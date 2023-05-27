@@ -1,10 +1,18 @@
 <script lang="ts">
 	import VideoLink from '$lib/components/VideoLink.svelte'
-	import { quickLookVideos, thisDayVideos } from '$lib/data'
+	import { getVideosForDay, getVideosForShow } from '$lib/data'
 	import promoInfinite from '$lib/images/promo-gb_infinite.png'
 	import promoRandom from '$lib/images/promo-random.png'
 	import PromoLink from './PromoLink.svelte'
 	import type { Video } from '$lib/data'
+
+	function getNRandomVideos(videos: Video[], n: number): Video[] {
+		const shuffled = videos.sort(() => 0.5 - Math.random())
+		return shuffled.slice(0, n)
+	}
+
+	const quickLookVideos = getNRandomVideos(getVideosForShow('quick-looks'), 5)
+	const thisDayVideos = getNRandomVideos(getVideosForDay(), 5)
 </script>
 
 <section>
