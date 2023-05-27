@@ -35,6 +35,10 @@
 </footer>
 
 <style>
+	:global(section) {
+		margin-bottom: 2em;
+	}
+
 	footer {
 		background-color: var(--secondary);
 		box-shadow: 0 50vh 0 50vh var(--secondary);
