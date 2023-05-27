@@ -10,3 +10,10 @@
 	<strong>{video.title}</strong>
 	<time class="secondary" datetime={video.publicationDate.toISOString()}>{video.publicationDate.toLocaleDateString()}</time>
 </a>
+
+<style>
+	strong,
+	time {
+		display: block;
+	}
+</style>

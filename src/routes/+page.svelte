@@ -1,17 +1,18 @@
-<script>
-	import infinitePromo from '$lib/images/promo-gb_infinite.png';
-
+<script lang="ts">
+	import VideoLink from '$lib/components/VideoLink.svelte'
+	import { quickLookVideos, thisDayVideos } from '$lib/data'
+	import type { Video } from '$lib/data'
 </script>
 
 <section class="grid">
 	<div>
-		<a id="infinite" href="/infinite">
+		<a href="/infinite">
 			<h2>Giant Bomb Infinite</h2>
 			<p>Watch videos from the archive, 24/7.</p>
 		</a>
 	</div>
 	<div>
-		<a id="infinite" href="/random">
+		<a href="/random">
 			<h2>Random</h2>
 			<p>Watch a random video from the archive.</p>
 		</a>
@@ -20,71 +21,31 @@
 
 <section>
 	<div>
-		<h2>Some List of Videos</h2>
+		<h2>This Day in Giant Bomb History</h2>
 		&middot;
 		<a href="/TODO">See All</a>
 	</div>
 	<ul class="grid">
-		<li>
-			<img src="http://placekitten.com/320/180" alt="">
-			<strong>Video Title</strong>
-			<time class="secondary">Jul 21, '19</time>
-		</li>
-		<li>
-			<img src="http://placekitten.com/320/180" alt="">
-			<strong>Video Title</strong>
-			<time class="secondary">Jul 21, '19</time>
-		</li>
-		<li>
-			<img src="http://placekitten.com/320/180" alt="">
-			<strong>Video Title</strong>
-			<time class="secondary">Jul 21, '19</time>
-		</li>
-		<li>
-			<img src="http://placekitten.com/320/180" alt="">
-			<strong>Video Title</strong>
-			<time class="secondary">Jul 21, '19</time>
-		</li>
-		<li>
-			<img src="http://placekitten.com/320/180" alt="">
-			<strong>Video Title</strong>
-			<time class="secondary">Jul 21, '19</time>
-		</li>
+		{#each thisDayVideos as video}
+			<li>
+				<VideoLink {video} href="/historic/today/{video.id}" />
+			</li>
+		{/each}
 	</ul>
 </section>
 
 <section>
 	<div>
-		<h2>Another List of Videos</h2>
+		<h2>Quick Looks</h2>
 		&middot;
 		<a href="/TODO">See All</a>
 	</div>
 	<ul class="grid">
-		<li>
-			<img src="http://placekitten.com/320/180" alt="">
-			<strong>Video Title</strong>
-			<time class="secondary">Jul 21, '19</time>
-		</li>
-		<li>
-			<img src="http://placekitten.com/320/180" alt="">
-			<strong>Video Title</strong>
-			<time class="secondary">Jul 21, '19</time>
-		</li>
-		<li>
-			<img src="http://placekitten.com/320/180" alt="">
-			<strong>Video Title</strong>
-			<time class="secondary">Jul 21, '19</time>
-		</li>
-		<li>
-			<img src="http://placekitten.com/320/180" alt="">
-			<strong>Video Title</strong>
-			<time class="secondary">Jul 21, '19</time>
-		</li>
-		<li>
-			<img src="http://placekitten.com/320/180" alt="">
-			<strong>Video Title</strong>
-			<time class="secondary">Jul 21, '19</time>
-		</li>
+		{#each quickLookVideos as video}
+			<li>
+				<VideoLink {video} href="/shows/quick-looks/{video.id}" />
+			</li>
+		{/each}
 	</ul>
 </section>
 
@@ -101,14 +62,5 @@
 
 	li {
 		list-style: none;
-	}
-
-	strong,
-	time {
-		display: block;
-	}
-
-	#infinite {
-
 	}
 </style>
