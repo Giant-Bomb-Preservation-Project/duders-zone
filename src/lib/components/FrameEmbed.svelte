@@ -8,8 +8,6 @@
 		{src}
 		{title}
 		frameborder="0"
-		webkitallowfullscreen="true"
-		mozallowfullscreen="true"
 		allowfullscreen>
 	</iframe>
 </div>

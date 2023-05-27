@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Frame from '$lib/components/Frame.svelte'
+	import FrameEmbed from '$lib/components/FrameEmbed.svelte'
 </script>
 
 <h1>Random</h1>
 
 <section>
-	<Frame
+	<FrameEmbed
 		src="https://archive.org/embed/gb-2300-7253-IDW4JNP"
 		title="Unprofessional Fridays: 04/12/2013"
 	/>
