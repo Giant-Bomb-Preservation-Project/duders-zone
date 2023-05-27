@@ -3,6 +3,10 @@
 	import { getRandomVideo } from '$lib/data'
 
 	$: video = getRandomVideo()
+
+	function randomize() {
+		video = getRandomVideo()
+	}
 </script>
 
 <h1>Random</h1>
@@ -12,14 +16,12 @@
 		src="https://archive.org/embed/{video.id}"
 		title={video.title}
 	/>
+	<h2>{video.title}</h2>
+	<p>{video.description}</p>
 </section>
 
 <section id="more">
-	<a role="button" href="/random">Another Random Video</a>
+	<button on:click={randomize}>
+		Another Random Video
+	</button>
 </section>
-
-<style>
-	#more {
-		text-align: center;
-	}
-</style>
