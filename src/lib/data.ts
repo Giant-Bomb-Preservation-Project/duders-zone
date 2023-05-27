@@ -1,16 +1,19 @@
+import { error } from '@sveltejs/kit';
+
 export interface Show {
 	id: string,
 	title: string,
 	description: string,
-	image?: string,
+	logo?: string,
+	poster?: string,
 }
 
 export interface Video {
 	id: string,
 	title: string,
 	description: string,
-	image: string,
 	publicationDate: Date,
+	image?: string,
 }
 
 const MOCK_SHOWS: Show[] = [
@@ -18,13 +21,14 @@ const MOCK_SHOWS: Show[] = [
 		id: 'game-tapes',
 		title: 'Game Tapes',
 		description: 'Unearthing the forgotten magnetic media of the video game industry.',
-		image: 'game-tapes.png',
+		poster: 'game-tapes.png',
 	},
 	{
 		id: 'quick-looks',
 		title: 'Quick Looks',
 		description: 'Sit back and enjoy as the Giant Bomb team takes an unedited look at the latest video games.',
-		image: 'quick-looks.jpg',
+		poster: 'quick-looks.jpg',
+		logo: 'quick-looks-logo.png',
 	},
 	{
 		id: 'reviews',
@@ -84,8 +88,28 @@ export function getRandomVideo(): Video {
 	return shuffled[0]
 }
 
+export function getShowById(id: string): Show | null {
+	for (const show of MOCK_SHOWS) {
+		if (show.id === id) {
+			return show
+		}
+	}
+
+	return null
+}
+
 export function getShows(): Show[] {
 	return MOCK_SHOWS
+}
+
+export function getVideoById(id: string): Video | null {
+	for (const video of MOCK_VIDEOS) {
+		if (video.id === id) {
+			return video
+		}
+	}
+
+	return null
 }
 
 export function getVideosForDay(day?: Date): Video[] {
@@ -98,7 +122,7 @@ export function getVideosForDay(day?: Date): Video[] {
 
 export function getVideosForShow(show: string): Video[] {
 	if (show != 'quick-looks') {
-		throw Error(`[getVideosForShow] Show not found: ${show}`)
+		throw error(500, `[getVideosForShow] Show not found: ${show}`)
 	}
 
 	return MOCK_VIDEOS

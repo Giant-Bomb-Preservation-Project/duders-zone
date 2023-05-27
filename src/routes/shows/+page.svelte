@@ -10,8 +10,8 @@
 	{#each shows as show}
 		<li>
 			<a href="/shows/{show.id}">
-				{#if show.image}
-					<img src="/shows/{show.image}" alt="">
+				{#if show.poster}
+					<img src="/shows/{show.poster}" alt="">
 				{:else}
 					<img src="/shows/default.jpg" alt="">
 				{/if}
