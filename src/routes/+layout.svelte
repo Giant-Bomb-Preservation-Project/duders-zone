@@ -1,5 +1,5 @@
 <script>
-	import '@picocss/pico';
+	import '@picocss/pico'
 </script>
 
 <header>
