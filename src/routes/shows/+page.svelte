@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getShows } from '$lib/data'
+	import ShowLink from '$lib/components/ShowLink.svelte'
 
 	const shows = getShows()
 </script>
@@ -9,24 +10,12 @@
 <ul>
 	{#each shows as show}
 		<li>
-			<a href="/shows/{show.id}">
-				{#if show.poster}
-					<img src="/shows/{show.poster}" alt="">
-				{:else}
-					<img src="/shows/default.jpg" alt="">
-				{/if}
-				<strong>{show.title}</strong>
-				<span class="secondary">{show.description}</span>
-			</a>
+			<ShowLink {show} />
 		</li>
 	{/each}
 </ul>
 
 <style>
-	a > * {
-		display: block;
-	}
-
 	strong {
 		padding-top: 0.5em;
 	}
