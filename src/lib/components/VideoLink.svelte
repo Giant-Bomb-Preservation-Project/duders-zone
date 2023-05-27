@@ -8,7 +8,7 @@
 <a {href}>
 	<img src={video.image} alt="">
 	<strong>{video.title}</strong>
-	<time class="secondary" datetime={video.publicationDate.toISOString()}>{video.publicationDate.toLocaleDateString()}</time>
+	<time class="secondary" datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>
 </a>
 
 <style>
