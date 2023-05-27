@@ -8,9 +8,11 @@ export const load = (({ params }) => {
     if (show === null)
         throw error(404, 'Not found')
 
-    const video = getVideosForShow(params.show).shift()
-    if (video === undefined)
+    const videos = getVideosForShow(params.show)
+    if (videos.length === 0)
         throw error(404, 'Not found')
+
+    const video = videos[0]
 
     throw redirect(302, `/shows/${show.id}/${video.id}`)
 }) satisfies PageLoad
