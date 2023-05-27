@@ -1,3 +1,10 @@
+export interface Show {
+	id: string,
+	title: string,
+	description: string,
+	image?: string,
+}
+
 export interface Video {
 	id: string,
 	title: string,
@@ -6,7 +13,27 @@ export interface Video {
 	publicationDate: Date,
 }
 
-const MOCK_VIDEOS = [
+const MOCK_SHOWS: Show[] = [
+	{
+		id: 'game-tapes',
+		title: 'Game Tapes',
+		description: 'Unearthing the forgotten magnetic media of the video game industry.',
+		image: 'game-tapes.png',
+	},
+	{
+		id: 'quick-looks',
+		title: 'Quick Looks',
+		description: 'Sit back and enjoy as the Giant Bomb team takes an unedited look at the latest video games.',
+		image: 'quick-looks.jpg',
+	},
+	{
+		id: 'reviews',
+		title: 'Reviews',
+		description: 'Giant Bomb delivers the final word on video games in podcast form.',
+	}
+]
+
+const MOCK_VIDEOS: Video[] = [
 	{
 		id: '2019-03-16-Demo_Derby-Demo_Derby_PlayStation_Jampack_-_Summer_of_1999-IDPTSFZS',
 		title: 'Demo Derby: PlayStation Jampack - Summer of 1999',
@@ -55,6 +82,10 @@ export function getRandomVideo(): Video {
 	const shuffled = MOCK_VIDEOS.sort(() => 0.5 - Math.random())
 
 	return shuffled[0]
+}
+
+export function getShows(): Show[] {
+	return MOCK_SHOWS
 }
 
 export function getVideosForDay(day?: Date): Video[] {
