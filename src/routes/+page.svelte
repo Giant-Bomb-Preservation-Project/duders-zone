@@ -51,7 +51,7 @@
 	<div>
 		<h2>Quick Looks</h2>
 		&middot;
-		<a href="/TODO">See All</a>
+		<a href="/shows/quick-looks">See All</a>
 	</div>
 	<ul class="grid">
 		{#each quickLookVideos as video}
