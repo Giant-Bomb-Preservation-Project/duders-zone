@@ -1,5 +1,5 @@
 <script lang="ts">
-	import FrameEmbed from '$lib/components/FrameEmbed.svelte'
+	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
 	import { getRandomVideo } from '$lib/data'
 
 	$: video = getRandomVideo()
@@ -12,12 +12,7 @@
 <h1>Random</h1>
 
 <section>
-	<FrameEmbed
-		src="https://archive.org/embed/{video.id}"
-		title={video.title}
-	/>
-	<h2>{video.title}</h2>
-	<p>{video.description}</p>
+	<VideoEmbed {video} />
 </section>
 
 <section id="more">
