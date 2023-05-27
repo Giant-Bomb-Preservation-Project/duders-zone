@@ -6,13 +6,13 @@
 	import PromoLink from './PromoLink.svelte'
 	import type { Video } from '$lib/data'
 
-	function getNRandomVideos(videos: Video[], n: number): Video[] {
+	function pickNRandomVideos(videos: Video[], n: number): Video[] {
 		const shuffled = videos.sort(() => 0.5 - Math.random())
 		return shuffled.slice(0, n)
 	}
 
-	const quickLookVideos = getNRandomVideos(getVideosForShow('quick-looks'), 5)
-	const thisDayVideos = getNRandomVideos(getVideosForDay(), 5)
+	const quickLookVideos = pickNRandomVideos(getVideosForShow('quick-looks'), 5)
+	const thisDayVideos = pickNRandomVideos(getVideosForDay(), 5)
 </script>
 
 <section>
