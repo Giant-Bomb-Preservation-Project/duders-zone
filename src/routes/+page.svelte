@@ -5,7 +5,7 @@
 
 <section class="grid">
 	<div>
-		<a id="infinite" href="https://www.giantbomb.com/infinite/">
+		<a id="infinite" href="/infinite">
 			<h2>Giant Bomb Infinite</h2>
 			<p>Watch videos from the archive, 24/7.</p>
 		</a>
