@@ -16,10 +16,6 @@
 </ul>
 
 <style>
-	strong {
-		padding-top: 0.5em;
-	}
-
 	li {
 		list-style: none;
 		margin-bottom: 2em;
