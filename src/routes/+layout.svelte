@@ -21,7 +21,7 @@
 				<a href="/random" class="contrast">Random</a>
 			</li>
 			<li>
-				<a href="/about" class="contrast">About</a>
+				<a href="/alumni" class="contrast">Alumni</a>
 			</li>
 		</ul>
 	</nav>
