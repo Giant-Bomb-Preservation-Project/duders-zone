@@ -36,14 +36,25 @@ for (const video of videoData) {
 	}
 }
 
+// Sort by date descending
+const byDateDesc = (a: { date: Date }, b: { date: Date }) => b.date.getTime() - a.date.getTime()
+
+// Sort randomly
+const byRandom = () => 0.5 - Math.random()
+
+// Sort by title ascending
+const byTitleAsc = (a: { title: string }, b: { title: string }) => a.title.localeCompare(b.title)
+
 export function getRandomShows(amount: number): Show[] {
-	const shuffled = Object.values(shows).sort(() => 0.5 - Math.random())
+	const shuffled = Object.values(shows)
+		.sort(byRandom)
 
 	return shuffled.slice(0, amount)
 }
 
 export function getRandomVideo(): Video {
-	const shuffled = Object.values(videos).sort(() => 0.5 - Math.random())
+	const shuffled = Object.values(videos)
+		.sort(byRandom)
 
 	return shuffled[0]
 }
@@ -53,7 +64,8 @@ export function getShowById(id: string): Show | null {
 }
 
 export function getShows(): Show[] {
-	return Object.values(shows).sort((a, b) => a.title.localeCompare(b.title))
+	return Object.values(shows)
+		.sort(byTitleAsc)
 }
 
 export function getVideoById(id: string): Video | null {
@@ -66,13 +78,13 @@ export function getVideosForDay(day?: Date): Video[] {
 	const date = day.getDate()
 	const month = day.getMonth()
 
-	return Object.values(videos).filter(video => {
-		return video.date.getDate() == date && video.date.getMonth() == month
-	})
+	return Object.values(videos)
+		.filter(video => video.date.getDate() == date && video.date.getMonth() == month)
+		.sort(byDateDesc)
 }
 
 export function getVideosForShow(show: Show): Video[] {
 	return show.videos
 		.map(videoId => videos[videoId])
-		.sort((a, b) => b.date.getTime() - a.date.getTime())
+		.sort(byDateDesc)
 }
