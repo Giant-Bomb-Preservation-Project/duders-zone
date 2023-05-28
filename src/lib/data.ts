@@ -8,6 +8,7 @@ export interface Show {
 	description: string,
 	logo?: string,
 	poster?: string,
+	videos: string[],
 }
 
 export interface Video {
@@ -16,56 +17,47 @@ export interface Video {
 	description: string,
 	date: Date,
 	show?: string,
-	image?: string,
+	thumbnail?: string,
 }
 
-const shows: Show[] = showData
+const shows: { [key:string]: Show } = {}
+for (const show of showData) {
+	shows[show.id] = show
+}
 
-const videos: Video[] = videoData.map(video => {
-	return {
+const videos: { [key:string]: Video } = {}
+for (const video of videoData) {
+	videos[video.id] = {
 		id: video.id,
 		title: video.title,
 		description: video.description,
 		date: new Date(video.date),
-		show: video.show || undefined,
-		image: video.image,
+		thumbnail: video.thumbnail,
 	}
-})
+}
 
 export function getRandomShows(amount: number): Show[] {
-	const shuffled = shows.sort(() => 0.5 - Math.random())
+	const shuffled = Object.values(shows).sort(() => 0.5 - Math.random())
 
 	return shuffled.slice(0, amount)
 }
 
 export function getRandomVideo(): Video {
-	const shuffled = videos.sort(() => 0.5 - Math.random())
+	const shuffled = Object.values(videos).sort(() => 0.5 - Math.random())
 
 	return shuffled[0]
 }
 
 export function getShowById(id: string): Show | null {
-	for (const show of showData) {
-		if (show.id === id) {
-			return show
-		}
-	}
-
-	return null
+	return id in shows ? shows[id] : null
 }
 
 export function getShows(): Show[] {
-	return showData
+	return Object.values(shows).sort((a, b) => a.title.localeCompare(b.title))
 }
 
 export function getVideoById(id: string): Video | null {
-	for (const video of videos) {
-		if (video.id === id) {
-			return video
-		}
-	}
-
-	return null
+	return id in videos ? videos[id] : null
 }
 
 export function getVideosForDay(day?: Date): Video[] {
@@ -74,18 +66,13 @@ export function getVideosForDay(day?: Date): Video[] {
 	const date = day.getDate()
 	const month = day.getMonth()
 
-	return videos.filter(video => {
+	return Object.values(videos).filter(video => {
 		return video.date.getDate() == date && video.date.getMonth() == month
 	})
 }
 
-export function getVideosForShow(show: string): Video[] {
-	const showVideos: Video[] = []
-	for (const video of videos) {
-		if (video.show === show) {
-			showVideos.push(video)
-		}
-	}
-
-	return showVideos.sort((a, b) => b.date.getTime() - a.date.getTime())
+export function getVideosForShow(show: Show): Video[] {
+	return show.videos
+		.map(videoId => videos[videoId])
+		.sort((a, b) => b.date.getTime() - a.date.getTime())
 }

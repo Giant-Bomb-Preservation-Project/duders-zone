@@ -1,20 +1,167 @@
 [
-	{
-		"id": "game-tapes",
-		"title": "Game Tapes",
-		"description": "Unearthing the forgotten magnetic media of the video game industry.",
-		"poster": "game-tapes.png"
-	},
-	{
-		"id": "quick-looks",
-		"title": "Quick Looks",
-		"description": "Sit back and enjoy as the Giant Bomb team takes an unedited look at the latest video games.",
-		"poster": "quick-looks.jpg",
-		"logo": "quick-looks-logo.png"
-	},
-	{
-		"id": "reviews",
-		"title": "Reviews",
-		"description": "Giant Bomb delivers the final word on video games in podcast form."
-	}
+    {
+        "id": "quick-looks",
+        "title": "Quick Looks",
+        "description": "",
+        "videos": [
+            "0001-quick-look-gamecock-demos-legendary",
+            "0002-quick-look-a-quick-look-at-burnout-bikes",
+            "2009-02-18-quick-looks-quick-look-grand-theft-auto-iv-the-lost-and-damned"
+        ],
+        "poster": "quick-looks.jpg",
+        "logo": "quick-looks-logo.png"
+    },
+    {
+        "id": "this-aint-no-game",
+        "title": "This Ain't No Game",
+        "description": "",
+        "videos": [
+            "2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY",
+            "2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N",
+            "2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY",
+            "2009-03-05-This_Aint_No_Game-This_Aint_No_Game_TANG_Final_Fantasy_VII_Advent_Children-IDP0ST4I",
+            "2009-03-13-This_Aint_No_Game-This_Aint_No_Game_TANG_Resident_Evil_Degeneration-IDKH3Q2L",
+            "2009-03-19-This_Aint_No_Game-This_Aint_No_Game_TANG_Hitman-ID1IH49B",
+            "2009-04-02-This_Aint_No_Game-This_Aint_No_Game_TANG_Final_Fantasy_The_Spirits_Within-ID3WCEJY",
+            "2009-04-09-This_Aint_No_Game-This_Aint_No_Game_TANG_Silent_Hill-IDQ8K1O5",
+            "2009-04-16-This_Aint_No_Game-This_Aint_No_Game_TANG_Lara_Croft_Tomb_Raider-IDUY6CNT",
+            "2009-04-23-This_Aint_No_Game-This_Aint_No_Game_TANG_Doom-IDP6U93F",
+            "2009-04-30-This_Aint_No_Game-This_Aint_No_Game_TANG_Mortal_Kombat-ID9W4B7F",
+            "2009-05-07-This_Aint_No_Game-This_Aint_No_Game_TANG_Tomb_Raider_The_Cradle_of_Life-ID6H53FK",
+            "2009-05-14-This_Aint_No_Game-This_Aint_No_Game_TANG_DOA_Dead_or_Alive-ID448KEQ",
+            "2009-05-21-This_Aint_No_Game-This_Aint_No_Game_TANG_Resident_Evil_Apocalypse-IDIZVJYV",
+            "2009-05-28-This_Aint_No_Game-This_Aint_No_Game_TANG_Max_Payne-IDZDN55T",
+            "2009-06-18-This_Aint_No_Game-This_Aint_No_Game_TANG_Super_Mario_Bros-IDPBF0S0",
+            "2009-06-25-This_Aint_No_Game-This_Aint_No_Game_TANG_Resident_Evil_Extinction-IDKT8WR0",
+            "2009-07-02-This_Aint_No_Game-This_Aint_No_Game_TANG_SF_The_Legend_of_Chun-Li-IDR7CKC4",
+            "2009-07-17-This_Aint_No_Game-This_Aint_No_Game_TANG_Mortal_Kombat_Annihilation-IDM3GNKC",
+            "2009-07-24-This_Aint_No_Game-This_Aint_No_Game_TANG_In_The_Name_of_the_King-IDNCXCZ4",
+            "2009-07-31-This_Aint_No_Game-This_Aint_No_Game_TANG_Wing_Commander-IDEYGNOG",
+            "2009-08-06-This_Aint_No_Game-This_Aint_No_Game_TANG_BloodRayne-IDRIVMBL",
+            "2009-08-13-This_Aint_No_Game-This_Aint_No_Game_TANG_House_of_the_Dead-IDYRN88T",
+            "2009-09-03-This_Aint_No_Game-This_Aint_No_Game_TANG_Alone_in_the_Dark-IDTNEXZT",
+            "2009-09-17-This_Aint_No_Game-This_Aint_No_Game_TANG_House_of_the_Dead_2-IDMGUP5S",
+            "2009-09-24-This_Aint_No_Game-This_Aint_No_Game_TANG_BloodRayne_II_Deliverance-IDFMWTTS",
+            "2009-10-01-This_Aint_No_Game-This_Aint_No_Game_TANG_Far_Cry-IDLMKX1B",
+            "2009-10-09-This_Aint_No_Game-This_Aint_No_Game_TANG_Onechanbara_The_Movie-IDGU7CBQ",
+            "2010-07-16-This_Aint_No_Game-This_Aint_No_Game_Wonderful_Universe_of_TANG_Tron-ID6OOJH6",
+            "2010-07-23-This_Aint_No_Game-This_Aint_No_Game_Wonderful_Universe_of_TANG_WarGames-IDXM8Z9U",
+            "2010-08-06-This_Aint_No_Game-This_Aint_No_Game_Wonderful_Universe_of_TANG_Joysticks-IDSV11DW",
+            "2010-08-13-This_Aint_No_Game-This_Aint_No_Game_Wonderful_Universe_of_TANG_Nightmares-IDK15SVJ"
+        ]
+    },
+    {
+        "id": "betting-the-farmville",
+        "title": "Betting the FarmVille",
+        "description": "",
+        "videos": [
+            "2011-08-01-Betting_the_FarmVille-Betting_the_FarmVille_Part_01-ID0JMQ4T",
+            "2011-08-03-Betting_the_FarmVille-Betting_the_FarmVille_Part_02-ID4U8XEV",
+            "2011-08-05-Betting_the_FarmVille-Betting_the_FarmVille_Part_03-IDYPVIQI",
+            "2011-08-06-Betting_the_FarmVille-Betting_the_FarmVille_Part_04-IDPM9TXA",
+            "2011-08-10-Betting_the_FarmVille-Betting_the_FarmVille_Part_05-IDN4HXZ3",
+            "2011-08-12-Betting_the_FarmVille-Betting_the_FarmVille_Part_06-IDGQH0E2",
+            "2011-08-15-Betting_the_FarmVille-Betting_the_FarmVille_Part_07-IDLR4ANP",
+            "2011-08-17-Betting_the_FarmVille-Betting_the_FarmVille_Part_08-ID9XATQK",
+            "2011-08-19-Betting_the_FarmVille-Betting_the_FarmVille_Part_09-IDVBBZ0B"
+        ]
+    },
+    {
+        "id": "demo-derby",
+        "title": "Demo Derby",
+        "description": "",
+        "videos": [
+            "2014-08-08-Demo_Derby-Demo_Derby_Pizza_Hut_Disc_0-ID6GYASO",
+            "2014-09-04-Demo_Derby-Demo_Derby_Toys_R_Us_Attack_of_the_Killer_Demos-IDYR67BR",
+            "2014-09-20-Demo_Derby-Demo_Derby_PlayStation_Underground_Volume_3_Issue_3-ID42WN2W",
+            "2014-09-27-Demo_Derby-Demo_Derby_PlayStation_Underground_Volume_4_Issue_4-IDPNB8TW",
+            "2014-10-23-Demo_Derby-Demo_Derby_Official_Xbox_Magazine_039-IDS7BKY4",
+            "2014-11-15-Demo_Derby-Demo_Derby_Sega_Dreamcast_Generator_Vol_01-IDD3CJZD",
+            "2015-01-31-Demo_Derby-Demo_Derby_Official_PlayStation_Magazine_Issue_58-ID3ZV6GG",
+            "2015-02-16-Demo_Derby-Demo_Derby_Official_PlayStation_Magazine_Issue_85-IDCV11PR",
+            "2015-02-23-Demo_Derby-Demo_Derby_Official_PlayStation_Magazine_Disc_52-IDYE2SII",
+            "2015-03-21-Demo_Derby-Demo_Derby_Official_Dreamcast_Magazine_Vol_2_Vol_9-IDHIPCGT",
+            "2015-05-13-Demo_Derby-Demo_Derby_Official_Xbox_Magazine_040-IDBS1AW9",
+            "2015-07-25-Demo_Derby-Demo_Derby_PlayStation_Underground_Volume_4_Issue_3-IDELE8KL",
+            "2015-10-10-Demo_Derby-Demo_Derby_PlayStation_Underground_Volume_1_Issue_1-IDQ14LUE",
+            "2015-12-07-Demo_Derby-Demo_Derby_PlayStation_Underground_Volume_1_Issue_3-IDC15V51",
+            "2016-02-23-Demo_Derby-Demo_Derby_Official_Xbox_Magazine_011-IDAZBB9C",
+            "2016-04-17-Demo_Derby-Demo_Derby_PlayStation_Underground_Volume_2_Issue_1-IDO99QFJ",
+            "2016-05-28-Demo_Derby-Demo_Derby_Official_Xbox_Magazine_Australia_052-IDY8H7PJ",
+            "2016-07-04-Demo_Derby-Demo_Derby_PlayStation_Underground_Volume_3_Issue_1-ID8U6A0J",
+            "2016-07-23-Demo_Derby-Demo_Derby_PlayStation_Underground_Volume_2_Issue_4-ID0BVFV8",
+            "2016-09-10-Demo_Derby-Demo_Derby_PlayStation_Underground_Volume_1_Issue_4-IDG1SOBR",
+            "2016-11-08-Demo_Derby-Demo_Derby_Official_Xbox_Magazine_052-IDFNNMMT",
+            "2017-02-14-Demo_Derby-Demo_Derby_Official_PlayStation_Magazine_Disc_79-IDZGPUHX",
+            "2017-05-06-Demo_Derby-Demo_Derby_PlayStation_Underground_Volume_3_Issue_4-ID6GFZ7O",
+            "2017-07-09-Demo_Derby-Demo_Derby_Official_Xbox_Magazine_031-IDJUX81G",
+            "2017-09-20-Demo_Derby-Demo_Derby_Official_Xbox_Magazine_054-IDVXHO3Y",
+            "2017-11-07-Demo_Derby-Demo_Derby_PlayStation_Underground_Volume_3_Issue_2-IDH5P6X6",
+            "2018-02-04-Demo_Derby-Demo_Derby_Official_Xbox_Magazine_064-IDGT9HEO",
+            "2018-07-14-Demo_Derby-Demo_Derby_Official_PlayStation_Magazine_Issue_59-IDO9QKJM",
+            "2018-08-15-Demo_Derby-Demo_Derby_Official_Dreamcast_Magazine_Volume_8_-_Volume_11-ID39O9CM",
+            "2018-09-01-Demo_Derby-Demo_Derby_Official_Playstation_Magazine_Issue_93-ID5T6MPM"
+        ]
+    },
+    {
+        "id": "unprofessional-fridays",
+        "title": "Unprofessional Fridays",
+        "description": "",
+        "videos": [
+            "2015-07-17-unprofessional-fridays-unprofessional-fridays-07-17-2015.mp-4"
+        ]
+    },
+    {
+        "id": "giant-bomb-makes-mario",
+        "title": "Giant Bomb Makes Mario",
+        "description": "",
+        "videos": [
+            "2015-09-23-Giant_Bomb_Makes_Mario-Giant_Bomb_Makes_Mario-IDWPF4HY",
+            "2015-09-23-Giant_Bomb_Makes_Mario-Giant_Bomb_Makes_Mario3228",
+            "2015-10-07-Giant_Bomb_Makes_Mario-Giant_Bomb_Makes_Mario_-_Part_02-IDHNDDOI",
+            "2016-03-10-Giant_Bomb_Makes_Mario-Giant_Bomb_Makes_Mario_-_Part_03-IDZF45B8",
+            "2016-03-24-Giant_Bomb_Makes_Mario-Giant_Bomb_Makes_Mario_-_Part_04-ID174HG5"
+        ]
+    },
+    {
+        "id": "choose-our-own-adventure",
+        "title": "Choose Our Own Adventure",
+        "description": "",
+        "videos": [
+            "2015-10-20-choose-our-own-adventure-choose-our-own-adventure-10-20-2015-life-is-strange"
+        ]
+    },
+    {
+        "id": "get-in-the-ring",
+        "title": "Get in the Ring",
+        "description": "",
+        "videos": [
+            "2017-10-19-Get_in_the_Ring-Get_in_the_Ring_10-18-2017-IDMUQ1UF",
+            "2018-01-26-Get_in_the_Ring-Get_in_the_Ring_01-26-2018-IDAQ4HGT",
+            "2018-05-16-Get_in_the_Ring-Get_in_the_Ring_III-ID0N83L2",
+            "2018-08-22-Get_in_the_Ring-Get_in_the_Ring_IV-ID7KZB8S"
+        ]
+    },
+    {
+        "id": "bens-lens",
+        "title": "Ben's Lens",
+        "description": "",
+        "videos": [
+            "2018-03-26-Bens_Lens-Bens_Lens_Bens_Lens_The_Cool_S-IDSYH28P",
+            "2018-04-02-Bens_Lens-Bens_Lens_Bens_Lens_Friday_Face_Fun_Fiesta-ID7ADDDE",
+            "2018-04-10-Bens_Lens-Bens_Lens_Bens_Lens_Brainstorming-IDT00TJ9",
+            "2018-04-19-Bens_Lens-Bens_Lens_Bens_Lens_Unprofessional_Fridays-IDT7C05O",
+            "2018-04-26-Bens_Lens-Bens_Lens_Bens_Lens_Save_the_Earth_Ride_a_Tesla-ID39CSFE",
+            "2018-05-02-Bens_Lens-Bens_Lens_Bens_Lens_The_Blundertaker-IDDJFKJ5",
+            "2018-05-11-Bens_Lens-Bens_Lens_Bens_Lens_Death_Race-IDM39E17",
+            "2018-05-25-Bens_Lens-Bens_Lens_Bens_Lens_Setting_the_Barista-IDBTC6WY",
+            "2018-06-01-Bens_Lens-Bens_Lens_Bens_Lens_Packing_Up-IDVUAG4G",
+            "2018-07-03-Bens_Lens-Bens_Lens_Bens_Lens_Arcade_Stickler-IDK965U2",
+            "2018-07-11-Bens_Lens-Bens_Lens_Bens_Lens_Gravy_Train-ID7J2G80",
+            "2018-08-02-Bens_Lens-Bens_Lens_Bens_Lens_Bad_Beans-ID98ETGY",
+            "2018-08-23-Bens_Lens-Bens_Lens_Bens_Lens_The_Shirt_Video-IDGY1GQ3",
+            "2018-09-07-Bens_Lens-Bens_Lens_Bens_Lens_The_One_That_Youre_In_Maybe-ID9XMSIN",
+            "2018-09-28-Bens_Lens-Bens_Lens_Bens_Lens_Fort_Night-IDA12AJH"
+        ]
+    }
 ]

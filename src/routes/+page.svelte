@@ -49,7 +49,7 @@
 			<a href="/shows/{ show.id }">See All</a>
 		</div>
 		<ul class="grid">
-			{#each show.videos as video}
+			{#each show.videoObjects as video}
 				<li>
 					<VideoLink {video} href="/shows/{ show.id }/{video.id}" />
 				</li>

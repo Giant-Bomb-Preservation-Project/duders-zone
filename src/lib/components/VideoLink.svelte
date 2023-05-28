@@ -4,7 +4,7 @@
 	export let video: Video
 	export let href: string
 
-	const imageSrc = video.image || '/shows/default.jpg'
+	const imageSrc = video.thumbnail || '/shows/default.jpg'
 </script>
 
 <a {href}>

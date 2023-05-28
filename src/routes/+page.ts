@@ -8,7 +8,7 @@ function pickNRandomVideos(videos: Video[], n: number): Video[] {
 }
 
 interface ShowWithVideos extends Show{
-    videos: Video[],
+    videoObjects: Video[],
 }
 
 export const load = (({ params }) => {
@@ -18,7 +18,7 @@ export const load = (({ params }) => {
     const filledShows: ShowWithVideos[] = shows.map(show => {
         return {
             ...show,
-            videos: pickNRandomVideos(getVideosForShow(show.id), 5)
+            videoObjects: pickNRandomVideos(getVideosForShow(show), 5)
         }
     })
 

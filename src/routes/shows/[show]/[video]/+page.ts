@@ -8,7 +8,7 @@ export const load = (({ params }) => {
     if (show === null)
         throw error(404, 'Not found')
 
-    const videos = getVideosForShow(params.show)
+    const videos = getVideosForShow(show)
 
     const video = getVideoById(params.video)
     if (video === null)
