@@ -63,11 +63,14 @@ export function getVideoById(id: string): Video | null {
 }
 
 export function getVideosForDay(day?: Date): Video[] {
-	if (day) {
-		console.warn('[getVideosForDay] Passing in a date parameter is not yet supported')
-	}
+	day = day || new Date()
 
-	return videos
+	const date = day.getDate()
+	const month = day.getMonth()
+
+	return videos.filter(video => {
+		return video.date.getDate() == date && video.date.getMonth() == month
+	})
 }
 
 export function getVideosForShow(show: string): Video[] {
