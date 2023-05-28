@@ -78,5 +78,5 @@ export function getVideosForShow(show: string): Video[] {
 		}
 	}
 
-	return showVideos
+	return showVideos.sort((a, b) => b.date.getTime() - a.date.getTime())
 }
