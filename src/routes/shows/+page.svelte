@@ -1,14 +1,13 @@
 <script lang="ts">
-	import { getShows } from '$lib/data'
 	import ShowLink from '$lib/components/ShowLink.svelte'
 
-	const shows = getShows()
+	export let data: PageData
 </script>
 
 <h1>Shows</h1>
 
 <ul>
-	{#each shows as show}
+	{#each data.shows as show}
 		<li>
 			<ShowLink {show} />
 		</li>
