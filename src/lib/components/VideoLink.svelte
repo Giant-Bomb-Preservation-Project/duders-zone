@@ -14,6 +14,10 @@
 </a>
 
 <style>
+	img {
+		width: 100%;
+	}
+
 	strong,
 	time {
 		display: block;
