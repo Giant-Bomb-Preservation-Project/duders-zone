@@ -36,12 +36,12 @@
 	<div>
 		<h2>This Day in Giant Bomb History</h2>
 		&middot;
-		<a href="/TODO">See All</a>
+		<a href="/historic">See All</a>
 	</div>
 	<ul class="grid">
 		{#each thisDayVideos as video}
 			<li>
-				<VideoLink {video} href="/historic/today/{video.id}" />
+				<VideoLink {video} href="/historic/{video.id}" />
 			</li>
 		{/each}
 	</ul>

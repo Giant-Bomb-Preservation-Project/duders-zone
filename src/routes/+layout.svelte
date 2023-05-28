@@ -15,6 +15,9 @@
 				<a href="/infinite" class="contrast">Infinite</a>
 			</li>
 			<li>
+				<a href="/historic" class="contrast">Historic</a>
+			</li>
+			<li>
 				<a href="/random" class="contrast">Random</a>
 			</li>
 			<li>
