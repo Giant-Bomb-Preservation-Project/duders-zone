@@ -1,18 +1,10 @@
 <script lang="ts">
 	import VideoLink from '$lib/components/VideoLink.svelte'
-	import { getVideosForDay, getVideosForShow } from '$lib/data'
+	import PromoLink from '$lib/components/PromoLink.svelte'
 	import promoInfinite from '$lib/images/promo-gb_infinite.png'
 	import promoRandom from '$lib/images/promo-random.png'
-	import PromoLink from '$lib/components/PromoLink.svelte'
-	import type { Video } from '$lib/data'
 
-	function pickNRandomVideos(videos: Video[], n: number): Video[] {
-		const shuffled = videos.sort(() => 0.5 - Math.random())
-		return shuffled.slice(0, n)
-	}
-
-	const quickLookVideos = pickNRandomVideos(getVideosForShow('quick-looks'), 5)
-	const thisDayVideos = pickNRandomVideos(getVideosForDay(), 5)
+	export let data: PageData
 </script>
 
 <section>
@@ -39,7 +31,7 @@
 		<a href="/historic">See All</a>
 	</div>
 	<ul class="grid">
-		{#each thisDayVideos as video}
+		{#each data.historicVideos as video}
 			<li>
 				<VideoLink {video} href="/historic/{video.id}" />
 			</li>
@@ -54,7 +46,7 @@
 		<a href="/shows/quick-looks">See All</a>
 	</div>
 	<ul class="grid">
-		{#each quickLookVideos as video}
+		{#each data.quickLookVideos as video}
 			<li>
 				<VideoLink {video} href="/shows/quick-looks/{video.id}" />
 			</li>
