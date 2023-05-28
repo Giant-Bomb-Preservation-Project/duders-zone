@@ -54,31 +54,29 @@ def fetch_ia_data():
                 'description': result.get('description', ''),
                 'date': result['date'],
             }
-
-            subjects = (
-                [result['subject']]
-                if type(result['subject']) == str
-                else result['subject']
-            )
-            for subject in subjects:
-                if subject == 'Giant Bomb':
-                    continue
-
-                show_id = make_identifier(subject)
-                if show_id not in shows:
-                    shows[show_id] = {
-                        'id': show_id,
-                        'title': subject,
-                        'description': '',
-                        'videos': []
-                    }
-
-                shows[show_id]['videos'].append(video_id)
-
         except KeyError:
             print('{video_id}: Missing metadata:', result)
             continue
 
+        subjects = (
+            [result['subject']]
+            if type(result['subject']) == str
+            else result['subject']
+        )
+        for subject in subjects:
+            if subject == 'Giant Bomb':
+                continue
+
+            show_id = make_identifier(subject)
+            if show_id not in shows:
+                shows[show_id] = {
+                    'id': show_id,
+                    'title': subject,
+                    'description': '',
+                    'videos': []
+                }
+
+            shows[show_id]['videos'].append(video_id)
         files = get_files(
             identifier=video_id,
             formats='Thumbnail',
