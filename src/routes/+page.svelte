@@ -3,6 +3,7 @@
 	import PromoLink from '$lib/components/PromoLink.svelte'
 	import promoInfinite from '$lib/images/promo-gb_infinite.png'
 	import promoRandom from '$lib/images/promo-random.png'
+	import type { PageData } from './$types'
 
 	export let data: PageData
 </script>

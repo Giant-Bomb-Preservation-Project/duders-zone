@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ShowLink from '$lib/components/ShowLink.svelte'
+	import type { PageData } from './$types'
 
 	export let data: PageData
 </script>
