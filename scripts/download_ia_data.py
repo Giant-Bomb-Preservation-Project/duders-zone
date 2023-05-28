@@ -12,7 +12,7 @@ COLLECTION_IDENTIFIER = 'giant-bomb-archive'
 DELAY_TIME = 2
 
 # Which thumbnail in the list to use as the image
-NTH_THUMBNAIL = 4
+# NTH_THUMBNAIL = 4
 
 # Files to write the data to
 TARGET_VIDEO_FILE = 'videos.json'
@@ -53,6 +53,7 @@ def fetch_ia_data():
                 'title': result['title'],
                 'description': result.get('description', ''),
                 'date': result['date'],
+                'thumbnail': f'https://archive.org/services/img/{video_id}',
             }
         except KeyError:
             print('{video_id}: Missing metadata:', result)
@@ -77,20 +78,21 @@ def fetch_ia_data():
                 }
 
             shows[show_id]['videos'].append(video_id)
-        files = get_files(
-            identifier=video_id,
-            formats='Thumbnail',
-        )
 
-        try:
-            i = 0
-            file = next(files)
-            while i < NTH_THUMBNAIL:
-                video['thumbnail'] = f'https://archive.org/download/{video_id}/' + quote(file.name)
-                file = next(files)
-                i += 1
-        except StopIteration:
-            pass  # ran out of thumbnails, so just use the last one
+        # files = get_files(
+        #     identifier=video_id,
+        #     formats='Thumbnail',
+        # )
+
+        # try:
+        #     i = 0
+        #     file = next(files)
+        #     while i < NTH_THUMBNAIL:
+        #         video['thumbnail'] = f'https://archive.org/download/{video_id}/' + quote(file.name)
+        #         file = next(files)
+        #         i += 1
+        # except StopIteration:
+        #     pass  # ran out of thumbnails, so just use the last one
 
         videos.append(video)
 
