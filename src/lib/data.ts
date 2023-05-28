@@ -32,6 +32,12 @@ const videos: Video[] = videoData.map(video => {
 	}
 })
 
+export function getRandomShows(amount: number): Show[] {
+	const shuffled = shows.sort(() => 0.5 - Math.random())
+
+	return shuffled.slice(0, amount)
+}
+
 export function getRandomVideo(): Video {
 	const shuffled = videos.sort(() => 0.5 - Math.random())
 

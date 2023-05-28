@@ -1,5 +1,5 @@
-import { getVideosForDay, getVideosForShow } from '$lib/data'
-import type { Video } from '$lib/data'
+import { getRandomShows, getVideosForDay, getVideosForShow } from '$lib/data'
+import type { Show, Video } from '$lib/data'
 import type { PageLoad } from './$types';
 
 function pickNRandomVideos(videos: Video[], n: number): Video[] {
@@ -7,12 +7,23 @@ function pickNRandomVideos(videos: Video[], n: number): Video[] {
     return shuffled.slice(0, n)
 }
 
+interface ShowWithVideos extends Show{
+    videos: Video[],
+}
+
 export const load = (({ params }) => {
-    const quickLookVideos = pickNRandomVideos(getVideosForShow('quick-looks'), 5)
+    const shows = getRandomShows(3)
     const historicVideos = pickNRandomVideos(getVideosForDay(), 5)
 
+    const filledShows: ShowWithVideos[] = shows.map(show => {
+        return {
+            ...show,
+            videos: pickNRandomVideos(getVideosForShow(show.id), 5)
+        }
+    })
+
     return {
-        quickLookVideos,
+        shows: filledShows,
         historicVideos,
     }
 }) satisfies PageLoad

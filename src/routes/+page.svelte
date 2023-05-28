@@ -40,20 +40,24 @@
 	</ul>
 </section>
 
-<section>
-	<div>
-		<h2>Quick Looks</h2>
-		&middot;
-		<a href="/shows/quick-looks">See All</a>
-	</div>
-	<ul class="grid">
-		{#each data.quickLookVideos as video}
-			<li>
-				<VideoLink {video} href="/shows/quick-looks/{video.id}" />
-			</li>
-		{/each}
-	</ul>
-</section>
+{#each data.shows as show}
+
+	<section>
+		<div>
+			<h2>{ show.title }</h2>
+			&middot;
+			<a href="/shows/{ show.id }">See All</a>
+		</div>
+		<ul class="grid">
+			{#each show.videos as video}
+				<li>
+					<VideoLink {video} href="/shows/{ show.id }/{video.id}" />
+				</li>
+			{/each}
+		</ul>
+	</section>
+
+{/each}
 
 <style>
 	h2 {
