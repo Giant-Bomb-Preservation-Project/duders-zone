@@ -3,7 +3,7 @@
 	import { getVideosForDay, getVideosForShow } from '$lib/data'
 	import promoInfinite from '$lib/images/promo-gb_infinite.png'
 	import promoRandom from '$lib/images/promo-random.png'
-	import PromoLink from './PromoLink.svelte'
+	import PromoLink from '$lib/components/PromoLink.svelte'
 	import type { Video } from '$lib/data'
 
 	function pickNRandomVideos(videos: Video[], n: number): Video[] {
