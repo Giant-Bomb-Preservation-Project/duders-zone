@@ -1,60 +1,110 @@
 <script lang="ts">
-	import VideoLink from '$lib/components/VideoLink.svelte'
-	import PromoLink from '$lib/components/PromoLink.svelte'
+	import MoreLink from '$lib/components/MoreLink.svelte'
+	import Splash from '$lib/components/Splash.svelte'
+	import VideoList, { VideoListMode } from '$lib/components/VideoList.svelte'
 	import promoInfinite from '$lib/images/promo-gb_infinite.png'
-	import promoRandom from '$lib/images/promo-random.png'
 	import type { PageData } from './$types'
 
 	export let data: PageData
 </script>
 
 <section>
-	<div>
-		<PromoLink
-			href="/infinite"
-			title="Giant Bomb Infinite"
-			description="Watch videos from the archive, 24/7."
-			image={promoInfinite}
-		/>
-		<PromoLink
-			href="/random"
-			title="Random"
-			description="Watch a random video from the archive."
-			image={promoRandom}
-		/>
-	</div>
+	<Splash image={promoInfinite}>
+		<div class="metadata">
+			<h3>Giant Bomb Infinite</h3>
+			<p>Watch videos from the archive, 24/7.</p>
+		</div>
+		<div class="link">
+			<a href="/infinite">
+				<img src={promoInfinite} alt="Giant Bomb Infinite">
+			</a>
+		</div>
+	</Splash>
 </section>
 
-<section>
-	<div>
-		<h2>This Day in Giant Bomb History</h2>
-		&middot;
-		<a href="/historic">See All</a>
-	</div>
-	<ul>
-		{#each data.historicVideos as video}
-			<li>
-				<VideoLink {video} href="/historic/{video.id}" />
-			</li>
-		{/each}
-	</ul>
+<section class="container videos">
+	<VideoList
+		videos={data.historicVideos}
+		title="This Day in Giant Bomb History"
+		rootUri="/historic"
+		seeAllUrl="/historic"
+		mode={VideoListMode.List}
+	/>
 </section>
 
 {#each data.shows as show}
 
-	<section>
-		<div>
-			<h2>{ show.title }</h2>
-			&middot;
-			<a href="/shows/{ show.id }">See All</a>
-		</div>
-		<ul>
-			{#each show.videoObjects as video}
-				<li>
-					<VideoLink {video} href="/shows/{ show.id }/{video.id}" />
-				</li>
-			{/each}
-		</ul>
-	</section>
+<section class="container videos">
+	<VideoList
+		videos={show.videoObjects}
+		title="{ show.title }"
+		rootUri="/shows/{ show.id }"
+		seeAllUrl="/shows/{ show.id }"
+		mode={VideoListMode.List}
+	/>
+</section>
 
 {/each}
+
+<MoreLink href="/shows">
+	More Shows
+</MoreLink>
+
+
+<style>
+	h3 {
+		font-size: 30px;
+		margin: 0;
+	}
+
+	p {
+		font-size: 14px;
+		line-height: 20px;
+		margin: 10px 0;
+	}
+
+	.link {
+		margin: 20px 0;
+	}
+
+	.link img {
+		box-shadow: rgba(255,255,255,0.1) 0 0 0 1px;
+		display: block;
+		width: 100%;
+	}
+
+	.videos {
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
+
+	@media (min-width: 992px) {
+		h3 {
+			font-size: 32px;
+			line-height: 35px;
+		}
+
+		p {
+			font-size: 21px;
+			line-height: 30px;
+		}
+
+		.metadata {
+			position: relative;
+			z-index: 2;
+		}
+
+		.link {
+			margin: 0 0 0 32px;
+			flex: 0 0 620px;
+			position: relative;
+			z-index: 2;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.link {
+			margin-left: 90px;
+		}
+	}
+</style>

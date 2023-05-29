@@ -13,12 +13,12 @@ interface ShowWithVideos extends Show{
 
 export const load = (({ params }) => {
     const shows = getRandomShows(3)
-    const historicVideos = pickNRandomVideos(getVideosForDay(), 5)
+    const historicVideos = pickNRandomVideos(getVideosForDay(), 4)
 
     const filledShows: ShowWithVideos[] = shows.map(show => {
         return {
             ...show,
-            videoObjects: pickNRandomVideos(getVideosForShow(show), 5)
+            videoObjects: pickNRandomVideos(getVideosForShow(show), 4)
         }
     })
 
