@@ -1,8 +1,17 @@
 <script>
-	import '../app.css'
+	import { page } from '$app/stores';
 	import logo from '$lib/images/logo-og.png'
 	import internetArchive from '$lib/images/internet-archive.jpg'
 	import giantBombPreservationSociety from '$lib/images/giant-bomb-preservation-society.png'
+	import '../app.css'
+
+	const menu = [
+		{ path: '/shows', text: 'Shows' },
+		{ path: '/infinite', text: 'Infinite' },
+		{ path: '/historic', text: 'Historic' },
+		{ path: '/random', text: 'Random' },
+		{ path: '/alumni', text: 'Alumni' },
+	]
 </script>
 
 <div id="site-container">
@@ -22,21 +31,11 @@
 	<nav>
 		<div class="container">
 			<ul>
-				<li>
-					<a href="/shows">Shows</a>
-				</li>
-				<li>
-					<a href="/infinite">Infinite</a>
-				</li>
-				<li>
-					<a href="/historic">Historic</a>
-				</li>
-				<li>
-					<a href="/random">Random</a>
-				</li>
-				<li>
-					<a href="/alumni">Alumni</a>
-				</li>
+				{#each menu as { path, text, className }}
+					<li>
+						<a class={$page.route.id.startsWith(path) ? 'active' : ''} href={path}>{text}</a>
+					</li>
+				{/each}
 			</ul>
 		</div>
 	</nav>
@@ -160,6 +159,7 @@
 		text-shadow: rgba(0, 0, 0, 0.5) 0 -1px 0;
 	}
 
+	nav a.active,
 	nav a:hover {
 		background: var(--color-red) url(/assets/bg-navsubhover.png) repeat-x;
 	}
