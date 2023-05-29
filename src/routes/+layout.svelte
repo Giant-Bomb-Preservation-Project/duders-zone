@@ -1,14 +1,15 @@
 <script>
 	import '../app.css'
 	import logo from '$lib/images/logo-og.png'
-
+	import internetArchive from '$lib/images/internet-archive.jpg'
+	import giantBombPreservationSociety from '$lib/images/giant-bomb-preservation-society.png'
 </script>
 
 <header>
 	<div class="container">
 		<div id="top-header">
 			<h1 id="brand">
-				<a href="/"><img src="{logo}" alt="duders.zone"></a>
+				<a href="/"><img src={logo} alt="duders.zone"></a>
 			</h1>
 			<a id="andre" class="border" href="https://www.giantbomb.com/infinite/">
 				Giant Bomb Infinite
@@ -44,16 +45,65 @@
 </main>
 
 <footer>
-	<div>
-		TODO
+	<div class="container">
+		<p id="thanks">This project was made possible thanks to:</p>
+		<div id="credits">
+			<div>
+				<a href="https://archive.org"><img src={internetArchive} alt="Internet Archive"></a>
+				<h3>Internet Archive</h3>
+				<p>If possible, consider <a href="https://archive.org/donate">donating</a> to keep the project alive.</p>
+			</div>
+			<div>
+				<a href="https://discord.gg/8zJKsAyVPT"><img src={giantBombPreservationSociety} alt="Giant Bomb Preservation Society"></a>
+				<h3>Giant Bomb Preservation Society</h3>
+				<p>Join <a href="https://discord.gg/8zJKsAyVPT">the Discord server</a> to know more.</p>
+			</div>
+		</div>
 	</div>
 </footer>
 
 <style>
+	footer {
+		background: #242629 url(/assets/bg-noise-white.png);
+		color: gray;
+		padding: 3em 0 5em;
+		position: relative;
+		text-align: center;
+	}
+
+	footer a {
+		color: white;
+	}
+
+	footer a:hover {
+		color: var(--color-red);
+	}
+
+	footer p {
+		margin-bottom: 3em;
+	}
+
+	footer::before {
+		content: " ";
+		display: block;
+		height: 1px;
+		width: 100%;
+		background: #861313;
+		border-top: 1px solid var(--color-red);
+		border-bottom: 1px solid #590d0d;
+		box-shadow: rgba(255,255,255,0.15) 0 1px 0;
+		position: absolute;
+		top: 0;
+	}
+
 	header {
 		background: #242629;
 		background-image: url(/assets/bg-noise-white.png), linear-gradient(#242629, #414549);
 		color: #ccc;
+	}
+
+	header h1 {
+		margin: 0;
 	}
 
 	nav {
@@ -73,7 +123,7 @@
 	}
 
 	nav a:hover {
-		background: #b31919 url(/assets/bg-navsubhover.png) repeat-x;
+		background: var(--color-red) url(/assets/bg-navsubhover.png) repeat-x;
 	}
 
 	nav ul {
@@ -98,7 +148,7 @@
 		height: 1px;
 		width: 100%;
 		background: #861313;
-		border-top: 1px solid #b31919;
+		border-top: 1px solid var(--color-red);
 		border-bottom: 1px solid #590d0d;
 		box-shadow: rgba(255,255,255,0.15) 0 1px 0;
 	}
@@ -134,6 +184,10 @@
 		max-width: 120px;
 	}
 
+	#credits img {
+		max-width: 200px;
+	}
+
 	#top-header {
 		align-items: center;
 		display: flex;
@@ -156,5 +210,21 @@
 		position: absolute;
 		top: 50%;
 		width: 0;
+	}
+
+	@media (min-width: 768px) {
+		#credits {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-evenly;
+		}
+
+		#credits > * {
+			flex: 1;
+		}
+
+		#credits img {
+			width: 200px;
+		}
 	}
 </style>
