@@ -9,7 +9,7 @@
 </script>
 
 <section>
-	<div class="grid">
+	<div>
 		<PromoLink
 			href="/infinite"
 			title="Giant Bomb Infinite"
@@ -31,7 +31,7 @@
 		&middot;
 		<a href="/historic">See All</a>
 	</div>
-	<ul class="grid">
+	<ul>
 		{#each data.historicVideos as video}
 			<li>
 				<VideoLink {video} href="/historic/{video.id}" />
@@ -48,7 +48,7 @@
 			&middot;
 			<a href="/shows/{ show.id }">See All</a>
 		</div>
-		<ul class="grid">
+		<ul>
 			{#each show.videoObjects as video}
 				<li>
 					<VideoLink {video} href="/shows/{ show.id }/{video.id}" />
@@ -58,20 +58,3 @@
 	</section>
 
 {/each}
-
-<style>
-	h2 {
-		display: inline;
-		font-size: 1.25rem;
-		margin: 0;
-	}
-
-	ul {
-		margin-top: 1em;
-		padding: 0;
-	}
-
-	li {
-		list-style: none;
-	}
-</style>

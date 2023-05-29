@@ -11,7 +11,7 @@
 />
 <h2>{video.title}</h2>
 <p>{video.description}</p>
-<p class="secondary">
+<p>
 	Originally published on
 	<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>
 </p>

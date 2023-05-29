@@ -15,7 +15,7 @@
 	<VideoEmbed {video} />
 </section>
 
-<section id="more">
+<section>
 	<button on:click={randomize}>
 		Another Random Video
 	</button>

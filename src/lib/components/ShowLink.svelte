@@ -9,11 +9,5 @@
 <a href="/shows/{show.id}">
 	<img src={imageSrc} alt="">
 	<strong>{show.title}</strong>
-	<span class="secondary">{show.description}</span>
+	<span>{show.description}</span>
 </a>
-
-<style>
-	a > * {
-		display: block;
-	}
-</style>

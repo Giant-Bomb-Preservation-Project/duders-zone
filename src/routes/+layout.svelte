@@ -1,54 +1,38 @@
 <script>
-	import '@picocss/pico'
+	import '../app.css'
 </script>
 
 <header>
-	<nav class="container">
+	<nav>
 		<ul>
 			<li>
-				<a href="/" class="contrast"><strong>duders.zone</strong></a>
+				<a href="/"><strong>duders.zone</strong></a>
 			</li>
 			<li>
-				<a href="/shows" class="contrast">Shows</a>
+				<a href="/shows">Shows</a>
 			</li>
 			<li>
-				<a href="/infinite" class="contrast">Infinite</a>
+				<a href="/infinite">Infinite</a>
 			</li>
 			<li>
-				<a href="/historic" class="contrast">Historic</a>
+				<a href="/historic">Historic</a>
 			</li>
 			<li>
-				<a href="/random" class="contrast">Random</a>
+				<a href="/random">Random</a>
 			</li>
 			<li>
-				<a href="/alumni" class="contrast">Alumni</a>
+				<a href="/alumni">Alumni</a>
 			</li>
 		</ul>
 	</nav>
 </header>
 
-<main class="container">
+<main>
 	<slot />
 </main>
 
 <footer>
-	<div class="container">
+	<div>
 		TODO
 	</div>
 </footer>
-
-<style>
-	:global(section) {
-		margin-bottom: 2em;
-	}
-
-	footer {
-		background-color: var(--secondary);
-		box-shadow: 0 50vh 0 50vh var(--secondary);
-	}
-
-	header {
-		background-color: var(--secondary);
-		padding: 0;
-	}
-</style>

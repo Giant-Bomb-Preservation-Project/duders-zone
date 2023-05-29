@@ -8,7 +8,7 @@
 
 <h1>
 	{#if data.show.logo}
-		<img id="logo" src="/shows/{data.show.logo}" alt="{data.show.title}">
+		<img src="/shows/{data.show.logo}" alt="{data.show.title}">
 	{:else}
 		{data.show.title}
 	{/if}
@@ -27,34 +27,3 @@
 		{/each}
 	</ul>
 </section>
-
-<style>
-	li {
-		list-style: none;
-	}
-
-	ul {
-		padding: 0;
-	}
-
-	#logo {
-		display: block;
-		max-width: 4em;
-		margin-bottom: 1em;
-	}
-
-	@media (min-width: 768px) {
-		ul {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			gap: 1em;
-		}
-	}
-
-	@media (min-width: 992px) {
-		ul {
-			grid-template-columns: repeat(3, 1fr);
-		}
-	}
-</style>
-

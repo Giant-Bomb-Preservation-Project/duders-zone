@@ -12,7 +12,6 @@
 	</a>
 </div>
 
-
 <style>
 	a {
 		background: none center center no-repeat;
