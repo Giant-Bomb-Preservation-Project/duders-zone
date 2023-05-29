@@ -3,7 +3,7 @@
 	--color-red-active: #b31919;
 	--font-regular: -apple-system, ".SFNSText-Regular", BlinkMacSystemFont, "San Francisco", "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Lucida Grande", sans-serif;
 	--font-special: "GlyddonRegular", Georgia, Times, "Times New Roman", serif;
-	--spacing: 10px;
+	--spacing: 1rem;
 }
 
 a {
@@ -40,6 +40,7 @@ p {
 }
 
 .container {
+	box-sizing: border-box;
 	width: 100%;
 	margin-right: auto;
 	margin-left: auto;

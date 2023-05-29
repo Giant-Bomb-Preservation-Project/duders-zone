@@ -210,7 +210,7 @@
 	}
 
 	#site-container {
-		overflow: hidden;
+		overflow-y: hidden;
 		min-height: 100%;
 	}
 
