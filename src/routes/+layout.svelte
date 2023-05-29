@@ -5,6 +5,8 @@
 	import giantBombPreservationSociety from '$lib/images/giant-bomb-preservation-society.png'
 </script>
 
+<div id="site-container">
+
 <header>
 	<div class="container">
 		<div id="top-header">
@@ -62,6 +64,8 @@
 	</div>
 </footer>
 
+</div>
+
 <style>
 	footer {
 		background: #242629 url(/assets/bg-noise-white.png);
@@ -69,6 +73,8 @@
 		padding: 3em 0 5em;
 		position: relative;
 		text-align: center;
+		padding-bottom: 50vh;
+		margin-bottom: -50vh;
 	}
 
 	footer a {
@@ -96,6 +102,14 @@
 		top: 0;
 	}
 
+	footer #credits {
+		margin-bottom: 4em;
+	}
+
+	footer #credits img {
+		max-width: 200px;
+	}
+
 	header {
 		background: #242629;
 		background-image: url(/assets/bg-noise-white.png), linear-gradient(#242629, #414549);
@@ -104,6 +118,30 @@
 
 	header h1 {
 		margin: 0;
+	}
+
+	header #andre span {
+		color: white;
+		display: block;
+	}
+
+	header #andre:hover {
+		background-position: 0 -70px;
+		text-shadow: #fff 0 0 5px;
+	}
+
+	header #brand {
+		padding-top: 10px;
+	}
+
+	header #brand img {
+		max-width: 120px;
+	}
+
+	header #top-header {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
 	}
 
 	nav {
@@ -142,6 +180,11 @@
 		flex: 1 1 auto;
 	}
 
+	nav .container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
 	nav::after {
 		content: " ";
 		display: block;
@@ -153,7 +196,7 @@
 		box-shadow: rgba(255,255,255,0.15) 0 1px 0;
 	}
 
-	#andre {
+	header #andre {
 		background: transparent url(/assets/icn-andre-48x240.png) 0 0 no-repeat;
 		background-position: 0 0;
 		background-size: 24px auto;
@@ -166,32 +209,9 @@
 		width: 152px;
 	}
 
-	#andre span {
-		color: white;
-		display: block;
-	}
-
-	#andre:hover {
-		background-position: 0 -70px;
-		text-shadow: #fff 0 0 5px;
-	}
-
-	#brand {
-		padding-top: 10px;
-	}
-
-	#brand img {
-		max-width: 120px;
-	}
-
-	#credits img {
-		max-width: 200px;
-	}
-
-	#top-header {
-		align-items: center;
-		display: flex;
-		flex-direction: row;
+	#site-container {
+		overflow: hidden;
+		min-height: 100%;
 	}
 
 	.border {
@@ -213,17 +233,17 @@
 	}
 
 	@media (min-width: 768px) {
-		#credits {
+		footer #credits {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-evenly;
 		}
 
-		#credits > * {
+		footer #credits > * {
 			flex: 1;
 		}
 
-		#credits img {
+		footer #credits img {
 			width: 200px;
 		}
 	}

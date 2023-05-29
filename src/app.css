@@ -3,6 +3,7 @@
 	--color-red-active: #b31919;
 	--font-regular: -apple-system, ".SFNSText-Regular", BlinkMacSystemFont, "San Francisco", "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Lucida Grande", sans-serif;
 	--font-special: "GlyddonRegular", Georgia, Times, "Times New Roman", serif;
+	--spacing: 10px;
 }
 
 a {
@@ -17,12 +18,17 @@ a:hover {
 body {
 	font-family: var(--font-regular);
 	font-size: 14px;
+	height: 100%;
 	margin: 0;
 	padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font-special);
+}
+
+html {
+	height: 100%
 }
 
 img {
@@ -33,8 +39,7 @@ p {
 	margin: 0;
 }
 
-.container,
-.container-fluid {
+.container {
 	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
