@@ -1,28 +1,33 @@
-# create-svelte
+# Duders Zone
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+See you next game.
 
-## Creating a project
+## Requirements
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+* Node 19+
+* Python 3.9+ (optional - for refreshing the store for IA)
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Install the dependencies:
 
-```bash
+```shell
+npm run install
+```
+
+Run the development server:
+
+```shell
 npm run dev
 
 # or start the server and open the app in a new browser tab
 npm run dev -- --open
+```
+
+Use the `check` script to validate TypeScript code:
+
+```shell
+npm run check
 ```
 
 ## Building
@@ -33,6 +38,41 @@ To create a production version of your app:
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+## Downloading Data
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+The web app relies on bundled JSON files for its data store which need to be
+refreshed using the Internet Archive API to get any updates to the collection.
+This is done using the `download_ia_data.py` script and requires Python to run.
+
+To run the script go into the scripts directory:
+
+```shell
+cd scripts
+```
+
+(Optional) Create and activate a virtual environment:
+
+```shell
+python -m venv env
+source env/bin/activate
+```
+
+Install the `internetarchive` dependency:
+
+```shell
+pip install internetarchive
+```
+
+Run the script:
+
+```shell
+python download_ia_data.py
+```
+
+This will create a _videos.json_ file and a _shows.json_ containing the video
+and show data respectively. You can then move them to the correct location,
+overriding what's there:
+
+```shell
+mv videos.json shows.json ../src/lib/data/
+```
