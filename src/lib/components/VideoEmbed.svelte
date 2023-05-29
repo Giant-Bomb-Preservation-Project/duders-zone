@@ -5,16 +5,16 @@
 	export let video: Video
 </script>
 
-<main>
+<div class="wrapper">
 	<div class="container">
-		<div id="container">
-			<div id="splash" style="background-image: url('{video.thumbnail}');"></div>
-			<div id="metadata">
-				<h2>{video.title}</h2>
+		<div class="inner-container">
+			<div class="splash" style="background-image: url('{video.thumbnail}');"></div>
+			<div class="metadata">
+				<h3>{video.title}</h3>
 				<p>{video.description}</p>
 				<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>
 			</div>
-			<div id="video">
+			<div class="video">
 				<FrameEmbed
 					src="https://archive.org/embed/{video.id}"
 					title={video.title}
@@ -22,17 +22,10 @@
 			</div>
 		</div>
 	</div>
-</main>
+</div>
 
 <style>
-	main {
-		background: black;
-		color: white;
-		font-family: var(--font-special);
-		padding: 16px 0;
-	}
-
-	h2 {
+	h3 {
 		font-size: 30px;
 		font-weight: normal;
 		margin: 0;
@@ -49,23 +42,25 @@
 		line-height: 20px;
 	}
 
-	#splash {
+	.wrapper {
+		background: black;
+		color: white;
+		font-family: var(--font-special);
+		padding: 16px 0;
+	}
+
+	.splash {
 		display: none;
 	}
 
-	#video {
+	.video {
 		margin: 20px 0;
 	}
 
 	@media (min-width: 992px) {
-		h2 {
+		h3 {
 			font-size: 32px;
 			line-height: 35px;
-		}
-
-		main {
-			padding: 0;
-			text-shadow: rgba(0,0,0,0.9) 0 1px 0;
 		}
 
 		p {
@@ -73,19 +68,19 @@
 			line-height: 30px;
 		}
 
-		#container {
+		.inner-container {
 			display: flex;
 			padding: 24px 0 64px;
 			overflow: hidden;
 			position: relative;
 		}
 
-		#metadata {
+		.metadata {
 			position: relative;
 			z-index: 2;
 		}
 
-		#splash {
+		.splash {
 			background: black center center no-repeat;
 			background-size: cover;
 			display: block;
@@ -98,7 +93,7 @@
 			z-index: 1;
 		}
 
-		#splash::after {
+		.splash::after {
 			content: " ";
 			width: 400px;
 			height: 100%;
@@ -109,7 +104,7 @@
 			position: absolute;
 		}
 
-		#splash::before {
+		.splash::before {
 			content: " ";
 			width: 400px;
 			height: 100%;
@@ -120,16 +115,21 @@
 			position: absolute;
 		}
 
-		#video {
+		.video {
 			margin: 0 0 0 32px;
 			flex: 0 0 620px;
 			position: relative;
 			z-index: 2;
 		}
+
+		.wrapper {
+			padding: 0;
+			text-shadow: rgba(0,0,0,0.9) 0 1px 0;
+		}
 	}
 
 	@media (min-width: 1200px) {
-		#video {
+		.video {
 			margin-left: 90px;
 		}
 	}
