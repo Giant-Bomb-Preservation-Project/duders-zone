@@ -5,7 +5,7 @@
 	export let videos: Video[]
 	export let title: string
 	export let rootUri: string
-	export let seeAllUrl: string
+	export let seeAllUrl: string | null = null
 </script>
 
 <div class="header-wrapper">

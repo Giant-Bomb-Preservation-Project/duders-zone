@@ -31,9 +31,9 @@
 	<nav>
 		<div class="container">
 			<ul>
-				{#each menu as { path, text, className }}
+				{#each menu as { path, text }}
 					<li>
-						<a class={$page.route.id.startsWith(path) ? 'active' : ''} href={path}>{text}</a>
+						<a class={$page.route.id?.startsWith(path) ? 'active' : ''} href={path}>{text}</a>
 					</li>
 				{/each}
 			</ul>
