@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte'
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
-	import VideoList, { VideoListModes } from '$lib/components/VideoList.svelte'
+	import VideoList, { VideoListMode } from '$lib/components/VideoList.svelte'
 	import { getRandomVideos } from '$lib/data'
 	import type { PageData } from './$types'
 
