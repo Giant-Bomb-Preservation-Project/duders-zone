@@ -41,6 +41,12 @@ p {
 	margin: 0;
 }
 
+svg {
+	height: 1em;
+	position: relative;
+	top: 2px;
+}
+
 .container {
 	box-sizing: border-box;
 	width: 100%;
