@@ -27,7 +27,6 @@
 <style>
 	h3 {
 		font-size: 30px;
-		font-weight: normal;
 		margin: 0;
 	}
 
