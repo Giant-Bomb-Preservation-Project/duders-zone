@@ -52,11 +52,11 @@ export function getRandomShows(amount: number): Show[] {
 	return shuffled.slice(0, amount)
 }
 
-export function getRandomVideo(): Video {
+export function getRandomVideos(amount: number): Video[] {
 	const shuffled = Object.values(videos)
 		.sort(byRandom)
 
-	return shuffled[0]
+	return shuffled.slice(0, amount)
 }
 
 export function getShowById(id: string): Show | null {
