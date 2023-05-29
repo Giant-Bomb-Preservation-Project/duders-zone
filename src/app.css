@@ -1,7 +1,62 @@
+:root {
+	--font-regular: -apple-system, ".SFNSText-Regular", BlinkMacSystemFont, "San Francisco", "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Lucida Grande", sans-serif;
+	--font-special: "GlyddonRegular", Georgia, Times, "Times New Roman", serif;
+}
+
+a {
+	text-decoration: none;
+}
+
 body {
-	font-family: -apple-system, ".SFNSText-Regular", BlinkMacSystemFont, "San Francisco", "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Lucida Grande", sans-serif
+	font-family: var(--font-regular);
+	margin: 0;
+	padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "GlyddonRegular", Georgia, Times, "Times New Roman", serif;
+	font-family: var(--font-special);
+	margin: 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+p {
+	margin: 0;
+}
+
+.container,
+.container-fluid {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: var(--spacing);
+	padding-left: var(--spacing);
+}
+
+@media (min-width: 576px) {
+	.container {
+		max-width: 510px;
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+@media (min-width: 768px) {
+	.container {
+		max-width: 700px;
+	}
+}
+
+@media (min-width: 992px) {
+	.container {
+		max-width: 920px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1130px;
+	}
 }
