@@ -1,29 +1,26 @@
 <script lang="ts">
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
-	import VideoLink from '$lib/components/VideoLink.svelte'
+	import VideoList from '$lib/components/VideoList.svelte'
 	import type { PageData } from './$types'
 
 	export let data: PageData
 </script>
 
-<h1>
-	{#if data.show.logo}
-		<img src="/shows/{data.show.logo}" alt="{data.show.title}">
-	{:else}
-		{data.show.title}
-	{/if}
-</h1>
+
+<h1 class="sr-only">{data.show.title}</h1>
 
 <section>
 	<VideoEmbed video={data.video} />
 </section>
 
-<section>
-	<ul>
-		{#each data.videos as video}
-			<li>
-				<VideoLink {video} href="/shows/{data.show.id}/{video.id}" />
-			</li>
-		{/each}
-	</ul>
+<section class="container videos">
+	<VideoList videos={data.videos} title="{data.show.title}" rootUri="/shows/{data.show.id}" />
 </section>
+
+
+<style>
+	.videos {
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
+</style>
