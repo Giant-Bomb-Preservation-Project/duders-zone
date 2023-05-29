@@ -1,3 +1,10 @@
+<script context="module" lang="ts">
+	export enum VideoListModes {
+		List = 'list',
+		Grid = 'grid',
+	}
+</script>
+
 <script lang="ts">
 	import type { Video } from '$lib/data'
 	import VideoLink from '$lib/components/VideoLink.svelte'
@@ -6,6 +13,15 @@
 	export let title: string
 	export let rootUri: string
 	export let seeAllUrl: string | null = null
+	export let mode: VideoListModes | null = null
+
+	let currentMode = mode || VideoListModes.List
+
+	function setCurrentMode(mode: VideoListModes) {
+		console.log('MOOOOD', mode)
+		currentMode = mode
+	}
+
 </script>
 
 <div class="header-wrapper">
@@ -14,10 +30,16 @@
 		{#if seeAllUrl}
 			<div class="see-all">&middot; <a href={seeAllUrl}>See All</a></div>
 		{/if}
+		{#if !mode}
+			<div class="controls">
+				<button class="{currentMode == VideoListModes.List ? 'active' : ''}" on:click={() => setCurrentMode(VideoListModes.List)}>List</button>
+				<button class="{currentMode == VideoListModes.Grid ? 'active' : ''}" on:click={() => setCurrentMode(VideoListModes.Grid)}>Grid</button>
+			</div>
+		{/if}
 	</div>
 </div>
 
-<ul>
+<ul class="{currentMode}">
 	{#each videos as video}
 		<li>
 			<a href="{rootUri}/{video.id}">
@@ -66,7 +88,7 @@
 
 	ul a {
 		display: block;
-		color: #2c2e30;
+		color: var(--color-gray);
 	}
 
 	ul a:hover h3 {
@@ -84,14 +106,34 @@
 		background-image: none;
 	}
 
-	.header {
-		display: flex;
+	.controls {
+		display: none;
 	}
 
-	.header .see-all {
+	.controls button {
+		background: none;
+		border: none;
+		color: var(--color-red-active);
+		cursor: pointer;
+		font-family: inherit;
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	.controls button.active,
+	.controls button:hover {
+		color: var(----color-gray);
+	}
+
+	.header {
+		display: flex;
 		font-family: var(--font-special);
 		font-size: 14px;
 		line-height: 20px;
+		justify-content: flex-start;
+	}
+
+	.header .see-all {
 		margin-left: 0.35em;
 	}
 
@@ -150,27 +192,42 @@
 	}
 
 	@media (min-width: 768px) {
-		h2,
-		.header .see-all {
+		h2 {
 			font-size: 18px;
 			line-height: 20px;
 		}
 
-		ul {
+		ul:not(.grid) {
 			display: block;
 		}
 
-		ul a {
+		ul:not(.grid) a {
 			display: flex;
 		}
 
-		ul li {
+		ul:not(.grid) li {
 			background-image: url(/assets/bg-border-light.png);
+		}
+
+		.controls {
+			display: block;
+			margin-left: auto;
+		}
+
+		.header {
+			font-size: 18px;
+			line-height: 20px;
 		}
 
 		.thumbnail {
 			flex: 0 0 23.40426%;
 			margin-right: 2.12766%;
+		}
+	}
+
+	@media (min-width: 992px) {
+		ul.grid {
+			grid-template-columns: repeat(3, 1fr);
 		}
 	}
 </style>
