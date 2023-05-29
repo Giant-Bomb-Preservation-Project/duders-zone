@@ -232,17 +232,24 @@
 		width: 0;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 576px) {
 		footer #credits {
 			display: flex;
 			flex-direction: row;
-			justify-content: space-evenly;
+			justify-content: center;
 		}
 
 		footer #credits > * {
 			flex: 1;
+			margin: 0 var(--spacing);
 		}
 
+		footer #credits img {
+			width: 160px;
+		}
+	}
+
+	@media (min-width: 768px) {
 		footer #credits img {
 			width: 200px;
 		}
