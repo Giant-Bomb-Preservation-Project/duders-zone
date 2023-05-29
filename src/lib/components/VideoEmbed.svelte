@@ -1,28 +1,24 @@
 <script lang="ts">
 	import FrameEmbed from '$lib/components/FrameEmbed.svelte'
+	import Splash from '$lib/components/Splash.svelte'
 	import type { Video } from '$lib/data'
 
 	export let video: Video
 </script>
 
-<div class="wrapper">
-	<div class="container">
-		<div class="inner-container">
-			<div class="splash" style="background-image: url('{video.thumbnail}');"></div>
-			<div class="metadata">
-				<h3>{video.title}</h3>
-				<p>{video.description}</p>
-				<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>
-			</div>
-			<div class="video">
-				<FrameEmbed
-					src="https://archive.org/embed/{video.id}"
-					title={video.title}
-				/>
-			</div>
-		</div>
+<Splash image={video.thumbnail}>
+	<div class="metadata">
+		<h3>{video.title}</h3>
+		<p>{video.description}</p>
+		<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>
 	</div>
-</div>
+	<div class="video">
+		<FrameEmbed
+			src="https://archive.org/embed/{video.id}"
+			title={video.title}
+		/>
+	</div>
+</Splash>
 
 <style>
 	h3 {
@@ -41,17 +37,6 @@
 		line-height: 20px;
 	}
 
-	.wrapper {
-		background: black;
-		color: white;
-		font-family: var(--font-special);
-		padding: 16px 0;
-	}
-
-	.splash {
-		display: none;
-	}
-
 	.video {
 		margin: 20px 0;
 	}
@@ -67,51 +52,9 @@
 			line-height: 30px;
 		}
 
-		.inner-container {
-			display: flex;
-			padding: 24px 0 64px;
-			overflow: hidden;
-			position: relative;
-		}
-
 		.metadata {
 			position: relative;
 			z-index: 2;
-		}
-
-		.splash {
-			background: black center center no-repeat;
-			background-size: cover;
-			display: block;
-			filter: blur(10px);
-			height: 100%;
-			opacity: 0.5;
-			position: absolute;
-			width: 100%;
-			top: 0;
-			z-index: 1;
-		}
-
-		.splash::after {
-			content: " ";
-			width: 400px;
-			height: 100%;
-			background: url(/assets/bg-kubrick-fade-left.png) left top repeat-y;
-			display: block;
-			top: 0;
-			left: 0;
-			position: absolute;
-		}
-
-		.splash::before {
-			content: " ";
-			width: 400px;
-			height: 100%;
-			background: url(/assets/bg-kubrick-fade-right.png) right top repeat-y;
-			display: block;
-			top: 0;
-			right: 0;
-			position: absolute;
 		}
 
 		.video {
@@ -119,11 +62,6 @@
 			flex: 0 0 620px;
 			position: relative;
 			z-index: 2;
-		}
-
-		.wrapper {
-			padding: 0;
-			text-shadow: rgba(0,0,0,0.9) 0 1px 0;
 		}
 	}
 
