@@ -1,25 +1,26 @@
 <script lang="ts">
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
-	import VideoLink from '$lib/components/VideoLink.svelte'
+	import VideoList from '$lib/components/VideoList.svelte'
 	import type { PageData } from './$types'
 
 	export let data: PageData
 </script>
 
-<h1>
-	Historic
-</h1>
+
+<h1 class="sr-only">Historic</h1>
 
 <section>
 	<VideoEmbed video={data.video} />
 </section>
 
-<section>
-	<ul>
-		{#each data.videos as video}
-			<li>
-				<VideoLink {video} href="/historic/{video.id}" />
-			</li>
-		{/each}
-	</ul>
+<section class="container videos">
+	<VideoList videos={data.videos} title="This Day in Giant Bomb History" rootUri="/historic" />
 </section>
+
+
+<style>
+	.videos {
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
+</style>
