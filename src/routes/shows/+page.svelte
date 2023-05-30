@@ -12,7 +12,7 @@
 		{#each data.shows as show}
 			<li>
 				<a href="/shows/{show.id}">
-					<img src="/shows/{show.poster || 'default.jpg'}" alt="">
+					<img src={show.poster ? `/shows/${show.poster}` : '/assets/default.jpg'} alt="">
 					<h2>{show.title}</h2>
 					<p>{show.description}</p>
 				</a>

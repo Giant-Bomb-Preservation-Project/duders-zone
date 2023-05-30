@@ -6,7 +6,7 @@
 	export let video: Video
 </script>
 
-<Splash image={video.thumbnail || "/shows/default.jpg"}>
+<Splash image={video.thumbnail || "/assets/default.jpg"}>
 	<div class="metadata">
 		<h3>{video.title}</h3>
 		<p>{video.description}</p>

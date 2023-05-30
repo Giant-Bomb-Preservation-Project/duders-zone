@@ -54,7 +54,7 @@
 		<li>
 			<a href="{rootUri}/{video.id}">
 				<div class="thumbnail">
-					<img src={video.thumbnail || '/shows/default.jpg'} alt="">
+					<img src={video.thumbnail || '/assets/default.jpg'} alt="">
 				</div>
 				<div class="metadata">
 					<h3>{video.title}</h3>
