@@ -55,8 +55,8 @@
 	}
 
 	.shows {
-		margin-bottom: 20px;
-		margin-top: 20px;
+		margin-bottom: var(--spacing);
+		margin-top: var(--spacing);
 	}
 
 	@media (min-width: 576px) {
@@ -70,7 +70,7 @@
 	@media (min-width: 992px) {
 		ul {
 			grid-template-columns: repeat(3, 1fr);
-			column-gap: 20px;
+			column-gap: var(--spacing);
 		}
 
 		ul li {

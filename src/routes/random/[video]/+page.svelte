@@ -35,11 +35,11 @@
 
 <style>
 	.controls {
-		margin: 20px 0;
+		margin: var(--spacing) 0;
 		text-align: center;
 	}
 	.videos {
-		margin-bottom: 20px;
-		margin-top: 20px;
+		margin-bottom: var(--spacing);
+		margin-top: var(--spacing);
 	}
 </style>

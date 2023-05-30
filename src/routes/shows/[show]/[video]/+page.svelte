@@ -20,7 +20,7 @@
 
 <style>
 	.videos {
-		margin-bottom: 20px;
-		margin-top: 20px;
+		margin-bottom: var(--spacing);
+		margin-top: var(--spacing);
 	}
 </style>

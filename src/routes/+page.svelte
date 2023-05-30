@@ -64,7 +64,7 @@
 	}
 
 	.link {
-		margin: 20px 0;
+		margin: var(--spacing) 0;
 	}
 
 	.link img {
@@ -74,8 +74,8 @@
 	}
 
 	.videos {
-		margin-bottom: 20px;
-		margin-top: 20px;
+		margin-bottom: var(--spacing);
+		margin-top: var(--spacing);
 	}
 
 	@media (min-width: 992px) {

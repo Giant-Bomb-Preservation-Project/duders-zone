@@ -38,7 +38,7 @@
 	}
 
 	.video {
-		margin: 20px 0;
+		margin: var(--spacing) 0;
 	}
 
 	@media (min-width: 992px) {
