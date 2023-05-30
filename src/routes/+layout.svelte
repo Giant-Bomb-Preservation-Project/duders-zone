@@ -47,7 +47,7 @@
 
 <footer>
 	<div class="container">
-		<p id="thanks">This project was made possible thanks to:</p>
+		<p id="thanks">This is an archival website about video games. It was made possible thanks to:</p>
 		<div id="credits">
 			<div>
 				<a href="https://archive.org"><img src={internetArchive} alt="Internet Archive"></a>
