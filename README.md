@@ -5,7 +5,7 @@ Bomb where the actual videos are hosted at
 [Internet Archive](https://archive.org/details/giant-bomb-archive). It's
 maintained for my own nostalgic benefit.
 
-Thanks for everything. See you next game.
+Thanks for everything! See you next game.
 
 ## Requirements
 

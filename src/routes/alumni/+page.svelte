@@ -221,7 +221,7 @@
 		<EmployeeList employees={memoriam} />
 	</section>
 
-	<p>Thanks for everything. See you next game.</p>
+	<p>Thanks for everything! See you next game.</p>
 </div>
 
 
