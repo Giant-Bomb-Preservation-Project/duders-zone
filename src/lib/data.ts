@@ -6,7 +6,7 @@ export interface Show {
 	id: string,
 	title: string,
 	description: string,
-	logo?: string,
+	logo?: string | null,
 	poster?: string,
 	videos: string[],
 }
