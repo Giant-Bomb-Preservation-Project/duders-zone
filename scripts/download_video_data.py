@@ -9,7 +9,7 @@ from internetarchive import get_files, search_items
 COLLECTION_IDENTIFIER = 'giant-bomb-archive'
 
 # Seconds to delay between making requests to IA
-DELAY_TIME = 2
+DELAY_TIME = 0
 
 # Which thumbnail in the list to use as the image
 # NTH_THUMBNAIL = 4
@@ -28,7 +28,7 @@ def make_identifier(name):
     return re.sub(r'[^\w-]', '', name.lower().replace(' ', '-'))
 
 
-def fetch_ia_data():
+def fetch_ia_data(shows):
     """Get video items from Internet Archive."""
     print(f'Searching for items in collection: {COLLECTION_IDENTIFIER}')
     search = search_items(
@@ -38,7 +38,6 @@ def fetch_ia_data():
 
     print('Fetching video items...')
     videos = []
-    shows = {}
     count = 0
     for result in search:
         video_id = result['identifier']
@@ -107,7 +106,16 @@ def fetch_ia_data():
 
 
 if __name__ == '__main__':
-    videos, shows = fetch_ia_data()
+    print(f'Loading shows from: {TARGET_SHOW_FILE}')
+    with open(TARGET_SHOW_FILE, 'r', encoding='utf-8') as file:
+        show_data = json.load(file)
+
+    shows = {}
+    for show in show_data:
+        show['videos'] = []
+        shows[show['id']] = show
+
+    videos, shows = fetch_ia_data(shows)
 
     print(f'Saving videos to: {TARGET_VIDEO_FILE}')
     with open(TARGET_VIDEO_FILE, 'w', encoding='utf-8') as file:
