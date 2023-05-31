@@ -1,6 +1,7 @@
 <script lang="ts">
 	import MoreLink from '$lib/components/MoreLink.svelte'
 	import Splash from '$lib/components/Splash.svelte'
+	import Thumbnail from '$lib/components/Thumbnail.svelte'
 	import VideoList, { VideoListMode } from '$lib/components/VideoList.svelte'
 	import promoInfinite from '$lib/images/promo-gb_infinite.png'
 	import type { PageData } from './$types'
@@ -16,7 +17,7 @@
 		</div>
 		<div class="link">
 			<a href="/infinite">
-				<img src={promoInfinite} alt="Giant Bomb Infinite">
+				<Thumbnail src={promoInfinite} alt="Giant Bomb Infinite" />
 			</a>
 		</div>
 	</Splash>
@@ -67,10 +68,10 @@
 		margin: var(--spacing) 0;
 	}
 
-	.link img {
+	.link a {
 		box-shadow: rgba(255,255,255,0.1) 0 0 0 1px;
 		display: block;
-		width: 100%;
+		line-height: 0;
 	}
 
 	.videos {

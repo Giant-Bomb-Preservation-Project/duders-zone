@@ -7,6 +7,7 @@
 
 <script lang="ts">
 	import type { Video } from '$lib/data'
+	import Thumbnail from '$lib/components/Thumbnail.svelte'
 	import VideoLink from '$lib/components/VideoLink.svelte'
 
 	export let videos: Video[]
@@ -54,7 +55,7 @@
 		<li>
 			<a href="{rootUri}/{video.id}">
 				<div class="thumbnail">
-					<img src={video.thumbnail || '/assets/default.jpg'} alt="">
+					<Thumbnail src={video.thumbnail || '/assets/default.jpg'} alt="" />
 				</div>
 				<div class="metadata">
 					<h3>{video.title}</h3>
@@ -77,10 +78,6 @@
 		font-size: 21px;
 		line-height: 25px;
 		margin: 10px 0 0;
-	}
-
-	img {
-		width: 100%;
 	}
 
 	time {
@@ -167,26 +164,6 @@
 		color: #696e72;
 		font-size: 14px;
 		line-height: 20px;
-	}
-
-	.thumbnail {
-		position: relative;
-	}
-
-	.thumbnail::before {
-		content: " ";
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		height: 0;
-		float: left;
-		background: url(/assets/av-splash-65x65.png) no-repeat center top;
-		background-size: auto;
-		width: 65px;
-		padding-top: 65px;
-		margin-top: -33px;
-		margin-left: -33px;
-		background-size: 100% auto;
 	}
 
 	@media (min-width: 576px) {
