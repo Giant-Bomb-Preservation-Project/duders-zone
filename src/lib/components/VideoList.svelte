@@ -8,7 +8,6 @@
 <script lang="ts">
 	import type { Video } from '$lib/data'
 	import Thumbnail from '$lib/components/Thumbnail.svelte'
-	import VideoLink from '$lib/components/VideoLink.svelte'
 
 	export let videos: Video[]
 	export let title: string
