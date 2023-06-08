@@ -41,13 +41,17 @@ Use the `format` script to format code:
 npm run format
 ```
 
-## Building
+## Deploying
 
-To create a production version of your app:
+Use the `build` script to make a production build of the site:
 
 ```bash
 npm run build
 ```
+
+Note that the site is configured to be run on [Netlify](https://netlify.com/)
+and may not run correctly on a different platform. If you want to run it
+somewhere else you may need to change the adapter in the svelte.config.js file.
 
 ## Downloading Data
 
