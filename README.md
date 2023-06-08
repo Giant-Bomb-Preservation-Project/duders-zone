@@ -35,6 +35,12 @@ Use the `check` script to validate TypeScript code:
 npm run check
 ```
 
+Use the `format` script to format code:
+
+```shell
+npm run format
+```
+
 ## Building
 
 To create a production version of your app:
