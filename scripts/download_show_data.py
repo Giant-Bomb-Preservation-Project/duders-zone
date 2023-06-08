@@ -1,3 +1,4 @@
+import argparse
 import json
 import os
 import os.path
@@ -23,7 +24,7 @@ SHOWS_PER_PAGE = 100
 TARGET_SHOW_FILE = 'shows.json'
 
 # Path to the location to store the images
-TARGET_IMAGES_PATH = 'images'
+TARGET_IMAGES_PATH = './images'
 
 # The API key used when connecting to the Giant Bomb API
 API_KEY = os.getenv('GB_API_KEY')
@@ -89,6 +90,14 @@ def get_shows():
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(
+        description='Downloads Giant Bomb show data')
+    parser.add_argument(
+        '-i', '--images',
+        help='download images',
+        action='store_true')
+    args = parser.parse_args()
+
     shows = get_shows()
 
     images = {}
@@ -107,16 +116,17 @@ if __name__ == '__main__':
     with open(TARGET_SHOW_FILE, 'w', encoding='utf-8') as file:
         json.dump(shows, file, ensure_ascii=False, indent=4)
 
-    print(f'Got {len(images)} images!')
-    print(f'Saving images to: {TARGET_IMAGES_PATH}')
-    try:
-        os.mkdir(TARGET_IMAGES_PATH)
-    except FileExistsError:
-        pass  # this is fine
-    for name, url in images.items():
-        print(f'Downloading: {url}')
+    if args.images:
+        print(f'Got {len(images)} images!')
+        print(f'Saving images to: {TARGET_IMAGES_PATH}')
+        try:
+            os.mkdir(TARGET_IMAGES_PATH)
+        except FileExistsError:
+            pass  # this is fine
+        for name, url in images.items():
+            print(f'Downloading: {url}')
 
-        local_file = os.path.join(TARGET_IMAGES_PATH, name)
-        urllib.request.urlretrieve(url, local_file)
+            local_file = os.path.join(TARGET_IMAGES_PATH, name)
+            urllib.request.urlretrieve(url, local_file)
 
-        time.sleep(DELAY_TIME)
+            time.sleep(DELAY_TIME)
