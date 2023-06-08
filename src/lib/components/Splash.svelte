@@ -5,8 +5,8 @@
 <div class="wrapper">
 	<div class="container">
 		<div class="inner-container">
-			<div class="splash" style="background-image: url('{image}');"></div>
-			<slot></slot>
+			<div class="splash" style="background-image: url('{image}');" />
+			<slot />
 		</div>
 	</div>
 </div>
@@ -45,7 +45,7 @@
 		}
 
 		.splash::after {
-			content: " ";
+			content: ' ';
 			width: 400px;
 			height: 100%;
 			background: url(/assets/bg-kubrick-fade-left.png) left top repeat-y;
@@ -56,7 +56,7 @@
 		}
 
 		.splash::before {
-			content: " ";
+			content: ' ';
 			width: 400px;
 			height: 100%;
 			background: url(/assets/bg-kubrick-fade-right.png) right top repeat-y;
@@ -68,7 +68,7 @@
 
 		.wrapper {
 			padding: 0;
-			text-shadow: rgba(0, 0 ,0, 0.9) 0 1px 0;
+			text-shadow: rgba(0, 0, 0, 0.9) 0 1px 0;
 		}
 	}
 </style>

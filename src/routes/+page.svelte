@@ -34,23 +34,18 @@
 </section>
 
 {#each data.shows as show}
-
-<section class="container videos">
-	<VideoList
-		videos={show.videoObjects}
-		title="{ show.title }"
-		rootUri="/shows/{ show.id }"
-		seeAllUrl="/shows/{ show.id }"
-		mode={VideoListMode.List}
-	/>
-</section>
-
+	<section class="container videos">
+		<VideoList
+			videos={show.videoObjects}
+			title={show.title}
+			rootUri="/shows/{show.id}"
+			seeAllUrl="/shows/{show.id}"
+			mode={VideoListMode.List}
+		/>
+	</section>
 {/each}
 
-<MoreLink href="/shows">
-	More Shows
-</MoreLink>
-
+<MoreLink href="/shows">More Shows</MoreLink>
 
 <style>
 	h3 {
@@ -69,7 +64,7 @@
 	}
 
 	.link a {
-		box-shadow: rgba(255,255,255,0.1) 0 0 0 1px;
+		box-shadow: rgba(255, 255, 255, 0.1) 0 0 0 1px;
 		display: block;
 		line-height: 0;
 	}

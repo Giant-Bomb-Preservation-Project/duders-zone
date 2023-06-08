@@ -9,8 +9,8 @@ Thanks for everything! See you next game.
 
 ## Requirements
 
-* Node 19+
-* Python 3.9+ (optional - for refreshing the store for IA)
+- Node 19+
+- Python 3.9+ (optional - for refreshing the store for IA)
 
 ## Developing
 
@@ -33,6 +33,12 @@ Use the `check` script to validate TypeScript code:
 
 ```shell
 npm run check
+```
+
+Use the `format` script to format code:
+
+```shell
+npm run format
 ```
 
 ## Building

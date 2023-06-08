@@ -4,7 +4,6 @@
 	export let data: PageData
 </script>
 
-
 <h1 class="sr-only">Shows</h1>
 
 <section class="container shows">
@@ -12,7 +11,10 @@
 		{#each data.shows as show}
 			<li>
 				<a href="/shows/{show.id}">
-					<img src={show.poster ? `/shows/${show.poster}` : '/assets/default.jpg'} alt="">
+					<img
+						src={show.poster ? `/shows/${show.poster}` : '/assets/default.jpg'}
+						alt=""
+					/>
 					<h2>{show.title}</h2>
 					<p>{show.description}</p>
 				</a>
@@ -20,7 +22,6 @@
 		{/each}
 	</ul>
 </section>
-
 
 <style>
 	h2 {
@@ -62,8 +63,8 @@
 	@media (min-width: 576px) {
 		ul {
 			display: grid;
-  			grid-template-columns: repeat(2, 1fr);
-  			column-gap: 10px;
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 10px;
 		}
 	}
 

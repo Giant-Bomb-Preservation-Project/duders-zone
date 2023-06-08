@@ -1,31 +1,31 @@
-import { error } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit'
 import showData from '$lib/data/shows.json'
 import videoData from '$lib/data/videos.json'
 
 export interface Show {
-	id: string,
-	title: string,
-	description: string,
-	logo?: string | null,
-	poster?: string,
-	videos: string[],
+	id: string
+	title: string
+	description: string
+	logo?: string | null
+	poster?: string
+	videos: string[]
 }
 
 export interface Video {
-	id: string,
-	title: string,
-	description: string,
-	date: Date,
-	show?: string,
-	thumbnail?: string,
+	id: string
+	title: string
+	description: string
+	date: Date
+	show?: string
+	thumbnail?: string
 }
 
-const shows: { [key:string]: Show } = {}
+const shows: { [key: string]: Show } = {}
 for (const show of showData) {
 	shows[show.id] = show
 }
 
-const videos: { [key:string]: Video } = {}
+const videos: { [key: string]: Video } = {}
 for (const video of videoData) {
 	videos[video.id] = {
 		id: video.id,
@@ -46,15 +46,13 @@ const byRandom = () => 0.5 - Math.random()
 const byTitleAsc = (a: { title: string }, b: { title: string }) => a.title.localeCompare(b.title)
 
 export function getRandomShows(amount: number): Show[] {
-	const shuffled = Object.values(shows)
-		.sort(byRandom)
+	const shuffled = Object.values(shows).sort(byRandom)
 
 	return shuffled.slice(0, amount)
 }
 
 export function getRandomVideos(amount: number): Video[] {
-	const shuffled = Object.values(videos)
-		.sort(byRandom)
+	const shuffled = Object.values(videos).sort(byRandom)
 
 	return shuffled.slice(0, amount)
 }
@@ -64,8 +62,7 @@ export function getShowById(id: string): Show | null {
 }
 
 export function getShows(): Show[] {
-	return Object.values(shows)
-		.sort(byTitleAsc)
+	return Object.values(shows).sort(byTitleAsc)
 }
 
 export function getVideoById(id: string): Video | null {
@@ -79,12 +76,10 @@ export function getVideosForDay(day?: Date): Video[] {
 	const month = day.getMonth()
 
 	return Object.values(videos)
-		.filter(video => video.date.getDate() == date && video.date.getMonth() == month)
+		.filter((video) => video.date.getDate() == date && video.date.getMonth() == month)
 		.sort(byDateDesc)
 }
 
 export function getVideosForShow(show: Show): Video[] {
-	return show.videos
-		.map(videoId => videos[videoId])
-		.sort(byDateDesc)
+	return show.videos.map((videoId) => videos[videoId]).sort(byDateDesc)
 }

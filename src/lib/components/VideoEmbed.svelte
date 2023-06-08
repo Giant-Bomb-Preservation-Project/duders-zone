@@ -6,17 +6,14 @@
 	export let video: Video
 </script>
 
-<Splash image={video.thumbnail || "/assets/default.jpg"}>
+<Splash image={video.thumbnail || '/assets/default.jpg'}>
 	<div class="metadata">
 		<h3>{video.title}</h3>
 		<p>{video.description}</p>
 		<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>
 	</div>
 	<div class="video">
-		<FrameEmbed
-			src="https://archive.org/embed/{video.id}"
-			title={video.title}
-		/>
+		<FrameEmbed src="https://archive.org/embed/{video.id}" title={video.title} />
 	</div>
 </Splash>
 

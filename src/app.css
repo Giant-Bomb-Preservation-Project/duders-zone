@@ -2,8 +2,10 @@
 	--color-red: #b31919;
 	--color-red-active: #ce1d1d;
 	--color-gray: #2c2e30;
-	--font-regular: -apple-system, ".SFNSText-Regular", BlinkMacSystemFont, "San Francisco", "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Lucida Grande", sans-serif;
-	--font-special: "GlyddonRegular", Georgia, Times, "Times New Roman", serif;
+	--font-regular: -apple-system, '.SFNSText-Regular', BlinkMacSystemFont, 'San Francisco',
+		'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+		'Helvetica Neue', 'Helvetica', 'Lucida Grande', sans-serif;
+	--font-special: 'GlyddonRegular', Georgia, Times, 'Times New Roman', serif;
 	--spacing: 20px;
 }
 
@@ -24,13 +26,18 @@ body {
 	padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: var(--font-special);
 	font-weight: normal;
 }
 
 html {
-	height: 100%
+	height: 100%;
 }
 
 img {
@@ -57,12 +64,12 @@ svg {
 }
 
 .sr-only {
-	position:absolute;
-	left:-10000px;
-	top:auto;
-	width:1px;
-	height:1px;
-	overflow:hidden;
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
 }
 
 @media (min-width: 576px) {

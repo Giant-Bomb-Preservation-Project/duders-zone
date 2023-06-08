@@ -1,13 +1,11 @@
-import { error } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit'
 import { getVideoById } from '$lib/data'
-import type { PageLoad } from './$types';
+import type { PageLoad } from './$types'
 
 export const load = (({ params }) => {
-    const video = getVideoById(params.video)
+	const video = getVideoById(params.video)
 
-    if (video === null)
-        throw error(404, 'Not found')
+	if (video === null) throw error(404, 'Not found')
 
-    return { video }
+	return { video }
 }) satisfies PageLoad
-
