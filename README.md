@@ -9,8 +9,8 @@ Thanks for everything! See you next game.
 
 ## Requirements
 
--   Node 19+
--   Python 3.9+ (optional - for refreshing the store for IA)
+- Node 19+
+- Python 3.9+ (optional - for refreshing the store for IA)
 
 ## Developing
 
