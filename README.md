@@ -84,12 +84,16 @@ Using your key, run the `download_show_data.py` script:
 GB_API_KEY=<your api key> python download_show_data.py
 ```
 
-This will create a _shows.json_ file containing the show metadata and an
-_images.txt_ file which contains the URL to the needed images. The images can
-be downloaded manually or using `wget` (or something similar):
+This will create a _shows.json_ file containing the show metadata.
+
+#### Images
+
+If you provide the `--images` flag to the script it will also download images to
+the _scripts/images_ directory, which can be moved to the assets directory manually or
+by running the following command:
 
 ```shell
-cat images.txt | xargs wget -c
+mv images/* ../static/shows
 ```
 
 ### Videos
