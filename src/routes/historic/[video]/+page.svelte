@@ -6,7 +6,6 @@
 	export let data: PageData
 </script>
 
-
 <h1 class="sr-only">Historic</h1>
 
 <section>
@@ -16,7 +15,6 @@
 <section class="container videos">
 	<VideoList videos={data.videos} title="This Day in Giant Bomb History" rootUri="/historic" />
 </section>
-
 
 <style>
 	.videos {

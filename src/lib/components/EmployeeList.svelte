@@ -28,11 +28,10 @@
 	}
 </script>
 
-
 <ul class="employees">
 	{#each employees as employee}
 		<li class="employee">
-			<img src={employee.image ? `/alumni/${employee.image}` : logoBw} alt="">
+			<img src={employee.image ? `/alumni/${employee.image}` : logoBw} alt="" />
 			<h3>{employee.name}</h3>
 			{#if employee.position}
 				<p>{employee.position}</p>
@@ -50,7 +49,6 @@
 		</li>
 	{/each}
 </ul>
-
 
 <style>
 	h3 {
@@ -94,7 +92,7 @@
 			gap: 30px;
 			flex-direction: row;
 			flex-wrap: wrap;
-  			justify-items: center;
+			justify-items: center;
 		}
 
 		li.employee {

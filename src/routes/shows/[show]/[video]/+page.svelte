@@ -6,7 +6,6 @@
 	export let data: PageData
 </script>
 
-
 <h1 class="sr-only">{data.show.title}</h1>
 
 <section>
@@ -14,9 +13,8 @@
 </section>
 
 <section class="container videos">
-	<VideoList videos={data.videos} title="{data.show.title}" rootUri="/shows/{data.show.id}" />
+	<VideoList videos={data.videos} title={data.show.title} rootUri="/shows/{data.show.id}" />
 </section>
-
 
 <style>
 	.videos {
