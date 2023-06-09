@@ -3,21 +3,21 @@ import showData from '$lib/data/shows.json'
 import videoData from '$lib/data/videos.json'
 
 export interface Show {
-	id: string
-	title: string
-	description: string
-	logo?: string | null
-	poster?: string
-	videos: string[]
+	readonly id: string
+	readonly title: string
+	readonly description: string
+	readonly logo?: string | null
+	readonly poster?: string
+	readonly videos: readonly string[]
 }
 
 export interface Video {
-	id: string
-	title: string
-	description: string
-	date: Date
-	show?: string
-	thumbnail?: string
+	readonly id: string
+	readonly title: string
+	readonly description: string
+	readonly date: Date
+	readonly show?: string
+	readonly thumbnail?: string
 }
 
 const shows: { [key: string]: Show } = {}
