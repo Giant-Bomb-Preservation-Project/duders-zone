@@ -1,10 +1,20 @@
 <script context="module" lang="ts">
-	export const PAGE_SIZE = 50
+	const PAGE_SIZE = 50
+
+	export function paginate<T extends any[]>(pageParam: string | null, items: T) {
+		const number = pageParam ? parseInt(pageParam) : 1
+		const itemIndexStart = (number - 1) * PAGE_SIZE
+		return {
+			number,
+			items: items.slice(itemIndexStart, itemIndexStart + PAGE_SIZE) as T,
+		}
+	}
 </script>
 
 <script lang="ts">
 	import { goto } from '$app/navigation'
 	import { page } from '$app/stores'
+
 	export let current: number = 1
 	export let results: number
 
@@ -13,6 +23,7 @@
 
 	function createPageButtons(current: number, total: number) {
 		const buttons: (number | null)[] = []
+		if (total === 1) return buttons
 		const startPage = Math.max(1, Math.min(total - 4, current - 2))
 		const endPage = Math.min(total, startPage + 4)
 		for (let p = startPage; p <= endPage; p++) {
