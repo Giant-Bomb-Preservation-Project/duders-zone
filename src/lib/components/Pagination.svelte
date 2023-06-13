@@ -8,8 +8,6 @@
 </script>
 
 <script lang="ts">
-	import { goto } from '$app/navigation'
-
 	export let currentPage: number = 1
 	export let totalResults: number
 
@@ -40,9 +38,7 @@
 	<li>{totalResults} results</li>
 	{#if currentPage > 1}
 		<li>
-			<a
-				on:click|preventDefault={() => goto(`?page=${currentPage - 1}`)}
-				href="?page={currentPage - 1}"
+			<a href="?page={currentPage - 1}"
 				><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 10">
 					<path d="M7 5H1l3 -3M1 5l3 3" />
 				</svg></a
@@ -52,9 +48,7 @@
 	{#each buttons as button}
 		{#if button}
 			<li class:current={button === currentPage}>
-				<a on:click|preventDefault={() => goto(`?page=${button}`)} href="?page={button}"
-					>{button}</a
-				>
+				<a href="?page={button}">{button}</a>
 			</li>
 		{:else}
 			<li class="ellipse">...</li>
@@ -62,9 +56,7 @@
 	{/each}
 	{#if currentPage < totalPages}
 		<li>
-			<a
-				on:click|preventDefault={() => goto(`?page=${currentPage + 1}`)}
-				href="?page={currentPage + 1}"
+			<a href="?page={currentPage + 1}"
 				><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 10">
 					<path d="M1 5H7l-3 -3M7 5l-3 3" />
 				</svg></a
