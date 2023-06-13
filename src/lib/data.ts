@@ -45,10 +45,6 @@ const byRandom = () => 0.5 - Math.random()
 // Sort by title ascending
 const byTitleAsc = (a: { title: string }, b: { title: string }) => a.title.localeCompare(b.title)
 
-// Sort by video count descending
-const byVideoCountDesc = (a: { videos: readonly any[] }, b: { videos: readonly any[] }) =>
-	b.videos.length - a.videos.length
-
 export function getRandomShows(amount: number): Show[] {
 	const shuffled = Object.values(shows).sort(byRandom)
 
@@ -67,10 +63,6 @@ export function getShowById(id: string): Show | null {
 
 export function getShows(): Show[] {
 	return Object.values(shows).sort(byTitleAsc)
-}
-
-export function getShowsByVideoCount(): Show[] {
-	return Object.values(shows).sort(byVideoCountDesc)
 }
 
 export function getVideoById(id: string): Video | null {

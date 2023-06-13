@@ -1,15 +1,21 @@
 <script lang="ts">
-	import { getShowsByVideoCount } from '$lib/data'
 	import type { PageData } from './$types'
 
 	export let data: PageData
 
-	let sorting: 'alphabetical' | 'most-videos' = 'alphabetical'
+	enum ShowSorting {
+		alphabetical,
+		mostVideos,
+	}
+
+	let sorting: ShowSorting = ShowSorting.alphabetical
 
 	$: sortedShows = getSortedShows(sorting)
 
-	function getSortedShows(sort: typeof sorting) {
-		if (sort === 'most-videos') return getShowsByVideoCount()
+	function getSortedShows(sort: ShowSorting) {
+		if (sort === ShowSorting.mostVideos) {
+			return [...data.shows].sort((a, b) => b.videos.length - a.videos.length)
+		}
 		return data.shows // Default sort is alphabetical
 	}
 </script>
@@ -18,8 +24,8 @@
 
 <section class="container shows">
 	<select bind:value={sorting}>
-		<option value="alphabetical">Alphabetical</option>
-		<option value="most-videos">Most Videos</option>
+		<option value={ShowSorting.alphabetical}>Alphabetical</option>
+		<option value={ShowSorting.mostVideos}>Most Videos</option>
 	</select>
 	<ul>
 		{#each sortedShows as show}
