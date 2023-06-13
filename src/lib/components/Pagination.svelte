@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	const PAGE_SIZE = 50
+	const PAGE_SIZE = 25
 
 	export function paginate<T extends any[]>(number: number, items: T) {
 		const itemIndexStart = (number - 1) * PAGE_SIZE
