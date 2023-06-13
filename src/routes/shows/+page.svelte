@@ -1,18 +1,28 @@
 <script lang="ts">
+	import { getShowsByVideoCount } from '$lib/data'
 	import type { PageData } from './$types'
 
 	export let data: PageData
+
+	let sorting: 'alphabetical' | 'most-videos' = 'alphabetical'
+
+	$: sortedShows = getSortedShows(sorting)
+
+	function getSortedShows(sort: typeof sorting) {
+		if (sort === 'most-videos') return getShowsByVideoCount()
+		return data.shows // Default sort is alphabetical
+	}
 </script>
 
 <h1 class="sr-only">Shows</h1>
 
 <section class="container shows">
-	<select>
-		<option>Alphabetical</option>
-		<option>Most Videos</option>
+	<select bind:value={sorting}>
+		<option value="alphabetical">Alphabetical</option>
+		<option value="most-videos">Most Videos</option>
 	</select>
 	<ul>
-		{#each data.shows as show}
+		{#each sortedShows as show}
 			<li>
 				<a href="/shows/{show.id}">
 					<img
