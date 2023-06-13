@@ -7,6 +7,10 @@
 <h1 class="sr-only">Shows</h1>
 
 <section class="container shows">
+	<select>
+		<option>Alphabetical</option>
+		<option>Most Videos</option>
+	</select>
 	<ul>
 		{#each data.shows as show}
 			<li>
@@ -53,6 +57,21 @@
 
 	ul li {
 		margin-bottom: 30px;
+	}
+
+	select {
+		appearance: none;
+		background: #394046 url(/assets/bg-select-dark.png) right;
+		background-size: auto 100%;
+		color: #dedede;
+		padding-left: 8px;
+		margin-bottom: 10px;
+		box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0 inset, rgba(0, 0, 0, 0.25) 0 1px 1px;
+		text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0;
+		width: 120px;
+		border: 1px solid #0b0d0e;
+		height: 22px;
+		border-radius: 3px;
 	}
 
 	.shows {
