@@ -14,11 +14,11 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
 
-	export let current: number = 1
-	export let results: number
+	export let currentPage: number = 1
+	export let totalResults: number
 
-	$: totalPages = Math.ceil(results / PAGE_SIZE)
-	$: buttons = createPageButtons(current, totalPages)
+	$: totalPages = Math.ceil(totalResults / PAGE_SIZE)
+	$: buttons = createPageButtons(currentPage, totalPages)
 
 	function createPageButtons(current: number, total: number) {
 		const buttons: (number | null)[] = []
@@ -41,12 +41,12 @@
 </script>
 
 <ul>
-	<li>{results} results</li>
-	{#if current > 1}
+	<li>{totalResults} results</li>
+	{#if currentPage > 1}
 		<li>
 			<a
-				on:click|preventDefault={() => goto(`?page=${current - 1}`)}
-				href="?page={current - 1}"
+				on:click|preventDefault={() => goto(`?page=${currentPage - 1}`)}
+				href="?page={currentPage - 1}"
 				><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 10">
 					<path d="M7 5H1l3 -3M1 5l3 3" />
 				</svg></a
@@ -55,7 +55,7 @@
 	{/if}
 	{#each buttons as button}
 		{#if button}
-			<li class:current={button === current}>
+			<li class:current={button === currentPage}>
 				<a on:click|preventDefault={() => goto(`?page=${button}`)} href="?page={button}"
 					>{button}</a
 				>
@@ -64,11 +64,11 @@
 			<li class="ellipse">...</li>
 		{/if}
 	{/each}
-	{#if current < totalPages}
+	{#if currentPage < totalPages}
 		<li>
 			<a
-				on:click|preventDefault={() => goto(`?page=${current + 1}`)}
-				href="?page={current + 1}"
+				on:click|preventDefault={() => goto(`?page=${currentPage + 1}`)}
+				href="?page={currentPage + 1}"
 				><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 10">
 					<path d="M1 5H7l-3 -3M7 5l-3 3" />
 				</svg></a

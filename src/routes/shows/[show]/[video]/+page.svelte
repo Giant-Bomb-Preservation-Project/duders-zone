@@ -23,7 +23,7 @@
 		title={data.show.title}
 		rootUri="/shows/{data.show.id}"
 	/>
-	<Pagination results={data.videos.length} current={paginatedVideos.number} />
+	<Pagination totalResults={data.videos.length} currentPage={paginatedVideos.number} />
 </section>
 
 <style>
