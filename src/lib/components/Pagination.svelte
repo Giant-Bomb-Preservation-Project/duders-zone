@@ -13,7 +13,6 @@
 
 <script lang="ts">
 	import { goto } from '$app/navigation'
-	import { page } from '$app/stores'
 
 	export let current: number = 1
 	export let results: number
@@ -47,7 +46,7 @@
 		<li>
 			<a
 				on:click|preventDefault={() => goto(`?page=${current - 1}`)}
-				href="{$page.url.pathname}?page={current - 1}"
+				href="?page={current - 1}"
 				><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 10">
 					<path d="M7 5H1l3 -3M1 5l3 3" />
 				</svg></a
@@ -57,9 +56,8 @@
 	{#each buttons as button}
 		{#if button}
 			<li class:current={button === current}>
-				<a
-					on:click|preventDefault={() => goto(`?page=${button}`)}
-					href="{$page.url.pathname}?page={button}">{button}</a
+				<a on:click|preventDefault={() => goto(`?page=${button}`)} href="?page={button}"
+					>{button}</a
 				>
 			</li>
 		{:else}
@@ -70,7 +68,7 @@
 		<li>
 			<a
 				on:click|preventDefault={() => goto(`?page=${current + 1}`)}
-				href="{$page.url.pathname}?page={current + 1}"
+				href="?page={current + 1}"
 				><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 10">
 					<path d="M1 5H7l-3 -3M7 5l-3 3" />
 				</svg></a
