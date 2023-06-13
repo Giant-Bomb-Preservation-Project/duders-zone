@@ -1,13 +1,9 @@
 <script context="module" lang="ts">
 	const PAGE_SIZE = 50
 
-	export function paginate<T extends any[]>(pageParam: string | null, items: T) {
-		const number = pageParam ? parseInt(pageParam) : 1
+	export function paginate<T extends any[]>(number: number, items: T) {
 		const itemIndexStart = (number - 1) * PAGE_SIZE
-		return {
-			number,
-			items: items.slice(itemIndexStart, itemIndexStart + PAGE_SIZE) as T,
-		}
+		return items.slice(itemIndexStart, itemIndexStart + PAGE_SIZE) as T
 	}
 </script>
 

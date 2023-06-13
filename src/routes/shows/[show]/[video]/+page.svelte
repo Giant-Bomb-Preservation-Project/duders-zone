@@ -8,7 +8,8 @@
 	export let data: PageData
 
 	$: pageParam = $page.url.searchParams.get('page')
-	$: paginatedVideos = paginate(pageParam, data.videos)
+	$: pageNumber = pageParam ? parseInt(pageParam) : 1
+	$: paginatedVideos = paginate(pageNumber, data.videos)
 </script>
 
 <h1 class="sr-only">{data.show.title}</h1>
@@ -19,11 +20,11 @@
 
 <section class="container videos">
 	<VideoList
-		videos={paginatedVideos.items}
+		videos={paginatedVideos}
 		title={data.show.title}
 		rootUri="/shows/{data.show.id}"
 	/>
-	<Pagination totalResults={data.videos.length} currentPage={paginatedVideos.number} />
+	<Pagination totalResults={data.videos.length} currentPage={pageNumber} />
 </section>
 
 <style>
