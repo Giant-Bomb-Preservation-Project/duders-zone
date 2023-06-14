@@ -2,13 +2,33 @@
 	import type { PageData } from './$types'
 
 	export let data: PageData
+
+	enum ShowSorting {
+		alphabetical,
+		mostVideos,
+	}
+
+	let sorting: ShowSorting = ShowSorting.alphabetical
+
+	$: sortedShows = getSortedShows(sorting)
+
+	function getSortedShows(sort: ShowSorting) {
+		if (sort === ShowSorting.mostVideos) {
+			return [...data.shows].sort((a, b) => b.videos.length - a.videos.length)
+		}
+		return data.shows // Default sort is alphabetical
+	}
 </script>
 
 <h1 class="sr-only">Shows</h1>
 
 <section class="container shows">
+	<select bind:value={sorting}>
+		<option value={ShowSorting.alphabetical}>Alphabetical</option>
+		<option value={ShowSorting.mostVideos}>Most Videos</option>
+	</select>
 	<ul>
-		{#each data.shows as show}
+		{#each sortedShows as show}
 			<li>
 				<a href="/shows/{show.id}">
 					<img
@@ -53,6 +73,21 @@
 
 	ul li {
 		margin-bottom: 30px;
+	}
+
+	select {
+		appearance: none;
+		background: #394046 url(/assets/bg-select-dark.png) right;
+		background-size: auto 100%;
+		color: #dedede;
+		padding-left: 8px;
+		margin-bottom: 10px;
+		box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0 inset, rgba(0, 0, 0, 0.25) 0 1px 1px;
+		text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0;
+		width: 120px;
+		border: 1px solid #0b0d0e;
+		height: 22px;
+		border-radius: 3px;
 	}
 
 	.shows {
