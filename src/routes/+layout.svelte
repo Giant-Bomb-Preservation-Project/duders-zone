@@ -1,6 +1,8 @@
 <script>
+	import { MetaTags } from 'svelte-meta-tags'
 	import { page } from '$app/stores'
 	import logo from '$lib/images/logo-dz.png'
+	import logoSquare from '$lib/images/logo-dz-square.png'
 	import internetArchive from '$lib/images/internet-archive.jpg'
 	import giantBombPreservationSociety from '$lib/images/giant-bomb-preservation-society.png'
 	import '../app.css'
@@ -12,7 +14,35 @@
 		{ path: '/random', text: 'Random' },
 		{ path: '/alumni', text: 'Alumni' },
 	]
+
+	const title = 'Duders Zone'
+	const description = 'An archival website about video games.'
+	const url = 'https://duders.zone/'
 </script>
+
+<MetaTags
+	{title}
+	{description}
+	openGraph={{
+		url,
+		title,
+		description,
+		type: 'site',
+		images: [
+			{
+				url: logo,
+				width: 206,
+				height: 140,
+			},
+		],
+	}}
+	twitter={{
+		cardType: 'summary_large_image',
+		title: 'Duders Zone',
+		description: 'An archival website about video games.',
+		image: logoSquare,
+	}}
+/>
 
 <div id="site-container">
 	<header>
