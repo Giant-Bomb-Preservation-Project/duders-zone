@@ -2,7 +2,6 @@
 	import { MetaTags } from 'svelte-meta-tags'
 	import { page } from '$app/stores'
 	import logo from '$lib/images/logo-dz.png'
-	import logoSquare from '$lib/images/logo-dz-square.png'
 	import internetArchive from '$lib/images/internet-archive.jpg'
 	import giantBombPreservationSociety from '$lib/images/giant-bomb-preservation-society.png'
 	import '../app.css'
