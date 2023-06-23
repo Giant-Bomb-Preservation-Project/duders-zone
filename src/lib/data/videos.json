@@ -987,6 +987,13 @@
         "thumbnail": "https://archive.org/services/img/2023-01-12-Blight_Club-Grubbsy_3D_-_Part_4-IDJVZ8GA"
     },
     {
+        "id": "2023-05-04-b-lite-club-may-the-fourth-be-with-you",
+        "title": "bLITE Club - May The Fourth Be With You",
+        "description": "Unarchived stream of bLITE Club celebrating Star Wars Day 2023.",
+        "date": "2023-05-04T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/2023-05-04-b-lite-club-may-the-fourth-be-with-you"
+    },
+    {
         "id": "2300-6648",
         "title": "Thursday Night Throwdown: 10/04/12",
         "description": "Tokyo invades our Torchlight stream and Jeff's brain along with llamas, the TurboGrafix, and real big beers.",
@@ -44623,6 +44630,195 @@
         "description": "Even if we keep our promises can that stop other things from breaking?",
         "date": "2023-05-24T00:00:00Z",
         "thumbnail": "https://archive.org/services/img/gb-2300-18528-ID8CO8N"
+    },
+    {
+        "id": "gb-2300-18532-IDYZOAB",
+        "title": "Giant Bombcast 791: Dark Cloud 2",
+        "description": "We're joined by our dear friend Mike Minotti to chat about Street Fighter 6, continued adventures in Tears of the Kingdom, and Baulder Gate: Dark Alliance for the GameCube? We also recap the PlayStation Showcase, sales numbers, and more!",
+        "date": "2023-05-30T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18532-IDYZOAB"
+    },
+    {
+        "id": "gb-2300-18533-ID9M9V4",
+        "title": "Giant Bombcast 791: Dark Cloud 2",
+        "description": "We're joined by our dear friend Mike Minotti to chat about Street Fighter 6, continued adventures in Tears of the Kingdom, and Baulder Gate: Dark Alliance for the GameCube? We also recap the PlayStation Showcase, sales numbers, and more!",
+        "date": "2023-05-30T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18533-ID9M9V4"
+    },
+    {
+        "id": "gb-2300-18534-IDRAFYM",
+        "title": "Unprofessional Fridays: Unprofessional Fridays 05/26/23",
+        "description": "There's no better time to upload UPF than Wednesday!",
+        "date": "2023-05-31T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18534-IDRAFYM"
+    },
+    {
+        "id": "gb-2300-18535-IDN9ARQ",
+        "title": "Game Mess Mornings 05/31/23",
+        "description": "Grubb is joined by Lucy James to talk about a rumblings of a new Fable game, more rumblings of a new Wolfenstein game, and more video game news!",
+        "date": "2023-05-31T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18535-IDN9ARQ"
+    },
+    {
+        "id": "gb-2300-18536-IDIBPF0",
+        "title": "Quick Look: Street Fighter 6",
+        "description": "Tam and Dan hit the lab to figure out the science behind combos and start fights with any and everybody in Street Fighter 6!",
+        "date": "2023-05-31T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18536-IDIBPF0"
+    },
+    {
+        "id": "gb-2300-18537-IDQIUTX",
+        "title": "Connectivity Compadres: Four Swords Fiesta 05",
+        "description": "After a catastrophe last week, will our compadres keep their composure and keep it together?",
+        "date": "2023-05-31T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18537-IDQIUTX"
+    },
+    {
+        "id": "gb-2300-18538-ID4HXTA",
+        "title": "Game Mess Mornings 06/01/23",
+        "description": "Grubb is joined by Jan to talk about a whole mess of video game news including: Redfall development woes, Bobby Kotick buffonery, and more!",
+        "date": "2023-06-01T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18538-ID4HXTA"
+    },
+    {
+        "id": "gb-2300-18539-IDIL0JV",
+        "title": "Quick Look: System Shock",
+        "description": "Bakalar and Grubb dip into System Shock and try to figure out what made it so special!",
+        "date": "2023-06-01T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18539-IDIL0JV"
+    },
+    {
+        "id": "gb-2300-18540-IDCC0IO",
+        "title": "RoboMitch 06",
+        "description": "Is it time for RoboMitch to finally pass the baton to the next person in line at the Blight Club.",
+        "date": "2023-06-01T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18540-IDCC0IO"
+    },
+    {
+        "id": "gb-2300-18541-IDMWUC6",
+        "title": "Voicemail Dump Truck 71",
+        "description": "We learn a lot about everyone on the Dump Truck. Sometimes too much.",
+        "date": "2023-06-01T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18541-IDMWUC6"
+    },
+    {
+        "id": "gb-2300-18542-IDIOW0F",
+        "title": "Game Mess Mornings 06/02/23",
+        "description": "Grubb is joined by Tam to talk about a whole mess of video game news including: Everybody 1-2 Switch, pastels, Final Fantasy VII Rebirth, and more.",
+        "date": "2023-06-02T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18542-IDIOW0F"
+    },
+    {
+        "id": "gb-2300-18543-IDLPV06",
+        "title": "Unprofessional Fridays: Unprofessiablo Fridiablo",
+        "description": "WHAT'S UP SATAN?",
+        "date": "2023-06-02T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18543-IDLPV06"
+    },
+    {
+        "id": "gb-2300-18544-IDD0JEI",
+        "title": "Game Mess Mornings 06/05/23",
+        "description": "Jeff Grubb is joined by Lex Luddy to chat about Square Enix's fears, Street Fighter 6 numbers doing really well, and more!",
+        "date": "2023-06-05T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18544-IDD0JEI"
+    },
+    {
+        "id": "gb-2300-18545-IDKSUV9",
+        "title": "Giant Bomb 4090",
+        "description": "Our dear friends from NZXT were kind enough to send us some new BEEFY computers so we get down to business to check out the power of these new PCs! Head over to giantbomb.com/nzxt for more!",
+        "date": "2023-06-05T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18545-IDKSUV9"
+    },
+    {
+        "id": "gb-2300-18546-IDOV5Q4",
+        "title": "Hey! I'm CityWalkin' Here!",
+        "description": "Place your WetBets! The crew spent some more time at Universal Studios after checking out Super Nintendo World. They enjoyed pasta, margaritas, and each other's company!",
+        "date": "2023-06-06T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18546-IDOV5Q4"
+    },
+    {
+        "id": "gb-2300-18547-IDN0EJH",
+        "title": "Giant Bombcast 792: Bad YouTubers",
+        "description": "Before we head over to Los Angeles for Summer Game Fest we got together to podcast! We talk about Street Fighter 6, Diablo IV, Apple's new VR helmet, and more!",
+        "date": "2023-06-06T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18547-IDN0EJH"
+    },
+    {
+        "id": "gb-2300-18548-ID5TA8E",
+        "title": "Giant Bombcast 792: Bad YouTubers",
+        "description": "Before we head over to Los Angeles for Summer Game Fest we got together to podcast! We talk about Street Fighter 6, Diablo IV, Apple's new VR helmet, and more!",
+        "date": "2023-06-06T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18548-ID5TA8E"
+    },
+    {
+        "id": "gb-2300-18549-IDEL1S0",
+        "title": "We Talk Over: Summer Game Fest 2023",
+        "description": "Keigh3 season begins as we got together to talk over Geoff Keighley's Summer Game Fest live! We see some Final Fantasy, some anime, a look at Mortal Kombat 1, Nic Cage, and more!",
+        "date": "2023-06-09T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18549-IDEL1S0"
+    },
+    {
+        "id": "gb-2300-18550-IDURSSE",
+        "title": "Giant Bomb at Nite: Night 1",
+        "description": "We brought a couch out to Summer Game Fest and got a bunch of our friends to sit and hang out on it! TOES OUT!",
+        "date": "2023-06-11T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18550-IDURSSE"
+    },
+    {
+        "id": "gb-2300-18551-IDG0I66",
+        "title": "Giant Bomb at Nite: Night 2",
+        "description": "We're back for another night of hanging out with our dear friends while we're all at Summer Game Fest!",
+        "date": "2023-06-11T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18551-IDG0I66"
+    },
+    {
+        "id": "gb-2300-18556-ID51F1T",
+        "title": "Game Mess Mornings 06/15/23",
+        "description": "Grubb and Jan are here to talk about news! New friendships, new projects, and even more stuff!",
+        "date": "2023-06-15T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18556-ID51F1T"
+    },
+    {
+        "id": "gb-2300-18557-IDTR558",
+        "title": "Giant Bombcast 794: Default Milk",
+        "description": "We're back and fully rested up from Summer Game Fest! We chat about a bunch of demos from Steam Next Fest, the Final Fantasy XVI demo, a bunch of news, and your emails!",
+        "date": "2023-06-20T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18557-IDTR558"
+    },
+    {
+        "id": "gb-2300-18558-IDWRPJC",
+        "title": "Giant Bombcast 794: Default Milk",
+        "description": "We're back and fully rested up from Summer Game Fest! We chat about a bunch of demos from Steam Next Fest, the Final Fantasy XVI demo, a bunch of news, and your emails!",
+        "date": "2023-06-20T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18558-IDWRPJC"
+    },
+    {
+        "id": "gb-2300-18559-IDYDYRE",
+        "title": "We Talk Over: Nintendo Direct 06/21/23",
+        "description": "Nintendo came in HOT for this Direct. We got a Mario RPG remake, a new Mario, a new Detective Pikachu, and more!",
+        "date": "2023-06-21T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18559-IDYDYRE"
+    },
+    {
+        "id": "gb-2300-18560-IDXZL1G",
+        "title": "Game Mess Mornings 06/21/23",
+        "description": "Grubb is joined by Mike to recap everything that happened at today's Nintendo Direct and fawn over the Mario RPG remake.",
+        "date": "2023-06-21T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18560-IDXZL1G"
+    },
+    {
+        "id": "gb-2300-18561-IDURFBW",
+        "title": "Quick Look: Final Fantasy XVI",
+        "description": "Jeff Grubb and Jan Ochoa check out the early bits of Final Fantasy XVI and gush over the combat, story, and perhaps the best dog of the year?",
+        "date": "2023-06-21T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18561-IDURFBW"
+    },
+    {
+        "id": "gb-2300-18562-IDJY172",
+        "title": "Playdate: Steam Next Fest",
+        "description": "So many demos, we should have ourselves a little fiesta with all of them! We check out Jusant, Sludgelife 2, Viewfinder, and more!",
+        "date": "2023-06-21T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18562-IDJY172"
     },
     {
         "id": "gb-2300-1859-ID0D3EO",
