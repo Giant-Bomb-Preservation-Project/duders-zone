@@ -14,35 +14,7 @@
 		{ path: '/random', text: 'Random' },
 		{ path: '/alumni', text: 'Alumni' },
 	]
-
-	const title = 'Duders Zone'
-	const description = 'An archival website about video games.'
-	const url = 'https://duders.zone/'
 </script>
-
-<MetaTags
-	{title}
-	{description}
-	openGraph={{
-		url,
-		title,
-		description,
-		type: 'site',
-		images: [
-			{
-				url: logo,
-				width: 206,
-				height: 140,
-			},
-		],
-	}}
-	twitter={{
-		cardType: 'summary_large_image',
-		title: 'Duders Zone',
-		description: 'An archival website about video games.',
-		image: logoSquare,
-	}}
-/>
 
 <div id="site-container">
 	<header>
