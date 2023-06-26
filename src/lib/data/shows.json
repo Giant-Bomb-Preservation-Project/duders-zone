@@ -3,7 +3,7 @@
         "id": "endurance-run",
         "title": "Endurance Run",
         "description": "Vinny and Jeff sit down and take a crack at the latest game in the Shin Megami Tensei series. Will they make it through the entire game?",
-        "poster": "2437462-persona%204.jpg",
+        "poster": "2437462-persona 4.jpg",
         "logo": null,
         "videos": [
             "endurance-run-persona-4-part-01",
@@ -321,7 +321,7 @@
         "id": "quick-looks",
         "title": "Quick Looks",
         "description": "Sit back and enjoy as the Giant Bomb team takes an unedited look at the latest video games.",
-        "poster": "3134778-show%20artwork.jpg",
+        "poster": "3134778-show artwork.jpg",
         "logo": "3134779-ql-logo.png",
         "videos": [
             "0001-quick-look-gamecock-demos-legendary",
@@ -1924,6 +1924,9 @@
             "gb-2300-18487-ID131PJ",
             "gb-2300-18490-ID9F69D",
             "gb-2300-18499-IDXD7EM",
+            "gb-2300-18536-IDIBPF0",
+            "gb-2300-18539-IDIL0JV",
+            "gb-2300-18561-IDURFBW",
             "gb-2300-1861-IDMOMT8",
             "gb-2300-1867-ID904C3",
             "gb-2300-1875-ID4MHN5",
@@ -4385,6 +4388,12 @@
             "gb-2300-18514-ID0XB41",
             "gb-2300-18524-IDZR9U9",
             "gb-2300-18525-IDTTGEQ",
+            "gb-2300-18532-IDYZOAB",
+            "gb-2300-18533-ID9M9V4",
+            "gb-2300-18547-IDN0EJH",
+            "gb-2300-18548-ID5TA8E",
+            "gb-2300-18557-IDTR558",
+            "gb-2300-18558-IDWRPJC",
             "gb-Unarchived0002-IDJRO2O",
             "gb-Unarchived0143-IDIDXUM",
             "gb-Unarchived8725"
@@ -4552,7 +4561,7 @@
         "title": "Blue Bombin'",
         "description": "Join Alex Navarro as he straps in and makes his way through several of the Mega Man games.",
         "poster": "3051242-2958247-blue_bombin_1080_2.png",
-        "logo": "3084883-blue%20bombin.png",
+        "logo": "3084883-blue bombin.png",
         "videos": [
             "blue-bombin-blue-bombin-mega-man-2",
             "blue-bombin-blue-bombin-mega-man-3-part-01",
@@ -4803,6 +4812,7 @@
             "gb-2300-17663",
             "gb-2300-17934",
             "gb-2300-17970",
+            "gb-2300-18562-IDJY172",
             "gb-2300-9532"
         ]
     },
@@ -5128,7 +5138,7 @@
         "title": "Ranking of Fighters",
         "description": "Every fighting game ever made, ranked and rated into an extremely scientific list by actual* fighting game scientists!",
         "poster": "3061759-rankingoffighters.jpg",
-        "logo": "3084889-ranking%20of%20fighters.png",
+        "logo": "3084889-ranking of fighters.png",
         "videos": [
             "gb-2300-10458-IDTEN70",
             "gb-2300-10520-IDALRUK",
@@ -5184,8 +5194,8 @@
         "id": "beast-in-the-east",
         "title": "Beast in the East",
         "description": "The Giant Bomb East team takes on the Yakuza series.",
-        "poster": "3061730-subbed%204.jpg",
-        "logo": "3084882-beast%20in%20the%20east.png",
+        "poster": "3061730-subbed 4.jpg",
+        "logo": "3084882-beast in the east.png",
         "videos": [
             "gb-2300-11854-ID13BPF",
             "gb-2300-11867-ID4NFTP",
@@ -5509,7 +5519,7 @@
         "title": "Game Tapes",
         "description": "Unearthing the forgotten magnetic media of the video game industry.",
         "poster": "3061534-gametapes.png",
-        "logo": "3084884-game%20tapes.png",
+        "logo": "3084884-game tapes.png",
         "videos": [
             "gb-2300-11008-IDA341V",
             "gb-2300-11045-ID44217",
@@ -5607,7 +5617,7 @@
         "title": "Murder Island",
         "description": "We get the team together to see if we can make it through PlayerUnknown's Battlegrounds.",
         "poster": "2948360-murderisland_art.jpg",
-        "logo": "3084887-murder%20island.png",
+        "logo": "3084887-murder island.png",
         "videos": [
             "gb-2300-12006",
             "gb-2300-12024",
@@ -5719,7 +5729,7 @@
         "title": "Kingdom Heartache",
         "description": "Join Ben Pack and TKTKTKTK as they engage in a simple and clean playthrough of Kingdom Hearts.",
         "poster": "3061498-kingdomheartache.jpg",
-        "logo": "3084886-kingdom%20heartache.png",
+        "logo": "3084886-kingdom heartache.png",
         "videos": [
             "gb-2300-12407-IDTLBZH",
             "gb-2300-12434-IDJ6EV5",
@@ -6063,6 +6073,8 @@
             "gb-2300-18498-ID4NJ87",
             "gb-2300-18509-IDR406E",
             "gb-2300-18521-ID0OKZN",
+            "gb-2300-18534-IDRAFYM",
+            "gb-2300-18543-IDLPV06",
             "gb-2300-6968-IDII445",
             "gb-2300-6987-IDMUMPW",
             "gb-2300-7008-IDW3A19",
@@ -6555,7 +6567,7 @@
         "title": "Gaiden the Ring",
         "description": "Wrestling is about telling stories. Those stories are usually very stupid. Here are some of them.",
         "poster": "3002958-gaidenthering.jpg",
-        "logo": "3083616-gaiden%20the%20ring.png",
+        "logo": "3083616-gaiden the ring.png",
         "videos": [
             "gb-2300-12876-IDXKXCT",
             "gb-2300-12899-IDZFALQ",
@@ -6774,6 +6786,8 @@
             "gb-2300-14573-IDLZ056",
             "gb-2300-14574-ID0JG6C",
             "gb-2300-14575-IDSFGPE",
+            "gb-2300-18550-IDURSSE",
+            "gb-2300-18551-IDG0I66",
             "gb-2300-2620-IDO3W2D",
             "gb-2300-2643-IDGR1IL",
             "gb-2300-2658-ID8WVPC",
@@ -7016,8 +7030,8 @@
         "id": "the-giant-beastcast",
         "title": "The Giant Beastcast",
         "description": "The Giant Bomb East team gathers to talk about the week in video games, their lives, and basically anything that interests them. All from New York City!",
-        "poster": "3061712-giant%20beastcast.png",
-        "logo": "3084877-giant%20beastcast.png",
+        "poster": "3061712-giant beastcast.png",
+        "logo": "3084877-giant beastcast.png",
         "videos": [
             "gb-2300-15311-IDRYCK7",
             "gb-2300-15337-IDK5IWQ",
@@ -7180,15 +7194,16 @@
             "gb-2300-18483-IDYZ57N",
             "gb-2300-18495-IDDJ9P3",
             "gb-2300-18508-IDA0O81",
-            "gb-2300-18520-IDEXVYB"
+            "gb-2300-18520-IDEXVYB",
+            "gb-2300-18541-IDMWUC6"
         ]
     },
     {
         "id": "all-systems-goku",
         "title": "All Systems Goku",
         "description": "Anime experts Dan Ryckert and Jeff Gerstmann embark on a quest to watch every episode of Dragon Ball Z Kai.",
-        "poster": "3061715-all%20systems%20goku.png",
-        "logo": "3083614-all%20systems%20goku.png",
+        "poster": "3061715-all systems goku.png",
+        "logo": "3083614-all systems goku.png",
         "videos": [
             "gb-2300-13456-IDYDFF2"
         ]
@@ -7256,7 +7271,7 @@
         "title": "Best of Giant Bomb",
         "description": "The very best of Giant Bomb.",
         "poster": "3072748-slide1.jpg",
-        "logo": "3083615-best%20of%20giant%20bomb.png",
+        "logo": "3083615-best of giant bomb.png",
         "videos": [
             "gb-2300-10975-IDHWH3N",
             "gb-2300-10992-ID1PXGT",
@@ -7781,7 +7796,7 @@
         "id": "bombin-the-am-with-scoops--the-wolf",
         "title": "Bombin' the A.M. With Scoops & the Wolf!",
         "description": "Grab a cup of coffee, and catch up on the day's headlines with Giant Bomb guys that aren't in San Francisco.",
-        "poster": "3061705-bombin%27%20the%20a.m..png",
+        "poster": "3061705-bombin' the a.m..png",
         "logo": null,
         "videos": [
             "gb-2300-7755",
@@ -8442,7 +8457,7 @@
         "id": "gotta-god-hand",
         "title": "Gotta God Hand!",
         "description": "Ben and Jason don't know why they have to, but they GOTTA!",
-        "poster": "3063345-gotta%20god.jpg",
+        "poster": "3063345-gotta god.jpg",
         "logo": null,
         "videos": [
             "gb-2300-13468-ID4OPUS",
@@ -8577,7 +8592,7 @@
         "id": "pokémonday-night-combat",
         "title": "PokéMonday Night Combat",
         "description": "Resident Pokémon professor Jan Ochoa shows us the ins and outs of competitive Pokémon battling!",
-        "poster": "3078470-pnc%20baby.jpg",
+        "poster": "3078470-pnc baby.jpg",
         "logo": null,
         "videos": [
             "gb-2300-13863-ID6L9V3",
@@ -8719,6 +8734,8 @@
             "gb-2300-18363-IDGOTXK",
             "gb-2300-18466-IDOOETI",
             "gb-2300-18527-ID55IH0",
+            "gb-2300-18549-IDEL1S0",
+            "gb-2300-18559-IDYDYRE",
             "gb-2300-7066",
             "gb-2300-7397",
             "gb-2300-7849",
@@ -8868,7 +8885,7 @@
         "title": "Breakfast 'N' Ben",
         "description": "My name is Ben and on this day I eat juice.",
         "poster": "3280282-juice.jpg",
-        "logo": "3198039-bnb%20clear.png",
+        "logo": "3198039-bnb clear.png",
         "videos": [
             "gb-2300-12946-IDDRUAO",
             "gb-2300-12963-IDZ599F",
@@ -8998,6 +9015,7 @@
             "gb-2300-18096",
             "gb-2300-18503-IDQ4U6D",
             "gb-2300-18510-IDX0LJQ",
+            "gb-2300-18546-IDOV5Q4",
             "gb-2300-2111",
             "gb-2300-3514",
             "gb-2300-3516",
@@ -9661,8 +9679,8 @@
         "id": "cowboys-with-abby",
         "title": "Cowboys With Abby!",
         "description": "Abby loves cowboys. Abby loves games. Why not have both?",
-        "poster": "3198035-cowboys%20logo.png",
-        "logo": "3198034-cowboys%20logotransparent.png",
+        "poster": "3198035-cowboys logo.png",
+        "logo": "3198034-cowboys logotransparent.png",
         "videos": [
             "gb-2300-15503-ID6HXEJ",
             "gb-2300-15553-ID22HUD",
@@ -10027,7 +10045,13 @@
             "gb-2300-18516-IDEASP9",
             "gb-2300-18519-ID0TSQQ",
             "gb-2300-18522-IDT4882",
-            "gb-2300-18526-ID5R28P"
+            "gb-2300-18526-ID5R28P",
+            "gb-2300-18535-IDN9ARQ",
+            "gb-2300-18538-ID4HXTA",
+            "gb-2300-18542-IDIOW0F",
+            "gb-2300-18544-IDD0JEI",
+            "gb-2300-18556-ID51F1T",
+            "gb-2300-18560-IDXZL1G"
         ]
     },
     {
@@ -10397,6 +10421,7 @@
             "2022-11-10-Blight_Club-Blight_Club_Grubbsy_3D_-_02-ID7TFXDE",
             "2022-11-17-Blight_Club-Grubbsy_3D_-_Part_3-IDMIERVC",
             "2023-01-12-Blight_Club-Grubbsy_3D_-_Part_4-IDJVZ8GA",
+            "2023-05-04-b-lite-club-may-the-fourth-be-with-you",
             "gb-2300-18300-ID6L9P7",
             "gb-2300-18322-IDID3TZ",
             "gb-2300-18334-IDR3TL0",
@@ -10410,7 +10435,8 @@
             "gb-2300-18455-ID9Q46A",
             "gb-2300-18482-ID9O7RF",
             "gb-2300-18507-IDLYSM9",
-            "gb-2300-18518-ID17JQW"
+            "gb-2300-18518-ID17JQW",
+            "gb-2300-18540-IDCC0IO"
         ]
     },
     {
@@ -10739,6 +10765,7 @@
             "gb-2300-17212-IDI26I1",
             "gb-2300-17694-ID5SY6I",
             "gb-2300-17957-IDTUOKO",
+            "gb-2300-18545-IDKSUV9",
             "gb-2300-216-IDWZ71X",
             "gb-2300-229-IDUOVDF",
             "gb-2300-235-IDYQZLA",
@@ -11642,7 +11669,8 @@
             "gb-2300-18453-IDD2OIL",
             "gb-2300-18465-IDB00C9",
             "gb-2300-18517-ID543NX",
-            "gb-2300-18528-ID8CO8N"
+            "gb-2300-18528-ID8CO8N",
+            "gb-2300-18537-IDQIUTX"
         ]
     },
     {
