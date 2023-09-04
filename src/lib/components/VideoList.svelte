@@ -18,7 +18,6 @@
 	let currentMode = mode || VideoListMode.List
 
 	function setCurrentMode(mode: VideoListMode) {
-		console.log('MOOOOD', mode)
 		currentMode = mode
 	}
 </script>
