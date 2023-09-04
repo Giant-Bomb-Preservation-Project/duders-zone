@@ -84,3 +84,7 @@ export function getVideosForDay(day?: Date): Video[] {
 export function getVideosForShow(show: Show): Video[] {
 	return show.videos.map((videoId) => videos[videoId]).sort(byDateDesc)
 }
+
+export function searchVideos(searchQuery: string): Video[] {
+	return getRandomVideos(4);
+}

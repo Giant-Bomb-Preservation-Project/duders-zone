@@ -9,6 +9,7 @@
 		{ path: '/shows', text: 'Shows' },
 		{ path: '/infinite', text: 'Infinite' },
 		{ path: '/historic', text: 'Historic' },
+		{ path: '/search', text: 'Search' },
 		{ path: '/random', text: 'Random' },
 		{ path: '/alumni', text: 'Alumni' },
 	]
