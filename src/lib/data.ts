@@ -32,6 +32,7 @@ for (const video of videoData) {
 		title: video.title,
 		description: video.description,
 		date: new Date(video.date),
+		show: Object.values(shows).find((show) => show.videos.includes(video.id))?.id,
 		thumbnail: video.thumbnail,
 	}
 }
