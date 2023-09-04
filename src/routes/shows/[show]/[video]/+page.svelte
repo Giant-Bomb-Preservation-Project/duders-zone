@@ -19,11 +19,7 @@
 </section>
 
 <section class="container videos">
-	<VideoList
-		videos={paginatedVideos}
-		title={data.show.title}
-		rootUri="/shows/{data.show.id}"
-	/>
+	<VideoList videos={paginatedVideos} title={data.show.title} rootUri="/shows/{data.show.id}" />
 	<Pagination totalResults={data.videos.length} currentPage={pageNumber} />
 </section>
 
