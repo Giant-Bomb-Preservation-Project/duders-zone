@@ -109,13 +109,13 @@ export function getVideosForShow(show: Show): Video[] {
 export function searchVideos(searchQuery: string, limit: number = 100): Video[] {
 	const words = extractWords(searchQuery)
 
-	//TODO search for incomplete words: "te" should match "test"
-
 	const foundVideos = new Set()
 	for (const word of words) {
-		if (videoIndex.has(word)) {
-			videoIndex.get(word).forEach(item => foundVideos.add(videos[item]))
-		}
+		videoIndex.forEach((value, key) => {
+			if (key.search(word) !== -1) {
+				videoIndex.get(key).forEach(item => foundVideos.add(videos[item]))
+			}
+		})
 	}
 
 	return Array.from(foundVideos).slice(0, limit)
