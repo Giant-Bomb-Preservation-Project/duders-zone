@@ -106,7 +106,7 @@ export function getVideosForShow(show: Show): Video[] {
 	return show.videos.map((videoId) => videos[videoId]).sort(byDateDesc)
 }
 
-export function searchVideos(searchQuery: string): Video[] {
+export function searchVideos(searchQuery: string, limit: number = 100): Video[] {
 	const words = extractWords(searchQuery)
 
 	//TODO search for incomplete words: "te" should match "test"
@@ -118,5 +118,5 @@ export function searchVideos(searchQuery: string): Video[] {
 		}
 	}
 
-	return Array.from(foundVideos)
+	return Array.from(foundVideos).slice(0, limit)
 }
