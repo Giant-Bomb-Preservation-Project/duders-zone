@@ -1,6 +1,7 @@
 import { error } from '@sveltejs/kit'
 import showData from '$lib/data/shows.json'
 import videoData from '$lib/data/videos.json'
+import { extractWords } from '$lib/text'
 
 export interface Show {
 	readonly id: string
@@ -37,6 +38,8 @@ for (const video of videoData) {
 	}
 }
 
+const videoIndex: Map<string, string[]> = generateVideoIndex(videoData)
+
 // Sort by date descending
 const byDateDesc = (a: { date: Date }, b: { date: Date }) => b.date.getTime() - a.date.getTime()
 
@@ -45,6 +48,24 @@ const byRandom = () => 0.5 - Math.random()
 
 // Sort by title ascending
 const byTitleAsc = (a: { title: string }, b: { title: string }) => a.title.localeCompare(b.title)
+
+export function generateVideoIndex(videoList: Video[]): { [key: string]: string[] } {
+	const index = new Map();
+
+	for (const video of videoList) {
+		const words = extractWords(video.title);
+
+		for (const word of words) {
+			if (!index.has(word)) {
+				index.set(word, [])
+			}
+
+			index.get(word).push(video.id)
+		}
+	}
+
+	return index
+}
 
 export function getRandomShows(amount: number): Show[] {
 	const shuffled = Object.values(shows).sort(byRandom)
