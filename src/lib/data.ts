@@ -107,5 +107,16 @@ export function getVideosForShow(show: Show): Video[] {
 }
 
 export function searchVideos(searchQuery: string): Video[] {
-	return getRandomVideos(4);
+	const words = extractWords(searchQuery)
+
+	//TODO search for incomplete words: "te" should match "test"
+
+	const foundVideos = new Set()
+	for (const word of words) {
+		if (videoIndex.has(word)) {
+			videoIndex.get(word).forEach(item => foundVideos.add(videos[item]))
+		}
+	}
+
+	return Array.from(foundVideos)
 }
