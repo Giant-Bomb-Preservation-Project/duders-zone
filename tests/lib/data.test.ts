@@ -1,34 +1,34 @@
 // sum.test.js
 import { describe, it, expect } from 'vitest'
 import { generateVideoIndex } from '$lib/data'
+import type { Video } from '$lib/data'
 
 describe('generateVideoIndex', () => {
-
 	it('creates an index of videos based on a list', () => {
-		const videos = [
+		const videos: Video[] = [
 			{
 				id: 'mfv',
 				title: 'My Fancy Video',
 				description: 'Description.',
-				date: Date.now(),
-				show: null,
-				thumbnail: null,
+				date: new Date(),
+				show: undefined,
+				thumbnail: undefined,
 			},
 			{
 				id: 'vgab',
 				title: 'Video Games Are Bad',
 				description: 'Description.',
-				date: Date.now(),
-				show: null,
-				thumbnail: null,
+				date: new Date(),
+				show: undefined,
+				thumbnail: undefined,
 			},
 			{
 				id: 'mbv',
 				title: 'My Bad Video',
 				description: 'Description.',
-				date: Date.now(),
-				show: null,
-				thumbnail: null,
+				date: new Date(),
+				show: undefined,
+				thumbnail: undefined,
 			},
 		]
 		const expected: Map<string, string[]> = new Map()
@@ -43,5 +43,4 @@ describe('generateVideoIndex', () => {
 
 		expect(result).toStrictEqual(expected)
 	})
-
 })

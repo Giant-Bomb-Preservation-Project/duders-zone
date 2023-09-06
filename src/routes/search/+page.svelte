@@ -13,7 +13,6 @@
 	const searchSubmit = () => {
 		videos = searchQuery === '' ? [] : searchVideos(searchQuery)
 	}
-
 </script>
 
 <div class="container">
@@ -22,17 +21,21 @@
 	<form on:submit={searchSubmit}>
 		<label for="search" class="sr-only">Search Query</label>
 		<div id="field-wrapper">
-			<input type="search" id="search" placeholder="search for something" bind:value={searchQuery}>
+			<input
+				type="search"
+				id="search"
+				placeholder="search for something"
+				bind:value={searchQuery}
+			/>
 		</div>
 		<Button handler={() => {}}>Go Get It</Button>
 	</form>
 
-	{#if videos.length }
+	{#if videos.length}
 		<VideoList {videos} title="Videos" />
 	{:else}
 		<div class="empty">No videos...</div>
 	{/if}
-
 </div>
 
 <style>
@@ -47,7 +50,7 @@
 	#field-wrapper {
 		background-image: linear-gradient(#e8e8e8, #fff);
 		border-radius: 4px;
-		box-shadow: rgba(255,255,255,0.25) 0 1px 0,rgba(0,0,0,0.4) 0 1px 3px inset;
+		box-shadow: rgba(255, 255, 255, 0.25) 0 1px 0, rgba(0, 0, 0, 0.4) 0 1px 3px inset;
 		flex: 1;
 		height: 25px;
 		margin-right: 1em;
@@ -61,7 +64,7 @@
 		display: block;
 		height: 100%;
 		padding: 0 0 0 16px;
-		text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 		width: 100%;
 	}
 

@@ -38,7 +38,7 @@ for (const video of videoData) {
 	}
 }
 
-const videoIndex: Map<string, string[]> = generateVideoIndex(videoData)
+const videoIndex: Map<string, string[]> = generateVideoIndex(Object.values(videos))
 
 // Sort by date descending
 const byDateDesc = (a: { date: Date }, b: { date: Date }) => b.date.getTime() - a.date.getTime()
@@ -49,11 +49,11 @@ const byRandom = () => 0.5 - Math.random()
 // Sort by title ascending
 const byTitleAsc = (a: { title: string }, b: { title: string }) => a.title.localeCompare(b.title)
 
-export function generateVideoIndex(videoList: Video[]): { [key: string]: string[] } {
-	const index = new Map();
+export function generateVideoIndex(videoList: Video[]): Map<string, string[]> {
+	const index = new Map()
 
 	for (const video of videoList) {
-		const words = extractWords(video.title);
+		const words = extractWords(video.title)
 
 		for (const word of words) {
 			if (!index.has(word)) {
@@ -113,10 +113,10 @@ export function searchVideos(searchQuery: string, limit: number = 100): Video[] 
 	for (const word of words) {
 		videoIndex.forEach((value, key) => {
 			if (key.search(word) !== -1) {
-				videoIndex.get(key).forEach(item => foundVideos.add(videos[item]))
+				videoIndex.get(key)!.forEach((item) => foundVideos.add(videos[item]))
 			}
 		})
 	}
 
-	return Array.from(foundVideos).slice(0, limit)
+	return (Array.from(foundVideos) as Video[]).slice(0, limit)
 }

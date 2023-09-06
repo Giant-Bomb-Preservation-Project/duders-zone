@@ -1,5 +1,4 @@
-
-const wordCharacter = /\w/i;
+const wordCharacter = /\w/i
 
 // Extract all the significant words from a piece of text
 export function extractWords(text: string): string[] {
