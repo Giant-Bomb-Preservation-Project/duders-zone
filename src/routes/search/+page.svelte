@@ -28,7 +28,9 @@
 				bind:value={searchQuery}
 			/>
 		</div>
-		<Button handler={() => {}}>Go Get It</Button>
+		<div id="button-wrapper">
+			<Button handler={() => {}}>Go Get It</Button>
+		</div>
 	</form>
 
 	{#if videos.length}
@@ -40,20 +42,9 @@
 
 <style>
 	form {
-		align-items: center;
-		display: flex;
 		margin: 3em auto;
-		max-width: 400px;
+		max-width: 500px;
 		width: 90%;
-	}
-
-	#field-wrapper {
-		background-image: linear-gradient(#e8e8e8, #fff);
-		border-radius: 4px;
-		box-shadow: rgba(255, 255, 255, 0.25) 0 1px 0, rgba(0, 0, 0, 0.4) 0 1px 3px inset;
-		flex: 1;
-		height: 25px;
-		margin-right: 1em;
 	}
 
 	input {
@@ -68,6 +59,19 @@
 		width: 100%;
 	}
 
+	#button-wrapper {
+		text-align: center;
+	}
+
+	#field-wrapper {
+		background-image: linear-gradient(#e8e8e8, #fff);
+		border-radius: 4px;
+		box-shadow: rgba(255, 255, 255, 0.25) 0 1px 0, rgba(0, 0, 0, 0.4) 0 1px 3px inset;
+		flex: 1;
+		height: 25px;
+		margin-bottom: 2em;
+	}
+
 	.container {
 		margin-bottom: var(--spacing);
 		margin-top: var(--spacing);
@@ -76,5 +80,16 @@
 	.empty {
 		margin: 5em 0;
 		text-align: center;
+	}
+
+	@media (min-width: 576px) {
+		form {
+			align-items: center;
+			display: flex;
+		}
+
+		#field-wrapper {
+			margin: 0 1em 0 0;
+		}
 	}
 </style>
