@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let handler: () => any
+	export let handler: () => any = () => {}
 </script>
 
 <button on:click={handler}>

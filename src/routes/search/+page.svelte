@@ -29,7 +29,7 @@
 			/>
 		</div>
 		<div id="button-wrapper">
-			<Button handler={() => {}}>Go Get It</Button>
+			<Button>Go Get It</Button>
 		</div>
 	</form>
 
