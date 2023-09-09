@@ -41,6 +41,12 @@ Use the `format` script to format code:
 npm run format
 ```
 
+Use the `test` script to test the code:
+
+```shell
+npm run test
+```
+
 ## Deploying
 
 Use the `build` script to make a production build of the site:

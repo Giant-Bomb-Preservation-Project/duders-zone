@@ -11,14 +11,13 @@
 
 	export let videos: Video[]
 	export let title: string
-	export let rootUri: string
+	export let rootUri: string | null = null
 	export let seeAllUrl: string | null = null
 	export let mode: VideoListMode | null = null
 
 	let currentMode = mode || VideoListMode.List
 
 	function setCurrentMode(mode: VideoListMode) {
-		console.log('MOOOOD', mode)
 		currentMode = mode
 	}
 </script>
@@ -67,7 +66,7 @@
 <ul class={currentMode}>
 	{#each videos as video}
 		<li>
-			<a href="{rootUri}/{video.id}">
+			<a href="{rootUri || `shows/${video.show}`}/{video.id}">
 				<div class="thumbnail">
 					<Thumbnail src={video.thumbnail || '/assets/default.jpg'} alt="" />
 				</div>

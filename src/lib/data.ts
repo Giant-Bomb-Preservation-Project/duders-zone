@@ -1,6 +1,7 @@
 import { error } from '@sveltejs/kit'
 import showData from '$lib/data/shows.json'
 import videoData from '$lib/data/videos.json'
+import { extractWords } from '$lib/text'
 
 export interface Show {
 	readonly id: string
@@ -32,9 +33,12 @@ for (const video of videoData) {
 		title: video.title,
 		description: video.description,
 		date: new Date(video.date),
+		show: Object.values(shows).find((show) => show.videos.includes(video.id))?.id,
 		thumbnail: video.thumbnail,
 	}
 }
+
+const videoIndex: Map<string, string[]> = generateVideoIndex(Object.values(videos))
 
 // Sort by date descending
 const byDateDesc = (a: { date: Date }, b: { date: Date }) => b.date.getTime() - a.date.getTime()
@@ -44,6 +48,24 @@ const byRandom = () => 0.5 - Math.random()
 
 // Sort by title ascending
 const byTitleAsc = (a: { title: string }, b: { title: string }) => a.title.localeCompare(b.title)
+
+export function generateVideoIndex(videoList: Video[]): Map<string, string[]> {
+	const index = new Map()
+
+	for (const video of videoList) {
+		const words = extractWords(video.title)
+
+		for (const word of words) {
+			if (!index.has(word)) {
+				index.set(word, [])
+			}
+
+			index.get(word).push(video.id)
+		}
+	}
+
+	return index
+}
 
 export function getRandomShows(amount: number): Show[] {
 	const shuffled = Object.values(shows).sort(byRandom)
@@ -82,4 +104,19 @@ export function getVideosForDay(day?: Date): Video[] {
 
 export function getVideosForShow(show: Show): Video[] {
 	return show.videos.map((videoId) => videos[videoId]).sort(byDateDesc)
+}
+
+export function searchVideos(searchQuery: string, limit: number = 100): Video[] {
+	const words = extractWords(searchQuery)
+
+	const foundVideos = new Set()
+	for (const word of words) {
+		videoIndex.forEach((value, key) => {
+			if (key.search(word) !== -1) {
+				videoIndex.get(key)!.forEach((item) => foundVideos.add(videos[item]))
+			}
+		})
+	}
+
+	return (Array.from(foundVideos) as Video[]).slice(0, limit)
 }
