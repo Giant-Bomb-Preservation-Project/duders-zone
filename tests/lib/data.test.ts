@@ -197,18 +197,112 @@ describe('DataStore', () => {
 					thumbnail: undefined,
 				},
 			]
-			const expected = new Map(Object.entries({
-				my: ['mfv', 'mbv'],
-				fancy: ['mfv'],
-				video: ['mfv', 'vgab', 'mbv'],
-				games: ['vgab'],
-				are: ['vgab'],
-				bad: ['vgab', 'mbv'],
-			}));
+			const expected = new Map(
+				Object.entries({
+					my: ['mfv', 'mbv'],
+					fancy: ['mfv'],
+					video: ['mfv', 'vgab', 'mbv'],
+					games: ['vgab'],
+					are: ['vgab'],
+					bad: ['vgab', 'mbv'],
+				})
+			)
 
 			const dataStore = new DataStore([], videoData)
 
 			expect(dataStore.videoIndex).toStrictEqual(expected)
+		})
+	})
+
+	describe('getRandomShows', () => {
+		it('gets a list of N random shows', () => {
+			const dataStore = new DataStore(testShowData, testVideoData)
+
+			for (var i = 0; i < 5; i++) {
+				const result = dataStore.getRandomShows(1)
+
+				expect(result.length).toBe(1)
+				expect(testShowData.map((x) => x.id)).toContain(result[0].id)
+			}
+		})
+	})
+
+	describe('getRandomVideos', () => {
+		it('gets a list of N random videos', () => {
+			const dataStore = new DataStore(testShowData, testVideoData)
+
+			for (var i = 0; i < 5; i++) {
+				const result = dataStore.getRandomVideos(2)
+
+				expect(result.length).toBe(2)
+				expect(testVideoData.map((x) => x.id)).toContain(result[0].id)
+				expect(testVideoData.map((x) => x.id)).toContain(result[1].id)
+			}
+		})
+	})
+
+	describe('getShowById', () => {
+		it('gets a specific show', () => {
+			const dataStore = new DataStore(testShowData, testVideoData)
+			const result = dataStore.getShowById('this-aint-no-game')
+
+			expect(result).toStrictEqual(dataStore.shows['this-aint-no-game'])
+		})
+	})
+
+	describe('getShows', () => {
+		it('gets a list of all shows', () => {
+			const dataStore = new DataStore(testShowData, testVideoData)
+			const result = dataStore.getShows()
+
+			expect(result.map((x) => x.id)).toStrictEqual(['cross-coast', 'this-aint-no-game'])
+		})
+	})
+
+	describe('getVideoById', () => {
+		it('gets a specific show', () => {
+			const dataStore = new DataStore(testShowData, testVideoData)
+			const result = dataStore.getVideoById(
+				'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N'
+			)
+
+			expect(result).toStrictEqual(
+				dataStore.videos[
+					'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N'
+				]
+			)
+		})
+	})
+
+	describe('getVideosForDay', () => {
+		it('gets a specific show', () => {
+			const dataStore = new DataStore(testShowData, testVideoData)
+			const result = dataStore.getVideosForDay(new Date('2023-11-25T00:00:00Z'))
+
+			expect(result.map((x) => x.id)).toStrictEqual(['gb-2300-16398-IDJKE0C'])
+		})
+	})
+
+	describe('getVideosForShow', () => {
+		it('gets a specific show', () => {
+			const dataStore = new DataStore(testShowData, testVideoData)
+			const result = dataStore.getVideosForShow(dataStore.shows['cross-coast'])
+
+			expect(result.map((x) => x.id)).toStrictEqual([
+				'gb-2300-16398-IDJKE0C',
+				'gb-2300-15259-IDJIYS2',
+			])
+		})
+	})
+
+	describe('searchVideos', () => {
+		it('gets a specific show', () => {
+			const dataStore = new DataStore(testShowData, testVideoData)
+			const result = dataStore.searchVideos('evil')
+
+			expect(result.map((x) => x.id)).toStrictEqual([
+				'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+			])
 		})
 	})
 })
