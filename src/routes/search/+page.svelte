@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte'
 	import VideoList from '$lib/components/VideoList.svelte'
-	import { searchVideos } from '$lib/data'
+	import { dataStore } from '$lib/data'
 	import type { Video } from '$lib/data'
 
 	let videos: Video[]
@@ -11,7 +11,7 @@
 
 	//TODO debounce (trailing edge) this function
 	const searchSubmit = () => {
-		videos = searchQuery === '' ? [] : searchVideos(searchQuery)
+		videos = searchQuery === '' ? [] : dataStore.searchVideos(searchQuery)
 	}
 </script>
 

@@ -21,28 +21,22 @@ export interface Video {
 	readonly thumbnail?: string
 }
 
-const shows: { [key: string]: Show } = {}
-for (const show of showData) {
-	shows[show.id] = show
-}
+// Sort by date descending
+const byDateDesc = (a: { date: Date }, b: { date: Date }) => b.date.getTime() - a.date.getTime()
 
-const videos: { [key: string]: Video } = {}
-for (const video of videoData) {
-	videos[video.id] = {
-		id: video.id,
-		title: video.title,
-		description: video.description,
-		date: new Date(video.date),
-		show: Object.values(shows).find((show) => show.videos.includes(video.id))?.id,
-		thumbnail: video.thumbnail,
-	}
-}
+// Sort randomly
+const byRandom = () => 0.5 - Math.random()
 
+// Sort by title ascending
+const byTitleAsc = (a: { title: string }, b: { title: string }) => a.title.localeCompare(b.title)
+
+// Data store which contains the data for the app.
 export class DataStore {
 	readonly shows: { [key: string]: Show }
 	readonly videos: { [key: string]: Video }
 	readonly videoIndex: Map<string, string[]>
 
+	// Construct the datastore based on given show and video data.
 	constructor(showData: any[], videoData: any[]) {
 		this.shows = {}
 		for (const show of showData) {
@@ -63,7 +57,7 @@ export class DataStore {
 				title: video.title,
 				description: video.description,
 				date: new Date(video.date),
-				show: Object.values(shows).find((show) => show.videos.includes(video.id))?.id,
+				show: Object.values(this.shows).find((show) => show.videos.includes(video.id))?.id,
 				thumbnail: video.thumbnail,
 			}
 		}
@@ -77,91 +71,72 @@ export class DataStore {
 					this.videoIndex.set(word, [])
 				}
 
-				this.videoIndex.get(word).push(video.id)
+				this.videoIndex.get(word)!.push(video.id)
 			}
 		}
 	}
-}
 
-const videoIndex: Map<string, string[]> = generateVideoIndex(Object.values(videos))
+	// Get a random show.
+	getRandomShows(amount: number): Show[] {
+		const shuffled = Object.values(this.shows).sort(byRandom)
 
-// Sort by date descending
-const byDateDesc = (a: { date: Date }, b: { date: Date }) => b.date.getTime() - a.date.getTime()
+		return shuffled.slice(0, amount)
+	}
 
-// Sort randomly
-const byRandom = () => 0.5 - Math.random()
+	// Get a random video.
+	getRandomVideos(amount: number): Video[] {
+		const shuffled = Object.values(this.videos).sort(byRandom)
 
-// Sort by title ascending
-const byTitleAsc = (a: { title: string }, b: { title: string }) => a.title.localeCompare(b.title)
+		return shuffled.slice(0, amount)
+	}
 
-export function generateVideoIndex(videoList: Video[]): Map<string, string[]> {
-	const index = new Map()
+	// Get a show by its ID.
+	getShowById(id: string): Show | null {
+		return id in this.shows ? this.shows[id] : null
+	}
 
-	for (const video of videoList) {
-		const words = extractWords(video.title)
+	// Get all shows (sorted alphabetically).
+	getShows(): Show[] {
+		return Object.values(this.shows).sort(byTitleAsc)
+	}
 
+	// Get a video by its ID.
+	getVideoById(id: string): Video | null {
+		return id in this.videos ? this.videos[id] : null
+	}
+
+	// Get all videos which were released on a given day.
+	getVideosForDay(day?: Date): Video[] {
+		day = day || new Date()
+
+		const date = day.getDate()
+		const month = day.getMonth()
+
+		return Object.values(this.videos)
+			.filter((video) => video.date.getDate() == date && video.date.getMonth() == month)
+			.sort(byDateDesc)
+	}
+
+	// Get videos for a specific show.
+	getVideosForShow(show: Show): Video[] {
+		return show.videos.map((videoId) => this.videos[videoId]).sort(byDateDesc)
+	}
+
+	// Search videos for a given query.
+	searchVideos(searchQuery: string, limit: number = 100): Video[] {
+		const words = extractWords(searchQuery)
+
+		const foundVideos = new Set()
 		for (const word of words) {
-			if (!index.has(word)) {
-				index.set(word, [])
-			}
-
-			index.get(word).push(video.id)
+			this.videoIndex.forEach((value, key) => {
+				if (key.search(word) !== -1) {
+					this.videoIndex.get(key)!.forEach((item) => foundVideos.add(this.videos[item]))
+				}
+			})
 		}
+
+		return (Array.from(foundVideos) as Video[]).slice(0, limit)
 	}
-
-	return index
 }
 
-export function getRandomShows(amount: number): Show[] {
-	const shuffled = Object.values(shows).sort(byRandom)
-
-	return shuffled.slice(0, amount)
-}
-
-export function getRandomVideos(amount: number): Video[] {
-	const shuffled = Object.values(videos).sort(byRandom)
-
-	return shuffled.slice(0, amount)
-}
-
-export function getShowById(id: string): Show | null {
-	return id in shows ? shows[id] : null
-}
-
-export function getShows(): Show[] {
-	return Object.values(shows).sort(byTitleAsc)
-}
-
-export function getVideoById(id: string): Video | null {
-	return id in videos ? videos[id] : null
-}
-
-export function getVideosForDay(day?: Date): Video[] {
-	day = day || new Date()
-
-	const date = day.getDate()
-	const month = day.getMonth()
-
-	return Object.values(videos)
-		.filter((video) => video.date.getDate() == date && video.date.getMonth() == month)
-		.sort(byDateDesc)
-}
-
-export function getVideosForShow(show: Show): Video[] {
-	return show.videos.map((videoId) => videos[videoId]).sort(byDateDesc)
-}
-
-export function searchVideos(searchQuery: string, limit: number = 100): Video[] {
-	const words = extractWords(searchQuery)
-
-	const foundVideos = new Set()
-	for (const word of words) {
-		videoIndex.forEach((value, key) => {
-			if (key.search(word) !== -1) {
-				videoIndex.get(key)!.forEach((item) => foundVideos.add(videos[item]))
-			}
-		})
-	}
-
-	return (Array.from(foundVideos) as Video[]).slice(0, limit)
-}
+export const dataStore = new DataStore(showData, videoData)

@@ -1,4 +1,4 @@
-import { getRandomShows, getVideosForDay, getVideosForShow } from '$lib/data'
+import { dataStore } from '$lib/data'
 import type { Show, Video } from '$lib/data'
 import type { PageLoad } from './$types'
 
@@ -12,13 +12,13 @@ interface ShowWithVideos extends Show {
 }
 
 export const load = (({ params }) => {
-	const shows = getRandomShows(3)
-	const historicVideos = pickNRandomVideos(getVideosForDay(), 4)
+	const shows = dataStore.getRandomShows(3)
+	const historicVideos = pickNRandomVideos(dataStore.getVideosForDay(), 4)
 
 	const filledShows: ShowWithVideos[] = shows.map((show) => {
 		return {
 			...show,
-			videoObjects: pickNRandomVideos(getVideosForShow(show), 4),
+			videoObjects: pickNRandomVideos(dataStore.getVideosForShow(show), 4),
 		}
 	})
 
