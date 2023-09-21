@@ -2,15 +2,15 @@
 	import Button from '$lib/components/Button.svelte'
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
 	import VideoList from '$lib/components/VideoList.svelte'
-	import { getRandomVideos } from '$lib/data'
+	import { dataStore } from '$lib/data'
 	import type { PageData } from './$types'
 
 	export let data: PageData
 
-	$: videos = getRandomVideos(12)
+	$: videos = dataStore.getRandomVideos(12)
 
 	function randomize() {
-		videos = getRandomVideos(12)
+		videos = dataStore.getRandomVideos(12)
 	}
 </script>
 
