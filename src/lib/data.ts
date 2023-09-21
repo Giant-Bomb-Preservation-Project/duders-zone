@@ -38,6 +38,37 @@ for (const video of videoData) {
 	}
 }
 
+export class DataStore {
+	readonly shows: { [key: string]: Show }
+	readonly videos: { [key: string]: Video }
+
+	constructor(showData: any[], videoData: any[]) {
+		this.shows = {}
+		for (const show of showData) {
+			this.shows[show.id] = {
+				id: show.id,
+				title: show.title,
+				description: show.description,
+				poster: show.poster,
+				logo: show.logo,
+				videos: show.videos,
+			}
+		}
+
+		this.videos = {}
+		for (const video of videoData) {
+			this.videos[video.id] = {
+				id: video.id,
+				title: video.title,
+				description: video.description,
+				date: new Date(video.date),
+				show: Object.values(shows).find((show) => show.videos.includes(video.id))?.id,
+				thumbnail: video.thumbnail,
+			}
+		}
+	}
+}
+
 const videoIndex: Map<string, string[]> = generateVideoIndex(Object.values(videos))
 
 // Sort by date descending
