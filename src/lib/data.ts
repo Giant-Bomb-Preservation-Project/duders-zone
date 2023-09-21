@@ -41,6 +41,7 @@ for (const video of videoData) {
 export class DataStore {
 	readonly shows: { [key: string]: Show }
 	readonly videos: { [key: string]: Video }
+	readonly videoIndex: Map<string, string[]>
 
 	constructor(showData: any[], videoData: any[]) {
 		this.shows = {}
@@ -64,6 +65,19 @@ export class DataStore {
 				date: new Date(video.date),
 				show: Object.values(shows).find((show) => show.videos.includes(video.id))?.id,
 				thumbnail: video.thumbnail,
+			}
+		}
+
+		this.videoIndex = new Map()
+		for (const video of videoData) {
+			const words = extractWords(video.title)
+
+			for (const word of words) {
+				if (!this.videoIndex.has(word)) {
+					this.videoIndex.set(word, [])
+				}
+
+				this.videoIndex.get(word).push(video.id)
 			}
 		}
 	}

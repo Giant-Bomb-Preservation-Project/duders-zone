@@ -169,6 +169,47 @@ describe('DataStore', () => {
 			expect(dataStore.shows).toStrictEqual(expectedShows)
 			expect(dataStore.videos).toStrictEqual(expectedVideos)
 		})
+
+		it('generates a video index', () => {
+			const videoData: Video[] = [
+				{
+					id: 'mfv',
+					title: 'My Fancy Video',
+					description: 'Description.',
+					date: new Date(),
+					show: undefined,
+					thumbnail: undefined,
+				},
+				{
+					id: 'vgab',
+					title: 'Video Games Are Bad',
+					description: 'Description.',
+					date: new Date(),
+					show: undefined,
+					thumbnail: undefined,
+				},
+				{
+					id: 'mbv',
+					title: 'My Bad Video',
+					description: 'Description.',
+					date: new Date(),
+					show: undefined,
+					thumbnail: undefined,
+				},
+			]
+			const expected = new Map(Object.entries({
+				my: ['mfv', 'mbv'],
+				fancy: ['mfv'],
+				video: ['mfv', 'vgab', 'mbv'],
+				games: ['vgab'],
+				are: ['vgab'],
+				bad: ['vgab', 'mbv'],
+			}));
+
+			const dataStore = new DataStore([], videoData)
+
+			expect(dataStore.videoIndex).toStrictEqual(expected)
+		})
 	})
 })
 
