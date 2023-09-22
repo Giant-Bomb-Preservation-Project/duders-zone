@@ -126,16 +126,26 @@ export class DataStore {
 	searchVideos(searchQuery: string, limit: number = 100): Video[] {
 		const words = extractWords(searchQuery)
 
-		const foundVideos = new Set()
+		const foundVideos = new Map()
 		for (const word of words) {
 			this.videoIndex.forEach((value, key) => {
 				if (key.search(word) !== -1) {
-					this.videoIndex.get(key)!.forEach((item) => foundVideos.add(this.videos[item]))
+					const matchWeight = word == key ? 10 : 5
+
+					this.videoIndex.get(key)!.forEach((item) => {
+						if (!foundVideos.has(item)) {
+							foundVideos.set(item, 0)
+						}
+						foundVideos.set(item, foundVideos.get(item) + matchWeight)
+					})
 				}
 			})
 		}
 
-		return (Array.from(foundVideos) as Video[]).slice(0, limit)
+		const sortedVideos = [...foundVideos].sort((a, b) => b[1] - a[1])
+		const videoList = sortedVideos.map((item) => this.videos[item[0]]) as Video[]
+
+		return videoList.slice(0, limit)
 	}
 }
 

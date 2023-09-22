@@ -290,13 +290,75 @@ describe('DataStore', () => {
 	})
 
 	describe('searchVideos', () => {
-		it('gets a specific show', () => {
+		it('gets a specific video', () => {
 			const dataStore = new DataStore(testShowData, testVideoData)
 			const result = dataStore.searchVideos('evil')
 
 			expect(result.map((x) => x.id)).toStrictEqual([
 				'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
 			])
+		})
+
+		it('weighs exact matches higher than non-exact ones', () => {
+			const videoData = [
+				{
+					id: 'not_exact',
+					title: 'Not Exact Testing',
+					description: '',
+					date: '2020-03-02T00:00:00Z',
+					thumbnail: null,
+				},
+				{
+					id: 'exact',
+					title: 'Exact Test',
+					description: '',
+					date: '2020-03-02T00:00:00Z',
+					thumbnail: null,
+				},
+				{
+					id: 'not_included',
+					title: 'Not Included',
+					description: '',
+					date: '2020-03-02T00:00:00Z',
+					thumbnail: null,
+				},
+			]
+
+			const dataStore = new DataStore(testShowData, videoData)
+			const result = dataStore.searchVideos('test')
+
+			expect(result.map((x) => x.id)).toStrictEqual(['exact', 'not_exact'])
+		})
+
+		it('weighs multiple word matches higher than single ones', () => {
+			const videoData = [
+				{
+					id: 'only_one',
+					title: 'Test',
+					description: '',
+					date: '2020-03-02T00:00:00Z',
+					thumbnail: null,
+				},
+				{
+					id: 'two',
+					title: 'Test Thing',
+					description: '',
+					date: '2020-03-02T00:00:00Z',
+					thumbnail: null,
+				},
+				{
+					id: 'none',
+					title: 'Explosive Bananas',
+					description: '',
+					date: '2020-03-02T00:00:00Z',
+					thumbnail: null,
+				},
+			]
+
+			const dataStore = new DataStore(testShowData, videoData)
+			const result = dataStore.searchVideos('test thing')
+
+			expect(result.map((x) => x.id)).toStrictEqual(['two', 'only_one'])
 		})
 	})
 })
