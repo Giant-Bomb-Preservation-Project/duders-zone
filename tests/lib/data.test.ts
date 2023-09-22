@@ -151,44 +151,58 @@ describe('DataStore', () => {
 		})
 
 		it('generates a video index', () => {
-			const videoData: Video[] = [
-				{
-					id: 'mfv',
-					title: 'My Fancy Video',
-					description: 'Description.',
-					date: new Date(),
-					show: undefined,
-					thumbnail: undefined,
-				},
-				{
-					id: 'vgab',
-					title: 'Video Games Are Bad',
-					description: 'Description.',
-					date: new Date(),
-					show: undefined,
-					thumbnail: undefined,
-				},
-				{
-					id: 'mbv',
-					title: 'My Bad Video',
-					description: 'Description.',
-					date: new Date(),
-					show: undefined,
-					thumbnail: undefined,
-				},
-			]
 			const expected = new Map(
 				Object.entries({
-					my: ['mfv', 'mbv'],
-					fancy: ['mfv'],
-					video: ['mfv', 'vgab', 'mbv'],
-					games: ['vgab'],
-					are: ['vgab'],
-					bad: ['vgab', 'mbv'],
+					'2': [ 'gb-2300-15259-IDJIYS2' ],
+					abby: [ 'gb-2300-16398-IDJKE0C' ],
+					ain: [
+					  '2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+					  '2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+					  '2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+					],
+					but: [ 'gb-2300-16398-IDJKE0C' ],
+					coast: [ 'gb-2300-15259-IDJIYS2', 'gb-2300-16398-IDJKE0C' ],
+					cross: [ 'gb-2300-15259-IDJIYS2', 'gb-2300-16398-IDJKE0C' ],
+					dead: [ 'gb-2300-15259-IDJIYS2' ],
+					double: [ '2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY' ],
+					dragon: [ '2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY' ],
+					evil: [ '2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY' ],
+					fighter: [ '2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N' ],
+					game: [
+					  '2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+					  '2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+					  '2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+					],
+					goodbye: [ 'gb-2300-16398-IDJKE0C' ],
+					later: [ 'gb-2300-16398-IDJKE0C' ],
+					no: [
+					  '2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+					  '2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+					  '2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+					],
+					not: [ 'gb-2300-16398-IDJKE0C' ],
+					red: [ 'gb-2300-15259-IDJIYS2' ],
+					redemption: [ 'gb-2300-15259-IDJIYS2' ],
+					resident: [ '2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY' ],
+					s: [ 'gb-2300-16398-IDJKE0C' ],
+					see: [ 'gb-2300-16398-IDJKE0C' ],
+					stream: [ 'gb-2300-16398-IDJKE0C' ],
+					street: [ '2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N' ],
+					t: [
+					  '2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+					  '2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+					  '2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+					],
+					this: [
+					  '2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+					  '2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+					  '2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+					],
+					you: [ 'gb-2300-16398-IDJKE0C' ],
 				})
 			)
 
-			const dataStore = new DataStore([], videoData)
+			const dataStore = new DataStore(testShowData, testVideoData)
 
 			expect(dataStore.videoIndex).toStrictEqual(expected)
 		})
