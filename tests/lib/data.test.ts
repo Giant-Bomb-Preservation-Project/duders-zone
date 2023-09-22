@@ -15,7 +15,6 @@ const testShowData = [
 			'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
 			'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
 			'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
-			'2009-03-05-This_Aint_No_Game-This_Aint_No_Game_TANG_Final_Fantasy_VII_Advent_Children-IDP0ST4I',
 		],
 	},
 	{
@@ -30,7 +29,7 @@ const testShowData = [
 const testVideoData = [
 	{
 		id: 'gb-2300-15259-IDJIYS2',
-		title: 'Cross Coast: Red Dead Redemption 2 (03/02/2020)',
+		title: 'Cross Coast: Red Dead Redemption 2',
 		description: "Let's posse up and see what's new in the world of Red Dead.",
 		date: '2020-03-02T00:00:00Z',
 		thumbnail: 'https://archive.org/services/img/gb-2300-15259-IDJIYS2',
@@ -68,14 +67,6 @@ const testVideoData = [
 		thumbnail:
 			'https://archive.org/services/img/2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
 	},
-	{
-		id: '2009-03-05-This_Aint_No_Game-This_Aint_No_Game_TANG_Final_Fantasy_VII_Advent_Children-IDP0ST4I',
-		title: "This Ain't No Game: TANG: Final Fantasy VII Advent Children",
-		description: 'Ryan dives deep into this tale of love, loss, and Sephiroth.',
-		date: '2009-03-05T00:00:00Z',
-		thumbnail:
-			'https://archive.org/services/img/2009-03-05-This_Aint_No_Game-This_Aint_No_Game_TANG_Final_Fantasy_VII_Advent_Children-IDP0ST4I',
-	},
 ]
 
 describe('DataStore', () => {
@@ -101,14 +92,13 @@ describe('DataStore', () => {
 						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
 						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
 						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
-						'2009-03-05-This_Aint_No_Game-This_Aint_No_Game_TANG_Final_Fantasy_VII_Advent_Children-IDP0ST4I',
 					],
 				},
 			}
 			const expectedVideos = {
 				'gb-2300-15259-IDJIYS2': {
 					id: 'gb-2300-15259-IDJIYS2',
-					title: 'Cross Coast: Red Dead Redemption 2 (03/02/2020)',
+					title: 'Cross Coast: Red Dead Redemption 2',
 					description: "Let's posse up and see what's new in the world of Red Dead.",
 					date: new Date('2020-03-02T00:00:00Z'),
 					thumbnail: 'https://archive.org/services/img/gb-2300-15259-IDJIYS2',
@@ -152,16 +142,6 @@ describe('DataStore', () => {
 						'https://archive.org/services/img/2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
 					show: 'this-aint-no-game',
 				},
-				'2009-03-05-This_Aint_No_Game-This_Aint_No_Game_TANG_Final_Fantasy_VII_Advent_Children-IDP0ST4I':
-					{
-						id: '2009-03-05-This_Aint_No_Game-This_Aint_No_Game_TANG_Final_Fantasy_VII_Advent_Children-IDP0ST4I',
-						title: "This Ain't No Game: TANG: Final Fantasy VII Advent Children",
-						description: 'Ryan dives deep into this tale of love, loss, and Sephiroth.',
-						date: new Date('2009-03-05T00:00:00Z'),
-						thumbnail:
-							'https://archive.org/services/img/2009-03-05-This_Aint_No_Game-This_Aint_No_Game_TANG_Final_Fantasy_VII_Advent_Children-IDP0ST4I',
-						show: 'this-aint-no-game',
-					},
 			}
 
 			const dataStore = new DataStore(testShowData, testVideoData)
@@ -171,44 +151,62 @@ describe('DataStore', () => {
 		})
 
 		it('generates a video index', () => {
-			const videoData: Video[] = [
-				{
-					id: 'mfv',
-					title: 'My Fancy Video',
-					description: 'Description.',
-					date: new Date(),
-					show: undefined,
-					thumbnail: undefined,
-				},
-				{
-					id: 'vgab',
-					title: 'Video Games Are Bad',
-					description: 'Description.',
-					date: new Date(),
-					show: undefined,
-					thumbnail: undefined,
-				},
-				{
-					id: 'mbv',
-					title: 'My Bad Video',
-					description: 'Description.',
-					date: new Date(),
-					show: undefined,
-					thumbnail: undefined,
-				},
-			]
 			const expected = new Map(
 				Object.entries({
-					my: ['mfv', 'mbv'],
-					fancy: ['mfv'],
-					video: ['mfv', 'vgab', 'mbv'],
-					games: ['vgab'],
-					are: ['vgab'],
-					bad: ['vgab', 'mbv'],
+					'2': ['gb-2300-15259-IDJIYS2'],
+					abbys: ['gb-2300-16398-IDJKE0C'],
+					aint: [
+						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+					],
+					but: ['gb-2300-16398-IDJKE0C'],
+					coast: ['gb-2300-15259-IDJIYS2', 'gb-2300-16398-IDJKE0C'],
+					cross: ['gb-2300-15259-IDJIYS2', 'gb-2300-16398-IDJKE0C'],
+					dead: ['gb-2300-15259-IDJIYS2'],
+					double: [
+						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+					],
+					dragon: [
+						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+					],
+					evil: ['2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY'],
+					fighter: [
+						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+					],
+					game: [
+						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+					],
+					goodbye: ['gb-2300-16398-IDJKE0C'],
+					later: ['gb-2300-16398-IDJKE0C'],
+					no: [
+						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+					],
+					not: ['gb-2300-16398-IDJKE0C'],
+					red: ['gb-2300-15259-IDJIYS2'],
+					redemption: ['gb-2300-15259-IDJIYS2'],
+					resident: [
+						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+					],
+					see: ['gb-2300-16398-IDJKE0C'],
+					stream: ['gb-2300-16398-IDJKE0C'],
+					street: [
+						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+					],
+					this: [
+						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+					],
+					you: ['gb-2300-16398-IDJKE0C'],
 				})
 			)
 
-			const dataStore = new DataStore([], videoData)
+			const dataStore = new DataStore(testShowData, testVideoData)
 
 			expect(dataStore.videoIndex).toStrictEqual(expected)
 		})
@@ -296,13 +294,75 @@ describe('DataStore', () => {
 	})
 
 	describe('searchVideos', () => {
-		it('gets a specific show', () => {
+		it('gets a specific video', () => {
 			const dataStore = new DataStore(testShowData, testVideoData)
 			const result = dataStore.searchVideos('evil')
 
 			expect(result.map((x) => x.id)).toStrictEqual([
 				'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
 			])
+		})
+
+		it('weighs exact matches higher than non-exact ones', () => {
+			const videoData = [
+				{
+					id: 'not_exact',
+					title: 'Not Exact Testing',
+					description: '',
+					date: '2020-03-02T00:00:00Z',
+					thumbnail: null,
+				},
+				{
+					id: 'exact',
+					title: 'Exact Test',
+					description: '',
+					date: '2020-03-02T00:00:00Z',
+					thumbnail: null,
+				},
+				{
+					id: 'not_included',
+					title: 'Not Included',
+					description: '',
+					date: '2020-03-02T00:00:00Z',
+					thumbnail: null,
+				},
+			]
+
+			const dataStore = new DataStore(testShowData, videoData)
+			const result = dataStore.searchVideos('test')
+
+			expect(result.map((x) => x.id)).toStrictEqual(['exact', 'not_exact'])
+		})
+
+		it('weighs multiple word matches higher than single ones', () => {
+			const videoData = [
+				{
+					id: 'only_one',
+					title: 'Test',
+					description: '',
+					date: '2020-03-02T00:00:00Z',
+					thumbnail: null,
+				},
+				{
+					id: 'two',
+					title: 'Test Thing',
+					description: '',
+					date: '2020-03-02T00:00:00Z',
+					thumbnail: null,
+				},
+				{
+					id: 'none',
+					title: 'Explosive Bananas',
+					description: '',
+					date: '2020-03-02T00:00:00Z',
+					thumbnail: null,
+				},
+			]
+
+			const dataStore = new DataStore(testShowData, videoData)
+			const result = dataStore.searchVideos('test thing')
+
+			expect(result.map((x) => x.id)).toStrictEqual(['two', 'only_one'])
 		})
 	})
 })
