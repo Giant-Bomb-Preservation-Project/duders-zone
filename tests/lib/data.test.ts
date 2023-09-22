@@ -15,7 +15,6 @@ const testShowData = [
 			'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
 			'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
 			'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
-			'2009-03-05-This_Aint_No_Game-This_Aint_No_Game_TANG_Final_Fantasy_VII_Advent_Children-IDP0ST4I',
 		],
 	},
 	{
@@ -30,7 +29,7 @@ const testShowData = [
 const testVideoData = [
 	{
 		id: 'gb-2300-15259-IDJIYS2',
-		title: 'Cross Coast: Red Dead Redemption 2 (03/02/2020)',
+		title: 'Cross Coast: Red Dead Redemption 2',
 		description: "Let's posse up and see what's new in the world of Red Dead.",
 		date: '2020-03-02T00:00:00Z',
 		thumbnail: 'https://archive.org/services/img/gb-2300-15259-IDJIYS2',
@@ -68,14 +67,6 @@ const testVideoData = [
 		thumbnail:
 			'https://archive.org/services/img/2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
 	},
-	{
-		id: '2009-03-05-This_Aint_No_Game-This_Aint_No_Game_TANG_Final_Fantasy_VII_Advent_Children-IDP0ST4I',
-		title: "This Ain't No Game: TANG: Final Fantasy VII Advent Children",
-		description: 'Ryan dives deep into this tale of love, loss, and Sephiroth.',
-		date: '2009-03-05T00:00:00Z',
-		thumbnail:
-			'https://archive.org/services/img/2009-03-05-This_Aint_No_Game-This_Aint_No_Game_TANG_Final_Fantasy_VII_Advent_Children-IDP0ST4I',
-	},
 ]
 
 describe('DataStore', () => {
@@ -101,14 +92,13 @@ describe('DataStore', () => {
 						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
 						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
 						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
-						'2009-03-05-This_Aint_No_Game-This_Aint_No_Game_TANG_Final_Fantasy_VII_Advent_Children-IDP0ST4I',
 					],
 				},
 			}
 			const expectedVideos = {
 				'gb-2300-15259-IDJIYS2': {
 					id: 'gb-2300-15259-IDJIYS2',
-					title: 'Cross Coast: Red Dead Redemption 2 (03/02/2020)',
+					title: 'Cross Coast: Red Dead Redemption 2',
 					description: "Let's posse up and see what's new in the world of Red Dead.",
 					date: new Date('2020-03-02T00:00:00Z'),
 					thumbnail: 'https://archive.org/services/img/gb-2300-15259-IDJIYS2',
@@ -152,16 +142,6 @@ describe('DataStore', () => {
 						'https://archive.org/services/img/2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
 					show: 'this-aint-no-game',
 				},
-				'2009-03-05-This_Aint_No_Game-This_Aint_No_Game_TANG_Final_Fantasy_VII_Advent_Children-IDP0ST4I':
-					{
-						id: '2009-03-05-This_Aint_No_Game-This_Aint_No_Game_TANG_Final_Fantasy_VII_Advent_Children-IDP0ST4I',
-						title: "This Ain't No Game: TANG: Final Fantasy VII Advent Children",
-						description: 'Ryan dives deep into this tale of love, loss, and Sephiroth.',
-						date: new Date('2009-03-05T00:00:00Z'),
-						thumbnail:
-							'https://archive.org/services/img/2009-03-05-This_Aint_No_Game-This_Aint_No_Game_TANG_Final_Fantasy_VII_Advent_Children-IDP0ST4I',
-						show: 'this-aint-no-game',
-					},
 			}
 
 			const dataStore = new DataStore(testShowData, testVideoData)
