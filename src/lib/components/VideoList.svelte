@@ -66,7 +66,7 @@
 <ul class={currentMode}>
 	{#each videos as video}
 		<li>
-			<a href="{rootUri || `shows/${video.show}`}/{video.id}">
+			<a href="{rootUri || `/shows/${video.show}`}/{video.id}">
 				<div class="thumbnail">
 					<Thumbnail src={video.thumbnail || '/assets/default.jpg'} alt="" />
 				</div>
