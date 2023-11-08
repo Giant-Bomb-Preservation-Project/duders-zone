@@ -16,7 +16,7 @@
 			<p>Watch videos from the archive, 24/7.</p>
 		</div>
 		<div class="link">
-			<a href="/infinite">
+			<a href="https://www.giantbomb.com/infinite/">
 				<Thumbnail src={promoInfinite} alt="Giant Bomb Infinite" />
 			</a>
 		</div>
