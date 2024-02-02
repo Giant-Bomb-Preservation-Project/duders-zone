@@ -13286,13 +13286,6 @@
         "thumbnail": "https://archive.org/services/img/gb-2300-12364"
     },
     {
-        "id": "gb-2300-12365",
-        "title": "Playdate: Nancy Drew - Message in a Haunted Mansion (07/07/2017)",
-        "description": "Abby shows Dan and Vinny the ins and outs of the Nancy Drew series, until Special Guest Jeff Bakalar comes in and derails everything.",
-        "date": "2017-07-07T00:00:00Z",
-        "thumbnail": "https://archive.org/services/img/gb-2300-12365"
-    },
-    {
         "id": "gb-2300-12366-ID1OZJK",
         "title": "Unprofessional Fridays: 07/07/2017",
         "description": "Jeff, Ben, and Jason bring you the best in video games that you brought to us.",
@@ -46207,6 +46200,20 @@
         "thumbnail": "https://archive.org/services/img/gb-2300-18760-IDA3DKC"
     },
     {
+        "id": "gb-2300-18761-ID87QN3",
+        "title": "Game Mess Mornings 10/27/23",
+        "description": "Grubb is joined by Jason Fanelli to chat about Alan Wake 2 updates, a possible Dragon Quest game in the future, Insomniac addressing complaints, and more!",
+        "date": "2023-10-27T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18761-ID87QN3"
+    },
+    {
+        "id": "gb-2300-18762-IDS3T90",
+        "title": "Unprofessional Fridays: Ghost Busters: Spirits Unleashed ECTO Edition",
+        "description": "The ONLY way to properly hunt ghosts is by matching jumpsuits and gold chains!",
+        "date": "2023-10-27T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18762-IDS3T90"
+    },
+    {
         "id": "gb-2300-18763-IDGHTGM",
         "title": "Game Mess Mornings 10/31/23",
         "description": "Grubb is joined by Evan Campbell to chat about an interesting new Nintendo patent, Xbox blocking unauthorized third-party controllers, Sakurai's views on the future of Smash, and more!",
@@ -46298,11 +46305,277 @@
         "thumbnail": "https://archive.org/services/img/gb-2300-18774-IDTGU2K"
     },
     {
+        "id": "gb-2300-18775-IDA8RY5",
+        "title": "Giant Bombcast 814: Grunt Double",
+        "description": "Today we're joined by Nathan Grayson and Chris Person to talk about their new website: Aftermath.site! We chat about the hidden horrors of PG movies, climbing mountains in Jusant, Like a Dragon Gaiden: The Man Who Erased His Name, questionable VO in Mortal Kombat 1, and guiding people around in Humanity. We also chat about Epic Games Store not making money, the Nintendo Switch continuing to sell a lot, Xbox and AI tools, walking in the woods, and more!",
+        "date": "2023-11-07T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18775-IDA8RY5"
+    },
+    {
+        "id": "gb-2300-18776-ID3IGFB",
+        "title": "Giant Bombcast 814: Grunt Double",
+        "description": "Today we're joined by Nathan Grayson and Chris Person to talk about their new website: Aftermath.site! We chat about the hidden horrors of PG movies, climbing mountains in Jusant, Like a Dragon Gaiden: The Man Who Erased His Name, questionable VO in Mortal Kombat 1, and guiding people around in Humanity. We also chat about Epic Games Store not making money, the Nintendo Switch continuing to sell a lot, Xbox and AI tools, walking in the woods, and more!",
+        "date": "2023-11-07T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18776-ID3IGFB"
+    },
+    {
+        "id": "gb-2300-18777-ID8E7SA",
+        "title": "Game Mess Mornings 11/08/23",
+        "description": "Grubb and Tam breakdown a whole slew of news like a trailer for GTA 6 coming, Mass Effect teases, and a LEGEND OF ZELDA MOVIE?",
+        "date": "2023-11-08T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18777-ID8E7SA"
+    },
+    {
+        "id": "gb-2300-18778-IDSM1D0",
+        "title": "Voicemail Dump Truck 92",
+        "description": "Bailey Meyers joins us on the Dump Truck again to chat about sweaters, Swifties, changing names, and Birmingham Alabama beef! Call into the Voicemail Dump Truck (707)EXIT-FLU",
+        "date": "2023-11-08T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18778-IDSM1D0"
+    },
+    {
+        "id": "gb-2300-18779-IDPG7BH",
+        "title": "OLED STEAM DECK",
+        "description": "Dan and Jan popped over to Seattle to visit Valve's HQ to check out the NEW OLED Steam Deck! They run a series of scientific tests to run the new Steam Deck through its paces, admire a special special edition, and enter a spherical...thing.",
+        "date": "2023-11-09T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18779-IDPG7BH"
+    },
+    {
         "id": "gb-2300-1878-ID5QBK5",
         "title": "Quick Look: VVVVVV",
         "description": "Jeff, Ryan, and Vinny turn their worlds upside down in this fauxback for the PC.",
         "date": "2010-01-14T00:00:00Z",
         "thumbnail": "https://archive.org/services/img/gb-2300-1878-ID5QBK5"
+    },
+    {
+        "id": "gb-2300-18781-ID18GPV",
+        "title": "Game Mess Mornings 11/13/23",
+        "description": "Grubb is joined by Britton Peele today to chat about the PlayStation Portal, Modern Warfare 3 charting despite poor reviews, PS5's detachable disc drive tests, and more! Find Britton Peele on the internet here: https://twitter.com/BrittonPeele",
+        "date": "2023-11-13T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18781-ID18GPV"
+    },
+    {
+        "id": "gb-2300-18782-IDEKFRZ",
+        "title": "Giant Bombcast 815: Egg But Big",
+        "description": "We got Disney Trivia Champion Mike Minotti back on the podcast as we chat about Slay the Princess, Thirsty Suitors, Hans, and some quick impressions on the PlayStation Portal! We also cover Nintendo Indie World, the Game Awards Nominee list, Rocksteady steadily pushing Suicide Squad along, and more! WE'RE ALSO PUTTING ON A LIVE SHOW! Giant Bomb's Game of the Year LIVE will be 12/9/23, 12pm, at the Moroccan Lounge! Tickets available soooon!",
+        "date": "2023-11-14T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18782-IDEKFRZ"
+    },
+    {
+        "id": "gb-2300-18783-IDOWEBV",
+        "title": "Game Mess Mornings 11/15/23",
+        "description": "Grubb has TurboShawn on to chat about Super Mario RPG reviews popping in, the October Circana report, Like a Dragon: Infinite Wealth's fat length, and more!",
+        "date": "2023-11-15T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18783-IDOWEBV"
+    },
+    {
+        "id": "gb-2300-18784-IDEQ68G",
+        "title": "Ride to Grubb: Jefftribution | Part 3",
+        "description": "You can't fly out of hell, but you can definitely have physical relations with multiple people!",
+        "date": "2023-11-15T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18784-IDEQ68G"
+    },
+    {
+        "id": "gb-2300-18785-ID9TVIX",
+        "title": "Game Mess Mornings 11/16/23",
+        "description": "Grubb is joined by Jan to chat about SEGA trying to flip their IPs to movies and shows, Rocksteady potentially fixing Suicide Squad, and some deep cleavage in games!",
+        "date": "2023-11-16T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18785-ID9TVIX"
+    },
+    {
+        "id": "gb-2300-18786-IDBCHK4",
+        "title": "Unprofessional Fridays: Oops all Nickis!",
+        "description": "Nothing more unprofessional than doing a Friday show on Thursday! Grubb, Bakalar, Shawn, and Niki throw on their pink to drop into whatever chaos is currently going on in Call of Duty to DOMINATE!",
+        "date": "2023-11-16T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18786-IDBCHK4"
+    },
+    {
+        "id": "gb-2300-18787-ID3VIR7",
+        "title": "Voicemail Dump Truck 93",
+        "description": "The Dump Truck is full of coasters that you can put any and all beverages on! We answer your quandries about plants communicating, milk drinking, developing good habits, and more! Call into the Dump Truck (707)EXIT-FLU and leave a message!",
+        "date": "2023-11-16T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18787-ID3VIR7"
+    },
+    {
+        "id": "gb-2300-18788-IDGFEDM",
+        "title": "Game Mess Mornings 11/17/23",
+        "description": "Grubb and Tam have a lovely Dregsday chatting about Dragon's Dogma 2 updates, the PlayStation Portal selling out, and more!",
+        "date": "2023-11-17T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18788-IDGFEDM"
+    },
+    {
+        "id": "gb-2300-18791-IDQB2SP",
+        "title": "Game Mess Mornings 11/20/23",
+        "description": "Grubb is joined by Jordan Middler to chat about the Last of Us Part 2 Remaster, Valve celebrating Half-Life's 25th anniversary, David Hayter hinting at future Metal Gear, and more! Also! If you missed out on the initial sales of tickets to the Giant Bomb GOTY Finale, we've switched venues and opened up more tickets! https://t.co/U7JmDasDmi",
+        "date": "2023-11-20T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18791-IDQB2SP"
+    },
+    {
+        "id": "gb-2300-18793-ID5OG9Z",
+        "title": "Giant Bombcast 816: Nice Cute Lil Dudes",
+        "description": "Make sure to defrost your turkies! This week we chat about the Lenovo Legion Go, Persona 5 Tactica, Super Mario RPG, and Chants of Sennaar! We also talk about the Switch 2 not having DLSS, Pokemon never going extinct, and more! If you missed out on tickets to the Giant Bomb Game of the Year LIVE, we've switched up venues and have more on sale: https://www.ticketmaster.com/giant-bomb-los-angeles-california-12-09-2023/event/09005F6FEAF94234",
+        "date": "2023-11-21T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18793-ID5OG9Z"
+    },
+    {
+        "id": "gb-2300-18794-IDZIQZ6",
+        "title": "Giant Bombcast 816: Nice Cute Lil Dudes",
+        "description": "Make sure to defrost your turkies! This week we chat about the Lenovo Legion Go, Persona 5 Tactica, Super Mario RPG, and Chants of Sennaar! We also talk about the Switch 2 not having DLSS, Pokemon never going extinct, and more! If you missed out on tickets to the Giant Bomb Game of the Year LIVE, we've switched up venues and have more on sale: https://www.ticketmaster.com/giant-bomb-los-angeles-california-12-09-2023/event/09005F6FEAF94234",
+        "date": "2023-11-21T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18794-IDZIQZ6"
+    },
+    {
+        "id": "gb-2300-18795-IDGKJBG",
+        "title": "Game Mess Mornings 11/27/23",
+        "description": "Grubb has Lexi on to chat about The Game Awards beefing up security and moving away from \"WORLD PREMIERE\" branding, Silent Hill 2 Remake updates, Level-5 potentially putting out Professor Layton back out, and more!",
+        "date": "2023-11-27T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18795-IDGKJBG"
+    },
+    {
+        "id": "gb-2300-18796-IDPETCZ",
+        "title": "Giant Bombcast 817: CATHOLIC KARATE",
+        "description": "Right before we get to Game of the Year this week we continue the mad dash to play all the games! Bailey joins us this week as we talk about Venba, El Paso Elsewhere, finishing Jusant, trying our hardest to continue through Alan Wake 2 and Baldur's Gate 3! We're a little light on the news this week but we chat about Sony's class action lawsuit, Killer Instinct getting a new Anniversary Edition, and Bethesda replying to negative Steam reviews.",
+        "date": "2023-11-28T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18796-IDPETCZ"
+    },
+    {
+        "id": "gb-2300-18797-IDTJUK8",
+        "title": "Giant Bombcast 817: CATHOLIC KARATE",
+        "description": "Right before we get to Game of the Year this week we continue the mad dash to play all the games! Bailey joins us this week as we talk about Venba, El Paso Elsewhere, finishing Jusant, trying our hardest to continue through Alan Wake 2 and Baldur's Gate 3! We're a little light on the news this week but we chat about Sony's class action lawsuit, Killer Instinct getting a new Anniversary Edition, and Bethesda replying to negative Steam reviews.",
+        "date": "2023-11-28T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18797-IDTJUK8"
+    },
+    {
+        "id": "gb-2300-18798-ID84GF6",
+        "title": "Game Mess Mornings 11/29/23",
+        "description": "Steve Saylor joins Grubb this morning to chat about weak sales for Sonic Superstars, Dragon's Dogma 2's confirmed release date, Beyond Good & Evil's Anniversary edition, layoffs at Unity, Shadow the Hedgehog's feet, and more!",
+        "date": "2023-11-29T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18798-ID84GF6"
+    },
+    {
+        "id": "gb-2300-18799-IDYRQ8G",
+        "title": "04",
+        "description": "BLIGHT CLUB CLASSIFIES AS AN ORGANIZED CRIME UNIT IN THE UNITED STATES. Grubb and company continue their ride through this terrible terrible blight that is Ride to Hell: Retribution.",
+        "date": "2023-11-29T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18799-IDYRQ8G"
+    },
+    {
+        "id": "gb-2300-18803-ID2IYOP",
+        "title": "2023: Day 2",
+        "description": "SCREW IT! WE'LL DO IT LIVE! Join us as we continue down the journey of Game of the Year 2023. The whole crew is mostly here to chat about seven more categories: - BEST PIKMIN - Bloodborne Presents OLD GAME OF THE YEAR - Psi-Ops Presents BEST DUDE-TOSSING - BEST MULTIPLAYER - Soulja Boy Presents Best Game For People Who Drink Beer And Get Drunk or Smoke Weed and Get High and who macrodose to deal with the pain of everyday life - MOST B-GAME - Cheesecake Factory Presents PETER MOLYNEUX MEMORIAL (he’s fine)",
+        "date": "2023-12-04T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18803-ID2IYOP"
+    },
+    {
+        "id": "gb-2300-18804-IDZD3I6",
+        "title": "2023: Day 3",
+        "description": "We're all together IN PERSON for DAY 3 of the Game of the Year! Today we begin the whittling process to get to the TOP 20 Games of the Year to start the voting process. Do the knives come out? What harsh cuts need to be made? What games will make it to the Silver Spoon?",
+        "date": "2023-12-07T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18804-IDZD3I6"
+    },
+    {
+        "id": "gb-2300-18805-IDPEZHT",
+        "title": "Giant Bomb at Nite (12/06/23)",
+        "description": "We brought the couch back to Los Angeles to chat with all of our friends in and around the industry before The Game Awards pops off! *edited out the breaks and tried to clean up the audio! 00:00 - Segment 1 - Couch: Jake Baldino, Lucy James, Emma Fyffe | Back Row: Tamoor Hussain, Michael Higham 45:43 - Segment 2 - Couch: Alyssa Mercante, Jen Glennon, Brittani Johnson, Steve Saylor | Back Row: Shawn Kittelson, John Drake 01:24:18 - Segment 3 - Couch: Jake Steinberg, Kahlief Adams, Parris Lillly | Back",
+        "date": "2023-12-08T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18805-IDPEZHT"
+    },
+    {
+        "id": "gb-2300-18806-IDN6S99",
+        "title": "Game Mess Mornings 12/11/23",
+        "description": "Grubb's back after a long week in LA and is joined again by Rachel Kaser! They chat about Fortnite shooting back up the charts thanks to LEGO, Final Fantasy XVI and Tears of the Kingdom not getting sequels, and SEGA getting edgy with it's games.",
+        "date": "2023-12-11T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18806-IDN6S99"
+    },
+    {
+        "id": "gb-2300-18807-IDF1P6V",
+        "title": "Giant Bombcast 818: Please Wrap it Up",
+        "description": "We're back after a long week in Los Angeles! We recap our time during The Game Awards and then GB Live, as well as our misecellaneous shenanigans around Los Angles, and also we squeeze in talking about video games! We also bit adieu to E3 as it is officially announced as gone!",
+        "date": "2023-12-12T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18807-IDF1P6V"
+    },
+    {
+        "id": "gb-2300-18808-IDJE4L9",
+        "title": "Giant Bombcast 818: Please Wrap it Up",
+        "description": "We're back after a long week in Los Angeles! We recap our time during The Game Awards and then GB Live, as well as our misecellaneous shenanigans around Los Angles, and also we squeeze in talking about video games! We also bit adieu to E3 as it is officially announced as gone!",
+        "date": "2023-12-12T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18808-IDJE4L9"
+    },
+    {
+        "id": "gb-2300-18809-ID6RSX7",
+        "title": "Game Mess Mornings 12/13/23",
+        "description": "Grubb is joined by Lucy today to chat over November's Circana numbers, GTA 6's PC Port not coming at launch, Indiana Jones' exclusivity, and Valve urging users to STOP smelling their Steam Deck vents.",
+        "date": "2023-12-13T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18809-ID6RSX7"
+    },
+    {
+        "id": "gb-2300-18810-ID8G80W",
+        "title": "2023: FINALE",
+        "description": "WE HAVE ASSEMBLED IN PERSON to discuss some more categories like \"Please Stop\", \"Most Disappointing\", \"Best Moment/Sequence\", and to crown the real GAME OF THE YEAR!",
+        "date": "2023-12-13T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18810-ID8G80W"
+    },
+    {
+        "id": "gb-2300-18811-ID4IKFY",
+        "title": "2023: FINALE",
+        "description": "WE HAVE ASSEMBLED IN PERSON to discuss some more categories like \"Please Stop\", \"Most Disappointing\", \"Best Moment/Sequence\", and to crown the real GAME OF THE YEAR!",
+        "date": "2023-12-13T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18811-ID4IKFY"
+    },
+    {
+        "id": "gb-2300-18812-ID5IKG3",
+        "title": "Ride to Grubb: Jefftribution | Part 5",
+        "description": "Grubb has to be close to the end now with Ride to Hell right? HE HAS TO BE CLOSE TO THE END. RIGHT?",
+        "date": "2023-12-13T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18812-ID5IKG3"
+    },
+    {
+        "id": "gb-2300-18813-IDE3MVE",
+        "title": "Game Mess Mornings 12/14/23",
+        "description": "Grubb and Jan are here to chat about the Insomniac leak and what it might mean for Spider-Man games moving forwards, Fall Out 4's current gen port being pushed off to 2024, and more stories!",
+        "date": "2023-12-14T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18813-IDE3MVE"
+    },
+    {
+        "id": "gb-2300-18814-IDHQQGH",
+        "title": "The Finals",
+        "description": "Jeff, Jeff, and Jan are ready to cash in all their money with The Finals! Let's steak bank vaults, blow up buildings, shoot off grappling hooks, swing hammers and LET'S BURST INTO COINS!",
+        "date": "2023-12-14T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18814-IDHQQGH"
+    },
+    {
+        "id": "gb-2300-18815-ID0US3Y",
+        "title": "Voicemail Dump Truck 95",
+        "description": "The Dump Truck has roused from its brief slumber to chat about health problems, favorite parts of the foot, and more! Call into the Dump Truck at (707)EXIT-FLU!",
+        "date": "2023-12-14T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18815-ID0US3Y"
+    },
+    {
+        "id": "gb-2300-18816-IDH00HL",
+        "title": "Voicemail Dump Truck 95",
+        "description": "The Dump Truck has roused from its brief slumber to chat about health problems, favorite parts of the foot, and more! Call into the Dump Truck at (707)EXIT-FLU!",
+        "date": "2023-12-14T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18816-IDH00HL"
+    },
+    {
+        "id": "gb-2300-18817-IDHNR18",
+        "title": "Game Mess Mornings 12/15/23",
+        "description": "Grubb and Tam are here to chat about all the video game news. News like The Last of Us Multiplayer game getting canceled, more layoffs at Embracer, TGAs setting records, and more DREGS!",
+        "date": "2023-12-15T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18817-IDHNR18"
+    },
+    {
+        "id": "gb-2300-18818-IDSLS76",
+        "title": "2023: BONUS Day",
+        "description": "We couldn't end Game of the Year season without deliberating on Best Game Music of the year! Listen along as we rediscover banger after banger and try our hardest to crown today's winner. Special thanks to YOU at home for hanging out this whole Game of the Year season. &lt;3",
+        "date": "2023-12-15T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18818-IDSLS76"
+    },
+    {
+        "id": "gb-2300-18819-ID8WPK6",
+        "title": "2023: BONUS Day",
+        "description": "We couldn't end Game of the Year season without deliberating on Best Game Music of the year! Listen along as we rediscover banger after banger and try our hardest to crown today's winner. Special thanks to YOU at home for hanging out this whole Game of the Year season. &lt;3",
+        "date": "2023-12-15T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18819-ID8WPK6"
     },
     {
         "id": "gb-2300-1882",
@@ -46312,11 +46585,347 @@
         "thumbnail": "https://archive.org/services/img/gb-2300-1882"
     },
     {
+        "id": "gb-2300-18820-IDJP7H5",
+        "title": "Unprofessional Fridays: Unprofessional Company",
+        "description": "Absolutely nothing can go wrong when you throw 4 rascals into space without any instructions and a clibbard.",
+        "date": "2023-12-15T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18820-IDJP7H5"
+    },
+    {
+        "id": "gb-2300-18821-IDV1FOA",
+        "title": "Game Mess Mornings 12/18/23",
+        "description": "Grubb has Scott McCrae on today's show to chat about Activision settling their discrimination lawsuit, a possible DLC chapter for Elden Ring, and maybe a Luigi appearence in the original Super Mario 64!",
+        "date": "2023-12-18T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18821-IDV1FOA"
+    },
+    {
+        "id": "gb-2300-18822-ID66672",
+        "title": "Giant Bombcast 819: Dirty JPEGs",
+        "description": "Welcome to the last live Bombcast of the year! We have a great time zipping around in The Finals, reset our futures in God of War: Valhalla, and flip dwellings in House Flipper 2! We also have an extended chat about the unfortunate Insomniac leaks, the discovery of a possible Luigi in Super Mario 64, and your emails!",
+        "date": "2023-12-19T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18822-ID66672"
+    },
+    {
+        "id": "gb-2300-18823-ID0JHI6",
+        "title": "Giant Bombcast 819: Dirty JPEGs",
+        "description": "Welcome to the last live Bombcast of the year! We have a great time zipping around in The Finals, reset our futures in God of War: Valhalla, and flip dwellings in House Flipper 2! We also have an extended chat about the unfortunate Insomniac leaks, the discovery of a possible Luigi in Super Mario 64, and your emails!",
+        "date": "2023-12-19T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18823-ID0JHI6"
+    },
+    {
+        "id": "gb-2300-18824-IDXO5YB",
+        "title": "Game Mess Mornings 12/20/23",
+        "description": "Grubb and Lucy finish the year with another round up of video game news! We cover a 2025 Black Ops 2 sequel, some updates to the Insomiac leaks, and even more!",
+        "date": "2023-12-20T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18824-IDXO5YB"
+    },
+    {
+        "id": "gb-2300-18825-IDJTGPW",
+        "title": "Lethal Company",
+        "description": "Let's get the whole gang on a little ship and collect some trash for a tentacle monster! We try out a modded version of Lethal Company and we become the most efficient company that totally survives each day and spends their money wisely.",
+        "date": "2023-12-20T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18825-IDJTGPW"
+    },
+    {
+        "id": "gb-2300-18826-IDVMJ7A",
+        "title": "Ride to Grubb: Jefftribution | Part 6",
+        "description": "Grubb revs up his engines to try and have one last ride to end this year and end this blight!",
+        "date": "2023-12-20T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18826-IDVMJ7A"
+    },
+    {
+        "id": "gb-2300-18827-IDBD9VZ",
+        "title": "Voicemail Dump Truck 96",
+        "description": "The Voicemail Dump Truck is backing up on the last dump of the year! We learn about Mike's extensive yodeling abilities and barely pick up the phone to answer your calls! Yabadadooooooo!",
+        "date": "2023-12-21T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18827-IDBD9VZ"
+    },
+    {
+        "id": "gb-2300-18828-IDLCGW2",
+        "title": "Giant Bombcast 820: Jogger Strats",
+        "description": "We at GBHQ are hoping you're having a wonderful Holiday break! We got together to put one more Bombcast in the chamber before the new year! Jeff, Jeff, and Jan chat about the 2024 games that they're most excited about!",
+        "date": "2023-12-26T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18828-IDLCGW2"
+    },
+    {
+        "id": "gb-2300-18829-ID1F33H",
+        "title": "Giant Bombcast 820: Jogger Strats",
+        "description": "We at GBHQ are hoping you're having a wonderful Holiday break! We got together to put one more Bombcast in the chamber before the new year! Jeff, Jeff, and Jan chat about the 2024 games that they're most excited about!",
+        "date": "2023-12-26T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18829-ID1F33H"
+    },
+    {
+        "id": "gb-2300-18830-IDSNIYA",
+        "title": "Game Tapes Midway Rocks the House & Nintendo Power Starfox 64 Promo Video (1997)",
+        "description": "The only real way to celebrate the end of the year and the Holiday season is to load up some good ol' VHS tapes! We watch some old Midway bangers and whatever it is that Nintendo put together to promote Starfox 64!",
+        "date": "2023-12-27T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18830-IDSNIYA"
+    },
+    {
+        "id": "gb-2300-18831-ID3SONW",
+        "title": "Everything Else",
+        "description": "A lot of this footage has been burning a hole in a hard drive, so why not put it all out in one video? There's some extra bits from Pax West, Dream Hack, Summer Game Fest, and more!",
+        "date": "2023-12-31T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18831-ID3SONW"
+    },
+    {
+        "id": "gb-2300-18833-IDRNEY7",
+        "title": "Giant Bombcast 821: YOU CAN'T KICK ME",
+        "description": "Jan's out sick for this one, so Bakalar's taking over as co-captain of the ship! We're starting the new year right by talking about how soda sucks, Gremlins 2 (apparently) rules, and as it turns out: We like playing video games. Following that, we chat about how into Kojima's weirdness we are, the Switch getting a flash cart, and Mickey Mouse joining the public domain (featuring the opinions of a couple of our friends).",
+        "date": "2024-01-02T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18833-IDRNEY7"
+    },
+    {
+        "id": "gb-2300-18834-ID74FWM",
+        "title": "Game Mess Mornings 01/03/24",
+        "description": "Grubb is joined FOR THE FIRST TIME EVER by Jeff Bakalar to talk about Star Wars Outlaws' release window, Square Enix moving from NFT weirdness to AI weirdness, and Shigeru Miyamoto starting to think about retirement.",
+        "date": "2024-01-03T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18834-ID74FWM"
+    },
+    {
+        "id": "gb-2300-18835-IDIWPLQ",
+        "title": "Avatar: Frontiers of Pandora",
+        "description": "Let's experience pure bliss and connect our hair tails to each other! LET'S GO EYWA!",
+        "date": "2024-01-03T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18835-IDIWPLQ"
+    },
+    {
+        "id": "gb-2300-18836-IDGMJA0",
+        "title": "Ride to Grubb: Jefftribution | Part 7",
+        "description": "Grubb's canonical next step through Jake Conway's adventure!",
+        "date": "2024-01-03T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18836-IDGMJA0"
+    },
+    {
+        "id": "gb-2300-18837-IDRB0HJ",
+        "title": "Game Mess Mornings 01/04/24",
+        "description": "Grubb and guest Scott McCrae chat about Scott's preview of Like a Dragon: Infinite Wealth, a 13-year-old \"beating\" Tetris, and more!",
+        "date": "2024-01-04T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18837-IDRB0HJ"
+    },
+    {
+        "id": "gb-2300-18838-IDFFJFO",
+        "title": "Tetris 99",
+        "description": "We suck at Tetris, so we mostly talk about Avril Lavigne instead.",
+        "date": "2024-01-04T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18838-IDFFJFO"
+    },
+    {
+        "id": "gb-2300-18839-IDMKKCO",
+        "title": "Voicemail Dump Truck 97",
+        "description": "On a very special first Dump of 2024, Dan Ryckert learns who in his life is Italian.",
+        "date": "2024-01-04T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18839-IDMKKCO"
+    },
+    {
+        "id": "gb-2300-18840-IDA9QZZ",
+        "title": "Game Mess Mornings 01/05/24",
+        "description": "Grubb is joined by Jason Fanelli to talk about Konami's releases for the year, Steam's top games of 2023, and new PC gaming hardware!",
+        "date": "2024-01-05T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18840-IDA9QZZ"
+    },
+    {
+        "id": "gb-2300-18841-IDLWDH2",
+        "title": "Unprofessional Fridays: Microphone Games",
+        "description": "Dan's fingey hurts, so we try (TRY) to play games with our voices!",
+        "date": "2024-01-05T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18841-IDLWDH2"
+    },
+    {
+        "id": "gb-2300-18842-IDRFQ04",
+        "title": "Giant Bombcast 821: REVENGEANCE",
+        "description": "We had a bit of a light gaming week on account of being busy, but Jeff, Jeff, Shawn, and Niki are still here to give you a nice, long (and sometimes heated) conversation about what we predict PlayStation, Xbox, and Nintendo will do in 2024!",
+        "date": "2024-01-05T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18842-IDRFQ04"
+    },
+    {
+        "id": "gb-2300-18843-ID7JUVC",
+        "title": "Game Mess Mornings 01/08/24",
+        "description": "Grubb and Lex Luddy start the week by chatting about Hi-Fi Rush possibly heading over to the Nintendo Switch, high expectations for Senua's Saga: Hellblade II, an upcoming Xbox Direct, and even more!",
+        "date": "2024-01-08T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18843-ID7JUVC"
+    },
+    {
+        "id": "gb-2300-18844-ID42YQZ",
+        "title": "Giant Bombcast 822: Derelict Mall",
+        "description": "We have our dear friend friend John \"Super Eye Patch Wolf\" to chat about In Stars and Time, his experience with Lies of P, a bit of Void Strangers, Jan's forray into exposure therapy with Wallace & Gromit in The Grand Getaway, Asgard's Wrath II, Cobalt Core, and Grubb's time with Pacific Drive. We also chat about the possibility of a big Xbox game heading to other platforms, an upcoming Xbox Direct, and more!",
+        "date": "2024-01-09T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18844-ID42YQZ"
+    },
+    {
+        "id": "gb-2300-18845-IDW2Z4S",
+        "title": "Giant Bombcast 822: Derelict Mall",
+        "description": "We have our dear friend friend John \"Super Eye Patch Wolf\" to chat about In Stars and Time, his experience with Lies of P, a bit of Void Strangers, Jan's forray into exposure therapy with Wallace & Gromit in The Grand Getaway, Asgard's Wrath II, Cobalt Core, and Grubb's time with Pacific Drive. We also chat about the possibility of a big Xbox game heading to other platforms, an upcoming Xbox Direct, and more!",
+        "date": "2024-01-09T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18845-IDW2Z4S"
+    },
+    {
+        "id": "gb-2300-18846-IDX82B2",
+        "title": "Game Mess Mornings 01/10/24",
+        "description": "Grubb and Mike Minotti are here to chat about today's gaming headlines! They chat about Indiana Jones launching this year, Suicide Squad previews looking \"meh\", and more!",
+        "date": "2024-01-10T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18846-IDX82B2"
+    },
+    {
+        "id": "gb-2300-18847-IDT9UD0",
+        "title": "Pacific Drive",
+        "description": "Grubb and Jan go for a drive through the Pacific North West to scrap some cars, build a hammer, and drive straight into a giant beam!",
+        "date": "2024-01-10T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18847-IDT9UD0"
+    },
+    {
+        "id": "gb-2300-18848-IDSXG6A",
+        "title": "Ride to Grubb: Jefftribution | FINALE",
+        "description": "Not even a broken disc drive could stop Grubb from riding through HELL to finish off this Blight! Watch as he painstakingly conducts surgery over some saves and finishes his adventure.",
+        "date": "2024-01-10T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18848-IDSXG6A"
+    },
+    {
+        "id": "gb-2300-18849-IDPSV4D",
+        "title": "Game Mess Mornings 01/11/24",
+        "description": "Grubb and Jan sit down to chat about a new DualSense controller popping up online, the title of Bethesda's Indiana Jones game getting leaked, developers needing to disclose AI use on Steam, some quick impressions of Prince of Persia: The Lost Crown, and more!",
+        "date": "2024-01-11T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18849-IDPSV4D"
+    },
+    {
+        "id": "gb-2300-18850-ID54447",
+        "title": "Prince of Persia: The Lost Crown",
+        "description": "We got a full house as we check out Prince of Persia: The Lost Crown! We chat about the combat, the traversal, a bit about the story, and where it fits in with other MetroidVania style games!",
+        "date": "2024-01-11T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18850-ID54447"
+    },
+    {
+        "id": "gb-2300-18851-IDBKBHK",
+        "title": "Voicemail Dump Truck 98",
+        "description": "We have our dear friend Alex Boniello joining us on the dump truck this week to chat about preserving memories, celebrating the anniversary of Baja Blast, and so much more!",
+        "date": "2024-01-11T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18851-IDBKBHK"
+    },
+    {
+        "id": "gb-2300-18852-IDFHG88",
+        "title": "Game Mess Mornings 01/12/24",
+        "description": "Grubb is joined by Tam for a lovely Dregsday as they chat about Prince of Persia reviews, a bunch of old games rereleasing, and an AI GameShark successor making wild claims!",
+        "date": "2024-01-12T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18852-IDFHG88"
+    },
+    {
+        "id": "gb-2300-18853-IDTTT6A",
+        "title": "Unprofessional Fridays: DUMB VR GRAB BAG",
+        "description": "Niki, Grubb, Dan, and Jan all strap in and enter VIRTUAL REALITY! We check out some terrifying claymation, some table tennis, and some of the actual coolest VR stuff in Nock!",
+        "date": "2024-01-12T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18853-IDTTT6A"
+    },
+    {
+        "id": "gb-2300-18854-IDMHFMM",
+        "title": "Giant Bombcast 822: REVENGEANCE",
+        "description": "We got the whole gang here to review Prince of Persia: The Lost Crown AND to draft their picks in Giant Bomb's first ever Fantasy Critic league!",
+        "date": "2024-01-12T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18854-IDMHFMM"
+    },
+    {
+        "id": "gb-2300-18855-ID961OP",
+        "title": "Giant Bombcast 823: Cumulative File",
+        "description": "This week we continue our positive chatter about Prince of Persia: The Lost Crown, we somehow are coerced to talk about wrestling for a portion of time, Jan gets into a new game called \"Poker\", and Shawn prepares for Tekken 8's eventual release and revisits some 3D fighters of yore. We also talk about the upcoming Elden Ring DLC, Dragon's Dogma 2 being newbie friendly, and more!",
+        "date": "2024-01-16T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18855-ID961OP"
+    },
+    {
+        "id": "gb-2300-18856-IDTS58R",
+        "title": "Giant Bombcast 823: Cumulative File",
+        "description": "This week we continue our positive chatter about Prince of Persia: The Lost Crown, we somehow are coerced to talk about wrestling for a portion of time, Jan gets into a new game called \"Poker\", and Shawn prepares for Tekken 8's eventual release and revisits some 3D fighters of yore. We also talk about the upcoming Elden Ring DLC, Dragon's Dogma 2 being newbie friendly, and more!",
+        "date": "2024-01-16T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18856-IDTS58R"
+    },
+    {
+        "id": "gb-2300-18857-IDY7HY4",
+        "title": "Game Mess Mornings 01/17/24",
+        "description": "Grubb is joined by Scott McCrae to chat about the reviews coming out of The Last Of Us Part II Remastered, Scott's impressions on Persona 3 Reload, Billy Mitchel's record being reinstated, and more!",
+        "date": "2024-01-17T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18857-IDY7HY4"
+    },
+    {
+        "id": "gb-2300-18858-ID0RN8O",
+        "title": "001",
+        "description": "The cold never bothered him anyway...",
+        "date": "2024-01-17T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18858-ID0RN8O"
+    },
+    {
+        "id": "gb-2300-18859-ID6R53H",
+        "title": "Game Mess Mornings 01/18/24",
+        "description": "Grubb and Jan are here with a steaming pile of news! We go over the Circana reports and try to extrapolate what that means for the future of the industry, we also chat about the new studio from ex-Rocksteady peeps, a NEW Plants vs. Zombies game, and even more!",
+        "date": "2024-01-18T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18859-ID6R53H"
+    },
+    {
         "id": "gb-2300-1886-ID39OCR",
         "title": "Reviews: Darksiders Video Review",
         "description": "The real victims of the Apocalypse are the ones who are left behind.",
         "date": "2010-01-15T00:00:00Z",
         "thumbnail": "https://archive.org/services/img/gb-2300-1886-ID39OCR"
+    },
+    {
+        "id": "gb-2300-18860-IDAZYY1",
+        "title": "Voicemail Dump Truck 99",
+        "description": "The Voicemail Dump Truck is loaded with calls about robots, being on the new wave, and of course butts!",
+        "date": "2024-01-18T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18860-IDAZYY1"
+    },
+    {
+        "id": "gb-2300-18861-IDD7DU9",
+        "title": "We Talk Over: Xbox Developer Direct",
+        "description": "THAT'S A COOL WHIP! Jan, Dan, Grubb, Niki, Bakalar, and Mike are here to be pleasantly surprised by Xbox's roundup of video games!",
+        "date": "2024-01-18T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18861-IDD7DU9"
+    },
+    {
+        "id": "gb-2300-18862-IDAIHTY",
+        "title": "Tails of the Sun",
+        "description": "Dan and Grubb embark on an adventure filled with discovery, family, cheese pigs, pizza birds, and more in the obscure Tails of the Sun",
+        "date": "2024-01-18T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18862-IDAIHTY"
+    },
+    {
+        "id": "gb-2300-18863-IDZJI25",
+        "title": "Game Mess Mornings 01/19/24",
+        "description": "Grubb and Tam recap all the games that dropped from Xbox Developer Direct, Square Enix wants to make fewer games, Palworld might be unstoppable, and more!",
+        "date": "2024-01-19T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18863-IDZJI25"
+    },
+    {
+        "id": "gb-2300-18864-IDPQCJQ",
+        "title": "Giant Bombcast 823: REVENGEANCE",
+        "description": "Turns out we also like things that aren't games! We bring you some of our favorite nongame stuff that we found or liked in 2023!",
+        "date": "2024-01-19T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18864-IDPQCJQ"
+    },
+    {
+        "id": "gb-2300-18865-ID3MBTK",
+        "title": "Unprofessional Fridays: UnPALfessional Fridays",
+        "description": "We love palling around with our best pals while punching rocks and catching our new little pals! Let's get to the guns!",
+        "date": "2024-01-19T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18865-ID3MBTK"
+    },
+    {
+        "id": "gb-2300-18866-IDIZ87B",
+        "title": "Game Mess Mornings 01/22/24",
+        "description": "Grubb and Lex Luddy break down Palworlds chaotic success and if it might warrant some legal attention from Nintendo, Walmart is starting to throw away video games, Halo Infinite is done with seasons, and more!",
+        "date": "2024-01-22T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18866-IDIZ87B"
+    },
+    {
+        "id": "gb-2300-18867-IDFLW76",
+        "title": "Best of Giant Bomb: 225: They're Flakey!",
+        "description": "Let's take a fun stroll down memory lane where Mike became a robot and brought his feet out unprompted!",
+        "date": "2024-01-22T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18867-IDFLW76"
+    },
+    {
+        "id": "gb-2300-18868-IDD45T3",
+        "title": "Tails of the Sun (Part 2)",
+        "description": "We now know why the wooly mammoth actually went extinct. Watch as Grubb and Dan continue their quest through one of the oddest PS1 titles, Tails of the Sun! When are we all getting sick tribals tats?",
+        "date": "2024-01-22T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18868-IDD45T3"
     },
     {
         "id": "gb-2300-1887",
@@ -46326,11 +46935,151 @@
         "thumbnail": "https://archive.org/services/img/gb-2300-1887"
     },
     {
+        "id": "gb-2300-18870-IDV8XXI",
+        "title": "Giant Bombcast 824: Year of the Segue",
+        "description": "We got our friend John Warren on the show today to chat about Glydr! Help control games with your feet! We also got a loaded plate of games while we chat about playing and all the things surrounding Palworld, the audacity and greatness of Tekken 8, and loving the island life in Like a Dragon: Infinite Wealth! We also tackle all of the week's biggest game news like the unfortunate Riot layoffs, Walmart throwing away physical games, and rumors of Shadow the Hedgehog's casting. Check out Glydr at glyder.gg!",
+        "date": "2024-01-23T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18870-IDV8XXI"
+    },
+    {
+        "id": "gb-2300-18871-IDHRGUI",
+        "title": "Giant Bombcast 824: Year of the Segue",
+        "description": "We got our friend John Warren on the show today to chat about Glydr! Help control games with your feet! We also got a loaded plate of games while we chat about playing and all the things surrounding Palworld, the audacity and greatness of Tekken 8, and loving the island life in Like a Dragon: Infinite Wealth! We also tackle all of the week's biggest game news like the unfortunate Riot layoffs, Walmart throwing away physical games, and rumors of Shadow the Hedgehog's casting. Check out Glydr at glyder.gg!",
+        "date": "2024-01-23T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18871-IDHRGUI"
+    },
+    {
+        "id": "gb-2300-18872-ID4SJLT",
+        "title": "Friday Night Forking S03E01",
+        "description": "Jan joins The Windbag in THE SNOWDRIFT (*echoing* drift, drift, drift...)",
+        "date": "2024-01-23T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18872-ID4SJLT"
+    },
+    {
+        "id": "gb-2300-18873-IDP1LGM",
+        "title": "Friday Night Forking S03E02",
+        "description": "WHAT'S IN THE BOOOOOX??? (It's Grubb.)",
+        "date": "2024-01-23T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18873-IDP1LGM"
+    },
+    {
+        "id": "gb-2300-18874-IDR80KM",
+        "title": "Friday Night Forking S03E03",
+        "description": "Bakalar kept his skates on for this, right? ...Right?",
+        "date": "2024-01-23T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18874-IDR80KM"
+    },
+    {
+        "id": "gb-2300-18875-IDGHTD7",
+        "title": "Friday Night Forking S03E04",
+        "description": "The SNOWDRIFT (*echoes* drift, drift, drift...) Saga concludes with a visit from Dan!",
+        "date": "2024-01-23T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18875-IDGHTD7"
+    },
+    {
+        "id": "gb-2300-18876-IDCW2B2",
+        "title": "Game Mess Mornings 01/24/24",
+        "description": "Lucy James makes her return to Game Mess Mornings to chat with Grubb about about Infinite Wealth and Tekken 8 reviews, Nintendo filing takedown requests against Palworld mods, and more!",
+        "date": "2024-01-24T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18876-IDCW2B2"
+    },
+    {
+        "id": "gb-2300-18877-IDGGB2L",
+        "title": "Tails of the Sun (Part 3)",
+        "description": "Grubb and Dan continue their quest to get to the sun by killing mammoths and cheese pigs!",
+        "date": "2024-01-24T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18877-IDGGB2L"
+    },
+    {
+        "id": "gb-2300-18877-IDOMCS7",
+        "title": "Tails of the Sun (Part 3)",
+        "description": "Grubb and Dan continue their quest to get to the sun by killing mammoths and cheese pigs!",
+        "date": "2024-01-24T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18877-IDOMCS7"
+    },
+    {
+        "id": "gb-2300-18878-IDIWTE3",
+        "title": "002",
+        "description": "The cold may not bother him, but the wind really REALLY does.",
+        "date": "2024-01-24T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18878-IDIWTE3"
+    },
+    {
+        "id": "gb-2300-18878-IDS8NPF",
+        "title": "002",
+        "description": "The cold may not bother him, but the wind really REALLY does.",
+        "date": "2024-01-24T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18878-IDS8NPF"
+    },
+    {
+        "id": "gb-2300-18879-IDBKSIE",
+        "title": "Game Mess Mornings 01/25/24",
+        "description": "Grubb and Jan are here to break down the deluge of unfortunate news in the games industry.",
+        "date": "2024-01-25T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18879-IDBKSIE"
+    },
+    {
         "id": "gb-2300-1888-IDGN906",
         "title": "I Love Mondays: 01/18/10",
         "description": "Excuse me stewardess, I speak Monday.",
         "date": "2010-01-18T00:00:00Z",
         "thumbnail": "https://archive.org/services/img/gb-2300-1888-IDGN906"
+    },
+    {
+        "id": "gb-2300-18880-IDVNGBY",
+        "title": "Like a Dragon: Infinite Wealth",
+        "description": "Grubb and Jan hit up Hawaii to hand out with their dear friend Ichiban. We check out the job system, the farming and island sim on Dondoko island, sing some karaoke, and of course get into street fights with the vagrants of Hawaii!",
+        "date": "2024-01-25T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18880-IDVNGBY"
+    },
+    {
+        "id": "gb-2300-18881-ID84SJR",
+        "title": "Voicemail Dump Truck 100",
+        "description": "We broke Ben Pack out of podcast jail to help celebrate 100 dumps! We listen to your calls about search results, eating in dreams, and questionable renditions of songs! Big thanks to YOU at home for listening and keeping the wheels on the dump truck spinning. Leave a Voicemail at: (707)EXIT-FLU",
+        "date": "2024-01-25T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18881-ID84SJR"
+    },
+    {
+        "id": "gb-2300-18882-IDJC15J",
+        "title": "Game Mess Mornings 01/26/24",
+        "description": "Grubb and Tam detail Blizzard's now scrapped survival game, Microsoft pulling back from physical game releases, a ROG Ally successor coming out later this year, and some Switch 2 details!",
+        "date": "2024-01-26T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18882-IDJC15J"
+    },
+    {
+        "id": "gb-2300-18883-IDEZ8PQ",
+        "title": "Unprofessional Fridays: Tekken 8 Scrub League",
+        "description": "Grubb, Dan, Jan, Mike, and TurboShawn pop into a lobby and try to throw each other into a volcano in Tekken 8!",
+        "date": "2024-01-26T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18883-IDEZ8PQ"
+    },
+    {
+        "id": "gb-2300-18884-IDHVR77",
+        "title": "Giant Bombcast 824: REVENGEANCE",
+        "description": "We got Imran Khan, Lex Luddy, and Jesse Viteli in the building to talk about Like a Dragon: Infinite Wealth and our favorite numbskull: Ichiban Kasuga!",
+        "date": "2024-01-26T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18884-IDHVR77"
+    },
+    {
+        "id": "gb-2300-18885-IDO2KYE",
+        "title": "Giant Bombcast 825: FOOTLONG FRIDAYS",
+        "description": "Bailey Meyers is back on the show as we chat about a whole slew of games! We continue talking about Like a Dragon: Infinite Wealth, Tekken 8, Jan's brief time in Persona 3 Reload, and a whole bunch of small titles that Bailey checked out over the break! We also try our best to cover Microsoft's mass layoffs, a Deus Ex game being cancelled, Switch 2 rumors, and whether or not someone should precut our steaks!",
+        "date": "2024-01-30T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18885-IDO2KYE"
+    },
+    {
+        "id": "gb-2300-18886-ID0661U",
+        "title": "Giant Bombcast 825: FOOTLONG FRIDAYS",
+        "description": "Bailey Meyers is back on the show as we chat about a whole slew of games! We continue talking about Like a Dragon: Infinite Wealth, Tekken 8, Jan's brief time in Persona 3 Reload, and a whole bunch of small titles that Bailey checked out over the break! We also try our best to cover Microsoft's mass layoffs, a Deus Ex game being cancelled, Switch 2 rumors, and whether or not someone should precut our steaks!",
+        "date": "2024-01-30T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18886-ID0661U"
+    },
+    {
+        "id": "gb-2300-18889-ID1FSSU",
+        "title": "Voicemail Dump Truck 101",
+        "description": "We're figuring out a WHOLE LOT of things to do and futures to start in one episode alone! New fathers, new locations, and new tattoos!",
+        "date": "2024-02-01T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18889-ID1FSSU"
     },
     {
         "id": "gb-2300-1889-IDSSEFU",
@@ -46340,11 +47089,305 @@
         "thumbnail": "https://archive.org/services/img/gb-2300-1889-IDSSEFU"
     },
     {
+        "id": "gb-2300-18891-IDW21PQ",
+        "title": "Giant Bombcast 825: REVENGEANCE",
+        "description": "It's all Persona 3 Reload today as we had a deep chat and a mini \"review\" of P3R with Jan, TurboShawn, Mike Minotti, and our dear friend Michael Higham! We also chat a bit about Test Test Test, Penny's Big Breakaway, and Tekken 8 before we dive DEEP into Tartarus.",
+        "date": "2024-02-02T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18891-IDW21PQ"
+    },
+    {
+        "id": "gb-2300-18893-IDJPLHC",
+        "title": "Game Mess Mornings 02/05/24",
+        "description": "Jeff Grubb is joined by Mike Minotti today to chat about Microsoft potentially launching Starfield and possibly more on the PlayStatoion 5! They also chat about a Donkey Kong Hub popping up on Nintendo Switch Online, Suicide Squad being up and down in the world of games, and more stories!",
+        "date": "2024-02-05T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18893-IDJPLHC"
+    },
+    {
+        "id": "gb-2300-18894-ID495OF",
+        "title": "Tail of the Sun (FINAL)",
+        "description": "Grubb and Dan are finally at the end of the Tail of the Sun and are ready to present their longform review for the hottest and most confusing PlayStation 1 game!",
+        "date": "2024-02-05T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18894-ID495OF"
+    },
+    {
+        "id": "gb-2300-18895-IDPE27O",
+        "title": "Giant Bombcast 826: Whimsical Skips",
+        "description": "Let's all give Grubb a warm welcome back to the pod as he graces us with swift skips in the morning. We're also graciously joined by KindaFunny's SnowBikeMike as we dive deep into a whole bunch of Xbox and other Microsoft news! We chat about playtime in games, a bit about Suicide Squad: Kill the Justice League, and Jan gets into poker trouble.",
+        "date": "2024-02-06T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18895-IDPE27O"
+    },
+    {
+        "id": "gb-2300-18896-IDCM4T1",
+        "title": "Giant Bombcast 826: Whimsical Skips",
+        "description": "Let's all give Grubb a warm welcome back to the pod as he graces us with swift skips in the morning. We're also graciously joined by KindaFunny's SnowBikeMike as we dive deep into a whole bunch of Xbox and other Microsoft news! We chat about playtime in games, a bit about Suicide Squad: Kill the Justice League, and Jan gets into poker trouble.",
+        "date": "2024-02-06T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18896-IDCM4T1"
+    },
+    {
+        "id": "gb-2300-18897-IDYAZCZ",
+        "title": "Game Mess Mornings 02/07/24",
+        "description": "Grubb and Lucy chat about what might be next for the Xbox as far as hardware is concerned, Capcom surveying gamers, Nintendo and Palworld dealings, and even more!",
+        "date": "2024-02-07T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18897-IDYAZCZ"
+    },
+    {
+        "id": "gb-2300-18898-IDCKMCW",
+        "title": "Giant Bomb Presents: Power Bombcast: 9th Inning?!",
+        "description": "It feels like a whole different world since the last time we talked proper about wrestling on the website!",
+        "date": "2024-02-07T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18898-IDCKMCW"
+    },
+    {
+        "id": "gb-2300-18899-IDU6LT8",
+        "title": "Catch Me if You Dan",
+        "description": "The shoot story of a real worker. Dan Ryckert had some points to burn and we sent him to a location he knows NOTHING ABOUT! Will it be a small town, a big city, or a dirt lot? Watch as Dan discovers all that [REDACTED] has to offer!",
+        "date": "2024-02-08T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18899-IDU6LT8"
+    },
+    {
         "id": "gb-2300-1890-ID0EPX5",
         "title": "Mailbag: Giant Bomb Mailbag: Hot Sauce Edition",
         "description": "Japanese junk food and the further adventures of Vinny's cell phone.",
         "date": "2010-01-15T00:00:00Z",
         "thumbnail": "https://archive.org/services/img/gb-2300-1890-ID0EPX5"
+    },
+    {
+        "id": "gb-2300-18900-IDTNHFL",
+        "title": "Game Mess Mornings 02/08/24",
+        "description": "Grubb and Jan talk the giant Disney and Epic Games deal that just got made, the FTC getting upset with Microsoft, and even more!",
+        "date": "2024-02-08T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18900-IDTNHFL"
+    },
+    {
+        "id": "gb-2300-18901-ID1MZLB",
+        "title": "004",
+        "description": "Mike Miquanchi gets a letter from a certain someone that hopefully propels him out of this pit he's stuck in!",
+        "date": "2024-02-08T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18901-ID1MZLB"
+    },
+    {
+        "id": "gb-2300-18902-IDUY8SG",
+        "title": "Voicemail Dump Truck 102",
+        "description": "We get to hear all about Dan's mystery trip, have an existential crisis about choice and time, and also eat an obscene amount of shrimp with a stranger.",
+        "date": "2024-02-08T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18902-IDUY8SG"
+    },
+    {
+        "id": "gb-2300-18903-IDM9VDJ",
+        "title": "Game Mess Mornings 02/09/25",
+        "description": "Grubb and Tam go over some new updates and speculations around the eventual release of Grand Theft Auto 6, examining AAAA games, and even more rumors around the Nintendo Switch's successor!",
+        "date": "2024-02-09T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18903-IDM9VDJ"
+    },
+    {
+        "id": "gb-2300-18904-ID6R51R",
+        "title": "Unprofessional Fridays: Helldivers 2",
+        "description": "Jan, Grubb, Dan, and Mike dive into HELL as they battle bugs, minefields, and bad internet connections!",
+        "date": "2024-02-09T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18904-ID6R51R"
+    },
+    {
+        "id": "gb-2300-18905-IDRPFPU",
+        "title": "Game Mess Mornings 02/12/24",
+        "description": "Grubb and Mike are here to chat about Phil Spencer assuring that Xbox is not leaving the console market, the Switch 2 may be backwards compatible, Foamstars reviews, and more!",
+        "date": "2024-02-12T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18905-IDRPFPU"
+    },
+    {
+        "id": "gb-2300-18906-IDC0SP0",
+        "title": "Helldivers 2",
+        "description": "The compadres have decided to dive back into Helldivers 2! How many mines can we collectively throw now??",
+        "date": "2024-02-12T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18906-IDC0SP0"
+    },
+    {
+        "id": "gb-2300-18908-IDW6S12",
+        "title": "Giant Bombcast 827: Urn-ergy",
+        "description": "The Bombcast is for lovers! We chat about cards in Balatro, Bakalar's time with the dioramalike Harold Halibut, and how much we've been enjoying Helldivers 2! Grubb also explains the news such as Xbox's podcast, Switch 2 leaks, and even more news stories.",
+        "date": "2024-02-13T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18908-IDW6S12"
+    },
+    {
+        "id": "gb-2300-18909-IDTKO28",
+        "title": "Giant Bombcast 827: Urn-ergy",
+        "description": "The Bombcast is for lovers! We chat about cards in Balatro, Bakalar's time with the dioramalike Harold Halibut, and how much we've been enjoying Helldivers 2! Grubb also explains the news such as Xbox's podcast, Switch 2 leaks, and even more news stories.",
+        "date": "2024-02-13T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18909-IDTKO28"
+    },
+    {
+        "id": "gb-2300-18910-IDKNS9P",
+        "title": "Game Mess Mornings 02/14/24",
+        "description": "Our dear friend and fellow pokemon freak Jordan Middler returns to Game Mess Mornings! Grubb and Jordan chat about the PS5 in the \"latter stage\" of its life cycle, Sony Franchise game releases not coming until 2025, and even more PlayStation related stories. Happy Valentine's Day!",
+        "date": "2024-02-14T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18910-IDKNS9P"
+    },
+    {
+        "id": "gb-2300-18911-ID6632L",
+        "title": "005",
+        "description": "Mike Miquanchi is making steady progress! Is he closer to the finish line than he expects or will the fire from hell be too much for him and the makeup?",
+        "date": "2024-02-14T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18911-ID6632L"
+    },
+    {
+        "id": "gb-2300-18912-IDMZ8FY",
+        "title": "Game Mess Mornings 02/15/24",
+        "description": "Grubb and Jan chat about the possibility of an upcoming Nintendo Direct, Mario vs Donkey Kong Reviews, every screen being an Xbox, and PlayStation 5 woes!",
+        "date": "2024-02-15T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18912-IDMZ8FY"
+    },
+    {
+        "id": "gb-2300-18913-IDM8DT7",
+        "title": "Voicemail Dump Truck 103",
+        "description": "We have a grand time talking about Valentine's Day as we continue down the shrimp vs biscuit train, being influenced to buy things, bad dates, and even more!",
+        "date": "2024-02-15T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18913-IDM8DT7"
+    },
+    {
+        "id": "gb-2300-18914-IDT1C5N",
+        "title": "Game Mess Mornings 02/16/24",
+        "description": "Grubb has Jason Fanelli on the show today to chat about all the news that came out of the Xbox podcast yesterday, some BREAKING news of a First Person Mandalorian game, Bandai Namco updates, and even more!",
+        "date": "2024-02-16T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18914-IDT1C5N"
+    },
+    {
+        "id": "gb-2300-18915-IDS46KQ",
+        "title": "Giant Bombcast 827: Revengeance",
+        "description": "We got our dear friend from VGC News, Jordan Middler, on the podcast today to chat about games, the Switch 2, and whether or not Cloud Strife is popular!",
+        "date": "2024-02-16T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18915-IDS46KQ"
+    },
+    {
+        "id": "gb-2300-18916-ID6GVOC",
+        "title": "Unprofessional Fridays: Unprofessional Fridays 02/16/24",
+        "description": "Excuuuuuuuuuse me! It's time to be unprofessional on this lovely Friday!",
+        "date": "2024-02-16T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18916-ID6GVOC"
+    },
+    {
+        "id": "gb-2300-18918-ID8FB37",
+        "title": "Giant Bombcast 828: Like A Roll of Toilet Paper",
+        "description": "Jan's out for this one, so Host Bakalar and Producer Grubb join forces with Dan and Shawn to talk about cool indie games, the Switch 2's potential release window, and the glory of Baja Blast.",
+        "date": "2024-02-20T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18918-ID8FB37"
+    },
+    {
+        "id": "gb-2300-18920-ID8UTO4",
+        "title": "We Talk Over: Nintendo Direct Partner Showcase 02/21/2024",
+        "description": "Old favorites getting remastered, some exciting shadowdrops, and the Xbox stuff makes a (brief) appearance!",
+        "date": "2024-02-21T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18920-ID8UTO4"
+    },
+    {
+        "id": "gb-2300-18922-IDVS1WB",
+        "title": "Game Mess Mornings 02/21/24",
+        "description": "Grubb is joined by Lord Cognito to do a round up of today's Nintendo Partner Direct, the Shadow of the Erdtree trailer, and a whole bunch of other BREAKING news!",
+        "date": "2024-02-21T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18922-IDVS1WB"
+    },
+    {
+        "id": "gb-2300-18924-IDFO68P",
+        "title": "006",
+        "description": "In this episode: Sub-Zero fights a T-Rex! For some reason!",
+        "date": "2024-02-21T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18924-IDFO68P"
+    },
+    {
+        "id": "gb-2300-18925-IDHMMC4",
+        "title": "Game Mess Mornings 02/22/24",
+        "description": "Grubb and Jan are both sick but are here to deliver the news! We recap Final Fantasy 7 Rebirth review, Pacific Drive reviews, Nintendo stocks dropping, Epic Mickey, and more!",
+        "date": "2024-02-22T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18925-IDHMMC4"
+    },
+    {
+        "id": "gb-2300-18926-ID9AHJ5",
+        "title": "Giant Bombcast 828: REVENGEANCE",
+        "description": "We've got a full house today to chat about Final Fantasy VII Rebirth! Don't worry because we dodge spoilers as Jeff Grubb, Lucy James, TurboShawn McDowell, Tamoor Hussain, Mike Minotti, and Emma Fyffee give their impressions on the game as a whole!",
+        "date": "2024-02-22T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18926-ID9AHJ5"
+    },
+    {
+        "id": "gb-2300-18927-ID6GF7F",
+        "title": "Voicemail Dump Truck 104",
+        "description": "We're joined by Maffew Gregg to do a mini spoilercast for Annette and I guess answer your voicemails!",
+        "date": "2024-02-22T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18927-ID6GF7F"
+    },
+    {
+        "id": "gb-2300-18928-ID1XYM8",
+        "title": "Game Mess Mornings 02/23/24",
+        "description": "Grubb and Tam are here for a lovely DREGSDAY! They go over Suicide Squad falling short of expectations, Circana January reports, Hideo Kojima documentary releasing, and more!",
+        "date": "2024-02-23T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18928-ID1XYM8"
+    },
+    {
+        "id": "gb-2300-18929-IDDKMXE",
+        "title": "006",
+        "description": "In this episode: Sub-Zero fights a T-Rex! For some reason!",
+        "date": "2024-02-23T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18929-IDDKMXE"
+    },
+    {
+        "id": "gb-2300-18930-IDZYSLD",
+        "title": "006",
+        "description": "In this episode: Sub-Zero fights a T-Rex! For some reason!",
+        "date": "2024-02-23T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18930-IDZYSLD"
+    },
+    {
+        "id": "gb-2300-18931-IDQUPXA",
+        "title": "Unprofessional Fridays: Mario Maker!",
+        "description": "Somehow, it has been NINE years since the original Mario Maker saga here at Giant Bomb! Watch as Grubb dives into a fresh hell while we all gleefully look on!",
+        "date": "2024-02-23T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18931-IDQUPXA"
+    },
+    {
+        "id": "gb-2300-18932-IDP9MDF",
+        "title": "Game Mess Mornings 02/26/24",
+        "description": "Grubb is joined by Emma Fyffe to chat about some more Final Fantasy VII Rebirth impressions, some Switch 2 updates, Helldivers 2 charting very hard in the UK, Hidetaka Miyazaki delegating directing for future games, and more!",
+        "date": "2024-02-26T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18932-IDP9MDF"
+    },
+    {
+        "id": "gb-2300-18933-ID0G6AT",
+        "title": "Giant Bombcast 829: Fantasian",
+        "description": "This week we chat extensively about more Balatro and some more talk about Final Fantasy VII Rebirth! We also squeeze in some Arzette and Unicorn Overlord chat as well. On top of that we cover the recent layoffs at Sony, a quick recap over the Pokemon Direct from this morning, and a whole slew of more news and emails!",
+        "date": "2024-02-28T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18933-ID0G6AT"
+    },
+    {
+        "id": "gb-2300-18934-IDAUR0G",
+        "title": "Giant Bombcast 829: Fantasian",
+        "description": "This week we chat extensively about more Balatro and some more talk about Final Fantasy VII Rebirth! We also squeeze in some Arzette and Unicorn Overlord chat as well. On top of that we cover the recent layoffs at Sony, a quick recap over the Pokemon Direct from this morning, and a whole slew of more news and emails!",
+        "date": "2024-02-28T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18934-IDAUR0G"
+    },
+    {
+        "id": "gb-2300-18935-IDTFSC6",
+        "title": "We Talk Over: Pokemon Presents (02/27/24)",
+        "description": "We did not Pokemon Sleep and woke up real early to check out all the new announcements from today's Pokemon Presents! Who wants some ZA?",
+        "date": "2024-02-27T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18935-IDTFSC6"
+    },
+    {
+        "id": "gb-2300-18936-IDAVCHP",
+        "title": "Mario Maker Morning Mess",
+        "description": "Jeff Grubb has CHOSEN to throw himself into the pit that is Dan Ryckert's brain on Mario Maker.",
+        "date": "2024-02-27T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18936-IDAVCHP"
+    },
+    {
+        "id": "gb-2300-18937-IDV9HBM",
+        "title": "Game Mess Mornings 02/28/24",
+        "description": "Grubb has Lex Luddy on the show today to chat about Nintendo's battles with piracy, PlayStation \"reevaluating\" how the company operates, a cancelled Twisted Metal game, mislabled Final Fantasy 7 Rebirth discs, and more!",
+        "date": "2024-02-28T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18937-IDV9HBM"
+    },
+    {
+        "id": "gb-2300-18938-ID6JFH1",
+        "title": "FINALE",
+        "description": "Against all odds, Mike Miquanchi has finally ended this terrible blight that been inflicted on him. You can sometimes trust a wizard.",
+        "date": "2024-02-28T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18938-ID6JFH1"
     },
     {
         "id": "gb-2300-1894",
