@@ -1,5 +1,4 @@
 import axios from 'axios'
-import commandLineArgs from 'command-line-args'
 import { promises as fs } from 'fs'
 import path from 'path'
 
@@ -109,67 +108,37 @@ async function downloadFile(source, target) {
 
 // Run the script
 async function run() {
-	const optionDefinitions = [
-		{ name: 'help', alias: 'h', type: Boolean, description: 'show this help text' },
-		{ name: 'images', alias: 'i', type: Boolean, description: 'download show images' },
-		{ name: 'shows', alias: 's', type: Boolean, description: 'download show data' },
-	]
-	const options = commandLineArgs(optionDefinitions)
+	console.log('Fetching show data...')
+	const shows = await getShows()
 
-	if (options.help) {
-		console.log('Sync data with the Giant Bomb and Internet Archive APIs')
-		console.log('')
-		console.log('Usage:')
-		console.log('  node sync_data.js [flags]')
-		console.log('')
-		console.log('Flags:')
-		for (const opt of optionDefinitions) {
-			console.log(`  -${opt.alias}, --${opt.name}\t${opt.description}`)
+	console.log(`Saving ${shows.length} shows to: ${SHOWS_FILE}`)
+	const formattedShows = shows.map((show) => {
+		show.poster = getImageFilename(show.poster)
+		show.logo = getImageFilename(show.logo)
+		return show
+	})
+	await fs.writeFile(SHOWS_FILE, JSON.stringify(formattedShows, null, 4))
+
+	var images = {}
+	for (const show of shows) {
+		if (show.poster != null) {
+			images[getImageFilename(show.poster)] = show.poster
 		}
-
-		return
-	}
-
-	var shows = []
-	if (options.shows || options.images) {
-		console.log('Fetching show data...')
-
-		shows = await getShows()
-
-		if (options.shows) {
-			console.log(`Got ${shows.length} shows!`)
-			console.log(`Saving shows to: ${SHOWS_FILE}`)
-			const formattedShows = shows.map((show) => {
-				show.poster = getImageFilename(show.poster)
-				show.logo = getImageFilename(show.logo)
-				return show
-			})
-			await fs.writeFile(SHOWS_FILE, JSON.stringify(formattedShows, null, 4))
+		if (show.logo != null) {
+			images[getImageFilename(show.logo)] = show.logo
 		}
 	}
 
-	if (options.images) {
-		var images = {}
-		for (const show of shows) {
-			if (show.poster != null) {
-				images[getImageFilename(show.poster)] = show.poster
-			}
-			if (show.logo != null) {
-				images[getImageFilename(show.logo)] = show.logo
-			}
-		}
+	console.log(`Downloading ${Object.values(images).length} images...`)
+	for (const image of Object.keys(images)) {
+		const target = IMAGES_PATH + image
 
-		console.log(`Downloading ${Object.values(images).length} images...`)
-		for (const image of Object.keys(images)) {
-			const target = IMAGES_PATH + image
-
-			try {
-				await fs.access(target, fs.constants.F_OK)
-				console.debug(`Skipping ${image}`)
-			} catch {
-				await downloadFile(images[image], target)
-				await sleep(DELAY_TIME)
-			}
+		try {
+			await fs.access(target, fs.constants.F_OK)
+			console.debug(`Skipping ${image}`)
+		} catch {
+			await downloadFile(images[image], target)
+			await sleep(DELAY_TIME)
 		}
 	}
 }
