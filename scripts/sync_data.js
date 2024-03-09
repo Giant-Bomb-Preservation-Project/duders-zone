@@ -1,4 +1,5 @@
 import axios from 'axios'
+import commandLineArgs from 'command-line-args'
 import { promises as fs } from 'fs'
 
 // Base URL to the Giant Bomb API
@@ -11,10 +12,10 @@ const DELAY_TIME = 2
 const SHOWS_PER_PAGE = 100
 
 // Path to the file to store the show meta data
-const TARGET_SHOWS_FILE = 'shows.json'
+const SHOWS_FILE = 'src/lib/data/shows.json'
 
 // Path to the location to store the images
-const TARGET_IMAGES_PATH = './images'
+const IMAGES_PATH = 'static/shows'
 
 // The API key used when connecting to the Giant Bomb API
 const GB_API_KEY = process.env.GB_API_KEY
@@ -30,6 +31,19 @@ function makeIdentifier(title) {
 		.toLowerCase()
 		.replaceAll(' ', '-')
 		.replace(/[^\w-]/g, '')
+}
+
+// Convert a URL to an image filename
+function getImageFilename(url) {
+	if (url === null) {
+		return null
+	}
+
+	return decodeURI(url)
+		.split('/')
+		.pop()
+		.replaceAll(' ', '-')
+		.replace(/(.*\.\w+)(.*?)$/, '$1')  // remove anything after the last period
 }
 
 // Get a list of all the shows
@@ -84,13 +98,48 @@ async function getShows() {
 
 // Run the script
 async function run() {
-	console.log('Fetching shows...')
+	const optionDefinitions = [
+		{ name: 'help', alias: 'h', type: Boolean, description: 'show this help text' },
+		{ name: 'images', alias: 'i', type: Boolean, description: 'download show images' },
+		{ name: 'shows', alias: 's', type: Boolean, description: 'download show data' },
+	]
+	const options = commandLineArgs(optionDefinitions)
 
-	const shows = await getShows()
-	console.log(`Got ${shows.length} shows!`)
+	if (options.help) {
+		console.log('Sync data with the Giant Bomb and Internet Archive APIs')
+		console.log('')
+		console.log('Usage:')
+		console.log('  node sync_data.js [flags]')
+		console.log('')
+		console.log('Flags:')
+		for (const opt of optionDefinitions) {
+			console.log(`  -${opt.alias}, --${opt.name}\t${opt.description}`)
+		}
 
-	console.log(`Saving shows to: ${TARGET_SHOWS_FILE}`)
-	await fs.writeFile(TARGET_SHOWS_FILE, JSON.stringify(shows, null, 4))
+		return
+	}
+
+	var shows = []
+	if (options.shows || options.images) {
+		console.log('Fetching show data...')
+
+		shows = await getShows()
+		console.log(`Got ${shows.length} shows!`)
+
+		if (options.shows) {
+			console.log(`Saving shows to: ${SHOWS_FILE}`)
+			const formattedShows = shows.map(show => {
+				show.poster = getImageFilename(show.poster)
+				show.logo = getImageFilename(show.logo)
+				return show
+			})
+			await fs.writeFile(SHOWS_FILE, JSON.stringify(formattedShows, null, 4))
+		}
+	}
+
+	if (options.images) {
+		console.warn("TODO")
+	}
 }
 
 run()
