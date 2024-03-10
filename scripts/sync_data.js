@@ -51,7 +51,6 @@ function getImageFilename(url) {
 	return decodeURI(url)
 		.split('/')
 		.pop()
-		.replaceAll(' ', '-')
 		.replace(/(.*\.\w+)(.*?)$/, '$1') // remove anything after the last period
 }
 
