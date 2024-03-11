@@ -207,6 +207,11 @@ async function downloadFile(source, target) {
 
 // Run the script
 async function run() {
+	if (!GB_API_KEY) {
+		console.error('ERROR! Missing GB_API_KEY')
+		process.exit(1)
+	}
+
 	console.log('Fetching show data...')
 	let shows = await getShows()
 
