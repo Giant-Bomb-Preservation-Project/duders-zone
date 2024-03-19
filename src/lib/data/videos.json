@@ -47390,6 +47390,13 @@
         "thumbnail": "https://archive.org/services/img/gb-2300-18938-ID6JFH1"
     },
     {
+        "id": "gb-2300-18939-ID9C0PJ",
+        "title": "Game Mess Mornings 02/29/24",
+        "description": "Grubb and Shawn go over more industry layoffs including 670 people from EA, Saber Interactive escaping Embracer Group, and the Yuzu team's brief response to Nintendo's legal action against the emulator.",
+        "date": "2024-02-29T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18939-ID9C0PJ"
+    },
+    {
         "id": "gb-2300-1894",
         "title": "White Knight Chronicles Previewapocalypse",
         "description": "This mammoth video represents the last and only coverage you will need before White Knight Chronicles releases.",
@@ -47397,11 +47404,193 @@
         "thumbnail": "https://archive.org/services/img/gb-2300-1894"
     },
     {
+        "id": "gb-2300-18940-ID0HYA3",
+        "title": "Arzette: The Jewel of Faramore",
+        "description": "Excuuuuuuuuuse me! It's time for more Arzette.",
+        "date": "2024-02-29T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18940-ID0HYA3"
+    },
+    {
+        "id": "gb-2300-18941-ID0MMZW",
+        "title": "Voicemail Dump Truck 105",
+        "description": "This week we're joined by Ben Hanson and Haley MacLean from MinnMax to talk bad dates, Monsieur Bakalar, and why Dan will never be thirsty for Tifa.",
+        "date": "2024-02-29T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18941-ID0MMZW"
+    },
+    {
+        "id": "gb-2300-18942-IDCPS6A",
+        "title": "Game Mess Mornings 03/01/24",
+        "description": "Dregsday has returned, so Grubb and Tam are here to talk you thorough Toys For Bob going independent, Gearbox potentially being sold by Embracer Group, and Guerrilla’s Horizon online game *continuing* development amid recent cancellations.",
+        "date": "2024-03-01T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18942-IDCPS6A"
+    },
+    {
+        "id": "gb-2300-18943-ID7G3JY",
+        "title": "Unprofessional Fridays: Grubb Starts Final Fantasy VII Rebirth",
+        "description": "And he knows SO little about FFVII. Don't worry. We brought in experts Tam and Shawn to help.",
+        "date": "2024-03-01T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18943-ID7G3JY"
+    },
+    {
+        "id": "gb-2300-18944-IDPJRK9",
+        "title": "Game Mess Mornings 03/04/24",
+        "description": "Jeff Grubb is joined by Emma Fyffe today to chat about some Mario Day rumors, Ghost of Tsushima possibly heading to the PC soon, special edition consoles, Balatro getting removed from digital stores, and more!",
+        "date": "2024-03-04T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18944-IDPJRK9"
+    },
+    {
+        "id": "gb-2300-18947-IDQBV2R",
+        "title": "Giant Bombcast 830: Muddy Buddies",
+        "description": "This week, Jan, Bakalar, and Grubb are joined by Polygon & The Besties' Russ Frushtick to talk more about their adventures through Final Fantasy VII Rebirth, Balatro, and Expeditions: A Mudrunner Game! Following that, they cover the updates on the Nintendo vs. Yuzu case, EA's continued turmoil, a whole bunch of other news and of course, your emails!",
+        "date": "2024-03-06T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18947-IDQBV2R"
+    },
+    {
+        "id": "gb-2300-18948-IDCY235",
+        "title": "Giant Bombcast 830: Muddy Buddies",
+        "description": "This week, Jan, Bakalar, and Grubb are joined by Polygon & The Besties' Russ Frushtick to talk more about their adventures through Final Fantasy VII Rebirth, Balatro, and Expeditions: A Mudrunner Game! Following that, they cover the updates on the Nintendo vs. Yuzu case, EA's continued turmoil, a whole bunch of other news and of course, your emails!",
+        "date": "2024-03-06T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18948-IDCY235"
+    },
+    {
+        "id": "gb-2300-18949-IDVDZR0",
+        "title": "Game Mess Mornings 03/06/24",
+        "description": "Jeff Grubb is joined by Tamoor Hussain for an early Dregsday! They chat about some footage from the cancelled Timesplitters game, Ghost of Tsushima being confirmed to head to PC, Supergiant only working on Hades, and more! Grow up!",
+        "date": "2024-03-06T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18949-IDVDZR0"
+    },
+    {
+        "id": "gb-2300-18950-IDH9I81",
+        "title": "We Talk Over: Xbox Partner Preview",
+        "description": "You know what would be cool news from a video game company? Video game announcements.",
+        "date": "2024-03-06T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18950-IDH9I81"
+    },
+    {
+        "id": "gb-2300-18951-IDFG26W",
+        "title": "001",
+        "description": "Is that a blight? Is that a bad game? It's SuperDan! Watch Dan fly through rings, use his ice breath, and learn a lot about Superman!",
+        "date": "2024-03-06T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18951-IDFG26W"
+    },
+    {
+        "id": "gb-2300-18952-ID8SV28",
+        "title": "Recapping the Xbox Partner Preview",
+        "description": "Jeff Grubb is joined by Jan Ochoa to recap yesterday's Xbox Partner Preview event, chat about Final Fantasy 7's console exclusivity deal, initial impressions on the new Fallout TV series trailer, and more!",
+        "date": "2024-03-07T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18952-ID8SV28"
+    },
+    {
+        "id": "gb-2300-18953-ID5IWPA",
+        "title": "Voicemail Dump Truck 106",
+        "description": "Our dear friend Matt Shipman joins us on the dump truck today as we chat about scent based memory, E3 style pressers, weird substances in American chocolate, and more!",
+        "date": "2024-03-07T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18953-ID5IWPA"
+    },
+    {
+        "id": "gb-2300-18954-ID7WJOM",
+        "title": "Voicemail Dump Truck 106",
+        "description": "Our dear friend Matt Shipman joins us on the dump truck today as we chat about scent based memory, E3 style pressers, weird substances in American chocolate, and more!",
+        "date": "2024-03-07T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18954-ID7WJOM"
+    },
+    {
+        "id": "gb-2300-18955-IDPHWOB",
+        "title": "Princess Peach: Showtime + MORE",
+        "description": "We try on a bunch of outfits in the Princess Peach: Showtime demo and play even more things!",
+        "date": "2024-03-07T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18955-IDPHWOB"
+    },
+    {
+        "id": "gb-2300-18956-IDDJF4F",
+        "title": "Game Mess Mornings 03/08/24",
+        "description": "Jeff Grubb and Lucy James are here to chat about Unicorn Overlord reviews, Vanillaware forbidding Atlus on releasing Unicorn Overlord on PC, the possibility of Halo on PlayStation, Helldivers 2 sales, and more!",
+        "date": "2024-03-08T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18956-IDDJF4F"
+    },
+    {
+        "id": "gb-2300-18957-IDNXEIZ",
+        "title": "Game Mess Mornings 03/11/24",
+        "description": "Jeff Grubb and Mike Minotti are here to start you off with a bunch of Mario news! We've got dates for Paper Mario and Luigi's Mansion 2, new Super Mario Lego kits, a new Super Mario Bros. movie in the works, Warner Bros. retiring Adult Swim games, and even more!",
+        "date": "2024-03-11T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18957-IDNXEIZ"
+    },
+    {
+        "id": "gb-2300-18958-IDXX4BX",
+        "title": "Giant Bombcast 831: Hi-Rizz Vest",
+        "description": "This week on the podcast, we chat about our first two hours in Rise of Ronin, WWE 2K24 being a pretty okay game, spinning yo-yos in Penny's Big Breakaway, brief thoughts on Unicorn Overlord, and hot dog controllers! We also chat about the news from Mario Day, WB's insane business plans, and more!",
+        "date": "2024-03-12T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18958-IDXX4BX"
+    },
+    {
+        "id": "gb-2300-18959-IDQVV1E",
+        "title": "Giant Bombcast 831: Hi-Rizz Vest",
+        "description": "This week on the podcast, we chat about our first two hours in Rise of Ronin, WWE 2K24 being a pretty okay game, spinning yo-yos in Penny's Big Breakaway, brief thoughts on Unicorn Overlord, and hot dog controllers! We also chat about the news from Mario Day, WB's insane business plans, and more!",
+        "date": "2024-03-12T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18959-IDQVV1E"
+    },
+    {
         "id": "gb-2300-1896",
         "title": "Touring with Final Fantasy XIII",
         "description": "Gia and John from Anime Vice spend time on the Final Fantasy XIII tour bus.",
         "date": "2010-01-18T00:00:00Z",
         "thumbnail": "https://archive.org/services/img/gb-2300-1896"
+    },
+    {
+        "id": "gb-2300-18960-IDO4N9Y",
+        "title": "Game Mess Mornings 03/13/24",
+        "description": "Jeff Grubb is joined by Lex Luddy today to chat about cryptic Mega Man photos being tweeted out by Arika, a Final Fantasy VII Rebirth expansion centered around Queen's Blood, improvements to the PS5 DualSense, and more!",
+        "date": "2024-03-13T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18960-IDO4N9Y"
+    },
+    {
+        "id": "gb-2300-18962-IDP3GGX",
+        "title": "Game Mess Mornings 03/14/24",
+        "description": "Jeff Grubb is joined by Jan Ochoa today to chat about the sale of Saber Interactive, reports of consumer spending trending downwards in 2024, GTA 6 being lauded as an important game, Summer Game Fest dates announced, and more!",
+        "date": "2024-03-14T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18962-IDP3GGX"
+    },
+    {
+        "id": "gb-2300-18963-IDWH9GK",
+        "title": "Voicemail Dump Truck 107",
+        "description": "This week we get VERY into birds! We also answer your voicemails about aging, bad reputations, bad American chocolate, popular kid names, and more!",
+        "date": "2024-03-14T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18963-IDWH9GK"
+    },
+    {
+        "id": "gb-2300-18964-ID7ULII",
+        "title": "Voicemail Dump Truck 107",
+        "description": "This week we get VERY into birds! We also answer your voicemails about aging, bad reputations, bad American chocolate, popular kid names, and more!",
+        "date": "2024-03-14T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18964-ID7ULII"
+    },
+    {
+        "id": "gb-2300-18965-ID4Z4SS",
+        "title": "Star Wars Battlefront Classic Collection",
+        "description": "We checked out and threw down with the Giant Bomb community in Star Wars Battlefront Classic Collection! Lots and LOTS of lasers!",
+        "date": "2024-03-14T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18965-ID4Z4SS"
+    },
+    {
+        "id": "gb-2300-18966-IDEYCXH",
+        "title": "Game Mess Mornings 03/15/24",
+        "description": "Jeff Grubb is joined by Tamoor Hussain to chat about the messy launch of Star Wars: Battlefront Classic Edition, some unfortunate layoffs at the Apex Legends team, some hot statistics with the most played games on the Steam Deck, and surprising crossovers with Sonic the Hedgehog!",
+        "date": "2024-03-15T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18966-IDEYCXH"
+    },
+    {
+        "id": "gb-2300-18967-IDPIGC9",
+        "title": "Giant Bombcast Bombcast Revengeance: Wrestling Game Mount Rushmore",
+        "description": "Dan, Jan, Grubb, and Mike get into the virtual squared circle to decide what occupies the Mount Rushmore for best wrestling games! We also chat a bit about Mario Golf, Star Wars Battlefront Classic Collection, and Prince of Persia: The Lost Crown.",
+        "date": "2024-03-15T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18967-IDPIGC9"
+    },
+    {
+        "id": "gb-2300-18968-IDXY50C",
+        "title": "Giant Bombcast Bombcast Revengeance: Wrestling Game Mount Rushmore",
+        "description": "Dan, Jan, Grubb, and Mike get into the virtual squared circle to decide what occupies the Mount Rushmore for best wrestling games! We also chat a bit about Mario Golf, Star Wars Battlefront Classic Collection, and Prince of Persia: The Lost Crown.",
+        "date": "2024-03-15T00:00:00Z",
+        "thumbnail": "https://archive.org/services/img/gb-2300-18968-IDXY50C"
     },
     {
         "id": "gb-2300-1897",
