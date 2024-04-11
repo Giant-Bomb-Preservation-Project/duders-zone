@@ -19,6 +19,9 @@ export interface Video {
 	readonly date: Date
 	readonly show?: string
 	readonly thumbnail?: string
+	readonly source: {
+		readonly internetarchive?: string
+	}
 }
 
 // Sort by date descending
@@ -59,6 +62,7 @@ export class DataStore {
 				date: new Date(video.date),
 				show: Object.values(this.shows).find((show) => show.videos.includes(video.id))?.id,
 				thumbnail: video.thumbnail,
+				source: video.source,
 			}
 		}
 

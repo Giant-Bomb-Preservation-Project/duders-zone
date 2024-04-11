@@ -4,6 +4,7 @@
 	import type { Video } from '$lib/data'
 
 	export let video: Video
+	export const videoSource: string = 'internetarchive'
 </script>
 
 <Splash image={video.thumbnail || '/assets/default.jpg'}>
@@ -13,7 +14,12 @@
 		<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>
 	</div>
 	<div class="video">
-		<FrameEmbed src="https://archive.org/embed/{video.id}" title={video.title} />
+		{#if videoSource === 'internetarchive'}
+			<FrameEmbed
+				src="https://archive.org/embed/{video.source.internetarchive}"
+				title={video.title}
+			/>
+		{/if}
 	</div>
 </Splash>
 

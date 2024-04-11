@@ -156,6 +156,9 @@ async function getVideos(showMap) {
 				description: item.description ?? '',
 				date: item.date,
 				thumbnail: `https://archive.org/services/img/${videoId}`,
+				source: {
+					internetarchive: videoId,
+				},
 			}
 
 			const subjects =
@@ -245,7 +248,7 @@ async function run() {
 	console.log('Fetching videos...')
 	const showMap = Object.fromEntries(shows.map((show) => [show.id, show]))
 	const videos = await getVideos(showMap)
-	shows = Object.values(showMap)  // catch shows that were added via videos
+	shows = Object.values(showMap) // catch shows that were added via videos
 
 	console.log(`Saving ${videos.length} videos to: ${VIDEOS_FILE}`)
 	await fs.writeFile(VIDEOS_FILE, JSON.stringify(videos, null, 4))
