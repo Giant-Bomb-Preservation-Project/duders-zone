@@ -25,7 +25,7 @@
 	.wrapper {
 		box-shadow: rgba(255, 255, 255, 0.1) 0 0 0 1px;
 		position: relative;
-		padding-bottom: 56.25%; /* 16:9 */
+		padding-bottom: 52.75%; /* 16:9 */
 		padding-top: 25px;
 		height: 0;
 	}
