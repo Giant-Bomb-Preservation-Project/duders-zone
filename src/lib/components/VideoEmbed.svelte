@@ -1,10 +1,11 @@
 <script lang="ts">
 	import FrameEmbed from '$lib/components/FrameEmbed.svelte'
 	import Splash from '$lib/components/Splash.svelte'
+	import { VideoSource } from '$lib/data'
 	import type { Video } from '$lib/data'
 
 	export let video: Video
-	export const videoSource: string = 'internetarchive'
+	export let videoSource: VideoSource = VideoSource.InternetArchive
 </script>
 
 <Splash image={video.thumbnail || '/assets/default.jpg'}>
@@ -14,12 +15,12 @@
 		<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>
 	</div>
 	<div class="video">
-		{#if videoSource === 'internetarchive'}
+		{#if videoSource === VideoSource.InternetArchive}
 			<FrameEmbed
 				src="https://archive.org/embed/{video.source.internetarchive}"
 				title={video.title}
 			/>
-		{:else if videoSource == 'youtube'}
+		{:else if videoSource == VideoSource.YouTube}
 			<FrameEmbed
 				src="https://www.youtube.com/embed/{video.source.youtube}"
 				title={video.title}
@@ -31,7 +32,12 @@
 			<span class="sr-only">Source</span>
 			{#if video.source.youtube}
 				<label title="Use YouTube video source">
-					<input type="radio" name="source" value="youtube" bind:group={videoSource} />
+					<input
+						type="radio"
+						name="source"
+						value={VideoSource.YouTube}
+						bind:group={videoSource}
+					/>
 					<svg
 						viewBox="0 -38 256 256"
 						version="1.1"
@@ -57,7 +63,7 @@
 					<input
 						type="radio"
 						name="source"
-						value="internetarchive"
+						value={VideoSource.InternetArchive}
 						bind:group={videoSource}
 					/>
 					<svg

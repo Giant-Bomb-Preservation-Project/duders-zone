@@ -3,6 +3,11 @@ import showData from '$lib/data/shows.json'
 import videoData from '$lib/data/videos.json'
 import { extractWords } from '$lib/text'
 
+export enum VideoSource {
+	InternetArchive = 'internetarchive',
+	YouTube = 'youtube',
+}
+
 export interface Show {
 	readonly id: string
 	readonly title: string
