@@ -19,6 +19,8 @@
 				src="https://archive.org/embed/{video.source.internetarchive}"
 				title={video.title}
 			/>
+		{:else}
+			<p class="error">No video available</p>
 		{/if}
 	</div>
 </Splash>
@@ -38,6 +40,11 @@
 	time {
 		font-size: 18px;
 		line-height: 20px;
+	}
+
+	.error {
+		padding: 3em 0;
+		text-align: center;
 	}
 
 	.video {
