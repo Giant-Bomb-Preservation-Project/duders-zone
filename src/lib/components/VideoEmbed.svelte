@@ -4,7 +4,6 @@
 	import { VideoSource } from '$lib/data'
 	import type { Video } from '$lib/data'
 	import { preferredSource } from '$lib/store.js'
-	import noVideo from '$lib/images/novideo.png'
 
 	export let video: Video
 
