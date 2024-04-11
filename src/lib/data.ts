@@ -5,6 +5,7 @@ import { extractWords } from '$lib/text'
 
 export enum VideoSource {
 	InternetArchive = 'internetarchive',
+	Direct = 'direct',
 	YouTube = 'youtube',
 }
 
@@ -26,6 +27,7 @@ export interface Video {
 	readonly thumbnail?: string
 	readonly source: {
 		readonly internetarchive?: string
+		readonly direct?: string
 		readonly youtube?: string
 	}
 }

@@ -26,7 +26,9 @@
 		<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>
 	</div>
 	<div class="video">
-		{#if videoSource == VideoSource.YouTube && video.source.youtube}
+		{#if videoSource == VideoSource.Direct && video.source.direct}
+			<video controls src={video.source.direct}></video>
+		{:else if videoSource == VideoSource.YouTube && video.source.youtube}
 			<FrameEmbed
 				src="https://www.youtube.com/embed/{video.source.youtube}"
 				title={video.title}
@@ -48,6 +50,14 @@
 						disabled={!video.source.internetarchive && 'disabled'}
 					>
 						Internet Archive
+					</button>
+					<button
+						title="Use direct video source"
+						on:click={() => setSource(VideoSource.Direct)}
+						class={videoSource === VideoSource.Direct && 'current'}
+						disabled={!video.source.direct && 'disabled'}
+					>
+						Direct
 					</button>
 					<button
 						title="Use YouTube video source"
@@ -78,6 +88,11 @@
 	time {
 		font-size: 18px;
 		line-height: 20px;
+	}
+
+	video {
+		display: block;
+		width: 100%;
 	}
 
 	.video {
