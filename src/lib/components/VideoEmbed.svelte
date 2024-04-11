@@ -19,6 +19,11 @@
 				src="https://archive.org/embed/{video.source.internetarchive}"
 				title={video.title}
 			/>
+		{:else if videoSource == 'youtube'}
+			<FrameEmbed
+				src="https://www.youtube.com/embed/{video.source.youtube}"
+				title={video.title}
+			/>
 		{:else}
 			<p class="error">No video available</p>
 		{/if}

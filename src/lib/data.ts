@@ -21,6 +21,7 @@ export interface Video {
 	readonly thumbnail?: string
 	readonly source: {
 		readonly internetarchive?: string
+		readonly youtube?: string
 	}
 }
 

@@ -4,7 +4,13 @@
 </script>
 
 <div class="wrapper">
-	<iframe {src} {title} frameborder="0" allowfullscreen />
+	<iframe
+		{src}
+		{title}
+		frameborder="0"
+		allow="autoplay; encrypted-media; picture-in-picture; web-share"
+		allowfullscreen
+	/>
 </div>
 
 <style>
