@@ -3,6 +3,7 @@
 	import Splash from '$lib/components/Splash.svelte'
 	import { VideoSource } from '$lib/data'
 	import type { Video } from '$lib/data'
+	import noVideo from '$lib/images/novideo.png'
 
 	export let video: Video
 	export let videoSource: VideoSource = VideoSource.InternetArchive
@@ -15,18 +16,16 @@
 		<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>
 	</div>
 	<div class="video">
-		{#if videoSource === VideoSource.InternetArchive}
-			<FrameEmbed
-				src="https://archive.org/embed/{video.source.internetarchive}"
-				title={video.title}
-			/>
-		{:else if videoSource == VideoSource.YouTube}
+		{#if videoSource == VideoSource.YouTube && video.source.youtube}
 			<FrameEmbed
 				src="https://www.youtube.com/embed/{video.source.youtube}"
 				title={video.title}
 			/>
 		{:else}
-			<p class="error">No video available</p>
+			<FrameEmbed
+				src="https://archive.org/embed/{video.source.internetarchive}"
+				title={video.title}
+			/>
 		{/if}
 		<div class="source-selector">
 			<span class="sr-only">Source</span>
@@ -113,11 +112,6 @@
 	time {
 		font-size: 18px;
 		line-height: 20px;
-	}
-
-	.error {
-		padding: 3em 0;
-		text-align: center;
 	}
 
 	.source-selector {
