@@ -3,10 +3,20 @@
 	import Splash from '$lib/components/Splash.svelte'
 	import { VideoSource } from '$lib/data'
 	import type { Video } from '$lib/data'
+	import { preferredSource } from '$lib/store.js'
 	import noVideo from '$lib/images/novideo.png'
 
 	export let video: Video
-	export let videoSource: VideoSource = VideoSource.InternetArchive
+
+	let videoSource: VideoSource
+
+	preferredSource.subscribe((value: VideoSource) => {
+		videoSource = value
+	})
+
+	function setSource(source: VideoSource) {
+		preferredSource.update(() => source)
+	}
 </script>
 
 <Splash image={video.thumbnail || '/assets/default.jpg'}>
@@ -30,13 +40,11 @@
 		<div class="source-selector">
 			<span class="sr-only">Source</span>
 			{#if video.source.youtube}
-				<label title="Use YouTube video source">
-					<input
-						type="radio"
-						name="source"
-						value={VideoSource.YouTube}
-						bind:group={videoSource}
-					/>
+				<button
+					title="Use YouTube video source"
+					on:click={() => setSource(VideoSource.YouTube)}
+					class={videoSource === VideoSource.YouTube && 'current'}
+				>
 					<svg
 						viewBox="0 -38 256 256"
 						version="1.1"
@@ -55,16 +63,14 @@
 							/>
 						</g>
 					</svg>
-				</label>
+				</button>
 			{/if}
 			{#if video.source.internetarchive}
-				<label title="Use Internet Archive video source">
-					<input
-						type="radio"
-						name="source"
-						value={VideoSource.InternetArchive}
-						bind:group={videoSource}
-					/>
+				<button
+					title="Use Internet Archive video source"
+					on:click={() => setSource(VideoSource.InternetArchive)}
+					class={videoSource === VideoSource.InternetArchive && 'current'}
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						aria-label="Internet Archive"
@@ -76,7 +82,7 @@
 							d="m81 419h350v18h-350zm14-34h323v25h-323zm-2-284h321v35h-321zm319-10 10-11-169-39-168 39 10 11h158zm-273 154-1-51-3-47c0-2 0-2-2-2a67 67 0 0 0 -28 0c-1 0-2 0-2 2l-2 47a2223 2223 0 0 0 0 127l2 43 1 8 15 3c6-1 11-1 16-3l1-8 2-43a1616 1616 0 0 0 1-76zm88 0-2-51-2-47c0-2-1-2-2-2a67 67 0 0 0 -28 0c-2 0-2 0-2 2l-3 47a2223 2223 0 0 0 0 127l2 43 1 8c5 2 11 2 16 3l16-3v-8l2-43a1620 1620 0 0 0 2-76zm101 0-1-51-3-47c0-2 0-2-2-2a67 67 0 0 0 -28 0c-1 0-2 0-2 2l-2 47a2223 2223 0 0 0 0 127l2 43 1 8 15 3c5-1 11-1 16-3l1-8 2-43a1624 1624 0 0 0 1-76zm85 0-1-51-2-47c0-2-1-2-2-2a67 67 0 0 0 -29 0l-1 2-3 47a2227 2227 0 0 0 0 127l2 43 1 8c5 2 10 2 16 3l15-3 1-8 2-43a1620 1620 0 0 0 1-76z"
 						/>
 					</svg>
-				</label>
+				</button>
 			{/if}
 		</div>
 	</div>
@@ -88,18 +94,17 @@
 		margin: 0;
 	}
 
-	input[type='radio'] {
-		display: none;
-	}
-
-	label {
+	button {
+		background: none;
+		border: 0;
 		cursor: pointer;
+		font-size: 16px;
 		opacity: 0.4;
 		padding: 0 0.15em;
 	}
 
-	label:hover,
-	label:has(input[type='radio']:checked) {
+	button:hover,
+	button.current {
 		opacity: 1;
 	}
 
