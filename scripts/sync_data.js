@@ -47,29 +47,45 @@ async function downloadFile(source, target) {
 	await fs.writeFile(target, fileData)
 }
 
+// Show an error text and terminate the program
+async function fatalError(message) {
+	console.error(`ERROR! ${message}`)
+	process.exit(1)
+}
+
 // Make a GET request to the given URL
 async function getRequest(url, queryParams) {
 	try {
-		console.debug(`Fetching from: ${url} ${JSON.stringify(queryParams)}`)
+		const queryString = Object.keys(queryParams)
+			.map((k) => `${k}=${queryParams[k]}`)
+			.join('&')
+		console.debug(`GET ${url}?${queryString}`)
 		const response = await axios.get(url, {
 			headers: HEADERS,
 			params: queryParams,
 		})
+
 		return response.data
 	} catch (e) {
 		if (e instanceof axios.AxiosError) {
-			console.error(`ERROR! Unexpected status code: ${e.response.status}`)
-			console.error(e.response.data)
-			process.exit(1)
+			fatalError(`ERROR! Unexpected status code: ${e.response.status}\n${e.response.data}`)
 		} else {
 			throw e
 		}
 	}
 }
 
+// Read a JSON file
+async function readJSONFile(path) {
+	const contents = await fs.readFile(path, 'utf8')
+
+	return JSON.parse(contents)
+}
+
 // Sleep function (thanks to: https://stackoverflow.com/a/39914235)
 function sleep(seconds) {
 	console.debug(`Sleeping for ${seconds} seconds...`)
+
 	return new Promise((resolve) => setTimeout(resolve, seconds * 1000))
 }
 
@@ -93,9 +109,96 @@ function toIdentifier(text) {
 		.replace(/[^\w-]/g, '')
 }
 
+// Write a JSON file
+async function writeJSONFile(path, data) {
+	await fs.writeFile(path, JSON.stringify(data, null, 4))
+}
+
 ///
 /// Script functions
 ///
+
+async function downloadShowImages(shows) {
+	let images = {}
+	for (const [identifier, show] of Object.entries(shows)) {
+		if (show.poster != null) {
+			const filename = toFilename(show.poster)
+			images[filename] = show.poster
+			shows[identifier].poster = filename
+		}
+
+		if (show.logo != null) {
+			const filename = toFilename(show.logo)
+			images[filename] = show.logo
+			shows[identifier].logo = filename
+		}
+	}
+
+	console.log(`Downloading ${Object.values(images).length} images...`)
+	for (const image of Object.keys(images)) {
+		const target = SHOW_IMAGES_PATH + image
+
+		try {
+			await fs.access(target, fs.constants.F_OK)
+			console.debug(`Skipping existing image: ${image}`)
+		} catch {
+			await downloadFile(images[image], target)
+			await sleep(DELAY_TIME)
+		}
+	}
+
+	return shows
+}
+
+// Get a list of all the shows from Giant Bomb
+async function fetchShows() {
+	console.log('Fetching shows...')
+
+	const url = 'https://www.giantbomb.com/api/video_shows/'
+	const params = {
+		api_key: GB_API_KEY,
+		format: 'json',
+		limit: SHOWS_PER_REQUEST,
+		field_list: 'id,title,deck,image,logo',
+		offset: 0,
+	}
+
+	let shows = {}
+	let page = 1
+	while (true) {
+		params.offset = (page - 1) * SHOWS_PER_REQUEST
+
+		const data = await getRequest(url, params)
+		const results = data.results ?? []
+
+		if (results.length == 0) {
+			break // we're done here
+		}
+
+		console.debug(` -> got ${results.length} results`)
+
+		for (const result of results) {
+			const identifier = toIdentifier(result.title)
+			if (Object.hasOwn(shows, identifier)) {
+				fatalError(`ERROR! Conflicting show identifier: ${identifier}`)
+			}
+
+			shows[identifier] = {
+				id: identifier,
+				gb_id: result.id,
+				title: result.title,
+				description: result.deck,
+				poster: result.image ? result.image.medium_url : null,
+				logo: result.logo ? result.logo.medium_url : null,
+			}
+		}
+
+		page = page + 1
+		await sleep(DELAY_TIME)
+	}
+
+	return shows
+}
 
 // Run the script
 async function run() {
@@ -104,7 +207,12 @@ async function run() {
 		process.exit(1)
 	}
 
-	console.log('TODO')
+	let shows = await fetchShows()
+	shows = await downloadShowImages(shows)
+
+	const showsList = Object.values(shows)
+	console.log(`Saving ${showsList.length} shows to: ${SHOWS_FILE_PATH}`)
+	await writeJSONFile(SHOWS_FILE_PATH, showsList)
 }
 
 run()
