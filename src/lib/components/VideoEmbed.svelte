@@ -7,14 +7,8 @@
 
 	export let video: Video
 
-	let videoSource: VideoSource
-
-	preferredSource.subscribe((value: VideoSource) => {
-		videoSource = value
-	})
-
 	function setSource(source: VideoSource) {
-		preferredSource.update(() => source)
+		preferredSource.set(source)
 	}
 </script>
 
@@ -25,9 +19,9 @@
 		<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>
 	</div>
 	<div class="video">
-		{#if videoSource == VideoSource.Direct && video.source.direct}
-			<video controls src={video.source.direct}></video>
-		{:else if videoSource == VideoSource.YouTube && video.source.youtube}
+		{#if $preferredSource == VideoSource.Direct && video.source.direct}
+			<video controls src={video.source.direct} />
+		{:else if $preferredSource == VideoSource.YouTube && video.source.youtube}
 			<FrameEmbed
 				src="https://www.youtube.com/embed/{video.source.youtube}"
 				title={video.title}
@@ -45,7 +39,7 @@
 					<button
 						title="Use Internet Archive video source"
 						on:click={() => setSource(VideoSource.InternetArchive)}
-						class={videoSource === VideoSource.InternetArchive && 'current'}
+						class={$preferredSource === VideoSource.InternetArchive && 'current'}
 						disabled={!video.source.internetarchive && 'disabled'}
 					>
 						Internet Archive
@@ -53,7 +47,7 @@
 					<button
 						title="Use direct video source"
 						on:click={() => setSource(VideoSource.Direct)}
-						class={videoSource === VideoSource.Direct && 'current'}
+						class={$preferredSource === VideoSource.Direct && 'current'}
 						disabled={!video.source.direct && 'disabled'}
 					>
 						Direct
@@ -61,7 +55,7 @@
 					<button
 						title="Use YouTube video source"
 						on:click={() => setSource(VideoSource.YouTube)}
-						class={videoSource === VideoSource.YouTube && 'current'}
+						class={$preferredSource === VideoSource.YouTube && 'current'}
 						disabled={!video.source.youtube && 'disabled'}
 					>
 						YouTube
