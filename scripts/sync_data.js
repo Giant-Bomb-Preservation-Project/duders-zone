@@ -47,6 +47,26 @@ async function downloadFile(source, target) {
 	await fs.writeFile(target, fileData)
 }
 
+// Make a GET request to the given URL
+async function getRequest(url, queryParams) {
+	try {
+		console.debug(`Fetching from: ${url} ${JSON.stringify(queryParams)}`)
+		const response = await axios.get(url, {
+			headers: HEADERS,
+			params: queryParams,
+		})
+		return response.data
+	} catch (e) {
+		if (e instanceof axios.AxiosError) {
+			console.error(`ERROR! Unexpected status code: ${e.response.status}`)
+			console.error(e.response.data)
+			process.exit(1)
+		} else {
+			throw e
+		}
+	}
+}
+
 // Sleep function (thanks to: https://stackoverflow.com/a/39914235)
 function sleep(seconds) {
 	console.debug(`Sleeping for ${seconds} seconds...`)
