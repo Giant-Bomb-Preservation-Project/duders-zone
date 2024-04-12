@@ -39,24 +39,24 @@
 					<button
 						title="Use Internet Archive video source"
 						on:click={() => setSource(VideoSource.InternetArchive)}
-						class={$preferredSource === VideoSource.InternetArchive && 'current'}
-						disabled={!video.source.internetarchive && 'disabled'}
+						class:current={$preferredSource === VideoSource.InternetArchive}
+						disabled={!video.source.internetarchive}
 					>
 						Internet Archive
 					</button>
 					<button
 						title="Use direct video source"
 						on:click={() => setSource(VideoSource.Direct)}
-						class={$preferredSource === VideoSource.Direct && 'current'}
-						disabled={!video.source.direct && 'disabled'}
+						class:current={$preferredSource === VideoSource.Direct}
+						disabled={!video.source.direct}
 					>
 						Direct
 					</button>
 					<button
 						title="Use YouTube video source"
 						on:click={() => setSource(VideoSource.YouTube)}
-						class={$preferredSource === VideoSource.YouTube && 'current'}
-						disabled={!video.source.youtube && 'disabled'}
+						class:current={$preferredSource === VideoSource.YouTube}
+						disabled={!video.source.youtube}
 					>
 						YouTube
 					</button>
