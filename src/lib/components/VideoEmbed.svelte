@@ -125,7 +125,7 @@
 		opacity: 0.3;
 	}
 
-	.video-controls button:hover,
+	.video-controls button:hover:not(:disabled),
 	.video-controls button.current {
 		color: #f5faff;
 		text-shadow: #007fff 0 0 3px, #007fff 0 0 5px;
