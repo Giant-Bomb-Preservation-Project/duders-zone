@@ -150,53 +150,94 @@ async function downloadShowImages(shows) {
 	return shows
 }
 
-// Get a list of all the shows from Giant Bomb
-async function fetchShows() {
-	console.log('Fetching shows...')
+// Get videos from Internet Archive
+async function fetchArchiveVideos(shows) {
+	console.log('Fetching Internet Archive videos...')
 
-	const url = 'https://www.giantbomb.com/api/video_shows/'
+	const url = `https://archive.org/services/search/v1/scrape`
 	const params = {
-		api_key: GB_API_KEY,
-		format: 'json',
-		field_list: 'id,title,deck,image,logo',
-		limit: GIANT_BOMB_REQUEST_LIMIT,
-		offset: 0,
+		q: `collection:${COLLECTION_IDENTIFIER}`,
+		count: INTERNET_ARCHIVE_REQUEST_LIMIT,
+		fields: 'identifier,date,title,description,mediatype,subject',
 	}
 
-	let shows = {}
-	let page = 1
-	while (true) {
-		params.offset = (page - 1) * GIANT_BOMB_REQUEST_LIMIT
+	let total = -1
+	let found = 0
+	let videos = []
+	while (found !== total) {
+		let data = await getRequest(url, params)
 
-		const data = await getRequest(url, params)
-		const results = data.results ?? []
-		if (results.length == 0) {
-			break // we're done here
+		if (Object.hasOwn(data, 'error')) {
+			fatalError(`Error returned from IA: ${data.error}`)
 		}
 
-		console.debug(` -> got ${results.length} results`)
+		console.debug(` -> ${data.items.length} results`)
 
-		for (const result of results) {
-			shows[result.id] = {
-				id: toIdentifier(result.title),
-				gb_id: result.id,
-				title: result.title,
-				description: result.deck,
-				poster: result.image?.medium_url ?? null,
-				logo: result.logo?.medium_url ?? null,
+		if (total === -1) {
+			total = data.total
+		}
+		found += data.count
+
+		for (const item of data.items) {
+			const videoId = item.identifier
+
+			if (item.mediatype !== 'movies') {
+				console.debug(`${videoId}: Skipping non-movie entry`)
+				continue
 			}
+
+			const video = {
+				id: videoId,
+				//gb_id: null,
+				//show: 'unknown',
+				title: item.title,
+				description: item.description ?? '',
+				date: item.date,//(new Date(item.date)).toISOString(),
+				thumbnail: `https://archive.org/services/img/${videoId}`,
+				source: {
+					internetarchive: videoId,
+				},
+			}
+
+			const subjects =
+				typeof item.subject === 'string' || item.subject instanceof String
+					? [item.subject]
+					: item.subject
+			for (const subject of subjects) {
+				if (subject === 'Giant Bomb') {
+					continue
+				}
+
+				const showId = toIdentifier(subject)
+				if (!Object.hasOwn(shows, showId)) {
+					shows[showId] = {
+						id: showId,
+						title: subject,
+						description: '',
+						videos: [],
+					}
+				}
+
+				//video.show = showId
+				shows[showId].videos.push(videoId)
+			}
+
+			videos.push(video)
 		}
 
-		page = page + 1
-		await sleep(DELAY_TIME)
+		if (Object.hasOwn(data, 'cursor')) {
+			params.cursor = data.cursor
+		} else if (found !== total) {
+			fatalError(`Cursor not found in IA response: ${data}`)
+		}
 	}
 
-	return shows
+	return videos
 }
 
 // Fetch videos from Giant Bomb
-async function fetchVideos(shows) {
-	console.log('Fetching videos...')
+async function fetchGiantBombVideos(shows) {
+	console.log('Fetching Giant Bomb videos...')
 
 	const url = 'https://www.giantbomb.com/api/videos/'
 	const params = {
@@ -232,7 +273,7 @@ async function fetchVideos(shows) {
 				show: shows[result.video_show.id].id,
 		        title: result.name,
 		        description: result.deck,
-		        date: result.publish_date,
+		        date: (new Date(result.publish_date)).toISOString(),
 		        thumbnail: result.image?.medium_url ?? null,
 		        source: {},
 			}
@@ -250,6 +291,52 @@ async function fetchVideos(shows) {
 	return videos
 }
 
+// Get a list of all the shows from Giant Bomb
+async function fetchShows() {
+	console.log('Fetching shows...')
+
+	const url = 'https://www.giantbomb.com/api/video_shows/'
+	const params = {
+		api_key: GB_API_KEY,
+		format: 'json',
+		field_list: 'id,title,deck,image,logo',
+		limit: GIANT_BOMB_REQUEST_LIMIT,
+		offset: 0,
+	}
+
+	let shows = {}
+	let page = 1
+	while (true) {
+		params.offset = (page - 1) * GIANT_BOMB_REQUEST_LIMIT
+
+		const data = await getRequest(url, params)
+		const results = data.results ?? []
+		if (results.length == 0) {
+			break // we're done here
+		}
+
+		console.debug(` -> got ${results.length} results`)
+
+		for (const result of results) {
+			const identifier = toIdentifier(result.title)
+			shows[identifier] = {
+				id: identifier,
+				//gb_id: result.id,
+				title: result.title,
+				description: result.deck,
+				poster: result.image?.medium_url ?? null,
+				logo: result.logo?.medium_url ?? null,
+				videos: [],
+			}
+		}
+
+		page = page + 1
+		await sleep(DELAY_TIME)
+	}
+
+	return shows
+}
+
 // Run the script
 async function run() {
 	if (!GB_API_KEY) {
@@ -260,12 +347,16 @@ async function run() {
 	let shows = await fetchShows()
 	shows = await downloadShowImages(shows)
 
-	let videos = await fetchVideos(shows)
-	console.log(videos)
+	let videos = await fetchArchiveVideos(shows)
+
+	//let videos = await fetchGiantBombVideos(shows)
 
 	const showsList = Object.values(shows)
 	console.log(`Saving ${showsList.length} shows to: ${SHOWS_FILE_PATH}`)
 	await writeJSONFile(SHOWS_FILE_PATH, showsList)
+
+	console.log(`Saving ${videos.length} shows to: ${VIDEOS_FILE_PATH}`)
+	await writeJSONFile(VIDEOS_FILE_PATH, videos)
 }
 
 run()
