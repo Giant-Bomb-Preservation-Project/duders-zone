@@ -1,6 +1,7 @@
 [
     {
         "id": "endurance-run",
+        "gb_id": 2,
         "title": "Endurance Run",
         "description": "Vinny and Jeff sit down and take a crack at the latest game in the Shin Megami Tensei series. Will they make it through the entire game?",
         "poster": "2437462-persona 4.jpg",
@@ -319,6 +320,7 @@
     },
     {
         "id": "quick-looks",
+        "gb_id": 3,
         "title": "Quick Looks",
         "description": "Sit back and enjoy as the Giant Bomb team takes an unedited look at the latest video games.",
         "poster": "3134778-show artwork.jpg",
@@ -3685,6 +3687,7 @@
     },
     {
         "id": "vrodeo",
+        "gb_id": 4,
         "title": "VRodeo",
         "description": "The Giant Bomb team punches deck and enters the gridspace to bring you the finest virtual reality round-ups this side of the Pecos, pardner.",
         "poster": "2889791-gb_vrodeo_r1_1.jpg",
@@ -3726,6 +3729,7 @@
     },
     {
         "id": "giant-bombcast",
+        "gb_id": 5,
         "title": "Giant Bombcast",
         "description": "The Giant Bombcast is the world's most beloved video game podcast, and now it's available in video form.",
         "poster": "3380594-bombcast-logo-wide.png",
@@ -4510,6 +4514,7 @@
     },
     {
         "id": "old-games",
+        "gb_id": 8,
         "title": "Old Games",
         "description": "You've found yourself at the base of Giant Bomb's Old Games.",
         "poster": "2911719-oldgames_final.jpg",
@@ -4590,6 +4595,7 @@
     },
     {
         "id": "unfinished",
+        "gb_id": 11,
         "title": "Unfinished",
         "description": "Sometimes we look at a game before it's done. When that's the case? Well... it must be Unfinished.",
         "poster": "2911721-unfinished_final.jpg",
@@ -4864,6 +4870,7 @@
     },
     {
         "id": "ranking-of-fighters",
+        "gb_id": 13,
         "title": "Ranking of Fighters",
         "description": "Every fighting game ever made, ranked and rated into an extremely scientific list by actual* fighting game scientists!",
         "poster": "3061759-rankingoffighters.jpg",
@@ -4921,6 +4928,7 @@
     },
     {
         "id": "this-aint-no-game",
+        "gb_id": 15,
         "title": "This Ain't No Game",
         "description": "Your look into the world of video game movies and the Wonderful Universe of movies with video game themes.",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -4966,6 +4974,7 @@
     },
     {
         "id": "kerbal-project-beast",
+        "gb_id": 16,
         "title": "Kerbal: Project B.E.A.S.T",
         "description": "No, this actually _is_ rocket science, thank you very much.",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -4992,6 +5001,7 @@
     },
     {
         "id": "reviews",
+        "gb_id": 18,
         "title": "Reviews",
         "description": "Giant Bomb delivers the final word on video games in podcast form.",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -5079,6 +5089,7 @@
     },
     {
         "id": "game-tapes-raw",
+        "gb_id": 21,
         "title": "Game Tapes RAW",
         "description": "We got that B-roll.",
         "poster": "3061727-gametapes.png",
@@ -5125,6 +5136,7 @@
     },
     {
         "id": "betting-the-farmville",
+        "gb_id": 22,
         "title": "Betting the FarmVille",
         "description": "How low will these interns stoop to best each other at The World's Most Popular Facebook Game?",
         "poster": "2935478-1521744797-18654.png",
@@ -5143,6 +5155,7 @@
     },
     {
         "id": "kingdom-heartache",
+        "gb_id": 27,
         "title": "Kingdom Heartache",
         "description": "Join Ben Pack and TKTKTKTK as they engage in a simple and clean playthrough of Kingdom Hearts.",
         "poster": "3061498-kingdomheartache.jpg",
@@ -5158,6 +5171,7 @@
     },
     {
         "id": "unprofessional-fridays",
+        "gb_id": 28,
         "title": "Unprofessional Fridays",
         "description": "The end of the week is here! You made it! Let's sit back, relax, and close the week out in style with some video games.",
         "poster": "3061728-upf.jpg",
@@ -5619,6 +5633,7 @@
     },
     {
         "id": "metal-gear-scanlon",
+        "gb_id": 29,
         "title": "Metal Gear Scanlon",
         "description": "Drew Scanlon attempts to go on as many sneaking missions as he can find.",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -5721,6 +5736,7 @@
     },
     {
         "id": "six-crazy-frights",
+        "gb_id": 30,
         "title": "Six Crazy Frights",
         "description": "The road to Halloween is paved in the ghosts of Abby's dignity.",
         "poster": "2966321-gw_intro.00_00_28_12.still012.jpg",
@@ -5755,6 +5771,7 @@
     },
     {
         "id": "get-in-the-ring",
+        "gb_id": 31,
         "title": "Get in the Ring",
         "description": "What the hell is going on in the world of wrestling these days? Alex and Dan are here to chat about it and play wrestling games.",
         "poster": "2970176-2969864-hhh.jpg",
@@ -5768,6 +5785,7 @@
     },
     {
         "id": "game-of-the-year",
+        "gb_id": 33,
         "title": "Game of the Year",
         "description": "Discover the best and worst games of the year with your friends from Giant Bomb.",
         "poster": "3344196-gb-goty-2021-deliberations-day-1-thumbnail.jpg",
@@ -5943,6 +5961,7 @@
     },
     {
         "id": "the-dating-games",
+        "gb_id": 34,
         "title": "The Dating Games",
         "description": "Ben and Abby are on both a spiritual and physical journey to match-make the world. Can they find love in this series of Dating Simulators? Or are they both as unf*ckable as ever?",
         "poster": "2992959-thedatinggames.jpg",
@@ -5961,6 +5980,7 @@
     },
     {
         "id": "gaiden-the-ring",
+        "gb_id": 37,
         "title": "Gaiden the Ring",
         "description": "Wrestling is about telling stories. Those stories are usually very stupid. Here are some of them.",
         "poster": "3002958-gaidenthering.jpg",
@@ -5981,6 +6001,7 @@
     },
     {
         "id": "star-spangled-beasters",
+        "gb_id": 38,
         "title": "Star Spangled Beasters",
         "description": "United We Game",
         "poster": "3026066-starspangledbeasters_thumbnail.jpg",
@@ -5992,6 +6013,7 @@
     },
     {
         "id": "e3-vs-gb",
+        "gb_id": 40,
         "title": "E3 vs. GB",
         "description": "The eternal battle between Giant Bomb and the Electronic Three rages on.",
         "poster": "3082572-lincoln.jpg",
@@ -6334,6 +6356,7 @@
     },
     {
         "id": "giant-bomb-presents",
+        "gb_id": 43,
         "title": "Giant Bomb Presents",
         "description": "Giant Bomb Presents is giantbomb.com's home for interviews, previews, and more.",
         "poster": "3061721-gb-presents.png",
@@ -6347,11 +6370,13 @@
             "gb-2300-18320-IDYMSKF",
             "gb-2300-18697-ID05892",
             "gb-2300-18898-IDCKMCW",
-            "gb-2300-18999-IDJ0T38"
+            "gb-2300-18999-IDJ0T38",
+            "gb-2300-19006-IDH27S7"
         ]
     },
     {
         "id": "the-giant-beastcast",
+        "gb_id": 45,
         "title": "The Giant Beastcast",
         "description": "The Giant Bomb East team gathers to talk about the week in video games, their lives, and basically anything that interests them. All from New York City!",
         "poster": "3061712-giant beastcast.png",
@@ -6432,6 +6457,7 @@
     },
     {
         "id": "voicemail-dump-truck",
+        "gb_id": 47,
         "title": "Voicemail Dump Truck",
         "description": "If you think the GIant Bombcast spends too much time talking about Not Video Games, you're going to hate this thing.",
         "poster": "3328071-gb_voicemaildumptruck_1920x1080.jpg",
@@ -6564,6 +6590,7 @@
     },
     {
         "id": "all-systems-goku",
+        "gb_id": 48,
         "title": "All Systems Goku",
         "description": "Anime experts Dan Ryckert and Jeff Gerstmann embark on a quest to watch every episode of Dragon Ball Z Kai.",
         "poster": "3061715-all systems goku.png",
@@ -6574,6 +6601,7 @@
     },
     {
         "id": "best-of-giant-bomb",
+        "gb_id": 50,
         "title": "Best of Giant Bomb",
         "description": "The very best of Giant Bomb.",
         "poster": "3072748-slide1.jpg",
@@ -6733,6 +6761,7 @@
     },
     {
         "id": "extra-life",
+        "gb_id": 52,
         "title": "Extra Life",
         "description": "Marathon long live streams to raise money for Extra Life. It's for the kids!",
         "poster": "3072747-download.jpg",
@@ -6916,6 +6945,7 @@
     },
     {
         "id": "mailbag",
+        "gb_id": 53,
         "title": "Mailbag",
         "description": "What's in the mail? Is it an old T-shirt? A lunchbox full of rusty knives? Video game treasures? Canadian energy drinks?",
         "poster": "3061535-mailbag_none_preview.jpg",
@@ -7091,6 +7121,7 @@
     },
     {
         "id": "giant-devcast",
+        "gb_id": 54,
         "title": "Giant Devcast",
         "description": "Will Carle and Dan Auer talk through the behind-the-scenes work that the engineering and design teams do for Giant Bomb.",
         "poster": "3061716-giant-devcast.png",
@@ -7102,6 +7133,7 @@
     },
     {
         "id": "bombin-the-am-with-scoops--the-wolf",
+        "gb_id": 56,
         "title": "Bombin' the A.M. With Scoops & the Wolf!",
         "description": "Grab a cup of coffee, and catch up on the day's headlines with Giant Bomb guys that aren't in San Francisco.",
         "poster": "3061705-bombin' the a.m..png",
@@ -7222,6 +7254,7 @@
     },
     {
         "id": "i-love-mondays",
+        "gb_id": 58,
         "title": "I Love Mondays",
         "description": "Want to know what's on Giant Bomb this week? This often-wrong look at the week ahead may help!",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -7427,6 +7460,7 @@
     },
     {
         "id": "question-of-the-week",
+        "gb_id": 59,
         "title": "Question of the Week",
         "description": "We ask, you answer. It's Giant Bomb's Question of the Week!",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -7518,6 +7552,7 @@
     },
     {
         "id": "daily-dota",
+        "gb_id": 65,
         "title": "Daily Dota",
         "description": "Dota 2. Every day.*",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -7573,6 +7608,7 @@
     },
     {
         "id": "the-binding-of-patrick",
+        "gb_id": 66,
         "title": "The Binding of Patrick",
         "description": "Patrick Klepek gets tied up with The Binding of Issac.",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -7602,6 +7638,7 @@
     },
     {
         "id": "professional-wednesdays",
+        "gb_id": 67,
         "title": "Professional Wednesdays",
         "description": "Hump day will never be the same.",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -7614,6 +7651,7 @@
     },
     {
         "id": "pokmonday-night-combat",
+        "gb_id": 69,
         "title": "PokéMonday Night Combat",
         "description": "Resident Pokémon professor Jan Ochoa shows us the ins and outs of competitive Pokémon battling!",
         "poster": "3078470-pnc baby.jpg",
@@ -7661,6 +7699,7 @@
     },
     {
         "id": "we-talk-over",
+        "gb_id": 71,
         "title": "We Talk Over",
         "description": "Let's discuss some new games and some press conferences!",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -7744,6 +7783,7 @@
     },
     {
         "id": "bens-lens",
+        "gb_id": 72,
         "title": "Ben's Lens",
         "description": "Videographer extraordinaire Ben Pack takes you behind the scenes of Giant Bomb dot com.",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -7776,6 +7816,7 @@
     },
     {
         "id": "pax",
+        "gb_id": 73,
         "title": "PAX",
         "description": "We travel across the world to visit everyone's favorite gaming conventions: PAX! Watch our live panels!",
         "poster": "img_broken.png",
@@ -7884,6 +7925,7 @@
     },
     {
         "id": "breakfast-n-ben",
+        "gb_id": 74,
         "title": "Breakfast 'N' Ben",
         "description": "My name is Ben and on this day I eat juice.",
         "poster": "3280282-juice.jpg",
@@ -7946,6 +7988,7 @@
     },
     {
         "id": "vlogs-and-travelogues",
+        "gb_id": 77,
         "title": "Vlogs and Travelogues",
         "description": "The world is our oyster and we plan to document every bit of it. Watch behind the scenes videos and vlogs of our travels.",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -7991,6 +8034,7 @@
     },
     {
         "id": "building-with-brad",
+        "gb_id": 78,
         "title": "Building With Brad",
         "description": "Join Brad as he builds!",
         "poster": "3115986-building.jpg",
@@ -8003,6 +8047,7 @@
     },
     {
         "id": "get-on-my-level",
+        "gb_id": 79,
         "title": "Get On My Level!",
         "description": "The Giant Bomb community build levels to try and stump Ben and Dan for their money!",
         "poster": "3118070-getonmylevel-artwork.png",
@@ -8020,6 +8065,7 @@
     },
     {
         "id": "party-of-one",
+        "gb_id": 84,
         "title": "Party of One",
         "description": "Who wants a delicious solo stream with your favorite video game personalities? Your table is ready!",
         "poster": "3169079-partyforone.png",
@@ -8120,6 +8166,7 @@
     },
     {
         "id": "lockdown-2020",
+        "gb_id": 86,
         "title": "Lockdown 2020",
         "description": "It's a lockdown baby! We're under orders to work from home so here we go!",
         "poster": "3174779-lockdown2020.jpg",
@@ -8426,6 +8473,7 @@
     },
     {
         "id": "fortnite-with-st-vincent-eventually",
+        "gb_id": 87,
         "title": "Fortnite With St. Vincent! (Eventually)",
         "description": "St. Vincent like Fortnite. Abby likes St. Vincent. This is a fool-proof plan to impress St. Vincent enough to play Fortnite with Abby. How could it fail?",
         "poster": "3192161-fortnitewithstv.png",
@@ -8445,6 +8493,7 @@
     },
     {
         "id": "giant-bomb-makes-mario",
+        "gb_id": 88,
         "title": "Giant Bomb Makes Mario",
         "description": "Giant Bomb comes together to show Miyamoto what's up and make their own Mario.",
         "poster": "3193163-policestate.jpg",
@@ -8462,6 +8511,7 @@
     },
     {
         "id": "2-fallout-2-furious",
+        "gb_id": 89,
         "title": "2 Fallout 2 Furious",
         "description": "Ben embarks on a quest in the wasteland to crush groins and take names.",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -8479,6 +8529,7 @@
     },
     {
         "id": "cowboys-with-abby",
+        "gb_id": 91,
         "title": "Cowboys With Abby!",
         "description": "Abby loves cowboys. Abby loves games. Why not have both?",
         "poster": "3198035-cowboys logo.png",
@@ -8493,6 +8544,7 @@
     },
     {
         "id": "road-to-evo-operation-2-0-in-2020",
+        "gb_id": 93,
         "title": "Road to EVO: Operation 2-0 in 2020",
         "description": "EVO starts Saturday, July 4th, and Ben totally forgot about that. Watch as he scrambles to learn a new game in time to not get blown the frick up.",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -8505,6 +8557,7 @@
     },
     {
         "id": "astroneering-with-brad-and-vinny",
+        "gb_id": 94,
         "title": "Astroneering with Brad and Vinny",
         "description": "Join Brand and Vinny as they play Astroneer.",
         "poster": "3217076-astroneering_bradandvinny_show.jpg",
@@ -8542,6 +8595,7 @@
     },
     {
         "id": "the-adventures-of-jane-leno",
+        "gb_id": 95,
         "title": "The Adventures of Jane Leno",
         "description": "Ben takes a crack at a Dragon Age game for the first time with Dragon Age Origins.",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -8552,6 +8606,7 @@
     },
     {
         "id": "the-bloodborne-identity-with-jan",
+        "gb_id": 96,
         "title": "The Bloodborne Identity with Jan",
         "description": "Jan takes his first trip through Yharnam!",
         "poster": "3231449-5928555833-31751.jpg",
@@ -8587,6 +8642,7 @@
     },
     {
         "id": "garage-talk",
+        "gb_id": 98,
         "title": "Garage Talk",
         "description": "Jeff Gerstmann's garage has a lot of things in it, and rather than clean it efficiently, he'd like to slow down and show you some.",
         "poster": "3285743-vlcsnap-2021-04-21-22h18m18s479.png",
@@ -8606,6 +8662,7 @@
     },
     {
         "id": "grubbsnax",
+        "gb_id": 100,
         "title": "GrubbSnax",
         "description": "News expert Jeff Grubb is here to dish out all of the hottest news!",
         "poster": "3383665-game-mess-mornings-16-9-centered.jpg",
@@ -8955,11 +9012,13 @@
             "gb-2300-18994-IDKOB0M",
             "gb-2300-18997-IDBKF50",
             "gb-2300-19000-ID6UAQR",
-            "gb-2300-19003-ID4948C"
+            "gb-2300-19003-ID4948C",
+            "gb-2300-19005-IDHTCW6"
         ]
     },
     {
         "id": "albummer",
+        "gb_id": 103,
         "title": "ALBUMMER!",
         "description": "The crew behind Two Minutes to Late Night are here to re-review some of the most critically reviled albums out there!",
         "poster": "3307498-untitled-1.jpg",
@@ -9036,6 +9095,7 @@
     },
     {
         "id": "the-very-online-show",
+        "gb_id": 104,
         "title": "The Very Online Show",
         "description": "Tamoor Hussain and Lucy James are very online. Jeff Bakalar is only sorta online.",
         "poster": "3307515-veryonlineshowshowart.jpg",
@@ -9071,6 +9131,7 @@
     },
     {
         "id": "giant-bomb-animated",
+        "gb_id": 107,
         "title": "Giant Bomb Animated",
         "description": "Giant Bomb gets animated! Monthly cartoons sourced from the Giant Bomb universe each month!",
         "poster": "3312158-logo.png",
@@ -9089,6 +9150,7 @@
     },
     {
         "id": "ranking-of-evil",
+        "gb_id": 108,
         "title": "Ranking of Evil",
         "description": "Evil Uno guides the Giant Bomb crew on a journey on what is truly EVIL.",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -9102,6 +9164,7 @@
     },
     {
         "id": "reel-layers",
+        "gb_id": 109,
         "title": "Reel Layers",
         "description": "There's art in every frame.",
         "poster": "3325514-reellayerslogo.png",
@@ -9116,6 +9179,7 @@
     },
     {
         "id": "run-for-the-hills",
+        "gb_id": 110,
         "title": "Run for the Hills",
         "description": "Silent Hill expert, Jess, guides Jan through the mysterious fog that is Silent Hill.",
         "poster": "3328420-rfth.jpg",
@@ -9146,6 +9210,7 @@
     },
     {
         "id": "giant-bombathon",
+        "gb_id": 111,
         "title": "Giant Bombathon",
         "description": "We have ourselves a little Bombathon to celebrate the end of the year and to celebrate a premium sale!",
         "poster": "3334188-titleslide.jpg",
@@ -9160,6 +9225,7 @@
     },
     {
         "id": "arcade-pit-on-giant-bomb",
+        "gb_id": 113,
         "title": "Arcade Pit on Giant Bomb",
         "description": "The very first official Giant Bomb Arcade Pit! Two teams of two players face-off in fast-paced and strange gaming challenges and trivia!",
         "poster": "3350064-ar.jpg",
@@ -9207,6 +9273,7 @@
     },
     {
         "id": "sekiro-choa",
+        "gb_id": 114,
         "title": "Sekiro-Choa",
         "description": "Sequel to the hit seires \"The Bloodborne Identity\" comes SEKIRO-CHOA! The lonewolf, Jan, embarks to save the little lord boy!",
         "poster": "3399807-sek.jpg",
@@ -9225,6 +9292,7 @@
     },
     {
         "id": "friday-night-forking",
+        "gb_id": 115,
         "title": "Friday Night Forking",
         "description": "We're forking on a Friday night!",
         "poster": "3419763-fnfshow.jpg",
@@ -9242,6 +9310,7 @@
     },
     {
         "id": "eternal-darkness-at-the-heart-of-my-soul",
+        "gb_id": 116,
         "title": "Eternal Darkness at the Heart of My Soul",
         "description": "The King of the Elder Melienials is here to confront the darkness.",
         "poster": "3421145-6655113641-34192.jpg",
@@ -9266,6 +9335,7 @@
     },
     {
         "id": "blight-club",
+        "gb_id": 119,
         "title": "Blight Club",
         "description": "These games aren't the best, but we gotta play them so Dan can finish Sonic!",
         "poster": "3432668-blight-club.jpg",
@@ -9332,11 +9402,13 @@
             "gb-2300-18951-IDFG26W",
             "gb-2300-18974-ID5NNOH",
             "gb-2300-18981-ID45N7X",
-            "gb-2300-18996-IDRZW0V"
+            "gb-2300-18996-IDRZW0V",
+            "gb-2300-19007-IDXNL6W"
         ]
     },
     {
         "id": "grubber-langs-punch-out",
+        "gb_id": 120,
         "title": "Grubber Lang's Punch-Out!!",
         "description": "Dan is here to coach Jeff Grubb on how to finally beat Mike Tyson and beyond!",
         "poster": "3441728-grubber.jpg",
@@ -9359,6 +9431,7 @@
     },
     {
         "id": "play-it-forward",
+        "gb_id": 122,
         "title": "Play it Forward",
         "description": "We play the oddest game of telephone by passing the actual controller around to the whole staff and trying to get through Alpha Protocol!",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -9382,6 +9455,7 @@
     },
     {
         "id": "licensed-to-thrill",
+        "gb_id": 123,
         "title": "Licensed to Thrill",
         "description": "Let's look at some licensed games and see if they're any good!",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -9392,6 +9466,7 @@
     },
     {
         "id": "giant-bomb-plays",
+        "gb_id": 124,
         "title": "Giant Bomb Plays",
         "description": "We're playing a game!",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -9421,6 +9496,7 @@
     },
     {
         "id": "mario-party-party",
+        "gb_id": 6,
         "title": "Mario Party Party",
         "description": "Join us as the Giant Bomb gang stares down the barrel of a long game of each release in the mainline Mario Party series.",
         "poster": "2911720-mariopartyparty_final.jpg",
@@ -9442,6 +9518,7 @@
     },
     {
         "id": "jar-time-w-jeff",
+        "gb_id": 7,
         "title": "Jar Time w/ Jeff",
         "description": "PM your questions to \"Jeff\" on the site to be considered for this series of informal Q&amp;A videos.",
         "poster": "2891653-vlcsnap-error475.jpg",
@@ -9498,6 +9575,7 @@
     },
     {
         "id": "blue-bombin",
+        "gb_id": 9,
         "title": "Blue Bombin'",
         "description": "Join Alex Navarro as he straps in and makes his way through several of the Mega Man games.",
         "poster": "3051242-2958247-blue_bombin_1080_2.png",
@@ -9524,6 +9602,7 @@
     },
     {
         "id": "playdate",
+        "gb_id": 10,
         "title": "Playdate",
         "description": "Curated games for the discerning player.",
         "poster": "3119654-gb_playdate-art.png",
@@ -9757,6 +9836,7 @@
     },
     {
         "id": "demo-derby",
+        "gb_id": 12,
         "title": "Demo Derby",
         "description": "The past and the present collide as Giant Bomb digs into the dark world of old demo discs.",
         "poster": "2914003-demoderby.jpg",
@@ -9803,6 +9883,7 @@
     },
     {
         "id": "beast-in-the-east",
+        "gb_id": 14,
         "title": "Beast in the East",
         "description": "The Giant Bomb East team takes on the Yakuza series.",
         "poster": "3061730-subbed 4.jpg",
@@ -9836,6 +9917,7 @@
     },
     {
         "id": "this-is-the-run",
+        "gb_id": 17,
         "title": "This Is the Run",
         "description": "Gaming's greatest challenges, met head-on by gaming's greatest game players.",
         "poster": "2932183-therun.jpg",
@@ -9908,6 +9990,7 @@
     },
     {
         "id": "vinnyvania",
+        "gb_id": 19,
         "title": "VinnyVania",
         "description": "Vinny Caravella takes on the challenge of playing through each of the Castlevania games and some extras. It's always Belmont O'Clock somewhere!",
         "poster": "3061729-vinnyvania.jpg",
@@ -9969,6 +10052,7 @@
     },
     {
         "id": "game-tapes",
+        "gb_id": 20,
         "title": "Game Tapes",
         "description": "Unearthing the forgotten magnetic media of the video game industry.",
         "poster": "3061534-gametapes.png",
@@ -9992,6 +10076,7 @@
     },
     {
         "id": "bring-your-b-game",
+        "gb_id": 23,
         "title": "Bring Your B-Game",
         "description": "We play some of our generation's finest mid-tier game releases.",
         "poster": "2936574-cp_bringyourbgame_05052017.01_21_31_45.still001.jpg",
@@ -10004,6 +10089,7 @@
     },
     {
         "id": "murder-island",
+        "gb_id": 24,
         "title": "Murder Island",
         "description": "We get the team together to see if we can make it through PlayerUnknown's Battlegrounds.",
         "poster": "2948360-murderisland_art.jpg",
@@ -10040,6 +10126,7 @@
     },
     {
         "id": "steal-my-sunshine",
+        "gb_id": 25,
         "title": "Steal My Sunshine",
         "description": "Join us as we see who can collect the most Shines, and hold onto them, by the end of the game.",
         "poster": "2954768-stealmysunshine_1920x1080.jpg",
@@ -10067,6 +10154,7 @@
     },
     {
         "id": "the-exquisite-corps",
+        "gb_id": 26,
         "title": "The Exquisite Corps",
         "description": "Our team has to pass their save files to one another as each of them attempt to successively complete their mission.",
         "poster": "2954769-cp_excorps_ep01_07242017.00_00_06_55.still001.jpg",
@@ -10116,6 +10204,7 @@
     },
     {
         "id": "million-dollar-abby",
+        "gb_id": 32,
         "title": "Million Dollar Abby",
         "description": "Abby \"The American Mare\" Russell may be a rookie boxer, but she's got the world's best coach and she's ready to punch her way to the top in the one and only Punch-Out!",
         "poster": "2974727-abbyrussellpunchout.jpg",
@@ -10127,6 +10216,7 @@
     },
     {
         "id": "thirteen-deadly-sims",
+        "gb_id": 35,
         "title": "Thirteen Deadly Sims",
         "description": "One by one, each will die. This will be fun, I cannot lie.",
         "poster": "2995512-deadlysims.png",
@@ -10147,6 +10237,7 @@
     },
     {
         "id": "whos-the-big-boss",
+        "gb_id": 36,
         "title": "Who's The Big Boss?",
         "description": "After decades of avoiding his sacred duty, Dan finally begins Operation Intrude N313.",
         "poster": "2997134-2438751817-DU0XO.jpg",
@@ -10171,6 +10262,7 @@
     },
     {
         "id": "mass-alex",
+        "gb_id": 39,
         "title": "Mass Alex",
         "description": "Alex makes his hero to journey through Mass Effect",
         "poster": "3038614-massalex.jpg",
@@ -10248,6 +10340,7 @@
     },
     {
         "id": "premium-podcasts",
+        "gb_id": 49,
         "title": "Premium Podcasts",
         "description": "Premium podcasts for Premium Members.",
         "poster": "3061722-premium_podcasts.png",
@@ -10306,6 +10399,7 @@
     },
     {
         "id": "thursday-night-throwdown",
+        "gb_id": 57,
         "title": "Thursday Night Throwdown",
         "description": "It's Thursday night and it's time for you to go up against us in a weekly throwdown of decidedly humble proportions.",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -10460,6 +10554,7 @@
     },
     {
         "id": "breaking-brad",
+        "gb_id": 62,
         "title": "Breaking Brad",
         "description": "Can we break Brad Shoemaker's will and send him packing? We put him up against some difficult video games to find out.",
         "poster": "3119610-1-original.png",
@@ -10529,6 +10624,7 @@
     },
     {
         "id": "die-another-friday",
+        "gb_id": 63,
         "title": "Die Another Friday",
         "description": "Ryckert, Dan Ryckert, begins his ill-advised quest to finally beating Goldeneye 007 on 00 Agent Difficulty.",
         "poster": "3062394-4890415448-Drg9SWlVYAAACuI.jpg",
@@ -10554,6 +10650,7 @@
     },
     {
         "id": "gotta-god-hand",
+        "gb_id": 64,
         "title": "Gotta God Hand!",
         "description": "Ben and Jason don't know why they have to, but they GOTTA!",
         "poster": "3063345-gotta god.jpg",
@@ -10576,6 +10673,7 @@
     },
     {
         "id": "jeff-gerstmanns-pro-skater",
+        "gb_id": 68,
         "title": "Jeff Gerstmann's Pro Skater",
         "description": "How many benihanas can Jeff land as he plays through all the Tony Hawk games and an assortment of Tony Hawk knock-offs?",
         "poster": "3078132-desk_art.jpg",
@@ -10593,6 +10691,7 @@
     },
     {
         "id": "load-our-last-save",
+        "gb_id": 70,
         "title": "Load Our Last Save",
         "description": "What happens when you return to a previous save from days, months, or a decade ago? Discover just how well we remember where we left in various games as explore our old save files.",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -10626,6 +10725,7 @@
     },
     {
         "id": "giant-bomb-crime-crew",
+        "gb_id": 75,
         "title": "Giant Bomb Crime Crew",
         "description": "The Beast crew hop into GTA Online to do some crimes and finish some heists.",
         "poster": "3101498-gtaonline_poster.jpg",
@@ -10648,6 +10748,7 @@
     },
     {
         "id": "giant-bomb-sea-beasts",
+        "gb_id": 76,
         "title": "Giant Bomb Sea Beasts",
         "description": "Ahoy matey! It's time for Giant Bomb to sail the open seas in the search for that beautiful booty!",
         "poster": "3101499-7410309233-31014.jpg",
@@ -10670,6 +10771,7 @@
     },
     {
         "id": "youre-gonna-finish-it",
+        "gb_id": 80,
         "title": "You're Gonna Finish It!(?)",
         "description": "Maybe we will! Maybe we won't!",
         "poster": "3118553-ygfi.jpg",
@@ -10684,6 +10786,7 @@
     },
     {
         "id": "grapes-and-wrath",
+        "gb_id": 81,
         "title": "Grapes and Wrath",
         "description": "We've got grapes and this Asura guy has a lot of wrath!",
         "poster": "3127123-8400555368-31189.jpg",
@@ -10702,6 +10805,7 @@
     },
     {
         "id": "burgle-my-bananas",
+        "gb_id": 82,
         "title": "Burgle My Bananas",
         "description": "We attempt to get enough bananas in Donkey Kong 64 to satisfy either the game, our needs, or just get enough to buy our way out of playing.",
         "poster": "3121866-burgle.png",
@@ -10719,6 +10823,7 @@
     },
     {
         "id": "clue-crew",
+        "gb_id": 83,
         "title": "Clue Crew",
         "description": "There are mysteries to be solved and Alex and Abby are on the case! Watch as they play classic mystery adventure games and finally put an end to crime.",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -10756,6 +10861,7 @@
     },
     {
         "id": "cross-coast",
+        "gb_id": 85,
         "title": "Cross Coast",
         "description": "We join forces across the country to overcome all obstacles.",
         "poster": "3171039-crosscoast.png",
@@ -10767,6 +10873,7 @@
     },
     {
         "id": "lets-minecraft-together",
+        "gb_id": 90,
         "title": "Let's Minecraft Together!",
         "description": "We get together to mine, build, and survive together in our virtual world.",
         "poster": "3196062-letsminecrafttogether.jpg",
@@ -10831,6 +10938,7 @@
     },
     {
         "id": "mario-madness",
+        "gb_id": 92,
         "title": "Mario Madness",
         "description": "These levels are hard, but our resolve is harder!",
         "poster": "3026329-gb_default-16_9.jpg",
@@ -10841,6 +10949,7 @@
     },
     {
         "id": "borne-to-run",
+        "gb_id": 99,
         "title": "Borne to Run",
         "description": "Danny and Tamoor were Borne to Run!",
         "poster": "3300201-borne-to-run-logo.jpg",
@@ -10855,6 +10964,7 @@
     },
     {
         "id": "guilty-treasures",
+        "gb_id": 101,
         "title": "Guilty Treasures",
         "description": "In this series, Danny O'Dwyer hangs out with each member of the crew to find out what their favorite obscure game is!",
         "poster": "3305556-guiltytreasures-1jeff.jpg",
@@ -10868,6 +10978,7 @@
     },
     {
         "id": "bak-2-skool",
+        "gb_id": 105,
         "title": "Bak 2 Skool",
         "description": "It must have been really fun being in school with Dan Ryckert. Now we'll all know what it's like, for better or worse!",
         "poster": "3309226-keyart.png",
@@ -10890,6 +11001,7 @@
     },
     {
         "id": "voidburgers-hot-takeouts",
+        "gb_id": 106,
         "title": "VoidBurger's Hot Takeouts",
         "description": "Potentially strange gaming opinions and analysis arrives fresh out of the oven in VoidBurger's Hot Takeouts.",
         "poster": "3309231-hot_takeouts-key_art.png",

@@ -188,11 +188,11 @@ async function fetchArchiveVideos(shows) {
 
 			const video = {
 				id: videoId,
-				//gb_id: null,
-				//show: 'unknown',
+				gb_id: null,
+				show: 'unknown',
 				title: item.title,
 				description: item.description ?? '',
-				date: item.date,//(new Date(item.date)).toISOString(),
+				date: new Date(item.date).toISOString(),
 				thumbnail: `https://archive.org/services/img/${videoId}`,
 				source: {
 					internetarchive: videoId,
@@ -218,7 +218,7 @@ async function fetchArchiveVideos(shows) {
 					}
 				}
 
-				//video.show = showId
+				video.show = showId
 				shows[showId].videos.push(videoId)
 			}
 
@@ -321,7 +321,7 @@ async function fetchShows() {
 			const identifier = toIdentifier(result.title)
 			shows[identifier] = {
 				id: identifier,
-				//gb_id: result.id,
+				gb_id: result.id,
 				title: result.title,
 				description: result.deck,
 				poster: result.image?.medium_url ?? null,
