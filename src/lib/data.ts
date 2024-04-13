@@ -3,6 +3,12 @@ import showData from '$lib/data/shows.json'
 import videoData from '$lib/data/videos.json'
 import { extractWords } from '$lib/text'
 
+export enum VideoSource {
+	InternetArchive = 'internetarchive',
+	Direct = 'direct',
+	YouTube = 'youtube',
+}
+
 export interface Show {
 	readonly id: string
 	readonly title: string
@@ -19,6 +25,11 @@ export interface Video {
 	readonly date: Date
 	readonly show?: string
 	readonly thumbnail?: string
+	readonly source: {
+		readonly internetarchive?: string
+		readonly direct?: string
+		readonly youtube?: string
+	}
 }
 
 // Sort by date descending
@@ -59,6 +70,7 @@ export class DataStore {
 				date: new Date(video.date),
 				show: Object.values(this.shows).find((show) => show.videos.includes(video.id))?.id,
 				thumbnail: video.thumbnail,
+				source: video.source,
 			}
 		}
 

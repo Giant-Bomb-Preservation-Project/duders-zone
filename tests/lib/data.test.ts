@@ -33,6 +33,9 @@ const testVideoData = [
 		description: "Let's posse up and see what's new in the world of Red Dead.",
 		date: '2020-03-02T00:00:00Z',
 		thumbnail: 'https://archive.org/services/img/gb-2300-15259-IDJIYS2',
+		source: {
+			internetarchive: 'gb-2300-15259-IDJIYS2',
+		},
 	},
 	{
 		id: 'gb-2300-16398-IDJKE0C',
@@ -41,6 +44,9 @@ const testVideoData = [
 			'Join us as we wish Abby well using full sentences, one word, and eventually questionable hand gestures.',
 		date: '2020-11-25T00:00:00Z',
 		thumbnail: 'https://archive.org/services/img/gb-2300-16398-IDJKE0C',
+		source: {
+			internetarchive: 'gb-2300-16398-IDJKE0C',
+		},
 	},
 	{
 		id: '2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
@@ -49,6 +55,10 @@ const testVideoData = [
 		date: '2009-02-11T00:00:00Z',
 		thumbnail:
 			'https://archive.org/services/img/2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+		source: {
+			internetarchive:
+				'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+		},
 	},
 	{
 		id: '2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
@@ -58,6 +68,10 @@ const testVideoData = [
 		date: '2009-02-19T00:00:00Z',
 		thumbnail:
 			'https://archive.org/services/img/2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+		source: {
+			internetarchive:
+				'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+		},
 	},
 	{
 		id: '2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
@@ -66,6 +80,10 @@ const testVideoData = [
 		date: '2009-02-26T00:00:00Z',
 		thumbnail:
 			'https://archive.org/services/img/2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+		source: {
+			internetarchive:
+				'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+		},
 	},
 ]
 
@@ -103,6 +121,9 @@ describe('DataStore', () => {
 					date: new Date('2020-03-02T00:00:00Z'),
 					thumbnail: 'https://archive.org/services/img/gb-2300-15259-IDJIYS2',
 					show: 'cross-coast',
+					source: {
+						internetarchive: 'gb-2300-15259-IDJIYS2',
+					},
 				},
 				'gb-2300-16398-IDJKE0C': {
 					id: 'gb-2300-16398-IDJKE0C',
@@ -112,6 +133,9 @@ describe('DataStore', () => {
 					date: new Date('2020-11-25T00:00:00Z'),
 					thumbnail: 'https://archive.org/services/img/gb-2300-16398-IDJKE0C',
 					show: 'cross-coast',
+					source: {
+						internetarchive: 'gb-2300-16398-IDJKE0C',
+					},
 				},
 				'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY': {
 					id: '2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
@@ -122,6 +146,10 @@ describe('DataStore', () => {
 					thumbnail:
 						'https://archive.org/services/img/2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
 					show: 'this-aint-no-game',
+					source: {
+						internetarchive:
+							'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+					},
 				},
 				'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N': {
 					id: '2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
@@ -132,6 +160,10 @@ describe('DataStore', () => {
 					thumbnail:
 						'https://archive.org/services/img/2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
 					show: 'this-aint-no-game',
+					source: {
+						internetarchive:
+							'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+					},
 				},
 				'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY': {
 					id: '2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
@@ -141,6 +173,10 @@ describe('DataStore', () => {
 					thumbnail:
 						'https://archive.org/services/img/2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
 					show: 'this-aint-no-game',
+					source: {
+						internetarchive:
+							'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+					},
 				},
 			}
 
