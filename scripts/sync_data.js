@@ -14,8 +14,14 @@ const HEADERS = {
 // Identifier for the GB archive in Internet Archive
 const COLLECTION_IDENTIFIER = 'giant-bomb-archive'
 
-// Seconds to delay between making requests to GB
-const DELAY_TIME = 5
+// Seconds to delay between making requests
+const SLEEP_DELAY = 5
+
+// Seconds to delay between retrying failed requests
+const RETRY_DELAY = 30
+
+// Amount of times to retry a GET request
+const RETRY_TIMES = 3
 
 // Amount of items to fetch per request to Giant Bomb (max: 100)
 const GIANT_BOMB_REQUEST_LIMIT = 100
@@ -55,24 +61,33 @@ async function fatalError(message) {
 
 // Make a GET request to the given URL
 async function getRequest(url, queryParams) {
-	try {
-		const queryString = Object.keys(queryParams)
-			.map((k) => `${k}=${queryParams[k]}`)
-			.join('&')
-		console.debug(`GET ${url}?${queryString}`)
-		const response = await axios.get(url, {
-			headers: HEADERS,
-			params: queryParams,
-		})
+	let times = 0
+	while (times < RETRY_TIMES) {
+		try {
+			const queryString = Object.keys(queryParams)
+				.map((k) => `${k}=${queryParams[k]}`)
+				.join('&')
+			console.debug(`GET ${url}?${queryString}`)
+			const response = await axios.get(url, {
+				headers: HEADERS,
+				params: queryParams,
+			})
 
-		return response.data
-	} catch (e) {
-		if (e instanceof axios.AxiosError) {
-			fatalError(`Unexpected status code: ${e.response.status}\n${e.response.data}`)
-		} else {
-			throw e
+			return response.data
+		} catch (e) {
+			if (e instanceof axios.AxiosError) {
+				console.warn(`WARNING! Unexpected status code: ${e.response?.status}\n${e.response?.data}`)
+			} else {
+				throw e
+			}
 		}
+
+		times += 1
+		console.debug(`Retrying in ${RETRY_DELAY} seconds...`)
+		await sleep(RETRY_DELAY)
 	}
+
+	fatalError('Unable to complete request')
 }
 
 // Read a JSON file
@@ -143,7 +158,7 @@ async function downloadShowImages(shows) {
 			skipped += 1
 		} catch {
 			await downloadFile(images[image], target)
-			await sleep(DELAY_TIME)
+			await sleep(SLEEP_DELAY)
 		}
 	}
 
@@ -292,7 +307,7 @@ async function fetchGiantBombVideos(videos, shows) {
 		}
 
 		page = page + 1
-		await sleep(DELAY_TIME)
+		await sleep(SLEEP_DELAY)
 	}
 
 	console.debug(` -> processed ${count} videos`)
@@ -338,7 +353,7 @@ async function fetchShows() {
 		}
 
 		page = page + 1
-		await sleep(DELAY_TIME)
+		await sleep(SLEEP_DELAY)
 	}
 
 	console.debug(` -> got ${Object.keys(shows).length} shows`)
