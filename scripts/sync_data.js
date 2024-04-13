@@ -188,7 +188,6 @@ async function fetchArchiveVideos(shows) {
 			fatalError(`Error returned from IA: ${data.error}`)
 		}
 
-
 		if (total === -1) {
 			total = data.total
 		}
@@ -243,6 +242,7 @@ async function fetchArchiveVideos(shows) {
 
 		if (Object.hasOwn(data, 'cursor')) {
 			params.cursor = data.cursor
+			await sleep(SLEEP_DELAY)
 		} else if (found !== total) {
 			fatalError(`Cursor not found in IA response: ${data}`)
 		}
