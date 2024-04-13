@@ -266,17 +266,20 @@ async function fetchGiantBombVideos(videos, shows) {
 		count += results.length
 
 		for (const result of results) {
-			const show = Object.values(shows).find((show) => show.gb_id === result.video_show.id)
-			if (show === -1) {
-				fatalError(`Missing show with ID: ${result.video_show.id}`)
+			let videoIndex = -1
+			if (result.video_show?.id) {
+				const show = Object.values(shows).find((show) => show.gb_id === result.video_show.id)
+				videoIndex = videos.findIndex(
+					(video) => video.title === result.name.trim() && video.show === shows[show.id].id
+				)
+			} else {
+				videoIndex = videos.findIndex(
+					(video) => video.title === result.name.trim()
+				)
 			}
 
-			const showId = show.id
-			const videoIndex = videos.findIndex(
-				(video) => video.title === result.name && video.show === shows[showId].id
-			)
 			if (videoIndex === -1) {
-				console.warn(`WARNING! Can't find video for ${result.name}`)
+				console.warn(`WARNING! Can't find archive video for: ${result.name}`)
 				continue
 			}
 
