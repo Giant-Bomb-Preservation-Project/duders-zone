@@ -84,8 +84,6 @@ async function readJSONFile(path) {
 
 // Sleep function (thanks to: https://stackoverflow.com/a/39914235)
 function sleep(seconds) {
-	console.debug(`Sleeping for ${seconds} seconds...`)
-
 	return new Promise((resolve) => setTimeout(resolve, seconds * 1000))
 }
 
@@ -134,18 +132,22 @@ async function downloadShowImages(shows) {
 		}
 	}
 
-	console.log(`Downloading ${Object.values(images).length} images...`)
+	console.log(`Downloading show images...`)
+
+	let skipped = 0
 	for (const image of Object.keys(images)) {
 		const target = SHOW_IMAGES_PATH + image
 
 		try {
 			await fs.access(target, fs.constants.F_OK)
-			console.debug(`Skipping existing image: ${image}`)
+			skipped += 1
 		} catch {
 			await downloadFile(images[image], target)
 			await sleep(DELAY_TIME)
 		}
 	}
+
+	console.debug(` -> ${Object.values(images).length - skipped} downloaded (${skipped} skipped)`)
 
 	return shows
 }
@@ -171,7 +173,6 @@ async function fetchArchiveVideos(shows) {
 			fatalError(`Error returned from IA: ${data.error}`)
 		}
 
-		console.debug(` -> ${data.items.length} results`)
 
 		if (total === -1) {
 			total = data.total
@@ -232,6 +233,8 @@ async function fetchArchiveVideos(shows) {
 		}
 	}
 
+	console.debug(` -> got ${videos.length} videos`)
+
 	return videos
 }
 
@@ -249,6 +252,7 @@ async function fetchGiantBombVideos(videos, shows) {
 	}
 
 	let page = 1
+	let count = 0
 	while (true) {
 		params.offset = (page - 1) * GIANT_BOMB_REQUEST_LIMIT
 
@@ -259,7 +263,7 @@ async function fetchGiantBombVideos(videos, shows) {
 			break // we're done here
 		}
 
-		console.debug(` -> got ${results.length} results`)
+		count += results.length
 
 		for (const result of results) {
 			const show = Object.values(shows).find((show) => show.gb_id === result.video_show.id)
@@ -288,6 +292,8 @@ async function fetchGiantBombVideos(videos, shows) {
 		await sleep(DELAY_TIME)
 	}
 
+	console.debug(` -> processed ${count} videos`)
+
 	return videos
 }
 
@@ -315,8 +321,6 @@ async function fetchShows() {
 			break // we're done here
 		}
 
-		console.debug(` -> got ${results.length} results`)
-
 		for (const result of results) {
 			const identifier = toIdentifier(result.title)
 			shows[identifier] = {
@@ -333,6 +337,8 @@ async function fetchShows() {
 		page = page + 1
 		await sleep(DELAY_TIME)
 	}
+
+	console.debug(` -> got ${Object.keys(shows).length} shows`)
 
 	return shows
 }
