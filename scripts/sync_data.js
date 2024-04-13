@@ -15,13 +15,13 @@ const HEADERS = {
 const COLLECTION_IDENTIFIER = 'giant-bomb-archive'
 
 // Seconds to delay between making requests to GB
-const DELAY_TIME = 2
+const DELAY_TIME = 5
 
-// Amount of shows to fetch per request (max: 100)
-const SHOWS_PER_REQUEST = 100
+// Amount of items to fetch per request to Giant Bomb (max: 100)
+const GIANT_BOMB_REQUEST_LIMIT = 100
 
-// Amount of videos to fetch per request (max: 10000)
-const VIDEOS_PER_REQUEST = 10000
+// Amount of videos to fetch per request to Internet Archive (max: 10000)
+const INTERNET_ARCHIVE_REQUEST_LIMIT = 10000
 
 // Paths to the files to store the show and video meta data
 const SHOWS_FILE_PATH = 'src/lib/data/shows.json'
@@ -68,7 +68,7 @@ async function getRequest(url, queryParams) {
 		return response.data
 	} catch (e) {
 		if (e instanceof axios.AxiosError) {
-			fatalError(`ERROR! Unexpected status code: ${e.response.status}\n${e.response.data}`)
+			fatalError(`Unexpected status code: ${e.response.status}\n${e.response.data}`)
 		} else {
 			throw e
 		}
@@ -158,19 +158,18 @@ async function fetchShows() {
 	const params = {
 		api_key: GB_API_KEY,
 		format: 'json',
-		limit: SHOWS_PER_REQUEST,
 		field_list: 'id,title,deck,image,logo',
+		limit: GIANT_BOMB_REQUEST_LIMIT,
 		offset: 0,
 	}
 
 	let shows = {}
 	let page = 1
 	while (true) {
-		params.offset = (page - 1) * SHOWS_PER_REQUEST
+		params.offset = (page - 1) * GIANT_BOMB_REQUEST_LIMIT
 
 		const data = await getRequest(url, params)
 		const results = data.results ?? []
-
 		if (results.length == 0) {
 			break // we're done here
 		}
@@ -178,18 +177,13 @@ async function fetchShows() {
 		console.debug(` -> got ${results.length} results`)
 
 		for (const result of results) {
-			const identifier = toIdentifier(result.title)
-			if (Object.hasOwn(shows, identifier)) {
-				fatalError(`ERROR! Conflicting show identifier: ${identifier}`)
-			}
-
-			shows[identifier] = {
-				id: identifier,
+			shows[result.id] = {
+				id: toIdentifier(result.title),
 				gb_id: result.id,
 				title: result.title,
 				description: result.deck,
-				poster: result.image ? result.image.medium_url : null,
-				logo: result.logo ? result.logo.medium_url : null,
+				poster: result.image?.medium_url ?? null,
+				logo: result.logo?.medium_url ?? null,
 			}
 		}
 
@@ -198,6 +192,62 @@ async function fetchShows() {
 	}
 
 	return shows
+}
+
+// Fetch videos from Giant Bomb
+async function fetchVideos(shows) {
+	console.log('Fetching videos...')
+
+	const url = 'https://www.giantbomb.com/api/videos/'
+	const params = {
+		api_key: GB_API_KEY,
+		format: 'json',
+		field_list: 'id,name,deck,video_show,publish_date,youtube_id,image',
+		limit: GIANT_BOMB_REQUEST_LIMIT,
+		offset: 0,
+	}
+
+	let videos = []
+	let page = 1
+	while (true) {
+		params.offset = (page - 1) * GIANT_BOMB_REQUEST_LIMIT
+
+		const data = await getRequest(url, params)
+
+		const results = data.results ?? []
+		if (results.length == 0) {
+			break // we're done here
+		}
+
+		console.debug(` -> got ${results.length} results`)
+
+		for (const result of results) {
+			if (!Object.hasOwn(shows, result.video_show.id)) {
+				fatalError(`Missing show with ID: ${result.video_show.id}`)
+			}
+
+			const video = {
+				id: `gb-${result.id}`,
+				gb_id: result.id,
+				show: shows[result.video_show.id].id,
+		        title: result.name,
+		        description: result.deck,
+		        date: result.publish_date,
+		        thumbnail: result.image?.medium_url ?? null,
+		        source: {},
+			}
+			if (result.youtube_id) {
+				video.source.youtube = result.youtube_id
+			}
+
+			videos.push(video)
+		}
+
+		page = page + 1
+		await sleep(DELAY_TIME)
+	}
+
+	return videos
 }
 
 // Run the script
@@ -209,6 +259,9 @@ async function run() {
 
 	let shows = await fetchShows()
 	shows = await downloadShowImages(shows)
+
+	let videos = await fetchVideos(shows)
+	console.log(videos)
 
 	const showsList = Object.values(shows)
 	console.log(`Saving ${showsList.length} shows to: ${SHOWS_FILE_PATH}`)
