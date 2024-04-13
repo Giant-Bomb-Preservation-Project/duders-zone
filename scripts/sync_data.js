@@ -236,7 +236,7 @@ async function fetchArchiveVideos(shows) {
 }
 
 // Fetch videos from Giant Bomb
-async function fetchGiantBombVideos(shows) {
+async function fetchGiantBombVideos(videos, shows) {
 	console.log('Fetching Giant Bomb videos...')
 
 	const url = 'https://www.giantbomb.com/api/videos/'
@@ -248,7 +248,6 @@ async function fetchGiantBombVideos(shows) {
 		offset: 0,
 	}
 
-	let videos = []
 	let page = 1
 	while (true) {
 		params.offset = (page - 1) * GIANT_BOMB_REQUEST_LIMIT
@@ -263,25 +262,26 @@ async function fetchGiantBombVideos(shows) {
 		console.debug(` -> got ${results.length} results`)
 
 		for (const result of results) {
-			if (!Object.hasOwn(shows, result.video_show.id)) {
+			const show = Object.values(shows).find((show) => show.gb_id === result.video_show.id)
+			if (show === -1) {
 				fatalError(`Missing show with ID: ${result.video_show.id}`)
 			}
 
-			const video = {
-				id: `gb-${result.id}`,
-				gb_id: result.id,
-				show: shows[result.video_show.id].id,
-		        title: result.name,
-		        description: result.deck,
-		        date: (new Date(result.publish_date)).toISOString(),
-		        thumbnail: result.image?.medium_url ?? null,
-		        source: {},
-			}
-			if (result.youtube_id) {
-				video.source.youtube = result.youtube_id
+			const showId = show.id
+			const videoIndex = videos.findIndex(
+				(video) => video.title === result.name && video.show === shows[showId].id
+			)
+			if (videoIndex === -1) {
+				console.warn(`WARNING! Can't find video for ${result.name}`)
+				continue
 			}
 
-			videos.push(video)
+			videos[videoIndex].gb_id = result.id
+			videos[videoIndex].date = new Date(result.publish_date).toISOString() // the canonical date
+			//videos[videoIndex].thumbnail = result.image?.medium_url ?? videos[videoIndex].thumbnail
+			if (result.youtube_id) {
+				videos[videoIndex].source.youtube = result.youtube_id
+			}
 		}
 
 		page = page + 1
@@ -348,8 +348,7 @@ async function run() {
 	shows = await downloadShowImages(shows)
 
 	let videos = await fetchArchiveVideos(shows)
-
-	//let videos = await fetchGiantBombVideos(shows)
+	videos = await fetchGiantBombVideos(videos, shows)
 
 	const showsList = Object.values(shows)
 	console.log(`Saving ${showsList.length} shows to: ${SHOWS_FILE_PATH}`)
