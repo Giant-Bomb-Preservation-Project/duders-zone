@@ -258,7 +258,7 @@ async function fetchArchiveVideos(shows) {
 
 	console.debug(` -> got ${videos.length} videos`)
 
-	return videos
+	return [shows, videos]
 }
 
 // Fetch videos from Giant Bomb
@@ -347,7 +347,7 @@ async function fetchGiantBombVideos(videos, shows) {
 
 	console.debug(` -> processed ${count} videos`)
 
-	return videos
+	return [shows, videos]
 }
 
 // Get a list of all the shows from Giant Bomb
@@ -404,8 +404,9 @@ async function run() {
 	}
 
 	let shows = await fetchShows()
-	let videos = await fetchArchiveVideos(shows)
-	videos = await fetchGiantBombVideos(videos, shows)
+	let videos
+	[shows, videos] = await fetchArchiveVideos(shows);
+	[shows, videos] = await fetchGiantBombVideos(videos, shows);
 
 	shows = await downloadShowImages(shows)
 
