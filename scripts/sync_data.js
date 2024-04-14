@@ -405,8 +405,8 @@ async function run() {
 
 	let shows = await fetchShows()
 	let videos
-	[shows, videos] = await fetchArchiveVideos(shows);
-	[shows, videos] = await fetchGiantBombVideos(videos, shows);
+	;[shows, videos] = await fetchArchiveVideos(shows)
+	;[shows, videos] = await fetchGiantBombVideos(videos, shows)
 
 	shows = await downloadShowImages(shows)
 
