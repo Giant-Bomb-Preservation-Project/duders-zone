@@ -159,6 +159,7 @@ async function downloadShowImages(shows) {
 		const target = SHOW_IMAGES_PATH + image
 
 		try {
+			// Check to see if this file exists - if it doesn't it will throw an exception
 			await fs.access(target, fs.constants.F_OK)
 			skipped += 1
 		} catch {
@@ -219,6 +220,7 @@ async function fetchArchiveVideos(shows) {
 				},
 			}
 
+			// Look through the video subjects to find a matching GB show
 			const subjects =
 				typeof item.subject === 'string' || item.subject instanceof String
 					? [item.subject]
@@ -230,6 +232,7 @@ async function fetchArchiveVideos(shows) {
 
 				const showId = toIdentifier(subject)
 				if (!Object.hasOwn(shows, showId)) {
+					// The show doesn't exist in the GB API, so let's add it
 					shows[showId] = {
 						id: showId,
 						title: subject,
