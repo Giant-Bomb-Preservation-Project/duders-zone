@@ -36,6 +36,13 @@ const VIDEOS_FILE_PATH = 'src/lib/data/videos.json'
 // Path to the location to store the show images
 const SHOW_IMAGES_PATH = 'static/shows/'
 
+// Video types to skip
+const UNWANTED_VIDEO_TYPES = [
+	"Trailers",
+	"Trailers, Exclude From Infinite",
+	"Trailers, Features",
+]
+
 // The API key used when connecting to the Giant Bomb API
 const GB_API_KEY = process.env.GB_API_KEY
 
@@ -261,7 +268,7 @@ async function fetchGiantBombVideos(videos, shows) {
 	const params = {
 		api_key: GB_API_KEY,
 		format: 'json',
-		field_list: 'id,name,deck,video_show,publish_date,youtube_id,image',
+		field_list: 'deck,id,image,name,publish_date,video_show,video_type,youtube_id',
 		limit: GIANT_BOMB_REQUEST_LIMIT,
 		offset: 0,
 	}
@@ -281,6 +288,10 @@ async function fetchGiantBombVideos(videos, shows) {
 		count += results.length
 
 		for (const result of results) {
+			if (UNWANTED_VIDEO_TYPES.includes(result.video_type)) {
+				continue;
+			}
+
 			let videoIndex = -1
 			if (result.video_show?.id) {
 				const show = Object.values(shows).find((show) => show.gb_id === result.video_show.id)
