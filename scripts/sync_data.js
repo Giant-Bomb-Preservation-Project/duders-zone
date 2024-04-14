@@ -294,7 +294,30 @@ async function fetchGiantBombVideos(videos, shows) {
 
 			let videoIndex = -1
 			if (result.video_show?.id) {
-				const show = Object.values(shows).find((show) => show.gb_id === result.video_show.id)
+				let show = Object.values(shows).find((show) => show.gb_id === result.video_show.id)
+
+				// We didn't get the show from the /shows API call :/
+				if (!show) {
+					const showId = toIdentifier(result.video_show.title)
+					if (Object.hasOwn(shows, showId)) {
+						shows[showId].gb_id = result.video_show.id
+						shows[showId].poster = result.video_show.image?.medium_url ?? null
+						shows[showId].logo = result.video_show.logo?.medium_url ?? null
+					} else {
+						shows[showId] = {
+							id: showId,
+							gb_id: result.video_show.id,
+							title: result.video_show.title,
+							description: '',
+							poster: result.video_show.image?.medium_url ?? null,
+							logo: result.video_show.logo?.medium_url ?? null,
+							videos: [],
+						}
+					}
+
+					show = shows[showId]
+				}
+
 				videoIndex = videos.findIndex(
 					(video) => video.title === result.name.trim() && video.show === shows[show.id].id
 				)
@@ -309,6 +332,7 @@ async function fetchGiantBombVideos(videos, shows) {
 				continue
 			}
 
+			// Fill in only the fields we care about
 			videos[videoIndex].gb_id = result.id
 			videos[videoIndex].date = new Date(result.publish_date).toISOString() // the canonical date
 			//videos[videoIndex].thumbnail = result.image?.medium_url ?? videos[videoIndex].thumbnail
@@ -380,10 +404,10 @@ async function run() {
 	}
 
 	let shows = await fetchShows()
-	shows = await downloadShowImages(shows)
-
 	let videos = await fetchArchiveVideos(shows)
 	videos = await fetchGiantBombVideos(videos, shows)
+
+	shows = await downloadShowImages(shows)
 
 	const showsList = Object.values(shows)
 	console.log(`Saving ${showsList.length} shows to: ${SHOWS_FILE_PATH}`)
