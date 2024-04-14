@@ -21,7 +21,7 @@ const SLEEP_DELAY = 5
 const RETRY_DELAY = 30
 
 // Amount of times to retry a GET request
-const RETRY_TIMES = 3
+const REQUEST_ATTEMPTS = 3
 
 // Amount of items to fetch per request to Giant Bomb (max: 100)
 const GIANT_BOMB_REQUEST_LIMIT = 100
@@ -69,7 +69,7 @@ async function fatalError(message) {
 // Make a GET request to the given URL
 async function getRequest(url, queryParams) {
 	let times = 0
-	while (times < RETRY_TIMES) {
+	while (times < REQUEST_ATTEMPTS) {
 		try {
 			const queryString = Object.keys(queryParams)
 				.map((k) => `${k}=${queryParams[k]}`)
