@@ -37,11 +37,7 @@ const VIDEOS_FILE_PATH = 'src/lib/data/videos.json'
 const SHOW_IMAGES_PATH = 'static/shows/'
 
 // Video types to skip
-const UNWANTED_VIDEO_TYPES = [
-	"Trailers",
-	"Trailers, Exclude From Infinite",
-	"Trailers, Features",
-]
+const UNWANTED_VIDEO_TYPES = ['Trailers', 'Trailers, Exclude From Infinite', 'Trailers, Features']
 
 // The API key used when connecting to the Giant Bomb API
 const GB_API_KEY = process.env.GB_API_KEY
@@ -83,7 +79,9 @@ async function getRequest(url, queryParams) {
 			return response.data
 		} catch (e) {
 			if (e instanceof axios.AxiosError) {
-				console.warn(`WARNING! Unexpected status code: ${e.response?.status}\n${e.response?.data}`)
+				console.warn(
+					`WARNING! Unexpected status code: ${e.response?.status}\n${e.response?.data}`
+				)
 			} else {
 				throw e
 			}
@@ -289,7 +287,7 @@ async function fetchGiantBombVideos(videos, shows) {
 
 		for (const result of results) {
 			if (UNWANTED_VIDEO_TYPES.includes(result.video_type)) {
-				continue;
+				continue
 			}
 
 			let videoIndex = -1
@@ -319,12 +317,11 @@ async function fetchGiantBombVideos(videos, shows) {
 				}
 
 				videoIndex = videos.findIndex(
-					(video) => video.title === result.name.trim() && video.show === shows[show.id].id
+					(video) =>
+						video.title === result.name.trim() && video.show === shows[show.id].id
 				)
 			} else {
-				videoIndex = videos.findIndex(
-					(video) => video.title === result.name.trim()
-				)
+				videoIndex = videos.findIndex((video) => video.title === result.name.trim())
 			}
 
 			if (videoIndex === -1) {
