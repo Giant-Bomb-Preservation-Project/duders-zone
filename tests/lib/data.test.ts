@@ -29,6 +29,7 @@ const testShowData = [
 const testVideoData = [
 	{
 		id: 'gb-2300-15259-IDJIYS2',
+		show: 'cross-coast',
 		title: 'Cross Coast: Red Dead Redemption 2',
 		description: "Let's posse up and see what's new in the world of Red Dead.",
 		date: '2020-03-02T00:00:00Z',
@@ -39,6 +40,7 @@ const testVideoData = [
 	},
 	{
 		id: 'gb-2300-16398-IDJKE0C',
+		show: 'cross-coast',
 		title: "Cross Coast: Abby's Not-Goodbye-But-See-You-Later Stream!",
 		description:
 			'Join us as we wish Abby well using full sentences, one word, and eventually questionable hand gestures.',
@@ -50,6 +52,7 @@ const testVideoData = [
 	},
 	{
 		id: '2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+		show: 'this-aint-no-game',
 		title: "This Ain't No Game: Double Dragon",
 		description: "Ryan kicks off his movie tour with this...well...it's definitely a movie.",
 		date: '2009-02-11T00:00:00Z',
@@ -62,6 +65,7 @@ const testVideoData = [
 	},
 	{
 		id: '2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+		show: 'this-aint-no-game',
 		title: "This Ain't No Game: Street Fighter",
 		description:
 			"In honor of Street Fighter IV's release, we're sharing this epic piece of cinema.",
@@ -75,6 +79,7 @@ const testVideoData = [
 	},
 	{
 		id: '2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+		show: 'this-aint-no-game',
 		title: "This Ain't No Game: Resident Evil",
 		description: 'Ryan finds some love for the master of anti-dog karate.',
 		date: '2009-02-26T00:00:00Z',
@@ -343,6 +348,7 @@ describe('DataStore', () => {
 			const videoData = [
 				{
 					id: 'not_exact',
+					show: 'this-aint-no-game',
 					title: 'Not Exact Testing',
 					description: '',
 					date: '2020-03-02T00:00:00Z',
@@ -350,6 +356,7 @@ describe('DataStore', () => {
 				},
 				{
 					id: 'exact',
+					show: 'this-aint-no-game',
 					title: 'Exact Test',
 					description: '',
 					date: '2020-03-02T00:00:00Z',
@@ -357,6 +364,7 @@ describe('DataStore', () => {
 				},
 				{
 					id: 'not_included',
+					show: 'this-aint-no-game',
 					title: 'Not Included',
 					description: '',
 					date: '2020-03-02T00:00:00Z',
@@ -374,6 +382,7 @@ describe('DataStore', () => {
 			const videoData = [
 				{
 					id: 'only_one',
+					show: 'this-aint-no-game',
 					title: 'Test',
 					description: '',
 					date: '2020-03-02T00:00:00Z',
@@ -381,6 +390,7 @@ describe('DataStore', () => {
 				},
 				{
 					id: 'two',
+					show: 'this-aint-no-game',
 					title: 'Test Thing',
 					description: '',
 					date: '2020-03-02T00:00:00Z',
@@ -388,6 +398,7 @@ describe('DataStore', () => {
 				},
 				{
 					id: 'none',
+					show: 'this-aint-no-game',
 					title: 'Explosive Bananas',
 					description: '',
 					date: '2020-03-02T00:00:00Z',

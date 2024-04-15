@@ -68,7 +68,7 @@ export class DataStore {
 				title: video.title,
 				description: video.description,
 				date: new Date(video.date),
-				show: Object.values(this.shows).find((show) => show.videos.includes(video.id))?.id,
+				show: video.show,
 				thumbnail: video.thumbnail,
 				source: video.source,
 			}
