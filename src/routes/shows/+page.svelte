@@ -82,7 +82,9 @@
 		color: #dedede;
 		padding-left: 8px;
 		margin-bottom: 10px;
-		box-shadow: rgba(255, 255, 255, 0.2) 0 1px 0 inset, rgba(0, 0, 0, 0.25) 0 1px 1px;
+		box-shadow:
+			rgba(255, 255, 255, 0.2) 0 1px 0 inset,
+			rgba(0, 0, 0, 0.25) 0 1px 1px;
 		text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0;
 		width: 120px;
 		border: 1px solid #0b0d0e;

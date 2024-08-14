@@ -93,7 +93,9 @@
 		display: inline-block;
 		line-height: 19px;
 		border-radius: 2px;
-		box-shadow: rgba(0, 0, 0, 0.25) 0 0 0 1px, rgba(255, 255, 255, 0.15) 0 1px 0 inset,
+		box-shadow:
+			rgba(0, 0, 0, 0.25) 0 0 0 1px,
+			rgba(255, 255, 255, 0.15) 0 1px 0 inset,
 			rgba(0, 0, 0, 0.25) 0 2px 2px;
 		text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
 		-webkit-background-clip: padding;
@@ -108,8 +110,11 @@
 	}
 
 	ul li.current a {
-		box-shadow: #b5b5b5 0 0 0 1px, rgba(255, 255, 255, 0.15) 0 1px 0 inset,
-			rgba(0, 0, 0, 0.3) 0 1px 5px inset, #fff 0 2px 0;
+		box-shadow:
+			#b5b5b5 0 0 0 1px,
+			rgba(255, 255, 255, 0.15) 0 1px 0 inset,
+			rgba(0, 0, 0, 0.3) 0 1px 5px inset,
+			#fff 0 2px 0;
 	}
 
 	ul li:not(.current) a:hover {
