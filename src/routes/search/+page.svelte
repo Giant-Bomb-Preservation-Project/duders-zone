@@ -66,7 +66,9 @@
 	#field-wrapper {
 		background-image: linear-gradient(#e8e8e8, #fff);
 		border-radius: 4px;
-		box-shadow: rgba(255, 255, 255, 0.25) 0 1px 0, rgba(0, 0, 0, 0.4) 0 1px 3px inset;
+		box-shadow:
+			rgba(255, 255, 255, 0.25) 0 1px 0,
+			rgba(0, 0, 0, 0.4) 0 1px 3px inset;
 		flex: 1;
 		height: 25px;
 		margin-bottom: 2em;

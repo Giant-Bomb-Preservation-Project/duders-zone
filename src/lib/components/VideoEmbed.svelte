@@ -128,7 +128,9 @@
 	.video-controls button:hover:not(:disabled),
 	.video-controls button.current {
 		color: #f5faff;
-		text-shadow: #007fff 0 0 3px, #007fff 0 0 5px;
+		text-shadow:
+			#007fff 0 0 3px,
+			#007fff 0 0 5px;
 	}
 
 	.video-controls li {
@@ -143,7 +145,9 @@
 
 	.video-controls li:hover .link {
 		color: #f5faff;
-		text-shadow: #007fff 0 0 3px, #007fff 0 0 5px;
+		text-shadow:
+			#007fff 0 0 3px,
+			#007fff 0 0 5px;
 	}
 
 	.video-controls li:hover .link-gear {
@@ -152,7 +156,9 @@
 
 	.video-controls .controls {
 		background-color: #1d1f20;
-		box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px inset, rgba(255, 255, 255, 0.15) 0 1px 0 inset,
+		box-shadow:
+			rgba(0, 0, 0, 0.25) 0 0 10px inset,
+			rgba(255, 255, 255, 0.15) 0 1px 0 inset,
 			rgba(0, 0, 0, 0.75) 0 0 5px;
 		border-radius: 3px;
 		border: 1px solid #111213;
