@@ -39,6 +39,9 @@ const SHOW_IMAGES_PATH = 'static/shows/'
 // Video types to skip
 const UNWANTED_VIDEO_TYPES = ['Trailers', 'Trailers, Exclude From Infinite', 'Trailers, Features']
 
+// Identifiers of movies in Internet Archive that we're not interested in
+const UNWANTED_IA_MOVIES = ['signup_confirmation']
+
 // The API key used when connecting to the Giant Bomb API
 const GB_API_KEY = process.env.GB_API_KEY
 
@@ -204,6 +207,11 @@ async function fetchArchiveVideos(shows) {
 
 			if (item.mediatype !== 'movies') {
 				console.debug(`${videoId}: Skipping non-movie entry`)
+				continue
+			}
+
+			if (UNWANTED_IA_MOVIES.includes(videoId)) {
+				console.debug(`${videoId}: Skipping unwanted movie`)
 				continue
 			}
 
