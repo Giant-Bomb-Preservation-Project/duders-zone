@@ -4550,6 +4550,28 @@
             "gb-2300-19196-IDG1SM0",
             "gb-2300-19200-IDHXINQ",
             "gb-2300-19201-IDL8UG5",
+            "gb-2300-19212-ID7W0EF",
+            "gb-2300-19213-IDRKVLP",
+            "gb-2300-19216-IDBAWE4",
+            "gb-2300-19217-IDJMVZJ",
+            "gb-2300-19226-IDQH8AB",
+            "gb-2300-19227-IDYOLL1",
+            "gb-2300-19237-IDJT6IB",
+            "gb-2300-19238-IDBC2DU",
+            "gb-2300-19241-IDW5CGL",
+            "gb-2300-19242-IDLSPEO",
+            "gb-2300-19251-IDW50IT",
+            "gb-2300-19252-ID8XXXP",
+            "gb-2300-19257-ID07EQ1",
+            "gb-2300-19258-IDVQT2M",
+            "gb-2300-19263-IDPDWLA",
+            "gb-2300-19264-ID9ZIJY",
+            "gb-2300-19275-ID7J7YW",
+            "gb-2300-19276-IDJJCTJ",
+            "gb-2300-19287-ID92L57",
+            "gb-2300-19288-IDUQ31W",
+            "gb-2300-19297-IDGDMXH",
+            "gb-2300-19298-IDZJ32J",
             "gb-Unarchived0002-IDJRO2O",
             "gb-Unarchived0143-IDIDXUM",
             "gb-Unarchived8725"
@@ -5592,6 +5614,11 @@
             "gb-2300-19180-IDODHRX",
             "gb-2300-19197-IDRQDCC",
             "gb-2300-19210-IDPJK9X",
+            "gb-2300-19222-ID82FFL",
+            "gb-2300-19236-ID8FBXK",
+            "gb-2300-19250-IDCTD9A",
+            "gb-2300-19262-IDUU7L1",
+            "gb-2300-19271-IDPTPGF",
             "gb-2300-6968-IDII445",
             "gb-2300-6987-IDMUMPW",
             "gb-2300-7008-IDW3A19",
@@ -6435,7 +6462,8 @@
             "gb-2300-19056-IDHUY54",
             "gb-2300-19168-ID0V2QC",
             "gb-2300-19207-IDD3MCV",
-            "gb-2300-19208-IDLF1OA"
+            "gb-2300-19208-IDLF1OA",
+            "gb-2300-19247-IDK2V95"
         ]
     },
     {
@@ -6673,7 +6701,21 @@
             "gb-2300-19192-IDTR61O",
             "gb-2300-19193-ID8DUFD",
             "gb-2300-19205-IDB5N8A",
-            "gb-2300-19206-IDWFI9U"
+            "gb-2300-19206-IDWFI9U",
+            "gb-2300-19219-IDBPYYW",
+            "gb-2300-19220-IDR4TLT",
+            "gb-2300-19233-IDSTCAJ",
+            "gb-2300-19234-IDD6IVA",
+            "gb-2300-19248-ID3HBAM",
+            "gb-2300-19249-IDLFG8L",
+            "gb-2300-19259-IDKMHFG",
+            "gb-2300-19260-IDG0J98",
+            "gb-2300-19268-IDNODV1",
+            "gb-2300-19269-IDX4M50",
+            "gb-2300-19281-IDZPKXR",
+            "gb-2300-19282-IDQ4SIO",
+            "gb-2300-19294-IDRY2B5",
+            "gb-2300-19295-IDXBTQY"
         ]
     },
     {
@@ -7867,6 +7909,9 @@
             "gb-2300-19112-IDEF0BZ",
             "gb-2300-19113-IDAGQ41",
             "gb-2300-19124-IDSELY0",
+            "gb-2300-19228-IDGJY2O",
+            "gb-2300-19240-ID2RMXT",
+            "gb-2300-19289-IDEJSW0",
             "gb-2300-7066",
             "gb-2300-7397",
             "gb-2300-7849",
@@ -8117,6 +8162,8 @@
             "gb-2300-18899-IDU6LT8",
             "gb-2300-19018-IDD51D7",
             "gb-2300-19082-ID68EL0",
+            "gb-2300-19272-IDDAFQ6",
+            "gb-2300-19278-ID3270J",
             "gb-2300-2111",
             "gb-2300-3514",
             "gb-2300-3516",
@@ -9161,7 +9208,29 @@
             "gb-2300-19202-ID4VA57",
             "gb-2300-19204-ID8O2UW",
             "gb-2300-19209-IDR1510",
-            "gb-2300-19211-IDD1E4V"
+            "gb-2300-19211-IDD1E4V",
+            "gb-2300-19214-ID8NCQ3",
+            "gb-2300-19218-IDLCXH0",
+            "gb-2300-19221-IDZK1YA",
+            "gb-2300-19223-IDKT5D0",
+            "gb-2300-19230-IDRXHX9",
+            "gb-2300-19232-IDM2SBD",
+            "gb-2300-19235-ID7X237",
+            "gb-2300-19239-IDB84YN",
+            "gb-2300-19243-ID5D9IX",
+            "gb-2300-19246-IDDZJV0",
+            "gb-2300-19256-IDGXC21",
+            "gb-2300-19261-IDK2KFP",
+            "gb-2300-19265-IDRP984",
+            "gb-2300-19270-ID9R0D1",
+            "gb-2300-19273-IDFVBZ7",
+            "gb-2300-19277-IDKG0B9",
+            "gb-2300-19280-ID8GG9U",
+            "gb-2300-19283-IDK0VH9",
+            "gb-2300-19286-IDFYECN",
+            "gb-2300-19290-IDI3GCU",
+            "gb-2300-19293-IDIR7TS",
+            "gb-2300-19296-IDBDNF4"
         ]
     },
     {
@@ -9500,6 +9569,10 @@
             "2022-11-17-Blight_Club-Grubbsy_3D_-_Part_3-IDMIERVC",
             "2023-01-12-Blight_Club-Grubbsy_3D_-_Part_4-IDJVZ8GA",
             "2023-05-04-b-lite-club-may-the-fourth-be-with-you",
+            "blight-club-grubbkatana-07",
+            "blight-club-mk-mythologies-03",
+            "blight-club-robomitch-02",
+            "blight-club-superdan-64-02",
             "gb-2300-18300-ID6L9P7",
             "gb-2300-18322-IDID3TZ",
             "gb-2300-18334-IDR3TL0",
@@ -9539,13 +9612,10 @@
             "gb-2300-18836-IDGMJA0",
             "gb-2300-18848-IDSXG6A",
             "gb-2300-18858-ID0RN8O",
-            "gb-2300-18878-IDIWTE3",
             "gb-2300-18878-IDS8NPF",
             "gb-2300-18901-ID1MZLB",
             "gb-2300-18911-ID6632L",
             "gb-2300-18924-IDFO68P",
-            "gb-2300-18929-IDDKMXE",
-            "gb-2300-18930-IDZYSLD",
             "gb-2300-18938-ID6JFH1",
             "gb-2300-18951-IDFG26W",
             "gb-2300-18974-ID5NNOH",
@@ -9563,7 +9633,11 @@
             "gb-2300-19128-IDDPTZQ",
             "gb-2300-19173-IDH18UC",
             "gb-2300-19190-IDU1M68",
-            "gb-2300-19203-ID35QCC"
+            "gb-2300-19203-ID35QCC",
+            "gb-2300-19215-IDWQG1N",
+            "gb-2300-19245-ID32K6C",
+            "gb-2300-19279-IDZUT45",
+            "gb-2300-19299-IDPIAZG"
         ]
     },
     {
@@ -9664,7 +9738,12 @@
             "gb-2300-19172-IDJ4AFH",
             "gb-2300-19175-IDMNZU0",
             "gb-2300-19194-ID5KUJU",
-            "gb-2300-19199-ID5JBXL"
+            "gb-2300-19199-ID5JBXL",
+            "gb-2300-19224-IDIC5QQ",
+            "gb-2300-19231-IDCEH96",
+            "gb-2300-19244-ID2UH2D",
+            "gb-2300-19274-IDUAPR7",
+            "gb-2300-19291-IDLTINT"
         ]
     },
     {
@@ -10582,6 +10661,7 @@
         "poster": "3026329-gb_default-16_9.jpg",
         "logo": null,
         "videos": [
+            "2012-10-04-thursday-night-throwdown-thursday-night-throwdown-10-04-12",
             "2300-6648",
             "gb-2300-18729-IDIDDAU",
             "gb-2300-18749-IDH59W7",
@@ -11204,6 +11284,26 @@
         ]
     },
     {
+        "id": "mortal-kombat-armagrubben",
+        "title": "Mortal Kombat: ArmaGrubben",
+        "description": "",
+        "videos": [
+            "2023-09-21-mortal-kombat-arma-grubben-mortal-kombat-arma-grubben-mortal-kombat-x-finale",
+            "20230814-part-2-mortal-kombat-2011-playthrough-w-commentary-mortal-kombat-arma-grubben",
+            "armagrubben-10",
+            "armagrubben-11_202409",
+            "armagrubben-12",
+            "armagrubben-3",
+            "armagrubben-4",
+            "armagrubben-5",
+            "armagrubben-6",
+            "armagrubben-7",
+            "armagrubben-8",
+            "armagrubben-9",
+            "gb-2300-18630-IDHKAN9"
+        ]
+    },
+    {
         "id": "behind-the-scenes",
         "title": "Behind The Scenes",
         "description": "",
@@ -11432,6 +11532,15 @@
             "gb-2300-6581-IDOUP4P",
             "gb-Unarchived0011-IDVS9XT",
             "gb-Unarchived8717"
+        ]
+    },
+    {
+        "id": "giant-bomb-infinite-bumpers",
+        "title": "Giant Bomb Infinite Bumpers",
+        "description": "",
+        "videos": [
+            "bumper_ben02-05-10-2018-7207872288",
+            "bumper_jeff01-03-28-2018-8678795475"
         ]
     },
     {
@@ -12403,14 +12512,6 @@
             "gb-2300-18568-IDM0WQW",
             "gb-2300-18586-IDTGGWH",
             "gb-2300-18629-IDBWFL9"
-        ]
-    },
-    {
-        "id": "mortal-kombat-armagrubben",
-        "title": "Mortal Kombat: ArmaGrubben",
-        "description": "",
-        "videos": [
-            "gb-2300-18630-IDHKAN9"
         ]
     },
     {
