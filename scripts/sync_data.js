@@ -207,45 +207,49 @@ async function fetchArchiveVideos(shows) {
 				continue
 			}
 
-			const video = {
-				id: videoId,
-				gb_id: null,
-				show: 'unknown',
-				title: item.title,
-				description: item.description ?? '',
-				date: new Date(item.date).toISOString(),
-				thumbnail: `https://archive.org/services/img/${videoId}`,
-				source: {
-					internetarchive: videoId,
-				},
-			}
-
-			// Look through the video subjects to find a matching GB show
-			const subjects =
-				typeof item.subject === 'string' || item.subject instanceof String
-					? [item.subject]
-					: item.subject
-			for (const subject of subjects) {
-				if (subject === 'Giant Bomb') {
-					continue
+			try {
+				const video = {
+					id: videoId,
+					gb_id: null,
+					show: 'unknown',
+					title: item.title,
+					description: item.description ?? '',
+					date: new Date(item.date).toISOString(),
+					thumbnail: `https://archive.org/services/img/${videoId}`,
+					source: {
+						internetarchive: videoId,
+					},
 				}
 
-				const showId = toIdentifier(subject)
-				if (!Object.hasOwn(shows, showId)) {
-					// The show doesn't exist in the GB API, so let's add it
-					shows[showId] = {
-						id: showId,
-						title: subject,
-						description: '',
-						videos: [],
+				// Look through the video subjects to find a matching GB show
+				const subjects =
+					typeof item.subject === 'string' || item.subject instanceof String
+						? [item.subject]
+						: item.subject
+				for (const subject of subjects) {
+					if (subject === 'Giant Bomb') {
+						continue
 					}
+
+					const showId = toIdentifier(subject)
+					if (!Object.hasOwn(shows, showId)) {
+						// The show doesn't exist in the GB API, so let's add it
+						shows[showId] = {
+							id: showId,
+							title: subject,
+							description: '',
+							videos: [],
+						}
+					}
+
+					video.show = showId
+					shows[showId].videos.push(videoId)
 				}
 
-				video.show = showId
-				shows[showId].videos.push(videoId)
+				videos.push(video)
+			} catch (error) {
+				fatalError('Unable to parse video item: ' + JSON.stringify(item))
 			}
-
-			videos.push(video)
 		}
 
 		if (Object.hasOwn(data, 'cursor')) {
