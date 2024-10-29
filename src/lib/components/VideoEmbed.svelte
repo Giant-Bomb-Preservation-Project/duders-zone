@@ -20,7 +20,8 @@
 	</div>
 	<div class="video">
 		{#if $preferredSource == VideoSource.Direct && video.source.direct}
-			<video controls src={video.source.direct} />
+			<!-- svelte-ignore a11y_media_has_caption -->
+			<video controls src={video.source.direct}></video>
 		{:else if $preferredSource == VideoSource.YouTube && video.source.youtube}
 			<FrameEmbed
 				src="https://www.youtube.com/embed/{video.source.youtube}"

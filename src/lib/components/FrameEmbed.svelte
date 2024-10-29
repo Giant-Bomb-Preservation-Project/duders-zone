@@ -10,7 +10,7 @@
 		frameborder="0"
 		allow="autoplay; encrypted-media; picture-in-picture; web-share"
 		allowfullscreen
-	/>
+	></iframe>
 </div>
 
 <style>

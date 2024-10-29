@@ -5,7 +5,7 @@
 <div class="wrapper">
 	<div class="container">
 		<div class="inner-container">
-			<div class="splash" style="background-image: url('{image}');" />
+			<div class="splash" style="background-image: url('{image}');"></div>
 			<slot />
 		</div>
 	</div>

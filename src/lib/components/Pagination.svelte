@@ -38,7 +38,7 @@
 	<li>{totalResults} results</li>
 	{#if currentPage > 1}
 		<li>
-			<a href="?page={currentPage - 1}"
+			<a href="?page={currentPage - 1}" aria-label="Previous Page"
 				><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 10">
 					<path d="M7 5H1l3 -3M1 5l3 3" />
 				</svg></a
@@ -56,7 +56,7 @@
 	{/each}
 	{#if currentPage < totalPages}
 		<li>
-			<a href="?page={currentPage + 1}"
+			<a href="?page={currentPage + 1}" aria-label="Next Page"
 				><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 10">
 					<path d="M1 5H7l-3 -3M7 5l-3 3" />
 				</svg></a
