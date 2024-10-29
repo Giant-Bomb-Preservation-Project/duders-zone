@@ -1,12 +1,8 @@
 <script lang="ts">
 	import type { PageData } from './$types'
+	import { ShowSorting } from '$lib/types'
 
 	export let data: PageData
-
-	enum ShowSorting {
-		alphabetical,
-		mostVideos,
-	}
 
 	let sorting: ShowSorting = ShowSorting.alphabetical
 

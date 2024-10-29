@@ -1,7 +1,7 @@
 <script lang="ts">
 	import EmployeeList from '$lib/components/EmployeeList.svelte'
 
-	import type { Employee } from '$lib/components/EmployeeList.svelte'
+	import type { Employee } from '$lib/types'
 
 	const current: Employee[] = [
 		{

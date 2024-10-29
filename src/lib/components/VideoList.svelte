@@ -1,12 +1,6 @@
-<script context="module" lang="ts">
-	export enum VideoListMode {
-		List = 'list',
-		Grid = 'grid',
-	}
-</script>
-
 <script lang="ts">
 	import type { Video } from '$lib/data'
+	import { VideoListMode } from '$lib/types'
 	import Thumbnail from '$lib/components/Thumbnail.svelte'
 
 	export let videos: Video[]

@@ -1,15 +1,6 @@
-<script context="module" lang="ts">
-	export interface Employee {
-		name: string
-		position?: string
-		years: string
-		image?: string
-		links?: string[]
-	}
-</script>
-
 <script lang="ts">
 	import logoBw from '$lib/images/logo-bw.png'
+	import type { Employee } from '$lib/types'
 
 	export let employees: Employee[]
 
