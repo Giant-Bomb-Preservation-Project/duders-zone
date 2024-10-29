@@ -2,11 +2,13 @@
 	import type { PageData } from './$types'
 	import { ShowSorting } from '$lib/types'
 
-	export let data: PageData
+	interface Props {
+		data: PageData
+	}
 
-	let sorting: ShowSorting = ShowSorting.alphabetical
-
-	$: sortedShows = getSortedShows(sorting)
+	const { data }: Props = $props()
+	let sorting: ShowSorting = $state(ShowSorting.alphabetical)
+	let sortedShows = $derived(getSortedShows(sorting))
 
 	function getSortedShows(sort: ShowSorting) {
 		if (sort === ShowSorting.mostVideos) {

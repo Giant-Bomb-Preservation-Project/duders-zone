@@ -5,11 +5,14 @@
 	import VideoList from '$lib/components/VideoList.svelte'
 	import type { PageData } from './$types'
 
-	export let data: PageData
+	interface Props {
+		data: PageData
+	}
 
-	$: pageParam = $page.url.searchParams.get('page')
-	$: pageNumber = pageParam ? parseInt(pageParam) : 1
-	$: paginatedVideos = paginate(pageNumber, data.videos)
+	const { data }: Props = $props()
+	let pageParam = $derived($page.url.searchParams.get('page'))
+	let pageNumber = $derived(pageParam ? parseInt(pageParam) : 1)
+	let paginatedVideos = $derived(paginate(pageNumber, data.videos))
 </script>
 
 <h1 class="sr-only">{data.show.title}</h1>

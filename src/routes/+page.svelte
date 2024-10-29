@@ -6,8 +6,11 @@
 	import promoInfinite from '$lib/images/promo-gb_infinite.png'
 	import { VideoListMode } from '$lib/types'
 	import type { PageData } from './$types'
+	interface Props {
+		data: PageData
+	}
 
-	export let data: PageData
+	const { data }: Props = $props()
 </script>
 
 <section>

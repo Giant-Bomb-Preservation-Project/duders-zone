@@ -2,12 +2,15 @@
 	import Button from '$lib/components/Button.svelte'
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
 	import VideoList from '$lib/components/VideoList.svelte'
-	import { dataStore } from '$lib/data'
+	import { dataStore, type Video } from '$lib/data'
 	import type { PageData } from './$types'
 
-	export let data: PageData
+	interface Props {
+		data: PageData
+	}
 
-	$: videos = dataStore.getRandomVideos(12)
+	let { data }: Props = $props()
+	let videos: Video[] = $state(dataStore.getRandomVideos(12))
 
 	function randomize() {
 		videos = dataStore.getRandomVideos(12)
