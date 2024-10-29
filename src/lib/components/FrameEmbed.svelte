@@ -1,6 +1,10 @@
 <script lang="ts">
-	export let src: string
-	export let title: string
+	interface Props {
+		src: string
+		title: string
+	}
+
+	const { src, title }: Props = $props()
 </script>
 
 <div class="wrapper">

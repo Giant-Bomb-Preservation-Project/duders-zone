@@ -3,17 +3,17 @@
 	import { VideoListMode } from '$lib/types'
 	import Thumbnail from '$lib/components/Thumbnail.svelte'
 
-	export let videos: Video[]
-	export let title: string
-	export let rootUri: string | null = null
-	export let seeAllUrl: string | null = null
-	export let mode: VideoListMode | null = null
-
-	let currentMode = mode || VideoListMode.List
-
-	function setCurrentMode(mode: VideoListMode) {
-		currentMode = mode
+	interface Props {
+		videos: Video[]
+		title: string
+		rootUri?: string
+		seeAllUrl?: string
+		mode?: VideoListMode
 	}
+
+	const { videos, title, rootUri, seeAllUrl, mode }: Props = $props()
+
+	let currentMode: VideoListMode = $state(mode || VideoListMode.List)
 </script>
 
 <div class="header-wrapper">
@@ -26,7 +26,9 @@
 			<div class="controls">
 				<button
 					class={currentMode == VideoListMode.List ? 'active' : ''}
-					on:click={() => setCurrentMode(VideoListMode.List)}
+					onclick={() => {
+						currentMode = VideoListMode.List
+					}}
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +42,9 @@
 				</button>
 				<button
 					class={currentMode == VideoListMode.Grid ? 'active' : ''}
-					on:click={() => setCurrentMode(VideoListMode.Grid)}
+					onclick={() => {
+						currentMode = VideoListMode.Grid
+					}}
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

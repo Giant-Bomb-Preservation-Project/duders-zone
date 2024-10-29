@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	const PAGE_SIZE = 25
 
 	export function paginate<T extends any[]>(number: number, items: T) {
@@ -8,28 +8,36 @@
 </script>
 
 <script lang="ts">
-	export let currentPage: number = 1
-	export let totalResults: number
+	interface Props {
+		currentPage?: number
+		totalResults: number
+	}
 
-	$: totalPages = Math.ceil(totalResults / PAGE_SIZE)
-	$: buttons = createPageButtons(currentPage, totalPages)
+	const { currentPage = 1, totalResults }: Props = $props()
+
+	const totalPages = Math.ceil(totalResults / PAGE_SIZE)
+	const buttons = createPageButtons(currentPage, totalPages)
 
 	function createPageButtons(current: number, total: number) {
 		const buttons: (number | null)[] = []
 		if (total === 1) return buttons
+
 		const startPage = Math.max(1, Math.min(total - 4, current - 2))
 		const endPage = Math.min(total, startPage + 4)
 		for (let p = startPage; p <= endPage; p++) {
 			buttons.push(p)
 		}
+
 		if (startPage > 1) {
 			if (startPage - 1 > 1) buttons.unshift(null)
 			buttons.unshift(1)
 		}
+
 		if (endPage < total) {
 			if (endPage < total - 1) buttons.push(null)
 			buttons.push(total)
 		}
+
 		return buttons
 	}
 </script>

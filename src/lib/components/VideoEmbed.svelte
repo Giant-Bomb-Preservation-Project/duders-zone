@@ -5,7 +5,11 @@
 	import type { Video } from '$lib/data'
 	import { preferredSource } from '$lib/store.js'
 
-	export let video: Video
+	interface Props {
+		video: Video
+	}
+
+	const { video }: Props = $props()
 
 	function setSource(source: VideoSource) {
 		preferredSource.set(source)
@@ -39,7 +43,7 @@
 				<div class="controls">
 					<button
 						title="Use Internet Archive video source"
-						on:click={() => setSource(VideoSource.InternetArchive)}
+						onclick={() => setSource(VideoSource.InternetArchive)}
 						class:current={$preferredSource === VideoSource.InternetArchive}
 						disabled={!video.source.internetarchive}
 					>
@@ -47,7 +51,7 @@
 					</button>
 					<button
 						title="Use direct video source"
-						on:click={() => setSource(VideoSource.Direct)}
+						onclick={() => setSource(VideoSource.Direct)}
 						class:current={$preferredSource === VideoSource.Direct}
 						disabled={!video.source.direct}
 					>
@@ -55,7 +59,7 @@
 					</button>
 					<button
 						title="Use YouTube video source"
-						on:click={() => setSource(VideoSource.YouTube)}
+						onclick={() => setSource(VideoSource.YouTube)}
 						class:current={$preferredSource === VideoSource.YouTube}
 						disabled={!video.source.youtube}
 					>

@@ -1,12 +1,17 @@
 <script lang="ts">
-	export let image: string
+	interface Props {
+		children: () => any
+		image: string
+	}
+
+	const { children, image }: Props = $props()
 </script>
 
 <div class="wrapper">
 	<div class="container">
 		<div class="inner-container">
 			<div class="splash" style="background-image: url('{image}');"></div>
-			<slot />
+			{@render children()}
 		</div>
 	</div>
 </div>
