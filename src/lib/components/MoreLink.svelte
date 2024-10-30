@@ -1,8 +1,9 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte'
 	import FrameEmbed from '$lib/components/FrameEmbed.svelte'
 
 	interface Props {
-		children: () => any
+		children: Snippet
 		href: string
 	}
 
