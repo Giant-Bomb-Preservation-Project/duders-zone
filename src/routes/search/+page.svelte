@@ -4,10 +4,8 @@
 	import { dataStore } from '$lib/data'
 	import type { Video } from '$lib/data'
 
-	let videos: Video[]
-	$: videos = []
-
-	let searchQuery = ''
+	let searchQuery = $state('')
+	let videos: Video[] = $state([])
 
 	//TODO debounce (trailing edge) this function
 	const searchSubmit = () => {
@@ -18,7 +16,7 @@
 <div class="container">
 	<h1>Search</h1>
 
-	<form on:submit={searchSubmit}>
+	<form onsubmit={searchSubmit}>
 		<label for="search" class="sr-only">Search Query</label>
 		<div id="field-wrapper">
 			<input

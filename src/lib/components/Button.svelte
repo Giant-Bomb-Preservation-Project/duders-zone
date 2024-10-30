@@ -1,9 +1,16 @@
 <script lang="ts">
-	export let handler: () => any = () => {}
+	import type { Snippet } from 'svelte'
+
+	interface Props {
+		children: Snippet
+		handler?: () => any
+	}
+
+	const { children, handler = () => {} }: Props = $props()
 </script>
 
-<button on:click={handler}>
-	<slot />
+<button onclick={handler}>
+	{@render children()}
 </button>
 
 <style>

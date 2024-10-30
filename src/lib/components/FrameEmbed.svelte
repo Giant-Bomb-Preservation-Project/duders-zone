@@ -1,6 +1,10 @@
 <script lang="ts">
-	export let src: string
-	export let title: string
+	interface Props {
+		src: string
+		title: string
+	}
+
+	const { src, title }: Props = $props()
 </script>
 
 <div class="wrapper">
@@ -10,7 +14,7 @@
 		frameborder="0"
 		allow="autoplay; encrypted-media; picture-in-picture; web-share"
 		allowfullscreen
-	/>
+	></iframe>
 </div>
 
 <style>

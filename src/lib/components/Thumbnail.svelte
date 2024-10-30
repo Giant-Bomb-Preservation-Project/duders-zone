@@ -1,6 +1,10 @@
 <script lang="ts">
-	export let src: string
-	export let alt: string
+	interface Props {
+		src: string
+		alt?: string
+	}
+
+	const { src, alt }: Props = $props()
 </script>
 
 <div class="thumbnail">

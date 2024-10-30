@@ -3,7 +3,11 @@
 	import VideoList from '$lib/components/VideoList.svelte'
 	import type { PageData } from './$types'
 
-	export let data: PageData
+	interface Props {
+		data: PageData
+	}
+
+	const { data }: Props = $props()
 </script>
 
 <h1 class="sr-only">Historic</h1>

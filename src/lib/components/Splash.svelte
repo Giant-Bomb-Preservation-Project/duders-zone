@@ -1,12 +1,19 @@
 <script lang="ts">
-	export let image: string
+	import type { Snippet } from 'svelte'
+
+	interface Props {
+		children: Snippet
+		image: string
+	}
+
+	const { children, image }: Props = $props()
 </script>
 
 <div class="wrapper">
 	<div class="container">
 		<div class="inner-container">
-			<div class="splash" style="background-image: url('{image}');" />
-			<slot />
+			<div class="splash" style="background-image: url('{image}');"></div>
+			{@render children()}
 		</div>
 	</div>
 </div>

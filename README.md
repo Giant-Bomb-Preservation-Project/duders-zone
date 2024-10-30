@@ -16,7 +16,7 @@ Thanks for everything! See you next game.
 Install the dependencies:
 
 ```shell
-npm run install
+npm install
 ```
 
 Run the development server:

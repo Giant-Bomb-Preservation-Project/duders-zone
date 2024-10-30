@@ -1,12 +1,18 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte'
 	import FrameEmbed from '$lib/components/FrameEmbed.svelte'
 
-	export let href: string
+	interface Props {
+		children: Snippet
+		href: string
+	}
+
+	const { children, href }: Props = $props()
 </script>
 
 <div class="wrapper">
 	<a {href}>
-		<slot />
+		{@render children()}
 		<svg
 			class="arrow"
 			xmlns="http://www.w3.org/2000/svg"
