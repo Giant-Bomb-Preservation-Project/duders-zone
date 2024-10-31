@@ -4,16 +4,26 @@
 	interface Props {
 		children: Snippet
 		handler?: () => any
+		href?: string
 	}
 
-	const { children, handler = () => {} }: Props = $props()
+	const { children, handler, href }: Props = $props()
 </script>
 
-<button onclick={handler}>
-	{@render children()}
-</button>
+{#if handler}
+	<button onclick={handler}>
+		{@render children()}
+	</button>
+{:else if href}
+	<a {href}>
+		{@render children()}
+	</a>
+{:else}
+	MISSING HANDLER OR HREF
+{/if}
 
 <style>
+	a,
 	button {
 		display: inline-block;
 		cursor: pointer;
@@ -37,6 +47,7 @@
 		transition: all 0.15s;
 	}
 
+	a:active,
 	button:active {
 		color: #e33636;
 		background-color: #bc1a1a;
@@ -44,6 +55,7 @@
 		background-repeat: repeat-x;
 	}
 
+	a::before,
 	button::before {
 		content: '';
 		position: absolute;
