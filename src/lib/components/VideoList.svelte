@@ -2,6 +2,7 @@
 	import type { Video } from '$lib/data'
 	import { VideoListMode } from '$lib/types'
 	import Thumbnail from '$lib/components/Thumbnail.svelte'
+	import { videoListMode } from '$lib/store.js'
 
 	interface Props {
 		videos: Video[]
@@ -12,8 +13,6 @@
 	}
 
 	const { videos, title, rootUri, seeAllUrl, mode }: Props = $props()
-
-	let currentMode: VideoListMode = $state(mode || VideoListMode.List)
 </script>
 
 <div class="header-wrapper">
@@ -25,9 +24,9 @@
 		{#if !mode}
 			<div class="controls">
 				<button
-					class={currentMode == VideoListMode.List ? 'active' : ''}
+					class={$videoListMode == VideoListMode.List ? 'active' : ''}
 					onclick={() => {
-						currentMode = VideoListMode.List
+						videoListMode.set(VideoListMode.List)
 					}}
 				>
 					<svg
@@ -41,9 +40,9 @@
 					List
 				</button>
 				<button
-					class={currentMode == VideoListMode.Grid ? 'active' : ''}
+					class={$videoListMode == VideoListMode.Grid ? 'active' : ''}
 					onclick={() => {
-						currentMode = VideoListMode.Grid
+						videoListMode.set(VideoListMode.Grid)
 					}}
 				>
 					<svg
@@ -61,7 +60,7 @@
 	</div>
 </div>
 
-<ul class={currentMode}>
+<ul class={$videoListMode}>
 	{#each videos as video}
 		<li>
 			<a href="{rootUri || `/shows/${video.show}`}/{video.id}">
