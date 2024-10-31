@@ -61,7 +61,7 @@
 	</div>
 </div>
 
-<ul class={$videoListMode}>
+<ul class={mode ?? $videoListMode}>
 	{#each videos as video}
 		<li>
 			<a href="{rootUri || `/shows/${video.show}`}/{video.id}{linkSuffix}">
