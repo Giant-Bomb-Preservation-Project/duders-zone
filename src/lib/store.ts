@@ -5,7 +5,7 @@ import { VideoListMode } from '$lib/types'
 
 // The preferred video source
 export const preferredSource = writable(
-	localStorage.getItem('preferredSource') || VideoSource.InternetArchive
+	localStorage.getItem('preferredSource') || VideoSource.YouTube
 )
 
 // How to show the video list
