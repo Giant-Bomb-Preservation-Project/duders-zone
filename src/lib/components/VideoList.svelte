@@ -10,9 +10,10 @@
 		rootUri?: string
 		seeAllUrl?: string
 		mode?: VideoListMode
+		linkSuffix?: string
 	}
 
-	const { videos, title, rootUri, seeAllUrl, mode }: Props = $props()
+	const { videos, title, rootUri, seeAllUrl, mode, linkSuffix = '' }: Props = $props()
 </script>
 
 <div class="header-wrapper">
@@ -63,7 +64,7 @@
 <ul class={$videoListMode}>
 	{#each videos as video}
 		<li>
-			<a href="{rootUri || `/shows/${video.show}`}/{video.id}">
+			<a href="{rootUri || `/shows/${video.show}`}/{video.id}{linkSuffix}">
 				<div class="thumbnail">
 					<Thumbnail src={video.thumbnail || '/assets/default.jpg'} alt="" />
 				</div>

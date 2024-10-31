@@ -22,7 +22,11 @@
 </section>
 
 <section class="container videos">
-	<VideoList videos={paginatedVideos} title={data.show.title} />
+	<VideoList
+		videos={paginatedVideos}
+		title={data.show.title}
+		linkSuffix={`?page=${pageNumber}`}
+	/>
 	<Pagination totalResults={data.videos.length} currentPage={pageNumber} />
 </section>
 
