@@ -8,6 +8,10 @@
 	}
 
 	const { children, handler, href }: Props = $props()
+
+	if (handler == null && href == null) {
+		throw Error('Missing handler or href in <Button>')
+	}
 </script>
 
 {#if handler}
@@ -18,8 +22,6 @@
 	<a {href}>
 		{@render children()}
 	</a>
-{:else}
-	MISSING HANDLER OR HREF
 {/if}
 
 <style>
