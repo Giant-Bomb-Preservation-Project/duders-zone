@@ -1,19 +1,27 @@
 <script lang="ts">
+	import { goto } from '$app/navigation'
 	import Button from '$lib/components/Button.svelte'
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
-	import VideoList from '$lib/components/VideoList.svelte'
 	import { dataStore, type Video } from '$lib/data'
+	import VideoList from '$lib/components/VideoList.svelte'
 	import type { PageData } from './$types'
 
 	interface Props {
 		data: PageData
 	}
 
-	let { data }: Props = $props()
+	const { data }: Props = $props()
 	let videos: Video[] = $state(dataStore.getRandomVideos(12))
 
+	// Get a new list of random videos
 	function randomize() {
-		videos = dataStore.getRandomVideos(12)
+		const randomVideos = dataStore.getRandomVideos(13)
+		const firstVideo = randomVideos.pop()
+
+		videos = randomVideos
+		if (firstVideo) {
+			goto(`/random/${firstVideo.id}`)
+		}
 	}
 </script>
 
