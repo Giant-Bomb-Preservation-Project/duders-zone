@@ -2,7 +2,6 @@
 	import Button from '$lib/components/Button.svelte'
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
 	import VideoList from '$lib/components/VideoList.svelte'
-	import { dataStore, type Video } from '$lib/data'
 	import type { PageData } from './$types'
 
 	interface Props {
@@ -10,7 +9,6 @@
 	}
 
 	const { data }: Props = $props()
-	const videos: Video[] = $state(dataStore.getRandomVideos(12))
 </script>
 
 <h1 class="sr-only">Random</h1>
@@ -20,7 +18,7 @@
 </section>
 
 <section class="container videos">
-	<VideoList {videos} title="Random Videos" rootUri="/random" />
+	<VideoList videos={data.videos} title="Random Videos" rootUri="/random" />
 
 	<div class="controls">
 		<Button href="/random">
