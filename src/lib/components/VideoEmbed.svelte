@@ -10,10 +10,6 @@
 	}
 
 	const { video }: Props = $props()
-
-	function setSource(source: VideoSource) {
-		preferredSource.set(source)
-	}
 </script>
 
 <Splash image={video.thumbnail || '/assets/default.jpg'}>
@@ -43,7 +39,7 @@
 				<div class="controls">
 					<button
 						title="Use Internet Archive video source"
-						onclick={() => setSource(VideoSource.InternetArchive)}
+						onclick={() => preferredSource.set(VideoSource.InternetArchive)}
 						class:current={$preferredSource === VideoSource.InternetArchive}
 						disabled={!video.source.internetarchive}
 					>
@@ -51,7 +47,7 @@
 					</button>
 					<button
 						title="Use direct video source"
-						onclick={() => setSource(VideoSource.Direct)}
+						onclick={() => preferredSource.set(VideoSource.Direct)}
 						class:current={$preferredSource === VideoSource.Direct}
 						disabled={!video.source.direct}
 					>
@@ -59,7 +55,7 @@
 					</button>
 					<button
 						title="Use YouTube video source"
-						onclick={() => setSource(VideoSource.YouTube)}
+						onclick={() => preferredSource.set(VideoSource.YouTube)}
 						class:current={$preferredSource === VideoSource.YouTube}
 						disabled={!video.source.youtube}
 					>

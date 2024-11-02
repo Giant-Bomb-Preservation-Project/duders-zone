@@ -2,6 +2,7 @@
 	import type { Video } from '$lib/data'
 	import { VideoListMode } from '$lib/types'
 	import Thumbnail from '$lib/components/Thumbnail.svelte'
+	import { videoListMode } from '$lib/store.js'
 
 	interface Props {
 		videos: Video[]
@@ -9,11 +10,10 @@
 		rootUri?: string
 		seeAllUrl?: string
 		mode?: VideoListMode
+		linkSuffix?: string
 	}
 
-	const { videos, title, rootUri, seeAllUrl, mode }: Props = $props()
-
-	let currentMode: VideoListMode = $state(mode || VideoListMode.List)
+	const { videos, title, rootUri, seeAllUrl, mode, linkSuffix = '' }: Props = $props()
 </script>
 
 <div class="header-wrapper">
@@ -25,9 +25,9 @@
 		{#if !mode}
 			<div class="controls">
 				<button
-					class={currentMode == VideoListMode.List ? 'active' : ''}
+					class={$videoListMode == VideoListMode.List ? 'active' : ''}
 					onclick={() => {
-						currentMode = VideoListMode.List
+						videoListMode.set(VideoListMode.List)
 					}}
 				>
 					<svg
@@ -41,9 +41,9 @@
 					List
 				</button>
 				<button
-					class={currentMode == VideoListMode.Grid ? 'active' : ''}
+					class={$videoListMode == VideoListMode.Grid ? 'active' : ''}
 					onclick={() => {
-						currentMode = VideoListMode.Grid
+						videoListMode.set(VideoListMode.Grid)
 					}}
 				>
 					<svg
@@ -61,10 +61,10 @@
 	</div>
 </div>
 
-<ul class={currentMode}>
+<ul class={mode ?? $videoListMode}>
 	{#each videos as video}
 		<li>
-			<a href="{rootUri || `/shows/${video.show}`}/{video.id}">
+			<a href="{rootUri || `/shows/${video.show}`}/{video.id}{linkSuffix}">
 				<div class="thumbnail">
 					<Thumbnail src={video.thumbnail || '/assets/default.jpg'} alt="" />
 				</div>
