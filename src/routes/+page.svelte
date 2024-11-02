@@ -1,5 +1,4 @@
 <script lang="ts">
-	import MoreLink from '$lib/components/MoreLink.svelte'
 	import Splash from '$lib/components/Splash.svelte'
 	import Thumbnail from '$lib/components/Thumbnail.svelte'
 	import VideoList from '$lib/components/VideoList.svelte'
@@ -48,8 +47,6 @@
 		/>
 	</section>
 {/each}
-
-<MoreLink href="/shows">More Shows</MoreLink>
 
 <style>
 	h3 {
