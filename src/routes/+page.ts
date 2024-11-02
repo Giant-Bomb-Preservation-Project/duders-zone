@@ -7,23 +7,12 @@ function pickNRandomVideos(videos: Video[], n: number): Video[] {
 	return shuffled.slice(0, n)
 }
 
-interface ShowWithVideos extends Show {
-	videoObjects: Video[]
-}
-
 export const load = (({ params }) => {
 	const shows = dataStore.getRandomShows(3)
-	const historicVideos = pickNRandomVideos(dataStore.getVideosForDay(), 4)
-
-	const filledShows: ShowWithVideos[] = shows.map((show) => {
-		return {
-			...show,
-			videoObjects: pickNRandomVideos(dataStore.getVideosForShow(show), 4),
-		}
-	})
+	const historicVideos = pickNRandomVideos(dataStore.getVideosForDay(), 6)
 
 	return {
-		shows: filledShows,
+		shows,
 		historicVideos,
 	}
 }) satisfies PageLoad

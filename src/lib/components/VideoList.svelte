@@ -131,10 +131,6 @@
 		color: var(----color-gray);
 	}
 
-	.see-all {
-		margin-left: 0.35em;
-	}
-
 	.metadata {
 		color: #696e72;
 		font-size: 14px;

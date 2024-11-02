@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Header from '$lib/components/Header.svelte'
 	import Splash from '$lib/components/Splash.svelte'
 	import Thumbnail from '$lib/components/Thumbnail.svelte'
 	import VideoList from '$lib/components/VideoList.svelte'
@@ -26,27 +27,37 @@
 	</Splash>
 </section>
 
-<section class="container videos">
-	<VideoList
-		videos={data.historicVideos}
-		title="This Day in Giant Bomb History"
-		rootUri="/historic"
-		seeAllUrl="/historic"
-		mode={VideoListMode.List}
-	/>
-</section>
-
-{#each data.shows as show}
-	<section class="container videos">
-		<VideoList
-			videos={show.videoObjects}
-			title={show.title}
-			rootUri="/shows/{show.id}"
-			seeAllUrl="/shows/{show.id}"
-			mode={VideoListMode.List}
-		/>
-	</section>
-{/each}
+<div class="container">
+	<div class="left">
+		<section>
+			<VideoList
+				videos={data.historicVideos}
+				title="This Day in Giant Bomb History"
+				rootUri="/historic"
+				seeAllUrl="/historic"
+				mode={VideoListMode.List}
+			/>
+		</section>
+	</div>
+	<aside class="right">
+		<Header title="Random Shows">
+			<div class="see-all">&middot; <a href="/shows">See All</a></div>
+		</Header>
+		<ul class="shows">
+			{#each data.shows as show}
+				<li>
+					<a href="/shows/{show.id}">
+						<img
+							src={show.poster ? `/shows/${show.poster}` : '/assets/default.jpg'}
+							alt=""
+						/>
+						<h3>{show.title}</h3>
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</aside>
+</div>
 
 <style>
 	h3 {
@@ -60,8 +71,23 @@
 		margin: 10px 0;
 	}
 
+	.container {
+		display: block;
+		margin-bottom: var(--spacing);
+		margin-top: var(--spacing);
+	}
+
+	.container .left {
+		flex: 2;
+	}
+
+	.container .right {
+		flex: 1;
+		margin-left: var(--spacing);
+	}
+
 	.link {
-		margin: var(--spacing) 0;
+		margin: 0;
 	}
 
 	.link a {
@@ -70,9 +96,62 @@
 		line-height: 0;
 	}
 
-	.videos {
-		margin-bottom: var(--spacing);
-		margin-top: var(--spacing);
+	.shows a {
+		color: white;
+		display: block;
+		position: relative;
+		text-shadow: rgba(0, 0, 0, 0.75) 0 1px 1px;
+	}
+
+	.shows a:hover {
+		text-shadow:
+			rgba(255, 255, 255, 0.75) 0 0 10px,
+			rgba(0, 0, 0, 0.75) 0 1px 1px;
+	}
+
+	.shows h3 {
+		align-items: end;
+		background: linear-gradient(
+			0deg,
+			rgba(0, 0, 0, 1) 0%,
+			rgba(0, 0, 0, 0) 50%,
+			rgba(0, 0, 0, 0) 100%
+		);
+		bottom: 0;
+		display: flex;
+		font-size: 24px;
+		left: 0;
+		line-height: 30px;
+		margin: 0;
+		padding: 0.5em;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	.shows img {
+		box-shadow: var(--box-shadow);
+		width: 100%;
+	}
+
+	.shows li {
+		margin: var(--spacing) 0;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	@media (min-width: 768px) {
+		.container {
+			display: flex;
+		}
+
+		.container .right {
+			margin-left: var(--spacing);
+		}
 	}
 
 	@media (min-width: 992px) {

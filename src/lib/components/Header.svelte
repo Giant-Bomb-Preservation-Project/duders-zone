@@ -2,7 +2,7 @@
 	import type { Snippet } from 'svelte'
 
 	interface Props {
-		children: Snippet
+		children?: Snippet
 		title: string
 	}
 
@@ -12,7 +12,9 @@
 <div class="header-wrapper">
 	<div class="header">
 		<h2>{title}</h2>
-		{@render children()}
+		{#if children}
+			{@render children()}
+		{/if}
 	</div>
 </div>
 
@@ -20,7 +22,7 @@
 	h2 {
 		font-size: 14px;
 		line-height: 20px;
-		margin: 0;
+		margin: 0 0.35em 0 0;
 	}
 
 	.header {
