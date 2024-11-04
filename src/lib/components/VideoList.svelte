@@ -154,11 +154,6 @@
 	}
 
 	@media (min-width: 768px) {
-		h2 {
-			font-size: 18px;
-			line-height: 20px;
-		}
-
 		ul:not(.grid) {
 			display: block;
 		}
