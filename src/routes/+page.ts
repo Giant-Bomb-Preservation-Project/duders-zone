@@ -10,9 +10,11 @@ function pickNRandomVideos(videos: Video[], n: number): Video[] {
 export const load = (({ params }) => {
 	const shows = dataStore.getRandomShows(3)
 	const historicVideos = pickNRandomVideos(dataStore.getVideosForDay(), 6)
+	const videos = dataStore.getRandomVideos(4)
 
 	return {
 		shows,
 		historicVideos,
+		videos,
 	}
 }) satisfies PageLoad
