@@ -128,13 +128,17 @@
 
 	.controls button.active,
 	.controls button:hover {
-		color: var(----color-gray);
+		color: var(--color-gray);
 	}
 
 	.metadata {
-		color: #696e72;
+		color: var(--color-gray-muted);
 		font-size: 14px;
 		line-height: 20px;
+	}
+
+	.metadata h3 {
+		color: var(--color-gray);
 	}
 
 	@media (min-width: 576px) {
