@@ -83,7 +83,7 @@
 		line-height: 15px;
 		font-weight: 600;
 		text-transform: uppercase;
-		margin: 0 0 0.25em;
+		margin: 0 0 0.5em;
 		padding: 0 5px;
 		box-shadow:
 			rgba(255, 255, 255, 0.1) 0 1px 0 inset,

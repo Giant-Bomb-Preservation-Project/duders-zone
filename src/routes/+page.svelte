@@ -2,7 +2,7 @@
 	import Header from '$lib/components/Header.svelte'
 	import PromoStrip from '$lib/components/PromoStrip.svelte'
 	import Splash from '$lib/components/Splash.svelte'
-	import Thumbnail from '$lib/components/Thumbnail.svelte'
+	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
 	import VideoList from '$lib/components/VideoList.svelte'
 	import promoInfinite from '$lib/images/promo-gb_infinite.png'
 	import { VideoListMode } from '$lib/types'
@@ -16,19 +16,11 @@
 	const mainVideo = videos.pop()
 </script>
 
-<section class="splash">
-	<Splash image={promoInfinite}>
-		<div class="metadata">
-			<h3>Giant Bomb Infinite</h3>
-			<p>Watch videos from the archive, 24/7.</p>
-		</div>
-		<div class="link">
-			<a href="https://www.giantbomb.com/infinite/">
-				<Thumbnail src={promoInfinite} alt="Giant Bomb Infinite" />
-			</a>
-		</div>
-	</Splash>
-</section>
+{#if mainVideo}
+	<section class="splash">
+		<VideoEmbed video={mainVideo} />
+	</section>
+{/if}
 
 <PromoStrip {videos} />
 
@@ -67,7 +59,7 @@
 		<Header title="Random Shows">
 			<div class="see-all">&middot; <a href="/shows">See All</a></div>
 		</Header>
-		<ul id="shows">
+		<ul class="shows">
 			{#each data.shows as show}
 				<li>
 					<a href="/shows/{show.id}">
@@ -152,27 +144,7 @@
 		top: -4px;
 	}
 
-	.splash h3 {
-		font-size: 30px;
-	}
-
-	.splash p {
-		font-size: 14px;
-		line-height: 20px;
-		margin: 10px 0;
-	}
-
-	.splash .link {
-		margin: 0;
-	}
-
-	.splash .link a {
-		box-shadow: rgba(255, 255, 255, 0.1) 0 0 0 1px;
-		display: block;
-		line-height: 0;
-	}
-
-	#shows a {
+	.shows a {
 		border: 1px solid white;
 		box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px;
 		color: white;
@@ -180,17 +152,17 @@
 		position: relative;
 	}
 
-	#shows a h3 {
+	.shows a h3 {
 		text-shadow: rgba(0, 0, 0, 0.75) 0 1px 1px;
 	}
 
-	#shows a:hover h3 {
+	.shows a:hover h3 {
 		text-shadow:
 			rgba(255, 255, 255, 0.75) 0 0 10px,
 			rgba(0, 0, 0, 0.75) 0 1px 1px;
 	}
 
-	#shows h3 {
+	.shows h3 {
 		align-items: start;
 		background: linear-gradient(
 			0deg,
@@ -212,12 +184,12 @@
 		z-index: 1;
 	}
 
-	#shows img {
+	.shows img {
 		box-shadow: var(--box-shadow);
 		width: 100%;
 	}
 
-	#shows li {
+	.shows li {
 		margin: var(--spacing) 0;
 	}
 
@@ -228,40 +200,12 @@
 	}
 
 	@media (min-width: 768px) {
-		.splash h3 {
-			font-size: 32px;
-			line-height: 35px;
-		}
-
-		.splash p {
-			font-size: 21px;
-			line-height: 30px;
-		}
-
-		.splash .link {
-			margin: 0 0 0 32px;
-			flex: 0 0 620px;
-			position: relative;
-			z-index: 2;
-		}
-
 		.columns {
 			display: flex;
 		}
 
 		.columns .right {
 			margin-left: var(--spacing);
-		}
-
-		.metadata {
-			position: relative;
-			z-index: 2;
-		}
-	}
-
-	@media (min-width: 1200px) {
-		.splash .link {
-			margin-left: 90px;
 		}
 	}
 </style>
