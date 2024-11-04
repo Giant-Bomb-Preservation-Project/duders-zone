@@ -50,6 +50,7 @@
 		font-size: 24px;
 		text-shadow: rgba(0, 0, 0, 0.75) 0 1px 1px;
 		margin: 0;
+		transition: text-shadow 0.25s;
 		z-index: 1;
 	}
 

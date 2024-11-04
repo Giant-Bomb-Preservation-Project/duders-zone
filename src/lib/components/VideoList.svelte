@@ -105,7 +105,7 @@
 		background-position: bottom;
 		background-image: url(/assets/bg-border-light.png);
 		background-repeat: repeat-x;
-		padding: 10px 0 12px;
+		padding: 15px 0 17px;
 	}
 
 	ul li:last-child {
@@ -139,6 +139,10 @@
 
 	.metadata h3 {
 		color: var(--color-gray);
+	}
+
+	.thumbnail :global(.thumbnail) {
+		box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
 	}
 
 	@media (min-width: 576px) {
@@ -176,7 +180,7 @@
 		}
 
 		.thumbnail {
-			flex: 0 0 23.40426%;
+			flex: 0 0 220px;
 			margin-right: 2.12766%;
 		}
 	}
@@ -190,6 +194,10 @@
 	@media (min-width: 1200px) {
 		ul.grid {
 			grid-template-columns: repeat(4, 1fr);
+		}
+
+		.thumbnail {
+			flex: 0 0 260px;
 		}
 	}
 </style>

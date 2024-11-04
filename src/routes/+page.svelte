@@ -67,7 +67,7 @@
 			</hgroup>
 		</a>
 
-		<Header title="Random Shows">
+		<Header title="Some Random Shows">
 			<div class="see-all">&middot; <a href="/shows">See All</a></div>
 		</Header>
 		<ul class="shows">
@@ -118,6 +118,7 @@
 
 	.infinite h3 {
 		text-shadow: rgba(0, 0, 0, 0.75) 0 1px 1px;
+		transition: text-shadow 0.25s;
 	}
 
 	.infinite:hover h3 {
@@ -139,7 +140,6 @@
 		flex-direction: column;
 		justify-content: end;
 		left: 0;
-		line-height: 30px;
 		margin: 0;
 		padding: 1em;
 		position: absolute;
@@ -156,7 +156,7 @@
 	}
 
 	.more {
-		margin: 4em 0;
+		margin: 2em 0;
 		text-align: center;
 	}
 
@@ -174,6 +174,7 @@
 
 	.shows a h3 {
 		text-shadow: rgba(0, 0, 0, 0.75) 0 1px 1px;
+		transition: text-shadow 0.25s;
 	}
 
 	.shows a:hover h3 {
