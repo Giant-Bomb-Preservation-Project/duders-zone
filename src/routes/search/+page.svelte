@@ -1,30 +1,21 @@
 <script lang="ts">
+	import { page } from '$app/stores'
 	import Button from '$lib/components/Button.svelte'
 	import VideoList from '$lib/components/VideoList.svelte'
 	import { dataStore } from '$lib/data'
 	import type { Video } from '$lib/data'
 
-	let searchQuery = $state('')
-	let videos: Video[] = $state([])
-
-	//TODO debounce (trailing edge) this function
-	const searchSubmit = () => {
-		videos = searchQuery === '' ? [] : dataStore.searchVideos(searchQuery)
-	}
+	let searchQuery: string | null = $derived($page.url.searchParams.get('q'))
+	let videos: Video[] = $derived(searchQuery ? dataStore.searchVideos(searchQuery) : [])
 </script>
 
 <div class="container">
-	<h1>Search</h1>
+	<h1 class="sr-only">Search</h1>
 
-	<form onsubmit={searchSubmit}>
-		<label for="search" class="sr-only">Search Query</label>
+	<form method="GET">
+		<label for="search">Search for Videos:</label>
 		<div id="field-wrapper">
-			<input
-				type="search"
-				id="search"
-				placeholder="search for something"
-				bind:value={searchQuery}
-			/>
+			<input type="search" id="search" name="q" value={searchQuery} />
 		</div>
 		<div id="button-wrapper">
 			<Button>Go Get It</Button>
@@ -32,9 +23,11 @@
 	</form>
 
 	{#if videos.length}
-		<VideoList {videos} title="Videos" />
+		<VideoList {videos} title={`Search results for: ${searchQuery}`} />
+	{:else if searchQuery}
+		<div class="empty">No videos found for "{searchQuery}"</div>
 	{:else}
-		<div class="empty">No videos...</div>
+		<div class="empty">You need to search for something...</div>
 	{/if}
 </div>
 
@@ -55,6 +48,13 @@
 		padding: 0 0 0 16px;
 		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 		width: 100%;
+	}
+
+	label {
+		display: block;
+		font-family: var(--font-special);
+		font-size: 18px;
+		margin: 0.5em 0;
 	}
 
 	#button-wrapper {
@@ -78,18 +78,19 @@
 	}
 
 	.empty {
+		color: var(--color-gray-muted);
+		font-size: 24px;
+		font-style: italic;
 		margin: 5em 0;
 		text-align: center;
 	}
 
 	@media (min-width: 576px) {
-		form {
-			align-items: center;
-			display: flex;
-		}
+	}
 
-		#field-wrapper {
-			margin: 0 1em 0 0;
+	@media (min-width: 768px) {
+		form {
+			display: none;
 		}
 	}
 </style>

@@ -12,9 +12,7 @@
 <div class="header-wrapper">
 	<div class="header">
 		<h2>{title}</h2>
-		{#if children}
-			{@render children()}
-		{/if}
+		{@render children?.()}
 	</div>
 </div>
 

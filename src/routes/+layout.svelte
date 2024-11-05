@@ -1,10 +1,16 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte'
 	import { page } from '$app/stores'
 	import logo from '$lib/images/logo-dz.png'
 	import internetArchive from '$lib/images/internet-archive.jpg'
 	import giantBombPreservationSociety from '$lib/images/giant-bomb-preservation-society.png'
 	import '../app.css'
 
+	interface Props {
+		children?: Snippet
+	}
+
+	const { children }: Props = $props()
 	const menu = [
 		{ path: '/shows', text: 'Shows' },
 		{ path: '/historic', text: 'Historic' },
@@ -25,6 +31,32 @@
 					Giant Bomb Infinite
 					<span>Hang out and watch Giant Bomb Videos FOREVER!</span>
 				</a>
+				<form method="GET" action="/search">
+					<svg
+						class="magnifying-glass"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 512 512"
+						fill="currentColor"
+					>
+						<!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+						<path
+							d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+						/>
+					</svg>
+					<input type="search" id="search" placeholder="Search for something" name="q" />
+					<button aria-label="Search" title="Search">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 448 512"
+							fill="currentColor"
+						>
+							<!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+							<path
+								d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
+							/>
+						</svg>
+					</button>
+				</form>
 			</div>
 		</div>
 		<nav>
@@ -43,7 +75,7 @@
 	</header>
 
 	<main>
-		<slot />
+		{@render children?.()}
 	</main>
 
 	<footer>
@@ -175,6 +207,57 @@
 		flex-direction: row;
 	}
 
+	header #top-header button {
+		background: none;
+		border: 0;
+		cursor: pointer;
+		padding: 0;
+	}
+
+	header #top-header form {
+		align-items: center;
+		color: var(--color-gray);
+		display: none;
+		margin-left: auto;
+		background: #f5f5f5;
+		border-radius: 30px;
+		box-shadow:
+			rgba(0, 0, 0, 0.4) 0 3px 3px inset,
+			#000 0 0 0 1px,
+			rgba(255, 255, 255, 0.15) 0 2px 0;
+		padding: 0 10px;
+		position: relative;
+		width: 300px;
+	}
+
+	header #top-header input {
+		background: transparent;
+		border: 0;
+		color: black;
+		font-size: 12px;
+		height: 30px;
+		line-height: initial;
+		width: 100%;
+		margin: 0;
+		padding: 0 7px;
+		text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
+		border-radius: 300px;
+	}
+
+	header #top-header svg {
+		color: inherit;
+		height: 14px;
+		width: 14px;
+	}
+
+	header #top-header svg.magnifying-glass {
+		top: 0;
+	}
+
+	header #top-header input:focus {
+		outline: none;
+	}
+
 	nav {
 		border-top: solid 1px #070808;
 		background: #2b2e31 url(/assets/bg-noise-white.png);
@@ -282,6 +365,10 @@
 	}
 
 	@media (min-width: 768px) {
+		header #top-header form {
+			display: flex;
+		}
+
 		footer #credits img {
 			width: 200px;
 		}
