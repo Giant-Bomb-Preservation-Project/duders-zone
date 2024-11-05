@@ -10,18 +10,12 @@
 </script>
 
 <div class="container">
-	<h1>Search</h1>
+	<h1 class="sr-only">Search</h1>
 
 	<form method="GET">
-		<label for="search" class="sr-only">Search Query</label>
+		<label for="search">Search for Videos:</label>
 		<div id="field-wrapper">
-			<input
-				type="search"
-				id="search"
-				placeholder="search for something"
-				name="q"
-				value={searchQuery}
-			/>
+			<input type="search" id="search" name="q" value={searchQuery} />
 		</div>
 		<div id="button-wrapper">
 			<Button>Go Get It</Button>
@@ -29,7 +23,7 @@
 	</form>
 
 	{#if videos.length}
-		<VideoList {videos} title="Videos" />
+		<VideoList {videos} title={`${searchQuery} - ${videos.length} Videos`} />
 	{:else if searchQuery}
 		<div class="empty">No videos found for "{searchQuery}"</div>
 	{:else}
@@ -54,6 +48,13 @@
 		padding: 0 0 0 16px;
 		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 		width: 100%;
+	}
+
+	label {
+		display: block;
+		font-family: var(--font-special);
+		font-size: 18px;
+		margin: 0.5em 0;
 	}
 
 	#button-wrapper {
@@ -91,7 +92,7 @@
 		}
 
 		#field-wrapper {
-			margin: 0 1em 0 0;
+			margin: 0 1em 0;
 		}
 	}
 </style>
