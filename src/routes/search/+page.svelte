@@ -1,29 +1,26 @@
 <script lang="ts">
+	import { page } from '$app/stores'
 	import Button from '$lib/components/Button.svelte'
 	import VideoList from '$lib/components/VideoList.svelte'
 	import { dataStore } from '$lib/data'
 	import type { Video } from '$lib/data'
 
-	let searchQuery = $state('')
-	let videos: Video[] = $state([])
-
-	//TODO debounce (trailing edge) this function
-	const searchSubmit = () => {
-		videos = searchQuery === '' ? [] : dataStore.searchVideos(searchQuery)
-	}
+	let searchQuery: string | null = $derived($page.url.searchParams.get('q'))
+	let videos: Video[] = $derived(searchQuery ? dataStore.searchVideos(searchQuery) : [])
 </script>
 
 <div class="container">
 	<h1>Search</h1>
 
-	<form onsubmit={searchSubmit}>
+	<form method="GET">
 		<label for="search" class="sr-only">Search Query</label>
 		<div id="field-wrapper">
 			<input
 				type="search"
 				id="search"
 				placeholder="search for something"
-				bind:value={searchQuery}
+				name="q"
+				value={searchQuery}
 			/>
 		</div>
 		<div id="button-wrapper">
