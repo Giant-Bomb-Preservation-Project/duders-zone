@@ -23,7 +23,7 @@
 	</form>
 
 	{#if videos.length}
-		<VideoList {videos} title={`${searchQuery} - ${videos.length} Videos`} />
+		<VideoList {videos} title={`Search results for: ${searchQuery}`} />
 	{:else if searchQuery}
 		<div class="empty">No videos found for "{searchQuery}"</div>
 	{:else}
@@ -86,13 +86,11 @@
 	}
 
 	@media (min-width: 576px) {
-		form {
-			align-items: center;
-			display: flex;
-		}
+	}
 
-		#field-wrapper {
-			margin: 0 1em 0;
+	@media (min-width: 768px) {
+		form {
+			display: none;
 		}
 	}
 </style>
