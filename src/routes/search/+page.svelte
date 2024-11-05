@@ -30,8 +30,10 @@
 
 	{#if videos.length}
 		<VideoList {videos} title="Videos" />
+	{:else if searchQuery}
+		<div class="empty">No videos found for "{searchQuery}"</div>
 	{:else}
-		<div class="empty">No videos...</div>
+		<div class="empty">You need to search for something...</div>
 	{/if}
 </div>
 
@@ -75,6 +77,9 @@
 	}
 
 	.empty {
+		color: var(--color-gray-muted);
+		font-size: 24px;
+		font-style: italic;
 		margin: 5em 0;
 		text-align: center;
 	}
