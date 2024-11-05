@@ -33,6 +33,7 @@
 				</a>
 				<form method="GET" action="/search">
 					<svg
+						class="magnifying-glass"
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 512 512"
 						fill="currentColor"
@@ -43,6 +44,18 @@
 						/>
 					</svg>
 					<input type="search" id="search" placeholder="Search for something" name="q" />
+					<button aria-label="Search" title="Search">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 448 512"
+							fill="currentColor"
+						>
+							<!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+							<path
+								d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
+							/>
+						</svg>
+					</button>
 				</form>
 			</div>
 		</div>
@@ -194,7 +207,16 @@
 		flex-direction: row;
 	}
 
+	header #top-header button {
+		background: none;
+		border: 0;
+		cursor: pointer;
+		padding: 0;
+	}
+
 	header #top-header form {
+		align-items: center;
+		color: var(--color-gray);
 		display: none;
 		margin-left: auto;
 		background: #f5f5f5;
@@ -203,6 +225,7 @@
 			rgba(0, 0, 0, 0.4) 0 3px 3px inset,
 			#000 0 0 0 1px,
 			rgba(255, 255, 255, 0.15) 0 2px 0;
+		padding: 0 10px;
 		position: relative;
 		width: 300px;
 	}
@@ -216,18 +239,19 @@
 		line-height: initial;
 		width: 100%;
 		margin: 0;
-		padding: 0 10px 0 30px;
+		padding: 0 7px;
 		text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
 		border-radius: 300px;
 	}
 
 	header #top-header svg {
-		color: var(--color-gray);
+		color: inherit;
 		height: 14px;
-		left: 8px;
-		position: absolute;
-		top: 8px;
 		width: 14px;
+	}
+
+	header #top-header svg.magnifying-glass {
+		top: 0;
 	}
 
 	header #top-header input:focus {
@@ -342,7 +366,7 @@
 
 	@media (min-width: 768px) {
 		header #top-header form {
-			display: block;
+			display: flex;
 		}
 
 		footer #credits img {
