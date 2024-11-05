@@ -14,9 +14,11 @@
 
 <Splash image={video.thumbnail || '/assets/default.jpg'}>
 	<div class="metadata">
-		<h3>{video.title}</h3>
-		<p>{video.description}</p>
-		<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>
+		<a href={`/shows/${video.show}/${video.id}`}>
+			<h3>{video.title}</h3>
+			<p>{video.description}</p>
+			<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>
+		</a>
 	</div>
 	<div class="video">
 		{#if $preferredSource == VideoSource.Direct && video.source.direct}
@@ -87,6 +89,16 @@
 	video {
 		display: block;
 		width: 100%;
+	}
+
+	.metadata a {
+		color: white;
+		text-shadow: rgba(0, 0, 0, 0.9) 0 1px 0;
+		transition: text-shadow 0.25s;
+	}
+
+	.metadata a:hover {
+		text-shadow: rgba(255, 255, 255, 0.75) 0 0 10px;
 	}
 
 	.video {
