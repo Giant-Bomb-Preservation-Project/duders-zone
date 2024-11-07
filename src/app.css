@@ -51,6 +51,39 @@ p {
 	margin: 0;
 }
 
+input[type='submit'] {
+	background: #394046 url(/assets/bg-button-dark.png) center center repeat-x;
+	color: #dedede;
+	padding: 0 1em;
+	box-shadow:
+		rgba(255, 255, 255, 0.2) 0 1px 0 inset,
+		rgba(0, 0, 0, 0.25) 0 1px 1px;
+	text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0;
+	border: 1px solid #0b0d0e;
+	height: 22px;
+	border-radius: 3px;
+}
+
+input[type='submit']:active {
+	position: relative;
+	top: 1px;
+}
+
+select {
+	appearance: none;
+	background: #394046 url(/assets/bg-select-dark.png) right;
+	background-size: auto 100%;
+	color: #dedede;
+	padding: 0 16px 0 8px;
+	box-shadow:
+		rgba(255, 255, 255, 0.2) 0 1px 0 inset,
+		rgba(0, 0, 0, 0.25) 0 1px 1px;
+	text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0;
+	border: 1px solid #0b0d0e;
+	height: 22px;
+	border-radius: 3px;
+}
+
 svg {
 	height: 1em;
 	position: relative;

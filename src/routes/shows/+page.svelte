@@ -73,23 +73,6 @@
 		margin-bottom: 30px;
 	}
 
-	select {
-		appearance: none;
-		background: #394046 url(/assets/bg-select-dark.png) right;
-		background-size: auto 100%;
-		color: #dedede;
-		padding-left: 8px;
-		margin-bottom: 10px;
-		box-shadow:
-			rgba(255, 255, 255, 0.2) 0 1px 0 inset,
-			rgba(0, 0, 0, 0.25) 0 1px 1px;
-		text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0;
-		width: 120px;
-		border: 1px solid #0b0d0e;
-		height: 22px;
-		border-radius: 3px;
-	}
-
 	.shows {
 		margin-bottom: var(--spacing);
 		margin-top: var(--spacing);
