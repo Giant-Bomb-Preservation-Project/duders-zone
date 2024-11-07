@@ -1,10 +1,10 @@
 import { error, redirect } from '@sveltejs/kit'
 import { dataStore } from '$lib/data'
-import { parseDate } from '$lib/text'
+import { textToDate } from '$lib/text'
 import type { PageLoad } from './$types'
 
 export const load = (({ params }) => {
-	const date = parseDate(params.date)
+	const date = textToDate(params.date)
 	if (!date) {
 		throw error(400, `Unable to parse date: "${params.date}"`)
 	}

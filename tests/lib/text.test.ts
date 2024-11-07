@@ -1,6 +1,13 @@
 // sum.test.js
 import { describe, it, expect } from 'vitest'
-import { extractWords, parseDate } from '$lib/text'
+import { dateToText, extractWords, textToDate } from '$lib/text'
+
+describe('dateToText', () => {
+	it('converts a date to a text format', () => {
+		expect(dateToText(new Date(2008, 11, 21))).toStrictEqual('1221')
+		expect(dateToText(new Date(2008, 0, 1))).toStrictEqual('0101')
+	})
+})
 
 describe('extractWords', () => {
 	it('covnerts text to a list of words', () => {
@@ -21,11 +28,11 @@ describe('extractWords', () => {
 	})
 })
 
-describe('parseDate', () => {
+describe('textToDate', () => {
 	it('parses text as a month/day date', () => {
-		expect(parseDate('1221')).toStrictEqual(new Date(2008, 11, 21))
-		expect(parseDate('0101')).toStrictEqual(new Date(2008, 0, 1))
-		expect(parseDate('not a date')).toStrictEqual(null)
-		expect(parseDate('123')).toStrictEqual(null)
+		expect(textToDate('1221')).toStrictEqual(new Date(2008, 11, 21))
+		expect(textToDate('0101')).toStrictEqual(new Date(2008, 0, 1))
+		expect(textToDate('not a date')).toStrictEqual(null)
+		expect(textToDate('123')).toStrictEqual(null)
 	})
 })
