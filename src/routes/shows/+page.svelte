@@ -21,10 +21,12 @@
 <h1 class="sr-only">Shows</h1>
 
 <section class="container shows">
-	<select bind:value={sorting}>
-		<option value={ShowSorting.alphabetical}>Alphabetical</option>
-		<option value={ShowSorting.mostVideos}>Most Videos</option>
-	</select>
+	<form>
+		<select id="sorting" bind:value={sorting}>
+			<option value={ShowSorting.alphabetical}>Alphabetical</option>
+			<option value={ShowSorting.mostVideos}>Most Videos</option>
+		</select>
+	</form>
 	<ul>
 		{#each sortedShows as show}
 			<li>
@@ -42,10 +44,18 @@
 </section>
 
 <style>
+	form {
+		margin-bottom: var(--spacing);
+	}
+
 	h2 {
 		font-size: 16px;
 		line-height: 20px;
 		margin: 0;
+	}
+
+	select {
+		width: 150px;
 	}
 
 	ul {
