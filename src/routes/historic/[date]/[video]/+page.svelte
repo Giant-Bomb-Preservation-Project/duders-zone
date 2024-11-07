@@ -1,6 +1,8 @@
 <script lang="ts">
+	import { goto } from '$app/navigation'
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
 	import VideoList from '$lib/components/VideoList.svelte'
+	import { dateToText } from '$lib/text'
 	import type { PageData } from './$types'
 
 	interface Props {
@@ -8,6 +10,36 @@
 	}
 
 	const { data }: Props = $props()
+	const currentMonth = $derived(data.date.getMonth())
+	const currentDay = $derived(data.date.getDate())
+	const currentUri = $derived('/historic/' + dateToText(data.date))
+
+	const months = [
+		'January',
+		'February',
+		'March',
+		'April',
+		'May',
+		'June',
+		'July',
+		'August',
+		'September',
+		'October',
+		'November',
+		'December',
+	]
+
+	function gotoDate(event: SubmitEvent & { currentTarget: EventTarget & HTMLFormElement }) {
+		event.preventDefault()
+		if (!event.currentTarget) {
+			return
+		}
+
+		const month = event.currentTarget.month.value.padStart(2, '0')
+		const day = event.currentTarget.day.value.padStart(2, '0')
+
+		goto(`/historic/${month}${day}`)
+	}
 </script>
 
 <h1 class="sr-only">Historic</h1>
@@ -17,10 +49,28 @@
 </section>
 
 <section class="container videos">
-	<VideoList videos={data.videos} title="This Day in Giant Bomb History" rootUri="/historic" />
+	<form onsubmit={gotoDate}>
+		<select name="month">
+			{#each months as month, i}
+				<option value={i + 1} selected={i == currentMonth}>{month}</option>
+			{/each}
+		</select>
+		<select name="day">
+			{#each { length: 31 } as _, i}
+				<option value={i + 1} selected={i + 1 == currentDay}>{i + 1}</option>
+			{/each}
+		</select>
+		<input type="submit" value="Go" />
+	</form>
+
+	<VideoList videos={data.videos} title="This Day in Giant Bomb History" rootUri={currentUri} />
 </section>
 
 <style>
+	form {
+		margin-bottom: var(--spacing);
+	}
+
 	.videos {
 		margin-bottom: var(--spacing);
 		margin-top: var(--spacing);
