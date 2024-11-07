@@ -8,5 +8,5 @@ export const load = (({ params }) => {
 
 	const shuffled = videos.sort(() => 0.5 - Math.random())
 
-	throw redirect(302, `/historic/${shuffled[0].id}`)
+	redirect(302, `/historic/${shuffled[0].id}`)
 }) satisfies PageLoad

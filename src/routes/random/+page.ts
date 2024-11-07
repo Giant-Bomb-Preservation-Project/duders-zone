@@ -5,5 +5,5 @@ import type { PageLoad } from './$types'
 export const load = (({ params }) => {
 	const video = dataStore.getRandomVideos(1)[0]
 
-	throw redirect(302, `/random/${video.id}`)
+	redirect(302, `/random/${video.id}`)
 }) satisfies PageLoad

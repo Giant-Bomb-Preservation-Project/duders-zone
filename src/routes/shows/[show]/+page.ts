@@ -12,5 +12,5 @@ export const load = (({ params }) => {
 
 	const video = videos[0]
 
-	throw redirect(302, `/shows/${show.id}/${video.id}`)
+	redirect(302, `/shows/${show.id}/${video.id}`)
 }) satisfies PageLoad
