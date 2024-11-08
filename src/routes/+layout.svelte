@@ -64,8 +64,10 @@
 				<ul>
 					{#each menu as { path, text }}
 						<li>
-							<a class={$page.route.id?.startsWith(path) ? 'active' : ''} href={path}
-								>{text}</a
+							<a
+								class={$page.route.id?.startsWith(path) ? 'active' : ''}
+								href={path}
+								data-sveltekit-preload-data="off">{text}</a
 							>
 						</li>
 					{/each}

@@ -6,6 +6,7 @@
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
 	import VideoList from '$lib/components/VideoList.svelte'
 	import promoInfinite from '$lib/images/promo-gb_infinite.png'
+	import { dateToText } from '$lib/text'
 	import { VideoListMode } from '$lib/types'
 	import type { PageData } from './$types'
 	interface Props {
@@ -15,6 +16,7 @@
 	const { data }: Props = $props()
 	const videos = data.videos
 	const mainVideo = videos.pop()
+	const historicUri = '/historic/' + dateToText(new Date())
 </script>
 
 {#if mainVideo}
@@ -28,7 +30,7 @@
 		<VideoList
 			videos={data.historicVideos}
 			title="This Day in Giant Bomb History"
-			rootUri="/historic"
+			rootUri={historicUri}
 			seeAllUrl="/historic"
 			mode={VideoListMode.List}
 		/>

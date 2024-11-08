@@ -1,12 +1,10 @@
 import { error, redirect } from '@sveltejs/kit'
 import { dataStore } from '$lib/data'
+import { dateToText } from '$lib/text'
 import type { PageLoad } from './$types'
 
-export const load = (({ params }) => {
-	const videos = dataStore.getVideosForDay()
-	if (videos.length === 0) throw error(404, 'Not found')
+export const load = (() => {
+	const date = new Date()
 
-	const shuffled = videos.sort(() => 0.5 - Math.random())
-
-	throw redirect(302, `/historic/${shuffled[0].id}`)
+	redirect(302, '/historic/' + dateToText(date))
 }) satisfies PageLoad
