@@ -15,7 +15,7 @@
 	let selectedMonth = $state(0)
 	let selectedDay = $state(0)
 
-	$effect(()=>{
+	$effect(() => {
 		selectedMonth = data.date.getMonth() + 1
 		selectedDay = data.date.getDate()
 	})
