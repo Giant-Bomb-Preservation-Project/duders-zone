@@ -16,12 +16,12 @@
 	let selectedDay = $state(0)
 
 	$effect(() => {
-		selectedMonth = data.date.getMonth() + 1
+		selectedMonth = data.date.getMonth()
 		selectedDay = data.date.getDate()
 	})
 
 	const daysInSelectedMonth = $derived(
-		[31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][selectedMonth - 1]
+		[31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][selectedMonth]
 	)
 
 	$effect(() => {
@@ -66,7 +66,7 @@
 	<form onsubmit={gotoDate}>
 		<select name="month" bind:value={selectedMonth}>
 			{#each months as month, i}
-				<option value={i + 1}>{month}</option>
+				<option value={i}>{month}</option>
 			{/each}
 		</select>
 		<select name="day" bind:value={selectedDay}>
