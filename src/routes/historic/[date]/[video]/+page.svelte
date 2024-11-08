@@ -10,9 +10,23 @@
 	}
 
 	const { data }: Props = $props()
-	const currentMonth = $derived(data.date.getMonth())
-	const currentDay = $derived(data.date.getDate())
 	const currentUri = $derived('/historic/' + dateToText(data.date))
+
+	let selectedMonth = $state(0)
+	let selectedDay = $state(0)
+
+	$effect(()=>{
+		selectedMonth = data.date.getMonth() + 1
+		selectedDay = data.date.getDate()
+	})
+
+	const daysInSelectedMonth = $derived(
+		[31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][selectedMonth - 1]
+	)
+
+	$effect(() => {
+		selectedDay = Math.min(selectedDay, daysInSelectedMonth)
+	})
 
 	const months = [
 		'January',
@@ -49,15 +63,16 @@
 </section>
 
 <section class="container videos">
+	<a href="/historic/0812/gb-2300-19213-IDRKVLP">click me</a>
 	<form onsubmit={gotoDate}>
-		<select name="month">
+		<select name="month" bind:value={selectedMonth}>
 			{#each months as month, i}
-				<option value={i + 1} selected={i == currentMonth}>{month}</option>
+				<option value={i + 1}>{month}</option>
 			{/each}
 		</select>
-		<select name="day">
-			{#each { length: 31 } as _, i}
-				<option value={i + 1} selected={i + 1 == currentDay}>{i + 1}</option>
+		<select name="day" bind:value={selectedDay}>
+			{#each { length: daysInSelectedMonth } as _, i}
+				<option value={i + 1}>{i + 1}</option>
 			{/each}
 		</select>
 		<input type="submit" value="Go" />
