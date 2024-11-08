@@ -63,7 +63,6 @@
 </section>
 
 <section class="container videos">
-	<a href="/historic/0812/gb-2300-19213-IDRKVLP">click me</a>
 	<form onsubmit={gotoDate}>
 		<select name="month" bind:value={selectedMonth}>
 			{#each months as month, i}
