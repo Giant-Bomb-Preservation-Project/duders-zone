@@ -9,7 +9,7 @@ Thanks for everything! See you next game.
 
 ## Requirements
 
--   Node 19+
+- Node 19+
 
 ## Developing
 
