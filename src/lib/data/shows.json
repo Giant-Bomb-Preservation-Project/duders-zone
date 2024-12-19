@@ -4572,6 +4572,12 @@
             "gb-2300-19288-IDUQ31W",
             "gb-2300-19297-IDGDMXH",
             "gb-2300-19298-IDZJ32J",
+            "gb-2300-19302-IDBLKZ2",
+            "gb-2300-19303-IDMA7O2",
+            "gb-2300-19312-ID5EIV6",
+            "gb-2300-19313-ID5PH8O",
+            "gb-2300-19316-IDBRDWF",
+            "gb-2300-19317-ID4BRXT",
             "gb-Unarchived0002-IDJRO2O",
             "gb-Unarchived0143-IDIDXUM",
             "gb-Unarchived8725"
@@ -5619,6 +5625,7 @@
             "gb-2300-19250-IDCTD9A",
             "gb-2300-19262-IDUU7L1",
             "gb-2300-19271-IDPTPGF",
+            "gb-2300-19314-IDXJZLO",
             "gb-2300-6968-IDII445",
             "gb-2300-6987-IDMUMPW",
             "gb-2300-7008-IDW3A19",
@@ -6715,7 +6722,9 @@
             "gb-2300-19281-IDZPKXR",
             "gb-2300-19282-IDQ4SIO",
             "gb-2300-19294-IDRY2B5",
-            "gb-2300-19295-IDXBTQY"
+            "gb-2300-19295-IDXBTQY",
+            "gb-2300-19308-IDRB9C7",
+            "gb-2300-19309-IDKJN26"
         ]
     },
     {
@@ -9230,7 +9239,11 @@
             "gb-2300-19286-IDFYECN",
             "gb-2300-19290-IDI3GCU",
             "gb-2300-19293-IDIR7TS",
-            "gb-2300-19296-IDBDNF4"
+            "gb-2300-19296-IDBDNF4",
+            "gb-2300-19300-IDSRWRK",
+            "gb-2300-19304-IDU8JCM",
+            "gb-2300-19311-IDK7S5F",
+            "gb-2300-19315-IDBIDCW"
         ]
     },
     {
@@ -9637,7 +9650,8 @@
             "gb-2300-19215-IDWQG1N",
             "gb-2300-19245-ID32K6C",
             "gb-2300-19279-IDZUT45",
-            "gb-2300-19299-IDPIAZG"
+            "gb-2300-19299-IDPIAZG",
+            "gb-2300-19307-ID1ZJ7B"
         ]
     },
     {
@@ -9743,8 +9757,29 @@
             "gb-2300-19231-IDCEH96",
             "gb-2300-19244-ID2UH2D",
             "gb-2300-19274-IDUAPR7",
-            "gb-2300-19291-IDLTINT"
+            "gb-2300-19291-IDLTINT",
+            "gb-2300-19301-IDUYCXM",
+            "gb-2300-19306-ID968D7",
+            "gb-2300-19310-IDEJRIF"
         ]
+    },
+    {
+        "id": "days-shawn",
+        "gb_id": 126,
+        "title": "Days Shawn",
+        "description": "A series birthed from a bad pun and a lot of money raised during Extra Life.",
+        "poster": "3652046-thumbnail.jpg",
+        "logo": "3652959-logo(site).png",
+        "videos": []
+    },
+    {
+        "id": "delight-club",
+        "gb_id": 127,
+        "title": "Delight Club",
+        "description": "If you can't have a blight, you may as well have a bit of delight!",
+        "poster": "3652986-delightclub.png",
+        "logo": "3652985-delightclublogo(site).png",
+        "videos": []
     },
     {
         "id": "mario-party-party",

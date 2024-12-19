@@ -51,6 +51,10 @@ export class DataStore {
 	constructor(showData: any[], videoData: any[]) {
 		this.shows = {}
 		for (const show of showData) {
+			if (show.videos.length == 0) {
+				continue
+			}
+
 			this.shows[show.id] = {
 				id: show.id,
 				title: show.title,
