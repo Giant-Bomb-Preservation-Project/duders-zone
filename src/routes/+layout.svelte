@@ -27,9 +27,9 @@
 				<h1 id="brand">
 					<a href="/"><img src={logo} alt="duders.zone" /></a>
 				</h1>
-				<a id="andre" class="border" href="https://www.giantbomb.com/infinite/">
-					Giant Bomb Infinite
-					<span>Hang out and watch Giant Bomb Videos FOREVER!</span>
+				<a id="andre" class="border" href="https://www.twitch.tv/giantbombforever">
+					Giant Bomb Forever
+					<span>Hang out and watch Giant Bomb Videos FOR EVER!</span>
 				</a>
 				<form method="GET" action="/search">
 					<svg
