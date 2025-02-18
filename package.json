@@ -15,19 +15,19 @@
 		"test:watch": "vitest watch"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.3.1",
-		"@sveltejs/adapter-netlify": "^4.4.0",
-		"@sveltejs/kit": "^2.12.1",
-		"@sveltejs/vite-plugin-svelte": "^4.0.3",
+		"@sveltejs/adapter-auto": "^4.0.0",
+		"@sveltejs/adapter-netlify": "^4.4.1",
+		"@sveltejs/kit": "^2.17.1",
+		"@sveltejs/vite-plugin-svelte": "^5.0.3",
 		"axios": "^1.7.9",
-		"prettier": "^3.4.2",
-		"prettier-plugin-svelte": "^3.3.2",
-		"svelte": "^5.14.2",
-		"svelte-check": "^4.1.1",
+		"prettier": "^3.5.1",
+		"prettier-plugin-svelte": "^3.3.3",
+		"svelte": "^5.20.2",
+		"svelte-check": "^4.1.4",
 		"tslib": "^2.8.1",
-		"typescript": "^5.7.2",
-		"vite": "^5.1.8",
-		"vitest": "^2.1.8"
+		"typescript": "^5.7.3",
+		"vite": "^6.1.0",
+		"vitest": "^3.0.6"
 	},
 	"type": "module"
 }
