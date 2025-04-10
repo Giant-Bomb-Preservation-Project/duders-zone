@@ -85,9 +85,8 @@ async function getRequest(url, queryParams) {
 			return response.data
 		} catch (e) {
 			if (e instanceof axios.AxiosError) {
-				console.warn(
-					`WARNING! Unexpected status code: ${e.response?.status}\n${e.response?.data}`
-				)
+				console.warn(`WARNING! Unexpected status code: ${e.response?.status}`)
+				console.warn(e.response?.data)
 			} else {
 				throw e
 			}
