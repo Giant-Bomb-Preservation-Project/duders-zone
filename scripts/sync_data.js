@@ -60,8 +60,11 @@ async function downloadFile(source, target) {
 }
 
 // Show an error text and terminate the program
-async function fatalError(message) {
+async function fatalError(message, exception) {
 	console.error(`ERROR! ${message}`)
+	if (exception) {
+		console.error(exception)
+	}
 	process.exit(1)
 }
 
@@ -256,7 +259,7 @@ async function fetchArchiveVideos(shows) {
 
 				videos.push(video)
 			} catch (error) {
-				fatalError('Unable to parse video item: ' + JSON.stringify(item))
+				fatalError('Unable to parse video item: ' + JSON.stringify(item), error)
 			}
 		}
 
