@@ -218,13 +218,15 @@ async function fetchArchiveVideos(shows) {
 			}
 
 			try {
+				const date = item.date ?? "1970-01-01"
+
 				const video = {
 					id: videoId,
 					gb_id: null,
 					show: 'unknown',
 					title: item.title,
 					description: item.description ?? '',
-					date: new Date(item.date).toISOString(),
+					date: new Date(date).toISOString(),
 					thumbnail: `https://archive.org/services/img/${videoId}`,
 					source: {
 						internetarchive: videoId,
