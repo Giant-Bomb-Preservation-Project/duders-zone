@@ -208,12 +208,12 @@ async function fetchArchiveVideos(shows) {
 			const videoId = item.identifier
 
 			if (item.mediatype !== 'movies') {
-				console.debug(`${videoId}: Skipping non-movie entry`)
+				console.debug(`${videoId}: Skipping non-movie entry (mediatype = ${item.mediatype})`)
 				continue
 			}
 
 			if (UNWANTED_IA_MOVIES.includes(videoId)) {
-				console.debug(`${videoId}: Skipping unwanted movie`)
+				console.debug(`${videoId}: Skipping unwanted movie (identifier = ${item.mediatype})`)
 				continue
 			}
 
