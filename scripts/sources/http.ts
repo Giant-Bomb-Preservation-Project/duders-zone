@@ -8,6 +8,9 @@ const HEADERS = {
 // Amount of times to retry a GET request
 const REQUEST_ATTEMPTS = 3
 
+// Seconds to delay between retrying failed requests
+const RETRY_DELAY = 30
+
 // Make a GET request to the given URL
 export async function getRequest(url: String, queryParams: Object) {
 	let times = 0
