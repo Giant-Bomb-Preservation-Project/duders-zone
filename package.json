@@ -10,7 +10,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check .",
 		"format": "prettier --write .",
-		"sync": "node scripts/sync_data.js",
+		"sync": "npx tsx scripts/sync_data.ts",
 		"test": "vitest run",
 		"test:watch": "vitest watch"
 	},
@@ -25,6 +25,7 @@
 		"svelte": "^5.20.2",
 		"svelte-check": "^4.1.4",
 		"tslib": "^2.8.1",
+		"tsx": "^4.19.3",
 		"typescript": "^5.7.3",
 		"vite": "^6.1.0",
 		"vitest": "^3.0.6"

@@ -208,17 +208,21 @@ async function fetchArchiveVideos(shows) {
 			const videoId = item.identifier
 
 			if (item.mediatype !== 'movies') {
-				console.debug(`${videoId}: Skipping non-movie entry (mediatype = ${item.mediatype})`)
+				console.debug(
+					`${videoId}: Skipping non-movie entry (mediatype = ${item.mediatype})`
+				)
 				continue
 			}
 
 			if (UNWANTED_IA_MOVIES.includes(videoId)) {
-				console.debug(`${videoId}: Skipping unwanted movie (identifier = ${item.mediatype})`)
+				console.debug(
+					`${videoId}: Skipping unwanted movie (identifier = ${item.mediatype})`
+				)
 				continue
 			}
 
 			try {
-				const date = item.date ?? "1970-01-01"
+				const date = item.date ?? '1970-01-01'
 
 				const video = {
 					id: videoId,
@@ -414,7 +418,7 @@ async function fetchShows() {
 
 // Run the script
 async function run() {
-	if (!GB_API_KEY) {
+	if (!process.env.GB_API_KEY) {
 		console.error('ERROR! Missing GB_API_KEY')
 		process.exit(1)
 	}
