@@ -1,3 +1,5 @@
+import { promises as fs } from 'fs'
+
 import axios from 'axios'
 
 // Headers sent with each request
@@ -11,8 +13,18 @@ const REQUEST_ATTEMPTS = 3
 // Seconds to delay between retrying failed requests
 const RETRY_DELAY = 30
 
+// Download a file
+export async function downloadFile(source: string, target: string) {
+	console.debug(`Downloading: ${source}`)
+	const response = await axios.get(source, { responseType: 'arraybuffer' })
+	const fileData = Buffer.from(response.data, 'binary')
+
+	console.debug(` -> saving to ${target}`)
+	await fs.writeFile(target, fileData)
+}
+
 // Make a GET request to the given URL
-export async function getRequest(url: String, queryParams: Object) {
+export async function getRequest(url: string, queryParams: Object) {
 	let times = 0
 	while (times < REQUEST_ATTEMPTS) {
 		try {
