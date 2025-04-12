@@ -10,7 +10,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check .",
 		"format": "prettier --write .",
-		"sync": "npx tsx scripts/sync_data.ts",
+		"sync": "tsx scripts/sync_data.ts",
 		"test": "vitest run",
 		"test:watch": "vitest watch"
 	},

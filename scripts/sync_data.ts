@@ -2,32 +2,17 @@ import axios from 'axios'
 import { promises as fs } from 'fs'
 import path from 'path'
 
+import { writeJSONFile } from './sources/file.ts'
+import { downloadFile } from './sources/http.ts'
+import GiantBomb from './sources/GiantBomb.ts'
+import InternetArchive from './sources/InternetArchive.ts'
+
 ///
 /// Config
 ///
 
-// Headers sent with each request
-const HEADERS = {
-	'user-agent': 'Giant-Bomb-Preservation-Project/duders-zone',
-}
-
 // Identifier for the GB archive in Internet Archive
 const COLLECTION_IDENTIFIER = 'giant-bomb-archive'
-
-// Seconds to delay between making requests
-const SLEEP_DELAY = 5
-
-// Seconds to delay between retrying failed requests
-const RETRY_DELAY = 30
-
-// Amount of times to retry a GET request
-const REQUEST_ATTEMPTS = 3
-
-// Amount of items to fetch per request to Giant Bomb (max: 100)
-const GIANT_BOMB_REQUEST_LIMIT = 100
-
-// Amount of videos to fetch per request to Internet Archive (max: 10000)
-const INTERNET_ARCHIVE_REQUEST_LIMIT = 10000
 
 // Paths to the files to store the show and video meta data
 const SHOWS_FILE_PATH = 'src/lib/data/shows.json'
@@ -36,84 +21,48 @@ const VIDEOS_FILE_PATH = 'src/lib/data/videos.json'
 // Path to the location to store the show images
 const SHOW_IMAGES_PATH = 'static/shows/'
 
-// Video types to skip
+// Internet Archive subjects to not consider as shows
+const UNWANTED_SUBJECTS = ['Giant Bomb']
+
+// Video types from Giant Bomb to skip
 const UNWANTED_VIDEO_TYPES = ['Trailers', 'Trailers, Exclude From Infinite', 'Trailers, Features']
 
 // Identifiers of movies in Internet Archive that we're not interested in
 const UNWANTED_IA_MOVIES = ['signup_confirmation']
 
-// The API key used when connecting to the Giant Bomb API
-const GB_API_KEY = process.env.GB_API_KEY
-
 ///
 /// Helper functions
 ///
 
-// Download a file
-async function downloadFile(source, target) {
-	console.debug(`Downloading: ${source}`)
-	const response = await axios.get(source, { responseType: 'arraybuffer' })
-	const fileData = Buffer.from(response.data, 'binary')
+// Find a GB video in the list of IA videos
+function findVideo(iaVideos: Array, gbVideo: Object, show: Object | null): Object {
+	const guid = gbVideo.guid
+	const title = gbVideo.name.trim()
+	const description = gbVideo.description.trim()
+	const date = gbVideo.publish_date.toISOString().substring(0, 10) // get just the date part
 
-	console.debug(` -> saving to ${target}`)
-	await fs.writeFile(target, fileData)
-}
+	const possibleVideos = show !== null ? show.videos : Object.keys(iaVideos)
 
-// Show an error text and terminate the program
-async function fatalError(message, exception) {
-	console.error(`ERROR! ${message}`)
-	if (exception) {
-		console.error(exception)
-	}
-	process.exit(1)
-}
+	for (const identifier of possibleVideos) {
+		const iaVideo = iaVideos[identifier]
+		let score = 0
 
-// Make a GET request to the given URL
-async function getRequest(url, queryParams) {
-	let times = 0
-	while (times < REQUEST_ATTEMPTS) {
-		try {
-			const queryString = Object.keys(queryParams)
-				.map((k) => `${k}=${queryParams[k]}`)
-				.join('&')
-			console.debug(`GET ${url}?${queryString}`)
-			const response = await axios.get(url, {
-				headers: HEADERS,
-				params: queryParams,
-			})
+		score += iaVideo.title.includes(title) ? 1 : 0
+		score += iaVideo.description && iaVideo.description.includes(description) ? 1 : 0
+		score += iaVideo.id.includes(guid) ? 1 : 0
+		score += iaVideo.date.toISOString().substring(0, 10) ? 1 : 0
 
-			return response.data
-		} catch (e) {
-			if (e instanceof axios.AxiosError) {
-				console.warn(`WARNING! Unexpected status code: ${e.response?.status}`)
-				console.warn(e.response?.data)
-			} else {
-				throw e
-			}
+		if (score >= 2) {
+			// probably the right video
+			return iaVideo
 		}
-
-		times += 1
-		console.debug(`Retrying in ${RETRY_DELAY} seconds...`)
-		await sleep(RETRY_DELAY)
 	}
 
-	fatalError('Unable to complete request')
-}
-
-// Read a JSON file
-async function readJSONFile(path) {
-	const contents = await fs.readFile(path, 'utf8')
-
-	return JSON.parse(contents)
-}
-
-// Sleep function (thanks to: https://stackoverflow.com/a/39914235)
-function sleep(seconds) {
-	return new Promise((resolve) => setTimeout(resolve, seconds * 1000))
+	return null
 }
 
 // Convert a URL to a filename
-function toFilename(url) {
+function toFilename(url: string): string {
 	if (url === null) {
 		return null
 	}
@@ -125,317 +74,199 @@ function toFilename(url) {
 }
 
 // Convert text into a sanitized identifier
-function toIdentifier(text) {
+function toIdentifier(text: string): string {
 	return text
 		.toLowerCase()
 		.replaceAll(' ', '-')
 		.replace(/[^\w-]/g, '')
 }
 
-// Write a JSON file
-async function writeJSONFile(path, data) {
-	await fs.writeFile(path, JSON.stringify(data, null, 4))
-}
-
 ///
-/// Script functions
+/// Script
 ///
 
-async function downloadShowImages(shows) {
-	let images = {}
-	for (const [identifier, show] of Object.entries(shows)) {
-		if (show.poster != null) {
-			const filename = toFilename(show.poster)
-			images[filename] = show.poster
-			shows[identifier].poster = filename
-		}
-
-		if (show.logo != null) {
-			const filename = toFilename(show.logo)
-			images[filename] = show.logo
-			shows[identifier].logo = filename
-		}
-	}
-
-	console.log(`Downloading show images...`)
-
-	let skipped = 0
-	for (const image of Object.keys(images)) {
-		const target = SHOW_IMAGES_PATH + image
-
-		try {
-			// Check to see if this file exists - if it doesn't it will throw an exception
-			await fs.access(target, fs.constants.F_OK)
-			skipped += 1
-		} catch {
-			await downloadFile(images[image], target)
-			await sleep(SLEEP_DELAY)
-		}
-	}
-
-	console.debug(` -> ${Object.values(images).length - skipped} downloaded (${skipped} skipped)`)
-
-	return shows
-}
-
-// Get videos from Internet Archive
-async function fetchArchiveVideos(shows) {
-	console.log('Fetching Internet Archive videos...')
-
-	const url = `https://archive.org/services/search/v1/scrape`
-	const params = {
-		q: `collection:${COLLECTION_IDENTIFIER}`,
-		count: INTERNET_ARCHIVE_REQUEST_LIMIT,
-		fields: 'identifier,date,title,description,mediatype,subject',
-	}
-
-	let total = -1
-	let found = 0
-	let videos = []
-	while (found !== total) {
-		let data = await getRequest(url, params)
-
-		if (Object.hasOwn(data, 'error')) {
-			fatalError(`Error returned from IA: ${data.error}`)
-		}
-
-		if (total === -1) {
-			total = data.total
-		}
-		found += data.count
-
-		for (const item of data.items) {
-			const videoId = item.identifier
-
-			if (item.mediatype !== 'movies') {
-				console.debug(
-					`${videoId}: Skipping non-movie entry (mediatype = ${item.mediatype})`
-				)
-				continue
-			}
-
-			if (UNWANTED_IA_MOVIES.includes(videoId)) {
-				console.debug(
-					`${videoId}: Skipping unwanted movie (identifier = ${item.mediatype})`
-				)
-				continue
-			}
-
-			try {
-				const date = item.date ?? '1970-01-01'
-
-				const video = {
-					id: videoId,
-					gb_id: null,
-					show: 'unknown',
-					title: item.title,
-					description: item.description ?? '',
-					date: new Date(date).toISOString(),
-					thumbnail: `https://archive.org/services/img/${videoId}`,
-					source: {
-						internetarchive: videoId,
-					},
-				}
-
-				// Look through the video subjects to find a matching GB show
-				const subjects =
-					typeof item.subject === 'string' || item.subject instanceof String
-						? [item.subject]
-						: item.subject
-				for (const subject of subjects) {
-					if (subject === 'Giant Bomb') {
-						continue
-					}
-
-					const showId = toIdentifier(subject)
-					if (!Object.hasOwn(shows, showId)) {
-						// The show doesn't exist in the GB API, so let's add it
-						shows[showId] = {
-							id: showId,
-							title: subject,
-							description: '',
-							videos: [],
-						}
-					}
-
-					video.show = showId
-					shows[showId].videos.push(videoId)
-				}
-
-				videos.push(video)
-			} catch (error) {
-				fatalError('Unable to parse video item: ' + JSON.stringify(item), error)
-			}
-		}
-
-		if (Object.hasOwn(data, 'cursor')) {
-			params.cursor = data.cursor
-			await sleep(SLEEP_DELAY)
-		} else if (found !== total) {
-			fatalError(`Cursor not found in IA response: ${data}`)
-		}
-	}
-
-	console.debug(` -> got ${videos.length} videos`)
-
-	return [shows, videos]
-}
-
-// Fetch videos from Giant Bomb
-async function fetchGiantBombVideos(videos, shows) {
-	console.log('Fetching Giant Bomb videos...')
-
-	const url = 'https://www.giantbomb.com/api/videos/'
-	const params = {
-		api_key: GB_API_KEY,
-		format: 'json',
-		field_list: 'deck,id,image,name,publish_date,video_show,video_type,youtube_id',
-		limit: GIANT_BOMB_REQUEST_LIMIT,
-		offset: 0,
-	}
-
-	let page = 1
-	let count = 0
-	while (true) {
-		params.offset = (page - 1) * GIANT_BOMB_REQUEST_LIMIT
-
-		const data = await getRequest(url, params)
-
-		const results = data.results ?? []
-		if (results.length == 0) {
-			break // we're done here
-		}
-
-		count += results.length
-
-		for (const result of results) {
-			if (UNWANTED_VIDEO_TYPES.includes(result.video_type)) {
-				continue
-			}
-
-			let videoIndex = -1
-			if (result.video_show?.id) {
-				let show = Object.values(shows).find((show) => show.gb_id === result.video_show.id)
-
-				// We didn't get the show from the /shows API call :/
-				if (!show) {
-					const showId = toIdentifier(result.video_show.title)
-					if (Object.hasOwn(shows, showId)) {
-						shows[showId].gb_id = result.video_show.id
-						shows[showId].poster = result.video_show.image?.medium_url ?? null
-						shows[showId].logo = result.video_show.logo?.medium_url ?? null
-					} else {
-						shows[showId] = {
-							id: showId,
-							gb_id: result.video_show.id,
-							title: result.video_show.title,
-							description: '',
-							poster: result.video_show.image?.medium_url ?? null,
-							logo: result.video_show.logo?.medium_url ?? null,
-							videos: [],
-						}
-					}
-
-					show = shows[showId]
-				}
-
-				videoIndex = videos.findIndex(
-					(video) =>
-						video.title === result.name.trim() && video.show === shows[show.id].id
-				)
-			} else {
-				videoIndex = videos.findIndex((video) => video.title === result.name.trim())
-			}
-
-			if (videoIndex === -1) {
-				console.warn(`WARNING! Can't find archive video for: ${result.name}`)
-				continue
-			}
-
-			// Fill in only the fields we care about
-			videos[videoIndex].gb_id = result.id
-			videos[videoIndex].date = new Date(result.publish_date).toISOString() // the canonical date
-			//videos[videoIndex].thumbnail = result.image?.medium_url ?? videos[videoIndex].thumbnail
-			if (result.youtube_id) {
-				videos[videoIndex].source.youtube = result.youtube_id
-			}
-		}
-
-		page = page + 1
-		await sleep(SLEEP_DELAY)
-	}
-
-	console.debug(` -> processed ${count} videos`)
-
-	return [shows, videos]
-}
-
-// Get a list of all the shows from Giant Bomb
-async function fetchShows() {
-	console.log('Fetching shows...')
-
-	const url = 'https://www.giantbomb.com/api/video_shows/'
-	const params = {
-		api_key: GB_API_KEY,
-		format: 'json',
-		field_list: 'id,title,deck,image,logo',
-		limit: GIANT_BOMB_REQUEST_LIMIT,
-		offset: 0,
-	}
-
-	let shows = {}
-	let page = 1
-	while (true) {
-		params.offset = (page - 1) * GIANT_BOMB_REQUEST_LIMIT
-
-		const data = await getRequest(url, params)
-		const results = data.results ?? []
-		if (results.length == 0) {
-			break // we're done here
-		}
-
-		for (const result of results) {
-			const identifier = toIdentifier(result.title)
-			shows[identifier] = {
-				id: identifier,
-				gb_id: result.id,
-				title: result.title,
-				description: result.deck,
-				poster: result.image?.medium_url ?? null,
-				logo: result.logo?.medium_url ?? null,
-				videos: [],
-			}
-		}
-
-		page = page + 1
-		await sleep(SLEEP_DELAY)
-	}
-
-	console.debug(` -> got ${Object.keys(shows).length} shows`)
-
-	return shows
-}
-
-// Run the script
 async function run() {
 	if (!process.env.GB_API_KEY) {
 		console.error('ERROR! Missing GB_API_KEY')
 		process.exit(1)
 	}
 
-	let shows = await fetchShows()
-	let videos
-	;[shows, videos] = await fetchArchiveVideos(shows)
-	;[shows, videos] = await fetchGiantBombVideos(videos, shows)
+	const shows = {}
+	const videos = {}
 
-	shows = await downloadShowImages(shows)
+	// Load data
+
+	const gb = new GiantBomb(process.env.GB_API_KEY)
+	const ia = new InternetArchive()
+
+	console.log('Getting items from Internet Archive...')
+	let iaItems = await ia.getCollectionItems(COLLECTION_IDENTIFIER)
+	console.log(`Got ${iaItems.length} items`)
+
+	console.log('Getting shows from Giant Bomb...')
+	let gbShows = await gb.getShows()
+	console.log(`Got ${gbShows.length} shows`)
+
+	console.log('Getting videos from Giant Bomb...')
+	let gbVideos = await gb.getVideos()
+	console.log(`Got ${gbVideos.length} videos`)
+
+	// Clean data
+
+	iaItems = iaItems.filter(
+		(item) => item.mediatype !== 'movies' || !UNWANTED_IA_MOVIES.includes(item.identifier)
+	)
+	for (const item of iaItems) {
+		item.subject = item.subject.filter((subject) => !UNWANTED_SUBJECTS.includes(subject))
+	}
+
+	gbVideos = gbVideos.filter((video) => !UNWANTED_VIDEO_TYPES.includes(video.video_type))
+
+	// Process shows
+
+	for (const video of gbVideos) {
+		if (!video.show) {
+			continue // nothing doing
+		}
+
+		const existingShow = gbShows.find((show) => show.id === video.show.id)
+		if (existingShow) {
+			continue // also nothing doing
+		}
+
+		// Show didn't come from the GB API so needs to be created
+		gbShows.push({
+			description: '',
+			id: video.show.id,
+			title: video.show.title,
+			image: video.show.image,
+			logo: video.show.logo,
+		})
+	}
+
+	for (const show of gbShows) {
+		const poster = toFilename(show.image)
+		const logo = toFilename(show.logo)
+		const identifier = toIdentifier(show.title)
+
+		if (poster !== null) {
+			await downloadFile(show.image, SHOW_IMAGES_PATH + poster)
+		}
+
+		if (logo !== null) {
+			await downloadFile(show.logo, SHOW_IMAGES_PATH + logo)
+		}
+
+		shows[identifier] = {
+			id: identifier,
+			gb_id: show.id,
+			title: show.title,
+			description: show.description ?? '',
+			poster: poster,
+			logo: logo,
+			videos: [],
+		}
+	}
+
+	// Process IA items
+
+	for (const item of iaItems) {
+		const identifier = item.identifier
+
+		const video = {
+			id: identifier,
+			gb_id: null,
+			show: null,
+			title: item.title,
+			description: item.description,
+			date: item.date ? item.date : new Date(1970, 0, 1),
+			thumbnail: `https://archive.org/services/img/${identifier}`,
+			source: {
+				internetarchive: identifier,
+			},
+		}
+
+		for (const subject of item.subject) {
+			const show = toIdentifier(subject)
+			if (!Object.hasOwn(shows, show)) {
+				console.debug(`Show not found in GB, creating: ${subject}`)
+				shows[show] = {
+					id: show,
+					gb_id: null,
+					title: subject,
+					description: '',
+					poster: null,
+					logo: null,
+					videos: [],
+				}
+			}
+
+			shows[show].videos.push(identifier)
+			video.show = show
+		}
+
+		videos[identifier] = video
+	}
+
+	// Process GB videos
+
+	for (const item of gbVideos) {
+		let show = null
+		if (item.show?.id) {
+			show = Object.values(shows).find((s) => s.gb_id == item.show.id)
+			if (!show) {
+				console.error(`Missing GB show with id: ${item.show.id}`)
+			}
+		}
+
+		let video = findVideo(videos, item, show)
+		if (video === null) {
+			if (!show) {
+				console.error(
+					`Skipping video missing from IA but also missing a show: ${item.name}`
+				)
+				continue // TODO: what to do?
+			}
+
+			console.warn(`Video missing from IA: ${item.name} (${item.id})`)
+
+			const identifier = `UNARCHIVED-gb-${item.guid}` // so it sticks out
+			video = {
+				id: identifier,
+				gb_id: item.id,
+				show: show.id,
+				title: item.name,
+				description: item.description,
+				date: item.publish_date,
+				thumbnail: item.image,
+				source: {
+					youtube_id: item.youtube_id,
+				},
+			}
+			videos[identifier] = video
+			show.videos.push(identifier)
+		}
+
+		video.gb_id = item.id
+		video.date = item.publish_date // usually more accurate
+		if (item.youtube_id !== null) {
+			video.source.youtube = item.youtube_id
+		}
+
+		if (item.image !== null) {
+			video.thumbnail = item.image
+		}
+	}
+
+	// Save the data
 
 	const showsList = Object.values(shows)
 	console.log(`Saving ${showsList.length} shows to: ${SHOWS_FILE_PATH}`)
 	await writeJSONFile(SHOWS_FILE_PATH, showsList)
 
-	console.log(`Saving ${videos.length} shows to: ${VIDEOS_FILE_PATH}`)
-	await writeJSONFile(VIDEOS_FILE_PATH, videos)
+	const videosList = Object.values(videos)
+	console.log(`Saving ${videosList.length} videos to: ${VIDEOS_FILE_PATH}`)
+	await writeJSONFile(VIDEOS_FILE_PATH, videosList)
 }
 
 run()
