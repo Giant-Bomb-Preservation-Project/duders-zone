@@ -6,7 +6,7 @@ const REQUEST_LIMIT = 100
 // Image size to fetch (icon_url, medium_url, screen_url, screen_large_url, small_url, super_url, thumb_url, tiny_url, original_url)
 const IMAGE_SIZE = 'super_url'
 
-export interface GiantBombShow {
+export type GiantBombShow = {
 	description: string
 	id: number
 	title: string
@@ -14,14 +14,22 @@ export interface GiantBombShow {
 	logo: string | null
 }
 
-export interface GiantBombVideo {
+export type GiantBombVideoShow = {
+	id: number
+	title: string
+	image: string | null
+	logo: string | null
+}
+
+export type GiantBombVideo = {
 	description: string
 	id: number
+	guid: string
 	name: string
 	publish_date: Date
 	image: string | null
 	video_type: string
-	show_id: int | null
+	show: GiantBombVideoShow | null
 	youtube_id: string | null
 }
 
@@ -80,7 +88,7 @@ export default class GiantBomb {
 		const params = {
 			api_key: this.api_key,
 			format: 'json',
-			field_list: 'deck,id,image,name,publish_date,video_show,video_type,youtube_id',
+			field_list: 'deck,id,guid,image,name,publish_date,video_show,video_type,youtube_id',
 			limit: REQUEST_LIMIT,
 			offset: 0,
 		}
@@ -97,15 +105,24 @@ export default class GiantBomb {
 			}
 
 			for (const item of results) {
+				const show = item.video_show
+					? ({
+							id: item.video_show.id,
+							title: item.video_show.title,
+							image: item.video_show.image?.[IMAGE_SIZE] ?? null,
+							logo: item.video_show.logo?.[IMAGE_SIZE] ?? null,
+						} as GiantBombVideoShow)
+					: null
 
 				videos.push({
 					description: item.deck,
 					id: item.id,
+					guid: item.guid,
 					name: item.name,
-					publish_date: Date.parse(item.publish_date),
+					publish_date: new Date(item.publish_date),
 					image: item.image?.[IMAGE_SIZE] ?? null,
 					video_type: item.video_type,
-					show_id: item.video_show?.id ?? null,
+					show: show,
 					youtube_id: item.youtube_id,
 				} as GiantBombVideo)
 			}

@@ -1,4 +1,3 @@
-import { readJSONFile } from './file.ts'
 import { getRequest, sleep } from './http.ts'
 
 const REQUEST_LIMIT = 10000
@@ -43,14 +42,19 @@ export default class InternetArchive {
 				total = data.total
 			}
 			found += data.count
+			const results = data.items
 
-			for (const item of data.items) {
+			for (const item of results) {
+				const subject =
+					typeof item.subject === 'string' || item.subject instanceof String
+						? [item.subject]
+						: item.subject
 				items.push({
 					identifier: item.identifier,
 					mediatype: item.mediatype,
-					date: Date.parse(item.date),
+					date: item.date ? new Date(item.date) : null,
 					description: item.description,
-					subject: item.subject,
+					subject: subject,
 					title: item.title,
 				} as ArchiveCollectionItem)
 			}
