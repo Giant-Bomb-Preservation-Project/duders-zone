@@ -21,15 +21,6 @@ const VIDEOS_FILE_PATH = 'src/lib/data/videos.json'
 // Path to the location to store the show images
 const SHOW_IMAGES_PATH = 'static/shows/'
 
-// Internet Archive subjects to not consider as shows
-const UNWANTED_SUBJECTS = ['Giant Bomb']
-
-// Video types from Giant Bomb to skip
-const UNWANTED_VIDEO_TYPES = ['Trailers', 'Trailers, Exclude From Infinite', 'Trailers, Features']
-
-// Identifiers of movies in Internet Archive that we're not interested in
-const UNWANTED_IA_MOVIES = ['signup_confirmation']
-
 ///
 /// Helper functions
 ///
@@ -110,17 +101,6 @@ async function run() {
 	console.log('Getting videos from Giant Bomb...')
 	let gbVideos = await gb.getVideos()
 	console.log(`Got ${gbVideos.length} videos`)
-
-	// Clean data
-
-	iaItems = iaItems.filter(
-		(item) => item.mediatype !== 'movies' || !UNWANTED_IA_MOVIES.includes(item.identifier)
-	)
-	for (const item of iaItems) {
-		item.subject = item.subject.filter((subject) => !UNWANTED_SUBJECTS.includes(subject))
-	}
-
-	gbVideos = gbVideos.filter((video) => !UNWANTED_VIDEO_TYPES.includes(video.video_type))
 
 	// Process shows
 
