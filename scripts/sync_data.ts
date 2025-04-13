@@ -208,8 +208,14 @@ async function run() {
 				continue // TODO: what to do?
 			}
 
-			console.warn(`Video missing from IA: ${item.name} (${item.id})`)
+			if (!item.youtube_id) {
+				console.error(
+					`Skipping video missing from IA but also missing a YouTube ID: ${item.name}`
+				)
+				continue // TODO: what to do?
+			}
 
+			console.warn(`Video missing from IA, creating: ${item.name} (${item.id})`)
 			const identifier = `UNARCHIVED-gb-${item.guid}` // so it sticks out
 			video = {
 				id: identifier,
