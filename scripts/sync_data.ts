@@ -220,7 +220,7 @@ async function run() {
 				date: item.publish_date,
 				thumbnail: item.image,
 				source: {
-					youtube_id: item.youtube_id,
+					youtube: item.youtube_id,
 				},
 			}
 			videos[identifier] = video
