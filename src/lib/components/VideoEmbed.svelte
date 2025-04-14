@@ -12,27 +12,32 @@
 	const { video }: Props = $props()
 	let videoSource = $derived.by(() => {
 		let availableSources: Array<VideoSource> = []
+
 		if (video.source.internetarchive) {
+			if ($preferredSource === VideoSource.InternetArchive) {
+				return VideoSource.InternetArchive
+			}
+
 			availableSources.push(VideoSource.InternetArchive)
 		}
+
 		if (video.source.direct) {
+			if ($preferredSource === VideoSource.Direct) {
+				return VideoSource.Direct
+			}
+
 			availableSources.push(VideoSource.Direct)
 		}
+
 		if (video.source.youtube) {
+			if ($preferredSource === VideoSource.YouTube) {
+				return VideoSource.YouTube
+			}
+
 			availableSources.push(VideoSource.YouTube)
 		}
 
-		if ($preferredSource == VideoSource.InternetArchive) {
-			return video.source.internetarchive
-				? VideoSource.InternetArchive
-				: availableSources.shift()
-		}
-		if ($preferredSource == VideoSource.Direct) {
-			return video.source.direct ? VideoSource.Direct : availableSources.shift()
-		}
-		if ($preferredSource == VideoSource.YouTube) {
-			return video.source.youtube ? VideoSource.YouTube : availableSources.shift()
-		}
+		return availableSources[0]
 	})
 </script>
 
