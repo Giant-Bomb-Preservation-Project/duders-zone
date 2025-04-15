@@ -10,6 +10,35 @@
 	}
 
 	const { video }: Props = $props()
+	let videoSource = $derived.by(() => {
+		let availableSources: Array<VideoSource> = []
+
+		if (video.source.internetarchive) {
+			if ($preferredSource === VideoSource.InternetArchive) {
+				return VideoSource.InternetArchive
+			}
+
+			availableSources.push(VideoSource.InternetArchive)
+		}
+
+		if (video.source.direct) {
+			if ($preferredSource === VideoSource.Direct) {
+				return VideoSource.Direct
+			}
+
+			availableSources.push(VideoSource.Direct)
+		}
+
+		if (video.source.youtube) {
+			if ($preferredSource === VideoSource.YouTube) {
+				return VideoSource.YouTube
+			}
+
+			availableSources.push(VideoSource.YouTube)
+		}
+
+		return availableSources[0]
+	})
 </script>
 
 <Splash image={video.thumbnail || '/assets/default.jpg'}>
@@ -21,15 +50,15 @@
 		</a>
 	</div>
 	<div class="video">
-		{#if $preferredSource == VideoSource.Direct && video.source.direct}
+		{#if videoSource == VideoSource.Direct}
 			<!-- svelte-ignore a11y_media_has_caption -->
 			<video controls src={video.source.direct}></video>
-		{:else if $preferredSource == VideoSource.YouTube && video.source.youtube}
+		{:else if videoSource == VideoSource.YouTube}
 			<FrameEmbed
 				src="https://www.youtube.com/embed/{video.source.youtube}"
 				title={video.title}
 			/>
-		{:else}
+		{:else if videoSource == VideoSource.InternetArchive}
 			<FrameEmbed
 				src="https://archive.org/embed/{video.source.internetarchive}"
 				title={video.title}

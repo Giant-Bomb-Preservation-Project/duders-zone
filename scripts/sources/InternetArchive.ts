@@ -1,6 +1,13 @@
 import { getRequest, sleep } from './http.ts'
 
+// Max items per request (min: 100)
 const REQUEST_LIMIT = 10000
+
+// Identifiers of movies in Internet Archive that we're not interested in
+const UNWANTED_ITEMS = ['signup_confirmation']
+
+// Internet Archive subjects to not consider as shows
+const UNWANTED_SUBJECTS = ['Giant Bomb']
 
 export interface ArchiveCollectionItem {
 	identifier: string
@@ -45,6 +52,10 @@ export default class InternetArchive {
 			const results = data.items
 
 			for (const item of results) {
+				if (item.mediatype !== 'movies' || UNWANTED_ITEMS.includes(item.identifier)) {
+					continue // we don't want it
+				}
+
 				const subject =
 					typeof item.subject === 'string' || item.subject instanceof String
 						? [item.subject]
@@ -54,7 +65,7 @@ export default class InternetArchive {
 					mediatype: item.mediatype,
 					date: item.date ? new Date(item.date) : null,
 					description: item.description,
-					subject: subject,
+					subject: subject.filter((s) => !UNWANTED_SUBJECTS.includes(s)),
 					title: item.title,
 				} as ArchiveCollectionItem)
 			}

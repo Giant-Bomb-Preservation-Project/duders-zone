@@ -21,15 +21,6 @@ const VIDEOS_FILE_PATH = 'src/lib/data/videos.json'
 // Path to the location to store the show images
 const SHOW_IMAGES_PATH = 'static/shows/'
 
-// Internet Archive subjects to not consider as shows
-const UNWANTED_SUBJECTS = ['Giant Bomb']
-
-// Video types from Giant Bomb to skip
-const UNWANTED_VIDEO_TYPES = ['Trailers', 'Trailers, Exclude From Infinite', 'Trailers, Features']
-
-// Identifiers of movies in Internet Archive that we're not interested in
-const UNWANTED_IA_MOVIES = ['signup_confirmation']
-
 ///
 /// Helper functions
 ///
@@ -110,17 +101,6 @@ async function run() {
 	console.log('Getting videos from Giant Bomb...')
 	let gbVideos = await gb.getVideos()
 	console.log(`Got ${gbVideos.length} videos`)
-
-	// Clean data
-
-	iaItems = iaItems.filter(
-		(item) => item.mediatype !== 'movies' || !UNWANTED_IA_MOVIES.includes(item.identifier)
-	)
-	for (const item of iaItems) {
-		item.subject = item.subject.filter((subject) => !UNWANTED_SUBJECTS.includes(subject))
-	}
-
-	gbVideos = gbVideos.filter((video) => !UNWANTED_VIDEO_TYPES.includes(video.video_type))
 
 	// Process shows
 
@@ -228,8 +208,14 @@ async function run() {
 				continue // TODO: what to do?
 			}
 
-			console.warn(`Video missing from IA: ${item.name} (${item.id})`)
+			if (!item.youtube_id) {
+				console.error(
+					`Skipping video missing from IA but also missing a YouTube ID: ${item.name}`
+				)
+				continue // TODO: what to do?
+			}
 
+			console.warn(`Video missing from IA, creating: ${item.name} (${item.id})`)
 			const identifier = `UNARCHIVED-gb-${item.guid}` // so it sticks out
 			video = {
 				id: identifier,
@@ -240,7 +226,7 @@ async function run() {
 				date: item.publish_date,
 				thumbnail: item.image,
 				source: {
-					youtube_id: item.youtube_id,
+					youtube: item.youtube_id,
 				},
 			}
 			videos[identifier] = video

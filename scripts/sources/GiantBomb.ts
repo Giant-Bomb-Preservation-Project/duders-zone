@@ -6,6 +6,9 @@ const REQUEST_LIMIT = 100
 // Image size to fetch (icon_url, medium_url, screen_url, screen_large_url, small_url, super_url, thumb_url, tiny_url, original_url)
 const IMAGE_SIZE = 'super_url'
 
+// Video types from Giant Bomb to skip
+const UNWANTED_VIDEO_TYPES = ['Trailers', 'Trailers, Exclude From Infinite', 'Trailers, Features']
+
 export type GiantBombShow = {
 	description: string
 	id: number
@@ -105,6 +108,10 @@ export default class GiantBomb {
 			}
 
 			for (const item of results) {
+				if (UNWANTED_VIDEO_TYPES.includes(item.video_type)) {
+					continue // we don't want it
+				}
+
 				const show = item.video_show
 					? ({
 							id: item.video_show.id,
