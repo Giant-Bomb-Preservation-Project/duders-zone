@@ -1,12 +1,14 @@
 <script lang="ts">
-	import { page } from '$app/stores'
 	import Button from '$lib/components/Button.svelte'
 	import VideoList from '$lib/components/VideoList.svelte'
-	import { dataStore } from '$lib/data'
-	import type { Video } from '$lib/data'
+	import type { PageData } from './$types'
 
-	let searchQuery: string | null = $derived($page.url.searchParams.get('q'))
-	let videos: Video[] = $derived(searchQuery ? dataStore.searchVideos(searchQuery) : [])
+	interface Props {
+		data: PageData
+	}
+
+	const { data }: Props = $props()
+	const { searchQuery, videos } = $derived(data)
 </script>
 
 <div class="container">
