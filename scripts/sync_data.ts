@@ -215,6 +215,13 @@ async function run() {
 				continue // TODO: what to do?
 			}
 
+			if (!item.show) {
+				console.error(
+					`Skipping video missing a show: ${item.name}`
+				)
+				continue // TODO: what to do?
+			}
+
 			console.warn(`Video missing from IA, creating: ${item.name} (${item.id})`)
 			const identifier = `UNARCHIVED-gb-${item.guid}` // so it sticks out
 			video = {
