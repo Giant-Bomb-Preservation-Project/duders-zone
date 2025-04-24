@@ -3,6 +3,7 @@
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
 	import VideoList from '$lib/components/VideoList.svelte'
 	import { dateToText } from '$lib/text'
+	import { daysInEachMonth, months } from '$lib/dates'
 	import type { PageData } from './$types'
 
 	interface Props {
@@ -21,27 +22,12 @@
 	})
 
 	const daysInSelectedMonth = $derived(
-		[31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][selectedMonth - 1]
+		daysInEachMonth[selectedMonth - 1]
 	)
 
 	$effect(() => {
 		selectedDay = Math.min(selectedDay, daysInSelectedMonth)
 	})
-
-	const months = [
-		'January',
-		'February',
-		'March',
-		'April',
-		'May',
-		'June',
-		'July',
-		'August',
-		'September',
-		'October',
-		'November',
-		'December',
-	]
 
 	function gotoDate(event: SubmitEvent & { currentTarget: EventTarget & HTMLFormElement }) {
 		event.preventDefault()
