@@ -32,7 +32,7 @@
 			<li>
 				<a href="/shows/{show.id}">
 					<img
-						src={show.poster ? `/shows/${show.poster}` : '/assets/default.jpg'}
+						src={show.poster ? `/assets/shows/${show.poster}` : '/assets/default.jpg'}
 						alt=""
 					/>
 					<h2>{show.title}</h2>

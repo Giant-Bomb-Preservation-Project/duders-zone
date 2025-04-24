@@ -77,7 +77,7 @@
 				<li>
 					<a href="/shows/{show.id}">
 						<img
-							src={show.poster ? `/shows/${show.poster}` : '/assets/default.jpg'}
+							src={show.poster ? `/assets/shows/${show.poster}` : '/assets/default.jpg'}
 							alt=""
 						/>
 						<h3>{show.title}</h3>
