@@ -1,6 +1,6 @@
 import { error, redirect } from '@sveltejs/kit'
 import { dataStore } from '$lib/data'
-import type { PageLoad } from './$types'
+import type { EntryGenerator, PageLoad } from './$types'
 
 export const load = (({ params }) => {
 	const show = dataStore.getShowById(params.show)
@@ -14,3 +14,9 @@ export const load = (({ params }) => {
 
 	redirect(302, `/shows/${show.id}/${video.id}`)
 }) satisfies PageLoad
+
+export const entries: EntryGenerator = () => {
+	return dataStore.getShows().map((show) => {
+		return { show: show.id }
+	})
+}

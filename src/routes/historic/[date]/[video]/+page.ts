@@ -1,7 +1,8 @@
 import { error } from '@sveltejs/kit'
 import { dataStore } from '$lib/data'
-import { textToDate } from '$lib/text'
-import type { PageLoad } from './$types'
+import { allDates } from '$lib/dates'
+import { dateToText, textToDate } from '$lib/text'
+import type { EntryGenerator, PageLoad } from './$types'
 
 export const load = (({ params }) => {
 	const date = textToDate(params.date)
@@ -17,3 +18,17 @@ export const load = (({ params }) => {
 
 	return { date, video, videos }
 }) satisfies PageLoad
+
+export const entries: EntryGenerator = () => {
+	var results: { date: string; video: string }[] = []
+
+	for (const date of allDates()) {
+		const videos = dataStore.getVideosForDay(date).map((video) => {
+			return { date: dateToText(date), video: video.id }
+		})
+
+		results = results.concat(videos)
+	}
+
+	return results
+}
