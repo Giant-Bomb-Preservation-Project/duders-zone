@@ -10,8 +10,7 @@
 	}
 
 	const { data }: Props = $props()
-	let pageParam = $derived($page.url.searchParams.get('page'))
-	let pageNumber = $derived(pageParam ? parseInt(pageParam) : 1)
+	let pageNumber = $derived(data.pageNumber)
 	let paginatedVideos = $derived(paginate(pageNumber, data.videos))
 </script>
 
