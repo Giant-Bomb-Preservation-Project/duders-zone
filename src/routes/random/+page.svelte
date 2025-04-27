@@ -1,6 +1,8 @@
 <script lang="ts">
+	import { onMount } from 'svelte'
 	import { onNavigate } from '$app/navigation'
 	import Button from '$lib/components/Button.svelte'
+	import LoadingIndicator from '$lib/components/LoadingIndicator.svelte'
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
 	import { dataStore, type Video } from '$lib/data'
 	import VideoList from '$lib/components/VideoList.svelte'
@@ -10,19 +12,35 @@
 		data: PageData
 	}
 
+	const LOADING_DELAY = 500
+
 	const { data }: Props = $props()
-	let videos: Video[] = $state(dataStore.getRandomVideos(12))
+	let loading: boolean = $state(false)
+	let videos: Video[] = $state([])
+
+	onMount(() => {
+		randomize()
+	})
 
 	const randomize = () => {
-		videos = dataStore.getRandomVideos(12)
-		window.scrollTo({ top: 0, behavior: 'smooth' })
+		if (loading) return // don't double up
+		loading = true
+
+		setTimeout(() => {
+			videos = dataStore.getRandomVideos(12)
+			loading = false
+		}, LOADING_DELAY)
 	}
 </script>
 
 <h1 class="sr-only">Random</h1>
 
 <section id="video-container" class="container videos">
-	<VideoList {videos} title="Random Videos" />
+	{#if loading || videos.length == 0}
+		<LoadingIndicator />
+	{:else}
+		<VideoList {videos} title="Random Videos" />
+	{/if}
 
 	<div class="controls">
 		<Button handler={randomize}>
