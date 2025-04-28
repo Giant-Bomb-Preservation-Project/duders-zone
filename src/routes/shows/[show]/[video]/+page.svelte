@@ -29,6 +29,17 @@
 	<Pagination totalResults={data.videos.length} currentPage={pageNumber} />
 </section>
 
+<svelte:head>
+	<meta property="og:url" content="https://duders.zone/shows/{data.video.show}/{data.video.id}" />
+	<meta property="og:type" content="video.other" />
+	<meta property="og:title" content={data.video.title} />
+	<meta property="og:description" content={data.video.description} />
+	<meta property="og:image" content={data.video.thumbnail} />
+	<meta property="og:site_name" content="Duders Zone" />
+	<title>{data.video.title} - Duders Zone</title>
+	<meta name="description" content={data.video.description} />
+</svelte:head>
+
 <style>
 	.videos {
 		margin-bottom: var(--spacing);

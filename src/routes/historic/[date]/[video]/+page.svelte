@@ -21,9 +21,7 @@
 		selectedDay = data.date.getDate()
 	})
 
-	const daysInSelectedMonth = $derived(
-		daysInEachMonth[selectedMonth - 1]
-	)
+	const daysInSelectedMonth = $derived(daysInEachMonth[selectedMonth - 1])
 
 	$effect(() => {
 		selectedDay = Math.min(selectedDay, daysInSelectedMonth)
@@ -65,6 +63,17 @@
 
 	<VideoList videos={data.videos} title="This Day in Giant Bomb History" rootUri={currentUri} />
 </section>
+
+<svelte:head>
+	<meta property="og:url" content="https://duders.zone/shows/{data.video.show}/{data.video.id}" />
+	<meta property="og:type" content="video.other" />
+	<meta property="og:title" content={data.video.title} />
+	<meta property="og:description" content={data.video.description} />
+	<meta property="og:image" content={data.video.thumbnail} />
+	<meta property="og:site_name" content="Duders Zone" />
+	<title>{data.video.title} - Historic Duders Zone</title>
+	<meta name="description" content={data.video.description} />
+</svelte:head>
 
 <style>
 	form {

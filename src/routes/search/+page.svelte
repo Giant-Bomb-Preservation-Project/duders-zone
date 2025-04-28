@@ -33,6 +33,17 @@
 	{/if}
 </div>
 
+<svelte:head>
+	<meta property="og:url" content="https://duders.zone/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Duders Zone" />
+	<meta property="og:description" content="An archival website about video games." />
+	<meta property="og:image" content="https://duders.zone/image.png" />
+	<meta property="og:site_name" content="Duders Zone" />
+	<title>Search - Duders Zone</title>
+	<meta name="description" content="An archival website about video games." />
+</svelte:head>
+
 <style>
 	form {
 		margin: 3em auto;
