@@ -13,9 +13,21 @@ export const load = (({ params, url }) => {
 	const video = dataStore.getVideoById(params.video)
 	if (video === null) throw error(404, 'Not found')
 
-	const pageNumber: number = browser ? parseInt(url.searchParams.get('page') ?? '1') : 1
+	const perPage = 24
+	let pageNumber: number = 1
+	if (browser && url.searchParams.get('page')) {
+		pageNumber = parseInt(url.searchParams.get('page') ?? '1') || 1
+	} else {
+		// Determine which page the current video is on
+		for (let i = 0; i < videos.length; i++) {
+			if (videos[i].id === video.id) {
+				pageNumber = Math.floor(i / perPage) + 1
+				break
+			}
+		}
+	}
 
-	return { show, video, videos, pageNumber }
+	return { show, video, videos, pageNumber, perPage }
 }) satisfies PageLoad
 
 export const entries: EntryGenerator = () => {

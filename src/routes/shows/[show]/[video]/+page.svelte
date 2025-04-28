@@ -9,7 +9,6 @@
 	}
 
 	const { data }: Props = $props()
-	let pageNumber = $derived(data.pageNumber)
 </script>
 
 <h1 class="sr-only">{data.show.title}</h1>
@@ -19,7 +18,12 @@
 </section>
 
 <section class="container videos">
-	<VideoList videos={data.videos} title={data.show.title} perPage={24} {pageNumber} />
+	<VideoList
+		videos={data.videos}
+		title={data.show.title}
+		perPage={data.perPage}
+		pageNumber={data.pageNumber}
+	/>
 </section>
 
 <svelte:head>

@@ -35,7 +35,6 @@
 		const itemIndexStart = (pageNumber - 1) * perPage
 		return videos.slice(itemIndexStart, itemIndexStart + perPage)
 	})
-	let linkSuffix = $derived(pageNumber != 1 ? '?page=' + pageNumber : '')
 </script>
 
 <Header {title}>
@@ -77,7 +76,7 @@
 <ul class={mode ?? $videoListMode}>
 	{#each paginatedVideos as video}
 		<li>
-			<a href="{rootUri || `/shows/${video.show}`}/{video.id}{linkSuffix}">
+			<a href="{rootUri || `/shows/${video.show}`}/{video.id}">
 				<div class="thumbnail">
 					<Thumbnail src={video.thumbnail || '/assets/default.jpg'} alt="" />
 				</div>
