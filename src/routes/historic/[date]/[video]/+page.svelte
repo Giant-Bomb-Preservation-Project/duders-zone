@@ -69,7 +69,7 @@
 	<meta property="og:type" content="video.other" />
 	<meta property="og:title" content={data.video.title} />
 	<meta property="og:description" content={data.video.description} />
-	<meta property="og:image" content={data.video.thumbnail} />
+	<meta property="og:image" content={data.video.thumbnail || 'https://duders.zone/assets/default.jpg'} />
 	<meta property="og:site_name" content="Duders Zone" />
 	<title>{data.video.title} - Historic Duders Zone</title>
 	<meta name="description" content={data.video.description} />
