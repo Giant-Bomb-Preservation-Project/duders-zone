@@ -1,21 +1,12 @@
-<script module lang="ts">
-	const PAGE_SIZE = 24
-
-	export function paginate<T extends any[]>(number: number, items: T) {
-		const itemIndexStart = (number - 1) * PAGE_SIZE
-		return items.slice(itemIndexStart, itemIndexStart + PAGE_SIZE) as T
-	}
-</script>
-
 <script lang="ts">
 	interface Props {
-		currentPage?: number
+		currentPage: number
+		totalPages: number
 		totalResults: number
 	}
 
-	const { currentPage = 1, totalResults }: Props = $props()
+	const { currentPage, totalPages, totalResults }: Props = $props()
 
-	const totalPages = Math.ceil(totalResults / PAGE_SIZE)
 	const buttons = $derived(createPageButtons(currentPage, totalPages))
 
 	// Creates the list of which pages should show up as buttons (with null being ... separators)

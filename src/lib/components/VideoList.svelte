@@ -2,6 +2,7 @@
 	import type { Video } from '$lib/data'
 	import { VideoListMode } from '$lib/types'
 	import Header from '$lib/components/Header.svelte'
+	import Pagination from '$lib/components/Pagination.svelte'
 	import Thumbnail from '$lib/components/Thumbnail.svelte'
 	import { videoListMode } from '$lib/store.js'
 
@@ -11,10 +12,30 @@
 		rootUri?: string
 		seeAllUrl?: string
 		mode?: VideoListMode
-		linkSuffix?: string
+		perPage?: number
+		pageNumber?: number
 	}
 
-	const { videos, title, rootUri, seeAllUrl, mode, linkSuffix = '' }: Props = $props()
+	const {
+		videos,
+		title,
+		rootUri,
+		seeAllUrl,
+		mode,
+		perPage = -1,
+		pageNumber = 1,
+	}: Props = $props()
+
+	let totalPages = $derived(perPage != -1 ? Math.ceil(videos.length / perPage) : 1)
+	let paginatedVideos = $derived.by(() => {
+		if (perPage == -1) {
+			return videos
+		}
+
+		const itemIndexStart = (pageNumber - 1) * perPage
+		return videos.slice(itemIndexStart, itemIndexStart + perPage)
+	})
+	let linkSuffix = $derived(pageNumber != 1 ? '?page=' + pageNumber : '')
 </script>
 
 <Header {title}>
@@ -54,7 +75,7 @@
 </Header>
 
 <ul class={mode ?? $videoListMode}>
-	{#each videos as video}
+	{#each paginatedVideos as video}
 		<li>
 			<a href="{rootUri || `/shows/${video.show}`}/{video.id}{linkSuffix}">
 				<div class="thumbnail">
@@ -71,6 +92,8 @@
 		</li>
 	{/each}
 </ul>
+
+<Pagination totalResults={videos.length} currentPage={pageNumber} {totalPages} />
 
 <style>
 	h3 {
