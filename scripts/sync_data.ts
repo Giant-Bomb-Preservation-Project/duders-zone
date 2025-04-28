@@ -216,9 +216,7 @@ async function run() {
 			}
 
 			if (!item.show) {
-				console.error(
-					`Skipping video missing a show: ${item.name}`
-				)
+				console.error(`Skipping video missing a show: ${item.name}`)
 				continue // TODO: what to do?
 			}
 
