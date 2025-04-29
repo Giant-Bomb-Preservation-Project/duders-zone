@@ -19,7 +19,7 @@ const SHOWS_FILE_PATH = 'src/lib/data/shows.json'
 const VIDEOS_FILE_PATH = 'src/lib/data/videos.json'
 
 // Path to the location to store the show images
-const SHOW_IMAGES_PATH = 'static/shows/'
+const SHOW_IMAGES_PATH = 'static/assets/shows/'
 
 ///
 /// Helper functions
@@ -212,6 +212,11 @@ async function run() {
 				console.error(
 					`Skipping video missing from IA but also missing a YouTube ID: ${item.name}`
 				)
+				continue // TODO: what to do?
+			}
+
+			if (!item.show) {
+				console.error(`Skipping video missing a show: ${item.name}`)
 				continue // TODO: what to do?
 			}
 

@@ -26,7 +26,7 @@
 <ul class="employees">
 	{#each employees as employee}
 		<li class="employee">
-			<img src={employee.image ? `/alumni/${employee.image}` : logoBw} alt="" />
+			<img src={employee.image ? `/assets/alumni/${employee.image}` : logoBw} alt="" />
 			<h3>{employee.name}</h3>
 			{#if employee.position}
 				<p>{employee.position}</p>

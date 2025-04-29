@@ -3,6 +3,7 @@
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
 	import VideoList from '$lib/components/VideoList.svelte'
 	import { dateToText } from '$lib/text'
+	import { daysInEachMonth, months } from '$lib/dates'
 	import type { PageData } from './$types'
 
 	interface Props {
@@ -20,28 +21,11 @@
 		selectedDay = data.date.getDate()
 	})
 
-	const daysInSelectedMonth = $derived(
-		[31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][selectedMonth - 1]
-	)
+	const daysInSelectedMonth = $derived(daysInEachMonth[selectedMonth - 1])
 
 	$effect(() => {
 		selectedDay = Math.min(selectedDay, daysInSelectedMonth)
 	})
-
-	const months = [
-		'January',
-		'February',
-		'March',
-		'April',
-		'May',
-		'June',
-		'July',
-		'August',
-		'September',
-		'October',
-		'November',
-		'December',
-	]
 
 	function gotoDate(event: SubmitEvent & { currentTarget: EventTarget & HTMLFormElement }) {
 		event.preventDefault()
@@ -79,6 +63,20 @@
 
 	<VideoList videos={data.videos} title="This Day in Giant Bomb History" rootUri={currentUri} />
 </section>
+
+<svelte:head>
+	<meta property="og:url" content="https://duders.zone/shows/{data.video.show}/{data.video.id}" />
+	<meta property="og:type" content="video.other" />
+	<meta property="og:title" content={data.video.title} />
+	<meta property="og:description" content={data.video.description} />
+	<meta
+		property="og:image"
+		content={data.video.thumbnail || 'https://duders.zone/assets/default.jpg'}
+	/>
+	<meta property="og:site_name" content="Duders Zone" />
+	<title>{data.video.title} - Historic Duders Zone</title>
+	<meta name="description" content={data.video.description} />
+</svelte:head>
 
 <style>
 	form {

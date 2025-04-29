@@ -10,8 +10,7 @@
 	}
 
 	const { data }: Props = $props()
-	let pageParam = $derived($page.url.searchParams.get('page'))
-	let pageNumber = $derived(pageParam ? parseInt(pageParam) : 1)
+	let pageNumber = $derived(data.pageNumber)
 	let paginatedVideos = $derived(paginate(pageNumber, data.videos))
 </script>
 
@@ -29,6 +28,20 @@
 	/>
 	<Pagination totalResults={data.videos.length} currentPage={pageNumber} />
 </section>
+
+<svelte:head>
+	<meta property="og:url" content="https://duders.zone/shows/{data.video.show}/{data.video.id}" />
+	<meta property="og:type" content="video.other" />
+	<meta property="og:title" content={data.video.title} />
+	<meta property="og:description" content={data.video.description} />
+	<meta
+		property="og:image"
+		content={data.video.thumbnail || 'https://duders.zone/assets/default.jpg'}
+	/>
+	<meta property="og:site_name" content="Duders Zone" />
+	<title>{data.video.title} - Duders Zone</title>
+	<meta name="description" content={data.video.description} />
+</svelte:head>
 
 <style>
 	.videos {

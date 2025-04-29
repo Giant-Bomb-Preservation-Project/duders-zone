@@ -1,7 +1,8 @@
 import { error, redirect } from '@sveltejs/kit'
 import { dataStore } from '$lib/data'
-import { textToDate } from '$lib/text'
-import type { PageLoad } from './$types'
+import { allDates } from '$lib/dates'
+import { dateToText, textToDate } from '$lib/text'
+import type { EntryGenerator, PageLoad } from './$types'
 
 export const load = (({ params }) => {
 	const date = textToDate(params.date)
@@ -16,3 +17,9 @@ export const load = (({ params }) => {
 
 	redirect(302, `/historic/${params.date}/${shuffled[0].id}`)
 }) satisfies PageLoad
+
+export const entries: EntryGenerator = () => {
+	return allDates().map((date) => {
+		return { date: dateToText(date) }
+	})
+}
