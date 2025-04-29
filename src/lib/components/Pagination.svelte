@@ -35,7 +35,7 @@
 </script>
 
 <ul>
-	<li>{totalResults} results</li>
+	<li>{totalResults} videos</li>
 	{#if currentPage > 1}
 		<li>
 			<a href="?page={currentPage - 1}" aria-label="Previous Page"
