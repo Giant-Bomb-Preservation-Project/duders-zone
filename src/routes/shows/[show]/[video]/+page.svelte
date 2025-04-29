@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/stores'
-	import Pagination, { paginate } from '$lib/components/Pagination.svelte'
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
 	import VideoList from '$lib/components/VideoList.svelte'
 	import type { PageData } from './$types'
@@ -10,8 +9,6 @@
 	}
 
 	const { data }: Props = $props()
-	let pageNumber = $derived(data.pageNumber)
-	let paginatedVideos = $derived(paginate(pageNumber, data.videos))
 </script>
 
 <h1 class="sr-only">{data.show.title}</h1>
@@ -22,11 +19,11 @@
 
 <section class="container videos">
 	<VideoList
-		videos={paginatedVideos}
+		videos={data.videos}
 		title={data.show.title}
-		linkSuffix={`?page=${pageNumber}`}
+		perPage={data.perPage}
+		pageNumber={data.pageNumber}
 	/>
-	<Pagination totalResults={data.videos.length} currentPage={pageNumber} />
 </section>
 
 <svelte:head>
