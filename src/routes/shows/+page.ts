@@ -5,5 +5,3 @@ export const load = (({ params }) => {
 	const shows = dataStore.getShows()
 	return { shows }
 }) satisfies PageLoad
-
-export const prerender = true
