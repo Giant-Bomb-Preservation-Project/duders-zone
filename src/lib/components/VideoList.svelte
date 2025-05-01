@@ -93,7 +93,9 @@
 	{/each}
 </ul>
 
-<Pagination totalResults={videos.length} currentPage={pageNumber} {totalPages} />
+{#if !seeAllUrl}
+	<Pagination totalResults={videos.length} currentPage={pageNumber} {totalPages} />
+{/if}
 
 <style>
 	h3 {
