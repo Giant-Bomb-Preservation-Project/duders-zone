@@ -1,4 +1,5 @@
 import { error, redirect } from '@sveltejs/kit'
+import { base } from '$app/paths'
 import { dataStore } from '$lib/data'
 import type { EntryGenerator, PageLoad } from './$types'
 
@@ -12,7 +13,7 @@ export const load = (({ params }) => {
 
 	const video = videos[0]
 
-	redirect(302, `/shows/${show.id}/${video.id}`)
+	redirect(302, `${base}/shows/${show.id}/${video.id}`)
 }) satisfies PageLoad
 
 export const entries: EntryGenerator = () => {

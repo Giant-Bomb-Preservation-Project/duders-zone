@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
 	import { onNavigate } from '$app/navigation'
+	import { base } from '$app/paths'
 	import Button from '$lib/components/Button.svelte'
 	import LoadingIndicator from '$lib/components/LoadingIndicator.svelte'
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
@@ -22,7 +23,7 @@
 	})
 
 	onNavigate((navigation: OnNavigate) => {
-		if (navigation.to?.route.id === '/random') randomize()
+		if (navigation.to?.route.id === `${base}/random`) randomize()
 	})
 
 	const randomize = () => {

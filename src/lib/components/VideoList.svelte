@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths'
 	import type { Video } from '$lib/data'
 	import { VideoListMode } from '$lib/types'
 	import Header from '$lib/components/Header.svelte'
@@ -76,7 +77,7 @@
 <ul class={mode ?? $videoListMode}>
 	{#each paginatedVideos as video}
 		<li>
-			<a href="{rootUri || `/shows/${video.show}`}/{video.id}">
+			<a href="{rootUri || `${base}/shows/${video.show}`}/{video.id}">
 				<div class="thumbnail">
 					<Thumbnail src={video.thumbnail || '/assets/default.jpg'} alt="" />
 				</div>

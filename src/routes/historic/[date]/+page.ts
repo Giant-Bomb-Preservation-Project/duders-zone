@@ -1,4 +1,5 @@
 import { error, redirect } from '@sveltejs/kit'
+import { base } from '$app/paths'
 import { dataStore } from '$lib/data'
 import { allDates } from '$lib/dates'
 import { dateToText, textToDate } from '$lib/text'
@@ -15,7 +16,7 @@ export const load = (({ params }) => {
 
 	const shuffled = videos.sort(() => 0.5 - Math.random())
 
-	redirect(302, `/historic/${params.date}/${shuffled[0].id}`)
+	redirect(302, `${base}/historic/${params.date}/${shuffled[0].id}`)
 }) satisfies PageLoad
 
 export const entries: EntryGenerator = () => {

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths'
 	import type { PageData } from './$types'
 	import { ShowSorting } from '$lib/types'
 
@@ -30,9 +31,11 @@
 	<ul>
 		{#each sortedShows as show}
 			<li>
-				<a href="/shows/{show.id}">
+				<a href={`${base}/shows/${show.id}`}>
 					<img
-						src={show.poster ? `/assets/shows/${show.poster}` : '/assets/default.jpg'}
+						src={show.poster
+							? `${base}/assets/shows/${show.poster}`
+							: `${base}/assets/default.jpg`}
 						alt=""
 					/>
 					<h2>{show.title}</h2>

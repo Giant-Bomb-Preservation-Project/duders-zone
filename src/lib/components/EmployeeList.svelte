@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths'
 	import logoBw from '$lib/images/logo-bw.png'
 	import type { Employee } from '$lib/types'
 
@@ -26,7 +27,7 @@
 <ul class="employees">
 	{#each employees as employee}
 		<li class="employee">
-			<img src={employee.image ? `/assets/alumni/${employee.image}` : logoBw} alt="" />
+			<img src={employee.image ? `${base}/assets/alumni/${employee.image}` : logoBw} alt="" />
 			<h3>{employee.name}</h3>
 			{#if employee.position}
 				<p>{employee.position}</p>

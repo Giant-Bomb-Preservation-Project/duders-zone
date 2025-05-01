@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths'
 	import FrameEmbed from '$lib/components/FrameEmbed.svelte'
 	import Splash from '$lib/components/Splash.svelte'
 	import { VideoSource } from '$lib/data'
@@ -41,9 +42,9 @@
 	})
 </script>
 
-<Splash image={video.thumbnail || '/assets/default.jpg'}>
+<Splash image={video.thumbnail || `${base}/assets/default.jpg`}>
 	<div class="metadata">
-		<a href={`/shows/${video.show}/${video.id}`}>
+		<a href={`${base}/shows/${video.show}/${video.id}`}>
 			<h3>{video.title}</h3>
 			<p>{video.description}</p>
 			<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>

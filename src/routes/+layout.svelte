@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte'
+	import { base } from '$app/paths'
 	import { page } from '$app/stores'
 	import logo from '$lib/images/logo-dz.png'
 	import internetArchive from '$lib/images/internet-archive.jpg'
@@ -12,11 +13,11 @@
 
 	const { children }: Props = $props()
 	const menu = [
-		{ path: '/shows', text: 'Shows' },
-		{ path: '/historic', text: 'Historic' },
-		{ path: '/search', text: 'Search' },
-		{ path: '/random', text: 'Random' },
-		{ path: '/alumni', text: 'Alumni' },
+		{ path: `${base}/shows`, text: 'Shows' },
+		{ path: `${base}/historic`, text: 'Historic' },
+		{ path: `${base}/search`, text: 'Search' },
+		{ path: `${base}/random`, text: 'Random' },
+		{ path: `${base}/alumni`, text: 'Alumni' },
 	]
 </script>
 
@@ -25,13 +26,13 @@
 		<div class="container">
 			<div id="top-header">
 				<h1 id="brand">
-					<a href="/"><img src={logo} alt="duders.zone" /></a>
+					<a href={`${base}/`}><img src={logo} alt="duders.zone" /></a>
 				</h1>
 				<a id="andre" class="border" href="https://www.twitch.tv/giantbombforever">
 					Giant Bomb Forever
 					<span>Hang out and watch Giant Bomb Videos FOR EVER!</span>
 				</a>
-				<form method="GET" action="/search">
+				<form method="GET" action={`${base}/search`}>
 					<svg
 						class="magnifying-glass"
 						xmlns="http://www.w3.org/2000/svg"

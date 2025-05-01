@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
+	import { base } from '$app/paths'
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
 	import VideoList from '$lib/components/VideoList.svelte'
 	import { dateToText } from '$lib/text'
@@ -11,7 +12,7 @@
 	}
 
 	const { data }: Props = $props()
-	const currentUri = $derived('/historic/' + dateToText(data.date))
+	const currentUri = $derived(`${base}/historic/` + dateToText(data.date))
 
 	let selectedMonth = $state(0)
 	let selectedDay = $state(0)
@@ -36,7 +37,7 @@
 		const month = event.currentTarget.month.value.padStart(2, '0')
 		const day = event.currentTarget.day.value.padStart(2, '0')
 
-		goto(`/historic/${month}${day}`)
+		goto(`${base}/historic/${month}${day}`)
 	}
 </script>
 

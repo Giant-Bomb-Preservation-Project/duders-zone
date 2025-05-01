@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
+	import { base } from '$app/paths'
 	import Button from '$lib/components/Button.svelte'
 	import Header from '$lib/components/Header.svelte'
 	import LoadingIndicator from '$lib/components/LoadingIndicator.svelte'
@@ -18,7 +19,7 @@
 		return shuffled.slice(0, n)
 	}
 
-	const historicUri = '/historic/' + dateToText(new Date())
+	const historicUri = `${base}/historic/` + dateToText(new Date())
 	var loading: boolean = $state(true)
 	var shows: Show[] = $state([])
 	var randomVideos: Video[] = $state([])
@@ -49,12 +50,12 @@
 				videos={historicVideos}
 				title="This Day in Giant Bomb History"
 				rootUri={historicUri}
-				seeAllUrl="/historic"
+				seeAllUrl={`${base}/historic`}
 				mode={VideoListMode.List}
 			/>
 
 			<div class="more">
-				<Button href="/historic">
+				<Button href={`${base}/historic`}>
 					<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path
 							fill-rule="evenodd"
@@ -88,16 +89,16 @@
 			</a>
 
 			<Header title="Some Random Shows">
-				<div class="see-all">&middot; <a href="/shows">See All</a></div>
+				<div class="see-all">&middot; <a href={`${base}/shows`}>See All</a></div>
 			</Header>
 			<ul class="shows">
 				{#each shows as show}
 					<li>
-						<a href="/shows/{show.id}">
+						<a href={`${base}/shows/${show.id}`}>
 							<img
 								src={show.poster
-									? `/assets/shows/${show.poster}`
-									: '/assets/default.jpg'}
+									? `${base}/assets/shows/${show.poster}`
+									: `${base}/assets/default.jpg`}
 								alt=""
 							/>
 							<h3>{show.title}</h3>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths'
 	import type { Video } from '$lib/data'
 
 	interface Props {
@@ -11,8 +12,8 @@
 <section>
 	<ul>
 		{#each videos as video}
-			<li style="background-image: url('{video.thumbnail || '/assets/default.jpg'}');">
-				<a href={`/shows/${video.show}/${video.id}`}>
+			<li style="background-image: url('{video.thumbnail || '{base}/assets/default.jpg'}');">
+				<a href={`${base}/shows/${video.show}/${video.id}`}>
 					<hgroup>
 						<span>
 							Video
