@@ -2,10 +2,12 @@
 	import type { Snippet } from 'svelte'
 	import { base } from '$app/paths'
 	import { page } from '$app/stores'
+	import { browser } from '$app/environment'
 	import logo from '$lib/images/logo-dz.png'
 	import internetArchive from '$lib/images/internet-archive.jpg'
 	import giantBombPreservationSociety from '$lib/images/giant-bomb-preservation-society.png'
 	import '../app.css'
+	import Plausible from 'plausible-tracker'
 
 	interface Props {
 		children?: Snippet
@@ -19,6 +21,14 @@
 		{ path: `${base}/random`, text: 'Random' },
 		{ path: `${base}/alumni`, text: 'Alumni' },
 	]
+
+	if (browser && import.meta.env.VITE_PLAUSIBLE_HOST) {
+		const { enableAutoPageviews } = Plausible({
+			domain: 'duders.zone',
+			apiHost: import.meta.env.VITE_PLAUSIBLE_HOST,
+		})
+		enableAutoPageviews()
+	}
 </script>
 
 <div id="site-container">
