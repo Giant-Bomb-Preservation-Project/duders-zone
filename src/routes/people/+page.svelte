@@ -44,7 +44,6 @@
 					</div>
 					<div class="info">
 						<h2>{person.name}</h2>
-						<p>{person.position}</p>
 						{#if person.links}
 							<ul class="links">
 								{#each person.links as link}
