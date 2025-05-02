@@ -1,7 +1,6 @@
 const ignoredCharacters = /[']/g
 const wordCharacter = /\w/i
 const dateFormat = /^(\d\d)(\d\d)$/
-const urlPattern = /.*:\/\/(www.)?([^\/]+)\/?(.*)/
 const mastodonHosts = ['hachyderm.io', 'mastodon.social', 'social.davesnider.com']
 
 // Convert a Date object to text in the format "MMDD"
@@ -39,24 +38,26 @@ export function extractWords(text: string): string[] {
 
 // Convert a URL to a "pretty" (more readable) version
 export function prettyUrl(url: string): string {
-	const matches = url.match(urlPattern)
-	if (matches === null) {
-		return url
+	var realUrl: URL
+	try {
+		realUrl = new URL(url)
+	} catch {
+		return url // ignore errors
 	}
 
-	if (matches[2] === 'twitter.com') {
-		return '@' + matches[3]
+	if (realUrl.hostname === 'twitter.com') {
+		return '@' + realUrl.pathname.replace('/', '')
 	}
 
-	if (matches[2] === 'bsky.app') {
-		return '@' + matches[3].replace('profile/', '')
+	if (realUrl.hostname === 'bsky.app') {
+		return '@' + realUrl.pathname.replace('/profile/', '')
 	}
 
-	if (mastodonHosts.includes(matches[2]) && matches[3][0] == '@') {
-		return matches[3] + '@' + matches[2]
+	if (mastodonHosts.includes(realUrl.hostname) && realUrl.pathname.startsWith('/@')) {
+		return realUrl.pathname.replace('/', '') + '@' + realUrl.hostname
 	}
 
-	return matches[2] + (matches[3] ? '/' + matches[3] : '')
+	return realUrl.hostname.replace('www.', '') + (realUrl.pathname != '/' ? realUrl.pathname : '')
 }
 
 // Convert text in the format "MMDD" to a Date object
