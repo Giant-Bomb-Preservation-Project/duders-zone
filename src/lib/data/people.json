@@ -135,6 +135,16 @@
 			]
 		},
 		{
+			"name": "Niki Grayson",
+			"image": "niki.jpg",
+			"links": [
+				"https://www.twitch.tv/nikigrayson",
+				"https://bsky.app/profile/nikigrayson.com",
+				"https://vgbees.com/",
+				"https://makeyouthink.club/"
+			]
+		},
+		{
 			"name": "Patrick Klepek",
 			"image": "patrick.jpg",
 			"links": [
