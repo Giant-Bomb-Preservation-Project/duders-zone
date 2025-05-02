@@ -110,6 +110,7 @@
 	}
 
 	img {
+		border: 1px solid white;
 		width: 100%;
 	}
 
@@ -155,7 +156,6 @@
 	}
 
 	ul.people img {
-		border: 1px solid white;
 		border-radius: 4px;
 	}
 
