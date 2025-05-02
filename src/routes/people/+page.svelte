@@ -106,12 +106,18 @@
 	}
 
 	h2 {
+		font-size: 24px;
 		margin: 0;
 	}
 
 	img {
 		border: 1px solid white;
 		width: 100%;
+	}
+
+	p {
+		font-size: 12pt;
+		margin: 0.2em 0;
 	}
 
 	p.thank-you {
@@ -135,13 +141,17 @@
 	}
 
 	ul.links {
+		font-size: 11pt;
 		list-style: none;
 		margin: 0;
 		padding: 0;
 	}
 
 	ul.links li {
-		margin: 0.2em 0;
+		margin: 0.3em 0;
+		overflow: hidden; 
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 
 	ul.people {
@@ -161,16 +171,16 @@
 
 	ul.people li {
 		display: flex;
-		flex-basis: 100%;
+		flex: 0 0 100%;
 	}
 
 	ul.people .info {
 		flex: 1;
-		padding: 0.5em 0.85em;
+		padding: 0.25em 0.85em;
 	}
 
 	ul.people .image {
-		flex: 0 0 120px;
+		flex: 0 0 33%;
 	}
 
 	@media (min-width: 768px) {
@@ -182,7 +192,11 @@
 		}
 
 		ul.people li {
-			flex-basis: calc(50% - 2em);
+			flex-basis: calc(50% - 1em);
+		}
+
+		ul.people .image {
+			flex-basis: 120px;
 		}
 	}
 
