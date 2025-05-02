@@ -32,7 +32,7 @@
 
 <div class="container">
 	<section>
-		<h1>Alumni</h1>
+		<h1 class="sr-only">Alumni</h1>
 		<ul class="people">
 			{#each people.alumni as person}
 				<li>
