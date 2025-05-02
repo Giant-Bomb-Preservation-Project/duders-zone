@@ -1,4 +1,5 @@
 import { error } from '@sveltejs/kit'
+import peopleData from '$lib/data/people.json'
 import showData from '$lib/data/shows.json'
 import videoData from '$lib/data/videos.json'
 import { extractWords } from '$lib/text'
@@ -7,6 +8,24 @@ export enum VideoSource {
 	InternetArchive = 'internetarchive',
 	Direct = 'direct',
 	YouTube = 'youtube',
+}
+
+export interface Employee {
+	readonly name: string
+	readonly position: string
+	readonly image: string
+	readonly links: readonly string[]
+}
+
+export interface InMemoriam {
+	readonly name: string
+	readonly years: string
+	readonly image: string
+}
+
+export interface People {
+	readonly alumni: Employee[]
+	readonly inMemoriam: InMemoriam[]
 }
 
 export interface Show {
@@ -35,6 +54,9 @@ export interface Video {
 // Sort by date descending
 const byDateDesc = (a: { date: Date }, b: { date: Date }) => b.date.getTime() - a.date.getTime()
 
+// Sort by name ascending
+const byNameAsc = (a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name)
+
 // Sort randomly
 const byRandom = () => 0.5 - Math.random()
 
@@ -43,12 +65,37 @@ const byTitleAsc = (a: { title: string }, b: { title: string }) => a.title.local
 
 // Data store which contains the data for the app.
 export class DataStore {
+	readonly people: People
 	readonly shows: { [key: string]: Show }
 	readonly videos: { [key: string]: Video }
 	readonly videoIndex: Map<string, string[]>
 
 	// Construct the datastore based on given show and video data.
-	constructor(showData: any[], videoData: any[]) {
+	constructor(peopleData: any, showData: any[], videoData: any[]) {
+		let alumni = []
+		for (const person of peopleData.alumni) {
+			alumni.push({
+				name: person.name,
+				position: person.position,
+				image: person.image,
+				links: person.links,
+			})
+		}
+
+		let inMemoriam = []
+		for (const person of peopleData.in_memoriam) {
+			inMemoriam.push({
+				name: person.name,
+				years: person.years,
+				image: person.image,
+			})
+		}
+
+		this.people = {
+			alumni: alumni.sort(byNameAsc),
+			inMemoriam: inMemoriam.sort(byNameAsc),
+		}
+
 		this.shows = {}
 		for (const show of showData) {
 			if (show.videos.length == 0) {
@@ -89,6 +136,15 @@ export class DataStore {
 
 				this.videoIndex.get(word)!.push(video.id)
 			}
+		}
+	}
+
+	// Return the people.
+	getPeople(): People {
+		// Return copies so the data source cannot be modified
+		return {
+			alumni: Array.from(this.people.alumni),
+			inMemoriam: Array.from(this.people.inMemoriam),
 		}
 	}
 
@@ -165,4 +221,4 @@ export class DataStore {
 	}
 }
 
-export const dataStore = new DataStore(showData, videoData)
+export const dataStore = new DataStore(peopleData, showData, videoData)

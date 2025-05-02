@@ -1,6 +1,7 @@
 const ignoredCharacters = /[']/g
 const wordCharacter = /\w/i
 const dateFormat = /^(\d\d)(\d\d)$/
+const urlPattern = /.*:\/\/(www.)?([^\/]+)\/?([^\/]+)?.*/
 
 // Convert a Date object to text in the format "MMDD"
 export function dateToText(date: Date): string {
@@ -33,6 +34,20 @@ export function extractWords(text: string): string[] {
 	}
 
 	return Array.from(words.keys())
+}
+
+// Convert a URL to a "pretty" (more readable) version
+export function prettyUrl(url: string): string {
+	const matches = url.match(urlPattern)
+	if (matches === null) {
+		return url
+	}
+
+	if (matches[2] === 'twitter.com') {
+		return `@${matches[3]}`
+	}
+
+	return matches[2] + (matches[3] ? `/${matches[3]}` : '')
 }
 
 // Convert text in the format "MMDD" to a Date object
