@@ -1,6 +1,6 @@
 // sum.test.js
 import { describe, it, expect } from 'vitest'
-import { dateToText, extractWords, textToDate } from '$lib/text'
+import { dateToText, extractWords, prettyUrl, textToDate } from '$lib/text'
 
 describe('dateToText', () => {
 	it('converts a date to a text format', () => {
@@ -10,7 +10,7 @@ describe('dateToText', () => {
 })
 
 describe('extractWords', () => {
-	it('covnerts text to a list of words', () => {
+	it('converts text to a list of words', () => {
 		expect(extractWords('test')).toStrictEqual(['test'])
 		expect(extractWords('This is a test')).toStrictEqual(['this', 'is', 'a', 'test'])
 		expect(extractWords("Testing 2: The return of test'd-hater Tom [REMIX]")).toStrictEqual([
@@ -25,6 +25,39 @@ describe('extractWords', () => {
 			'remix',
 		])
 		expect(extractWords('The THE: the tHe-thE ThE')).toStrictEqual(['the'])
+	})
+})
+
+describe('prettyUrl', () => {
+	it('converts URLs to pretty text', () => {
+		const tests: { [key: string]: string } = {
+			'https://www.giantbomb.com': 'giantbomb.com',
+			'https://duders.zone': 'duders.zone',
+		}
+		for (const input of Object.keys(tests)) {
+			expect(prettyUrl(input)).toStrictEqual(tests[input])
+		}
+	})
+
+	it('ignores non-url text', () => {
+		const tests: { [key: string]: string } = {
+			test: 'test',
+			'this is text': 'this is text',
+			'': '',
+		}
+		for (const input of Object.keys(tests)) {
+			expect(prettyUrl(input)).toStrictEqual(tests[input])
+		}
+	})
+
+	it('adds @ to twitter links', () => {
+		const tests: { [key: string]: string } = {
+			'http://twitter.com/giantbomb': '@giantbomb',
+			'https://twitter.com/jeffgerstmann': '@jeffgerstmann',
+		}
+		for (const input of Object.keys(tests)) {
+			expect(prettyUrl(input)).toStrictEqual(tests[input])
+		}
 	})
 })
 
