@@ -303,6 +303,11 @@ async function run() {
 			videoShows.push(show.id)
 		}
 
+		if (videoShows.length === 0) {
+			log('error', `Skipping video due to missing show: ${video.title} (${video.identifier})`)
+			continue // TODO: what to do?
+		}
+
 		videos.push({
 			id: video.identifier,
 			gb_id: null,
