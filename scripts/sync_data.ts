@@ -118,7 +118,7 @@ async function run() {
 		gbShows.push({
 			description: '',
 			id: video.show.id,
-			slug: null,
+			slug: video.show.slug,
 			title: video.show.title,
 			image: video.show.image,
 			logo: video.show.logo,
