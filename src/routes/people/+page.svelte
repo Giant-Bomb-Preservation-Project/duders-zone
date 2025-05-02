@@ -18,22 +18,26 @@
 		<h1>Alumni</h1>
 		<ul class="people">
 			{#each people.alumni as person}
-				<li class="person">
-					<img
-						src={person.image ? `${base}/assets/people/${person.image}` : logoBw}
-						alt=""
-					/>
-					<h2>{person.name}</h2>
-					<p>{person.position}</p>
-					{#if person.links}
-						<ul class="links">
-							{#each person.links as link}
-								<li>
-									<a href={link}>{prettyUrl(link)}</a>
-								</li>
-							{/each}
-						</ul>
-					{/if}
+				<li>
+					<div class="image">
+						<img
+							src={person.image ? `${base}/assets/people/${person.image}` : logoBw}
+							alt=""
+						/>
+					</div>
+					<div class="info">
+						<h2>{person.name}</h2>
+						<p>{person.position}</p>
+						{#if person.links}
+							<ul class="links">
+								{#each person.links as link}
+									<li>
+										<a href={link}>{prettyUrl(link)}</a>
+									</li>
+								{/each}
+							</ul>
+						{/if}
+					</div>
 				</li>
 			{/each}
 		</ul>
@@ -41,9 +45,9 @@
 
 	<section>
 		<h1>In Memoriam</h1>
-		<ul class="people">
+		<ul class="in-memoriam">
 			{#each people.inMemoriam as person}
-				<li class="person">
+				<li>
 					<img
 						src={person.image ? `${base}/assets/people/${person.image}` : logoBw}
 						alt=""
@@ -75,15 +79,17 @@
 		margin-top: var(--spacing);
 	}
 
+	h1 {
+		font-size: 32px;
+		line-height: 35px;
+		text-align: center;
+	}
+
 	h2 {
 		margin: 0;
 	}
 
 	img {
-		border-radius: 50%;
-		box-shadow: var(--color-gray) 0 0 0 1px;
-		display: block;
-		margin-bottom: 10px;
 		width: 100%;
 	}
 
@@ -94,21 +100,17 @@
 		text-align: center;
 	}
 
-	ul.people {
-		display: flex;
+	ul.in-memoriam {
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		gap: 30px;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: flex-start;
+		text-align: center;
 	}
 
-	li.person {
-		flex-basis: 100%;
-		margin-bottom: 30px;
-		text-align: center;
+	ul.in-memoriam img {
+		border-radius: 50%;
+		max-width: 300px;
+		margin-bottom: 1em;
 	}
 
 	ul.links {
@@ -117,23 +119,52 @@
 		padding: 0;
 	}
 
-	@media (min-width: 576px) {
+	ul.people {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 2em;
+		justify-content: flex-start;
+	}
+
+	ul.people img {
+		border: 1px solid white;
+		border-radius: 4px;
+	}
+
+	ul.people li {
+		display: flex;
+		flex-basis: 100%;
+	}
+
+	ul.people .info {
+		flex: 1;
+		padding: 0.5em 0.85em;
+	}
+
+	ul.people .image {
+		flex: 0 0 120px;
+	}
+
+	@media (min-width: 768px) {
 		ul.people {
 			display: flex;
-			gap: 30px;
 			flex-direction: row;
 			flex-wrap: wrap;
 			justify-items: center;
 		}
 
-		li.person {
-			flex-basis: calc(50% - 30px);
+		ul.people li {
+			flex-basis: calc(50% - 2em);
 		}
 	}
 
-	@media (min-width: 768px) {
-		li.person {
-			flex-basis: calc(34% - 30px);
+	@media (min-width: 1200px) {
+		ul.people li {
+			flex-basis: calc(34% - 2em);
 		}
 	}
 </style>
