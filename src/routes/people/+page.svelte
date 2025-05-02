@@ -161,7 +161,7 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		gap: 2em;
-		margin: 1em 0;
+		margin: 2em 0;
 		justify-content: flex-start;
 	}
 
