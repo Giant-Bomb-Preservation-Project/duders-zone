@@ -6550,7 +6550,7 @@
         ]
     },
     {
-        "id": "the-giant-beastcast",
+        "id": "beastcast",
         "gb_id": 45,
         "title": "The Giant Beastcast",
         "description": "The Giant Bomb East team gathers to talk about the week in video games, their lives, and basically anything that interests them. All from New York City!",
@@ -7379,7 +7379,7 @@
         ]
     },
     {
-        "id": "bombin-the-am-with-scoops--the-wolf",
+        "id": "bombin-the-am-with-scoops-and-the-wolf",
         "gb_id": 56,
         "title": "Bombin' the A.M. With Scoops & the Wolf!",
         "description": "Grab a cup of coffee, and catch up on the day's headlines with Giant Bomb guys that aren't in San Francisco.",
@@ -7897,7 +7897,7 @@
         ]
     },
     {
-        "id": "pokmonday-night-combat",
+        "id": "pokemonday-night-combat",
         "gb_id": 69,
         "title": "PokéMonday Night Combat",
         "description": "Resident Pokémon professor Jan Ochoa shows us the ins and outs of competitive Pokémon battling!",
@@ -10896,7 +10896,7 @@
         ]
     },
     {
-        "id": "premium-podcasts",
+        "id": "premium",
         "gb_id": 49,
         "title": "Premium Podcasts",
         "description": "Premium podcasts for Premium Members.",

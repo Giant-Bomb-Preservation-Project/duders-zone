@@ -118,6 +118,7 @@ async function run() {
 		gbShows.push({
 			description: '',
 			id: video.show.id,
+			slug: null,
 			title: video.show.title,
 			image: video.show.image,
 			logo: video.show.logo,
@@ -127,7 +128,7 @@ async function run() {
 	for (const show of gbShows) {
 		const poster = toFilename(show.image)
 		const logo = toFilename(show.logo)
-		const identifier = toIdentifier(show.title)
+		const identifier = show.slug ?? toIdentifier(show.title)
 
 		if (poster !== null) {
 			await downloadFile(show.image, SHOW_IMAGES_PATH + poster)
@@ -167,11 +168,14 @@ async function run() {
 		}
 
 		for (const subject of item.subject) {
-			const show = toIdentifier(subject)
-			if (!Object.hasOwn(shows, show)) {
+			const show = Object.values(shows).find((s) => s.title.toLowerCase() == subject.toLowerCase())
+			var showId = toIdentifier(subject)
+			if (show) {
+				showId = show.id
+			} else {
 				console.debug(`Show not found in GB, creating: ${subject}`)
-				shows[show] = {
-					id: show,
+				shows[showId] = {
+					id: showId,
 					gb_id: null,
 					title: subject,
 					description: '',
@@ -181,8 +185,8 @@ async function run() {
 				}
 			}
 
-			shows[show].videos.push(identifier)
-			video.show = show
+			shows[showId].videos.push(identifier)
+			video.show = showId
 		}
 
 		videos[identifier] = video

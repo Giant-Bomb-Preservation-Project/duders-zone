@@ -12,6 +12,7 @@ const UNWANTED_VIDEO_TYPES = ['Trailers', 'Trailers, Exclude From Infinite', 'Tr
 export type GiantBombShow = {
 	description: string
 	id: number
+	slug: string | null
 	title: string
 	image: string | null
 	logo: string | null
@@ -52,7 +53,7 @@ export default class GiantBomb {
 		const params = {
 			api_key: this.api_key,
 			format: 'json',
-			field_list: 'id,title,deck,image,logo',
+			field_list: 'id,title,deck,image,logo,site_detail_url',
 			limit: REQUEST_LIMIT,
 			offset: 0,
 		}
@@ -69,9 +70,14 @@ export default class GiantBomb {
 			}
 
 			for (const item of results) {
+				const detailUrl = new URL(item.site_detail_url)
+				const match = detailUrl.pathname.match(/^\/shows\/(.+?)\/$/)
+				const slug = match ? match[1] : null
+
 				shows.push({
 					description: item.deck,
 					id: item.id,
+					slug: slug,
 					title: item.title,
 					image: item.image?.[IMAGE_SIZE] ?? null,
 					logo: item.logo?.[IMAGE_SIZE] ?? null,
