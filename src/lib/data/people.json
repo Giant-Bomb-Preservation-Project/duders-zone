@@ -125,6 +125,16 @@
 			]
 		},
 		{
+			"name": "Mike “Mitch” Minotti",
+			"image": "minotti.jpg",
+			"links": [
+				"https://www.patreon.com/gamemess",
+				"https://www.twitch.tv/tolkoto",
+				"https://bsky.app/profile/tolkoto.com",
+				"https://venturebeat.com/author/mike-minotti/"
+			]
+		},
+		{
 			"name": "Patrick Klepek",
 			"image": "patrick.jpg",
 			"links": [
@@ -140,7 +150,7 @@
 			]
 		},
 		{
-			"name": "Vincent \"Vinny\" Caravella",
+			"name": "Vincent “Vinny” Caravella",
 			"image": "vinny.png",
 			"links": [
 				"https://nextlander.com/",
