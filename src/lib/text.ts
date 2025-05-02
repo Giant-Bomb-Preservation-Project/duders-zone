@@ -1,7 +1,8 @@
 const ignoredCharacters = /[']/g
 const wordCharacter = /\w/i
 const dateFormat = /^(\d\d)(\d\d)$/
-const urlPattern = /.*:\/\/(www.)?([^\/]+)\/?([^\/]+)?.*/
+const urlPattern = /.*:\/\/(www.)?([^\/]+)\/?(.*)/
+const mastodonHosts = ['hachyderm.io', 'mastodon.social', 'social.davesnider.com']
 
 // Convert a Date object to text in the format "MMDD"
 export function dateToText(date: Date): string {
@@ -44,10 +45,18 @@ export function prettyUrl(url: string): string {
 	}
 
 	if (matches[2] === 'twitter.com') {
-		return `@${matches[3]}`
+		return '@' + matches[3]
 	}
 
-	return matches[2] + (matches[3] ? `/${matches[3]}` : '')
+	if (matches[2] === 'bsky.app') {
+		return '@' + matches[3].replace('profile/', '')
+	}
+
+	if (mastodonHosts.includes(matches[2]) && matches[3][0] == '@') {
+		return matches[3] + '@' + matches[2]
+	}
+
+	return matches[2] + (matches[3] ? '/' + matches[3] : '')
 }
 
 // Convert text in the format "MMDD" to a Date object

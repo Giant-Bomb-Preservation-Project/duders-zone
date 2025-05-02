@@ -31,8 +31,9 @@ describe('extractWords', () => {
 describe('prettyUrl', () => {
 	it('converts URLs to pretty text', () => {
 		const tests: { [key: string]: string } = {
-			'https://www.giantbomb.com': 'giantbomb.com',
+			'https://www.giantbomb.com/': 'giantbomb.com',
 			'https://duders.zone': 'duders.zone',
+			'https://www.twitch.tv/giantbombforever': 'twitch.tv/giantbombforever',
 		}
 		for (const input of Object.keys(tests)) {
 			expect(prettyUrl(input)).toStrictEqual(tests[input])
@@ -54,6 +55,26 @@ describe('prettyUrl', () => {
 		const tests: { [key: string]: string } = {
 			'http://twitter.com/giantbomb': '@giantbomb',
 			'https://twitter.com/jeffgerstmann': '@jeffgerstmann',
+		}
+		for (const input of Object.keys(tests)) {
+			expect(prettyUrl(input)).toStrictEqual(tests[input])
+		}
+	})
+
+	it('adds @ to Bluesky links', () => {
+		const tests: { [key: string]: string } = {
+			'https://bsky.app/profile/giantbomb.bsky.social': '@giantbomb.bsky.social',
+			'https://bsky.app/profile/nextlander.com': '@nextlander.com',
+		}
+		for (const input of Object.keys(tests)) {
+			expect(prettyUrl(input)).toStrictEqual(tests[input])
+		}
+	})
+
+	it('reformats Mastodon links', () => {
+		const tests: { [key: string]: string } = {
+			'https://mastodon.social/@jeffgerstmann': '@jeffgerstmann@mastodon.social',
+			'https://social.davesnider.com/@davesnider': '@davesnider@social.davesnider.com',
 		}
 		for (const input of Object.keys(tests)) {
 			expect(prettyUrl(input)).toStrictEqual(tests[input])
