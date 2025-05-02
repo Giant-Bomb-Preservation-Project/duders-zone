@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths'
+	import Icon, { IconType } from '$lib/components/Icon.svelte'
 	import { prettyUrl } from '$lib/text'
 	import logoBw from '$lib/images/logo-bw.png'
 	import type { People } from '$lib/data'
@@ -11,6 +12,22 @@
 
 	const { data }: Props = $props()
 	const { people } = data
+
+	function icon(url: string): IconType {
+		const hostname = new URL(url).hostname
+
+		switch (hostname) {
+			case 'bsky.app':
+				return IconType.Bluesky
+			case 'mastodon.social':
+			case 'social.davesnider.com':
+				return IconType.Mastodon
+			case 'www.twitch.tv':
+				return IconType.Twitch
+			default:
+				return IconType.Website
+		}
+	}
 </script>
 
 <div class="container">
@@ -32,7 +49,10 @@
 							<ul class="links">
 								{#each person.links as link}
 									<li>
-										<a href={link}>{prettyUrl(link)}</a>
+										<a href={link}>
+											<Icon type={icon(link)} />
+											{prettyUrl(link)}
+										</a>
 									</li>
 								{/each}
 							</ul>
@@ -117,6 +137,10 @@
 		list-style: none;
 		margin: 0;
 		padding: 0;
+	}
+
+	ul.links li {
+		margin: 0.2em 0;
 	}
 
 	ul.people {
