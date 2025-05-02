@@ -72,13 +72,38 @@ function toIdentifier(text: string): string {
 		.replace(/[^\w-]/g, '')
 }
 
+// Log text in a given color (defaulting to plain)
+function log(color: string, text: string) {
+	if (!text) {
+		text = color
+		color = 'none'
+	}
+
+	switch (color) {
+	case 'gray':
+		console.debug(`\x1b[37m${text}\x1b[0m`)
+		break
+	case 'success':
+		console.log(`\x1b[32m${text}\x1b[0m`)
+		break
+	case 'warn':
+		console.log(`\x1b[33m${text}\x1b[0m`)
+		break
+	case 'error':
+		console.error(`\x1b[31m${text}\x1b[0m`)
+		break
+	default:
+		console.log(text)
+	}
+}
+
 ///
 /// Script
 ///
 
 async function run() {
 	if (!process.env.GB_API_KEY) {
-		console.error('ERROR! Missing GB_API_KEY')
+		log('error', 'ERROR! Missing GB_API_KEY')
 		process.exit(1)
 	}
 
@@ -90,17 +115,17 @@ async function run() {
 	const gb = new GiantBomb(process.env.GB_API_KEY)
 	const ia = new InternetArchive()
 
-	console.log('Getting items from Internet Archive...')
+	log('Getting items from Internet Archive...')
 	let iaItems = await ia.getCollectionItems(COLLECTION_IDENTIFIER)
-	console.log(`Got ${iaItems.length} items`)
+	log('success', `Got ${iaItems.length} items`)
 
-	console.log('Getting shows from Giant Bomb...')
+	log('Getting shows from Giant Bomb...')
 	let gbShows = await gb.getShows()
-	console.log(`Got ${gbShows.length} shows`)
+	log('success', `Got ${gbShows.length} shows`)
 
-	console.log('Getting videos from Giant Bomb...')
+	log('Getting videos from Giant Bomb...')
 	let gbVideos = await gb.getVideos()
-	console.log(`Got ${gbVideos.length} videos`)
+	log('success', `Got ${gbVideos.length} videos`)
 
 	// Process shows
 
@@ -173,7 +198,7 @@ async function run() {
 			if (show) {
 				showId = show.id
 			} else {
-				console.debug(`Show not found in GB, creating: ${subject}`)
+				log('gray', `Show not found in GB, creating: ${subject}`)
 				shows[showId] = {
 					id: showId,
 					gb_id: null,
@@ -199,32 +224,32 @@ async function run() {
 		if (item.show?.id) {
 			show = Object.values(shows).find((s) => s.gb_id == item.show.id)
 			if (!show) {
-				console.error(`Missing GB show with id: ${item.show.id}`)
+				log('error', `Missing GB show with id: ${item.show.id}`)
 			}
 		}
 
 		let video = findVideo(videos, item, show)
 		if (video === null) {
 			if (!show) {
-				console.error(
+				log('error', 
 					`Skipping video missing from IA but also missing a show: ${item.name}`
 				)
 				continue // TODO: what to do?
 			}
 
 			if (!item.youtube_id) {
-				console.error(
+				log('error', 
 					`Skipping video missing from IA but also missing a YouTube ID: ${item.name}`
 				)
 				continue // TODO: what to do?
 			}
 
 			if (!item.show) {
-				console.error(`Skipping video missing a show: ${item.name}`)
+				log('error', `Skipping video missing a show: ${item.name}`)
 				continue // TODO: what to do?
 			}
 
-			console.warn(`Video missing from IA, creating: ${item.name} (${item.id})`)
+			log('warn', `Video missing from IA, creating: ${item.name} (${item.id})`)
 			const identifier = `UNARCHIVED-gb-${item.guid}` // so it sticks out
 			video = {
 				id: identifier,
