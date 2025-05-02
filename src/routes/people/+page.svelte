@@ -102,6 +102,7 @@
 	h1 {
 		font-size: 32px;
 		line-height: 35px;
+		margin: 2em 0 1em;
 		text-align: center;
 	}
 
@@ -127,10 +128,14 @@
 		text-align: center;
 	}
 
-	ul.in-memoriam {
+	ul {
 		list-style: none;
 		margin: 0;
 		padding: 0;
+	}
+
+	ul.in-memoriam {
+		margin: 3em 0;
 		text-align: center;
 	}
 
@@ -142,26 +147,21 @@
 
 	ul.links {
 		font-size: 11pt;
-		list-style: none;
-		margin: 0;
-		padding: 0;
 	}
 
 	ul.links li {
 		margin: 0.3em 0;
-		overflow: hidden; 
+		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
 
 	ul.people {
 		display: flex;
-		list-style: none;
-		margin: 0;
-		padding: 0;
 		flex-direction: row;
 		flex-wrap: wrap;
 		gap: 2em;
+		margin: 1em 0;
 		justify-content: flex-start;
 	}
 
