@@ -22,6 +22,8 @@
 			case 'mastodon.social':
 			case 'social.davesnider.com':
 				return IconType.Mastodon
+			case 'www.patreon.com':
+				return IconType.Patreon
 			case 'www.twitch.tv':
 				return IconType.Twitch
 			default:
