@@ -215,8 +215,12 @@ async function run() {
 		const iaVideoIndex = iaItems.findIndex((item) => {
 			let score = 0
 
-			score += item.title.includes(video.name) ? 1 : 0
-			score += item.description && item.description.includes(video.description) ? 1 : 0
+			score += item.title.replaceAll(' ', '').includes(video.name.replaceAll(' ', '')) ? 1 : 0
+			score +=
+				item.description &&
+				item.description.replaceAll(' ', '').includes(video.description.replaceAll(' ', ''))
+					? 1
+					: 0
 			score += item.identifier.includes(video.guid) ? 1 : 0
 			if (item.date) {
 				score +=
@@ -238,16 +242,19 @@ async function run() {
 			}
 		} else {
 			if (!video.youtube_id) {
-				log('error', `Skipping video due to missing IA and YouTube video: ${video.name}`)
+				log(
+					'error',
+					`Skipping video due to missing IA and YouTube video: ${video.name} (${video.id})`
+				)
 				continue // TODO: what to do?
 			} else {
-				log('warn', `Video is missing IA equivalent: ${video.name}`)
+				log('warn', `Video is missing IA equivalent: ${video.name} (${video.id})`)
 			}
 		}
 
 		// Video has no shows at all???
 		if (videoShows.size === 0) {
-			log('error', `Skipping video due to missing show: ${video.name}`)
+			log('error', `Skipping video due to missing show: ${video.name} (${video.id})`)
 			continue // TODO: what to do?
 		}
 
