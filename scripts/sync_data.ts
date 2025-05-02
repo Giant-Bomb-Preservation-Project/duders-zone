@@ -80,20 +80,20 @@ function log(color: string, text: string) {
 	}
 
 	switch (color) {
-	case 'gray':
-		console.debug(`\x1b[37m${text}\x1b[0m`)
-		break
-	case 'success':
-		console.log(`\x1b[32m${text}\x1b[0m`)
-		break
-	case 'warn':
-		console.log(`\x1b[33m${text}\x1b[0m`)
-		break
-	case 'error':
-		console.error(`\x1b[31m${text}\x1b[0m`)
-		break
-	default:
-		console.log(text)
+		case 'gray':
+			console.debug(`\x1b[37m${text}\x1b[0m`)
+			break
+		case 'success':
+			console.log(`\x1b[32m${text}\x1b[0m`)
+			break
+		case 'warn':
+			console.log(`\x1b[33m${text}\x1b[0m`)
+			break
+		case 'error':
+			console.error(`\x1b[31m${text}\x1b[0m`)
+			break
+		default:
+			console.log(text)
 	}
 }
 
@@ -107,8 +107,9 @@ async function run() {
 		process.exit(1)
 	}
 
-	const shows = {}
-	const videos = {}
+	const shows = []
+	const videos = []
+	const showVideos = {}
 
 	// Load data
 
@@ -129,6 +130,7 @@ async function run() {
 
 	// Process shows
 
+	// Ensure all shows embedded under GB videos are accounted for
 	for (const video of gbVideos) {
 		if (!video.show) {
 			continue // nothing doing
@@ -139,7 +141,6 @@ async function run() {
 			continue // also nothing doing
 		}
 
-		// Show didn't come from the GB API so needs to be created
 		gbShows.push({
 			description: '',
 			id: video.show.id,
@@ -150,10 +151,10 @@ async function run() {
 		})
 	}
 
+	// Download GB show images and add them to the list
 	for (const show of gbShows) {
 		const poster = toFilename(show.image)
 		const logo = toFilename(show.logo)
-		const identifier = show.slug ?? toIdentifier(show.title)
 
 		if (poster !== null) {
 			await downloadFile(show.image, SHOW_IMAGES_PATH + poster)
@@ -163,130 +164,172 @@ async function run() {
 			await downloadFile(show.logo, SHOW_IMAGES_PATH + logo)
 		}
 
-		shows[identifier] = {
-			id: identifier,
+		shows.push({
+			id: show.slug ?? toIdentifier(show.title),
 			gb_id: show.id,
 			title: show.title,
 			description: show.description ?? '',
 			poster: poster,
 			logo: logo,
 			videos: [],
-		}
+		})
 	}
 
-	// Process IA items
-
+	// Ensure all approrpiate IA subjects are added as shows
 	for (const item of iaItems) {
-		const identifier = item.identifier
-
-		const video = {
-			id: identifier,
-			gb_id: null,
-			show: null,
-			title: item.title,
-			description: item.description,
-			date: item.date ? item.date : new Date(1970, 0, 1),
-			thumbnail: `https://archive.org/services/img/${identifier}`,
-			source: {
-				internetarchive: identifier,
-			},
-		}
-
 		for (const subject of item.subject) {
-			const show = Object.values(shows).find((s) => s.title.toLowerCase() == subject.toLowerCase())
-			var showId = toIdentifier(subject)
-			if (show) {
-				showId = show.id
-			} else {
+			const show = shows.find((s) => s.title.toLowerCase() == subject.toLowerCase())
+			if (!show) {
 				log('gray', `Show not found in GB, creating: ${subject}`)
-				shows[showId] = {
-					id: showId,
+				shows.push({
+					id: toIdentifier(subject),
 					gb_id: null,
 					title: subject,
 					description: '',
 					poster: null,
 					logo: null,
 					videos: [],
-				}
+				})
 			}
-
-			shows[showId].videos.push(identifier)
-			video.show = showId
 		}
-
-		videos[identifier] = video
 	}
 
-	// Process GB videos
+	// Process videos
 
-	for (const item of gbVideos) {
-		let show = null
-		if (item.show?.id) {
-			show = Object.values(shows).find((s) => s.gb_id == item.show.id)
+	log(`Adding ${gbVideos.length} IA videos...`)
+	for (const video of gbVideos) {
+		const videoShows = new Set()
+
+		if (video.show?.id) {
+			// Add the associated show to the show list
+			const show = shows.find((s) => s.gb_id == video.show.id)
 			if (!show) {
-				log('error', `Missing GB show with id: ${item.show.id}`)
+				log('error', `Missing GB show with id: ${video.show.id}`)
+				continue
 			}
+
+			videoShows.add(show.id)
 		}
 
-		let video = findVideo(videos, item, show)
-		if (video === null) {
-			if (!show) {
-				log('error', 
-					`Skipping video missing from IA but also missing a show: ${item.name}`
-				)
+		// Find the IA video for this video
+		const iaVideoIndex = iaItems.findIndex((item) => {
+			let score = 0
+
+			score += item.title.includes(video.name) ? 1 : 0
+			score += item.description && item.description.includes(video.description) ? 1 : 0
+			score += item.identifier.includes(video.guid) ? 1 : 0
+			if (item.date) {
+				score +=
+					item.date.toISOString().substring(0, 10) ==
+					video.publish_date.toISOString().substring(0, 10)
+						? 1
+						: 0
+			}
+
+			return score >= 2 // probably the right video
+		})
+		const iaVideo = iaVideoIndex != -1 ? iaItems[iaVideoIndex] : null
+
+		if (iaVideo) {
+			// Add the IA subjects to the show list
+			for (const subject of iaVideo.subject) {
+				const show = shows.find((s) => s.title.toLowerCase() == subject.toLowerCase())
+				videoShows.add(show.id)
+			}
+		} else {
+			if (!video.youtube_id) {
+				log('error', `Skipping video due to missing IA and YouTube video: ${video.name}`)
 				continue // TODO: what to do?
+			} else {
+				log('warn', `Video is missing IA equivalent: ${video.name}`)
 			}
-
-			if (!item.youtube_id) {
-				log('error', 
-					`Skipping video missing from IA but also missing a YouTube ID: ${item.name}`
-				)
-				continue // TODO: what to do?
-			}
-
-			if (!item.show) {
-				log('error', `Skipping video missing a show: ${item.name}`)
-				continue // TODO: what to do?
-			}
-
-			log('warn', `Video missing from IA, creating: ${item.name} (${item.id})`)
-			const identifier = `UNARCHIVED-gb-${item.guid}` // so it sticks out
-			video = {
-				id: identifier,
-				gb_id: item.id,
-				show: show.id,
-				title: item.name,
-				description: item.description,
-				date: item.publish_date,
-				thumbnail: item.image,
-				source: {
-					youtube: item.youtube_id,
-				},
-			}
-			videos[identifier] = video
-			show.videos.push(identifier)
 		}
 
-		video.gb_id = item.id
-		video.date = item.publish_date // usually more accurate
-		if (item.youtube_id !== null) {
-			video.source.youtube = item.youtube_id
+		// Video has no shows at all???
+		if (videoShows.size === 0) {
+			log('error', `Skipping video due to missing show: ${video.name}`)
+			continue // TODO: what to do?
 		}
 
-		if (item.image !== null) {
-			video.thumbnail = item.image
+		// Setup the video sources
+		const source = {}
+		if (video.youtube_id) {
+			source['youtube'] = video.youtube_id
 		}
+		if (iaVideo) {
+			source['internetarchive'] = iaVideo.identifier
+		}
+
+		// Add the video to the video list
+		videos.push({
+			id: video.guid,
+			gb_id: video.id,
+			show: videoShows.values().next().value,
+			title: video.name,
+			description: video.description,
+			date: video.publish_date,
+			thumbnail: video.image,
+			source,
+		})
+
+		// Add the video to the show videos map
+		for (const show of videoShows) {
+			if (!(show in showVideos)) {
+				showVideos[show] = []
+			}
+
+			showVideos[show].push(video.guid)
+		}
+
+		// Remove the video from the IA list (we don't need it anymore)
+		if (iaVideoIndex != -1) {
+			iaItems.splice(iaVideoIndex, 1)
+		}
+	}
+
+	// Add the rest of the IA videos that don't have matching GB videos
+	log(`Adding ${iaItems.length} IA videos...`)
+	for (const video of iaItems) {
+		const videoShows = []
+		for (const subject of video.subject) {
+			const show = shows.find((s) => s.title.toLowerCase() == subject.toLowerCase())
+			videoShows.push(show.id)
+		}
+
+		videos.push({
+			id: video.identifier,
+			gb_id: null,
+			show: videoShows[0],
+			title: video.title,
+			description: video.description,
+			date: video.date,
+			thumbnail: `https://archive.org/services/img/${video.identifier}`,
+			source: {
+				internetarchive: video.identifier,
+			},
+		})
+
+		for (const show of videoShows) {
+			if (!(show in showVideos)) {
+				showVideos[show] = []
+			}
+
+			showVideos[show].push(video.identifier)
+		}
+	}
+
+	// Fill shows with videos
+	for (const show of shows) {
+		show.videos = showVideos[show.id] // this will fail if a show doesn't have videos
 	}
 
 	// Save the data
 
-	const showsList = Object.values(shows)
-	console.log(`Saving ${showsList.length} shows to: ${SHOWS_FILE_PATH}`)
-	await writeJSONFile(SHOWS_FILE_PATH, showsList)
+	await writeJSONFile(SHOWS_FILE_PATH, shows)
+	log('success', `Saved ${shows.length} shows to: ${SHOWS_FILE_PATH}`)
 
-	const videosList = Object.values(videos)
-	console.log(`Saving ${videosList.length} videos to: ${VIDEOS_FILE_PATH}`)
-	await writeJSONFile(VIDEOS_FILE_PATH, videosList)
+	await writeJSONFile(VIDEOS_FILE_PATH, videos)
+	log('success', `Saved ${videos.length} videos to: ${VIDEOS_FILE_PATH}`)
 }
 
 run()
