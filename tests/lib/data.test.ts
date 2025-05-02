@@ -3,6 +3,23 @@ import { describe, it, expect } from 'vitest'
 import { DataStore } from '$lib/data'
 import type { Video } from '$lib/data'
 
+const testPeopleData = {
+	alumni: [
+		{
+			name: 'Jeff Gerstmann',
+			position: 'Co-founder, Editor-in-Chief',
+			image: 'jeffge.jpg',
+			links: ['https://www.patreon.com/jeffgerstmann', 'https://twitter.com/jeffgerstmann'],
+		},
+	],
+	in_memoriam: [
+		{
+			name: 'Ryan Davis',
+			years: '1979–2013',
+			image: 'ryan.png',
+		},
+	],
+}
 const testShowData = [
 	{
 		id: 'this-aint-no-game',
@@ -94,7 +111,27 @@ const testVideoData = [
 
 describe('DataStore', () => {
 	describe('constructor', () => {
-		it('creates a DataStore based on video and show data', () => {
+		it('creates a DataStore based on person, video, and show data', () => {
+			const expectedPeople = {
+				alumni: [
+					{
+						name: 'Jeff Gerstmann',
+						position: 'Co-founder, Editor-in-Chief',
+						image: 'jeffge.jpg',
+						links: [
+							'https://www.patreon.com/jeffgerstmann',
+							'https://twitter.com/jeffgerstmann',
+						],
+					},
+				],
+				inMemoriam: [
+					{
+						name: 'Ryan Davis',
+						years: '1979–2013',
+						image: 'ryan.png',
+					},
+				],
+			}
 			const expectedShows = {
 				'cross-coast': {
 					id: 'cross-coast',
@@ -185,8 +222,9 @@ describe('DataStore', () => {
 				},
 			}
 
-			const dataStore = new DataStore(testShowData, testVideoData)
+			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
 
+			expect(dataStore.people).toStrictEqual(expectedPeople)
 			expect(dataStore.shows).toStrictEqual(expectedShows)
 			expect(dataStore.videos).toStrictEqual(expectedVideos)
 		})
@@ -247,7 +285,7 @@ describe('DataStore', () => {
 				})
 			)
 
-			const dataStore = new DataStore(testShowData, testVideoData)
+			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
 
 			expect(dataStore.videoIndex).toStrictEqual(expected)
 		})
@@ -255,7 +293,7 @@ describe('DataStore', () => {
 
 	describe('getRandomShows', () => {
 		it('gets a list of N random shows', () => {
-			const dataStore = new DataStore(testShowData, testVideoData)
+			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
 
 			for (var i = 0; i < 5; i++) {
 				const result = dataStore.getRandomShows(1)
@@ -268,7 +306,7 @@ describe('DataStore', () => {
 
 	describe('getRandomVideos', () => {
 		it('gets a list of N random videos', () => {
-			const dataStore = new DataStore(testShowData, testVideoData)
+			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
 
 			for (var i = 0; i < 5; i++) {
 				const result = dataStore.getRandomVideos(2)
@@ -282,7 +320,7 @@ describe('DataStore', () => {
 
 	describe('getShowById', () => {
 		it('gets a specific show', () => {
-			const dataStore = new DataStore(testShowData, testVideoData)
+			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
 			const result = dataStore.getShowById('this-aint-no-game')
 
 			expect(result).toStrictEqual(dataStore.shows['this-aint-no-game'])
@@ -291,7 +329,7 @@ describe('DataStore', () => {
 
 	describe('getShows', () => {
 		it('gets a list of all shows', () => {
-			const dataStore = new DataStore(testShowData, testVideoData)
+			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
 			const result = dataStore.getShows()
 
 			expect(result.map((x) => x.id)).toStrictEqual(['cross-coast', 'this-aint-no-game'])
@@ -300,7 +338,7 @@ describe('DataStore', () => {
 
 	describe('getVideoById', () => {
 		it('gets a specific show', () => {
-			const dataStore = new DataStore(testShowData, testVideoData)
+			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
 			const result = dataStore.getVideoById(
 				'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N'
 			)
@@ -315,7 +353,7 @@ describe('DataStore', () => {
 
 	describe('getVideosForDay', () => {
 		it('gets a specific show', () => {
-			const dataStore = new DataStore(testShowData, testVideoData)
+			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
 			const result = dataStore.getVideosForDay(new Date('2023-11-25T00:00:00Z'))
 
 			expect(result.map((x) => x.id)).toStrictEqual(['gb-2300-16398-IDJKE0C'])
@@ -324,7 +362,7 @@ describe('DataStore', () => {
 
 	describe('getVideosForShow', () => {
 		it('gets a specific show', () => {
-			const dataStore = new DataStore(testShowData, testVideoData)
+			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
 			const result = dataStore.getVideosForShow(dataStore.shows['cross-coast'])
 
 			expect(result.map((x) => x.id)).toStrictEqual([
@@ -336,7 +374,7 @@ describe('DataStore', () => {
 
 	describe('searchVideos', () => {
 		it('gets a specific video', () => {
-			const dataStore = new DataStore(testShowData, testVideoData)
+			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
 			const result = dataStore.searchVideos('evil')
 
 			expect(result.map((x) => x.id)).toStrictEqual([
@@ -372,7 +410,7 @@ describe('DataStore', () => {
 				},
 			]
 
-			const dataStore = new DataStore(testShowData, videoData)
+			const dataStore = new DataStore(testPeopleData, testShowData, videoData)
 			const result = dataStore.searchVideos('test')
 
 			expect(result.map((x) => x.id)).toStrictEqual(['exact', 'not_exact'])
@@ -406,7 +444,7 @@ describe('DataStore', () => {
 				},
 			]
 
-			const dataStore = new DataStore(testShowData, videoData)
+			const dataStore = new DataStore(testPeopleData, testShowData, videoData)
 			const result = dataStore.searchVideos('test thing')
 
 			expect(result.map((x) => x.id)).toStrictEqual(['two', 'only_one'])
