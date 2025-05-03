@@ -210,7 +210,7 @@ async function run() {
 
 	// Process videos
 
-	log(`Adding ${gbVideos.length} IA videos...`)
+	log(`Adding ${gbVideos.length} GB videos...`)
 	for (const video of gbVideos) {
 		const videoShows = new Set()
 
@@ -225,29 +225,34 @@ async function run() {
 			videoShows.add(show.id)
 		}
 
-		// Find the IA video for this video
-		const iaVideoIndex = iaItems.findIndex((item) => {
-			let score = 0
+		// Find the IA video for this video using the GUID
+		let iaVideoIndex = iaItems.findIndex((item) => (item.guid === video.guid))
 
-			score += item.title.replaceAll(' ', '').includes(video.name.replaceAll(' ', '')) ? 1 : 0
-			score +=
-				item.description &&
-				item.description.replaceAll(' ', '').includes(video.description.replaceAll(' ', ''))
-					? 1
-					: 0
-			score += item.identifier.includes(video.guid) ? 1 : 0
-			if (item.date) {
+		if (iaVideoIndex === -1) {
+			// Find the IA video for this video using metadata matching
+			iaVideoIndex = iaItems.findIndex((item) => {
+				let score = 0
+
+				score += item.title.replaceAll(' ', '').includes(video.name.replaceAll(' ', '')) ? 1 : 0
 				score +=
-					item.date.toISOString().substring(0, 10) ==
-					video.publish_date.toISOString().substring(0, 10)
+					item.description &&
+					item.description.replaceAll(' ', '').includes(video.description.replaceAll(' ', ''))
 						? 1
 						: 0
-			}
+				score += item.identifier.includes(video.guid) ? 1 : 0
+				if (item.date) {
+					score +=
+						item.date.toISOString().substring(0, 10) ==
+						video.publish_date.toISOString().substring(0, 10)
+							? 1
+							: 0
+				}
 
-			return score >= 2 // probably the right video
-		})
-		const iaVideo = iaVideoIndex != -1 ? iaItems[iaVideoIndex] : null
+				return score >= 2 // probably the right video
+			})
+		}
 
+		const iaVideo = iaVideoIndex !== -1 ? iaItems[iaVideoIndex] : null
 		if (iaVideo) {
 			// Add the IA subjects to the show list
 			for (const subject of iaVideo.subject) {
