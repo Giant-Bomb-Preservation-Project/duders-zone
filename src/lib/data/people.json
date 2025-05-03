@@ -1,6 +1,7 @@
 {
 	"alumni": [
 		{
+			"id": "ybbaaabby",
 			"name": "Abby Russell",
 			"image": "abby.png",
 			"links": [
@@ -9,6 +10,7 @@
 			]
 		},
 		{
+			"id": "alex",
 			"name": "Alex Navarro",
 			"image": "alex.png",
 			"links": [
@@ -17,6 +19,7 @@
 			]
 		},
 		{
+			"id": "austin_walker",
 			"name": "Austin Walker",
 			"image": "austin.jpg",
 			"links": [
@@ -25,6 +28,7 @@
 			]
 		},
 		{
+			"id": "bailey",
 			"name": "Bailey Myers",
 			"image": "bailey.jpg",
 			"links": [
@@ -33,6 +37,7 @@
 			]
 		},
 		{
+			"id": "benpack",
 			"name": "Ben Pack",
 			"image": "ben.png",
 			"links": [
@@ -40,6 +45,7 @@
 			]
 		},
 		{
+			"id": "brad",
 			"name": "Brad Shoemaker",
 			"image": "brad.png",
 			"links": [
@@ -48,6 +54,7 @@
 			]
 		},
 		{
+			"id": "danryckert",
 			"name": "Dan Ryckert",
 			"image": "danr.png",
 			"links": [
@@ -56,6 +63,7 @@
 			]
 		},
 		{
+			"id": "dannyodwyer",
 			"name": "Danny O’Dwyer",
 			"image": "danny.jpg",
 			"links": [
@@ -64,6 +72,7 @@
 			]
 		},
 		{
+			"id": "snide",
 			"name": "Dave Snider",
 			"image": "dave.png",
 			"links": [
@@ -72,14 +81,16 @@
 			]
 		},
 		{
+			"id": "drewbert",
 			"name": "Drew Scanlon",
-			"image": "drew.png",
+			"image": "drewbert.png",
 			"links": [
 				"https://www.drewscanlon.com/",
 				"https://bsky.app/profile/drewscanlon.bsky.social"
 			]
 		},
 		{
+			"id": "janman",
 			"name": "Jan Ochoa",
 			"image": "jan.png",
 			"links": [
@@ -88,6 +99,7 @@
 			]
 		},
 		{
+			"id": "unastrike",
 			"name": "Jason Oestreicher",
 			"image": "jason.png",
 			"links": [
@@ -96,6 +108,7 @@
 			]
 		},
 		{
+			"id": "jerf",
 			"name": "Jeff Bakalar",
 			"image": "jeffb.png",
 			"links": [
@@ -103,6 +116,7 @@
 			]
 		},
 		{
+			"id": "jeff",
 			"name": "Jeff Gerstmann",
 			"image": "jeffge.jpg",
 			"links": [
@@ -112,6 +126,7 @@
 			]
 		},
 		{
+			"id": "jeffgrubb",
 			"name": "Jeff Grubb",
 			"image": "jeffgr.png",
 			"links": [
@@ -121,6 +136,7 @@
 			]
 		},
 		{
+			"id": "voidburger",
 			"name": "Jess O'Brien",
 			"image": "jess.png",
 			"links": [
@@ -129,6 +145,7 @@
 			]
 		},
 		{
+			"id": "lucyjamesgames",
 			"name": "Lucy James",
 			"image": "lucy.jpg",
 			"links": [
@@ -136,6 +153,7 @@
 			]
 		},
 		{
+			"id": "rorie",
 			"name": "Matthew Rorie",
 			"image": "matthew.jpg",
 			"links": [
@@ -143,6 +161,7 @@
 			]
 		},
 		{
+			"id": "minotti",
 			"name": "Mike “Mitch” Minotti",
 			"image": "minotti.jpg",
 			"links": [
@@ -153,6 +172,7 @@
 			]
 		},
 		{
+			"id": "niki",
 			"name": "Niki Grayson",
 			"image": "niki.jpg",
 			"links": [
@@ -163,6 +183,7 @@
 			]
 		},
 		{
+			"id": "patrickklepek",
 			"name": "Patrick Klepek",
 			"image": "patrick.jpg",
 			"links": [
@@ -171,6 +192,7 @@
 			]
 		},
 		{
+			"id": "turboshawn",
 			"name": "Shawn “TurboShawn” McDowell",
 			"image": "turboshawn.jpg",
 			"links": [
@@ -179,6 +201,7 @@
 			]
 		},
 		{
+			"id": "tamoor",
 			"name": "Tamoor Hussain",
 			"image": "tam.jpg",
 			"links": [
@@ -186,6 +209,7 @@
 			]
 		},
 		{
+			"id": "vinny",
 			"name": "Vincent “Vinny” Caravella",
 			"image": "vinny.png",
 			"links": [
@@ -194,6 +218,7 @@
 			]
 		},
 		{
+			"id": "will",
 			"name": "Will Smith",
 			"image": "will.jpg",
 			"links": [
@@ -205,6 +230,7 @@
 	],
 	"in_memoriam": [
 		{
+			"id": "ryan",
 			"name": "Ryan Davis",
 			"years": "1979–2013",
 			"image": "ryan.png"
