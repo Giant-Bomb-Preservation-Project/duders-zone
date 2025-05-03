@@ -12,7 +12,6 @@ export enum VideoSource {
 
 export interface Employee {
 	readonly name: string
-	readonly position: string
 	readonly image: string
 	readonly links: readonly string[]
 }
@@ -76,7 +75,6 @@ export class DataStore {
 		for (const person of peopleData.alumni) {
 			alumni.push({
 				name: person.name,
-				position: person.position,
 				image: person.image,
 				links: person.links,
 			})

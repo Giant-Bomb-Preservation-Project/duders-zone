@@ -7,7 +7,6 @@ const testPeopleData = {
 	alumni: [
 		{
 			name: 'Jeff Gerstmann',
-			position: 'Co-founder, Editor-in-Chief',
 			image: 'jeffge.jpg',
 			links: ['https://www.patreon.com/jeffgerstmann', 'https://twitter.com/jeffgerstmann'],
 		},
@@ -116,7 +115,6 @@ describe('DataStore', () => {
 				alumni: [
 					{
 						name: 'Jeff Gerstmann',
-						position: 'Co-founder, Editor-in-Chief',
 						image: 'jeffge.jpg',
 						links: [
 							'https://www.patreon.com/jeffgerstmann',

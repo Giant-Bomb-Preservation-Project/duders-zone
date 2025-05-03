@@ -22,6 +22,8 @@
 			case 'mastodon.social':
 			case 'social.davesnider.com':
 				return IconType.Mastodon
+			case 'www.patreon.com':
+				return IconType.Patreon
 			case 'www.twitch.tv':
 				return IconType.Twitch
 			default:
@@ -44,7 +46,6 @@
 					</div>
 					<div class="info">
 						<h2>{person.name}</h2>
-						<p>{person.position}</p>
 						{#if person.links}
 							<ul class="links">
 								{#each person.links as link}
