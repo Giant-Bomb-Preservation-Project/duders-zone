@@ -116,7 +116,7 @@ async function run() {
 
 	// Load data
 
-	const gb = new GiantBomb(process.env.GB_API_KEY)
+	const gb = new GiantBomb(process.env.GB_API_KEY, 1)
 	const ia = new InternetArchive()
 
 	log('Getting items from Internet Archive...')
