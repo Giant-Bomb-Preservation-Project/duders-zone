@@ -3751,8 +3751,11 @@
             "2300-19596",
             "2300-19592",
             "2300-19583",
+            "2300-19578",
             "2300-19577",
+            "2300-19570",
             "2300-19569",
+            "2300-19568",
             "2300-19567",
             "2300-19555",
             "2300-19549",
@@ -4654,7 +4657,7 @@
             "2300-10112",
             "2300-10084",
             "2300-10033",
-            "gb-2300-18310-IDLT88J",
+            "gb-2300-18309-IDVKR1T",
             "gb-Unarchived0002-IDJRO2O",
             "gb-Unarchived0143-IDIDXUM",
             "gb-Unarchived8725"
@@ -6702,7 +6705,9 @@
             "2300-19619",
             "2300-19605",
             "2300-19604",
+            "2300-19589",
             "2300-19588",
+            "2300-19574",
             "2300-19575",
             "2300-19561",
             "2300-19547",
@@ -9957,8 +9962,8 @@
             "2300-18028",
             "2300-18014",
             "2023-05-04-b-lite-club-may-the-fourth-be-with-you",
-            "gb-2300-18924-IDFO68P",
-            "gb-2300-19128-IDDPTZQ"
+            "blight-club-grubbkatana-07",
+            "gb-2300-18924-IDFO68P"
         ]
     },
     {
@@ -11158,7 +11163,7 @@
             "2300-3838",
             "2300-3819",
             "2300-3784",
-            "2300-6648",
+            "2012-10-04-thursday-night-throwdown-thursday-night-throwdown-10-04-12",
             "gb-Unarchived0045-ID4PEP3",
             "gb-Unarchived0046-IDO1PLA",
             "gb-Unarchived0047-IDILHSM",
@@ -11793,7 +11798,8 @@
             "gb-Unarchived0140-IDYKSY2",
             "gb-Unarchived0145-ID850SD",
             "gb-Unarchived8728",
-            "giant_bomb_countdown_bumper"
+            "giant_bomb_countdown_bumper",
+            "whiskey-media-moving-day"
         ]
     },
     {
@@ -13798,6 +13804,18 @@
         "videos": [
             "2300-9883",
             "2300-9882"
+        ]
+    },
+    {
+        "id": "uncategorized",
+        "gb_id": null,
+        "title": "Uncategorized",
+        "description": "For all the videos that have no show of their own.",
+        "poster": null,
+        "logo": null,
+        "videos": [
+            "2300-18530",
+            "2300-7986"
         ]
     }
 ]

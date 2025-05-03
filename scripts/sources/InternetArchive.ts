@@ -11,11 +11,22 @@ const UNWANTED_SUBJECTS = ['Giant Bomb']
 
 export interface ArchiveCollectionItem {
 	identifier: string
+	guid: string | null
 	mediatype: string
 	date: Date
 	description: string
 	subject: Array<string>
 	title: string
+}
+
+function extractGuid(item: object): string | null {
+	if (!('external-identifier' in item)) {
+		return null
+	}
+
+	const match = item['external-identifier'].toLowerCase().match(/^gb-guid:(.+)$/)
+
+	return match ? match[1] : null
 }
 
 // Gets data from the Internet Archive API
@@ -32,7 +43,7 @@ export default class InternetArchive {
 		const params = {
 			q: `collection:${identifier}`,
 			count: REQUEST_LIMIT,
-			fields: 'identifier,date,title,description,mediatype,subject',
+			fields: 'identifier,date,title,description,mediatype,subject,external-identifier',
 		}
 
 		let total = -1
@@ -62,6 +73,7 @@ export default class InternetArchive {
 						: item.subject
 				items.push({
 					identifier: item.identifier,
+					guid: extractGuid(item),
 					mediatype: item.mediatype,
 					date: item.date ? new Date(item.date) : null,
 					description: item.description,
