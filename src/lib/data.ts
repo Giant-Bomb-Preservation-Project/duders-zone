@@ -172,6 +172,11 @@ export class DataStore {
 		return Object.values(this.shows).sort(byTitleAsc)
 	}
 
+	// Get a video by its Internet Archive ID.
+	getVideoByIAId(id: string): Video | null {
+		return Object.values(this.videos).find((v) => v.source.internetarchive == id) || null
+	}
+
 	// Get a video by its ID.
 	getVideoById(id: string): Video | null {
 		return id in this.videos ? this.videos[id] : null
