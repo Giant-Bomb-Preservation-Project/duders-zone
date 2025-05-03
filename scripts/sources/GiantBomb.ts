@@ -12,6 +12,7 @@ const UNWANTED_VIDEO_TYPES = ['Trailers', 'Trailers, Exclude From Infinite', 'Tr
 export type GiantBombShow = {
 	description: string
 	id: number
+	slug: string | null
 	title: string
 	image: string | null
 	logo: string | null
@@ -19,6 +20,7 @@ export type GiantBombShow = {
 
 export type GiantBombVideoShow = {
 	id: number
+	slug: string | null
 	title: string
 	image: string | null
 	logo: string | null
@@ -34,6 +36,14 @@ export type GiantBombVideo = {
 	video_type: string
 	show: GiantBombVideoShow | null
 	youtube_id: string | null
+}
+
+// Get the slug from a show
+function getShowSlug(show: object): string | null {
+	const url = new URL(show.site_detail_url)
+	const match = url.pathname.match(/^\/shows\/(.+?)\/$/)
+
+	return match ? match[1] : null
 }
 
 // Gets data from the GiantBomb API
@@ -52,7 +62,7 @@ export default class GiantBomb {
 		const params = {
 			api_key: this.api_key,
 			format: 'json',
-			field_list: 'id,title,deck,image,logo',
+			field_list: 'id,title,deck,image,logo,site_detail_url',
 			limit: REQUEST_LIMIT,
 			offset: 0,
 		}
@@ -72,6 +82,7 @@ export default class GiantBomb {
 				shows.push({
 					description: item.deck,
 					id: item.id,
+					slug: getShowSlug(item),
 					title: item.title,
 					image: item.image?.[IMAGE_SIZE] ?? null,
 					logo: item.logo?.[IMAGE_SIZE] ?? null,
@@ -115,6 +126,7 @@ export default class GiantBomb {
 				const show = item.video_show
 					? ({
 							id: item.video_show.id,
+							slug: getShowSlug(item.video_show),
 							title: item.video_show.title,
 							image: item.video_show.image?.[IMAGE_SIZE] ?? null,
 							logo: item.video_show.logo?.[IMAGE_SIZE] ?? null,
