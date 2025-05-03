@@ -21,6 +21,9 @@ const VIDEOS_FILE_PATH = 'src/lib/data/videos.json'
 // Path to the location to store the show images
 const SHOW_IMAGES_PATH = 'static/assets/shows/'
 
+// ID of the show which holds the uncategorized videos
+const UNCATEGORIZED_SHOW_ID = 'uncategorized'
+
 ///
 /// Helper functions
 ///
@@ -194,6 +197,17 @@ async function run() {
 		}
 	}
 
+	// Add a fake show to hold all the videos that don't have shows
+	shows.push({
+		id: UNCATEGORIZED_SHOW_ID,
+		gb_id: null,
+		title: 'Uncategorized',
+		description: 'For all the videos that have no show of their own.',
+		poster: null,
+		logo: null,
+		videos: [],
+	})
+
 	// Process videos
 
 	log(`Adding ${gbVideos.length} IA videos...`)
@@ -252,10 +266,9 @@ async function run() {
 			}
 		}
 
-		// Video has no shows at all???
+		// Video has no shows at all
 		if (videoShows.size === 0) {
-			log('error', `Skipping video due to missing show: ${video.name} (${video.id})`)
-			continue // TODO: what to do?
+			videoShows.add(UNCATEGORIZED_SHOW_ID)
 		}
 
 		// Setup the video sources
@@ -304,8 +317,7 @@ async function run() {
 		}
 
 		if (videoShows.length === 0) {
-			log('error', `Skipping video due to missing show: ${video.title} (${video.identifier})`)
-			continue // TODO: what to do?
+			videoShows.push(UNCATEGORIZED_SHOW_ID)
 		}
 
 		videos.push({
