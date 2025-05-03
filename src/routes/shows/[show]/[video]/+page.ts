@@ -1,5 +1,6 @@
-import { error } from '@sveltejs/kit'
+import { error, redirect } from '@sveltejs/kit'
 import { browser } from '$app/environment'
+import { base } from '$app/paths'
 import { dataStore } from '$lib/data'
 import type { EntryGenerator, PageLoad } from './$types'
 
@@ -10,7 +11,16 @@ export const load = (({ params, url }) => {
 
 	const videos = dataStore.getVideosForShow(show)
 
-	const video = dataStore.getVideoById(params.video)
+	let video = dataStore.getVideoById(params.video)
+	if (video === null) {
+		// Try to find the video using the IA ID and redirect to the new ID
+		// TODO: Maybe remove this after some time?
+		video = dataStore.getVideoByIAId(params.video)
+		if (video) {
+			redirect(301, `${base}/shows/${params.show}/${video.id}`)
+		}
+	}
+
 	if (video === null) throw error(404, 'Not found')
 
 	const perPage = 24

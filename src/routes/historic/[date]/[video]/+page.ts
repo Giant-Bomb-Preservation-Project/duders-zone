@@ -1,4 +1,5 @@
-import { error } from '@sveltejs/kit'
+import { error, redirect } from '@sveltejs/kit'
+import { base } from '$app/paths'
 import { dataStore } from '$lib/data'
 import { allDates } from '$lib/dates'
 import { dateToText, textToDate } from '$lib/text'
@@ -10,7 +11,15 @@ export const load = (({ params }) => {
 		throw error(400, `Unable to parse date: "${params.date}"`)
 	}
 
-	const video = dataStore.getVideoById(params.video)
+	let video = dataStore.getVideoById(params.video)
+	if (video === null) {
+		// Try to find the video using the IA ID and redirect to the new ID
+		// TODO: Maybe remove this after some time?
+		video = dataStore.getVideoByIAId(params.video)
+		if (video) {
+			redirect(301, `${base}/historic/${params.date}/${video.id}`)
+		}
+	}
 
 	if (video === null) throw error(404, 'Not found')
 

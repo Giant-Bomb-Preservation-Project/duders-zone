@@ -40,12 +40,12 @@ const testShowData = [
 		description: 'We join forces across the country to overcome all obstacles.',
 		poster: '3171039-crosscoast.png',
 		logo: '3171040-crosscoast_transparent.png',
-		videos: ['gb-2300-15259-IDJIYS2', 'gb-2300-16398-IDJKE0C'],
+		videos: ['2300-15259', '2300-16398'],
 	},
 ]
 const testVideoData = [
 	{
-		id: 'gb-2300-15259-IDJIYS2',
+		id: '2300-15259',
 		show: 'cross-coast',
 		title: 'Cross Coast: Red Dead Redemption 2',
 		description: "Let's posse up and see what's new in the world of Red Dead.",
@@ -56,7 +56,7 @@ const testVideoData = [
 		},
 	},
 	{
-		id: 'gb-2300-16398-IDJKE0C',
+		id: '2300-16398',
 		show: 'cross-coast',
 		title: "Cross Coast: Abby's Not-Goodbye-But-See-You-Later Stream!",
 		description:
@@ -139,7 +139,7 @@ describe('DataStore', () => {
 					description: 'We join forces across the country to overcome all obstacles.',
 					poster: '3171039-crosscoast.png',
 					logo: '3171040-crosscoast_transparent.png',
-					videos: ['gb-2300-15259-IDJIYS2', 'gb-2300-16398-IDJKE0C'],
+					videos: ['2300-15259', '2300-16398'],
 				},
 				'this-aint-no-game': {
 					id: 'this-aint-no-game',
@@ -156,8 +156,8 @@ describe('DataStore', () => {
 				},
 			}
 			const expectedVideos = {
-				'gb-2300-15259-IDJIYS2': {
-					id: 'gb-2300-15259-IDJIYS2',
+				'2300-15259': {
+					id: '2300-15259',
 					title: 'Cross Coast: Red Dead Redemption 2',
 					description: "Let's posse up and see what's new in the world of Red Dead.",
 					date: new Date('2020-03-02T00:00:00Z'),
@@ -167,8 +167,8 @@ describe('DataStore', () => {
 						internetarchive: 'gb-2300-15259-IDJIYS2',
 					},
 				},
-				'gb-2300-16398-IDJKE0C': {
-					id: 'gb-2300-16398-IDJKE0C',
+				'2300-16398': {
+					id: '2300-16398',
 					title: "Cross Coast: Abby's Not-Goodbye-But-See-You-Later Stream!",
 					description:
 						'Join us as we wish Abby well using full sentences, one word, and eventually questionable hand gestures.',
@@ -232,17 +232,17 @@ describe('DataStore', () => {
 		it('generates a video index', () => {
 			const expected = new Map(
 				Object.entries({
-					'2': ['gb-2300-15259-IDJIYS2'],
-					abbys: ['gb-2300-16398-IDJKE0C'],
+					'2': ['2300-15259'],
+					abbys: ['2300-16398'],
 					aint: [
 						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
 						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
 						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
 					],
-					but: ['gb-2300-16398-IDJKE0C'],
-					coast: ['gb-2300-15259-IDJIYS2', 'gb-2300-16398-IDJKE0C'],
-					cross: ['gb-2300-15259-IDJIYS2', 'gb-2300-16398-IDJKE0C'],
-					dead: ['gb-2300-15259-IDJIYS2'],
+					but: ['2300-16398'],
+					coast: ['2300-15259', '2300-16398'],
+					cross: ['2300-15259', '2300-16398'],
+					dead: ['2300-15259'],
 					double: [
 						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
 					],
@@ -258,21 +258,21 @@ describe('DataStore', () => {
 						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
 						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
 					],
-					goodbye: ['gb-2300-16398-IDJKE0C'],
-					later: ['gb-2300-16398-IDJKE0C'],
+					goodbye: ['2300-16398'],
+					later: ['2300-16398'],
 					no: [
 						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
 						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
 						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
 					],
-					not: ['gb-2300-16398-IDJKE0C'],
-					red: ['gb-2300-15259-IDJIYS2'],
-					redemption: ['gb-2300-15259-IDJIYS2'],
+					not: ['2300-16398'],
+					red: ['2300-15259'],
+					redemption: ['2300-15259'],
 					resident: [
 						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
 					],
-					see: ['gb-2300-16398-IDJKE0C'],
-					stream: ['gb-2300-16398-IDJKE0C'],
+					see: ['2300-16398'],
+					stream: ['2300-16398'],
 					street: [
 						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
 					],
@@ -281,7 +281,7 @@ describe('DataStore', () => {
 						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
 						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
 					],
-					you: ['gb-2300-16398-IDJKE0C'],
+					you: ['2300-16398'],
 				})
 			)
 
@@ -336,8 +336,17 @@ describe('DataStore', () => {
 		})
 	})
 
+	describe('getVideoByIAId', () => {
+		it('gets a specific video by its IA ID', () => {
+			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
+			const result = dataStore.getVideoByIAId('gb-2300-15259-IDJIYS2')
+
+			expect(result).toStrictEqual(dataStore.videos['2300-15259'])
+		})
+	})
+
 	describe('getVideoById', () => {
-		it('gets a specific show', () => {
+		it('gets a specific video', () => {
 			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
 			const result = dataStore.getVideoById(
 				'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N'
@@ -356,7 +365,7 @@ describe('DataStore', () => {
 			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
 			const result = dataStore.getVideosForDay(new Date('2023-11-25T00:00:00Z'))
 
-			expect(result.map((x) => x.id)).toStrictEqual(['gb-2300-16398-IDJKE0C'])
+			expect(result.map((x) => x.id)).toStrictEqual(['2300-16398'])
 		})
 	})
 
@@ -365,10 +374,7 @@ describe('DataStore', () => {
 			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
 			const result = dataStore.getVideosForShow(dataStore.shows['cross-coast'])
 
-			expect(result.map((x) => x.id)).toStrictEqual([
-				'gb-2300-16398-IDJKE0C',
-				'gb-2300-15259-IDJIYS2',
-			])
+			expect(result.map((x) => x.id)).toStrictEqual(['2300-16398', '2300-15259'])
 		})
 	})
 
