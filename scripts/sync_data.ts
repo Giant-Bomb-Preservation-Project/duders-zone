@@ -226,17 +226,21 @@ async function run() {
 		}
 
 		// Find the IA video for this video using the GUID
-		let iaVideoIndex = iaItems.findIndex((item) => (item.guid === video.guid))
+		let iaVideoIndex = iaItems.findIndex((item) => item.guid === video.guid)
 
 		if (iaVideoIndex === -1) {
 			// Find the IA video for this video using metadata matching
 			iaVideoIndex = iaItems.findIndex((item) => {
 				let score = 0
 
-				score += item.title.replaceAll(' ', '').includes(video.name.replaceAll(' ', '')) ? 1 : 0
+				score += item.title.replaceAll(' ', '').includes(video.name.replaceAll(' ', ''))
+					? 1
+					: 0
 				score +=
 					item.description &&
-					item.description.replaceAll(' ', '').includes(video.description.replaceAll(' ', ''))
+					item.description
+						.replaceAll(' ', '')
+						.includes(video.description.replaceAll(' ', ''))
 						? 1
 						: 0
 				score += item.identifier.includes(video.guid) ? 1 : 0
