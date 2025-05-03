@@ -192,6 +192,15 @@
 				"https://nextlander.com/",
 				"https://bsky.app/profile/vinnycaravella.bsky.social"
 			]
+		},
+		{
+			"name": "Will Smith",
+			"image": "will.jpg",
+			"links": [
+				"https://techpod.content.town/",
+				"https://www.patreon.com/techpod",
+				"https://bsky.app/profile/willsmith.fun"
+			]
 		}
 	],
 	"in_memoriam": [
