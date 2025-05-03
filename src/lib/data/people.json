@@ -19,6 +19,14 @@
 			]
 		},
 		{
+			"id": "alexisg",
+			"name": "Alexis Gallisá",
+			"image": "alexisg.jpg",
+			"links": [
+				"https://www.alexisgallisa.com/"
+			]
+		},
+		{
 			"id": "austin_walker",
 			"name": "Austin Walker",
 			"image": "austin.jpg",
@@ -112,6 +120,7 @@
 			"name": "Jeff Bakalar",
 			"image": "jeffb.png",
 			"links": [
+				"https://www.twitch.tv/jerftv",
 				"https://bsky.app/profile/jerf.xyz"
 			]
 		},
@@ -150,6 +159,14 @@
 			"image": "lucy.jpg",
 			"links": [
 				"https://bsky.app/profile/lucyjames.games"
+			]
+		},
+		{
+			"id": "mmahardy",
+			"name": "Mike Mahardy",
+			"image": "mmahardy.jpg",
+			"links": [
+				"https://twitter.com/mmahardy"
 			]
 		},
 		{
