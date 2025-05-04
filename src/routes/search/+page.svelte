@@ -91,7 +91,7 @@
 	}
 
 	.empty {
-		color: var(--color-gray-muted);
+		color: var(--color-text-muted);
 		font-size: 24px;
 		font-style: italic;
 		margin: 5em 0;
