@@ -367,6 +367,21 @@ describe('DataStore', () => {
 		})
 	})
 
+	describe('getVideos', () => {
+		it('gets all videos', () => {
+			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
+			const result = dataStore.getVideos()
+
+			expect(result.map((x) => x.id)).toStrictEqual([
+				'2300-16398',
+				'2300-15259',
+				'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+				'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+				'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+			])
+		})
+	})
+
 	describe('getVideosForShow', () => {
 		it('gets a specific show', () => {
 			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)

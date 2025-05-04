@@ -180,6 +180,11 @@ export class DataStore {
 		return id in this.videos ? this.videos[id] : null
 	}
 
+	// Get all videos sorted by date.
+	getVideos(): Video[] {
+		return Object.values(this.videos).sort(byDateDesc)
+	}
+
 	// Get all videos which were released on a given day.
 	getVideosForDay(day?: Date): Video[] {
 		day = day || new Date()
