@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { base } from '$app/paths'
 	import type { PageData } from './$types'
+	import Button from '$lib/components/Button.svelte'
+	import Icon, { IconType } from '$lib/components/Icon.svelte'
 	import { ShowSorting } from '$lib/types'
 
 	interface Props {
@@ -46,6 +48,13 @@
 	</ul>
 </section>
 
+<nav class="container">
+	<Button href={`${base}/videos/all`}>
+		Show me everything
+		<Icon type={IconType.ArrowRight} />
+	</Button>
+</nav>
+
 <svelte:head>
 	<meta property="og:url" content="https://duders.zone/" />
 	<meta property="og:type" content="website" />
@@ -66,6 +75,11 @@
 		font-size: 18px;
 		line-height: 20px;
 		margin: 0.5em 0 0.3em;
+	}
+
+	nav {
+		margin: 2em auto 4em;
+		text-align: center;
 	}
 
 	select {
