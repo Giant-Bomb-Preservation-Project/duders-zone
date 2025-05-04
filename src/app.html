@@ -6,6 +6,13 @@
 		<link rel="icon" href="%sveltekit.assets%/favicon-gb.ico" />
 
 		%sveltekit.head%
+
+		<script type="text/javascript">
+			const wantsToGoDark = window.matchMedia('(prefers-color-scheme: dark)')
+			if (wantsToGoDark.matches) {
+				document.documentElement.setAttribute('data-theme', 'dark')
+			}
+		</script>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
