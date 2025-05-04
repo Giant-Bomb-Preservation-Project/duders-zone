@@ -3,5 +3,5 @@ import { base } from '$app/paths'
 import type { PageLoad } from './$types'
 
 export const load = (() => {
-	redirect(301, `${base}/videos`)
+	redirect(301, `${base}/videos/shows`)
 }) satisfies PageLoad
