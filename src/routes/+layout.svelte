@@ -16,7 +16,7 @@
 
 	const { children }: Props = $props()
 	const menu = [
-		{ path: `${base}/shows`, text: 'Shows' },
+		{ path: `${base}/videos`, text: 'Videos' },
 		{ path: `${base}/historic`, text: 'Historic' },
 		{ path: `${base}/search`, text: 'Search' },
 		{ path: `${base}/random`, text: 'Random' },

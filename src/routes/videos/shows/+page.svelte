@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { base } from '$app/paths'
 	import type { PageData } from './$types'
+	import Button from '$lib/components/Button.svelte'
+	import Icon, { IconType } from '$lib/components/Icon.svelte'
+	import VideosHeader, { VideosPage } from '$lib/components/VideosHeader.svelte'
 	import { ShowSorting } from '$lib/types'
 
 	interface Props {
@@ -19,9 +22,11 @@
 	}
 </script>
 
-<h1 class="sr-only">Shows</h1>
+<VideosHeader current={VideosPage.Shows} />
 
 <section class="container shows">
+	<h1 class="sr-only">Shows</h1>
+
 	<form>
 		<select id="sorting" bind:value={sorting}>
 			<option value={ShowSorting.alphabetical}>Alphabetical</option>
@@ -31,7 +36,7 @@
 	<ul>
 		{#each sortedShows as show}
 			<li>
-				<a href={`${base}/shows/${show.id}`}>
+				<a href={`${base}/videos/${show.id}`}>
 					<img
 						src={show.poster
 							? `${base}/assets/shows/${show.poster}`
@@ -53,7 +58,7 @@
 	<meta property="og:description" content="An archival website about video games." />
 	<meta property="og:image" content="https://duders.zone/image.png" />
 	<meta property="og:site_name" content="Duders Zone" />
-	<title>Shows - Duders Zone</title>
+	<title>Videos - Duders Zone</title>
 	<meta name="description" content="An archival website about video games." />
 </svelte:head>
 

@@ -77,7 +77,7 @@
 <ul class={mode ?? $videoListMode}>
 	{#each paginatedVideos as video}
 		<li>
-			<a href="{rootUri || `${base}/shows/${video.show}`}/{video.id}">
+			<a href="{rootUri || `${base}/videos/${video.show}`}/{video.id}">
 				<div class="thumbnail">
 					<Thumbnail src={video.thumbnail || '/assets/default.jpg'} alt="" />
 				</div>
@@ -101,7 +101,7 @@
 	h3 {
 		font-size: 21px;
 		line-height: 25px;
-		margin: 10px 0 2px;
+		margin: var(--spacing-less) 0 0;
 	}
 
 	time {
@@ -207,6 +207,11 @@
 			background-image: url(/assets/bg-border-dark.png);
 		}
 
+		ul.grid h3 {
+			font-size: 18px;
+			line-height: 21px;
+		}
+
 		.controls {
 			display: block;
 			margin-left: auto;
@@ -214,7 +219,7 @@
 
 		.thumbnail {
 			flex: 0 0 220px;
-			margin-right: 2.12766%;
+			margin-right: var(--spacing);
 		}
 	}
 
