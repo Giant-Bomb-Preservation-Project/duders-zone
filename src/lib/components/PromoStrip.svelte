@@ -49,6 +49,7 @@
 
 	h3 {
 		font-size: 24px;
+		line-height: 30px;
 		text-shadow: rgba(0, 0, 0, 0.75) 0 1px 1px;
 		margin: 0;
 		transition: text-shadow 0.25s;

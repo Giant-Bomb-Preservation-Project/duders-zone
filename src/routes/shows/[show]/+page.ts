@@ -1,5 +1,6 @@
 import { redirect } from '@sveltejs/kit'
 import { base } from '$app/paths'
+import { dataStore } from '$lib/data'
 import type { EntryGenerator, PageLoad } from './$types'
 
 export const load = (({ params }) => {
