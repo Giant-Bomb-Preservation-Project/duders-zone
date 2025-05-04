@@ -33,6 +33,9 @@
 </script>
 
 <div class="container">
+	<p class="note">
+		Some of the fine folks who are a part of the Giant Bomb Extended Universe &hearts;
+	</p>
 	<section>
 		<h1 class="sr-only">Alumni</h1>
 		<ul class="people">
@@ -119,14 +122,18 @@
 
 	p {
 		font-size: 12pt;
-		margin: 0.2em 0;
+		font-style: italic;
+		margin: 1em 0;
+		text-align: center;
 	}
 
 	p.thank-you {
 		font-size: 22px;
-		font-style: italic;
 		margin: 3em 0;
-		text-align: center;
+	}
+
+	p.note {
+		color: var(--color-text-muted);
 	}
 
 	ul {
