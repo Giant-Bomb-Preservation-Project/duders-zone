@@ -68,9 +68,8 @@
 <style>
 	ul {
 		list-style: none;
-		margin: 0;
+		margin: var(--spacing) 0 calc(var(--spacing) * 2);
 		padding: 0;
-		margin-top: var(--spacing);
 		display: flex;
 	}
 

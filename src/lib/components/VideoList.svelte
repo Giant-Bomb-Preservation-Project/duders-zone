@@ -101,7 +101,7 @@
 	h3 {
 		font-size: 21px;
 		line-height: 25px;
-		margin: 10px 0 0;
+		margin: 10px 0 2px;
 	}
 
 	time {
@@ -119,7 +119,7 @@
 
 	ul a {
 		display: block;
-		color: var(--color-gray);
+		color: var(--color-text-muted);
 	}
 
 	ul a:hover h3 {
@@ -133,6 +133,10 @@
 		padding: 15px 0 17px;
 	}
 
+	:global([data-theme='dark']) ul li {
+		background-image: url(/assets/bg-border-dark.png);
+	}
+
 	ul li:last-child {
 		background-image: none;
 	}
@@ -144,26 +148,29 @@
 	.controls button {
 		background: none;
 		border: none;
-		color: var(--color-red-active);
+		color: var(--color-text-muted);
 		cursor: pointer;
 		font-family: inherit;
 		font-size: 14px;
 		line-height: 20px;
 	}
 
-	.controls button.active,
 	.controls button:hover {
-		color: var(--color-gray);
+		color: var(--color-red-active);
+	}
+
+	.controls button.active {
+		color: var(--color-text);
 	}
 
 	.metadata {
-		color: var(--color-gray-muted);
+		color: var(--color-text-muted);
 		font-size: 14px;
 		line-height: 20px;
 	}
 
 	.metadata h3 {
-		color: var(--color-gray);
+		color: var(--color-text);
 	}
 
 	.thumbnail :global(.thumbnail) {
@@ -177,26 +184,27 @@
 			column-gap: 10px;
 		}
 
-		ul li {
+		ul li,
+		:global([data-theme='dark']) ul li {
 			background-image: none;
 		}
 	}
 
 	@media (min-width: 768px) {
-		ul:not(.grid) {
+		ul.list {
 			display: block;
 		}
 
-		ul:not(.grid) a {
+		ul.list a {
 			display: flex;
 		}
 
-		ul:not(.grid) li {
+		ul.list li {
 			background-image: url(/assets/bg-border-light.png);
 		}
 
-		ul li:last-child {
-			background-image: none;
+		:global([data-theme='dark']) ul.list li {
+			background-image: url(/assets/bg-border-dark.png);
 		}
 
 		.controls {

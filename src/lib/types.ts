@@ -3,6 +3,11 @@ export enum ShowSorting {
 	mostVideos,
 }
 
+export enum Theme {
+	Dark = 'dark',
+	Light = 'light',
+}
+
 export enum VideoListMode {
 	List = 'list',
 	Grid = 'grid',

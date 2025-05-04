@@ -47,6 +47,11 @@
 		margin-top: 6px;
 	}
 
+	:global([data-theme='dark']) .header-wrapper::after,
+	:global([data-theme='dark']) .header-wrapper::before {
+		background-image: url(/assets/bg-border-dark.png);
+	}
+
 	@media (min-width: 768px) {
 		h2 {
 			font-size: 18px;

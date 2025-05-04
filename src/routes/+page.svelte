@@ -200,7 +200,7 @@
 	}
 
 	.shows a {
-		border: 1px solid white;
+		border: 1px solid var(--color-background);
 		box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px;
 		color: white;
 		display: block;

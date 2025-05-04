@@ -63,10 +63,9 @@
 		bottom: -5px;
 		z-index: -1;
 		border-radius: 18px;
-		background-color: #fcfcfd;
-		box-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px inset;
-		background-color: #fcfcfd;
-		background-image: linear-gradient(#e7e8e9, rgba(252, 252, 253, 0));
+		background-color: var(--color-background);
+		background-image: linear-gradient(rgba(252, 252, 253, 0.1), rgba(252, 252, 253, 0));
 		background-repeat: repeat-x;
+		box-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px inset;
 	}
 </style>

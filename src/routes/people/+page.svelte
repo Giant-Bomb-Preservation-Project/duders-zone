@@ -100,6 +100,14 @@
 		margin-top: var(--spacing);
 	}
 
+	a {
+		color: var(--color-text-muted);
+	}
+
+	a:hover {
+		color: var(--color-red);
+	}
+
 	h1 {
 		font-size: 32px;
 		line-height: 35px;

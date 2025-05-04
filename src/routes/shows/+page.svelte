@@ -63,9 +63,9 @@
 	}
 
 	h2 {
-		font-size: 16px;
+		font-size: 18px;
 		line-height: 20px;
-		margin: 0;
+		margin: 0.5em 0 0.3em;
 	}
 
 	select {
@@ -80,11 +80,15 @@
 
 	ul a {
 		display: block;
-		color: var(--color-gray);
+		color: var(--color-text);
 	}
 
 	ul a:hover h2 {
 		color: var(--color-red-active);
+	}
+
+	ul a p {
+		color: var(--color-text-muted);
 	}
 
 	ul img {
