@@ -14,8 +14,8 @@
 
 	const { current }: Props = $props()
 	const urls: { [key in VideosPage]: any } = {
-		[VideosPage.Videos]: `${base}/videos`,
 		[VideosPage.Shows]: `${base}/videos/shows`,
+		[VideosPage.Videos]: `${base}/videos/all`,
 	}
 </script>
 
