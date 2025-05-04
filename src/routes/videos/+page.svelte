@@ -31,7 +31,7 @@
 	<ul>
 		{#each sortedShows as show}
 			<li>
-				<a href={`${base}/shows/${show.id}`}>
+				<a href={`${base}/videos/${show.id}`}>
 					<img
 						src={show.poster
 							? `${base}/assets/shows/${show.poster}`
@@ -53,7 +53,7 @@
 	<meta property="og:description" content="An archival website about video games." />
 	<meta property="og:image" content="https://duders.zone/image.png" />
 	<meta property="og:site_name" content="Duders Zone" />
-	<title>Shows - Duders Zone</title>
+	<title>Videos - Duders Zone</title>
 	<meta name="description" content="An archival website about video games." />
 </svelte:head>
 

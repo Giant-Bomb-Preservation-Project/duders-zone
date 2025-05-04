@@ -89,12 +89,12 @@
 			</a>
 
 			<Header title="Some Random Shows">
-				<div class="see-all">&middot; <a href={`${base}/shows`}>See All</a></div>
+				<div class="see-all">&middot; <a href={`${base}/videos`}>See All</a></div>
 			</Header>
 			<ul class="shows">
 				{#each shows as show}
 					<li>
-						<a href={`${base}/shows/${show.id}`}>
+						<a href={`${base}/videos/${show.id}`}>
 							<img
 								src={show.poster
 									? `${base}/assets/shows/${show.poster}`

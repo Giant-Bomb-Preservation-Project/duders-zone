@@ -44,7 +44,7 @@
 
 <Splash image={video.thumbnail || `${base}/assets/default.jpg`}>
 	<div class="metadata">
-		<a href={`${base}/shows/${video.show}/${video.id}`}>
+		<a href={`${base}/videos/${video.show}/${video.id}`}>
 			<h3>{video.title}</h3>
 			<p>{video.description}</p>
 			<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>

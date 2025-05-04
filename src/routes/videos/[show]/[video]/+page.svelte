@@ -27,7 +27,7 @@
 </section>
 
 <svelte:head>
-	<meta property="og:url" content="https://duders.zone/shows/{data.video.show}/{data.video.id}" />
+	<meta property="og:url" content="https://duders.zone/videos/{data.video.show}/{data.video.id}" />
 	<meta property="og:type" content="video.other" />
 	<meta property="og:title" content={data.video.title} />
 	<meta property="og:description" content={data.video.description} />

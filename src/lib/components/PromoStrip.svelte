@@ -13,7 +13,7 @@
 	<ul>
 		{#each videos as video}
 			<li style="background-image: url('{video.thumbnail || '{base}/assets/default.jpg'}');">
-				<a href={`${base}/shows/${video.show}/${video.id}`}>
+				<a href={`${base}/videos/${video.show}/${video.id}`}>
 					<hgroup>
 						<span>
 							Video

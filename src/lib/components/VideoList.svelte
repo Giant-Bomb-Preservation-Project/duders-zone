@@ -77,7 +77,7 @@
 <ul class={mode ?? $videoListMode}>
 	{#each paginatedVideos as video}
 		<li>
-			<a href="{rootUri || `${base}/shows/${video.show}`}/{video.id}">
+			<a href="{rootUri || `${base}/videos/${video.show}`}/{video.id}">
 				<div class="thumbnail">
 					<Thumbnail src={video.thumbnail || '/assets/default.jpg'} alt="" />
 				</div>
