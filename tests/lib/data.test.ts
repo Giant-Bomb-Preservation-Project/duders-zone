@@ -76,7 +76,7 @@ const testVideoData = [
 		date: '2009-02-11T00:00:00Z',
 		thumbnail:
 			'https://archive.org/services/img/2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
-		duration: null,
+		duration: 1,
 		source: {
 			internetarchive:
 				'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
@@ -165,7 +165,7 @@ describe('DataStore', () => {
 					description: "Let's posse up and see what's new in the world of Red Dead.",
 					date: new Date('2020-03-02T00:00:00Z'),
 					thumbnail: 'https://archive.org/services/img/gb-2300-15259-IDJIYS2',
-					duration: 7300,
+					duration: '02:01:40',
 					show: 'cross-coast',
 					source: {
 						internetarchive: 'gb-2300-15259-IDJIYS2',
@@ -178,7 +178,7 @@ describe('DataStore', () => {
 						'Join us as we wish Abby well using full sentences, one word, and eventually questionable hand gestures.',
 					date: new Date('2020-11-25T00:00:00Z'),
 					thumbnail: 'https://archive.org/services/img/gb-2300-16398-IDJKE0C',
-					duration: 7925,
+					duration: '02:12:05',
 					show: 'cross-coast',
 					source: {
 						internetarchive: 'gb-2300-16398-IDJKE0C',
@@ -192,7 +192,7 @@ describe('DataStore', () => {
 					date: new Date('2009-02-11T00:00:00Z'),
 					thumbnail:
 						'https://archive.org/services/img/2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
-					duration: null,
+					duration: '00:00:01',
 					show: 'this-aint-no-game',
 					source: {
 						internetarchive:
@@ -207,7 +207,7 @@ describe('DataStore', () => {
 					date: new Date('2009-02-19T00:00:00Z'),
 					thumbnail:
 						'https://archive.org/services/img/2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-					duration: null,
+					duration: '--:--:--',
 					show: 'this-aint-no-game',
 					source: {
 						internetarchive:
@@ -221,7 +221,7 @@ describe('DataStore', () => {
 					date: new Date('2009-02-26T00:00:00Z'),
 					thumbnail:
 						'https://archive.org/services/img/2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
-					duration: null,
+					duration: '--:--:--',
 					show: 'this-aint-no-game',
 					source: {
 						internetarchive:

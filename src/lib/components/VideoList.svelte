@@ -121,6 +121,7 @@
 			<a href="{rootUri || `${base}/videos/${video.show}`}/{video.id}">
 				<div class="thumbnail">
 					<Thumbnail src={video.thumbnail || '/assets/default.jpg'} alt="" />
+					<span class="duration">{video.duration}</span>
 				</div>
 				<div class="metadata">
 					<h3>{video.title}</h3>
@@ -255,6 +256,20 @@
 		margin-top: -33px;
 		margin-left: -33px;
 		z-index: 1;
+	}
+
+	.thumbnail .duration {
+		background: black;
+		border-radius: 100px;
+		bottom: var(--spacing-less);
+		box-shadow: rgba(255, 255, 255, 0.25) 0 1px 1px;
+		color: white;
+		font-size: 12px;
+		left: var(--spacing-less);
+		line-height: 16px;
+		padding: 1px 6px 0;
+		position: absolute;
+		text-shadow: rgba(0, 0, 0, 0.5) 0 -1px 0;
 	}
 
 	@media (min-width: 576px) {

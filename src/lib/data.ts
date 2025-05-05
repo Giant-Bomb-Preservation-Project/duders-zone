@@ -43,13 +43,16 @@ export interface Video {
 	readonly date: Date
 	readonly show?: string
 	readonly thumbnail?: string
-	readonly duration?: number
+	readonly duration: string
 	readonly source: {
 		readonly internetarchive?: string
 		readonly direct?: string
 		readonly youtube?: string
 	}
 }
+
+const SECONDS_PER_HOUR = 3600
+const SECONDS_PER_MINUTE = 60
 
 // Sort by date descending
 const byDateDesc = (a: { date: Date }, b: { date: Date }) => b.date.getTime() - a.date.getTime()
@@ -62,6 +65,25 @@ const byRandom = () => 0.5 - Math.random()
 
 // Sort by title ascending
 const byTitleAsc = (a: { title: string }, b: { title: string }) => a.title.localeCompare(b.title)
+
+// Format the duration, converting from seconds to hh:mm:ss
+function formatDuration(duration: number | null): string {
+	if (!duration) {
+		return '--:--:--'
+	}
+
+	const hours = Math.floor(duration / SECONDS_PER_HOUR)
+	const minutes = Math.floor((duration - hours * SECONDS_PER_HOUR) / SECONDS_PER_MINUTE)
+	const seconds = duration - hours * SECONDS_PER_HOUR - minutes * SECONDS_PER_MINUTE
+
+	return (
+		String(hours).padStart(2, '0') +
+		':' +
+		String(minutes).padStart(2, '0') +
+		':' +
+		String(seconds).padStart(2, '0')
+	)
+}
 
 // Data store which contains the data for the app.
 export class DataStore {
@@ -120,7 +142,7 @@ export class DataStore {
 				date: new Date(video.date ?? '2008-03-06T12:00Z'),
 				show: video.show,
 				thumbnail: video.thumbnail,
-				duration: video.duration,
+				duration: formatDuration(video.duration),
 				source: video.source,
 			}
 		}
