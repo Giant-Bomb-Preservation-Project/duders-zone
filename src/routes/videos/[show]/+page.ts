@@ -1,6 +1,9 @@
+import { get } from 'svelte/store'
 import { error, redirect } from '@sveltejs/kit'
 import { base } from '$app/paths'
 import { dataStore } from '$lib/data'
+import { videoListSorting } from '$lib/store'
+import { VideoListSorting } from '$lib/types'
 import type { EntryGenerator, PageLoad } from './$types'
 
 export const load = (({ params }) => {
@@ -10,7 +13,12 @@ export const load = (({ params }) => {
 	const videos = dataStore.getVideosForShow(show)
 	if (videos.length === 0) throw error(404, 'Not found')
 
-	redirect(302, `${base}/videos/${show.id}/${videos[0].id}`)
+	const video =
+		get(videoListSorting) === VideoListSorting.NewestFirst
+			? videos[0]
+			: videos[videos.length - 1]
+
+	redirect(302, `${base}/videos/${show.id}/${video.id}`)
 }) satisfies PageLoad
 
 export const entries: EntryGenerator = () => {
