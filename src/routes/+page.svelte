@@ -39,7 +39,7 @@
 	<LoadingIndicator />
 {:else}
 	{#if mainVideo}
-		<VideoEmbed video={mainVideo} />
+		<VideoEmbed video={mainVideo} linkToVideo={true} />
 	{/if}
 
 	<PromoStrip videos={randomVideos} />
