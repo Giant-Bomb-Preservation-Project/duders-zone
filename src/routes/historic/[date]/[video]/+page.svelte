@@ -62,7 +62,12 @@
 		<input type="submit" value="Go" />
 	</form>
 
-	<VideoList videos={data.videos} title="This Day in Giant Bomb History" rootUri={currentUri} />
+	<VideoList
+		videos={data.videos}
+		currentVideo={data.video}
+		title="This Day in Giant Bomb History"
+		rootUri={currentUri}
+	/>
 </section>
 
 <svelte:head>

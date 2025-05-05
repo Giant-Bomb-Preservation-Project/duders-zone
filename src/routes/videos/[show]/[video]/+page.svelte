@@ -20,8 +20,9 @@
 <section class="container videos">
 	<VideoList
 		videos={data.videos}
+		currentVideo={data.video}
 		title={data.show.title}
-		perPage={data.perPage}
+		perPage={24}
 		pageNumber={data.pageNumber}
 	/>
 </section>

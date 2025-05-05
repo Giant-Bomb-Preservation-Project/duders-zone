@@ -2,6 +2,7 @@ import { writable } from 'svelte/store'
 
 import { VideoSource } from '$lib/data'
 import { Theme, VideoListMode } from '$lib/types'
+import { VideoListSorting } from './types'
 
 // Create a store for browsers
 const createBrowserStore = (key: string, defaultValue: any) => {
@@ -41,3 +42,9 @@ export const videoListMode =
 	typeof localStorage === 'undefined'
 		? createNodeStore(VideoListMode.List)
 		: createBrowserStore('videoListMode', VideoListMode.List)
+
+// How to sort the video list
+export const videoListSorting =
+	typeof localStorage === 'undefined'
+		? createNodeStore(VideoListSorting.NewestFirst)
+		: createBrowserStore('videoSorting', VideoListSorting.NewestFirst)

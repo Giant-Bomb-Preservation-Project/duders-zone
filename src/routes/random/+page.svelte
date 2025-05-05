@@ -43,7 +43,7 @@
 	{#if loading || videos.length == 0}
 		<LoadingIndicator />
 	{:else}
-		<VideoList {videos} title="Random Videos" />
+		<VideoList {videos} title="Random Videos" sortable={false} />
 	{/if}
 
 	<div class="controls">

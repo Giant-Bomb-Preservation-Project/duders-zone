@@ -22,21 +22,12 @@ export const load = (({ params, url }) => {
 
 	if (video === null) throw error(404, 'Not found')
 
-	const perPage = 24
-	let pageNumber: number = 1
-	if (browser && url.searchParams.get('page')) {
-		pageNumber = parseInt(url.searchParams.get('page') ?? '1') || 1
-	} else {
-		// Determine which page the current video is on
-		for (let i = 0; i < videos.length; i++) {
-			if (videos[i].id === video.id) {
-				pageNumber = Math.floor(i / perPage) + 1
-				break
-			}
-		}
-	}
+	let pageNumber: number | null =
+		browser && url.searchParams.get('page')
+			? parseInt(url.searchParams.get('page') ?? '1') || 1
+			: null
 
-	return { show, video, videos, pageNumber, perPage }
+	return { show, video, videos, pageNumber }
 }) satisfies PageLoad
 
 export const entries: EntryGenerator = () => {

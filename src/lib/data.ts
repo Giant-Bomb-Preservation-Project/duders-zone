@@ -116,7 +116,7 @@ export class DataStore {
 				id: video.id,
 				title: video.title,
 				description: video.description,
-				date: new Date(video.date),
+				date: new Date(video.date ?? '2008-03-06T12:00Z'),
 				show: video.show,
 				thumbnail: video.thumbnail,
 				source: video.source,
