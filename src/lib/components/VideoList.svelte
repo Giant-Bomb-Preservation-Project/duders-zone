@@ -179,7 +179,7 @@
 	}
 
 	ul li:last-child {
-		background-image: none;
+		background-image: none !important;
 	}
 
 	.controls {
