@@ -134,7 +134,7 @@
 	{/each}
 </ul>
 
-{#if !seeAllUrl}
+{#if perPage !== -1}
 	<Pagination totalResults={videos.length} {currentPage} {totalPages} />
 {/if}
 
@@ -167,6 +167,10 @@
 		color: var(--color-red-active);
 	}
 
+	ul a:hover .thumbnail::before {
+		display: block;
+	}
+
 	ul li {
 		background-position: bottom;
 		background-image: url(/assets/bg-border-light.png);
@@ -179,7 +183,7 @@
 	}
 
 	ul li:last-child {
-		background-image: none;
+		background-image: none !important;
 	}
 
 	.controls {
@@ -228,8 +232,29 @@
 		color: var(--color-text);
 	}
 
+	.thumbnail {
+		position: relative;
+	}
+
 	.thumbnail :global(.thumbnail) {
 		box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+	}
+
+	.thumbnail::before {
+		content: ' ';
+		display: none;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 0;
+		float: left;
+		background: url(/assets/av-splash-65x65.png) no-repeat center top;
+		background-size: 100% auto;
+		width: 65px;
+		padding-top: 65px;
+		margin-top: -33px;
+		margin-left: -33px;
+		z-index: 1;
 	}
 
 	@media (min-width: 576px) {
