@@ -36,6 +36,7 @@ export type GiantBombVideo = {
 	video_type: string
 	show: GiantBombVideoShow | null
 	youtube_id: string | null
+	duration: number | null
 }
 
 // Get the slug from a show
@@ -102,7 +103,7 @@ export default class GiantBomb {
 		const params = {
 			api_key: this.api_key,
 			format: 'json',
-			field_list: 'deck,id,guid,image,name,publish_date,video_show,video_type,youtube_id',
+			field_list: 'deck,id,guid,image,name,publish_date,video_show,video_type,youtube_id,length_seconds',
 			limit: REQUEST_LIMIT,
 			offset: 0,
 		}
@@ -143,6 +144,7 @@ export default class GiantBomb {
 					video_type: item.video_type,
 					show: show,
 					youtube_id: item.youtube_id,
+					duration: item.length_seconds ?? null,
 				} as GiantBombVideo)
 			}
 

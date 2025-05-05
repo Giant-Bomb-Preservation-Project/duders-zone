@@ -43,6 +43,7 @@ export interface Video {
 	readonly date: Date
 	readonly show?: string
 	readonly thumbnail?: string
+	readonly duration?: number
 	readonly source: {
 		readonly internetarchive?: string
 		readonly direct?: string
@@ -119,6 +120,7 @@ export class DataStore {
 				date: new Date(video.date ?? '2008-03-06T12:00Z'),
 				show: video.show,
 				thumbnail: video.thumbnail,
+				duration: video.duration,
 				source: video.source,
 			}
 		}

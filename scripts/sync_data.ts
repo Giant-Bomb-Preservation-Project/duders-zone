@@ -298,6 +298,7 @@ async function run() {
 			description: video.description,
 			date: video.publish_date,
 			thumbnail: video.image,
+			duration: video.duration,
 			source,
 		})
 
@@ -337,6 +338,7 @@ async function run() {
 			description: video.description,
 			date: video.date,
 			thumbnail: `https://archive.org/services/img/${video.identifier}`,
+			duration: null,
 			source: {
 				internetarchive: video.identifier,
 			},
