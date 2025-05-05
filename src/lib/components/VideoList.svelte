@@ -11,22 +11,24 @@
 	interface Props {
 		videos: Video[]
 		title: string
+		currentVideo?: Video
 		rootUri?: string
 		seeAllUrl?: string
 		mode?: VideoListMode
 		perPage?: number
-		pageNumber?: number
+		pageNumber?: number | null
 		sortable?: boolean
 	}
 
 	const {
 		videos,
 		title,
+		currentVideo,
 		rootUri,
 		seeAllUrl,
 		mode,
 		perPage = -1,
-		pageNumber = 1,
+		pageNumber = null,
 		sortable = true,
 	}: Props = $props()
 
@@ -36,12 +38,26 @@
 	)
 
 	let totalPages = $derived(perPage != -1 ? Math.ceil(videos.length / perPage) : 1)
+	let currentPage = $derived.by(() => {
+		if (!currentVideo || pageNumber || perPage === -1) {
+			return pageNumber ?? 1
+		}
+
+		// Determine which page the current video is on
+		for (let i = 0; i < sortedVideos.length; i++) {
+			if (sortedVideos[i].id === currentVideo.id) {
+				return Math.floor(i / perPage) + 1
+			}
+		}
+
+		return 1 // shouldn't happen, but just in case
+	})
 	let paginatedVideos = $derived.by(() => {
 		if (perPage == -1) {
 			return sortedVideos
 		}
 
-		const itemIndexStart = (pageNumber - 1) * perPage
+		const itemIndexStart = (currentPage - 1) * perPage
 		return sortedVideos.slice(itemIndexStart, itemIndexStart + perPage)
 	})
 </script>
@@ -119,7 +135,7 @@
 </ul>
 
 {#if !seeAllUrl}
-	<Pagination totalResults={videos.length} currentPage={pageNumber} {totalPages} />
+	<Pagination totalResults={videos.length} {currentPage} {totalPages} />
 {/if}
 
 <style>
