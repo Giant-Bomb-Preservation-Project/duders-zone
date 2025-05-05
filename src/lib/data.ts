@@ -73,8 +73,8 @@ function formatDuration(duration: number | null): string {
 	}
 
 	const hours = Math.floor(duration / SECONDS_PER_HOUR)
-	const minutes = Math.floor((duration - hours * SECONDS_PER_HOUR) / SECONDS_PER_MINUTE)
-	const seconds = duration - hours * SECONDS_PER_HOUR - minutes * SECONDS_PER_MINUTE
+	const minutes = Math.floor(duration % SECONDS_PER_HOUR / SECONDS_PER_MINUTE)
+	const seconds = duration % SECONDS_PER_MINUTE
 
 	return (
 		String(hours).padStart(2, '0') +
