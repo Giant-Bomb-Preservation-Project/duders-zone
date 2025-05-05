@@ -51,16 +51,6 @@ describe('prettyUrl', () => {
 		}
 	})
 
-	it('adds @ to twitter links', () => {
-		const tests: { [key: string]: string } = {
-			'http://twitter.com/giantbomb': '@giantbomb',
-			'https://twitter.com/jeffgerstmann': '@jeffgerstmann',
-		}
-		for (const input of Object.keys(tests)) {
-			expect(prettyUrl(input)).toStrictEqual(tests[input])
-		}
-	})
-
 	it('adds @ to Bluesky links', () => {
 		const tests: { [key: string]: string } = {
 			'https://bsky.app/profile/giantbomb.bsky.social': '@giantbomb.bsky.social',

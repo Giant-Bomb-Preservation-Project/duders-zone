@@ -45,10 +45,6 @@ export function prettyUrl(url: string): string {
 		return url // ignore errors
 	}
 
-	if (realUrl.hostname === 'twitter.com') {
-		return '@' + realUrl.pathname.replace('/', '')
-	}
-
 	if (realUrl.hostname === 'bsky.app') {
 		return '@' + realUrl.pathname.replace('/profile/', '')
 	}
