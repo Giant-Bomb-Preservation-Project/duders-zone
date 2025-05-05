@@ -155,6 +155,15 @@
 			]
 		},
 		{
+			"id": "joeyf",
+			"name": "Joey Fameli",
+			"image": ".jpg",
+			"links": [
+				"https://www.joeyfameli.com/",
+				"https://bsky.app/profile/joeyfameli.bsky.social"
+			]
+		},
+		{
 			"id": "lucyjamesgames",
 			"name": "Lucy James",
 			"image": "lucy.jpg",
@@ -168,6 +177,15 @@
 			"image": "mmahardy.jpg",
 			"links": [
 				"https://twitter.com/mmahardy"
+			]
+		},
+		{
+			"id": "marykish",
+			"name": "Mary Kish",
+			"image": "marykish.jpg",
+			"links": [
+				"https://www.twitch.tv/merrykish",
+				"https://bsky.app/profile/merrykish.bsky.social"
 			]
 		},
 		{
@@ -201,6 +219,14 @@
 			]
 		},
 		{
+			"id": "normanchan",
+			"name": "Norman Chan",
+			"image": "normanchan.jpeg",
+			"links": [
+				"https://www.tested.com/"
+			]
+		},
+		{
 			"id": "patrickklepek",
 			"name": "Patrick Klepek",
 			"image": "patrick.jpg",
@@ -208,6 +234,18 @@
 				"https://linktr.ee/patrickklepek",
 				"https://bsky.app/profile/patrickklepek.bsky.social"
 			]
+		},
+		{
+			"id": "saralima",
+			"name": "Sara Lima",
+			"image": "saralima.jpg",
+			"links": []
+		},
+		{
+			"id": "coonce",
+			"name": "Sean Coonce",
+			"image": "coonce.png",
+			"links": []
 		},
 		{
 			"id": "turboshawn",
@@ -225,6 +263,12 @@
 			"links": [
 				"https://bsky.app/profile/tamoorh.com"
 			]
+		},
+		{
+			"id": "gman",
+			"name": "Tony Guerrero",
+			"image": "gman.jpg",
+			"links": []
 		},
 		{
 			"id": "vinny",
