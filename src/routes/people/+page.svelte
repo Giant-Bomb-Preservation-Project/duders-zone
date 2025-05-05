@@ -34,7 +34,8 @@
 
 <div class="container">
 	<p class="note">
-		Some of the fine folks who are a part of the Giant Bomb Extended Universe &hearts;
+		Some of the many fine folks who made Giant Bomb what it was
+		<a href="https://www.youtube.com/watch?v=gVvUuSYp7-s">&hearts;</a>
 	</p>
 	<section>
 		<h1 class="sr-only">Alumni</h1>
