@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { base } from '$app/paths'
 	import type { Video } from '$lib/data'
-	import { VideoListMode } from '$lib/types'
+	import { VideoListMode, VideoListSorting } from '$lib/types'
 	import Header from '$lib/components/Header.svelte'
 	import Pagination from '$lib/components/Pagination.svelte'
 	import Thumbnail from '$lib/components/Thumbnail.svelte'
-	import { videoListMode } from '$lib/store.js'
+	import { videoListMode, videoListSorting } from '$lib/store.js'
 
 	interface Props {
 		videos: Video[]
@@ -15,6 +15,7 @@
 		mode?: VideoListMode
 		perPage?: number
 		pageNumber?: number
+		sortable?: boolean
 	}
 
 	const {
@@ -25,16 +26,22 @@
 		mode,
 		perPage = -1,
 		pageNumber = 1,
+		sortable = true,
 	}: Props = $props()
+
+	let videosReversed = $derived([...videos].reverse())
+	let sortedVideos = $derived(
+		$videoListSorting === VideoListSorting.NewestFirst ? videos : videosReversed
+	)
 
 	let totalPages = $derived(perPage != -1 ? Math.ceil(videos.length / perPage) : 1)
 	let paginatedVideos = $derived.by(() => {
 		if (perPage == -1) {
-			return videos
+			return sortedVideos
 		}
 
 		const itemIndexStart = (pageNumber - 1) * perPage
-		return videos.slice(itemIndexStart, itemIndexStart + perPage)
+		return sortedVideos.slice(itemIndexStart, itemIndexStart + perPage)
 	})
 </script>
 
@@ -42,10 +49,42 @@
 	{#if seeAllUrl}
 		<div class="see-all">&middot; <a href={seeAllUrl}>See All</a></div>
 	{/if}
-	{#if !mode}
-		<div class="controls">
+	<div class="controls">
+		{#if sortable}
 			<button
-				class={$videoListMode == VideoListMode.List ? 'active' : ''}
+				class:active={$videoListSorting == VideoListSorting.NewestFirst}
+				onclick={() => {
+					videoListSorting.set(VideoListSorting.NewestFirst)
+				}}
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"
+					><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
+						d="M448 96V224H288V96H448zm0 192V416H288V288H448zM224 224H64V96H224V224zM64 288H224V416H64V288zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"
+					/></svg
+				>
+				Newest
+			</button>
+			<button
+				class:active={$videoListSorting == VideoListSorting.OldestFirst}
+				onclick={() => {
+					videoListSorting.set(VideoListSorting.OldestFirst)
+				}}
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"
+					><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
+						d="M448 96V224H288V96H448zm0 192V416H288V288H448zM224 224H64V96H224V224zM64 288H224V416H64V288zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"
+					/></svg
+				>
+				Oldest
+			</button>
+		{/if}
+		{#if !mode && sortable}
+			<div class="divider mobile-hidden"></div>
+		{/if}
+		{#if !mode}
+			<button
+				class="mobile-hidden"
+				class:active={$videoListMode == VideoListMode.List}
 				onclick={() => {
 					videoListMode.set(VideoListMode.List)
 				}}
@@ -58,7 +97,8 @@
 				List
 			</button>
 			<button
-				class={$videoListMode == VideoListMode.Grid ? 'active' : ''}
+				class="mobile-hidden"
+				class:active={$videoListMode == VideoListMode.Grid}
 				onclick={() => {
 					videoListMode.set(VideoListMode.Grid)
 				}}
@@ -70,12 +110,12 @@
 				>
 				Grid
 			</button>
-		</div>
-	{/if}
+		{/if}
+	</div>
 </Header>
 
 <ul class={mode ?? $videoListMode}>
-	{#each paginatedVideos as video}
+	{#each paginatedVideos as video (video.id)}
 		<li>
 			<a href="{rootUri || `${base}/videos/${video.show}`}/{video.id}">
 				<div class="thumbnail">
@@ -142,7 +182,9 @@
 	}
 
 	.controls {
-		display: none;
+		display: flex;
+		align-items: center;
+		margin-left: auto;
 	}
 
 	.controls button {
@@ -161,6 +203,18 @@
 
 	.controls button.active {
 		color: var(--color-text);
+	}
+
+	.controls .divider {
+		height: 80%;
+		width: 0;
+		border-left: 1px solid rgba(0, 0, 0, 0.3);
+		margin: 0 8px;
+		box-shadow: 1px 0 0 rgba(255, 255, 255, 0.08);
+	}
+
+	.mobile-hidden {
+		display: none;
 	}
 
 	.metadata {
@@ -212,9 +266,8 @@
 			line-height: 21px;
 		}
 
-		.controls {
+		.mobile-hidden {
 			display: block;
-			margin-left: auto;
 		}
 
 		.thumbnail {

@@ -12,3 +12,8 @@ export enum VideoListMode {
 	List = 'list',
 	Grid = 'grid',
 }
+
+export enum VideoListSorting {
+	NewestFirst = 'newestFirst',
+	OldestFirst = 'oldestFirst',
+}

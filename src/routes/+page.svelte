@@ -52,6 +52,7 @@
 				rootUri={historicUri}
 				seeAllUrl={`${base}/historic`}
 				mode={VideoListMode.List}
+				sortable={false}
 			/>
 
 			<div class="more">
