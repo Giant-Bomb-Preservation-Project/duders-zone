@@ -134,7 +134,7 @@
 	{/each}
 </ul>
 
-{#if !seeAllUrl}
+{#if perPage !== -1}
 	<Pagination totalResults={videos.length} {currentPage} {totalPages} />
 {/if}
 
