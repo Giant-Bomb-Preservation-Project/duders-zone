@@ -1,7 +1,8 @@
 <script module lang="ts">
 	export enum VideosPage {
-		Videos = 'Videos',
+		Random = 'Random',
 		Shows = 'Shows',
+		Videos = 'Videos',
 	}
 </script>
 
@@ -16,6 +17,7 @@
 	const urls: { [key in VideosPage]: any } = {
 		[VideosPage.Shows]: `${base}/videos/shows`,
 		[VideosPage.Videos]: `${base}/videos/all`,
+		[VideosPage.Random]: `${base}/videos/random`,
 	}
 </script>
 

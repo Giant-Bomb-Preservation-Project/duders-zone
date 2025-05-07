@@ -7,6 +7,7 @@
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
 	import { dataStore, type Video } from '$lib/data'
 	import VideoList from '$lib/components/VideoList.svelte'
+	import VideosHeader, { VideosPage } from '$lib/components/VideosHeader.svelte'
 	import type { OnNavigate } from '@sveltejs/kit'
 	import type { PageData } from './$types'
 
@@ -36,6 +37,8 @@
 		})
 	}
 </script>
+
+<VideosHeader current={VideosPage.Random} />
 
 <h1 class="sr-only">Random</h1>
 
