@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths'
+	import Icon, { IconType } from '$lib/components/Icon.svelte'
 
 	const podcasts = [
 		{
@@ -49,7 +50,12 @@
 				<p>{podcast.description}</p>
 				<ul class="files">
 					{#each podcast.files as file}
-						<li><a href={`${base}/podcasts/${file}`}>{file}</a></li>
+						<li>
+							<a href={`${base}/podcasts/${file}`}>
+								<Icon type={IconType.RSS} />
+								{file}
+							</a>
+						</li>
 					{/each}
 				</ul>
 			</li>
