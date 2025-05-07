@@ -11,7 +11,7 @@
 	const { data }: Props = $props()
 </script>
 
-<VideosHeader current={VideosPage.Videos} />
+<VideosHeader current={VideosPage.All} />
 
 <section class="container videos">
 	<VideoList videos={data.videos} title="All Videos" perPage={24} pageNumber={data.pageNumber} />
