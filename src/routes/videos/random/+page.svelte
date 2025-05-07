@@ -23,7 +23,7 @@
 	})
 
 	onNavigate((navigation: OnNavigate) => {
-		if (navigation.to?.route.id === `${base}/random`) randomize()
+		if (navigation.to?.route.id === `${base}/videos/random`) randomize()
 	})
 
 	const randomize = () => {
