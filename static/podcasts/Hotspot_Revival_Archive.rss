@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    <channel>
+        <title><![CDATA[ Giant Bomb's "The Hotspot" (Archive) ]]></title>
+        <description><![CDATA[ Giant Bomb's revival of the Gamespot "Hotspot" podcast, courtesy of the Internet Archive. ]]></description>
+        <link>https://archive.org/details/giant-bomb-audio</link>
+        <language>en-us</language>
+        <category>Video Games</category>
+        <copyright>Copyright Giant Bomb</copyright>
+        <image>
+            <title>Giant Bomb</title>
+            <url>https://www.giantbomb.com/a/uploads/screen_kubrick/0/31/3188473-hotspot_2020.jpg</url>
+        </image>
+        <itunes:author>Giant Bomb</itunes:author>
+        <itunes:image href="https://www.giantbomb.com/a/uploads/screen_kubrick/0/31/3188473-hotspot_2020.jpg"/>
+        <itunes:owner>
+            <itunes:name>Giant Bomb</itunes:name>
+            <itunes:email>feeds@spreaker.com</itunes:email>
+        </itunes:owner>
+        <itunes:category text="Leisure">
+            <itunes:category text="Video Games" />
+        </itunes:category>
+        <itunes:summary><![CDATA[ Giant Bomb's revival of the Gamespot "Hotspot" podcast, courtesy of the Internet Archive. ]]></itunes:summary>
+        <itunes:explicit>true</itunes:explicit>
+        <itunes:type>episodic</itunes:type>
+        <pubDate>Fri, 30 Apr 2021 00:00:00 -0000</pubDate>
+        <generator>BlackDeath3's custom Giant Bomb RSS feed generator</generator>
+        <lastBuildDate>Mon, 05 May 2025 14:50:25 -0000</lastBuildDate>
+        <item>
+            <title><![CDATA[ Episode 360 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Something old, something new, something something The HotSpot! Join as we talk about playing old video games. ]]></description>
+            <itunes:subtitle><![CDATA[ Something old, something new, something something The HotSpot! Join as we talk about playing old video games. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Something old, something new, something something The HotSpot! Join as we talk about playing old video games. ]]></itunes:summary>
+            <itunes:duration>6158.56</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2999-IDGKYT0/2020-05-01-The_HotSpot_-_Episode_360.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2999-IDGKYT0/2020-05-01-The_HotSpot_-_Episode_360.mp3" length="147814370" />
+            <pubDate>Fri, 01 May 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2999</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>1</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 361 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ With the launch of new consoles upon us we take a look back at the good, the bad, and the bizarre decisions. ]]></description>
+            <itunes:subtitle><![CDATA[ With the launch of new consoles upon us we take a look back at the good, the bad, and the bizarre decisions. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ With the launch of new consoles upon us we take a look back at the good, the bad, and the bizarre decisions. ]]></itunes:summary>
+            <itunes:duration>7024.66</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3005-ID3WY39/2020-05-08-The_HotSpot_-_Episode_361.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3005-ID3WY39/2020-05-08-The_HotSpot_-_Episode_361.mp3" length="168850858" />
+            <pubDate>Fri, 08 May 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3005</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>2</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 362 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Video game reviews have been changing for a long time, and luckily we've got some of the folks that have been there changing them! ]]></description>
+            <itunes:subtitle><![CDATA[ Video game reviews have been changing for a long time, and luckily we've got some of the folks that have been there changing them! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Video game reviews have been changing for a long time, and luckily we've got some of the folks that have been there changing them! ]]></itunes:summary>
+            <itunes:duration>5544.85</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3012-IDZIFS1/2020-05-15-The_HotSpot_-_Episode_362.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3012-IDZIFS1/2020-05-15-The_HotSpot_-_Episode_362.mp3" length="133333946" />
+            <pubDate>Fri, 15 May 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3012</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>3</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 363 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We're back to discuss why you should or maybe shouldn't put so much stock in those reviews we all argued about. ]]></description>
+            <itunes:subtitle><![CDATA[ We're back to discuss why you should or maybe shouldn't put so much stock in those reviews we all argued about. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We're back to discuss why you should or maybe shouldn't put so much stock in those reviews we all argued about. ]]></itunes:summary>
+            <itunes:duration>6377.01</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3021-ID01SWU/2020-05-22-The_HotSpot_-_Episode_363.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3021-ID01SWU/2020-05-22-The_HotSpot_-_Episode_363.mp3" length="153305824" />
+            <pubDate>Fri, 22 May 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3021</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>4</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 364 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We're back to take a look at some of the hairy discoveries folks have hiding in their electronics junk drawer. ]]></description>
+            <itunes:subtitle><![CDATA[ We're back to take a look at some of the hairy discoveries folks have hiding in their electronics junk drawer. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We're back to take a look at some of the hairy discoveries folks have hiding in their electronics junk drawer. ]]></itunes:summary>
+            <itunes:duration>6240.02</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3026-IDZ8IN8/2020-05-29-The_Hotspot_-_Episode_364.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3026-IDZ8IN8/2020-05-29-The_Hotspot_-_Episode_364.mp3" length="150019026" />
+            <pubDate>Fri, 29 May 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3026</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>5</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 365 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Happy Anniversary Sega! Let's talk a bit about our experiences with your past and what might be ahead. ]]></description>
+            <itunes:subtitle><![CDATA[ Happy Anniversary Sega! Let's talk a bit about our experiences with your past and what might be ahead. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Happy Anniversary Sega! Let's talk a bit about our experiences with your past and what might be ahead. ]]></itunes:summary>
+            <itunes:duration>4453.44</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3032-ID3KO70/2020-06-05-The_HotSpot_-_Episode_365.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3032-ID3KO70/2020-06-05-The_HotSpot_-_Episode_365.mp3" length="107141167" />
+            <pubDate>Fri, 05 Jun 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3032</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>6</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 366 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ It's grab bag Friday, as we talk through everything from the gargantuan size of the PS5 to our disc-less console future and long lost Minecraft worlds! ]]></description>
+            <itunes:subtitle><![CDATA[ It's grab bag Friday, as we talk through everything from the gargantuan size of the PS5 to our disc-less console future and long lost Minecraft worlds! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ It's grab bag Friday, as we talk through everything from the gargantuan size of the PS5 to our disc-less console future and long lost Minecraft worlds! ]]></itunes:summary>
+            <itunes:duration>5384.98</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3038-ID9M58Y/2020-06-12-The_HotSpot_-_Episode_366.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3038-ID9M58Y/2020-06-12-The_HotSpot_-_Episode_366.mp3" length="129497183" />
+            <pubDate>Fri, 12 Jun 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3038</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>7</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 367 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Let's take some time and talk about EA, but before that let's talk miscellaneous tech! ]]></description>
+            <itunes:subtitle><![CDATA[ Let's take some time and talk about EA, but before that let's talk miscellaneous tech! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Let's take some time and talk about EA, but before that let's talk miscellaneous tech! ]]></itunes:summary>
+            <itunes:duration>6601.72</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3043-IDXWD5N/2020-06-19-The_HotSpot_-_Episode_367.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3043-IDXWD5N/2020-06-19-The_HotSpot_-_Episode_367.mp3" length="158699767" />
+            <pubDate>Fri, 19 Jun 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3043</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>8</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 368 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ It's the end of the week and it's time to blow this week out of our collective PCs. ]]></description>
+            <itunes:subtitle><![CDATA[ It's the end of the week and it's time to blow this week out of our collective PCs. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ It's the end of the week and it's time to blow this week out of our collective PCs. ]]></itunes:summary>
+            <itunes:duration>4305.43</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3050-ID7AR2G/2020-06-26-The_HotSpot_-_Episode_368.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3050-ID7AR2G/2020-06-26-The_HotSpot_-_Episode_368.mp3" length="103588896" />
+            <pubDate>Fri, 26 Jun 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3050</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>9</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 369 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We're back with some Free Talking Friday with a range of topics including headwear, modern Ubisoft games, and the best video game movies. ]]></description>
+            <itunes:subtitle><![CDATA[ We're back with some Free Talking Friday with a range of topics including headwear, modern Ubisoft games, and the best video game movies. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We're back with some Free Talking Friday with a range of topics including headwear, modern Ubisoft games, and the best video game movies. ]]></itunes:summary>
+            <itunes:duration>5985.24</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3061-IDGL1JU/2020-07-10-The_HotSpot_-_Episode_369.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3061-IDGL1JU/2020-07-10-The_HotSpot_-_Episode_369.mp3" length="143904789" />
+            <pubDate>Fri, 10 Jul 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3061</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>10</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 370 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Hostmaster Rich Gallup returns to The HotSpot to talk about how life has changed over the last 15 years when it comes to making podcasts about video games. ]]></description>
+            <itunes:subtitle><![CDATA[ Hostmaster Rich Gallup returns to The HotSpot to talk about how life has changed over the last 15 years when it comes to making podcasts about video games. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Hostmaster Rich Gallup returns to The HotSpot to talk about how life has changed over the last 15 years when it comes to making podcasts about video games. ]]></itunes:summary>
+            <itunes:duration>6555.91</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3068-ID32QQL/2020-07-17-The_HotSpot_-_Episode_370.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3068-ID32QQL/2020-07-17-The_HotSpot_-_Episode_370.mp3" length="157600419" />
+            <pubDate>Fri, 17 Jul 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3068</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>11</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 371 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ This week, the PlayStation 5 and Xbox Series X launches are on trial! ]]></description>
+            <itunes:subtitle><![CDATA[ This week, the PlayStation 5 and Xbox Series X launches are on trial! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ This week, the PlayStation 5 and Xbox Series X launches are on trial! ]]></itunes:summary>
+            <itunes:duration>4763.45</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3072-IDWI1NE/2020-07-24-The_HotSpot_-_Episode_371.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3072-IDWI1NE/2020-07-24-The_HotSpot_-_Episode_371.mp3" length="114582249" />
+            <pubDate>Fri, 24 Jul 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3072</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>12</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 372 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Got any big video game purchases you regret? No? How about posters? Statues? Ok, how about old drinks that look like they are poison? ]]></description>
+            <itunes:subtitle><![CDATA[ Got any big video game purchases you regret? No? How about posters? Statues? Ok, how about old drinks that look like they are poison? ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Got any big video game purchases you regret? No? How about posters? Statues? Ok, how about old drinks that look like they are poison? ]]></itunes:summary>
+            <itunes:duration>5771.16</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3080-IDT08SZ/2020-07-31-The_HotSpot_-_Episode_372.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3080-IDT08SZ/2020-07-31-The_HotSpot_-_Episode_372.mp3" length="138766358" />
+            <pubDate>Fri, 31 Jul 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3080</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>13</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 373 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ The power is back on and we're all here to talk about internet security, job security, and securing our upcoming programming schedules! ]]></description>
+            <itunes:subtitle><![CDATA[ The power is back on and we're all here to talk about internet security, job security, and securing our upcoming programming schedules! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ The power is back on and we're all here to talk about internet security, job security, and securing our upcoming programming schedules! ]]></itunes:summary>
+            <itunes:duration>7461.5</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3086-IDGNN5D/2020-08-07-The_HotSpot_-_Episode_373.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3086-IDGNN5D/2020-08-07-The_HotSpot_-_Episode_373.mp3" length="179336194" />
+            <pubDate>Fri, 07 Aug 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3086</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>14</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 374 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We've got a range of topics including Epic vs Apple, Microsoft vs Sony, and thermal paste versus graphite pads! ]]></description>
+            <itunes:subtitle><![CDATA[ We've got a range of topics including Epic vs Apple, Microsoft vs Sony, and thermal paste versus graphite pads! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We've got a range of topics including Epic vs Apple, Microsoft vs Sony, and thermal paste versus graphite pads! ]]></itunes:summary>
+            <itunes:duration>5558.83</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3092-ID4GDSH/2020-08-14-The_HotSpot_-_Episode_374.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3092-ID4GDSH/2020-08-14-The_HotSpot_-_Episode_374.mp3" length="133669577" />
+            <pubDate>Fri, 14 Aug 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3092</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>15</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 375 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Those hard drives! We're shucking and driving as we head into the weekend as we talk about the fun and dangers of home repair, temptations to buy expensive flight sim gear, and solder? ]]></description>
+            <itunes:subtitle><![CDATA[ Those hard drives! We're shucking and driving as we head into the weekend as we talk about the fun and dangers of home repair, temptations to buy expensive flight sim gear, and solder? ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Those hard drives! We're shucking and driving as we head into the weekend as we talk about the fun and dangers of home repair, temptations to buy expensive flight sim gear, and solder? ]]></itunes:summary>
+            <itunes:duration>5797.92</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3097-ID8349I/2020-08-21-The_HotSpot_-_Episode_375.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3097-ID8349I/2020-08-21-The_HotSpot_-_Episode_375.mp3" length="139410530" />
+            <pubDate>Fri, 21 Aug 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3097</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>16</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 376 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ What begins as a fun way to reminisce about old cartoon intro songs quickly escalates into a full on audio arms race of nostalgia! ]]></description>
+            <itunes:subtitle><![CDATA[ What begins as a fun way to reminisce about old cartoon intro songs quickly escalates into a full on audio arms race of nostalgia! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ What begins as a fun way to reminisce about old cartoon intro songs quickly escalates into a full on audio arms race of nostalgia! ]]></itunes:summary>
+            <itunes:duration>5529.62</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3103-IDGATJK/2020-08-28-The_HotSpot_-_Episode_376.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3103-IDGATJK/2020-08-28-The_HotSpot_-_Episode_376.mp3" length="132969509" />
+            <pubDate>Fri, 28 Aug 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3103</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>17</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 377 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ This week we break down the state of the video game news as of September 2020 before diving into some affable British TV and radio. ]]></description>
+            <itunes:subtitle><![CDATA[ This week we break down the state of the video game news as of September 2020 before diving into some affable British TV and radio. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ This week we break down the state of the video game news as of September 2020 before diving into some affable British TV and radio. ]]></itunes:summary>
+            <itunes:duration>5614.66</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3109-IDLH3II/2020-09-04-The_HotSpot_-_Episode_377.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3109-IDLH3II/2020-09-04-The_HotSpot_-_Episode_377.mp3" length="90079260" />
+            <pubDate>Fri, 04 Sep 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3109</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>18</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 378 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Guides editor Matt Rorie drops in to chat about cranking out strategy in the GameSpot days, novel uses for the Game Boy Camera, his dogs, and more! ]]></description>
+            <itunes:subtitle><![CDATA[ Guides editor Matt Rorie drops in to chat about cranking out strategy in the GameSpot days, novel uses for the Game Boy Camera, his dogs, and more! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Guides editor Matt Rorie drops in to chat about cranking out strategy in the GameSpot days, novel uses for the Game Boy Camera, his dogs, and more! ]]></itunes:summary>
+            <itunes:duration>6895.15</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3116-IDA8JZ3/2020-09-11-The_HotSpot_-_Episode_378.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3116-IDA8JZ3/2020-09-11-The_HotSpot_-_Episode_378.mp3" length="110567067" />
+            <pubDate>Fri, 11 Sep 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3116</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>19</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 379 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ These console wars are heating up and we're here to break them down! ]]></description>
+            <itunes:subtitle><![CDATA[ These console wars are heating up and we're here to break them down! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ These console wars are heating up and we're here to break them down! ]]></itunes:summary>
+            <itunes:duration>5137.18</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3123-IDJKFBI/2020-09-18-The_HotSpot_-_Episode_379.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3123-IDJKFBI/2020-09-18-The_HotSpot_-_Episode_379.mp3" length="123551234" />
+            <pubDate>Fri, 18 Sep 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3123</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>20</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 380 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ An external storage expansion for this podcast can be purchased at a retailer near you! ]]></description>
+            <itunes:subtitle><![CDATA[ An external storage expansion for this podcast can be purchased at a retailer near you! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ An external storage expansion for this podcast can be purchased at a retailer near you! ]]></itunes:summary>
+            <itunes:duration>5484.62</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3129-IDI2K4F/2020-09-25-The_HotSpot_-_Episode_380.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3129-IDI2K4F/2020-09-25-The_HotSpot_-_Episode_380.mp3" length="131889994" />
+            <pubDate>Fri, 25 Sep 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3129</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>21</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 381 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ This week there's only one question on everyone's minds: what's in the b... ah, you know how it goes. ]]></description>
+            <itunes:subtitle><![CDATA[ This week there's only one question on everyone's minds: what's in the b... ah, you know how it goes. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ This week there's only one question on everyone's minds: what's in the b... ah, you know how it goes. ]]></itunes:summary>
+            <itunes:duration>4387.54</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3136-IDFAKG3/2020-10-02-The_HotSpot_-_Episode_381.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3136-IDFAKG3/2020-10-02-The_HotSpot_-_Episode_381.mp3" length="105559882" />
+            <pubDate>Fri, 02 Oct 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3136</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>22</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 382 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Liquid metal! Gacha action! Snacks that are also bugs! This HotSpot has it all. ]]></description>
+            <itunes:subtitle><![CDATA[ Liquid metal! Gacha action! Snacks that are also bugs! This HotSpot has it all. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Liquid metal! Gacha action! Snacks that are also bugs! This HotSpot has it all. ]]></itunes:summary>
+            <itunes:duration>5017.13</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3142-IDPWTYF/2020-10-09-The_HotSpot_-_Episode_382.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3142-IDPWTYF/2020-10-09-The_HotSpot_-_Episode_382.mp3" length="120419337" />
+            <pubDate>Fri, 09 Oct 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3142</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>23</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 383 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ You wanna hear about video games? New ones, old ones, rare ones, virtual ones? You picked the right podcast! ]]></description>
+            <itunes:subtitle><![CDATA[ You wanna hear about video games? New ones, old ones, rare ones, virtual ones? You picked the right podcast! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ You wanna hear about video games? New ones, old ones, rare ones, virtual ones? You picked the right podcast! ]]></itunes:summary>
+            <itunes:duration>5771.88</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3149-ID61VQB/2020-10-16-The_HotSpot_-_Episode_383.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3149-ID61VQB/2020-10-16-The_HotSpot_-_Episode_383.mp3" length="138783642" />
+            <pubDate>Fri, 16 Oct 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3149</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>24</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 384 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Brace yourself for an unexpected trip down memory lane... ]]></description>
+            <itunes:subtitle><![CDATA[ Brace yourself for an unexpected trip down memory lane... ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Brace yourself for an unexpected trip down memory lane... ]]></itunes:summary>
+            <itunes:duration>5454.41</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3155-ID6RFU6/2020-10-23-The_HotSpot_-_Episode_384.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3155-ID6RFU6/2020-10-23-The_HotSpot_-_Episode_384.mp3" length="131164324" />
+            <pubDate>Fri, 23 Oct 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3155</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>25</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 385 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ It's time to talk about resistance in our video game hardware and in our video games! ]]></description>
+            <itunes:subtitle><![CDATA[ It's time to talk about resistance in our video game hardware and in our video games! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ It's time to talk about resistance in our video game hardware and in our video games! ]]></itunes:summary>
+            <itunes:duration>5201.74</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3162-IDR6MQ3/2020-10-30-The_HotSpot_-_Episode_385.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3162-IDR6MQ3/2020-10-30-The_HotSpot_-_Episode_385.mp3" length="125100446" />
+            <pubDate>Fri, 30 Oct 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3162</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>26</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 386 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ As the PS5 swings into its launch window we're here to tell you more about the UI, Miles Morales, and how things are shaping up leading up to the full console release. ]]></description>
+            <itunes:subtitle><![CDATA[ As the PS5 swings into its launch window we're here to tell you more about the UI, Miles Morales, and how things are shaping up leading up to the full console release. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ As the PS5 swings into its launch window we're here to tell you more about the UI, Miles Morales, and how things are shaping up leading up to the full console release. ]]></itunes:summary>
+            <itunes:duration>5192.74</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3169-IDBRTIF/2020-11-06-The_HotSpot_-_Episode_386.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3169-IDBRTIF/2020-11-06-The_HotSpot_-_Episode_386.mp3" length="124884950" />
+            <pubDate>Fri, 06 Nov 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3169</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>27</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 387 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We're joined by engineer Will Carle to learn all his dark secrets before he departs for new adventures. ]]></description>
+            <itunes:subtitle><![CDATA[ We're joined by engineer Will Carle to learn all his dark secrets before he departs for new adventures. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We're joined by engineer Will Carle to learn all his dark secrets before he departs for new adventures. ]]></itunes:summary>
+            <itunes:duration>5761.03</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3176-IDFVN3L/2020-11-13-The_HotSpot_-_Episode_387.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3176-IDFVN3L/2020-11-13-The_HotSpot_-_Episode_387.mp3" length="138522827" />
+            <pubDate>Fri, 13 Nov 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3176</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>28</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 388 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Awards season is almost upon us, and that can mean only one thing: time to start making lists. ]]></description>
+            <itunes:subtitle><![CDATA[ Awards season is almost upon us, and that can mean only one thing: time to start making lists. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Awards season is almost upon us, and that can mean only one thing: time to start making lists. ]]></itunes:summary>
+            <itunes:duration>5615.93</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3182-IDC9C1O/2020-11-20-The_HotSpot_-_Episode_388.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3182-IDC9C1O/2020-11-20-The_HotSpot_-_Episode_388.mp3" length="91840935" />
+            <pubDate>Fri, 20 Nov 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3182</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>29</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 389 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Was Sega's 32x one of the biggest events in gaming? How would VR rank for you? What about Fortnite? Join us for our brief tour through some industry milestones. ]]></description>
+            <itunes:subtitle><![CDATA[ Was Sega's 32x one of the biggest events in gaming? How would VR rank for you? What about Fortnite? Join us for our brief tour through some industry milestones. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Was Sega's 32x one of the biggest events in gaming? How would VR rank for you? What about Fortnite? Join us for our brief tour through some industry milestones. ]]></itunes:summary>
+            <itunes:duration>5716.1</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3191-ID4SIGE/2020-12-04-The_HotSpot_-_Episode_389.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3191-ID4SIGE/2020-12-04-The_HotSpot_-_Episode_389.mp3" length="137445781" />
+            <pubDate>Fri, 04 Dec 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3191</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>30</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 390 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We're talking about diners, drive-ins, and Mass Effect? Is Mass Effect coming back... we'll see. ]]></description>
+            <itunes:subtitle><![CDATA[ We're talking about diners, drive-ins, and Mass Effect? Is Mass Effect coming back... we'll see. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We're talking about diners, drive-ins, and Mass Effect? Is Mass Effect coming back... we'll see. ]]></itunes:summary>
+            <itunes:duration>5218.1</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3196-IDHGP2J/2020-12-11-The_HotSpot_-_Episode_390.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3196-IDHGP2J/2020-12-11-The_HotSpot_-_Episode_390.mp3" length="125493283" />
+            <pubDate>Fri, 11 Dec 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3196</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>31</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 391 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ You thought we were done talking about Cyberpunk? No? Well, you were right. We talk about what, if any, the events around its release could mean going forward. ]]></description>
+            <itunes:subtitle><![CDATA[ You thought we were done talking about Cyberpunk? No? Well, you were right. We talk about what, if any, the events around its release could mean going forward. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ You thought we were done talking about Cyberpunk? No? Well, you were right. We talk about what, if any, the events around its release could mean going forward. ]]></itunes:summary>
+            <itunes:duration>5045.62</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3202-IDF3RV0/2020-12-18-The_HotSpot_-_Episode_391.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3202-IDF3RV0/2020-12-18-The_HotSpot_-_Episode_391.mp3" length="121353565" />
+            <pubDate>Fri, 18 Dec 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3202</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>32</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 392 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We're back and it's tech, games, and RAM drama. Sorry, dRAMa? Sorry, SDRAMa? There we go. ]]></description>
+            <itunes:subtitle><![CDATA[ We're back and it's tech, games, and RAM drama. Sorry, dRAMa? Sorry, SDRAMa? There we go. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We're back and it's tech, games, and RAM drama. Sorry, dRAMa? Sorry, SDRAMa? There we go. ]]></itunes:summary>
+            <itunes:duration>5985.65</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3215-IDR4GQV/2021-01-08-The_HotSpot_-_Episode_392.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3215-IDR4GQV/2021-01-08-The_HotSpot_-_Episode_392.mp3" length="143913600" />
+            <pubDate>Fri, 08 Jan 2021 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3215</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>33</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 393 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ It's time to rank our GB game of the year lists and picks over the last ten-ish years. ]]></description>
+            <itunes:subtitle><![CDATA[ It's time to rank our GB game of the year lists and picks over the last ten-ish years. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ It's time to rank our GB game of the year lists and picks over the last ten-ish years. ]]></itunes:summary>
+            <itunes:duration>6928.99</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3221-ID3ZKO8/2021-01-15-The_HotSpot_-_Episode_393.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3221-ID3ZKO8/2021-01-15-The_HotSpot_-_Episode_393.mp3" length="166553856" />
+            <pubDate>Fri, 15 Jan 2021 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3221</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>34</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 394 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We're back and here to talk about some post-GOTY games we've jumped into and some of our favorite company merch! ]]></description>
+            <itunes:subtitle><![CDATA[ We're back and here to talk about some post-GOTY games we've jumped into and some of our favorite company merch! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We're back and here to talk about some post-GOTY games we've jumped into and some of our favorite company merch! ]]></itunes:summary>
+            <itunes:duration>5875.8</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3238-IDEY6KU/2021-01-29-The_HotSpot_-_Episode_394.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3238-IDEY6KU/2021-01-29-The_HotSpot_-_Episode_394.mp3" length="141278953" />
+            <pubDate>Fri, 29 Jan 2021 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3238</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>35</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 395 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We're back for another show of saving saves, magic, and what's on my desk! ]]></description>
+            <itunes:subtitle><![CDATA[ We're back for another show of saving saves, magic, and what's on my desk! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We're back for another show of saving saves, magic, and what's on my desk! ]]></itunes:summary>
+            <itunes:duration>4219.13</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3243-ID0YLM1/2021-02-05-The_HotSpot_-_Episode_395.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3243-ID0YLM1/2021-02-05-The_HotSpot_-_Episode_395.mp3" length="101517138" />
+            <pubDate>Fri, 05 Feb 2021 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3243</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>36</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 396 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We're back to ponder a dark future where nobody is safe... from themselves! ]]></description>
+            <itunes:subtitle><![CDATA[ We're back to ponder a dark future where nobody is safe... from themselves! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We're back to ponder a dark future where nobody is safe... from themselves! ]]></itunes:summary>
+            <itunes:duration>5574</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3249-IDF3RT2/2021-02-12-The_HotSpot_-_Episode_396.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3249-IDF3RT2/2021-02-12-The_HotSpot_-_Episode_396.mp3" length="134035279" />
+            <pubDate>Fri, 12 Feb 2021 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3249</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>37</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 397 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We're back and talking about packing up old studios and navigating that corporate lifestyle. ]]></description>
+            <itunes:subtitle><![CDATA[ We're back and talking about packing up old studios and navigating that corporate lifestyle. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We're back and talking about packing up old studios and navigating that corporate lifestyle. ]]></itunes:summary>
+            <itunes:duration>5708.02</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3255-IDVYORG/2021-02-19-The_HotSpot_-_Episode_397.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3255-IDVYORG/2021-02-19-The_HotSpot_-_Episode_397.mp3" length="137251651" />
+            <pubDate>Fri, 19 Feb 2021 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3255</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>38</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 398 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We start with talk about Sony's Japan Studio and wind up talking about the entire collapse of the video game industry! All in one show! ]]></description>
+            <itunes:subtitle><![CDATA[ We start with talk about Sony's Japan Studio and wind up talking about the entire collapse of the video game industry! All in one show! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We start with talk about Sony's Japan Studio and wind up talking about the entire collapse of the video game industry! All in one show! ]]></itunes:summary>
+            <itunes:duration>5514.48</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3260-IDZ2DH9/2021-02-26-The_HotSpot_-_Episode_398.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3260-IDZ2DH9/2021-02-26-The_HotSpot_-_Episode_398.mp3" length="132605574" />
+            <pubDate>Fri, 26 Feb 2021 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3260</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>39</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 399 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ It's Friday and time to check the availability of new consoles, the development of new games, and the state of Destiny 2 lore. ]]></description>
+            <itunes:subtitle><![CDATA[ It's Friday and time to check the availability of new consoles, the development of new games, and the state of Destiny 2 lore. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ It's Friday and time to check the availability of new consoles, the development of new games, and the state of Destiny 2 lore. ]]></itunes:summary>
+            <itunes:duration>5481.38</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3266-IDF3JNJ/2021-03-05-The_HotSpot_-_Episode_399.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3266-IDF3JNJ/2021-03-05-The_HotSpot_-_Episode_399.mp3" length="131812015" />
+            <pubDate>Fri, 05 Mar 2021 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3266</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>40</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 400 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We're back to chat about the past, present, and future of the video games industry! ]]></description>
+            <itunes:subtitle><![CDATA[ We're back to chat about the past, present, and future of the video games industry! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We're back to chat about the past, present, and future of the video games industry! ]]></itunes:summary>
+            <itunes:duration>5529.53</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3271-IDDHF4X/2021-03-12-The_HotSpot_-_Episode_400.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3271-IDDHF4X/2021-03-12-The_HotSpot_-_Episode_400.mp3" length="133213325" />
+            <pubDate>Fri, 12 Mar 2021 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3271</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>41</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 401 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ This episode of the HotSpot comes with your choice of vinyl, minidisc, or 8-track cassette. ]]></description>
+            <itunes:subtitle><![CDATA[ This episode of the HotSpot comes with your choice of vinyl, minidisc, or 8-track cassette. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ This episode of the HotSpot comes with your choice of vinyl, minidisc, or 8-track cassette. ]]></itunes:summary>
+            <itunes:duration>5350.8</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3277-IDKZL0I/2021-03-19-The_HotSpot_-_Episode_401.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3277-IDKZL0I/2021-03-19-The_HotSpot_-_Episode_401.mp3" length="85858334" />
+            <pubDate>Fri, 19 Mar 2021 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3277</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>42</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 402 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ It's time to get hot with talk about what makes a past, present, and future gaming convention attractive to you! ]]></description>
+            <itunes:subtitle><![CDATA[ It's time to get hot with talk about what makes a past, present, and future gaming convention attractive to you! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ It's time to get hot with talk about what makes a past, present, and future gaming convention attractive to you! ]]></itunes:summary>
+            <itunes:duration>4303.78</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3282-IDXUF04/2021-03-26-The_HotSpot_-_Episode_402.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3282-IDXUF04/2021-03-26-The_HotSpot_-_Episode_402.mp3" length="103548668" />
+            <pubDate>Fri, 26 Mar 2021 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3282</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>43</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 403 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ It's time to talk about gaming stuff and awards! Maybe someone will get awarded more gaming stuff someday. ]]></description>
+            <itunes:subtitle><![CDATA[ It's time to talk about gaming stuff and awards! Maybe someone will get awarded more gaming stuff someday. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ It's time to talk about gaming stuff and awards! Maybe someone will get awarded more gaming stuff someday. ]]></itunes:summary>
+            <itunes:duration>5469.05</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3287-ID1BYT5/2021-04-02-The_HotSpot_-_Episode_403.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3287-ID1BYT5/2021-04-02-The_HotSpot_-_Episode_403.mp3" length="131516419" />
+            <pubDate>Fri, 02 Apr 2021 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3287</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>44</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 404 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ What's Chris Meloni's diet-and-exercise regimen? Just who are the Friends of P? What the heck do they put in that slime?? The answers lie within! ]]></description>
+            <itunes:subtitle><![CDATA[ What's Chris Meloni's diet-and-exercise regimen? Just who are the Friends of P? What the heck do they put in that slime?? The answers lie within! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ What's Chris Meloni's diet-and-exercise regimen? Just who are the Friends of P? What the heck do they put in that slime?? The answers lie within! ]]></itunes:summary>
+            <itunes:duration>5254.54</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3292-IDI1YCQ/2021-04-09-The_HotSpot_-_Episode_404.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3292-IDI1YCQ/2021-04-09-The_HotSpot_-_Episode_404.mp3" length="42036480" />
+            <pubDate>Fri, 09 Apr 2021 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3292</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>45</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 405 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We're here to talk about landfills, haunted houses, and other earthly and spiritual troubles! ]]></description>
+            <itunes:subtitle><![CDATA[ We're here to talk about landfills, haunted houses, and other earthly and spiritual troubles! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We're here to talk about landfills, haunted houses, and other earthly and spiritual troubles! ]]></itunes:summary>
+            <itunes:duration>4595.64</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3297-ID0UNC4/2021-04-16-The_HotSpot_-_Episode_405.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3297-ID0UNC4/2021-04-16-The_HotSpot_-_Episode_405.mp3" length="110555113" />
+            <pubDate>Fri, 16 Apr 2021 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3297</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>46</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 406 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ All that glitters may not be gold but all that is glitter is trash. ]]></description>
+            <itunes:subtitle><![CDATA[ All that glitters may not be gold but all that is glitter is trash. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ All that glitters may not be gold but all that is glitter is trash. ]]></itunes:summary>
+            <itunes:duration>4482.58</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3302-IDCIAUK/2021-04-23-The_HotSpot_-_Episode_406.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3302-IDCIAUK/2021-04-23-The_HotSpot_-_Episode_406.mp3" length="107840605" />
+            <pubDate>Fri, 23 Apr 2021 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3302</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>47</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Episode 407 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We kick things off with some thoughts on Returnal before journeying to the past and future of the industry. ]]></description>
+            <itunes:subtitle><![CDATA[ We kick things off with some thoughts on Returnal before journeying to the past and future of the industry. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We kick things off with some thoughts on Returnal before journeying to the past and future of the industry. ]]></itunes:summary>
+            <itunes:duration>5567.33</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3307-IDMO09J/2021-04-30-The_HotSpot_-_Episode_407.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3307-IDMO09J/2021-04-30-The_HotSpot_-_Episode_407.mp3" length="133873938" />
+            <pubDate>Fri, 30 Apr 2021 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3307</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>48</itunes:episode>
+        </item>
+    </channel>
+</rss>
