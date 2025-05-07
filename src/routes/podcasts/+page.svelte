@@ -12,7 +12,7 @@
 			title: 'The Giant Beastcast',
 			description:
 				'The Giant Bomb East team gathers to talk about the week in video games, their lives, and basically anything that interests them. All from New York City!',
-			image: 'beastcast.png',
+			image: 'beastcast.jpg',
 			files: ['Giant_Beastcast_Archive.rss', 'Giant_Beastcast_Archive_Reduced.rss'],
 		},
 		{
