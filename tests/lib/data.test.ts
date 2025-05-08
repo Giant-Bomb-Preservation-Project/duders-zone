@@ -30,9 +30,9 @@ const testShowData = [
 		poster: '3026329-gb_default-16_9.jpg',
 		logo: null,
 		videos: [
-			'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
-			'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-			'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+			'IDBF5DWY',
+			'IDIAQF2N',
+			'IDB90NXY',
 		],
 	},
 	{
@@ -71,7 +71,7 @@ const testVideoData = [
 		},
 	},
 	{
-		id: '2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+		id: 'IDBF5DWY',
 		show: 'this-aint-no-game',
 		title: "This Ain't No Game: Double Dragon",
 		description: "Ryan kicks off his movie tour with this...well...it's definitely a movie.",
@@ -81,11 +81,11 @@ const testVideoData = [
 		duration: 1,
 		source: {
 			internetarchive:
-				'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+				'IDBF5DWY',
 		},
 	},
 	{
-		id: '2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+		id: 'IDIAQF2N',
 		show: 'this-aint-no-game',
 		title: "This Ain't No Game: Street Fighter",
 		description:
@@ -96,11 +96,11 @@ const testVideoData = [
 		duration: null,
 		source: {
 			internetarchive:
-				'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+				'IDIAQF2N',
 		},
 	},
 	{
-		id: '2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+		id: 'IDB90NXY',
 		show: 'this-aint-no-game',
 		title: "This Ain't No Game: Resident Evil",
 		description: 'Ryan finds some love for the master of anti-dog karate.',
@@ -110,7 +110,7 @@ const testVideoData = [
 		duration: null,
 		source: {
 			internetarchive:
-				'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+				'IDB90NXY',
 		},
 	},
 ]
@@ -156,9 +156,9 @@ describe('DataStore', () => {
 					poster: '3026329-gb_default-16_9.jpg',
 					logo: null,
 					videos: [
-						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
-						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+						'IDBF5DWY',
+						'IDIAQF2N',
+						'IDB90NXY',
 					],
 				},
 			}
@@ -188,8 +188,8 @@ describe('DataStore', () => {
 						internetarchive: 'gb-2300-16398-IDJKE0C',
 					},
 				},
-				'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY': {
-					id: '2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+				'IDBF5DWY': {
+					id: 'IDBF5DWY',
 					title: "This Ain't No Game: Double Dragon",
 					description:
 						"Ryan kicks off his movie tour with this...well...it's definitely a movie.",
@@ -200,11 +200,11 @@ describe('DataStore', () => {
 					show: 'this-aint-no-game',
 					source: {
 						internetarchive:
-							'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+							'IDBF5DWY',
 					},
 				},
-				'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N': {
-					id: '2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+				'IDIAQF2N': {
+					id: 'IDIAQF2N',
 					title: "This Ain't No Game: Street Fighter",
 					description:
 						"In honor of Street Fighter IV's release, we're sharing this epic piece of cinema.",
@@ -215,11 +215,11 @@ describe('DataStore', () => {
 					show: 'this-aint-no-game',
 					source: {
 						internetarchive:
-							'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+							'IDIAQF2N',
 					},
 				},
-				'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY': {
-					id: '2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+				'IDB90NXY': {
+					id: 'IDB90NXY',
 					title: "This Ain't No Game: Resident Evil",
 					description: 'Ryan finds some love for the master of anti-dog karate.',
 					date: new Date('2009-02-26T00:00:00Z'),
@@ -229,7 +229,7 @@ describe('DataStore', () => {
 					show: 'this-aint-no-game',
 					source: {
 						internetarchive:
-							'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+							'IDB90NXY',
 					},
 				},
 			}
@@ -247,51 +247,51 @@ describe('DataStore', () => {
 					'2': ['2300-15259'],
 					abbys: ['2300-16398'],
 					aint: [
-						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
-						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+						'IDBF5DWY',
+						'IDIAQF2N',
+						'IDB90NXY',
 					],
 					but: ['2300-16398'],
 					coast: ['2300-15259', '2300-16398'],
 					cross: ['2300-15259', '2300-16398'],
 					dead: ['2300-15259'],
 					double: [
-						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+						'IDBF5DWY',
 					],
 					dragon: [
-						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+						'IDBF5DWY',
 					],
-					evil: ['2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY'],
+					evil: ['IDB90NXY'],
 					fighter: [
-						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+						'IDIAQF2N',
 					],
 					game: [
-						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
-						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+						'IDBF5DWY',
+						'IDIAQF2N',
+						'IDB90NXY',
 					],
 					goodbye: ['2300-16398'],
 					later: ['2300-16398'],
 					no: [
-						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
-						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+						'IDBF5DWY',
+						'IDIAQF2N',
+						'IDB90NXY',
 					],
 					not: ['2300-16398'],
 					red: ['2300-15259'],
 					redemption: ['2300-15259'],
 					resident: [
-						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+						'IDB90NXY',
 					],
 					see: ['2300-16398'],
 					stream: ['2300-16398'],
 					street: [
-						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+						'IDIAQF2N',
 					],
 					this: [
-						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
-						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+						'IDBF5DWY',
+						'IDIAQF2N',
+						'IDB90NXY',
 					],
 					you: ['2300-16398'],
 				})
@@ -361,12 +361,12 @@ describe('DataStore', () => {
 		it('gets a specific video', () => {
 			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
 			const result = dataStore.getVideoById(
-				'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N'
+				'IDIAQF2N'
 			)
 
 			expect(result).toStrictEqual(
 				dataStore.videos[
-					'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N'
+					'IDIAQF2N'
 				]
 			)
 		})
@@ -389,9 +389,9 @@ describe('DataStore', () => {
 			expect(result.map((x) => x.id)).toStrictEqual([
 				'2300-16398',
 				'2300-15259',
-				'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
-				'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-				'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+				'IDB90NXY',
+				'IDIAQF2N',
+				'IDBF5DWY',
 			])
 		})
 	})
@@ -411,7 +411,7 @@ describe('DataStore', () => {
 			const result = dataStore.searchVideos('evil')
 
 			expect(result.map((x) => x.id)).toStrictEqual([
-				'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+				'IDB90NXY',
 			])
 		})
 
