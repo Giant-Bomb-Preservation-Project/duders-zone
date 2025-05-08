@@ -6,6 +6,7 @@ import type { Video } from '$lib/data'
 const testPeopleData = {
 	alumni: [
 		{
+			id: 'jeff',
 			name: 'Jeff Gerstmann',
 			image: 'jeffge.jpg',
 			links: ['https://www.patreon.com/jeffgerstmann', 'https://twitter.com/jeffgerstmann'],
@@ -13,6 +14,7 @@ const testPeopleData = {
 	],
 	in_memoriam: [
 		{
+			id: 'ryan',
 			name: 'Ryan Davis',
 			years: '1979–2013',
 			image: 'ryan.png',
@@ -119,6 +121,7 @@ describe('DataStore', () => {
 			const expectedPeople = {
 				alumni: [
 					{
+						id: 'jeff',
 						name: 'Jeff Gerstmann',
 						image: 'jeffge.jpg',
 						links: [
@@ -129,6 +132,7 @@ describe('DataStore', () => {
 				],
 				inMemoriam: [
 					{
+						id: 'ryan',
 						name: 'Ryan Davis',
 						years: '1979–2013',
 						image: 'ryan.png',

@@ -10,20 +10,22 @@ export enum VideoSource {
 	YouTube = 'youtube',
 }
 
-export interface Employee {
+export interface Person {
+	readonly id: string
 	readonly name: string
 	readonly image: string
 	readonly links: readonly string[]
 }
 
 export interface InMemoriam {
+	readonly id: string
 	readonly name: string
 	readonly years: string
 	readonly image: string
 }
 
 export interface People {
-	readonly alumni: Employee[]
+	readonly alumni: Person[]
 	readonly inMemoriam: InMemoriam[]
 }
 
@@ -97,6 +99,7 @@ export class DataStore {
 		let alumni = []
 		for (const person of peopleData.alumni) {
 			alumni.push({
+				id: person.id,
 				name: person.name,
 				image: person.image,
 				links: person.links,
@@ -106,6 +109,7 @@ export class DataStore {
 		let inMemoriam = []
 		for (const person of peopleData.in_memoriam) {
 			inMemoriam.push({
+				id: person.id,
 				name: person.name,
 				years: person.years,
 				image: person.image,

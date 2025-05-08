@@ -20,7 +20,7 @@
 		{ path: `${base}/historic`, text: 'Historic' },
 		{ path: `${base}/search`, text: 'Search' },
 		{ path: `${base}/podcasts`, text: 'Podcasts' },
-		{ path: `${base}/people`, text: 'Crew' },
+		{ path: `${base}/people`, text: 'Duders' },
 	]
 
 	if (browser && import.meta.env.VITE_PLAUSIBLE_HOST) {

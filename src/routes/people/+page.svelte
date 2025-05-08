@@ -33,6 +33,10 @@
 </script>
 
 <div class="container">
+	<p class="note">
+		Some of the many fine folks who made Giant Bomb what it was
+		<a href="https://www.youtube.com/watch?v=gVvUuSYp7-s">&hearts;</a>
+	</p>
 	<section>
 		<h1 class="sr-only">Alumni</h1>
 		<ul class="people">
@@ -90,7 +94,7 @@
 	<meta property="og:description" content="An archival website about video games." />
 	<meta property="og:image" content="https://duders.zone/image.png" />
 	<meta property="og:site_name" content="Duders Zone" />
-	<title>Crew - Duders Zone</title>
+	<title>Duders - Duders Zone</title>
 	<meta name="description" content="An archival website about video games." />
 </svelte:head>
 
@@ -127,14 +131,18 @@
 
 	p {
 		font-size: 12pt;
-		margin: 0.2em 0;
+		font-style: italic;
+		margin: 1em 0;
+		text-align: center;
 	}
 
 	p.thank-you {
 		font-size: 22px;
-		font-style: italic;
 		margin: 3em 0;
-		text-align: center;
+	}
+
+	p.note {
+		color: var(--color-text-muted);
 	}
 
 	ul {
