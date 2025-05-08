@@ -3,13 +3,24 @@
 	--color-red: #b31919;
 	--color-red-active: #ce1d1d;
 	--color-gray: #2c2e30;
-	--color-gray-muted: #696e72;
 	--font-regular:
 		-apple-system, '.SFNSText-Regular', BlinkMacSystemFont, 'San Francisco', 'Roboto',
 		'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
 		'Helvetica', 'Lucida Grande', sans-serif;
-	--font-special: 'GlyddonRegular', Georgia, Times, 'Times New Roman', serif;
+	--font-special: 'Jubilat', 'GlyddonRegular', Georgia, Times, 'Times New Roman', serif;
 	--spacing: 20px;
+	--spacing-less: 5px;
+	--spacing-more: 40px;
+	/* Theme colors */
+	--color-background: #f2f2f3;
+	--color-text: black;
+	--color-text-muted: #696e72;
+}
+
+[data-theme='dark'] {
+	--color-background: #262626;
+	--color-text: white;
+	--color-text-muted: #696e72;
 }
 
 a {
@@ -22,6 +33,7 @@ a:hover {
 }
 
 body {
+	color: var(--color-text);
 	font-family: var(--font-regular);
 	font-size: 14px;
 	height: 100%;
@@ -40,7 +52,7 @@ h6 {
 }
 
 html {
-	background: #f2f2f3;
+	background: var(--color-background);
 	height: 100%;
 }
 
@@ -53,7 +65,7 @@ p {
 }
 
 input[type='submit'] {
-	background: #394046 url(/assets/bg-button-dark.png) center center repeat-x;
+	background: var(--color-gray) url(/assets/bg-button-dark.png) center center repeat-x;
 	color: #dedede;
 	padding: 0 1em;
 	box-shadow:
@@ -72,7 +84,7 @@ input[type='submit']:active {
 
 select {
 	appearance: none;
-	background: #394046 url(/assets/bg-select-dark.png) right;
+	background: var(--color-gray) url(/assets/bg-select-dark.png) right;
 	background-size: auto 100%;
 	color: #dedede;
 	padding: 0 16px 0 8px;

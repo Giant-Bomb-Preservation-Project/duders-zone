@@ -13,7 +13,7 @@
 	<ul>
 		{#each videos as video}
 			<li style="background-image: url('{video.thumbnail || '{base}/assets/default.jpg'}');">
-				<a href={`${base}/shows/${video.show}/${video.id}`}>
+				<a href={`${base}/videos/${video.show}/${video.id}`}>
 					<hgroup>
 						<span>
 							Video
@@ -49,6 +49,7 @@
 
 	h3 {
 		font-size: 24px;
+		line-height: 30px;
 		text-shadow: rgba(0, 0, 0, 0.75) 0 1px 1px;
 		margin: 0;
 		transition: text-shadow 0.25s;

@@ -1,7 +1,8 @@
 import { writable } from 'svelte/store'
 
 import { VideoSource } from '$lib/data'
-import { VideoListMode } from '$lib/types'
+import { Theme, VideoListMode } from '$lib/types'
+import { VideoListSorting } from './types'
 
 // Create a store for browsers
 const createBrowserStore = (key: string, defaultValue: any) => {
@@ -26,8 +27,24 @@ export const preferredSource =
 		? createNodeStore(VideoSource.InternetArchive)
 		: createBrowserStore('preferredSource', VideoSource.InternetArchive)
 
+// Browser theme
+let defaultTheme = Theme.Light
+if (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+	defaultTheme = Theme.Dark
+}
+export const theme =
+	typeof localStorage === 'undefined'
+		? createNodeStore(defaultTheme)
+		: createBrowserStore('theme', defaultTheme)
+
 // How to show the video list
 export const videoListMode =
 	typeof localStorage === 'undefined'
 		? createNodeStore(VideoListMode.List)
 		: createBrowserStore('videoListMode', VideoListMode.List)
+
+// How to sort the video list
+export const videoListSorting =
+	typeof localStorage === 'undefined'
+		? createNodeStore(VideoListSorting.NewestFirst)
+		: createBrowserStore('videoSorting', VideoListSorting.NewestFirst)

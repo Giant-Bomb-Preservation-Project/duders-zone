@@ -21,6 +21,9 @@ const VIDEOS_FILE_PATH = 'src/lib/data/videos.json'
 // Path to the location to store the show images
 const SHOW_IMAGES_PATH = 'static/assets/shows/'
 
+// ID of the show which holds the uncategorized videos
+const UNCATEGORIZED_SHOW_ID = 'uncategorized'
+
 ///
 /// Helper functions
 ///
@@ -113,7 +116,7 @@ async function run() {
 
 	// Load data
 
-	const gb = new GiantBomb(process.env.GB_API_KEY)
+	const gb = new GiantBomb(process.env.GB_API_KEY, 1)
 	const ia = new InternetArchive()
 
 	log('Getting items from Internet Archive...')
@@ -194,9 +197,20 @@ async function run() {
 		}
 	}
 
+	// Add a fake show to hold all the videos that don't have shows
+	shows.push({
+		id: UNCATEGORIZED_SHOW_ID,
+		gb_id: null,
+		title: 'Uncategorized',
+		description: 'For all the videos that have no show of their own.',
+		poster: null,
+		logo: null,
+		videos: [],
+	})
+
 	// Process videos
 
-	log(`Adding ${gbVideos.length} IA videos...`)
+	log(`Adding ${gbVideos.length} GB videos...`)
 	for (const video of gbVideos) {
 		const videoShows = new Set()
 
@@ -211,29 +225,38 @@ async function run() {
 			videoShows.add(show.id)
 		}
 
-		// Find the IA video for this video
-		const iaVideoIndex = iaItems.findIndex((item) => {
-			let score = 0
+		// Find the IA video for this video using the GUID
+		let iaVideoIndex = iaItems.findIndex((item) => item.guid === video.guid)
 
-			score += item.title.replaceAll(' ', '').includes(video.name.replaceAll(' ', '')) ? 1 : 0
-			score +=
-				item.description &&
-				item.description.replaceAll(' ', '').includes(video.description.replaceAll(' ', ''))
+		if (iaVideoIndex === -1) {
+			// Find the IA video for this video using metadata matching
+			iaVideoIndex = iaItems.findIndex((item) => {
+				let score = 0
+
+				score += item.title.replaceAll(' ', '').includes(video.name.replaceAll(' ', ''))
 					? 1
 					: 0
-			score += item.identifier.includes(video.guid) ? 1 : 0
-			if (item.date) {
 				score +=
-					item.date.toISOString().substring(0, 10) ==
-					video.publish_date.toISOString().substring(0, 10)
+					item.description &&
+					item.description
+						.replaceAll(' ', '')
+						.includes(video.description.replaceAll(' ', ''))
 						? 1
 						: 0
-			}
+				score += item.identifier.includes(video.guid) ? 1 : 0
+				if (item.date) {
+					score +=
+						item.date.toISOString().substring(0, 10) ==
+						video.publish_date.toISOString().substring(0, 10)
+							? 1
+							: 0
+				}
 
-			return score >= 2 // probably the right video
-		})
-		const iaVideo = iaVideoIndex != -1 ? iaItems[iaVideoIndex] : null
+				return score >= 2 // probably the right video
+			})
+		}
 
+		const iaVideo = iaVideoIndex !== -1 ? iaItems[iaVideoIndex] : null
 		if (iaVideo) {
 			// Add the IA subjects to the show list
 			for (const subject of iaVideo.subject) {
@@ -252,10 +275,9 @@ async function run() {
 			}
 		}
 
-		// Video has no shows at all???
+		// Video has no shows at all
 		if (videoShows.size === 0) {
-			log('error', `Skipping video due to missing show: ${video.name} (${video.id})`)
-			continue // TODO: what to do?
+			videoShows.add(UNCATEGORIZED_SHOW_ID)
 		}
 
 		// Setup the video sources
@@ -276,6 +298,7 @@ async function run() {
 			description: video.description,
 			date: video.publish_date,
 			thumbnail: video.image,
+			duration: video.duration,
 			source,
 		})
 
@@ -304,8 +327,7 @@ async function run() {
 		}
 
 		if (videoShows.length === 0) {
-			log('error', `Skipping video due to missing show: ${video.title} (${video.identifier})`)
-			continue // TODO: what to do?
+			videoShows.push(UNCATEGORIZED_SHOW_ID)
 		}
 
 		videos.push({
@@ -316,6 +338,7 @@ async function run() {
 			description: video.description,
 			date: video.date,
 			thumbnail: `https://archive.org/services/img/${video.identifier}`,
+			duration: null,
 			source: {
 				internetarchive: video.identifier,
 			},

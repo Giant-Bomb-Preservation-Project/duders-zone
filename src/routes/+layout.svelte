@@ -3,6 +3,7 @@
 	import { base } from '$app/paths'
 	import { page } from '$app/stores'
 	import { browser } from '$app/environment'
+	import ThemeToggle from '$lib/components/ThemeToggle.svelte'
 	import logo from '$lib/images/logo-dz.png'
 	import internetArchive from '$lib/images/internet-archive.jpg'
 	import giantBombPreservationSociety from '$lib/images/giant-bomb-preservation-society.png'
@@ -15,10 +16,10 @@
 
 	const { children }: Props = $props()
 	const menu = [
-		{ path: `${base}/shows`, text: 'Shows' },
+		{ path: `${base}/videos`, text: 'Videos' },
 		{ path: `${base}/historic`, text: 'Historic' },
 		{ path: `${base}/search`, text: 'Search' },
-		{ path: `${base}/random`, text: 'Random' },
+		{ path: `${base}/podcasts`, text: 'Podcasts' },
 		{ path: `${base}/people`, text: 'Crew' },
 	]
 
@@ -68,6 +69,10 @@
 						</svg>
 					</button>
 				</form>
+
+				<div class="theme-toggle">
+					<ThemeToggle />
+				</div>
 			</div>
 		</div>
 		<nav>
@@ -138,6 +143,9 @@
 					>open source</a
 				>.
 			</p>
+			<div class="theme-toggle">
+				<ThemeToggle />
+			</div>
 		</div>
 	</footer>
 </div>
@@ -162,7 +170,7 @@
 	}
 
 	footer p {
-		margin-bottom: 3em;
+		margin-bottom: 2em;
 	}
 
 	footer::before {
@@ -184,6 +192,11 @@
 
 	footer #credits img {
 		max-width: 200px;
+	}
+
+	footer .theme-toggle {
+		margin: 1em auto 3em;
+		width: 2.65em;
 	}
 
 	header {
@@ -240,7 +253,7 @@
 			rgba(255, 255, 255, 0.15) 0 2px 0;
 		padding: 0 10px;
 		position: relative;
-		width: 300px;
+		width: 260px;
 	}
 
 	header #top-header input {
@@ -337,6 +350,10 @@
 		width: 152px;
 	}
 
+	header .theme-toggle {
+		display: none;
+	}
+
 	#site-container {
 		overflow-y: hidden;
 		min-height: 100%;
@@ -375,6 +392,11 @@
 		footer #credits img {
 			width: 160px;
 		}
+
+		header .theme-toggle {
+			display: block;
+			margin-left: auto;
+		}
 	}
 
 	@media (min-width: 768px) {
@@ -384,6 +406,10 @@
 
 		footer #credits img {
 			width: 200px;
+		}
+
+		header .theme-toggle {
+			margin-left: 1em;
 		}
 	}
 </style>

@@ -62,11 +62,20 @@
 		<input type="submit" value="Go" />
 	</form>
 
-	<VideoList videos={data.videos} title="This Day in Giant Bomb History" rootUri={currentUri} />
+	<VideoList
+		videos={data.videos}
+		currentVideo={data.video}
+		title="This Day in Giant Bomb History"
+		rootUri={currentUri}
+		perPage={100}
+	/>
 </section>
 
 <svelte:head>
-	<meta property="og:url" content="https://duders.zone/shows/{data.video.show}/{data.video.id}" />
+	<meta
+		property="og:url"
+		content="https://duders.zone/videos/{data.video.show}/{data.video.id}"
+	/>
 	<meta property="og:type" content="video.other" />
 	<meta property="og:title" content={data.video.title} />
 	<meta property="og:description" content={data.video.description} />

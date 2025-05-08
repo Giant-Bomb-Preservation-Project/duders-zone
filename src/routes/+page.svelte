@@ -39,7 +39,7 @@
 	<LoadingIndicator />
 {:else}
 	{#if mainVideo}
-		<VideoEmbed video={mainVideo} />
+		<VideoEmbed video={mainVideo} linkToVideo />
 	{/if}
 
 	<PromoStrip videos={randomVideos} />
@@ -52,6 +52,7 @@
 				rootUri={historicUri}
 				seeAllUrl={`${base}/historic`}
 				mode={VideoListMode.List}
+				sortable={false}
 			/>
 
 			<div class="more">
@@ -89,12 +90,12 @@
 			</a>
 
 			<Header title="Some Random Shows">
-				<div class="see-all">&middot; <a href={`${base}/shows`}>See All</a></div>
+				<div class="see-all">&middot; <a href={`${base}/videos`}>See All</a></div>
 			</Header>
 			<ul class="shows">
 				{#each shows as show}
 					<li>
-						<a href={`${base}/shows/${show.id}`}>
+						<a href={`${base}/videos/${show.id}`}>
 							<img
 								src={show.poster
 									? `${base}/assets/shows/${show.poster}`
@@ -200,7 +201,7 @@
 	}
 
 	.shows a {
-		border: 1px solid white;
+		border: 1px solid var(--color-background);
 		box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px;
 		color: white;
 		display: block;

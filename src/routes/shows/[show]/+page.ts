@@ -1,19 +1,10 @@
-import { error, redirect } from '@sveltejs/kit'
+import { redirect } from '@sveltejs/kit'
 import { base } from '$app/paths'
 import { dataStore } from '$lib/data'
 import type { EntryGenerator, PageLoad } from './$types'
 
 export const load = (({ params }) => {
-	const show = dataStore.getShowById(params.show)
-
-	if (show === null) throw error(404, 'Not found')
-
-	const videos = dataStore.getVideosForShow(show)
-	if (videos.length === 0) throw error(404, 'Not found')
-
-	const video = videos[0]
-
-	redirect(302, `${base}/shows/${show.id}/${video.id}`)
+	redirect(301, `${base}/videos/${params.show}`)
 }) satisfies PageLoad
 
 export const entries: EntryGenerator = () => {

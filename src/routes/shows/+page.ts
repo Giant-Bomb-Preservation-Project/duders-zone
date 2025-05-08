@@ -1,7 +1,7 @@
-import { dataStore } from '$lib/data'
+import { redirect } from '@sveltejs/kit'
+import { base } from '$app/paths'
 import type { PageLoad } from './$types'
 
-export const load = (({ params }) => {
-	const shows = dataStore.getShows()
-	return { shows }
+export const load = (() => {
+	redirect(301, `${base}/videos/shows`)
 }) satisfies PageLoad

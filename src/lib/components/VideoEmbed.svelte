@@ -8,9 +8,10 @@
 
 	interface Props {
 		video: Video
+		linkToVideo?: Boolean
 	}
 
-	const { video }: Props = $props()
+	const { video, linkToVideo = false }: Props = $props()
 	let videoSource = $derived.by(() => {
 		let availableSources: Array<VideoSource> = []
 
@@ -44,11 +45,17 @@
 
 <Splash image={video.thumbnail || `${base}/assets/default.jpg`}>
 	<div class="metadata">
-		<a href={`${base}/shows/${video.show}/${video.id}`}>
+		{#if linkToVideo}
+			<a href={`${base}/videos/${video.show}/${video.id}`}>
+				<h3>{video.title}</h3>
+				<p>{video.description}</p>
+				<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>
+			</a>
+		{:else}
 			<h3>{video.title}</h3>
 			<p>{video.description}</p>
 			<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>
-		</a>
+		{/if}
 	</div>
 	<div class="video">
 		{#if videoSource == VideoSource.Direct}

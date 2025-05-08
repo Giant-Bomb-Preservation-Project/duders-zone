@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+    <channel>
+        <title><![CDATA[ Giant Bomb Presents: Film & 40s (Archive) ]]></title>
+        <description><![CDATA[ The Film & 40s episodes of the Giant Bomb Presents show, courtesy of the Internet Archive. ]]></description>
+        <link>https://archive.org/details/giant-bomb-audio</link>
+        <language>en-us</language>
+        <category>Video Games</category>
+        <copyright>Copyright Giant Bomb</copyright>
+        <image>
+            <title>Giant Bomb Presents</title>
+            <url>https://d3wo5wojvuv7l.cloudfront.net/t_square_limited_480/images.spreaker.com/original/2b239887f7932f891920444f772a6311.jpg</url>
+            <link>https://www.spreaker.com/show/giant-bomb-presents</link>
+        </image>
+        <itunes:author>Giant Bomb</itunes:author>
+        <itunes:image href="https://d3wo5wojvuv7l.cloudfront.net/t_square_limited_480/images.spreaker.com/original/2b239887f7932f891920444f772a6311.jpg"/>
+        <itunes:owner>
+            <itunes:name>Giant Bomb</itunes:name>
+            <itunes:email>feeds@spreaker.com</itunes:email>
+        </itunes:owner>
+        <itunes:category text="Leisure">
+            <itunes:category text="Video Games" />
+        </itunes:category>
+        <itunes:summary><![CDATA[ The Film & 40s episodes of the Giant Bomb Presents show, courtesy of the Internet Archive. ]]></itunes:summary>
+        <itunes:explicit>true</itunes:explicit>
+        <itunes:type>episodic</itunes:type>
+        <pubDate>Wed, 19 Jul 2023 00:00:00 -0000</pubDate>
+        <generator>BlackDeath3's custom Giant Bomb RSS feed generator</generator>
+        <lastBuildDate>Mon, 05 May 2025 10:40:14 -0000</lastBuildDate>
+        <item>
+            <title><![CDATA[ Rocky IV ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Dan and Drew provide a beer-fueled commentary track for a movie that not only single-handedly ended the Cold War, but also features cake-serving robots, giant golden bull heads, and some of the greatest montages ever committed to celluloid. Ding, ding! ]]></description>
+            <itunes:subtitle><![CDATA[ Dan and Drew provide a beer-fueled commentary track for a movie that not only single-handedly ended the Cold War, but also features cake-serving robots, giant golden bull heads, and some of the greatest montages ever committed to celluloid. Ding, ding! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Dan and Drew provide a beer-fueled commentary track for a movie that not only single-handedly ended the Cold War, but also features cake-serving robots, giant golden bull heads, and some of the greatest montages ever committed to celluloid. Ding, ding! ]]></itunes:summary>
+            <itunes:duration>6418.08</itunes:duration>
+            <link>https://archive.org/download/gb-1600-1151-ID5FMXS/2015-02-27-Film__40s_Film__40s_Rocky_IV.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-1151-ID5FMXS/2015-02-27-Film__40s_Film__40s_Rocky_IV.mp3" length="51635691" />
+            <pubDate>Fri, 27 Feb 2015 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-1151</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>1</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ The Hunt for Red October ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Two buckaroos use their political intrigue and expert knowledge of underwater acoustics to finally locate some 40s for this deep dive into vintage Clance. ]]></description>
+            <itunes:subtitle><![CDATA[ Two buckaroos use their political intrigue and expert knowledge of underwater acoustics to finally locate some 40s for this deep dive into vintage Clance. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Two buckaroos use their political intrigue and expert knowledge of underwater acoustics to finally locate some 40s for this deep dive into vintage Clance. ]]></itunes:summary>
+            <itunes:duration>8780.5</itunes:duration>
+            <link>https://archive.org/download/gb-1600-1303-IDROUR6/2015-07-30-Film__40s_Film__40s_The_Hunt_for_Red_October.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-1303-IDROUR6/2015-07-30-Film__40s_Film__40s_The_Hunt_for_Red_October.mp3" length="70503544" />
+            <pubDate>Thu, 30 Jul 2015 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-1303</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>2</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Commando ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Feeling stressed? Why not let off some steam by watching Arnold and his rippling, camouflaged muscles completely wreck an entire island full of dudes? ]]></description>
+            <itunes:subtitle><![CDATA[ Feeling stressed? Why not let off some steam by watching Arnold and his rippling, camouflaged muscles completely wreck an entire island full of dudes? ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Feeling stressed? Why not let off some steam by watching Arnold and his rippling, camouflaged muscles completely wreck an entire island full of dudes? ]]></itunes:summary>
+            <itunes:duration>5854.25</itunes:duration>
+            <link>https://archive.org/download/gb-1600-1583-IDSVKW7/2016-04-29-Film__40s_Film__40s_Commando.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-1583-IDSVKW7/2016-04-29-Film__40s_Film__40s_Commando.mp3" length="47211162" />
+            <pubDate>Fri, 29 Apr 2016 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-1583</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>3</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ The Fast and the Furious (2001) ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ If we're gonna get through the entire Fast &amp; Furious franchise, we're gonna need a stack of Blu-rays, a bagful of 40s, and NOS. Definitely gonna need NOS. ]]></description>
+            <itunes:subtitle><![CDATA[ If we're gonna get through the entire Fast &amp; Furious franchise, we're gonna need a stack of Blu-rays, a bagful of 40s, and NOS. Definitely gonna need NOS. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ If we're gonna get through the entire Fast &amp; Furious franchise, we're gonna need a stack of Blu-rays, a bagful of 40s, and NOS. Definitely gonna need NOS. ]]></itunes:summary>
+            <itunes:duration>6324.51</itunes:duration>
+            <link>https://archive.org/download/gb-1600-1892-ID63C9Q/2017-02-24-Film__40s_Film__40s_The_Fast_and_the_Furious_(2001).mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-1892-ID63C9Q/2017-02-24-Film__40s_Film__40s_The_Fast_and_the_Furious_(2001).mp3" length="101205428" />
+            <pubDate>Fri, 24 Feb 2017 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-1892</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>4</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ 2 Fast 2 Furious ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We hungry for more Fast and Furious, bro. Unfortunately bro, this week we're forced to feast on the least of all F&amp;F movies, 2 Fast 2 Furious. Thank god for these 40s, right bro? ]]></description>
+            <itunes:subtitle><![CDATA[ We hungry for more Fast and Furious, bro. Unfortunately bro, this week we're forced to feast on the least of all F&amp;F movies, 2 Fast 2 Furious. Thank god for these 40s, right bro? ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We hungry for more Fast and Furious, bro. Unfortunately bro, this week we're forced to feast on the least of all F&amp;F movies, 2 Fast 2 Furious. Thank god for these 40s, right bro? ]]></itunes:summary>
+            <itunes:duration>6492.73</itunes:duration>
+            <link>https://archive.org/download/gb-1600-1896-ID4W4IK/2017-03-03-Film__40s_Film__40s_2_Fast_2_Furious.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-1896-ID4W4IK/2017-03-03-Film__40s_Film__40s_2_Fast_2_Furious.mp3" length="103897085" />
+            <pubDate>Fri, 03 Mar 2017 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-1896</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>5</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ The Fast and the Furious: Tokyo Drift ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Giant Bomb's resident Drift King Jeff Gerstmann joins the Beast crew as we screech our way through the greatest of all the drifting-focused Fast and the Furious movies. ]]></description>
+            <itunes:subtitle><![CDATA[ Giant Bomb's resident Drift King Jeff Gerstmann joins the Beast crew as we screech our way through the greatest of all the drifting-focused Fast and the Furious movies. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Giant Bomb's resident Drift King Jeff Gerstmann joins the Beast crew as we screech our way through the greatest of all the drifting-focused Fast and the Furious movies. ]]></itunes:summary>
+            <itunes:duration>6559.63</itunes:duration>
+            <link>https://archive.org/download/gb-1600-1904-ID39G7S/2017-03-10-Film__40s_Film__40s_The_Fast_and_the_Furious_Tokyo_Drift.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-1904-ID39G7S/2017-03-10-Film__40s_Film__40s_The_Fast_and_the_Furious_Tokyo_Drift.mp3" length="104967499" />
+            <pubDate>Fri, 10 Mar 2017 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-1904</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>6</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Fast & Furious ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We've got tankers full of malt liquor and we're ready to ride once more with Dom and Brian as we clear the last hurdle before the Fast &amp; Furious franchise shifts into top gear. ]]></description>
+            <itunes:subtitle><![CDATA[ We've got tankers full of malt liquor and we're ready to ride once more with Dom and Brian as we clear the last hurdle before the Fast &amp; Furious franchise shifts into top gear. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We've got tankers full of malt liquor and we're ready to ride once more with Dom and Brian as we clear the last hurdle before the Fast &amp; Furious franchise shifts into top gear. ]]></itunes:summary>
+            <itunes:duration>6427.35</itunes:duration>
+            <link>https://archive.org/download/gb-1600-1909-ID2OPAN/2017-03-17-Film__40s_Film__40s_Fast__Furious.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-1909-ID2OPAN/2017-03-17-Film__40s_Film__40s_Fast__Furious.mp3" length="102850937" />
+            <pubDate>Fri, 17 Mar 2017 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-1909</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>7</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Fast Five ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We reunite the entire Beast family for a long car trip down to Rio de Janeiro to steal a safe full of malt liquor. ]]></description>
+            <itunes:subtitle><![CDATA[ We reunite the entire Beast family for a long car trip down to Rio de Janeiro to steal a safe full of malt liquor. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We reunite the entire Beast family for a long car trip down to Rio de Janeiro to steal a safe full of malt liquor. ]]></itunes:summary>
+            <itunes:duration>8155.09</itunes:duration>
+            <link>https://archive.org/download/gb-1600-1916-IDDMA2N/2017-03-24-Film__40s_Film__40s_Fast_Five.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-1916-IDDMA2N/2017-03-24-Film__40s_Film__40s_Fast_Five.mp3" length="130494693" />
+            <pubDate>Fri, 24 Mar 2017 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-1916</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>8</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Fast & Furious 6 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We're six movies and damn near a thousand ounces deep into our Fast &amp; Furious journey, and things just keep getting stupider. Amnesia! Tanks! Impossible runways! THIS. IS. FILM. AND. 40S. ]]></description>
+            <itunes:subtitle><![CDATA[ We're six movies and damn near a thousand ounces deep into our Fast &amp; Furious journey, and things just keep getting stupider. Amnesia! Tanks! Impossible runways! THIS. IS. FILM. AND. 40S. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We're six movies and damn near a thousand ounces deep into our Fast &amp; Furious journey, and things just keep getting stupider. Amnesia! Tanks! Impossible runways! THIS. IS. FILM. AND. 40S. ]]></itunes:summary>
+            <itunes:duration>8125.07</itunes:duration>
+            <link>https://archive.org/download/gb-1600-1922-IDN619G/2017-03-31-Film__40s_Film__40s_Fast__Furious_6.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-1922-IDN619G/2017-03-31-Film__40s_Film__40s_Fast__Furious_6.mp3" length="130014537" />
+            <pubDate>Fri, 31 Mar 2017 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-1922</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>9</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Furious 7 ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Vinny, Dan, and Alex get together for one last ridiculous ride. Salute, mi familia. ]]></description>
+            <itunes:subtitle><![CDATA[ Vinny, Dan, and Alex get together for one last ridiculous ride. Salute, mi familia. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Vinny, Dan, and Alex get together for one last ridiculous ride. Salute, mi familia. ]]></itunes:summary>
+            <itunes:duration>8665.39</itunes:duration>
+            <link>https://archive.org/download/gb-1600-1926-ID9FTBO/2017-04-07-Film__40s_Film__40s_Furious_7.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-1926-ID9FTBO/2017-04-07-Film__40s_Film__40s_Furious_7.mp3" length="138659495" />
+            <pubDate>Fri, 07 Apr 2017 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-1926</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>10</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Battle Royale ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Abby, Alex, Dan, and Vinny return to the source of the Battle Royale craze to see if these high school students have any useful strategies for future Battlegrounds matches. ]]></description>
+            <itunes:subtitle><![CDATA[ Abby, Alex, Dan, and Vinny return to the source of the Battle Royale craze to see if these high school students have any useful strategies for future Battlegrounds matches. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Abby, Alex, Dan, and Vinny return to the source of the Battle Royale craze to see if these high school students have any useful strategies for future Battlegrounds matches. ]]></itunes:summary>
+            <itunes:duration>6911.84</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2058-IDAI6J5/2017-08-14-Film__40s_Film__40s_Battle_Royale.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2058-IDAI6J5/2017-08-14-Film__40s_Film__40s_Battle_Royale.mp3" length="110602822" />
+            <pubDate>Mon, 14 Aug 2017 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2058</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>11</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ They Live ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Abby and Jeff Bakalar put on the glasses for the first time as the Beast crew CONSUMES one of John Carpenter's greatest masterpieces. ]]></description>
+            <itunes:subtitle><![CDATA[ Abby and Jeff Bakalar put on the glasses for the first time as the Beast crew CONSUMES one of John Carpenter's greatest masterpieces. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Abby and Jeff Bakalar put on the glasses for the first time as the Beast crew CONSUMES one of John Carpenter's greatest masterpieces. ]]></itunes:summary>
+            <itunes:duration>6414.79</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2071-ID6OB8I/2017-08-25-Film__40s_Film__40s_They_Live.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2071-ID6OB8I/2017-08-25-Film__40s_Film__40s_They_Live.mp3" length="102649852" />
+            <pubDate>Fri, 25 Aug 2017 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2071</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>12</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Face/Off ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ A very special guest joins us as we kick off our Nicolas Cage retrospective with a movie so good, Dan played it at his wedding. ]]></description>
+            <itunes:subtitle><![CDATA[ A very special guest joins us as we kick off our Nicolas Cage retrospective with a movie so good, Dan played it at his wedding. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ A very special guest joins us as we kick off our Nicolas Cage retrospective with a movie so good, Dan played it at his wedding. ]]></itunes:summary>
+            <itunes:duration>8459.89</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2267-IDS17AE/2018-03-16-Film__40s_Film__40s_FaceOff.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2267-IDS17AE/2018-03-16-Film__40s_Film__40s_FaceOff.mp3" length="135371453" />
+            <pubDate>Fri, 16 Mar 2018 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2267</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>13</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ National Treasure ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We love American history here at Giant Bomb, so what better way to show that love than to get wasted and watch the critically acclaimed documentary National Treasure? ]]></description>
+            <itunes:subtitle><![CDATA[ We love American history here at Giant Bomb, so what better way to show that love than to get wasted and watch the critically acclaimed documentary National Treasure? ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We love American history here at Giant Bomb, so what better way to show that love than to get wasted and watch the critically acclaimed documentary National Treasure? ]]></itunes:summary>
+            <itunes:duration>7639.98</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2277-IDYG6J6/2018-03-23-Film__40s_Film__40s_National_Treasure.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2277-IDYG6J6/2018-03-23-Film__40s_Film__40s_National_Treasure.mp3" length="122253015" />
+            <pubDate>Fri, 23 Mar 2018 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2277</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>14</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Con Air ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Of the films in the Nicolas Cage action movie holy trinity, we can safely say that Con Air is the one that most deserves to be excommunicated. But we still got hammered and watched it anyway. ]]></description>
+            <itunes:subtitle><![CDATA[ Of the films in the Nicolas Cage action movie holy trinity, we can safely say that Con Air is the one that most deserves to be excommunicated. But we still got hammered and watched it anyway. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Of the films in the Nicolas Cage action movie holy trinity, we can safely say that Con Air is the one that most deserves to be excommunicated. But we still got hammered and watched it anyway. ]]></itunes:summary>
+            <itunes:duration>7208.07</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2285-IDSJ93X/2018-03-30-Film__40s_Film__40s_Con_Air.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2285-IDSJ93X/2018-03-30-Film__40s_Film__40s_Con_Air.mp3" length="115342493" />
+            <pubDate>Fri, 30 Mar 2018 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2285</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>15</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ The Rock ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Jeff Gerstmann joins the east coast crew as we attempt to answer the most pressing questions of our time: Who is Womack, and is he, in fact, a piece of shit? ]]></description>
+            <itunes:subtitle><![CDATA[ Jeff Gerstmann joins the east coast crew as we attempt to answer the most pressing questions of our time: Who is Womack, and is he, in fact, a piece of shit? ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Jeff Gerstmann joins the east coast crew as we attempt to answer the most pressing questions of our time: Who is Womack, and is he, in fact, a piece of shit? ]]></itunes:summary>
+            <itunes:duration>8158.62</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2296-IDGSZDX/2018-04-06-Film__40s_Film__40s_The_Rock.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2296-IDGSZDX/2018-04-06-Film__40s_Film__40s_The_Rock.mp3" length="130551159" />
+            <pubDate>Fri, 06 Apr 2018 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2296</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>16</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Vampire's Kiss ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Trying to explain what the hell Nicolas Cage is doing in Vampire's Kiss is a fool's errand, so instead, let's just get hammered and let the insanity wash over us. ]]></description>
+            <itunes:subtitle><![CDATA[ Trying to explain what the hell Nicolas Cage is doing in Vampire's Kiss is a fool's errand, so instead, let's just get hammered and let the insanity wash over us. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Trying to explain what the hell Nicolas Cage is doing in Vampire's Kiss is a fool's errand, so instead, let's just get hammered and let the insanity wash over us. ]]></itunes:summary>
+            <itunes:duration>6577.69</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2304-ID6Y1P7/2018-04-20-Film__40s_Film__40s_Vampires_Kiss.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2304-ID6Y1P7/2018-04-20-Film__40s_Film__40s_Vampires_Kiss.mp3" length="105256279" />
+            <pubDate>Fri, 20 Apr 2018 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2304</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>17</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Bad Lieutenant: Port of Call New Orleans ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ While most would consider Harvey Keitel the baddest of all lieutenants, Nicolas Cage gives him a run for his money in this off-kilter Herzog joint. ]]></description>
+            <itunes:subtitle><![CDATA[ While most would consider Harvey Keitel the baddest of all lieutenants, Nicolas Cage gives him a run for his money in this off-kilter Herzog joint. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ While most would consider Harvey Keitel the baddest of all lieutenants, Nicolas Cage gives him a run for his money in this off-kilter Herzog joint. ]]></itunes:summary>
+            <itunes:duration>7543.38</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2318-IDDMDAW/2018-04-27-Film__40s_Film__40s_Bad_Lieutenant_Port_of_Call_New_Orleans.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2318-IDDMDAW/2018-04-27-Film__40s_Film__40s_Bad_Lieutenant_Port_of_Call_New_Orleans.mp3" length="120707406" />
+            <pubDate>Fri, 27 Apr 2018 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2318</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>18</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ The Wicker Man (2006) ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Waypoint's Austin Walker joins the Bee-st crew to pick apart this absurd, terrible, absurdly terrible remake. ]]></description>
+            <itunes:subtitle><![CDATA[ Waypoint's Austin Walker joins the Bee-st crew to pick apart this absurd, terrible, absurdly terrible remake. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Waypoint's Austin Walker joins the Bee-st crew to pick apart this absurd, terrible, absurdly terrible remake. ]]></itunes:summary>
+            <itunes:duration>6571.13</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2325-IDIU3AL/2018-05-04-Film__40s_Film__40s_The_Wicker_Man_(2006).mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2325-IDIU3AL/2018-05-04-Film__40s_Film__40s_The_Wicker_Man_(2006).mp3" length="105151287" />
+            <pubDate>Fri, 04 May 2018 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2325</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>19</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Drive Angry ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ To close out our Nicolas Cage retrospective, we watch the film that you--yes, YOU--chose for us to watch. So buckle up, crack open a drink, and always remember: don't drive angry. DON'T DRIVE ANGRY. ]]></description>
+            <itunes:subtitle><![CDATA[ To close out our Nicolas Cage retrospective, we watch the film that you--yes, YOU--chose for us to watch. So buckle up, crack open a drink, and always remember: don't drive angry. DON'T DRIVE ANGRY. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ To close out our Nicolas Cage retrospective, we watch the film that you--yes, YOU--chose for us to watch. So buckle up, crack open a drink, and always remember: don't drive angry. DON'T DRIVE ANGRY. ]]></itunes:summary>
+            <itunes:duration>6321.84</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2334-IDU4AAW/2018-05-11-Film__40s_Film__40s_Drive_Angry.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2334-IDU4AAW/2018-05-11-Film__40s_Film__40s_Drive_Angry.mp3" length="101162820" />
+            <pubDate>Fri, 11 May 2018 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2334</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>20</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ The Return of the Living Dead ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ The Beast crew kicks off an October of delightful horror cinema with a zombie classic best known for both its extremely cool teens, and extremely gross practical effects. ]]></description>
+            <itunes:subtitle><![CDATA[ The Beast crew kicks off an October of delightful horror cinema with a zombie classic best known for both its extremely cool teens, and extremely gross practical effects. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ The Beast crew kicks off an October of delightful horror cinema with a zombie classic best known for both its extremely cool teens, and extremely gross practical effects. ]]></itunes:summary>
+            <itunes:duration>5635.27</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2476-IDWYND6/2018-10-05-Film__40s_Film__40s_The_Return_of_the_Living_Dead.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2476-IDWYND6/2018-10-05-Film__40s_Film__40s_The_Return_of_the_Living_Dead.mp3" length="90177584" />
+            <pubDate>Fri, 05 Oct 2018 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2476</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>21</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Premonition ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Sandra Bullock may be America's sweetheart, but is her charm enough to carry this goofy-ass supernatural thriller? Join the Beast crew as we have a few drinks and find out for ourselves. ]]></description>
+            <itunes:subtitle><![CDATA[ Sandra Bullock may be America's sweetheart, but is her charm enough to carry this goofy-ass supernatural thriller? Join the Beast crew as we have a few drinks and find out for ourselves. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Sandra Bullock may be America's sweetheart, but is her charm enough to carry this goofy-ass supernatural thriller? Join the Beast crew as we have a few drinks and find out for ourselves. ]]></itunes:summary>
+            <itunes:duration>6140.53</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2485-IDFIIAO/2018-10-12-Film__40s_Film__40s_Premonition.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2485-IDFIIAO/2018-10-12-Film__40s_Film__40s_Premonition.mp3" length="98261753" />
+            <pubDate>Fri, 12 Oct 2018 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2485</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>22</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Killer Klowns from Outer Space ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ What kind of clowns would record themselves getting drunk and watching weird horror movies? The Giant Beast clowns, of course! Join these clowns as they clown around on this 1980s clown horror classic! CLOWNS! ]]></description>
+            <itunes:subtitle><![CDATA[ What kind of clowns would record themselves getting drunk and watching weird horror movies? The Giant Beast clowns, of course! Join these clowns as they clown around on this 1980s clown horror classic! CLOWNS! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ What kind of clowns would record themselves getting drunk and watching weird horror movies? The Giant Beast clowns, of course! Join these clowns as they clown around on this 1980s clown horror classic! CLOWNS! ]]></itunes:summary>
+            <itunes:duration>5381.15</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2491-IDFI041/2018-10-19-Film__40s_Film__40s_Killer_Klowns_from_Outer_Space.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2491-IDFI041/2018-10-19-Film__40s_Film__40s_Killer_Klowns_from_Outer_Space.mp3" length="86111721" />
+            <pubDate>Fri, 19 Oct 2018 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2491</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>23</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Jason X ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ In the first installment of our Vinny Caravella double feature, we take to the stars and watch a bunch of space-faring future teens run smack-dab into an ancient, technologically enhanced murder man. ]]></description>
+            <itunes:subtitle><![CDATA[ In the first installment of our Vinny Caravella double feature, we take to the stars and watch a bunch of space-faring future teens run smack-dab into an ancient, technologically enhanced murder man. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ In the first installment of our Vinny Caravella double feature, we take to the stars and watch a bunch of space-faring future teens run smack-dab into an ancient, technologically enhanced murder man. ]]></itunes:summary>
+            <itunes:duration>5590.67</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2502-IDUBK60/2018-10-26-Film__40s_Film__40s_Jason_X.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2502-IDUBK60/2018-10-26-Film__40s_Film__40s_Jason_X.mp3" length="89464139" />
+            <pubDate>Fri, 26 Oct 2018 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2502</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>24</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ The Thing (1982) ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We've done a bunch of very silly movies over the course of this October, so we close out our series of horror films with a genuine classic in John Carpenter's paranoia-fueled monster masterpiece, The Thing! ]]></description>
+            <itunes:subtitle><![CDATA[ We've done a bunch of very silly movies over the course of this October, so we close out our series of horror films with a genuine classic in John Carpenter's paranoia-fueled monster masterpiece, The Thing! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We've done a bunch of very silly movies over the course of this October, so we close out our series of horror films with a genuine classic in John Carpenter's paranoia-fueled monster masterpiece, The Thing! ]]></itunes:summary>
+            <itunes:duration>6602.71</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2505-ID0MTH7/2018-10-31-Film__40s_Film__40s_The_Thing_(1982).mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2505-ID0MTH7/2018-10-31-Film__40s_Film__40s_The_Thing_(1982).mp3" length="105656723" />
+            <pubDate>Wed, 31 Oct 2018 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2505</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>25</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ The Gate ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ The gates of hell have opened, and the foul stench of malt liquor is flowing across the land! Only Giant Bomb's plucky heroes can seal away the doom forever by watching this campy 1987 horror classic. ]]></description>
+            <itunes:subtitle><![CDATA[ The gates of hell have opened, and the foul stench of malt liquor is flowing across the land! Only Giant Bomb's plucky heroes can seal away the doom forever by watching this campy 1987 horror classic. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ The gates of hell have opened, and the foul stench of malt liquor is flowing across the land! Only Giant Bomb's plucky heroes can seal away the doom forever by watching this campy 1987 horror classic. ]]></itunes:summary>
+            <itunes:duration>5381.15</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2833-ID6RE2E/2019-10-11-Film__40s_The_Gate.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2833-ID6RE2E/2019-10-11-Film__40s_The_Gate.mp3" length="86611781" />
+            <pubDate>Fri, 11 Oct 2019 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2833</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>26</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Event Horizon ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Mike Mahardy fills in for Abby this week as we take a leisurely jaunt out to Neptune to see what all the fussin' and the screamin' and the eye-clawin' is about over on the old Event Horizon. ]]></description>
+            <itunes:subtitle><![CDATA[ Mike Mahardy fills in for Abby this week as we take a leisurely jaunt out to Neptune to see what all the fussin' and the screamin' and the eye-clawin' is about over on the old Event Horizon. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Mike Mahardy fills in for Abby this week as we take a leisurely jaunt out to Neptune to see what all the fussin' and the screamin' and the eye-clawin' is about over on the old Event Horizon. ]]></itunes:summary>
+            <itunes:duration>5894.06</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2841-IDWHJ9D/2019-10-18-Film__40s_Event_Horizon.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2841-IDWHJ9D/2019-10-18-Film__40s_Event_Horizon.mp3" length="94818405" />
+            <pubDate>Fri, 18 Oct 2019 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2841</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>27</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ The Exorcist ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ The power of Christ compels us to watch William Friedkin's 1973 horror classic! Presumably the power of Satan compelled us to do it while drinking. ]]></description>
+            <itunes:subtitle><![CDATA[ The power of Christ compels us to watch William Friedkin's 1973 horror classic! Presumably the power of Satan compelled us to do it while drinking. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ The power of Christ compels us to watch William Friedkin's 1973 horror classic! Presumably the power of Satan compelled us to do it while drinking. ]]></itunes:summary>
+            <itunes:duration>8142.29</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2844-ID78CFP/2019-10-25-Film__40s_The_Exorcist.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2844-ID78CFP/2019-10-25-Film__40s_The_Exorcist.mp3" length="130790020" />
+            <pubDate>Fri, 25 Oct 2019 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2844</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>28</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Gremlins 2: The New Batch ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Happy Halloween, everyone! To celebrate this scariest of holidays, we're watching the consensus scariest movie of all time, Gremlins 2: The New Batch! No movie has ever been scarier! Quote us on that! ]]></description>
+            <itunes:subtitle><![CDATA[ Happy Halloween, everyone! To celebrate this scariest of holidays, we're watching the consensus scariest movie of all time, Gremlins 2: The New Batch! No movie has ever been scarier! Quote us on that! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Happy Halloween, everyone! To celebrate this scariest of holidays, we're watching the consensus scariest movie of all time, Gremlins 2: The New Batch! No movie has ever been scarier! Quote us on that! ]]></itunes:summary>
+            <itunes:duration>6532.86</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2850-IDNGVDD/2019-10-31-Film__40s_Gremlins_2_The_New_Batch.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2850-IDNGVDD/2019-10-31-Film__40s_Gremlins_2_The_New_Batch.mp3" length="105039201" />
+            <pubDate>Thu, 31 Oct 2019 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2850</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>29</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Pokemon: The First Movie ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ To celebrate the 20th Anniversary of the US release of the Pokemon movie and the release of Sword and Shield we decided to watch the first Pokemon movie! ]]></description>
+            <itunes:subtitle><![CDATA[ To celebrate the 20th Anniversary of the US release of the Pokemon movie and the release of Sword and Shield we decided to watch the first Pokemon movie! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ To celebrate the 20th Anniversary of the US release of the Pokemon movie and the release of Sword and Shield we decided to watch the first Pokemon movie! ]]></itunes:summary>
+            <itunes:duration>4748.52</itunes:duration>
+            <link>https://archive.org/download/gb-1600-2864-IDSRCZC/2019-11-15-Pokemon_The_First_Movie.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-2864-IDSRCZC/2019-11-15-Pokemon_The_First_Movie.mp3" length="37031736" />
+            <pubDate>Fri, 15 Nov 2019 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-2864</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>30</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Mickeys and Whiskies: Brink! ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Ben, Abby, and Jan are back to have a quick skate session in another Disney Channel Original movie. On their journey they learn about supporting a family, breaking your back, and skating with SOUL! ]]></description>
+            <itunes:subtitle><![CDATA[ Ben, Abby, and Jan are back to have a quick skate session in another Disney Channel Original movie. On their journey they learn about supporting a family, breaking your back, and skating with SOUL! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Ben, Abby, and Jan are back to have a quick skate session in another Disney Channel Original movie. On their journey they learn about supporting a family, breaking your back, and skating with SOUL! ]]></itunes:summary>
+            <itunes:duration>5861.6</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3117-IDTORGH/2020-09-14-Film__40s_Mickeys_and_Whiskies_Brink.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3117-IDTORGH/2020-09-14-Film__40s_Mickeys_and_Whiskies_Brink.mp3" length="63446304" />
+            <pubDate>Mon, 14 Sep 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3117</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>31</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Mickeys and Whiskies: The Other Me ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Jan, Abby, and Ben are back for another round of nostalgia. This time we get down into the science and morals of cloning, dancing in the cafeteria, and pizza! ]]></description>
+            <itunes:subtitle><![CDATA[ Jan, Abby, and Ben are back for another round of nostalgia. This time we get down into the science and morals of cloning, dancing in the cafeteria, and pizza! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Jan, Abby, and Ben are back for another round of nostalgia. This time we get down into the science and morals of cloning, dancing in the cafeteria, and pizza! ]]></itunes:summary>
+            <itunes:duration>5537.34</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3124-IDZOI9G/2020-09-21-Film__40s_Mickeys_and_Whiskies_The_Other_Me.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3124-IDZOI9G/2020-09-21-Film__40s_Mickeys_and_Whiskies_The_Other_Me.mp3" length="55455504" />
+            <pubDate>Mon, 21 Sep 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3124</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>32</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ BOO(ze)!: Hausu ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We're back with more booze and movies to kick off the spooky season with the absolute classic: Hausu/House! ]]></description>
+            <itunes:subtitle><![CDATA[ We're back with more booze and movies to kick off the spooky season with the absolute classic: Hausu/House! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We're back with more booze and movies to kick off the spooky season with the absolute classic: Hausu/House! ]]></itunes:summary>
+            <itunes:duration>5430.97</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3145-IDQ817M/2020-10-16-Film__40s_BOO(ze)_Hausu.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3145-IDQ817M/2020-10-16-Film__40s_BOO(ze)_Hausu.mp3" length="48767808" />
+            <pubDate>Fri, 16 Oct 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3145</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>33</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ BOO(ze)!: The Blob (1988) ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ We've assembled the grossest podcast crew to watch another spooky film! GET READY TO GET BLOBBED! ]]></description>
+            <itunes:subtitle><![CDATA[ We've assembled the grossest podcast crew to watch another spooky film! GET READY TO GET BLOBBED! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ We've assembled the grossest podcast crew to watch another spooky film! GET READY TO GET BLOBBED! ]]></itunes:summary>
+            <itunes:duration>5748.47</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3154-ID7PE7J/2020-10-23-Film__40s_BOO(ze)_The_Blob_(1988).mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3154-ID7PE7J/2020-10-23-Film__40s_BOO(ze)_The_Blob_(1988).mp3" length="52777128" />
+            <pubDate>Fri, 23 Oct 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3154</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>34</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ BOO(ze)!: Idle Hands ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Are my hands still idle if I'm holding a cold 40oz? ]]></description>
+            <itunes:subtitle><![CDATA[ Are my hands still idle if I'm holding a cold 40oz? ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Are my hands still idle if I'm holding a cold 40oz? ]]></itunes:summary>
+            <itunes:duration>5535.12</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3161-ID24IFM/2020-10-30-Film__40s_BOO(ze)_Idle_Hands.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3161-ID24IFM/2020-10-30-Film__40s_BOO(ze)_Idle_Hands.mp3" length="38459088" />
+            <pubDate>Fri, 30 Oct 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3161</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>35</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ BOO(ze)!: Leprechaun ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ How lucky are we to get to hangout with y'all and watch SPOOKY movies? Enjoy the conclusion of BOOze! ]]></description>
+            <itunes:subtitle><![CDATA[ How lucky are we to get to hangout with y'all and watch SPOOKY movies? Enjoy the conclusion of BOOze! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ How lucky are we to get to hangout with y'all and watch SPOOKY movies? Enjoy the conclusion of BOOze! ]]></itunes:summary>
+            <itunes:duration>5576.48</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3160-ID3EC98/2020-10-30-Film__40s_BOO(ze)_Leprechaun.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3160-ID3EC98/2020-10-30-Film__40s_BOO(ze)_Leprechaun.mp3" length="44768400" />
+            <pubDate>Fri, 30 Oct 2020 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3160</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>36</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Silent Hill (2006) ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Our daughter is sleepwalking and having visions! It's only right to drink a 40oz and watch a movie to help the problem! ]]></description>
+            <itunes:subtitle><![CDATA[ Our daughter is sleepwalking and having visions! It's only right to drink a 40oz and watch a movie to help the problem! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Our daughter is sleepwalking and having visions! It's only right to drink a 40oz and watch a movie to help the problem! ]]></itunes:summary>
+            <itunes:duration>7796.77</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3610-IDTK50N/2022-03-11-Giant_Bomb_Presents_Silent_Hill_(2006).mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3610-IDTK50N/2022-03-11-Giant_Bomb_Presents_Silent_Hill_(2006).mp3" length="69624528" />
+            <pubDate>Fri, 11 Mar 2022 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3610</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>37</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ The Terminator (1984) ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ What better way to finally watch a piece of cinematic history than with 4 other belligerent people screaming about the movie the whole time? Join us as Jeff Bakalar watches The Terminator for the first time! 
+
+We watched this on Amazon Prime Video, but it ]]></description>
+            <itunes:subtitle><![CDATA[ What better way to finally watch a piece of cinematic history than with 4 other belligerent people screaming about the movie the whole time? Join us as Jeff Bakalar watches The Terminator for the first time! 
+
+We watched this on Amazon Prime Video, but it ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ What better way to finally watch a piece of cinematic history than with 4 other belligerent people screaming about the movie the whole time? Join us as Jeff Bakalar watches The Terminator for the first time! 
+
+We watched this on Amazon Prime Video, but it ]]></itunes:summary>
+            <itunes:duration>6788.74</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3845-IDKT58M/2022-09-01-Giant_Bomb_Presents_The_Terminator_(1984).mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3845-IDKT58M/2022-09-01-Giant_Bomb_Presents_The_Terminator_(1984).mp3" length="81483572" />
+            <pubDate>Thu, 01 Sep 2022 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3845</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>38</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Road House (1989) ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ PAIN DON'T HURT. We promised we'd do it and here it is! A big thank you to everyone that hung out and got us to the goal of talking over Roadhouse after the Giant Bombathon. ]]></description>
+            <itunes:subtitle><![CDATA[ PAIN DON'T HURT. We promised we'd do it and here it is! A big thank you to everyone that hung out and got us to the goal of talking over Roadhouse after the Giant Bombathon. ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ PAIN DON'T HURT. We promised we'd do it and here it is! A big thank you to everyone that hung out and got us to the goal of talking over Roadhouse after the Giant Bombathon. ]]></itunes:summary>
+            <itunes:duration>6980.06</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3906-IDJPEBS/2022-10-17-Film__40s_Road_House_(1989).mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3906-IDJPEBS/2022-10-17-Film__40s_Road_House_(1989).mp3" length="83769325" />
+            <pubDate>Mon, 17 Oct 2022 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3906</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>39</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Hellraiser (1987) ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Hello sweet cenobites and cinnamon rolls! The crew has gotten together to watch the original Hellraiser (1987)! ]]></description>
+            <itunes:subtitle><![CDATA[ Hello sweet cenobites and cinnamon rolls! The crew has gotten together to watch the original Hellraiser (1987)! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Hello sweet cenobites and cinnamon rolls! The crew has gotten together to watch the original Hellraiser (1987)! ]]></itunes:summary>
+            <itunes:duration>5728.08</itunes:duration>
+            <link>https://archive.org/download/gb-1600-3921-IDW7RT1/2022-10-27-Film__40s_Hellraiser_(1987).mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/gb-1600-3921-IDW7RT1/2022-10-27-Film__40s_Hellraiser_(1987).mp3" length="80201653" />
+            <pubDate>Thu, 27 Oct 2022 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">gb-guid:1600-3921</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>40</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ RoboCop (1987) ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ Dan and Grubb pour 40s directly into RoboMitch as they all watch the masterpiece that is RoboCop. 
+
+(Movie starts at ~5:00ish) ]]></description>
+            <itunes:subtitle><![CDATA[ Dan and Grubb pour 40s directly into RoboMitch as they all watch the masterpiece that is RoboCop. 
+
+(Movie starts at ~5:00ish) ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ Dan and Grubb pour 40s directly into RoboMitch as they all watch the masterpiece that is RoboCop. 
+
+(Movie starts at ~5:00ish) ]]></itunes:summary>
+            <itunes:duration>7103.45</itunes:duration>
+            <link>https://archive.org/download/2023-07-19-film-40s-robo-cop-1987/2023-07-19-Film__40s_RoboCop_(1987).mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/2023-07-19-film-40s-robo-cop-1987/2023-07-19-Film__40s_RoboCop_(1987).mp3" length="170491820" />
+            <pubDate>Wed, 19 Jul 2023 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">2023-07-19-film-40s-robo-cop-1987</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>41</itunes:episode>
+        </item>
+        <item>
+            <title><![CDATA[ Annette ]]></title>
+            <itunes:author>Giant Bomb</itunes:author>
+            <description><![CDATA[ EVERYONE'S BEEN ASKING AND HERE IT IS: ANNETTE! ]]></description>
+            <itunes:subtitle><![CDATA[ EVERYONE'S BEEN ASKING AND HERE IT IS: ANNETTE! ]]></itunes:subtitle>
+            <itunes:summary><![CDATA[ EVERYONE'S BEEN ASKING AND HERE IT IS: ANNETTE! ]]></itunes:summary>
+            <itunes:duration>8157.72</itunes:duration>
+            <link>https://archive.org/download/2023-07-19-film-40s-annette/2023-07-19-Film__40s_Annette.mp3</link>
+            <enclosure type="mp3" url="https://archive.org/serve/2023-07-19-film-40s-annette/2023-07-19-Film__40s_Annette.mp3" length="195794952" />
+            <pubDate>Wed, 19 Jul 2023 00:00:00 -0000</pubDate>
+            <guid isPermaLink="false">2023-07-19-film-40s-annette</guid>
+            <itunes:episodeType>full</itunes:episodeType>
+            <itunes:episode>42</itunes:episode>
+        </item>
+    </channel>
+</rss>
