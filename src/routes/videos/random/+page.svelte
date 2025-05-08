@@ -7,6 +7,7 @@
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte'
 	import { dataStore, type Video } from '$lib/data'
 	import VideoList from '$lib/components/VideoList.svelte'
+	import VideosHeader, { VideosPage } from '$lib/components/VideosHeader.svelte'
 	import type { OnNavigate } from '@sveltejs/kit'
 	import type { PageData } from './$types'
 
@@ -23,7 +24,7 @@
 	})
 
 	onNavigate((navigation: OnNavigate) => {
-		if (navigation.to?.route.id === `${base}/random`) randomize()
+		if (navigation.to?.route.id === `${base}/videos/random`) randomize()
 	})
 
 	const randomize = () => {
@@ -36,6 +37,8 @@
 		})
 	}
 </script>
+
+<VideosHeader current={VideosPage.Random} />
 
 <h1 class="sr-only">Random</h1>
 
@@ -65,7 +68,7 @@
 	<meta property="og:description" content="An archival website about video games." />
 	<meta property="og:image" content="https://duders.zone/image.png" />
 	<meta property="og:site_name" content="Duders Zone" />
-	<title>Random - Duders Zone</title>
+	<title>Random Videos - Duders Zone</title>
 	<meta name="description" content="An archival website about video games." />
 </svelte:head>
 

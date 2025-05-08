@@ -19,7 +19,7 @@
 		{ path: `${base}/videos`, text: 'Videos' },
 		{ path: `${base}/historic`, text: 'Historic' },
 		{ path: `${base}/search`, text: 'Search' },
-		{ path: `${base}/random`, text: 'Random' },
+		{ path: `${base}/podcasts`, text: 'Podcasts' },
 		{ path: `${base}/people`, text: 'Crew' },
 	]
 
