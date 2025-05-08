@@ -29,11 +29,7 @@ const testShowData = [
 			'Your look into the world of video game movies and the Wonderful Universe of movies with video game themes.',
 		poster: '3026329-gb_default-16_9.jpg',
 		logo: null,
-		videos: [
-			'IDBF5DWY',
-			'IDIAQF2N',
-			'IDB90NXY',
-		],
+		videos: ['IDBF5DWY', 'IDIAQF2N', 'IDB90NXY'],
 	},
 	{
 		id: 'cross-coast',
@@ -80,8 +76,7 @@ const testVideoData = [
 			'https://archive.org/services/img/2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
 		duration: 1,
 		source: {
-			internetarchive:
-				'IDBF5DWY',
+			internetarchive: 'IDBF5DWY',
 		},
 	},
 	{
@@ -95,8 +90,7 @@ const testVideoData = [
 			'https://archive.org/services/img/2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
 		duration: null,
 		source: {
-			internetarchive:
-				'IDIAQF2N',
+			internetarchive: 'IDIAQF2N',
 		},
 	},
 	{
@@ -109,8 +103,7 @@ const testVideoData = [
 			'https://archive.org/services/img/2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
 		duration: null,
 		source: {
-			internetarchive:
-				'IDB90NXY',
+			internetarchive: 'IDB90NXY',
 		},
 	},
 ]
@@ -155,11 +148,7 @@ describe('DataStore', () => {
 						'Your look into the world of video game movies and the Wonderful Universe of movies with video game themes.',
 					poster: '3026329-gb_default-16_9.jpg',
 					logo: null,
-					videos: [
-						'IDBF5DWY',
-						'IDIAQF2N',
-						'IDB90NXY',
-					],
+					videos: ['IDBF5DWY', 'IDIAQF2N', 'IDB90NXY'],
 				},
 			}
 			const expectedVideos = {
@@ -188,7 +177,7 @@ describe('DataStore', () => {
 						internetarchive: 'gb-2300-16398-IDJKE0C',
 					},
 				},
-				'IDBF5DWY': {
+				IDBF5DWY: {
 					id: 'IDBF5DWY',
 					title: "This Ain't No Game: Double Dragon",
 					description:
@@ -199,11 +188,10 @@ describe('DataStore', () => {
 					duration: '00:00:01',
 					show: 'this-aint-no-game',
 					source: {
-						internetarchive:
-							'IDBF5DWY',
+						internetarchive: 'IDBF5DWY',
 					},
 				},
-				'IDIAQF2N': {
+				IDIAQF2N: {
 					id: 'IDIAQF2N',
 					title: "This Ain't No Game: Street Fighter",
 					description:
@@ -214,11 +202,10 @@ describe('DataStore', () => {
 					duration: '--:--:--',
 					show: 'this-aint-no-game',
 					source: {
-						internetarchive:
-							'IDIAQF2N',
+						internetarchive: 'IDIAQF2N',
 					},
 				},
-				'IDB90NXY': {
+				IDB90NXY: {
 					id: 'IDB90NXY',
 					title: "This Ain't No Game: Resident Evil",
 					description: 'Ryan finds some love for the master of anti-dog karate.',
@@ -228,8 +215,7 @@ describe('DataStore', () => {
 					duration: '--:--:--',
 					show: 'this-aint-no-game',
 					source: {
-						internetarchive:
-							'IDB90NXY',
+						internetarchive: 'IDB90NXY',
 					},
 				},
 			}
@@ -244,56 +230,74 @@ describe('DataStore', () => {
 		it('generates a video index', () => {
 			const expected = new Map(
 				Object.entries({
-					'2': ['2300-15259'],
-					abbys: ['2300-16398'],
-					aint: [
-						'IDBF5DWY',
-						'IDIAQF2N',
-						'IDB90NXY',
-					],
-					but: ['2300-16398'],
-					coast: ['2300-15259', '2300-16398'],
-					cross: ['2300-15259', '2300-16398'],
-					dead: ['2300-15259'],
-					double: [
-						'IDBF5DWY',
-					],
-					dragon: [
-						'IDBF5DWY',
-					],
-					evil: ['IDB90NXY'],
-					fighter: [
-						'IDIAQF2N',
-					],
-					game: [
-						'IDBF5DWY',
-						'IDIAQF2N',
-						'IDB90NXY',
-					],
-					goodbye: ['2300-16398'],
-					later: ['2300-16398'],
-					no: [
-						'IDBF5DWY',
-						'IDIAQF2N',
-						'IDB90NXY',
-					],
-					not: ['2300-16398'],
-					red: ['2300-15259'],
-					redemption: ['2300-15259'],
-					resident: [
-						'IDB90NXY',
-					],
-					see: ['2300-16398'],
-					stream: ['2300-16398'],
-					street: [
-						'IDIAQF2N',
-					],
-					this: [
-						'IDBF5DWY',
-						'IDIAQF2N',
-						'IDB90NXY',
-					],
-					you: ['2300-16398'],
+					'2': new Map(Object.entries({ '2300-15259': 10 })),
+					abbys: new Map(Object.entries({ '2300-16398': 10 })),
+					aint: new Map(
+						Object.entries({
+							IDBF5DWY: 10,
+							IDIAQF2N: 10,
+							IDB90NXY: 10,
+						})
+					),
+					but: new Map(Object.entries({ '2300-16398': 10 })),
+					coast: new Map(Object.entries({ '2300-15259': 10, '2300-16398': 10 })),
+					cross: new Map(Object.entries({ '2300-15259': 10, '2300-16398': 10 })),
+					dead: new Map(Object.entries({ '2300-15259': 10 })),
+					double: new Map(
+						Object.entries({
+							IDBF5DWY: 10,
+						})
+					),
+					dragon: new Map(
+						Object.entries({
+							IDBF5DWY: 10,
+						})
+					),
+					evil: new Map(Object.entries({ IDB90NXY: 10 })),
+					fighter: new Map(
+						Object.entries({
+							IDIAQF2N: 10,
+						})
+					),
+					game: new Map(
+						Object.entries({
+							IDBF5DWY: 10,
+							IDIAQF2N: 10,
+							IDB90NXY: 10,
+						})
+					),
+					goodbye: new Map(Object.entries({ '2300-16398': 10 })),
+					later: new Map(Object.entries({ '2300-16398': 10 })),
+					no: new Map(
+						Object.entries({
+							IDBF5DWY: 10,
+							IDIAQF2N: 10,
+							IDB90NXY: 10,
+						})
+					),
+					not: new Map(Object.entries({ '2300-16398': 10 })),
+					red: new Map(Object.entries({ '2300-15259': 10 })),
+					redemption: new Map(Object.entries({ '2300-15259': 10 })),
+					resident: new Map(
+						Object.entries({
+							IDB90NXY: 10,
+						})
+					),
+					see: new Map(Object.entries({ '2300-16398': 10 })),
+					stream: new Map(Object.entries({ '2300-16398': 10 })),
+					street: new Map(
+						Object.entries({
+							IDIAQF2N: 10,
+						})
+					),
+					this: new Map(
+						Object.entries({
+							IDBF5DWY: 10,
+							IDIAQF2N: 10,
+							IDB90NXY: 10,
+						})
+					),
+					you: new Map(Object.entries({ '2300-16398': 10 })),
 				})
 			)
 
@@ -360,15 +364,9 @@ describe('DataStore', () => {
 	describe('getVideoById', () => {
 		it('gets a specific video', () => {
 			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
-			const result = dataStore.getVideoById(
-				'IDIAQF2N'
-			)
+			const result = dataStore.getVideoById('IDIAQF2N')
 
-			expect(result).toStrictEqual(
-				dataStore.videos[
-					'IDIAQF2N'
-				]
-			)
+			expect(result).toStrictEqual(dataStore.videos['IDIAQF2N'])
 		})
 	})
 
@@ -410,9 +408,7 @@ describe('DataStore', () => {
 			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
 			const result = dataStore.searchVideos('evil')
 
-			expect(result.map((x) => x.id)).toStrictEqual([
-				'IDB90NXY',
-			])
+			expect(result.map((x) => x.id)).toStrictEqual(['IDB90NXY'])
 		})
 
 		it('weighs exact matches higher than non-exact ones', () => {

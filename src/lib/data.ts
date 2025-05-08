@@ -75,7 +75,7 @@ function formatDuration(duration: number | null): string {
 	}
 
 	const hours = Math.floor(duration / SECONDS_PER_HOUR)
-	const minutes = Math.floor(duration % SECONDS_PER_HOUR / SECONDS_PER_MINUTE)
+	const minutes = Math.floor((duration % SECONDS_PER_HOUR) / SECONDS_PER_MINUTE)
 	const seconds = duration % SECONDS_PER_MINUTE
 
 	return (
@@ -92,7 +92,7 @@ export class DataStore {
 	readonly people: People
 	readonly shows: { [key: string]: Show }
 	readonly videos: { [key: string]: Video }
-	readonly videoIndex: Map<string, string[]>
+	readonly videoIndex: Map<string, Map<string, number>>
 
 	// Construct the datastore based on given show and video data.
 	constructor(peopleData: any, showData: any[], videoData: any[]) {
@@ -157,10 +157,10 @@ export class DataStore {
 
 			for (const word of words) {
 				if (!this.videoIndex.has(word)) {
-					this.videoIndex.set(word, [])
+					this.videoIndex.set(word, new Map())
 				}
 
-				this.videoIndex.get(word)!.push(video.id)
+				this.videoIndex.get(word)!.set(video.id, 10)
 			}
 		}
 	}
@@ -238,13 +238,14 @@ export class DataStore {
 		for (const word of words) {
 			this.videoIndex.forEach((value, key) => {
 				if (key.search(word) !== -1) {
-					const matchWeight = word == key ? 10 : 5
+					const weightMultiplier = word == key ? 2 : 1 // exact matches are worth double
 
-					this.videoIndex.get(key)!.forEach((item) => {
-						if (!foundVideos.has(item)) {
-							foundVideos.set(item, 0)
+					this.videoIndex.get(key)!.forEach((weight, id) => {
+						if (!foundVideos.has(id)) {
+							foundVideos.set(id, 0)
 						}
-						foundVideos.set(item, foundVideos.get(item) + matchWeight)
+
+						foundVideos.set(id, foundVideos.get(id) + weight * weightMultiplier)
 					})
 				}
 			})
