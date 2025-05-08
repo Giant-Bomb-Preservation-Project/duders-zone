@@ -7,34 +7,46 @@
 			title: 'Giant Bombcast',
 			description: "The Giant Bombcast is the world's most beloved video game podcast.",
 			image: 'bombcast.jpg',
-			files: ['Giant_Bombcast_Archive.rss', 'Giant_Bombcast_Archive_Reduced.rss'],
+			files: {
+				'Giant Bombcast RSS (Premium Only)': 'Giant_Bombcast_Archive_Reduced.rss',
+				'Giant Bombcast RSS (Premium and Ad-supported)': 'Giant_Bombcast_Archive.rss',
+			},
 		},
 		{
 			title: 'The Giant Beastcast',
 			description:
 				'The Giant Bomb East team gathers to talk about the week in video games, their lives, and basically anything that interests them. All from New York City!',
 			image: 'beastcast.jpg',
-			files: ['Giant_Beastcast_Archive.rss', 'Giant_Beastcast_Archive_Reduced.rss'],
+			files: {
+				'Giant Beastcast RSS (Premium Only)': 'Giant_Beastcast_Archive_Reduced.rss',
+				'Giant Beastcast RSS (Premium and Ad-supported)': 'Giant_Beastcast_Archive.rss',
+			},
 		},
 		{
 			title: 'Danswers',
 			description:
 				"Dan Ryckert & Danny O'Dwyer provides answers to all of life's most pressing questions.",
 			image: 'danswers.jpg',
-			files: ['Danswers_Archive.rss'],
+			files: {
+				'Danswers RSS': 'Danswers_Archive.rss',
+			},
 		},
 		{
 			title: 'Film and 40s',
 			description:
 				'An audio accompaniment to your movie viewing pleasure with your friends at Giant Bomb.',
 			image: 'filmn40s.jpg',
-			files: ['Film_and_40s_Archive.rss'],
+			files: {
+				'Film and 40s': 'Film_and_40s_Archive.rss',
+			},
 		},
 		{
-			title: 'HotSpot Revival',
+			title: 'The Hotsot',
 			description: 'Giant Bomb\'s revival of the Gamespot "Hotspot" podcast.',
 			image: 'hotspot.jpg',
-			files: ['Hotspot_Revival_Archive.rss'],
+			files: {
+				'The Hotspot RSS': 'Hotspot_Revival_Archive.rss',
+			},
 		},
 	]
 </script>
@@ -49,11 +61,11 @@
 				<h2>{podcast.title}</h2>
 				<p>{podcast.description}</p>
 				<ul class="files">
-					{#each podcast.files as file}
+					{#each Object.entries(podcast.files) as [title, file]}
 						<li>
 							<a href={`${base}/podcasts/${file}`}>
 								<Icon type={IconType.RSS} />
-								{file}
+								{title}
 							</a>
 						</li>
 					{/each}
