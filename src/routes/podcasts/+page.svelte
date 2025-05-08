@@ -25,7 +25,7 @@
 		{
 			title: 'Danswers',
 			description:
-				"Dan Ryckert & Danny O'Dwyer provides answers to all of life's most pressing questions.",
+				"Dan Ryckert & Danny O'Dwyer provide answers to all of life's most pressing questions.",
 			image: 'danswers.jpg',
 			files: {
 				'Danswers RSS': 'Danswers_Archive.rss',
