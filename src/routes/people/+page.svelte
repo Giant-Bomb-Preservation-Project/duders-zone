@@ -94,7 +94,7 @@
 	<meta property="og:description" content="An archival website about video games." />
 	<meta property="og:image" content="https://duders.zone/image.png" />
 	<meta property="og:site_name" content="Duders Zone" />
-	<title>Crew - Duders Zone</title>
+	<title>Duders - Duders Zone</title>
 	<meta name="description" content="An archival website about video games." />
 </svelte:head>
 
