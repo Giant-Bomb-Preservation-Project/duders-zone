@@ -250,6 +250,14 @@
 			]
 		},
 		{
+			"id": "peterbrown",
+			"name": "Peter peterbrown",
+			"image": "peterbrown.png",
+			"links": [
+				"https://bsky.app/profile/pcbrown.bsky.social"
+			]
+		},
+		{
 			"id": "richgallup",
 			"name": "Rich Gallup",
 			"image": "richgallup.png",
