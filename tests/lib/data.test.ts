@@ -29,11 +29,7 @@ const testShowData = [
 			'Your look into the world of video game movies and the Wonderful Universe of movies with video game themes.',
 		poster: '3026329-gb_default-16_9.jpg',
 		logo: null,
-		videos: [
-			'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
-			'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-			'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
-		],
+		videos: ['IDBF5DWY', 'IDIAQF2N', 'IDB90NXY'],
 	},
 	{
 		id: 'cross-coast',
@@ -71,23 +67,22 @@ const testVideoData = [
 		},
 	},
 	{
-		id: '2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+		id: 'IDBF5DWY',
 		show: 'this-aint-no-game',
-		title: "This Ain't No Game: Double Dragon",
+		title: 'Double Dragon',
 		description: "Ryan kicks off his movie tour with this...well...it's definitely a movie.",
 		date: '2009-02-11T00:00:00Z',
 		thumbnail:
 			'https://archive.org/services/img/2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
 		duration: 1,
 		source: {
-			internetarchive:
-				'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+			internetarchive: 'IDBF5DWY',
 		},
 	},
 	{
-		id: '2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+		id: 'IDIAQF2N',
 		show: 'this-aint-no-game',
-		title: "This Ain't No Game: Street Fighter",
+		title: 'Street Fighter',
 		description:
 			"In honor of Street Fighter IV's release, we're sharing this epic piece of cinema.",
 		date: '2009-02-19T00:00:00Z',
@@ -95,22 +90,20 @@ const testVideoData = [
 			'https://archive.org/services/img/2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
 		duration: null,
 		source: {
-			internetarchive:
-				'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+			internetarchive: 'IDIAQF2N',
 		},
 	},
 	{
-		id: '2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+		id: 'IDB90NXY',
 		show: 'this-aint-no-game',
-		title: "This Ain't No Game: Resident Evil",
+		title: 'Resident Evil',
 		description: 'Ryan finds some love for the master of anti-dog karate.',
 		date: '2009-02-26T00:00:00Z',
 		thumbnail:
 			'https://archive.org/services/img/2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
 		duration: null,
 		source: {
-			internetarchive:
-				'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+			internetarchive: 'IDB90NXY',
 		},
 	},
 ]
@@ -155,11 +148,7 @@ describe('DataStore', () => {
 						'Your look into the world of video game movies and the Wonderful Universe of movies with video game themes.',
 					poster: '3026329-gb_default-16_9.jpg',
 					logo: null,
-					videos: [
-						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
-						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
-					],
+					videos: ['IDBF5DWY', 'IDIAQF2N', 'IDB90NXY'],
 				},
 			}
 			const expectedVideos = {
@@ -188,9 +177,9 @@ describe('DataStore', () => {
 						internetarchive: 'gb-2300-16398-IDJKE0C',
 					},
 				},
-				'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY': {
-					id: '2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
-					title: "This Ain't No Game: Double Dragon",
+				IDBF5DWY: {
+					id: 'IDBF5DWY',
+					title: 'Double Dragon',
 					description:
 						"Ryan kicks off his movie tour with this...well...it's definitely a movie.",
 					date: new Date('2009-02-11T00:00:00Z'),
@@ -199,13 +188,12 @@ describe('DataStore', () => {
 					duration: '00:00:01',
 					show: 'this-aint-no-game',
 					source: {
-						internetarchive:
-							'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+						internetarchive: 'IDBF5DWY',
 					},
 				},
-				'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N': {
-					id: '2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-					title: "This Ain't No Game: Street Fighter",
+				IDIAQF2N: {
+					id: 'IDIAQF2N',
+					title: 'Street Fighter',
 					description:
 						"In honor of Street Fighter IV's release, we're sharing this epic piece of cinema.",
 					date: new Date('2009-02-19T00:00:00Z'),
@@ -214,13 +202,12 @@ describe('DataStore', () => {
 					duration: '--:--:--',
 					show: 'this-aint-no-game',
 					source: {
-						internetarchive:
-							'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
+						internetarchive: 'IDIAQF2N',
 					},
 				},
-				'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY': {
-					id: '2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
-					title: "This Ain't No Game: Resident Evil",
+				IDB90NXY: {
+					id: 'IDB90NXY',
+					title: 'Resident Evil',
 					description: 'Ryan finds some love for the master of anti-dog karate.',
 					date: new Date('2009-02-26T00:00:00Z'),
 					thumbnail:
@@ -228,8 +215,7 @@ describe('DataStore', () => {
 					duration: '--:--:--',
 					show: 'this-aint-no-game',
 					source: {
-						internetarchive:
-							'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
+						internetarchive: 'IDB90NXY',
 					},
 				},
 			}
@@ -241,59 +227,268 @@ describe('DataStore', () => {
 			expect(dataStore.videos).toStrictEqual(expectedVideos)
 		})
 
-		it('generates a video index', () => {
+		it('generates a video search index', () => {
 			const expected = new Map(
 				Object.entries({
-					'2': ['2300-15259'],
-					abbys: ['2300-16398'],
-					aint: [
-						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
-						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
-					],
-					but: ['2300-16398'],
-					coast: ['2300-15259', '2300-16398'],
-					cross: ['2300-15259', '2300-16398'],
-					dead: ['2300-15259'],
-					double: [
-						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
-					],
-					dragon: [
-						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
-					],
-					evil: ['2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY'],
-					fighter: [
-						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-					],
-					game: [
-						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
-						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
-					],
-					goodbye: ['2300-16398'],
-					later: ['2300-16398'],
-					no: [
-						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
-						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
-					],
-					not: ['2300-16398'],
-					red: ['2300-15259'],
-					redemption: ['2300-15259'],
-					resident: [
-						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
-					],
-					see: ['2300-16398'],
-					stream: ['2300-16398'],
-					street: [
-						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-					],
-					this: [
-						'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
-						'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-						'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
-					],
-					you: ['2300-16398'],
+					'2': new Map(Object.entries({ '2300-15259': 10 })),
+					a: new Map(Object.entries({ IDBF5DWY: 5 })),
+					abby: new Map(Object.entries({ '2300-16398': 5 })),
+					abbys: new Map(Object.entries({ '2300-16398': 10 })),
+					across: new Map(Object.entries({ '2300-15259': 1, '2300-16398': 1 })),
+					aint: new Map(
+						Object.entries({
+							IDBF5DWY: 1,
+							IDIAQF2N: 1,
+							IDB90NXY: 1,
+						})
+					),
+					all: new Map(
+						Object.entries({
+							'2300-15259': 1,
+							'2300-16398': 1,
+						})
+					),
+					and: new Map(
+						Object.entries({
+							'2300-15259': 5,
+							'2300-16398': 5,
+							IDBF5DWY: 1,
+							IDIAQF2N: 1,
+							IDB90NXY: 1,
+						})
+					),
+					anti: new Map(Object.entries({ IDB90NXY: 5 })),
+					as: new Map(Object.entries({ '2300-16398': 5 })),
+					but: new Map(Object.entries({ '2300-16398': 10 })),
+					cinema: new Map(Object.entries({ IDIAQF2N: 5 })),
+					coast: new Map(Object.entries({ '2300-15259': 10, '2300-16398': 10 })),
+					country: new Map(
+						Object.entries({
+							'2300-15259': 1,
+							'2300-16398': 1,
+						})
+					),
+					cross: new Map(Object.entries({ '2300-15259': 10, '2300-16398': 10 })),
+					dead: new Map(Object.entries({ '2300-15259': 10 })),
+					definitely: new Map(Object.entries({ IDBF5DWY: 5 })),
+					dog: new Map(Object.entries({ IDB90NXY: 5 })),
+					double: new Map(
+						Object.entries({
+							IDBF5DWY: 10,
+						})
+					),
+					dragon: new Map(
+						Object.entries({
+							IDBF5DWY: 10,
+						})
+					),
+					epic: new Map(Object.entries({ IDIAQF2N: 5 })),
+					eventually: new Map(Object.entries({ '2300-16398': 5 })),
+					evil: new Map(Object.entries({ IDB90NXY: 10 })),
+					fighter: new Map(
+						Object.entries({
+							IDIAQF2N: 10,
+						})
+					),
+					finds: new Map(Object.entries({ IDB90NXY: 5 })),
+					for: new Map(Object.entries({ IDB90NXY: 5 })),
+					forces: new Map(
+						Object.entries({
+							'2300-15259': 1,
+							'2300-16398': 1,
+						})
+					),
+					full: new Map(Object.entries({ '2300-16398': 5 })),
+					game: new Map(
+						Object.entries({
+							IDBF5DWY: 1,
+							IDIAQF2N: 1,
+							IDB90NXY: 1,
+						})
+					),
+					gestures: new Map(Object.entries({ '2300-16398': 5 })),
+					goodbye: new Map(Object.entries({ '2300-16398': 10 })),
+					hand: new Map(Object.entries({ '2300-16398': 5 })),
+					his: new Map(Object.entries({ IDBF5DWY: 5 })),
+					honor: new Map(Object.entries({ IDIAQF2N: 5 })),
+					in: new Map(Object.entries({ '2300-15259': 5, IDIAQF2N: 5 })),
+					into: new Map(
+						Object.entries({
+							IDBF5DWY: 1,
+							IDIAQF2N: 1,
+							IDB90NXY: 1,
+						})
+					),
+					its: new Map(Object.entries({ IDBF5DWY: 5 })),
+					ivs: new Map(Object.entries({ IDIAQF2N: 5 })),
+					join: new Map(
+						Object.entries({
+							'2300-15259': 1,
+							'2300-16398': 5,
+						})
+					),
+					karate: new Map(Object.entries({ IDB90NXY: 5 })),
+					kicks: new Map(Object.entries({ IDBF5DWY: 5 })),
+					later: new Map(Object.entries({ '2300-16398': 10 })),
+					lets: new Map(Object.entries({ '2300-15259': 5 })),
+					look: new Map(
+						Object.entries({
+							IDBF5DWY: 1,
+							IDIAQF2N: 1,
+							IDB90NXY: 1,
+						})
+					),
+					love: new Map(Object.entries({ IDB90NXY: 5 })),
+					master: new Map(Object.entries({ IDB90NXY: 5 })),
+					movie: new Map(Object.entries({ IDBF5DWY: 5 })),
+					movies: new Map(
+						Object.entries({
+							IDBF5DWY: 1,
+							IDIAQF2N: 1,
+							IDB90NXY: 1,
+						})
+					),
+					new: new Map(Object.entries({ '2300-15259': 5 })),
+					no: new Map(
+						Object.entries({
+							IDBF5DWY: 1,
+							IDIAQF2N: 1,
+							IDB90NXY: 1,
+						})
+					),
+					not: new Map(Object.entries({ '2300-16398': 10 })),
+					obstacles: new Map(
+						Object.entries({
+							'2300-15259': 1,
+							'2300-16398': 1,
+						})
+					),
+					of: new Map(
+						Object.entries({
+							'2300-15259': 5,
+							IDBF5DWY: 1,
+							IDIAQF2N: 5,
+							IDB90NXY: 5,
+						})
+					),
+					off: new Map(Object.entries({ IDBF5DWY: 5 })),
+					one: new Map(Object.entries({ '2300-16398': 5 })),
+					overcome: new Map(
+						Object.entries({
+							'2300-15259': 1,
+							'2300-16398': 1,
+						})
+					),
+					piece: new Map(Object.entries({ IDIAQF2N: 5 })),
+					posse: new Map(Object.entries({ '2300-15259': 5 })),
+					questionable: new Map(Object.entries({ '2300-16398': 5 })),
+					red: new Map(Object.entries({ '2300-15259': 10 })),
+					redemption: new Map(Object.entries({ '2300-15259': 10 })),
+					release: new Map(Object.entries({ IDIAQF2N: 5 })),
+					resident: new Map(
+						Object.entries({
+							IDB90NXY: 10,
+						})
+					),
+					ryan: new Map(
+						Object.entries({
+							IDBF5DWY: 5,
+							IDB90NXY: 5,
+						})
+					),
+					see: new Map(Object.entries({ '2300-15259': 5, '2300-16398': 10 })),
+					stream: new Map(Object.entries({ '2300-16398': 10 })),
+					sentences: new Map(Object.entries({ '2300-16398': 5 })),
+					sharing: new Map(Object.entries({ IDIAQF2N: 5 })),
+					some: new Map(Object.entries({ IDB90NXY: 5 })),
+					street: new Map(
+						Object.entries({
+							IDIAQF2N: 10,
+						})
+					),
+					the: new Map(
+						Object.entries({
+							'2300-15259': 5,
+							'2300-16398': 1,
+							IDBF5DWY: 1,
+							IDIAQF2N: 1,
+							IDB90NXY: 5,
+						})
+					),
+					themes: new Map(
+						Object.entries({
+							IDBF5DWY: 1,
+							IDIAQF2N: 1,
+							IDB90NXY: 1,
+						})
+					),
+					this: new Map(
+						Object.entries({
+							IDBF5DWY: 5,
+							IDIAQF2N: 5,
+							IDB90NXY: 1,
+						})
+					),
+					to: new Map(
+						Object.entries({
+							'2300-15259': 1,
+							'2300-16398': 1,
+						})
+					),
+					tour: new Map(Object.entries({ IDBF5DWY: 5 })),
+					universe: new Map(
+						Object.entries({
+							IDBF5DWY: 1,
+							IDIAQF2N: 1,
+							IDB90NXY: 1,
+						})
+					),
+					up: new Map(Object.entries({ '2300-15259': 5 })),
+					us: new Map(Object.entries({ '2300-16398': 5 })),
+					using: new Map(Object.entries({ '2300-16398': 5 })),
+					video: new Map(
+						Object.entries({
+							IDBF5DWY: 1,
+							IDIAQF2N: 1,
+							IDB90NXY: 1,
+						})
+					),
+					we: new Map(Object.entries({ '2300-15259': 1, '2300-16398': 5 })),
+					well: new Map(Object.entries({ '2300-16398': 5, IDBF5DWY: 5 })),
+					were: new Map(Object.entries({ IDIAQF2N: 5 })),
+					whats: new Map(Object.entries({ '2300-15259': 5 })),
+					wish: new Map(Object.entries({ '2300-16398': 5 })),
+					with: new Map(
+						Object.entries({
+							IDBF5DWY: 5,
+							IDIAQF2N: 1,
+							IDB90NXY: 1,
+						})
+					),
+					wonderful: new Map(
+						Object.entries({
+							IDBF5DWY: 1,
+							IDIAQF2N: 1,
+							IDB90NXY: 1,
+						})
+					),
+					word: new Map(Object.entries({ '2300-16398': 5 })),
+					world: new Map(
+						Object.entries({
+							'2300-15259': 5,
+							IDBF5DWY: 1,
+							IDIAQF2N: 1,
+							IDB90NXY: 1,
+						})
+					),
+					you: new Map(Object.entries({ '2300-16398': 10 })),
+					your: new Map(
+						Object.entries({
+							IDBF5DWY: 1,
+							IDIAQF2N: 1,
+							IDB90NXY: 1,
+						})
+					),
 				})
 			)
 
@@ -360,15 +555,9 @@ describe('DataStore', () => {
 	describe('getVideoById', () => {
 		it('gets a specific video', () => {
 			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
-			const result = dataStore.getVideoById(
-				'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N'
-			)
+			const result = dataStore.getVideoById('IDIAQF2N')
 
-			expect(result).toStrictEqual(
-				dataStore.videos[
-					'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N'
-				]
-			)
+			expect(result).toStrictEqual(dataStore.videos['IDIAQF2N'])
 		})
 	})
 
@@ -389,9 +578,9 @@ describe('DataStore', () => {
 			expect(result.map((x) => x.id)).toStrictEqual([
 				'2300-16398',
 				'2300-15259',
-				'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
-				'2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
-				'2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
+				'IDB90NXY',
+				'IDIAQF2N',
+				'IDBF5DWY',
 			])
 		})
 	})
@@ -410,9 +599,7 @@ describe('DataStore', () => {
 			const dataStore = new DataStore(testPeopleData, testShowData, testVideoData)
 			const result = dataStore.searchVideos('evil')
 
-			expect(result.map((x) => x.id)).toStrictEqual([
-				'2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
-			])
+			expect(result.map((x) => x.id)).toStrictEqual(['IDB90NXY'])
 		})
 
 		it('weighs exact matches higher than non-exact ones', () => {
