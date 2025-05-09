@@ -268,7 +268,10 @@
 			"id": "gman",
 			"name": "Tony Guerrero",
 			"image": "gman.jpg",
-			"links": []
+			"links": [
+				"https://www.patreon.com/GManFromHeck",
+				"https://bsky.app/profile/gmanfromheck.bsky.social"
+			]
 		},
 		{
 			"id": "vinny",
