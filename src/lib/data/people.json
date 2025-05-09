@@ -275,7 +275,9 @@
 			"id": "coonce",
 			"name": "Sean Coonce",
 			"image": "coonce.png",
-			"links": []
+			"links": [
+				"https://twitter.com/cooncesean"
+			]
 		},
 		{
 			"id": "turboshawn",
