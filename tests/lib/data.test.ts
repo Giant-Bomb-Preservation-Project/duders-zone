@@ -231,6 +231,8 @@ describe('DataStore', () => {
 			const expected = new Map(
 				Object.entries({
 					'2': new Map(Object.entries({ '2300-15259': 10 })),
+					a: new Map(Object.entries({ IDBF5DWY: 5 })),
+					abby: new Map(Object.entries({ '2300-16398': 5 })),
 					abbys: new Map(Object.entries({ '2300-16398': 10 })),
 					aint: new Map(
 						Object.entries({
@@ -239,10 +241,21 @@ describe('DataStore', () => {
 							IDB90NXY: 10,
 						})
 					),
+					and: new Map(
+						Object.entries({
+							'2300-15259': 5,
+							'2300-16398': 5,
+						})
+					),
+					anti: new Map(Object.entries({ IDB90NXY: 5 })),
+					as: new Map(Object.entries({ '2300-16398': 5 })),
 					but: new Map(Object.entries({ '2300-16398': 10 })),
+					cinema: new Map(Object.entries({ IDIAQF2N: 5 })),
 					coast: new Map(Object.entries({ '2300-15259': 10, '2300-16398': 10 })),
 					cross: new Map(Object.entries({ '2300-15259': 10, '2300-16398': 10 })),
 					dead: new Map(Object.entries({ '2300-15259': 10 })),
+					definitely: new Map(Object.entries({ IDBF5DWY: 5 })),
+					dog: new Map(Object.entries({ IDB90NXY: 5 })),
 					double: new Map(
 						Object.entries({
 							IDBF5DWY: 10,
@@ -253,12 +266,17 @@ describe('DataStore', () => {
 							IDBF5DWY: 10,
 						})
 					),
+					epic: new Map(Object.entries({ IDIAQF2N: 5 })),
+					eventually: new Map(Object.entries({ '2300-16398': 5 })),
 					evil: new Map(Object.entries({ IDB90NXY: 10 })),
 					fighter: new Map(
 						Object.entries({
 							IDIAQF2N: 10,
 						})
 					),
+					finds: new Map(Object.entries({ IDB90NXY: 5 })),
+					for: new Map(Object.entries({ IDB90NXY: 5 })),
+					full: new Map(Object.entries({ '2300-16398': 5 })),
 					game: new Map(
 						Object.entries({
 							IDBF5DWY: 10,
@@ -266,8 +284,23 @@ describe('DataStore', () => {
 							IDB90NXY: 10,
 						})
 					),
+					gestures: new Map(Object.entries({ '2300-16398': 5 })),
 					goodbye: new Map(Object.entries({ '2300-16398': 10 })),
+					hand: new Map(Object.entries({ '2300-16398': 5 })),
+					his: new Map(Object.entries({ IDBF5DWY: 5 })),
+					honor: new Map(Object.entries({ IDIAQF2N: 5 })),
+					in: new Map(Object.entries({ '2300-15259': 5, IDIAQF2N: 5 })),
+					its: new Map(Object.entries({ IDBF5DWY: 5 })),
+					ivs: new Map(Object.entries({ IDIAQF2N: 5 })),
+					join: new Map(Object.entries({ '2300-16398': 5 })),
+					karate: new Map(Object.entries({ IDB90NXY: 5 })),
+					kicks: new Map(Object.entries({ IDBF5DWY: 5 })),
 					later: new Map(Object.entries({ '2300-16398': 10 })),
+					lets: new Map(Object.entries({ '2300-15259': 5 })),
+					love: new Map(Object.entries({ IDB90NXY: 5 })),
+					master: new Map(Object.entries({ IDB90NXY: 5 })),
+					movie: new Map(Object.entries({ IDBF5DWY: 5 })),
+					new: new Map(Object.entries({ '2300-15259': 5 })),
 					no: new Map(
 						Object.entries({
 							IDBF5DWY: 10,
@@ -276,20 +309,37 @@ describe('DataStore', () => {
 						})
 					),
 					not: new Map(Object.entries({ '2300-16398': 10 })),
+					of: new Map(Object.entries({ '2300-15259': 5, IDIAQF2N: 5, IDB90NXY: 5 })),
+					off: new Map(Object.entries({ IDBF5DWY: 5 })),
+					one: new Map(Object.entries({ '2300-16398': 5 })),
+					piece: new Map(Object.entries({ IDIAQF2N: 5 })),
+					posse: new Map(Object.entries({ '2300-15259': 5 })),
+					questionable: new Map(Object.entries({ '2300-16398': 5 })),
 					red: new Map(Object.entries({ '2300-15259': 10 })),
 					redemption: new Map(Object.entries({ '2300-15259': 10 })),
+					release: new Map(Object.entries({ IDIAQF2N: 5 })),
 					resident: new Map(
 						Object.entries({
 							IDB90NXY: 10,
 						})
 					),
-					see: new Map(Object.entries({ '2300-16398': 10 })),
+					ryan: new Map(
+						Object.entries({
+							IDBF5DWY: 5,
+							IDB90NXY: 5,
+						})
+					),
+					see: new Map(Object.entries({ '2300-15259': 5, '2300-16398': 10 })),
 					stream: new Map(Object.entries({ '2300-16398': 10 })),
+					sentences: new Map(Object.entries({ '2300-16398': 5 })),
+					sharing: new Map(Object.entries({ IDIAQF2N: 5 })),
+					some: new Map(Object.entries({ IDB90NXY: 5 })),
 					street: new Map(
 						Object.entries({
 							IDIAQF2N: 10,
 						})
 					),
+					the: new Map(Object.entries({ '2300-15259': 5, IDB90NXY: 5 })),
 					this: new Map(
 						Object.entries({
 							IDBF5DWY: 10,
@@ -297,6 +347,18 @@ describe('DataStore', () => {
 							IDB90NXY: 10,
 						})
 					),
+					tour: new Map(Object.entries({ IDBF5DWY: 5 })),
+					up: new Map(Object.entries({ '2300-15259': 5 })),
+					us: new Map(Object.entries({ '2300-16398': 5 })),
+					using: new Map(Object.entries({ '2300-16398': 5 })),
+					we: new Map(Object.entries({ '2300-16398': 5 })),
+					well: new Map(Object.entries({ '2300-16398': 5, IDBF5DWY: 5 })),
+					were: new Map(Object.entries({ IDIAQF2N: 5 })),
+					whats: new Map(Object.entries({ '2300-15259': 5 })),
+					wish: new Map(Object.entries({ '2300-16398': 5 })),
+					with: new Map(Object.entries({ IDBF5DWY: 5 })),
+					word: new Map(Object.entries({ '2300-16398': 5 })),
+					world: new Map(Object.entries({ '2300-15259': 5 })),
 					you: new Map(Object.entries({ '2300-16398': 10 })),
 				})
 			)

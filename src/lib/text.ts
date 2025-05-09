@@ -13,6 +13,10 @@ export function dateToText(date: Date): string {
 
 // Extract all the significant words from a piece of text
 export function extractWords(text: string): string[] {
+	if (!text) {
+		return []
+	}
+
 	text = text.replace(ignoredCharacters, '')
 
 	const words: Set<string> = new Set()

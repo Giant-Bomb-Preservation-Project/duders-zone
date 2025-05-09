@@ -55,6 +55,10 @@ export interface Video {
 
 const SECONDS_PER_HOUR = 3600
 const SECONDS_PER_MINUTE = 60
+const SEARCH_WEIGHTS = {
+	TITLE: 10,
+	DESCRIPTION: 5,
+}
 
 // Sort by date descending
 const byDateDesc = (a: { date: Date }, b: { date: Date }) => b.date.getTime() - a.date.getTime()
@@ -153,14 +157,24 @@ export class DataStore {
 
 		this.videoIndex = new Map()
 		for (const video of videoData) {
-			const words = extractWords(video.title)
-
-			for (const word of words) {
+			for (const word of extractWords(video.title)) {
 				if (!this.videoIndex.has(word)) {
 					this.videoIndex.set(word, new Map())
 				}
 
-				this.videoIndex.get(word)!.set(video.id, 10)
+				this.videoIndex.get(word)!.set(video.id, SEARCH_WEIGHTS.TITLE)
+			}
+
+			for (const word of extractWords(video.description)) {
+				if (!this.videoIndex.has(word)) {
+					this.videoIndex.set(word, new Map())
+				}
+
+				if (this.videoIndex.get(word)!.has(video.id)) {
+					continue // use the title weight
+				}
+
+				this.videoIndex.get(word)!.set(video.id, SEARCH_WEIGHTS.DESCRIPTION)
 			}
 		}
 	}
