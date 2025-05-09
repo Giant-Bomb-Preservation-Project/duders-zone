@@ -99,6 +99,14 @@
 			]
 		},
 		{
+			"id": "ltsquigs",
+			"name": "Ian Kelly",
+			"image": "ltsquigs.png",
+			"links": [
+				"https://bsky.app/profile/ltsquigs.bsky.social"
+			]
+		},
+		{
 			"id": "janman",
 			"name": "Jan Ochoa",
 			"image": "jan.png",
@@ -172,6 +180,12 @@
 			]
 		},
 		{
+			"id": "mattbodega",
+			"name": "Matt Kessler",
+			"image": "mattbodega.png",
+			"links": []
+		},
+		{
 			"id": "mmahardy",
 			"name": "Mike Mahardy",
 			"image": "mmahardy.jpg",
@@ -233,6 +247,14 @@
 			"links": [
 				"https://linktr.ee/patrickklepek",
 				"https://bsky.app/profile/patrickklepek.bsky.social"
+			]
+		},
+		{
+			"id": "richgallup",
+			"name": "Rich Gallup",
+			"image": "richgallup.png",
+			"links": [
+				"https://bsky.app/profile/richgallup.bsky.social"
 			]
 		},
 		{
