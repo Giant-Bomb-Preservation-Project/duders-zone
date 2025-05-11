@@ -12,6 +12,7 @@
 	}
 
 	const { video, linkToVideo = false }: Props = $props()
+	const thumbnail = video.thumbnail || `${base}/assets/default.jpg`
 	let videoSource = $derived.by(() => {
 		let availableSources: Array<VideoSource> = []
 
@@ -43,7 +44,7 @@
 	})
 </script>
 
-<Splash image={video.thumbnail || `${base}/assets/default.jpg`}>
+<Splash image={thumbnail}>
 	<div class="metadata">
 		{#if linkToVideo}
 			<a href={`${base}/videos/${video.show}/${video.id}`}>
@@ -60,7 +61,10 @@
 	<div class="video">
 		{#if videoSource == VideoSource.Direct}
 			<!-- svelte-ignore a11y_media_has_caption -->
-			<video controls src={video.source.direct}></video>
+			<video controls poster={thumbnail}>
+				<source src={video.source.direct} type="video/mp4" />
+				<a href={video.source.direct}>Download</a>
+			</video>
 		{:else if videoSource == VideoSource.YouTube}
 			<FrameEmbed
 				src="https://www.youtube.com/embed/{video.source.youtube}"
