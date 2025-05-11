@@ -4,7 +4,7 @@
 	import Splash from '$lib/components/Splash.svelte'
 	import { VideoSource } from '$lib/data'
 	import type { Video } from '$lib/data'
-	import { preferredSource } from '$lib/store.js'
+	import { preferredSource, wideVideo } from '$lib/store.js'
 
 	interface Props {
 		video: Video
@@ -13,7 +13,6 @@
 
 	const { video, linkToVideo = false }: Props = $props()
 	const thumbnail = video.thumbnail || `${base}/assets/default.jpg`
-	let isWide = $state(false)
 	let videoSource = $derived.by(() => {
 		let availableSources: Array<VideoSource> = []
 
@@ -46,7 +45,7 @@
 </script>
 
 <Splash image={thumbnail}>
-	<div class="video-container" class:wide={isWide}>
+	<div class="video-container" class:wide={$wideVideo}>
 		<div class="metadata">
 			{#if linkToVideo}
 				<a href={`${base}/videos/${video.show}/${video.id}`}>
@@ -110,8 +109,11 @@
 							YouTube
 						</button>
 						<hr />
-						<button title="Make video bigger" onclick={() => (isWide = !isWide)}>
-							{isWide ? 'Debiggen' : 'Embiggen'}
+						<button
+							title="Make video bigger"
+							onclick={() => wideVideo.set(!$wideVideo)}
+						>
+							{$wideVideo ? 'Debiggen' : 'Embiggen'}
 						</button>
 					</div>
 				</li>
