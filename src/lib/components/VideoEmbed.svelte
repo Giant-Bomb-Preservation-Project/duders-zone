@@ -109,7 +109,6 @@
 					<li>
 						<span class="link link-gear">Settings</span>
 						<div class="controls">
-							<h4>Source</h4>
 							<button
 								title="Use Internet Archive video source"
 								onclick={() => preferredSource.set(VideoSource.InternetArchive)}
@@ -225,12 +224,6 @@
 		text-shadow:
 			#007fff 0 0 3px,
 			#007fff 0 0 5px;
-	}
-
-	.video-controls h4 {
-		font-family: inherit;
-		font-weight: bold;
-		margin: 0.25em 0;
 	}
 
 	.video-controls hr {
