@@ -32,6 +32,15 @@
 	}
 </script>
 
+<div id="banner">
+	Giant Bomb is now independent of any corporate masters. Join
+	<a
+		href="https://www.giantbomb.com/join?slug=giant-bomb-is-now-100-independent&typeId=1100&id=6514"
+		>Giant Bomb Premium</a
+	>
+	today!
+</div>
+
 <div id="site-container">
 	<header>
 		<div class="container">
@@ -352,6 +361,18 @@
 
 	header .theme-toggle {
 		display: none;
+	}
+
+	#banner {
+		background: var(--color-red);
+		color: white;
+		padding: 1em;
+		text-align: center;
+	}
+
+	#banner a {
+		color: inherit;
+		text-decoration: underline;
 	}
 
 	#site-container {
