@@ -99,6 +99,14 @@
 			]
 		},
 		{
+			"id": "ltsquigs",
+			"name": "Ian Kelly",
+			"image": "ltsquigs.png",
+			"links": [
+				"https://bsky.app/profile/ltsquigs.bsky.social"
+			]
+		},
+		{
 			"id": "janman",
 			"name": "Jan Ochoa",
 			"image": "jan.png",
@@ -172,6 +180,12 @@
 			]
 		},
 		{
+			"id": "mattbodega",
+			"name": "Matt Kessler",
+			"image": "mattbodega.png",
+			"links": []
+		},
+		{
 			"id": "mmahardy",
 			"name": "Mike Mahardy",
 			"image": "mmahardy.jpg",
@@ -236,6 +250,22 @@
 			]
 		},
 		{
+			"id": "peterbrown",
+			"name": "Peter Brown",
+			"image": "peterbrown.png",
+			"links": [
+				"https://bsky.app/profile/pcbrown.bsky.social"
+			]
+		},
+		{
+			"id": "richgallup",
+			"name": "Rich Gallup",
+			"image": "richgallup.png",
+			"links": [
+				"https://bsky.app/profile/richgallup.bsky.social"
+			]
+		},
+		{
 			"id": "saralima",
 			"name": "Sara Lima",
 			"image": "saralima.jpg",
@@ -245,7 +275,9 @@
 			"id": "coonce",
 			"name": "Sean Coonce",
 			"image": "coonce.png",
-			"links": []
+			"links": [
+				"https://twitter.com/cooncesean"
+			]
 		},
 		{
 			"id": "turboshawn",
@@ -268,7 +300,10 @@
 			"id": "gman",
 			"name": "Tony Guerrero",
 			"image": "gman.jpg",
-			"links": []
+			"links": [
+				"https://www.patreon.com/GManFromHeck",
+				"https://bsky.app/profile/gmanfromheck.bsky.social"
+			]
 		},
 		{
 			"id": "vinny",

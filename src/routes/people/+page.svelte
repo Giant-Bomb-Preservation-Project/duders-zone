@@ -34,7 +34,7 @@
 
 <div class="container">
 	<p class="note">
-		Some of the many fine folks who made Giant Bomb what it was
+		Some of the many fine folks, past and present, who make Giant Bomb what it is
 		<a href="https://www.youtube.com/watch?v=gVvUuSYp7-s">&hearts;</a>
 	</p>
 	<section>
