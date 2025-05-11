@@ -13,6 +13,7 @@
 
 	const { video, linkToVideo = false }: Props = $props()
 	const thumbnail = video.thumbnail || `${base}/assets/default.jpg`
+	let isWide = $state(false)
 	let videoSource = $derived.by(() => {
 		let availableSources: Array<VideoSource> = []
 
@@ -45,68 +46,77 @@
 </script>
 
 <Splash image={thumbnail}>
-	<div class="metadata">
-		{#if linkToVideo}
-			<a href={`${base}/videos/${video.show}/${video.id}`}>
+	<div class="video-container" class:wide={isWide}>
+		<div class="metadata">
+			{#if linkToVideo}
+				<a href={`${base}/videos/${video.show}/${video.id}`}>
+					<h3>{video.title}</h3>
+					<p>{video.description}</p>
+					<time datetime={video.date.toISOString()}
+						>{video.date.toLocaleDateString()}</time
+					>
+				</a>
+			{:else}
 				<h3>{video.title}</h3>
 				<p>{video.description}</p>
 				<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>
-			</a>
-		{:else}
-			<h3>{video.title}</h3>
-			<p>{video.description}</p>
-			<time datetime={video.date.toISOString()}>{video.date.toLocaleDateString()}</time>
-		{/if}
-	</div>
-	<div class="video">
-		{#if videoSource == VideoSource.Direct}
-			<!-- svelte-ignore a11y_media_has_caption -->
-			<video controls poster={thumbnail}>
-				<source src={video.source.direct} type="video/mp4" />
-				<a href={video.source.direct}>Download</a>
-			</video>
-		{:else if videoSource == VideoSource.YouTube}
-			<FrameEmbed
-				src="https://www.youtube.com/embed/{video.source.youtube}"
-				title={video.title}
-			/>
-		{:else if videoSource == VideoSource.InternetArchive}
-			<FrameEmbed
-				src="https://archive.org/embed/{video.source.internetarchive}"
-				title={video.title}
-			/>
-		{/if}
-		<ul class="video-controls">
-			<li>
-				<span class="link link-gear">Source</span>
-				<div class="controls">
-					<button
-						title="Use Internet Archive video source"
-						onclick={() => preferredSource.set(VideoSource.InternetArchive)}
-						class:current={$preferredSource === VideoSource.InternetArchive}
-						disabled={!video.source.internetarchive}
-					>
-						Internet Archive
-					</button>
-					<button
-						title="Use direct video source"
-						onclick={() => preferredSource.set(VideoSource.Direct)}
-						class:current={$preferredSource === VideoSource.Direct}
-						disabled={!video.source.direct}
-					>
-						Direct
-					</button>
-					<button
-						title="Use YouTube video source"
-						onclick={() => preferredSource.set(VideoSource.YouTube)}
-						class:current={$preferredSource === VideoSource.YouTube}
-						disabled={!video.source.youtube}
-					>
-						YouTube
-					</button>
-				</div>
-			</li>
-		</ul>
+			{/if}
+		</div>
+		<div class="video">
+			{#if videoSource == VideoSource.Direct}
+				<!-- svelte-ignore a11y_media_has_caption -->
+				<video controls poster={thumbnail}>
+					<source src={video.source.direct} type="video/mp4" />
+					<a href={video.source.direct}>Download</a>
+				</video>
+			{:else if videoSource == VideoSource.YouTube}
+				<FrameEmbed
+					src="https://www.youtube.com/embed/{video.source.youtube}"
+					title={video.title}
+				/>
+			{:else if videoSource == VideoSource.InternetArchive}
+				<FrameEmbed
+					src="https://archive.org/embed/{video.source.internetarchive}"
+					title={video.title}
+				/>
+			{/if}
+			<ul class="video-controls">
+				<li>
+					<span class="link link-gear">Settings</span>
+					<div class="controls">
+						<h4>Source</h4>
+						<button
+							title="Use Internet Archive video source"
+							onclick={() => preferredSource.set(VideoSource.InternetArchive)}
+							class:current={$preferredSource === VideoSource.InternetArchive}
+							disabled={!video.source.internetarchive}
+						>
+							Internet Archive
+						</button>
+						<button
+							title="Use direct video source"
+							onclick={() => preferredSource.set(VideoSource.Direct)}
+							class:current={$preferredSource === VideoSource.Direct}
+							disabled={!video.source.direct}
+						>
+							Direct
+						</button>
+						<button
+							title="Use YouTube video source"
+							onclick={() => preferredSource.set(VideoSource.YouTube)}
+							class:current={$preferredSource === VideoSource.YouTube}
+							disabled={!video.source.youtube}
+						>
+							YouTube
+						</button>
+						<hr />
+						<button title="Make video bigger" onclick={() => (isWide = !isWide)}>
+							{isWide ? 'Debiggen' : 'Embiggen'}
+						</button>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</div>
 </Splash>
 
@@ -187,6 +197,18 @@
 			#007fff 0 0 5px;
 	}
 
+	.video-controls h4 {
+		font-family: inherit;
+		font-weight: bold;
+		margin: 0.25em 0;
+	}
+
+	.video-controls hr {
+		background-image: url(/assets/bg-border-dark.png);
+		border: 0;
+		height: 2px;
+	}
+
 	.video-controls li {
 		margin: 0 5px;
 		padding: 8px 5px;
@@ -251,6 +273,22 @@
 		background-position: left -142px;
 	}
 
+	.video-container.wide {
+		display: flex;
+		flex-direction: column;
+		margin: 0 var(--negative-spacing);
+	}
+
+	.video-container.wide .metadata {
+		order: 2;
+		padding: 0 var(--spacing);
+	}
+
+	.video-container.wide .video {
+		margin: 0 0 var(--spacing) !important;
+		order: 1;
+	}
+
 	@media (min-width: 992px) {
 		h3 {
 			font-size: 32px;
@@ -272,6 +310,22 @@
 			flex: 0 0 620px;
 			position: relative;
 			z-index: 2;
+		}
+
+		.video-container {
+			display: flex;
+		}
+
+		.video-container.wide {
+			margin: 0;
+		}
+
+		.video-container.wide .metadata {
+			padding: 0;
+		}
+
+		.video-container.wide .video {
+			flex: 0;
 		}
 	}
 
