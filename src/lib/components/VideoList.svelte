@@ -34,7 +34,7 @@
 
 	let videosReversed = $derived([...videos].reverse())
 	let sortedVideos = $derived(
-		$videoListSorting === VideoListSorting.NewestFirst ? videos : videosReversed
+		$videoListSorting === VideoListSorting.NewestFirst || !sortable ? videos : videosReversed
 	)
 
 	let totalPages = $derived(perPage != -1 ? Math.ceil(videos.length / perPage) : 1)

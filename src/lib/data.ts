@@ -55,6 +55,11 @@ export interface Video {
 
 const SECONDS_PER_HOUR = 3600
 const SECONDS_PER_MINUTE = 60
+const SEARCH_WEIGHTS = {
+	TITLE: 10,
+	DESCRIPTION: 5,
+	SHOW: 1,
+}
 
 // Sort by date descending
 const byDateDesc = (a: { date: Date }, b: { date: Date }) => b.date.getTime() - a.date.getTime()
@@ -75,7 +80,7 @@ function formatDuration(duration: number | null): string {
 	}
 
 	const hours = Math.floor(duration / SECONDS_PER_HOUR)
-	const minutes = Math.floor(duration % SECONDS_PER_HOUR / SECONDS_PER_MINUTE)
+	const minutes = Math.floor((duration % SECONDS_PER_HOUR) / SECONDS_PER_MINUTE)
 	const seconds = duration % SECONDS_PER_MINUTE
 
 	return (
@@ -92,7 +97,7 @@ export class DataStore {
 	readonly people: People
 	readonly shows: { [key: string]: Show }
 	readonly videos: { [key: string]: Video }
-	readonly videoIndex: Map<string, string[]>
+	readonly videoIndex: Map<string, Map<string, number>>
 
 	// Construct the datastore based on given show and video data.
 	constructor(peopleData: any, showData: any[], videoData: any[]) {
@@ -152,16 +157,26 @@ export class DataStore {
 		}
 
 		this.videoIndex = new Map()
-		for (const video of videoData) {
-			const words = extractWords(video.title)
-
-			for (const word of words) {
+		// Helper function for adding some text to the index with the given video ID and weight
+		const addWordToIndex = (text: string, videoId: string, weight: number) => {
+			extractWords(text).map((word) => {
 				if (!this.videoIndex.has(word)) {
-					this.videoIndex.set(word, [])
+					this.videoIndex.set(word, new Map())
 				}
 
-				this.videoIndex.get(word)!.push(video.id)
-			}
+				if (this.videoIndex.get(word)!.has(videoId)) {
+					return // use the previous weight
+				}
+
+				this.videoIndex.get(word)!.set(videoId, weight)
+			})
+		}
+
+		for (const video of videoData) {
+			addWordToIndex(video.title, video.id, SEARCH_WEIGHTS.TITLE)
+			addWordToIndex(video.description, video.id, SEARCH_WEIGHTS.DESCRIPTION)
+			addWordToIndex(this.shows[video.show].title, video.id, SEARCH_WEIGHTS.SHOW)
+			addWordToIndex(this.shows[video.show].description, video.id, SEARCH_WEIGHTS.SHOW)
 		}
 	}
 
@@ -238,13 +253,14 @@ export class DataStore {
 		for (const word of words) {
 			this.videoIndex.forEach((value, key) => {
 				if (key.search(word) !== -1) {
-					const matchWeight = word == key ? 10 : 5
+					const weightMultiplier = word == key ? 2 : 1 // exact matches are worth double
 
-					this.videoIndex.get(key)!.forEach((item) => {
-						if (!foundVideos.has(item)) {
-							foundVideos.set(item, 0)
+					this.videoIndex.get(key)!.forEach((weight, id) => {
+						if (!foundVideos.has(id)) {
+							foundVideos.set(id, 0)
 						}
-						foundVideos.set(item, foundVideos.get(item) + matchWeight)
+
+						foundVideos.set(id, foundVideos.get(id) + weight * weightMultiplier)
 					})
 				}
 			})

@@ -25,7 +25,12 @@
 	</form>
 
 	{#if videos.length}
-		<VideoList {videos} title={`Search results for: ${searchQuery}`} perPage={100} />
+		<VideoList
+			{videos}
+			title={`Search results for: ${searchQuery}`}
+			perPage={100}
+			sortable={false}
+		/>
 	{:else if searchQuery}
 		<div class="empty">No videos found for "{searchQuery}"</div>
 	{:else}
