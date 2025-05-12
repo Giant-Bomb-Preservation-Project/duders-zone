@@ -287,6 +287,10 @@ async function run() {
 		}
 		if (iaVideo) {
 			source['internetarchive'] = iaVideo.identifier
+
+			if (iaVideo.videoFile) {
+				source['direct'] = iaVideo.videoFile
+			}
 		}
 
 		// Add the video to the video list
@@ -330,6 +334,13 @@ async function run() {
 			videoShows.push(UNCATEGORIZED_SHOW_ID)
 		}
 
+		const source = {
+			internetarchive: video.identifier,
+		}
+		if (video.videoFile) {
+			source['direct'] = video.videoFile
+		}
+
 		videos.push({
 			id: video.identifier,
 			gb_id: null,
@@ -338,10 +349,8 @@ async function run() {
 			description: video.description,
 			date: video.date,
 			thumbnail: `https://archive.org/services/img/${video.identifier}`,
-			duration: null,
-			source: {
-				internetarchive: video.identifier,
-			},
+			duration: video.duration ? parseInt(video.duration) : null,
+			source,
 		})
 
 		for (const show of videoShows) {
