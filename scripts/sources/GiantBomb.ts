@@ -103,7 +103,8 @@ export default class GiantBomb {
 		const params = {
 			api_key: this.api_key,
 			format: 'json',
-			field_list: 'deck,id,guid,image,name,publish_date,video_show,video_type,youtube_id,length_seconds',
+			field_list:
+				'deck,id,guid,image,name,publish_date,video_show,video_type,youtube_id,length_seconds',
 			limit: REQUEST_LIMIT,
 			offset: 0,
 		}

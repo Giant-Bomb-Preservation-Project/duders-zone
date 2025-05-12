@@ -171,12 +171,12 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
+		color: var(--color-text-muted);
 	}
 
 	ul.people {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: 1fr;
 		gap: 2em;
 		margin: 2em 0;
 		justify-content: flex-start;
@@ -186,13 +186,15 @@
 		border-radius: 4px;
 	}
 
-	ul.people li {
+	ul.people > li {
 		display: flex;
 		flex: 0 0 100%;
+		min-width: 0;
 	}
 
 	ul.people .info {
 		flex: 1;
+		min-width: 0;
 		padding: 0.25em 0.85em;
 	}
 
@@ -202,14 +204,7 @@
 
 	@media (min-width: 768px) {
 		ul.people {
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-items: center;
-		}
-
-		ul.people li {
-			flex-basis: calc(50% - 1em);
+			grid-template-columns: repeat(2, 1fr);
 		}
 
 		ul.people .image {
@@ -218,8 +213,8 @@
 	}
 
 	@media (min-width: 1200px) {
-		ul.people li {
-			flex-basis: calc(34% - 2em);
+		ul.people {
+			grid-template-columns: repeat(3, 1fr);
 		}
 	}
 </style>
