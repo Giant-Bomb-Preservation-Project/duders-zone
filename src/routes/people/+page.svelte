@@ -164,7 +164,6 @@
 
 	ul.links {
 		font-size: 11pt;
-		min-width: 0;
 	}
 
 	ul.links li {
