@@ -171,6 +171,15 @@
 		width: 100%;
 	}
 
+	.video-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.metadata {
+		order: 2;
+	}
+
 	.metadata a {
 		color: white;
 		text-shadow: rgba(0, 0, 0, 0.9) 0 1px 0;
@@ -183,6 +192,7 @@
 
 	.video {
 		margin: var(--spacing) 0;
+		order: 1;
 	}
 
 	.video-controls {
@@ -351,6 +361,7 @@
 			flex: 0 0 268px;
 			position: relative;
 			z-index: 2;
+			order: 1;
 		}
 
 		.video {
@@ -358,10 +369,11 @@
 			margin: 0 0 0 32px;
 			position: relative;
 			z-index: 2;
+			order: 2;
 		}
 
 		.video-container {
-			display: flex;
+			flex-direction: row;
 		}
 
 		.video-loading {
