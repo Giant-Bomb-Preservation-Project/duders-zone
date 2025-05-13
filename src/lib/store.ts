@@ -6,7 +6,7 @@ import { VideoListSorting } from './types'
 
 // Create a store for browsers
 const createBrowserStore = <T extends string>(key: string, defaultValue: T) => {
-	const store = writable(localStorage.getItem(key) || defaultValue)
+	const store = writable((localStorage.getItem(key) as T) || defaultValue)
 
 	// Store the token in LocalStorage whenever it´s updated
 	store.subscribe((val) => {
@@ -19,7 +19,7 @@ const createBrowserStore = <T extends string>(key: string, defaultValue: T) => {
 }
 
 // Create a store for Node (only used when building the site)
-const createNodeStore = (defaultValue: any) => writable(defaultValue)
+const createNodeStore = <T extends any>(defaultValue: T) => writable(defaultValue)
 
 // The preferred video source
 export const preferredSource =
