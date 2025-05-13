@@ -11,6 +11,7 @@
 	--spacing: 20px;
 	--spacing-less: 5px;
 	--spacing-more: 40px;
+	--negative-spacing: -20px;
 	/* Theme colors */
 	--color-background: #f2f2f3;
 	--color-text: black;

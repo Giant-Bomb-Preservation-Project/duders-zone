@@ -37,6 +37,12 @@ export const theme =
 		? createNodeStore(defaultTheme)
 		: createBrowserStore('theme', defaultTheme)
 
+// Whether to show the video in W~I~D~E mode
+export const wideVideo =
+	typeof localStorage === 'undefined'
+		? createNodeStore(false)
+		: createBrowserStore('wideVideo', false)
+
 // How to show the video list
 export const videoListMode =
 	typeof localStorage === 'undefined'

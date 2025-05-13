@@ -24,7 +24,7 @@ export async function downloadFile(source: string, target: string) {
 }
 
 // Make a GET request to the given URL
-export async function getRequest(url: string, queryParams: Object) {
+export async function getRequest(url: string, queryParams: Object = {}) {
 	let times = 0
 	while (times < REQUEST_ATTEMPTS) {
 		try {

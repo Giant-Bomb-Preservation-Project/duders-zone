@@ -32,7 +32,6 @@
 
 	@media (min-width: 992px) {
 		.inner-container {
-			display: flex;
 			padding: 24px 0 64px;
 			overflow: hidden;
 			position: relative;
