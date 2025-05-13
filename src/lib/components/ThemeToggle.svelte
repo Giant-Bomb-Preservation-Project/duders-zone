@@ -17,6 +17,7 @@
 <label class="switch" class:dark={darkMode}>
 	<input type="checkbox" bind:checked={darkMode} />
 	<span class="modes"></span>
+	<span class="sr-only">Dark mode</span>
 </label>
 
 <style>
