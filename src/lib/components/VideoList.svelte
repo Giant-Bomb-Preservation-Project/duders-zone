@@ -5,7 +5,7 @@
 	import Header from '$lib/components/Header.svelte'
 	import Pagination from '$lib/components/Pagination.svelte'
 	import Thumbnail from '$lib/components/Thumbnail.svelte'
-	import { videoListMode, videoListSorting } from '$lib/store.js'
+	import { videoListMode, videoListSorting } from '$lib/store'
 	import Icon, { IconType } from './Icon.svelte'
 
 	interface Props {
