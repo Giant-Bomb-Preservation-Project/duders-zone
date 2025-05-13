@@ -5,7 +5,7 @@ import { Theme, VideoListMode } from '$lib/types'
 import { VideoListSorting } from './types'
 
 // Create a store for browsers
-const createBrowserStore = (key: string, defaultValue: any) => {
+const createBrowserStore = <T extends string>(key: string, defaultValue: T) => {
 	const store = writable(localStorage.getItem(key) || defaultValue)
 
 	// Store the token in LocalStorage whenever it´s updated
@@ -35,16 +35,16 @@ if (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: d
 export const theme =
 	typeof localStorage === 'undefined'
 		? createNodeStore(defaultTheme)
-		: createBrowserStore('theme', defaultTheme)
+		: createBrowserStore<Theme>('theme', defaultTheme)
 
 // How to show the video list
 export const videoListMode =
 	typeof localStorage === 'undefined'
 		? createNodeStore(VideoListMode.List)
-		: createBrowserStore('videoListMode', VideoListMode.List)
+		: createBrowserStore<VideoListMode>('videoListMode', VideoListMode.List)
 
 // How to sort the video list
 export const videoListSorting =
 	typeof localStorage === 'undefined'
 		? createNodeStore(VideoListSorting.NewestFirst)
-		: createBrowserStore('videoSorting', VideoListSorting.NewestFirst)
+		: createBrowserStore<VideoListSorting>('videoSorting', VideoListSorting.NewestFirst)
