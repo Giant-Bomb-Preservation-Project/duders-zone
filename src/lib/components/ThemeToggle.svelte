@@ -3,7 +3,7 @@
 	import { theme } from '$lib/store'
 	import { Theme } from '$lib/types'
 
-	let darkMode = $state($theme === Theme.Dark)
+	let darkMode = $derived($theme === Theme.Dark)
 
 	$effect(() => {
 		const themeType = darkMode ? Theme.Dark : Theme.Light
