@@ -33,12 +33,12 @@
 				options={[
 					{
 						label: 'Alphabetical',
-						icon: IconType.NewestFirst,
+						icon: IconType.LeastFirst,
 						option: ShowSorting.alphabetical,
 					},
 					{
 						label: 'Most Videos',
-						icon: IconType.OldestFirst,
+						icon: IconType.MostFirst,
 						option: ShowSorting.mostVideos,
 					},
 				]}
