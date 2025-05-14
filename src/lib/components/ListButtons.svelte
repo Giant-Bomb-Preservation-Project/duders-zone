@@ -1,7 +1,7 @@
-<script lang="ts">
+<script lang="ts" generics="T">
 	import Icon, { IconType } from './Icon.svelte'
 
-	interface Props<T = any> {
+	interface Props {
 		value: T
 		options: { label: string; option: T; icon: IconType }[]
 		onChange: (option: T) => void
