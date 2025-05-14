@@ -13,7 +13,7 @@
 		OldestFirst,
 		RSS,
 		LeastFirst,
-		MostFirst
+		MostFirst,
 	}
 </script>
 
@@ -101,15 +101,11 @@
 	</svg>
 {:else if type == IconType.LeastFirst}
 	<svg viewBox="0 0 14 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-		<path
-			d="M1,9 h11 v1.5 h-11Z M1,5.25 h8 v1.5 h-8Z M1,1.5 h5 v1.5 h-5Z"
-		/>
+		<path d="M1,9 h11 v1.5 h-11Z M1,5.25 h8 v1.5 h-8Z M1,1.5 h5 v1.5 h-5Z" />
 	</svg>
 {:else if type == IconType.MostFirst}
 	<svg viewBox="0 0 14 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-		<path
-			d="M1,1.5 h11 v1.5 h-11Z M1,5.25 h8 v1.5 h-8Z M1,9 h5 v1.5 h-5"
-		/>
+		<path d="M1,1.5 h11 v1.5 h-11Z M1,5.25 h8 v1.5 h-8Z M1,9 h5 v1.5 h-5" />
 	</svg>
 {:else}
 	??
