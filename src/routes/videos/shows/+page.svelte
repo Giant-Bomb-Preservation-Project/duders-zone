@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { base } from '$app/paths'
 	import type { PageData } from './$types'
-	import Button from '$lib/components/Button.svelte'
-	import Icon, { IconType } from '$lib/components/Icon.svelte'
+	import { IconType } from '$lib/components/Icon.svelte'
 	import VideosHeader, { VideosPage } from '$lib/components/VideosHeader.svelte'
 	import { ShowSorting } from '$lib/types'
+	import Header from '$lib/components/Header.svelte'
+	import ListButtons from '$lib/components/ListButtons.svelte'
 
 	interface Props {
 		data: PageData
@@ -23,16 +24,27 @@
 </script>
 
 <VideosHeader current={VideosPage.Shows} />
-
 <section class="container shows">
-	<h1 class="sr-only">Shows</h1>
-
-	<form>
-		<select id="sorting" bind:value={sorting}>
-			<option value={ShowSorting.alphabetical}>Alphabetical</option>
-			<option value={ShowSorting.mostVideos}>Most Videos</option>
-		</select>
-	</form>
+	<Header title="Shows">
+		<div class="controls">
+			<ListButtons
+				value={sorting}
+				onChange={(option) => (sorting = option)}
+				options={[
+					{
+						label: 'Alphabetical',
+						icon: IconType.LeastFirst,
+						option: ShowSorting.alphabetical,
+					},
+					{
+						label: 'Most Videos',
+						icon: IconType.MostFirst,
+						option: ShowSorting.mostVideos,
+					},
+				]}
+			/>
+		</div>
+	</Header>
 	<ul>
 		{#each sortedShows as show}
 			<li>
@@ -63,24 +75,22 @@
 </svelte:head>
 
 <style>
-	form {
-		margin-bottom: var(--spacing);
-	}
-
 	h2 {
 		font-size: 18px;
 		line-height: 20px;
 		margin: 0.5em 0 0.3em;
 	}
 
-	select {
-		width: 150px;
+	.controls {
+		display: flex;
+		align-items: center;
+		margin-left: auto;
 	}
 
 	ul {
 		list-style: none;
 		margin: 0;
-		padding: 0;
+		padding: var(--spacing) 0;
 	}
 
 	ul a {

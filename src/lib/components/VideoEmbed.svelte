@@ -6,7 +6,7 @@
 	import LoadingIndicator from '$lib/components/LoadingIndicator.svelte'
 	import Splash from '$lib/components/Splash.svelte'
 	import { VideoSource } from '$lib/data'
-	import { preferredSource, wideVideo } from '$lib/store.js'
+	import { preferredSource, wideVideo } from '$lib/store'
 	import type { Video } from '$lib/data'
 	import type { OnNavigate } from '@sveltejs/kit'
 

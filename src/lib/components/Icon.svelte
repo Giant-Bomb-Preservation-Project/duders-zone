@@ -12,6 +12,8 @@
 		NewestFirst,
 		OldestFirst,
 		RSS,
+		LeastFirst,
+		MostFirst,
 	}
 </script>
 
@@ -96,6 +98,14 @@
 		<path
 			d="M0,61 A9,9 0 0 0 18,61 A9,9 0 0 0 0,61 M0,38 A32,32 0 0 1 32,70 H46 A46,46 0 0 0 0,24 M0,14 A56,56 0 0 1 56,70 H70 A70,70 0 0 0 0,0"
 		/>
+	</svg>
+{:else if type == IconType.LeastFirst}
+	<svg viewBox="0 0 14 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		<path d="M1,9 h11 v1.5 h-11Z M1,5.25 h8 v1.5 h-8Z M1,1.5 h5 v1.5 h-5Z" />
+	</svg>
+{:else if type == IconType.MostFirst}
+	<svg viewBox="0 0 14 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		<path d="M1,1.5 h11 v1.5 h-11Z M1,5.25 h8 v1.5 h-8Z M1,9 h5 v1.5 h-5" />
 	</svg>
 {:else}
 	??

@@ -3,7 +3,7 @@
 	import { theme } from '$lib/store'
 	import { Theme } from '$lib/types'
 
-	let darkMode = $state($theme === Theme.Dark)
+	let darkMode = $derived($theme === Theme.Dark)
 
 	$effect(() => {
 		const themeType = darkMode ? Theme.Dark : Theme.Light
@@ -17,6 +17,7 @@
 <label class="switch" class:dark={darkMode}>
 	<input type="checkbox" bind:checked={darkMode} />
 	<span class="modes"></span>
+	<span class="sr-only">Dark mode</span>
 </label>
 
 <style>
