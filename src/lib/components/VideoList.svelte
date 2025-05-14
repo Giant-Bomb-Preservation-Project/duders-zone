@@ -6,7 +6,8 @@
 	import Pagination from '$lib/components/Pagination.svelte'
 	import Thumbnail from '$lib/components/Thumbnail.svelte'
 	import { videoListMode, videoListSorting } from '$lib/store'
-	import Icon, { IconType } from './Icon.svelte'
+	import ListButtons from './ListButtons.svelte'
+	import { IconType } from './Icon.svelte'
 
 	interface Props {
 		videos: Video[]
@@ -68,49 +69,45 @@
 	{/if}
 	<div class="controls">
 		{#if sortable}
-			<button
-				class:active={$videoListSorting == VideoListSorting.NewestFirst}
-				onclick={() => {
-					videoListSorting.set(VideoListSorting.NewestFirst)
-				}}
-			>
-				<Icon type={IconType.NewestFirst} />
-				Newest
-			</button>
-			<button
-				class:active={$videoListSorting == VideoListSorting.OldestFirst}
-				onclick={() => {
-					videoListSorting.set(VideoListSorting.OldestFirst)
-				}}
-			>
-				<Icon type={IconType.OldestFirst} />
-				Oldest
-			</button>
+			<ListButtons
+				value={$videoListSorting}
+				onChange={(option) => videoListSorting.set(option)}
+				options={[
+					{
+						label: 'Newest',
+						icon: IconType.NewestFirst,
+						option: VideoListSorting.NewestFirst,
+					},
+					{
+						label: 'Oldest',
+						icon: IconType.OldestFirst,
+						option: VideoListSorting.OldestFirst,
+					},
+				]}
+			/>
 		{/if}
 		{#if !mode && sortable}
 			<div class="divider mobile-hidden"></div>
 		{/if}
 		{#if !mode}
-			<button
-				class="mobile-hidden"
-				class:active={$videoListMode == VideoListMode.List}
-				onclick={() => {
-					videoListMode.set(VideoListMode.List)
-				}}
-			>
-				<Icon type={IconType.List} />
-				List
-			</button>
-			<button
-				class="mobile-hidden"
-				class:active={$videoListMode == VideoListMode.Grid}
-				onclick={() => {
-					videoListMode.set(VideoListMode.Grid)
-				}}
-			>
-				<Icon type={IconType.Grid} />
-				Grid
-			</button>
+			<div class="mobile-hidden">
+				<ListButtons
+					value={$videoListMode}
+					onChange={(option) => videoListMode.set(option)}
+					options={[
+						{
+							label: 'List',
+							icon: IconType.List,
+							option: VideoListMode.List,
+						},
+						{
+							label: 'Grid',
+							icon: IconType.Grid,
+							option: VideoListMode.Grid,
+						},
+					]}
+				/>
+			</div>
 		{/if}
 	</div>
 </Header>
@@ -191,24 +188,6 @@
 		display: flex;
 		align-items: center;
 		margin-left: auto;
-	}
-
-	.controls button {
-		background: none;
-		border: none;
-		color: var(--color-text-muted);
-		cursor: pointer;
-		font-family: inherit;
-		font-size: 14px;
-		line-height: 20px;
-	}
-
-	.controls button:hover {
-		color: var(--color-red-active);
-	}
-
-	.controls button.active {
-		color: var(--color-text);
 	}
 
 	.controls .divider {
