@@ -116,9 +116,11 @@
 	{#each paginatedVideos as video (video.id)}
 		<li>
 			<a href="{rootUri || `${base}/videos/${video.show}`}/{video.id}">
-				<div class="thumbnail">
-					<Thumbnail src={video.thumbnail || '/assets/default.jpg'} alt="" />
-					<span class="duration">{video.duration}</span>
+				<div class="thumbnail-wrapper">
+					<div class="thumbnail">
+						<Thumbnail src={video.thumbnail || '/assets/default.jpg'} alt="" />
+						<span class="duration">{video.duration}</span>
+					</div>
 				</div>
 				<div class="metadata">
 					<h3>{video.title}</h3>
@@ -290,7 +292,7 @@
 			display: block;
 		}
 
-		.thumbnail {
+		.thumbnail-wrapper {
 			flex: 0 0 220px;
 			margin-right: var(--spacing);
 		}
@@ -307,7 +309,7 @@
 			grid-template-columns: repeat(4, 1fr);
 		}
 
-		.thumbnail {
+		.thumbnail-wrapper {
 			flex: 0 0 260px;
 		}
 	}
