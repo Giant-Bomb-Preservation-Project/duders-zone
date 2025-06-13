@@ -3,6 +3,9 @@ import { getRequest, sleep } from './http.ts'
 // Max items per request (min: 100)
 const REQUEST_LIMIT = 10000
 
+// Max retries
+const MAX_RETRIES = 3
+
 // Identifiers of movies in Internet Archive that we're not interested in
 const UNWANTED_ITEMS = ['signup_confirmation']
 
@@ -71,7 +74,20 @@ export default class InternetArchive {
 		const items = []
 		for (const identifier of identifiers) {
 			const metadataUrl = `https://archive.org/metadata/${identifier}`
-			const data = await getRequest(metadataUrl)
+			let data = {}
+			let attempts = 0
+
+			while (attempts < MAX_RETRIES) {
+				data = await getRequest(metadataUrl)
+				attempts += 1
+				if ('metadata' in data) {
+					break
+				}
+			}
+
+			if ('error' in data) {
+				throw new Error(`Error returned from IA: ${data.error}`)
+			}
 
 			const subject =
 				typeof data.metadata.subject === 'string' || data.metadata.subject instanceof String
@@ -90,10 +106,20 @@ export default class InternetArchive {
 				(file) => file.source === 'original' && file.format === 'MPEG4'
 			)
 
+			var date = null
+			if (data.metadata.date) {
+				const match = data.metadata.date.match(/^(\d+)\/(\d+)\/(\d{4})$/)
+				if (match) {
+					date = new Date(parseInt(match[3], 10), parseInt(match[2], 10) - 1, parseInt(match[1]), 12)
+				} else {
+					date = new Date(data.metadata.date)
+				}
+			}
+
 			items.push({
 				identifier: data.metadata.identifier,
 				guid,
-				date: data.metadata.date ? new Date(data.metadata.date) : null,
+				date,
 				description: data.metadata.description,
 				subject: subject.filter((s) => !UNWANTED_SUBJECTS.includes(s)),
 				title: data.metadata.title,
