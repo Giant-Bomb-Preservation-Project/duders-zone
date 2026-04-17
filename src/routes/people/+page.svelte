@@ -11,7 +11,7 @@
 	}
 
 	const { data }: Props = $props()
-	const { people } = data
+	const people = $derived(data.people)
 
 	function icon(url: string): IconType {
 		const hostname = new URL(url).hostname
