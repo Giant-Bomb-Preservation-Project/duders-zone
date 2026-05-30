@@ -66,8 +66,8 @@ the collection. This is done using the script in the _scripts_ directory.
 
 This is done in two steps:
 
-* Download the data from GB and IA into temporary files.
-* Import the data from the temporary files to their respective JSON files.
+- Download the data from GB and IA into temporary files.
+- Import the data from the temporary files to their respective JSON files.
 
 It's done in two steps mainly to facilitate the development of the import step,
 or to use a local backup when the GB API is down. The downloaded files are stored
@@ -90,6 +90,9 @@ can be imported into the site's datastore using the `import` script:
 ```shell
 npm run import
 ```
+
+Note that the `import` script is the one that will attempt to download images
+for the GB shows.
 
 Both commands can be run together in sequence by invoking the `sync` script:
 
