@@ -126,7 +126,7 @@ export default class InternetArchive {
 				guid,
 				date,
 				description: data.metadata.description,
-				subject: subject.filter((s) => !UNWANTED_SUBJECTS.includes(s)),
+				subject: subject ? subject.filter((s) => !UNWANTED_SUBJECTS.includes(s)) : [],
 				title: data.metadata.title,
 				videoFile: videoFile
 					? `https://archive.org/download/${data.metadata.identifier}/${videoFile.name}`
