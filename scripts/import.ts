@@ -187,10 +187,7 @@ async function run() {
 				score += item.identifier.includes(video.guid) ? 1 : 0
 				if (item.date) {
 					score +=
-						item.date.substring(0, 10) ==
-						video.publish_date.substring(0, 10)
-							? 1
-							: 0
+						item.date.substring(0, 10) == video.publish_date.substring(0, 10) ? 1 : 0
 				}
 
 				return score >= 2 // probably the right video
