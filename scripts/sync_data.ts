@@ -2,10 +2,11 @@ import axios from 'axios'
 import { promises as fs } from 'fs'
 import path from 'path'
 
-import { writeJSONFile } from './sources/file.ts'
-import { downloadFile } from './sources/http.ts'
-import GiantBomb from './sources/GiantBomb.ts'
-import InternetArchive from './sources/InternetArchive.ts'
+import { writeJSONFile } from './utils/file.ts'
+import { downloadFile } from './utils/http.ts'
+import GiantBomb from './utils/GiantBomb.ts'
+import InternetArchive from './utils/InternetArchive.ts'
+import log from './utils/log.ts'
 
 ///
 /// Config
