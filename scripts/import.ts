@@ -80,16 +80,34 @@ async function run() {
 
 	// Process all the shows, downloading their posters and logos
 	for (const show of gbShows) {
-		const poster = toFilename(show.image)
-		const logo = toFilename(show.logo)
+		let poster = toFilename(show.image)
+		let logo = toFilename(show.logo)
 
-		// if (poster !== null) {
-		// 	await downloadFile(show.image, SHOW_IMAGES_PATH + poster)
-		// }
+		if (poster !== null) {
+			try {
+				await downloadFile(show.image, SHOW_IMAGES_PATH + poster)
+			} catch(err) {
+				if (err.response.status == 404) {
+					log('error', `Unable to download file: ${show.image}`)
+					poster = null
+				} else {
+					throw err
+				}
+			}
+		}
 
-		// if (logo !== null) {
-		// 	await downloadFile(show.logo, SHOW_IMAGES_PATH + logo)
-		// }
+		if (logo !== null) {
+			try {
+				await downloadFile(show.logo, SHOW_IMAGES_PATH + logo)
+			} catch(err) {
+				if (err.response.status == 404) {
+					log('error', `Unable to download file: ${show.logo}`)
+					logo = null
+				} else {
+					throw err
+				}
+			}
+		}
 
 		shows.push({
 			id: show.slug ?? toIdentifier(show.title),
