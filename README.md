@@ -1,9 +1,8 @@
 # Duders Zone
 
 This is an archival website about video games. It shows video content from Giant
-Bomb where the actual videos are hosted at
-[Internet Archive](https://archive.org/details/giant-bomb-archive). It's
-maintained for my own nostalgic benefit.
+Bomb in a nostalgic and conveninent format, with the actual videos are hosted at
+[Internet Archive](https://archive.org/details/giant-bomb-archive).
 
 Thanks for everything! See you next game.
 
@@ -74,9 +73,12 @@ or to use a local backup when the GB API is down. The downloaded files are store
 in the `tmp/` directory and can be deleted once the import is complete.
 
 To download data from Giant Bomb you will need an existing API key. This can
-be retrieved from [Giant Bomb](https://www.giantbomb.com/api/) (while it's still
-available) and you need to provide it as an environment variable named
-`GB_API_KEY`.
+be retrieved from [Giant Bomb](https://www.giantbomb.com/api/) and you need to
+provide it as an environment variable named `GB_API_KEY`.
+
+```shell
+set GB_API_KEY='your api key here'
+```
 
 Then the data can be downloaded using the `download` script:
 
