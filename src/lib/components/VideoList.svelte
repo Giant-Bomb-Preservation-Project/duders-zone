@@ -8,6 +8,7 @@
 	import { videoListMode, videoListSorting } from '$lib/store'
 	import ListButtons from './ListButtons.svelte'
 	import { IconType } from './Icon.svelte'
+	import { onMount } from 'svelte'
 
 	interface Props {
 		videos: Video[]
@@ -61,6 +62,12 @@
 		const itemIndexStart = (currentPage - 1) * perPage
 		return sortedVideos.slice(itemIndexStart, itemIndexStart + perPage)
 	})
+
+	let hideThumbnails = $state(true)
+
+	onMount(()=>{
+		hideThumbnails = false
+	})
 </script>
 
 <Header {title}>
@@ -111,15 +118,13 @@
 		{/if}
 	</div>
 </Header>
-
 <ul class={mode ?? $videoListMode}>
 	{#each paginatedVideos as video (video.id)}
 		<li>
 			<a href="{rootUri || `${base}/videos/${video.show}`}/{video.id}">
 				<div class="thumbnail-wrapper">
 					<div class="thumbnail">
-						<Thumbnail src={video.thumbnail || '/assets/default.jpg'} alt="" />
-						<span class="duration">{video.duration}</span>
+						<Thumbnail src={hideThumbnails || !video.thumbnail ? '/assets/default.jpg' : video.thumbnail} alt="" />
 					</div>
 				</div>
 				<div class="metadata">
