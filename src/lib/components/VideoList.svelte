@@ -63,7 +63,7 @@
 		return sortedVideos.slice(itemIndexStart, itemIndexStart + perPage)
 	})
 
-	let hideThumbnails = $state(true)
+	let hideThumbnails = $state(sortable)
 
 	onMount(()=>{
 		hideThumbnails = false
