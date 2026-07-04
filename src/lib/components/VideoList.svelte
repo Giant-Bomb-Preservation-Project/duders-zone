@@ -125,6 +125,7 @@
 				<div class="thumbnail-wrapper">
 					<div class="thumbnail">
 						<Thumbnail src={hideThumbnails || !video.thumbnail ? '/assets/default.jpg' : video.thumbnail} alt="" />
+						<span class="duration">{video.duration}</span>
 					</div>
 				</div>
 				<div class="metadata">
