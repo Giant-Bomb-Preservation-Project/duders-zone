@@ -183,7 +183,9 @@
 			"id": "mattbodega",
 			"name": "Matt Kessler",
 			"image": "mattbodega.png",
-			"links": []
+			"links": [
+				"https://bsky.app/profile/mattbodega.bsky.social"
+			]
 		},
 		{
 			"id": "mmahardy",
