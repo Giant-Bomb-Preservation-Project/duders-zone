@@ -63,6 +63,15 @@
 			]
 		},
 		{
+			"id": "chucktowski",
+			"name": "Chuck Zimmerheld",
+			"image": "chucktowski.jpg",
+			"links": [
+				"https://www.twitch.tv/chucktowski",
+				"https://bsky.app/profile/chucktowski.com"
+			]
+		},
+		{
 			"id": "danryckert",
 			"name": "Dan Ryckert",
 			"image": "danr.png",
