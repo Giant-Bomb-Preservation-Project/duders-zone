@@ -41,6 +41,7 @@ export interface Video {
 	readonly show?: string
 	readonly thumbnail?: string
 	readonly duration: string
+	readonly hosts: readonly string[]
 	readonly source: {
 		readonly internetarchive?: string
 		readonly direct?: string
@@ -128,6 +129,7 @@ export class DataStore {
 				show: video.show,
 				thumbnail: video.thumbnail,
 				duration: formatDuration(video.duration),
+				hosts: video.hosts,
 				source: video.source,
 			}
 

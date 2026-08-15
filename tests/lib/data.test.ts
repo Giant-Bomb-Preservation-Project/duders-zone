@@ -45,6 +45,7 @@ const testVideoData = [
 		date: '2020-03-02T00:00:00Z',
 		thumbnail: 'https://archive.org/services/img/gb-2300-15259-IDJIYS2',
 		duration: 7300,
+		hosts: [],
 		source: {
 			internetarchive: 'gb-2300-15259-IDJIYS2',
 		},
@@ -58,6 +59,7 @@ const testVideoData = [
 		date: '2020-11-25T00:00:00Z',
 		thumbnail: 'https://archive.org/services/img/gb-2300-16398-IDJKE0C',
 		duration: 7925,
+		hosts: [],
 		source: {
 			internetarchive: 'gb-2300-16398-IDJKE0C',
 		},
@@ -71,6 +73,7 @@ const testVideoData = [
 		thumbnail:
 			'https://archive.org/services/img/2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
 		duration: 1,
+		hosts: ['Ryan Davis'],
 		source: {
 			internetarchive: 'IDBF5DWY',
 		},
@@ -85,6 +88,7 @@ const testVideoData = [
 		thumbnail:
 			'https://archive.org/services/img/2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
 		duration: null,
+		hosts: ['Ryan Davis'],
 		source: {
 			internetarchive: 'IDIAQF2N',
 		},
@@ -98,6 +102,7 @@ const testVideoData = [
 		thumbnail:
 			'https://archive.org/services/img/2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
 		duration: null,
+		hosts: ['Ryan Davis'],
 		source: {
 			internetarchive: 'IDB90NXY',
 		},
@@ -151,6 +156,7 @@ describe('DataStore', () => {
 					date: new Date('2020-03-02T00:00:00Z'),
 					thumbnail: 'https://archive.org/services/img/gb-2300-15259-IDJIYS2',
 					duration: '02:01:40',
+					hosts: [],
 					show: 'cross-coast',
 					source: {
 						internetarchive: 'gb-2300-15259-IDJIYS2',
@@ -164,6 +170,7 @@ describe('DataStore', () => {
 					date: new Date('2020-11-25T00:00:00Z'),
 					thumbnail: 'https://archive.org/services/img/gb-2300-16398-IDJKE0C',
 					duration: '02:12:05',
+					hosts: [],
 					show: 'cross-coast',
 					source: {
 						internetarchive: 'gb-2300-16398-IDJKE0C',
@@ -178,6 +185,7 @@ describe('DataStore', () => {
 					thumbnail:
 						'https://archive.org/services/img/2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
 					duration: '00:00:01',
+					hosts: ['Ryan Davis'],
 					show: 'this-aint-no-game',
 					source: {
 						internetarchive: 'IDBF5DWY',
@@ -192,6 +200,7 @@ describe('DataStore', () => {
 					thumbnail:
 						'https://archive.org/services/img/2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
 					duration: '--:--:--',
+					hosts: ['Ryan Davis'],
 					show: 'this-aint-no-game',
 					source: {
 						internetarchive: 'IDIAQF2N',
@@ -205,6 +214,7 @@ describe('DataStore', () => {
 					thumbnail:
 						'https://archive.org/services/img/2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
 					duration: '--:--:--',
+					hosts: ['Ryan Davis'],
 					show: 'this-aint-no-game',
 					source: {
 						internetarchive: 'IDB90NXY',
