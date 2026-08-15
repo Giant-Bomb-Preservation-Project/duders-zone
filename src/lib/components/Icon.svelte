@@ -14,6 +14,7 @@
 		RSS,
 		LeastFirst,
 		MostFirst,
+		Play,
 	}
 </script>
 
@@ -106,6 +107,17 @@
 {:else if type == IconType.MostFirst}
 	<svg viewBox="0 0 14 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 		<path d="M1,1.5 h11 v1.5 h-11Z M1,5.25 h8 v1.5 h-8Z M1,9 h5 v1.5 h-5" />
+	</svg>
+{:else if type == IconType.Play}
+	<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor">
+		<path
+			d="M6.90588 4.53682C6.50592 4.2998 6 4.58808 6 5.05299V18.947C6 19.4119 6.50592 19.7002 6.90588 19.4632L18.629 12.5162C19.0211 12.2838 19.0211 11.7162 18.629 11.4838L6.90588 4.53682Z"
+			fill="currentColor"
+			stroke="currentColor"
+			stroke-width="1.5"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+		/>
 	</svg>
 {:else}
 	??

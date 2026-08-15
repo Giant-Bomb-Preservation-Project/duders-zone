@@ -52,6 +52,12 @@
 						<h2>{person.name}</h2>
 						{#if person.links}
 							<ul class="links">
+								{#if person.videos.length}
+									<li>
+										<Icon type={IconType.Play} />
+										{person.videos.length} Videos
+									</li>
+								{/if}
 								{#each person.links as link}
 									<li>
 										<a href={link}>

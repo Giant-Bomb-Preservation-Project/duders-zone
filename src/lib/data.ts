@@ -15,6 +15,7 @@ export interface Person {
 	readonly name: string
 	readonly image: string
 	readonly links: readonly string[]
+	readonly videos: string[]
 }
 
 export interface InMemoriam {
@@ -41,7 +42,7 @@ export interface Video {
 	readonly show?: string
 	readonly thumbnail?: string
 	readonly duration: string
-	readonly hosts: readonly string[]
+	readonly hosts: readonly Person[]
 	readonly source: {
 		readonly internetarchive?: string
 		readonly direct?: string
@@ -104,6 +105,7 @@ export class DataStore {
 				name: person.name,
 				image: person.image,
 				links: person.links,
+				videos: [],
 			}
 		}
 
@@ -121,6 +123,18 @@ export class DataStore {
 
 		this.videos = {}
 		for (const video of videoData) {
+			const hosts = []
+
+			for (const host of video.hosts) {
+				const person = peopleData.find((person) => person.name == host)
+				if (!person) {
+					console.warn(`Unable to find host "${host}" from video: ${video.title}`)
+					continue
+				}
+
+				hosts.push(person)
+			}
+
 			this.videos[video.id] = {
 				id: video.id,
 				title: video.title,
@@ -129,11 +143,14 @@ export class DataStore {
 				show: video.show,
 				thumbnail: video.thumbnail,
 				duration: formatDuration(video.duration),
-				hosts: video.hosts,
+				hosts,
 				source: video.source,
 			}
 
 			this.shows[video.show].videos.push(video.id)
+			for (const host of hosts) {
+				this.people[host.id].videos.push(video.id)
+			}
 		}
 
 		this.videoIndex = new Map()

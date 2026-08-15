@@ -80,7 +80,7 @@
 					</p>
 					{#if video.hosts.length}
 						<p class="detail">
-							Hosts: {video.hosts.join(', ')}
+							Hosts: {video.hosts.map((host) => host.name).join(', ')}
 						</p>
 					{/if}
 				</a>
@@ -95,7 +95,7 @@
 				</p>
 				{#if video.hosts.length}
 					<p class="detail">
-						Hosts: {video.hosts.join(', ')}
+						Hosts: {video.hosts.map((host) => host.name).join(', ')}
 					</p>
 				{/if}
 			{/if}

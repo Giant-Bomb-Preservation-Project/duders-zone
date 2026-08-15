@@ -121,12 +121,14 @@ describe('DataStore', () => {
 						'https://www.patreon.com/jeffgerstmann',
 						'https://twitter.com/jeffgerstmann',
 					],
+					videos: [],
 				},
 				ryan: {
 					id: 'ryan',
 					name: 'Ryan Davis',
 					image: 'ryan.png',
 					links: [],
+					videos: ['IDBF5DWY', 'IDIAQF2N', 'IDB90NXY'],
 				},
 			}
 			const expectedShows = {
@@ -185,7 +187,14 @@ describe('DataStore', () => {
 					thumbnail:
 						'https://archive.org/services/img/2009-02-11-This_Aint_No_Game-This_Aint_No_Game_Double_Dragon-IDBF5DWY',
 					duration: '00:00:01',
-					hosts: ['Ryan Davis'],
+					hosts: [
+						{
+							id: 'ryan',
+							name: 'Ryan Davis',
+							image: 'ryan.png',
+							links: [],
+						},
+					],
 					show: 'this-aint-no-game',
 					source: {
 						internetarchive: 'IDBF5DWY',
@@ -200,7 +209,14 @@ describe('DataStore', () => {
 					thumbnail:
 						'https://archive.org/services/img/2009-02-19-This_Aint_No_Game-This_Aint_No_Game_Street_Fighter-IDIAQF2N',
 					duration: '--:--:--',
-					hosts: ['Ryan Davis'],
+					hosts: [
+						{
+							id: 'ryan',
+							name: 'Ryan Davis',
+							image: 'ryan.png',
+							links: [],
+						},
+					],
 					show: 'this-aint-no-game',
 					source: {
 						internetarchive: 'IDIAQF2N',
@@ -214,7 +230,14 @@ describe('DataStore', () => {
 					thumbnail:
 						'https://archive.org/services/img/2009-02-26-This_Aint_No_Game-This_Aint_No_Game_Resident_Evil-IDB90NXY',
 					duration: '--:--:--',
-					hosts: ['Ryan Davis'],
+					hosts: [
+						{
+							id: 'ryan',
+							name: 'Ryan Davis',
+							image: 'ryan.png',
+							links: [],
+						},
+					],
 					show: 'this-aint-no-game',
 					source: {
 						internetarchive: 'IDB90NXY',
@@ -613,6 +636,7 @@ describe('DataStore', () => {
 					description: '',
 					date: '2020-03-02T00:00:00Z',
 					thumbnail: null,
+					hosts: [],
 				},
 				{
 					id: 'exact',
@@ -621,6 +645,7 @@ describe('DataStore', () => {
 					description: '',
 					date: '2020-03-02T00:00:00Z',
 					thumbnail: null,
+					hosts: [],
 				},
 				{
 					id: 'not_included',
@@ -629,6 +654,7 @@ describe('DataStore', () => {
 					description: '',
 					date: '2020-03-02T00:00:00Z',
 					thumbnail: null,
+					hosts: [],
 				},
 			]
 
@@ -647,6 +673,7 @@ describe('DataStore', () => {
 					description: '',
 					date: '2020-03-02T00:00:00Z',
 					thumbnail: null,
+					hosts: [],
 				},
 				{
 					id: 'two',
@@ -655,6 +682,7 @@ describe('DataStore', () => {
 					description: '',
 					date: '2020-03-02T00:00:00Z',
 					thumbnail: null,
+					hosts: [],
 				},
 				{
 					id: 'none',
@@ -663,6 +691,7 @@ describe('DataStore', () => {
 					description: '',
 					date: '2020-03-02T00:00:00Z',
 					thumbnail: null,
+					hosts: [],
 				},
 			]
 
