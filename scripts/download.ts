@@ -36,12 +36,12 @@ async function run() {
 	const ia = new InternetArchive()
 	const gb = new GiantBomb(process.env.GB_API_KEY, 1)
 
-	// log.info('Getting items from Internet Archive...')
-	// let iaItems = await ia.getCollectionItems(COLLECTION_IDENTIFIER)
-	// log.success(`Got ${iaItems.length} items`)
-	// var targetFile = TARGET_DIRECTORY_PATH + 'ia_items.json'
-	// await writeJSONFile(targetFile, iaItems)
-	// log.success(`Wrote file: ${targetFile}`)
+	log.info('Getting items from Internet Archive...')
+	let iaItems = await ia.getCollectionItems(COLLECTION_IDENTIFIER)
+	log.success(`Got ${iaItems.length} items`)
+	var targetFile = TARGET_DIRECTORY_PATH + 'ia_items.json'
+	await writeJSONFile(targetFile, iaItems)
+	log.success(`Wrote file: ${targetFile}`)
 
 	log.info('Getting shows from Giant Bomb...')
 	let gbShows = await gb.getShows()
@@ -50,12 +50,12 @@ async function run() {
 	await writeJSONFile(targetFile, gbShows)
 	log.success(`Wrote file: ${targetFile}`)
 
-	// log.info('Getting videos from Giant Bomb...')
-	// let gbVideos = await gb.getVideos()
-	// log.success(`Got ${gbVideos.length} videos`)
-	// targetFile = TARGET_DIRECTORY_PATH + 'gb_videos.json'
-	// await writeJSONFile(targetFile, gbVideos)
-	// log.success(`Wrote file: ${targetFile}`)
+	log.info('Getting videos from Giant Bomb...')
+	let gbVideos = await gb.getVideos()
+	log.success(`Got ${gbVideos.length} videos`)
+	targetFile = TARGET_DIRECTORY_PATH + 'gb_videos.json'
+	await writeJSONFile(targetFile, gbVideos)
+	log.success(`Wrote file: ${targetFile}`)
 }
 
 run()
