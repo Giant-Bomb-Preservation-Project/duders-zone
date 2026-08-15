@@ -87,7 +87,8 @@ export default class InternetArchive {
 			}
 
 			if ('error' in data) {
-				throw new Error(`Error returned from IA: ${data.error}`)
+				log.error(`Error returned from IA: ${data.error}`)
+				continue
 			}
 
 			const subject =
