@@ -1,4 +1,5 @@
 import { getRequest, sleep } from './http.ts'
+import log from './log.ts'
 
 // Max items per request (min: 100)
 const REQUEST_LIMIT = 10000
@@ -66,7 +67,7 @@ export default class InternetArchive {
 				scrapeParams.cursor = data.cursor
 				await sleep(this.delay)
 			} else if (found !== total) {
-				console.warn('Cursor not found in IA response', data)
+				log.warn('Cursor not found in IA response', data)
 				break
 			}
 		}

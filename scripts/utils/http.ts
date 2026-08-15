@@ -2,6 +2,8 @@ import { promises as fs } from 'fs'
 
 import axios from 'axios'
 
+import log from './log.ts'
+
 // Headers sent with each request
 const HEADERS = {
 	'user-agent': 'Giant-Bomb-Preservation-Project/duders-zone',
@@ -15,11 +17,11 @@ const RETRY_DELAY = 30
 
 // Download a file
 export async function downloadFile(source: string, target: string) {
-	console.debug(`Downloading: ${source}`)
+	log.debug(`Downloading: ${source}`)
 	const response = await axios.get(source, { responseType: 'arraybuffer' })
 	const fileData = Buffer.from(response.data, 'binary')
 
-	console.debug(` -> saving to ${target}`)
+	log.debug(` -> saving to ${target}`)
 	await fs.writeFile(target, fileData)
 }
 
@@ -31,7 +33,7 @@ export async function getRequest(url: string, queryParams: Object = {}) {
 			const queryString = Object.keys(queryParams)
 				.map((k) => `${k}=${queryParams[k]}`)
 				.join('&')
-			console.debug(`GET ${url}?${queryString}`)
+			log.debug(`GET ${url}?${queryString}`)
 			const response = await axios.get(url, {
 				headers: HEADERS,
 				params: queryParams,
@@ -40,15 +42,15 @@ export async function getRequest(url: string, queryParams: Object = {}) {
 			return response.data
 		} catch (e) {
 			if (e instanceof axios.AxiosError) {
-				console.warn(`WARNING! Unexpected status code: ${e.response?.status}`)
-				console.warn(e.response?.data)
+				log.warn(`WARNING! Unexpected status code: ${e.response?.status}`)
+				log.warn(e.response?.data)
 			} else {
 				throw e
 			}
 		}
 
 		times += 1
-		console.debug(`Retrying in ${RETRY_DELAY} seconds...`)
+		log.debug(`Retrying in ${RETRY_DELAY} seconds...`)
 		await sleep(RETRY_DELAY)
 	}
 
