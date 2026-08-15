@@ -128,17 +128,13 @@ export class DataStore {
 
 		this.shows = {}
 		for (const show of showData) {
-			if (show.videos.length == 0) {
-				continue
-			}
-
 			this.shows[show.id] = {
 				id: show.id,
 				title: show.title,
 				description: show.description,
 				poster: show.poster,
 				logo: show.logo,
-				videos: show.videos,
+				videos: [],
 			}
 		}
 
@@ -154,6 +150,8 @@ export class DataStore {
 				duration: formatDuration(video.duration),
 				source: video.source,
 			}
+
+			this.shows[video.show].videos.push(video.id)
 		}
 
 		this.videoIndex = new Map()
