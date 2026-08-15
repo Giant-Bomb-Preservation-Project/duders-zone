@@ -225,6 +225,10 @@ async function run() {
 
 	// Save the data
 
+	// Sort the data so updates won't cause a lot of changes in Git
+	shows.sort((a, b) => a.id - b.id)
+	videos.sort((a, b) => a.id - b.id)
+
 	await writeJSONFile(SHOWS_FILE_PATH, shows)
 	log.success(`Saved ${shows.length} shows to: ${SHOWS_FILE_PATH}`)
 
