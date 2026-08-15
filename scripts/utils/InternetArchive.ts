@@ -122,12 +122,17 @@ export default class InternetArchive {
 				}
 			}
 
+			var hosts = data.metadata.hosts
+				? data.metadata.hosts.split(',').map((name) => name.trim())
+				: []
+
 			items.push({
 				identifier: data.metadata.identifier,
 				guid,
 				date,
 				description: data.metadata.description,
 				subject: subject ? subject.filter((s) => !UNWANTED_SUBJECTS.includes(s)) : [],
+				hosts,
 				title: data.metadata.title,
 				videoFile: videoFile
 					? `https://archive.org/download/${data.metadata.identifier}/${videoFile.name}`
