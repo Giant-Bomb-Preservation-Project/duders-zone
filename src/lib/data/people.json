@@ -1,347 +1,343 @@
-{
-	"alumni": [
-		{
-			"id": "ybbaaabby",
-			"name": "Abby Russell",
-			"image": "abby.png",
-			"links": [
-				"https://www.twitch.tv/ybbaaabby",
-				"https://bsky.app/profile/ybbaaabby.bsky.social"
-			]
-		},
-		{
-			"id": "alex",
-			"name": "Alex Navarro",
-			"image": "alex.png",
-			"links": [
-				"https://nextlander.com/",
-				"https://bsky.app/profile/alexnavarro.bsky.social"
-			]
-		},
-		{
-			"id": "alexisg",
-			"name": "Alexis Gallisá",
-			"image": "alexisg.jpg",
-			"links": [
-				"https://www.alexisgallisa.com/"
-			]
-		},
-		{
-			"id": "austin_walker",
-			"name": "Austin Walker",
-			"image": "austin.jpg",
-			"links": [
-				"https://www.clockworkworlds.com/",
-				"https://bsky.app/profile/austinwalker.bsky.social"
-			]
-		},
-		{
-			"id": "bailey",
-			"name": "Bailey Myers",
-			"image": "bailey.jpg",
-			"links": [
-				"https://www.twitch.tv/bailienvspredator",
-				"https://bsky.app/profile/baileymeyers.bsky.social"
-			]
-		},
-		{
-			"id": "benpack",
-			"name": "Ben Pack",
-			"image": "ben.png",
-			"links": [
-				"https://bsky.app/profile/packbenpack.bsky.social",
-				"https://www.twitch.tv/glentennis"
-			]
-		},
-		{
-			"id": "brad",
-			"name": "Brad Shoemaker",
-			"image": "brad.png",
-			"links": [
-				"https://nextlander.com/",
-				"https://bsky.app/profile/bradshoemaker.bsky.social"
-			]
-		},
-		{
-			"id": "chucktowski",
-			"name": "Chuck Zimmerheld",
-			"image": "chucktowski.jpg",
-			"links": [
-				"https://www.twitch.tv/chucktowski",
-				"https://bsky.app/profile/chucktowski.com"
-			]
-		},
-		{
-			"id": "danryckert",
-			"name": "Dan Ryckert",
-			"image": "danr.png",
-			"links": [
-				"https://www.twitch.tv/danryckert",
-				"https://bsky.app/profile/danryckert.com"
-			]
-		},
-		{
-			"id": "dannyodwyer",
-			"name": "Danny O’Dwyer",
-			"image": "danny.jpg",
-			"links": [
-				"https://www.patreon.com/cw/noclip",
-				"https://bsky.app/profile/dannyodwyer.bsky.social"
-			]
-		},
-		{
-			"id": "snide",
-			"name": "Dave Snider",
-			"image": "dave.png",
-			"links": [
-				"https://davesnider.com",
-				"https://social.davesnider.com/@davesnider"
-			]
-		},
-		{
-			"id": "drewbert",
-			"name": "Drew Scanlon",
-			"image": "drewbert.png",
-			"links": [
-				"https://www.drewscanlon.com/",
-				"https://bsky.app/profile/drewscanlon.bsky.social"
-			]
-		},
-		{
-			"id": "ltsquigs",
-			"name": "Ian Kelly",
-			"image": "ltsquigs.png",
-			"links": [
-				"https://bsky.app/profile/ltsquigs.bsky.social"
-			]
-		},
-		{
-			"id": "janman",
-			"name": "Jan Ochoa",
-			"image": "jan.png",
-			"links": [
-				"https://www.twitch.tv/coffeewithjan",
-				"https://bsky.app/profile/janochoa.bsky.social"
-			]
-		},
-		{
-			"id": "unastrike",
-			"name": "Jason Oestreicher",
-			"image": "jason.png",
-			"links": [
-				"https://www.twitch.tv/unastrike",
-				"https://bsky.app/profile/unastrike.com"
-			]
-		},
-		{
-			"id": "jerf",
-			"name": "Jeff Bakalar",
-			"image": "jeffb.png",
-			"links": [
-				"https://www.twitch.tv/jerftv",
-				"https://bsky.app/profile/jerf.xyz"
-			]
-		},
-		{
-			"id": "jeff",
-			"name": "Jeff Gerstmann",
-			"image": "jeffge.jpg",
-			"links": [
-				"https://www.patreon.com/jeffgerstmann",
-				"https://bsky.app/profile/jeffgerstmann.com",
-				"https://mastodon.social/@jeffgerstmann"
-			]
-		},
-		{
-			"id": "jeffgrubb",
-			"name": "Jeff Grubb",
-			"image": "jeffgr.png",
-			"links": [
-				"https://www.patreon.com/gamemess",
-				"https://www.twitch.tv/jeffgrubb",
-				"https://bsky.app/profile/grubb.wtf"
-			]
-		},
-		{
-			"id": "voidburger",
-			"name": "Jess O'Brien",
-			"image": "jess.png",
-			"links": [
-				"https://www.patreon.com/voidburger",
-				"https://bsky.app/profile/voidburger.bsky.social"
-			]
-		},
-		{
-			"id": "joeyf",
-			"name": "Joey Fameli",
-			"image": "joeyf.jpg",
-			"links": [
-				"https://www.joeyfameli.com/",
-				"https://bsky.app/profile/joeyfameli.bsky.social"
-			]
-		},
-		{
-			"id": "lucyjamesgames",
-			"name": "Lucy James",
-			"image": "lucy.jpg",
-			"links": [
-				"https://bsky.app/profile/lucyjames.games"
-			]
-		},
-		{
-			"id": "mattbodega",
-			"name": "Matt Kessler",
-			"image": "mattbodega.png",
-			"links": [
-				"https://bsky.app/profile/mattbodega.bsky.social"
-			]
-		},
-		{
-			"id": "mmahardy",
-			"name": "Mike Mahardy",
-			"image": "mmahardy.jpg",
-			"links": [
-				"https://twitter.com/mmahardy"
-			]
-		},
-		{
-			"id": "marykish",
-			"name": "Mary Kish",
-			"image": "marykish.jpg",
-			"links": [
-				"https://www.twitch.tv/merrykish",
-				"https://bsky.app/profile/merrykish.bsky.social"
-			]
-		},
-		{
-			"id": "rorie",
-			"name": "Matthew Rorie",
-			"image": "matthew.jpg",
-			"links": [
-				"https://bsky.app/profile/frailgesture.bsky.social"
-			]
-		},
-		{
-			"id": "minotti",
-			"name": "Mike “Mitch” Minotti",
-			"image": "minotti.jpg",
-			"links": [
-				"https://www.patreon.com/gamemess",
-				"https://www.twitch.tv/tolkoto",
-				"https://bsky.app/profile/tolkoto.com",
-				"https://gamesbeat.com/author/tolkoto/"
-			]
-		},
-		{
-			"id": "niki",
-			"name": "Niki Grayson",
-			"image": "niki.jpg",
-			"links": [
-				"https://www.twitch.tv/nikigrayson",
-				"https://bsky.app/profile/nikigrayson.com",
-				"https://vgbees.com/",
-				"https://makeyouthink.club/"
-			]
-		},
-		{
-			"id": "normanchan",
-			"name": "Norman Chan",
-			"image": "normanchan.jpeg",
-			"links": [
-				"https://www.tested.com/"
-			]
-		},
-		{
-			"id": "patrickklepek",
-			"name": "Patrick Klepek",
-			"image": "patrick.jpg",
-			"links": [
-				"https://linktr.ee/patrickklepek",
-				"https://bsky.app/profile/patrickklepek.bsky.social"
-			]
-		},
-		{
-			"id": "peterbrown",
-			"name": "Peter Brown",
-			"image": "peterbrown.png",
-			"links": [
-				"https://bsky.app/profile/pcbrown.bsky.social"
-			]
-		},
-		{
-			"id": "richgallup",
-			"name": "Rich Gallup",
-			"image": "richgallup.png",
-			"links": [
-				"https://bsky.app/profile/richgallup.bsky.social"
-			]
-		},
-		{
-			"id": "saralima",
-			"name": "Sara Lima",
-			"image": "saralima.jpg",
-			"links": []
-		},
-		{
-			"id": "coonce",
-			"name": "Sean Coonce",
-			"image": "coonce.png",
-			"links": [
-				"https://twitter.com/cooncesean"
-			]
-		},
-		{
-			"id": "turboshawn",
-			"name": "Shawn “TurboShawn” McDowell",
-			"image": "turboshawn.jpg",
-			"links": [
-				"https://www.twitch.tv/turboshawn",
-				"https://bsky.app/profile/turboshawn.com"
-			]
-		},
-		{
-			"id": "tamoor",
-			"name": "Tamoor Hussain",
-			"image": "tam.jpg",
-			"links": [
-				"https://bsky.app/profile/tamoorh.com"
-			]
-		},
-		{
-			"id": "gman",
-			"name": "Tony Guerrero",
-			"image": "gman.jpg",
-			"links": [
-				"https://www.patreon.com/GManFromHeck",
-				"https://bsky.app/profile/gmanfromheck.bsky.social"
-			]
-		},
-		{
-			"id": "vinny",
-			"name": "Vincent “Vinny” Caravella",
-			"image": "vinny.png",
-			"links": [
-				"https://nextlander.com/",
-				"https://bsky.app/profile/vinnycaravella.bsky.social"
-			]
-		},
-		{
-			"id": "will",
-			"name": "Will Smith",
-			"image": "will.jpg",
-			"links": [
-				"https://techpod.content.town/",
-				"https://www.patreon.com/techpod",
-				"https://bsky.app/profile/willsmith.fun"
-			]
-		}
-	],
-	"in_memoriam": [
-		{
-			"id": "ryan",
-			"name": "Ryan Davis",
-			"years": "1979–2013",
-			"image": "ryan.png"
-		}
-	]
-}
+[
+	{
+		"id": "ybbaaabby",
+		"name": "Abby Russell",
+		"image": "abby.png",
+		"links": [
+			"https://www.twitch.tv/ybbaaabby",
+			"https://bsky.app/profile/ybbaaabby.bsky.social"
+		]
+	},
+	{
+		"id": "alex",
+		"name": "Alex Navarro",
+		"image": "alex.png",
+		"links": [
+			"https://nextlander.com/",
+			"https://bsky.app/profile/alexnavarro.bsky.social"
+		]
+	},
+	{
+		"id": "alexisg",
+		"name": "Alexis Gallisá",
+		"image": "alexisg.jpg",
+		"links": [
+			"https://www.alexisgallisa.com/"
+		]
+	},
+	{
+		"id": "austin_walker",
+		"name": "Austin Walker",
+		"image": "austin.jpg",
+		"links": [
+			"https://www.clockworkworlds.com/",
+			"https://bsky.app/profile/austinwalker.bsky.social"
+		]
+	},
+	{
+		"id": "bailey",
+		"name": "Bailey Myers",
+		"image": "bailey.jpg",
+		"links": [
+			"https://www.twitch.tv/bailienvspredator",
+			"https://bsky.app/profile/baileymeyers.bsky.social"
+		]
+	},
+	{
+		"id": "benpack",
+		"name": "Ben Pack",
+		"image": "ben.png",
+		"links": [
+			"https://bsky.app/profile/packbenpack.bsky.social",
+			"https://www.twitch.tv/glentennis"
+		]
+	},
+	{
+		"id": "brad",
+		"name": "Brad Shoemaker",
+		"image": "brad.png",
+		"links": [
+			"https://nextlander.com/",
+			"https://bsky.app/profile/bradshoemaker.bsky.social"
+		]
+	},
+	{
+		"id": "chucktowski",
+		"name": "Chuck Zimmerheld",
+		"image": "chucktowski.jpg",
+		"links": [
+			"https://www.twitch.tv/chucktowski",
+			"https://bsky.app/profile/chucktowski.com"
+		]
+	},
+	{
+		"id": "danryckert",
+		"name": "Dan Ryckert",
+		"image": "danr.png",
+		"links": [
+			"https://www.twitch.tv/danryckert",
+			"https://bsky.app/profile/danryckert.com"
+		]
+	},
+	{
+		"id": "dannyodwyer",
+		"name": "Danny O’Dwyer",
+		"image": "danny.jpg",
+		"links": [
+			"https://www.patreon.com/cw/noclip",
+			"https://bsky.app/profile/dannyodwyer.bsky.social"
+		]
+	},
+	{
+		"id": "snide",
+		"name": "Dave Snider",
+		"image": "dave.png",
+		"links": [
+			"https://davesnider.com",
+			"https://social.davesnider.com/@davesnider"
+		]
+	},
+	{
+		"id": "drewbert",
+		"name": "Drew Scanlon",
+		"image": "drewbert.png",
+		"links": [
+			"https://www.drewscanlon.com/",
+			"https://bsky.app/profile/drewscanlon.bsky.social"
+		]
+	},
+	{
+		"id": "ltsquigs",
+		"name": "Ian Kelly",
+		"image": "ltsquigs.png",
+		"links": [
+			"https://bsky.app/profile/ltsquigs.bsky.social"
+		]
+	},
+	{
+		"id": "janman",
+		"name": "Jan Ochoa",
+		"image": "jan.png",
+		"links": [
+			"https://www.twitch.tv/coffeewithjan",
+			"https://bsky.app/profile/janochoa.bsky.social"
+		]
+	},
+	{
+		"id": "unastrike",
+		"name": "Jason Oestreicher",
+		"image": "jason.png",
+		"links": [
+			"https://www.twitch.tv/unastrike",
+			"https://bsky.app/profile/unastrike.com"
+		]
+	},
+	{
+		"id": "jerf",
+		"name": "Jeff Bakalar",
+		"image": "jeffb.png",
+		"links": [
+			"https://www.twitch.tv/jerftv",
+			"https://bsky.app/profile/jerf.xyz"
+		]
+	},
+	{
+		"id": "jeff",
+		"name": "Jeff Gerstmann",
+		"image": "jeffge.jpg",
+		"links": [
+			"https://www.patreon.com/jeffgerstmann",
+			"https://bsky.app/profile/jeffgerstmann.com",
+			"https://mastodon.social/@jeffgerstmann"
+		]
+	},
+	{
+		"id": "jeffgrubb",
+		"name": "Jeff Grubb",
+		"image": "jeffgr.png",
+		"links": [
+			"https://www.patreon.com/gamemess",
+			"https://www.twitch.tv/jeffgrubb",
+			"https://bsky.app/profile/grubb.wtf"
+		]
+	},
+	{
+		"id": "voidburger",
+		"name": "Jess O'Brien",
+		"image": "jess.png",
+		"links": [
+			"https://www.patreon.com/voidburger",
+			"https://bsky.app/profile/voidburger.bsky.social"
+		]
+	},
+	{
+		"id": "joeyf",
+		"name": "Joey Fameli",
+		"image": "joeyf.jpg",
+		"links": [
+			"https://www.joeyfameli.com/",
+			"https://bsky.app/profile/joeyfameli.bsky.social"
+		]
+	},
+	{
+		"id": "lucyjamesgames",
+		"name": "Lucy James",
+		"image": "lucy.jpg",
+		"links": [
+			"https://bsky.app/profile/lucyjames.games"
+		]
+	},
+	{
+		"id": "mattbodega",
+		"name": "Matt Kessler",
+		"image": "mattbodega.png",
+		"links": [
+			"https://bsky.app/profile/mattbodega.bsky.social"
+		]
+	},
+	{
+		"id": "mmahardy",
+		"name": "Mike Mahardy",
+		"image": "mmahardy.jpg",
+		"links": [
+			"https://twitter.com/mmahardy"
+		]
+	},
+	{
+		"id": "marykish",
+		"name": "Mary Kish",
+		"image": "marykish.jpg",
+		"links": [
+			"https://www.twitch.tv/merrykish",
+			"https://bsky.app/profile/merrykish.bsky.social"
+		]
+	},
+	{
+		"id": "rorie",
+		"name": "Matthew Rorie",
+		"image": "matthew.jpg",
+		"links": [
+			"https://bsky.app/profile/frailgesture.bsky.social"
+		]
+	},
+	{
+		"id": "minotti",
+		"name": "Mike “Mitch” Minotti",
+		"image": "minotti.jpg",
+		"links": [
+			"https://www.patreon.com/gamemess",
+			"https://www.twitch.tv/tolkoto",
+			"https://bsky.app/profile/tolkoto.com",
+			"https://gamesbeat.com/author/tolkoto/"
+		]
+	},
+	{
+		"id": "niki",
+		"name": "Niki Grayson",
+		"image": "niki.jpg",
+		"links": [
+			"https://www.twitch.tv/nikigrayson",
+			"https://bsky.app/profile/nikigrayson.com",
+			"https://vgbees.com/",
+			"https://makeyouthink.club/"
+		]
+	},
+	{
+		"id": "normanchan",
+		"name": "Norman Chan",
+		"image": "normanchan.jpeg",
+		"links": [
+			"https://www.tested.com/"
+		]
+	},
+	{
+		"id": "patrickklepek",
+		"name": "Patrick Klepek",
+		"image": "patrick.jpg",
+		"links": [
+			"https://linktr.ee/patrickklepek",
+			"https://bsky.app/profile/patrickklepek.bsky.social"
+		]
+	},
+	{
+		"id": "peterbrown",
+		"name": "Peter Brown",
+		"image": "peterbrown.png",
+		"links": [
+			"https://bsky.app/profile/pcbrown.bsky.social"
+		]
+	},
+	{
+		"id": "richgallup",
+		"name": "Rich Gallup",
+		"image": "richgallup.png",
+		"links": [
+			"https://bsky.app/profile/richgallup.bsky.social"
+		]
+	},
+	{
+		"id": "ryan",
+		"name": "Ryan Davis",
+		"image": "ryan.png",
+		"links": []
+	},
+	{
+		"id": "saralima",
+		"name": "Sara Lima",
+		"image": "saralima.jpg",
+		"links": []
+	},
+	{
+		"id": "coonce",
+		"name": "Sean Coonce",
+		"image": "coonce.png",
+		"links": [
+			"https://twitter.com/cooncesean"
+		]
+	},
+	{
+		"id": "turboshawn",
+		"name": "Shawn “TurboShawn” McDowell",
+		"image": "turboshawn.jpg",
+		"links": [
+			"https://www.twitch.tv/turboshawn",
+			"https://bsky.app/profile/turboshawn.com"
+		]
+	},
+	{
+		"id": "tamoor",
+		"name": "Tamoor Hussain",
+		"image": "tam.jpg",
+		"links": [
+			"https://bsky.app/profile/tamoorh.com"
+		]
+	},
+	{
+		"id": "gman",
+		"name": "Tony Guerrero",
+		"image": "gman.jpg",
+		"links": [
+			"https://www.patreon.com/GManFromHeck",
+			"https://bsky.app/profile/gmanfromheck.bsky.social"
+		]
+	},
+	{
+		"id": "vinny",
+		"name": "Vincent “Vinny” Caravella",
+		"image": "vinny.png",
+		"links": [
+			"https://nextlander.com/",
+			"https://bsky.app/profile/vinnycaravella.bsky.social"
+		]
+	},
+	{
+		"id": "will",
+		"name": "Will Smith",
+		"image": "will.jpg",
+		"links": [
+			"https://techpod.content.town/",
+			"https://www.patreon.com/techpod",
+			"https://bsky.app/profile/willsmith.fun"
+		]
+	}
+]

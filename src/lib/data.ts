@@ -24,11 +24,6 @@ export interface InMemoriam {
 	readonly image: string
 }
 
-export interface People {
-	readonly alumni: Person[]
-	readonly inMemoriam: InMemoriam[]
-}
-
 export interface Show {
 	readonly id: string
 	readonly title: string
@@ -94,36 +89,21 @@ function formatDuration(duration: number | null): string {
 
 // Data store which contains the data for the app.
 export class DataStore {
-	readonly people: People
+	readonly people: { [key: string]: Person }
 	readonly shows: { [key: string]: Show }
 	readonly videos: { [key: string]: Video }
 	readonly videoIndex: Map<string, Map<string, number>>
 
 	// Construct the datastore based on given show and video data.
-	constructor(peopleData: any, showData: any[], videoData: any[]) {
-		let alumni = []
-		for (const person of peopleData.alumni) {
-			alumni.push({
+	constructor(peopleData: any[], showData: any[], videoData: any[]) {
+		this.people = {}
+		for (const person of peopleData) {
+			this.people[person.id] = {
 				id: person.id,
 				name: person.name,
 				image: person.image,
 				links: person.links,
-			})
-		}
-
-		let inMemoriam = []
-		for (const person of peopleData.in_memoriam) {
-			inMemoriam.push({
-				id: person.id,
-				name: person.name,
-				years: person.years,
-				image: person.image,
-			})
-		}
-
-		this.people = {
-			alumni: alumni.sort(byNameAsc),
-			inMemoriam: inMemoriam.sort(byNameAsc),
+			}
 		}
 
 		this.shows = {}
@@ -179,12 +159,9 @@ export class DataStore {
 	}
 
 	// Return the people.
-	getPeople(): People {
+	getPeople(): Person[] {
 		// Return copies so the data source cannot be modified
-		return {
-			alumni: Array.from(this.people.alumni),
-			inMemoriam: Array.from(this.people.inMemoriam),
-		}
+		return structuredClone(Object.values(this.people))
 	}
 
 	// Get a random show.

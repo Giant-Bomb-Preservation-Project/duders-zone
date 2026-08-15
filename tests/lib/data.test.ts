@@ -3,24 +3,20 @@ import { describe, it, expect } from 'vitest'
 import { DataStore } from '$lib/data'
 import type { Video } from '$lib/data'
 
-const testPeopleData = {
-	alumni: [
-		{
-			id: 'jeff',
-			name: 'Jeff Gerstmann',
-			image: 'jeffge.jpg',
-			links: ['https://www.patreon.com/jeffgerstmann', 'https://twitter.com/jeffgerstmann'],
-		},
-	],
-	in_memoriam: [
-		{
-			id: 'ryan',
-			name: 'Ryan Davis',
-			years: '1979–2013',
-			image: 'ryan.png',
-		},
-	],
-}
+const testPeopleData = [
+	{
+		id: 'jeff',
+		name: 'Jeff Gerstmann',
+		image: 'jeffge.jpg',
+		links: ['https://www.patreon.com/jeffgerstmann', 'https://twitter.com/jeffgerstmann'],
+	},
+	{
+		id: 'ryan',
+		name: 'Ryan Davis',
+		image: 'ryan.png',
+		links: [],
+	},
+]
 const testShowData = [
 	{
 		id: 'this-aint-no-game',
@@ -112,25 +108,21 @@ describe('DataStore', () => {
 	describe('constructor', () => {
 		it('creates a DataStore based on person, video, and show data', () => {
 			const expectedPeople = {
-				alumni: [
-					{
-						id: 'jeff',
-						name: 'Jeff Gerstmann',
-						image: 'jeffge.jpg',
-						links: [
-							'https://www.patreon.com/jeffgerstmann',
-							'https://twitter.com/jeffgerstmann',
-						],
-					},
-				],
-				inMemoriam: [
-					{
-						id: 'ryan',
-						name: 'Ryan Davis',
-						years: '1979–2013',
-						image: 'ryan.png',
-					},
-				],
+				jeff: {
+					id: 'jeff',
+					name: 'Jeff Gerstmann',
+					image: 'jeffge.jpg',
+					links: [
+						'https://www.patreon.com/jeffgerstmann',
+						'https://twitter.com/jeffgerstmann',
+					],
+				},
+				ryan: {
+					id: 'ryan',
+					name: 'Ryan Davis',
+					image: 'ryan.png',
+					links: [],
+				},
 			}
 			const expectedShows = {
 				'cross-coast': {

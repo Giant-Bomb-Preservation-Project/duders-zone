@@ -3,7 +3,7 @@
 	import Icon, { IconType } from '$lib/components/Icon.svelte'
 	import { prettyUrl } from '$lib/text'
 	import logoBw from '$lib/images/logo-bw.png'
-	import type { People } from '$lib/data'
+	import type { Person } from '$lib/data'
 	import type { PageData } from './$types'
 
 	interface Props {
@@ -40,7 +40,7 @@
 	<section>
 		<h1 class="sr-only">Alumni</h1>
 		<ul class="people">
-			{#each people.alumni as person}
+			{#each people as person}
 				<li>
 					<div class="image">
 						<img
@@ -63,22 +63,6 @@
 							</ul>
 						{/if}
 					</div>
-				</li>
-			{/each}
-		</ul>
-	</section>
-
-	<section>
-		<h1>In Memoriam</h1>
-		<ul class="in-memoriam">
-			{#each people.inMemoriam as person}
-				<li>
-					<img
-						src={person.image ? `${base}/assets/people/${person.image}` : logoBw}
-						alt=""
-					/>
-					<h2>{person.name}</h2>
-					<p>{person.years}</p>
 				</li>
 			{/each}
 		</ul>
@@ -149,17 +133,6 @@
 		list-style: none;
 		margin: 0;
 		padding: 0;
-	}
-
-	ul.in-memoriam {
-		margin: 3em 0;
-		text-align: center;
-	}
-
-	ul.in-memoriam img {
-		border-radius: 50%;
-		max-width: 300px;
-		margin-bottom: 1em;
 	}
 
 	ul.links {
