@@ -35,7 +35,7 @@ export interface Show {
 	readonly description: string
 	readonly logo?: string | null
 	readonly poster?: string
-	readonly videos: readonly string[]
+	readonly videos: string[]
 }
 
 export interface Video {
