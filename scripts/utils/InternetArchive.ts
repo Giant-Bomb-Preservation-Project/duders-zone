@@ -74,72 +74,77 @@ export default class InternetArchive {
 
 		const items = []
 		for (const identifier of identifiers) {
-			const metadataUrl = `https://archive.org/metadata/${identifier}`
-			let data = {}
-			let attempts = 0
+			try {
+				const metadataUrl = `https://archive.org/metadata/${identifier}`
+				let data = {}
+				let attempts = 0
 
-			while (attempts < MAX_RETRIES) {
-				data = await getRequest(metadataUrl)
-				attempts += 1
-				if ('metadata' in data) {
-					break
+				while (attempts < MAX_RETRIES) {
+					data = await getRequest(metadataUrl)
+					attempts += 1
+					if ('metadata' in data) {
+						break
+					}
 				}
-			}
 
-			if ('error' in data) {
-				log.error(`Error returned from IA: ${data.error}`)
-				continue
-			}
-
-			const subject =
-				typeof data.metadata.subject === 'string' || data.metadata.subject instanceof String
-					? [data.metadata.subject]
-					: data.metadata.subject
-
-			let guid = null
-			if ('external-identifier' in data.metadata) {
-				const match = data.metadata['external-identifier']
-					.toLowerCase()
-					.match(/^gb-guid:(.+)$/)
-				guid = match ? match[1] : null
-			}
-
-			const videoFile = data.files.find(
-				(file) => file.source === 'original' && file.format === 'MPEG4'
-			)
-
-			var date = null
-			if (data.metadata.date) {
-				const match = data.metadata.date.match(/^(\d+)\/(\d+)\/(\d{4})$/)
-				if (match) {
-					date = new Date(
-						parseInt(match[3], 10),
-						parseInt(match[2], 10) - 1,
-						parseInt(match[1]),
-						12
-					)
-				} else {
-					date = new Date(data.metadata.date)
+				if ('error' in data) {
+					log.error(`Error returned from IA: ${data.error}`)
+					continue
 				}
+
+				const subject =
+					typeof data.metadata.subject === 'string' ||
+					data.metadata.subject instanceof String
+						? [data.metadata.subject]
+						: data.metadata.subject
+
+				let guid = null
+				if ('external-identifier' in data.metadata) {
+					const match = data.metadata['external-identifier']
+						.toLowerCase()
+						.match(/^gb-guid:(.+)$/)
+					guid = match ? match[1] : null
+				}
+
+				const videoFile = data.files.find(
+					(file) => file.source === 'original' && file.format === 'MPEG4'
+				)
+
+				var date = null
+				if (data.metadata.date) {
+					const match = data.metadata.date.match(/^(\d+)\/(\d+)\/(\d{4})$/)
+					if (match) {
+						date = new Date(
+							parseInt(match[3], 10),
+							parseInt(match[2], 10) - 1,
+							parseInt(match[1]),
+							12
+						)
+					} else {
+						date = new Date(data.metadata.date)
+					}
+				}
+
+				var hosts = data.metadata.hosts
+					? data.metadata.hosts.split(',').map((name) => name.trim())
+					: []
+
+				items.push({
+					identifier: data.metadata.identifier,
+					guid,
+					date,
+					description: data.metadata.description,
+					subject: subject ? subject.filter((s) => !UNWANTED_SUBJECTS.includes(s)) : [],
+					hosts,
+					title: data.metadata.title,
+					videoFile: videoFile
+						? `https://archive.org/download/${data.metadata.identifier}/${videoFile.name}`
+						: null,
+					duration: videoFile?.length ?? null,
+				} as ArchiveCollectionItem)
+			} catch (e) {
+				log.error(`Error: ${e}`)
 			}
-
-			var hosts = data.metadata.hosts
-				? data.metadata.hosts.split(',').map((name) => name.trim())
-				: []
-
-			items.push({
-				identifier: data.metadata.identifier,
-				guid,
-				date,
-				description: data.metadata.description,
-				subject: subject ? subject.filter((s) => !UNWANTED_SUBJECTS.includes(s)) : [],
-				hosts,
-				title: data.metadata.title,
-				videoFile: videoFile
-					? `https://archive.org/download/${data.metadata.identifier}/${videoFile.name}`
-					: null,
-				duration: videoFile?.length ?? null,
-			} as ArchiveCollectionItem)
 		}
 
 		return items
