@@ -3,50 +3,6 @@ import { getRequest, sleep } from './http.ts'
 // Amount of items to fetch per request (max: 100)
 const REQUEST_LIMIT = 100
 
-// Image size to fetch (icon_url, medium_url, screen_url, screen_large_url, small_url, super_url, thumb_url, tiny_url, original_url)
-const IMAGE_SIZE = 'super_url'
-
-// Video types from Giant Bomb to skip
-const UNWANTED_VIDEO_TYPES = ['Trailers', 'Trailers, Exclude From Infinite', 'Trailers, Features']
-
-export type GiantBombShow = {
-	description: string
-	id: number
-	slug: string | null
-	title: string
-	image: string | null
-	logo: string | null
-}
-
-export type GiantBombVideoShow = {
-	id: number
-	slug: string | null
-	title: string
-	image: string | null
-	logo: string | null
-}
-
-export type GiantBombVideo = {
-	description: string
-	id: number
-	guid: string
-	name: string
-	publish_date: Date
-	image: string | null
-	video_type: string
-	show: GiantBombVideoShow | null
-	youtube_id: string | null
-	duration: number | null
-}
-
-// Get the slug from a show
-function getShowSlug(show: object): string | null {
-	const url = new URL(show.site_detail_url)
-	const match = url.pathname.match(/^\/shows\/(.+?)\/$/)
-
-	return match ? match[1] : null
-}
-
 // Gets data from the GiantBomb API
 export default class GiantBomb {
 	api_key: string
@@ -58,12 +14,10 @@ export default class GiantBomb {
 	}
 
 	// Get all shows from the API
-	async getShows(): Array<GiantBombShow> {
-		const url = 'https://www.giantbomb.com/api/video_shows/'
+	async getShows(): Array {
+		const url = 'https://giantbomb.com/api/public/shows'
 		const params = {
 			api_key: this.api_key,
-			format: 'json',
-			field_list: 'id,title,deck,image,logo,site_detail_url',
 			limit: REQUEST_LIMIT,
 			offset: 0,
 		}
@@ -79,17 +33,7 @@ export default class GiantBomb {
 				break // we're done here
 			}
 
-			for (const item of results) {
-				shows.push({
-					description: item.deck,
-					id: item.id,
-					slug: getShowSlug(item),
-					title: item.title,
-					image: item.image?.[IMAGE_SIZE] ?? null,
-					logo: item.logo?.[IMAGE_SIZE] ?? null,
-				} as GiantBombShow)
-			}
-
+			shows = shows.concat(results)
 			page = page + 1
 			await sleep(this.delay)
 		}
@@ -98,13 +42,10 @@ export default class GiantBomb {
 	}
 
 	// Get all videos from the API
-	async getVideos(): Array<GiantBombVideo> {
-		const url = 'https://www.giantbomb.com/api/videos/'
+	async getVideos(): Array {
+		const url = 'https://giantbomb.com/api/public/videos'
 		const params = {
 			api_key: this.api_key,
-			format: 'json',
-			field_list:
-				'deck,id,guid,image,name,publish_date,video_show,video_type,youtube_id,length_seconds',
 			limit: REQUEST_LIMIT,
 			offset: 0,
 		}
@@ -120,35 +61,7 @@ export default class GiantBomb {
 				break // we're done here
 			}
 
-			for (const item of results) {
-				if (UNWANTED_VIDEO_TYPES.includes(item.video_type)) {
-					continue // we don't want it
-				}
-
-				const show = item.video_show
-					? ({
-							id: item.video_show.id,
-							slug: getShowSlug(item.video_show),
-							title: item.video_show.title,
-							image: item.video_show.image?.[IMAGE_SIZE] ?? null,
-							logo: item.video_show.logo?.[IMAGE_SIZE] ?? null,
-						} as GiantBombVideoShow)
-					: null
-
-				videos.push({
-					description: item.deck,
-					id: item.id,
-					guid: item.guid,
-					name: item.name,
-					publish_date: new Date(item.publish_date),
-					image: item.image?.[IMAGE_SIZE] ?? null,
-					video_type: item.video_type,
-					show: show,
-					youtube_id: item.youtube_id,
-					duration: item.length_seconds ?? null,
-				} as GiantBombVideo)
-			}
-
+			videos = videos.concat(results)
 			page = page + 1
 			await sleep(this.delay)
 		}
