@@ -16,6 +16,24 @@
 		MostFirst,
 		Play,
 	}
+
+	export function iconForUrl(url: string): IconType {
+		const hostname = new URL(url).hostname
+
+		switch (hostname) {
+			case 'bsky.app':
+				return IconType.Bluesky
+			case 'mastodon.social':
+			case 'social.davesnider.com':
+				return IconType.Mastodon
+			case 'www.patreon.com':
+				return IconType.Patreon
+			case 'www.twitch.tv':
+				return IconType.Twitch
+			default:
+				return IconType.Website
+		}
+	}
 </script>
 
 <script lang="ts">

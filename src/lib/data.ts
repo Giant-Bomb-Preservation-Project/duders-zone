@@ -183,6 +183,11 @@ export class DataStore {
 		return structuredClone(Object.values(this.people))
 	}
 
+	// Return the people.
+	getPersonById(id: string): Person | null {
+		return id in this.people ? this.people[id] : null
+	}
+
 	// Get a random show.
 	getRandomShows(amount: number): Show[] {
 		const shuffled = Object.values(this.shows).sort(byRandom)
@@ -232,6 +237,11 @@ export class DataStore {
 		return Object.values(this.videos)
 			.filter((video) => video.date.getDate() == date && video.date.getMonth() == month)
 			.sort(byDateDesc)
+	}
+
+	// Get videos for a specific person.
+	getVideosForPerson(person: Person): Video[] {
+		return person.videos.map((videoId) => this.videos[videoId])
 	}
 
 	// Get videos for a specific show.

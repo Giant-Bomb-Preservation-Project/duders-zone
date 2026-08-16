@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths'
-	import Icon, { IconType } from '$lib/components/Icon.svelte'
+	import Icon, { IconType, iconForUrl } from '$lib/components/Icon.svelte'
 	import { prettyUrl } from '$lib/text'
 	import logoBw from '$lib/images/logo-bw.png'
 	import type { Person } from '$lib/data'
@@ -12,24 +12,6 @@
 
 	const { data }: Props = $props()
 	const people = $derived(data.people)
-
-	function icon(url: string): IconType {
-		const hostname = new URL(url).hostname
-
-		switch (hostname) {
-			case 'bsky.app':
-				return IconType.Bluesky
-			case 'mastodon.social':
-			case 'social.davesnider.com':
-				return IconType.Mastodon
-			case 'www.patreon.com':
-				return IconType.Patreon
-			case 'www.twitch.tv':
-				return IconType.Twitch
-			default:
-				return IconType.Website
-		}
-	}
 </script>
 
 <div class="container">
@@ -45,7 +27,7 @@
 					<div class="image">
 						<img
 							src={person.image ? `${base}/assets/people/${person.image}` : logoBw}
-							alt=""
+							alt="Photo of {person.name}"
 						/>
 					</div>
 					<div class="info">
@@ -54,14 +36,16 @@
 							<ul class="links">
 								{#if person.videos.length}
 									<li>
-										<Icon type={IconType.Play} />
-										{person.videos.length} Videos
+										<a href={`${base}/people/${person.id}`}>
+											<Icon type={IconType.Play} />
+											{person.videos.length} Videos
+										</a>
 									</li>
 								{/if}
 								{#each person.links as link}
 									<li>
 										<a href={link}>
-											<Icon type={icon(link)} />
+											<Icon type={iconForUrl(link)} />
 											{prettyUrl(link)}
 										</a>
 									</li>

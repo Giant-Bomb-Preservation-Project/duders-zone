@@ -65,7 +65,7 @@
 
 	let hideThumbnails = $state(sortable)
 
-	onMount(()=>{
+	onMount(() => {
 		hideThumbnails = false
 	})
 </script>
@@ -124,7 +124,12 @@
 			<a href="{rootUri || `${base}/videos/${video.show}`}/{video.id}">
 				<div class="thumbnail-wrapper">
 					<div class="thumbnail">
-						<Thumbnail src={hideThumbnails || !video.thumbnail ? '/assets/default.jpg' : video.thumbnail} alt="" />
+						<Thumbnail
+							src={hideThumbnails || !video.thumbnail
+								? '/assets/default.jpg'
+								: video.thumbnail}
+							alt=""
+						/>
 						<span class="duration">{video.duration}</span>
 					</div>
 				</div>

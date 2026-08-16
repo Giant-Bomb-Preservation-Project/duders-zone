@@ -95,7 +95,12 @@
 				</p>
 				{#if video.hosts.length}
 					<p class="detail">
-						Hosts: {video.hosts.map((host) => host.name).join(', ')}
+						Hosts:
+						{#each video.hosts as host}
+							<a href={`${base}/people/${host.id}`}>
+								{host.name}
+							</a>
+						{/each}
 					</p>
 				{/if}
 			{/if}
@@ -186,7 +191,15 @@
 
 	.detail {
 		font-size: 18px;
-		line-height: 20px;
+		line-height: 24px;
+	}
+
+	.detail a::after {
+		content: ', ';
+	}
+
+	.detail a:last-child::after {
+		content: '';
 	}
 
 	.video-container {
