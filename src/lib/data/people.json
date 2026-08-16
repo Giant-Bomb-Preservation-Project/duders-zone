@@ -76,7 +76,8 @@
 		"image": "danr.png",
 		"links": [
 			"https://www.twitch.tv/danryckert",
-			"https://bsky.app/profile/danryckert.com"
+			"https://bsky.app/profile/danryckert.com",
+			"https://wikipedia.org/wiki/Dan_Ryckert"
 		]
 	},
 	{
@@ -138,7 +139,8 @@
 		"image": "jeffb.png",
 		"links": [
 			"https://www.twitch.tv/jerftv",
-			"https://bsky.app/profile/jerf.xyz"
+			"https://bsky.app/profile/jerf.xyz",
+			"https://wikipedia.org/wiki/Jeff_Bakalar"
 		]
 	},
 	{
@@ -148,7 +150,7 @@
 		"links": [
 			"https://www.patreon.com/jeffgerstmann",
 			"https://bsky.app/profile/jeffgerstmann.com",
-			"https://mastodon.social/@jeffgerstmann"
+			"https://wikipedia.org/wiki/Jeff_Gerstmann"
 		]
 	},
 	{
@@ -278,7 +280,9 @@
 		"id": "ryan",
 		"name": "Ryan Davis",
 		"image": "ryan.png",
-		"links": []
+		"links": [
+			"https://wikipedia.org/wiki/Ryan_Davis_(video_game_journalist)"
+		]
 	},
 	{
 		"id": "saralima",

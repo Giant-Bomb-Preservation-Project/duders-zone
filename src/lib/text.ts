@@ -53,6 +53,10 @@ export function prettyUrl(url: string): string {
 		return '@' + realUrl.pathname.replace('/profile/', '')
 	}
 
+	if (realUrl.hostname === 'wikipedia.org') {
+		return realUrl.pathname.replace('/wiki/', '').replaceAll('_', ' ')
+	}
+
 	if (mastodonHosts.includes(realUrl.hostname) && realUrl.pathname.startsWith('/@')) {
 		return realUrl.pathname.replace('/', '') + '@' + realUrl.hostname
 	}
