@@ -23,6 +23,16 @@ const UNCATEGORIZED_SHOW_ID = 'uncategorized'
 /// Helper functions
 ///
 
+// Extract the ID from a YouTube URL
+function extractYouTubeId(url: string): string {
+	try {
+		const urlObject = new URL(url)
+		return urlObject.searchParams.get('v')
+	} catch {
+		return null // just swallow errors
+	}
+}
+
 // Convert a URL to a filename
 function toFilename(url: string): string {
 	if (url === null) {
@@ -69,26 +79,24 @@ async function run() {
 		}
 
 		gbShows.push({
-			description: '',
+			deck: '',
 			id: video.show.id,
 			slug: video.show.slug,
 			title: video.show.title,
-			image: video.show.image,
-			logo: video.show.logo,
 		})
 	}
 
 	// Process all the shows, downloading their posters and logos
 	for (const show of gbShows) {
-		let poster = toFilename(show.image)
-		let logo = toFilename(show.logo)
+		let poster = show.poster_image ? toFilename(show.poster_image.url) : null
+		let logo = show.logo_image ? toFilename(show.logo_image.url) : null
 
 		if (poster !== null) {
 			try {
-				await downloadFile(show.image, SHOW_IMAGES_PATH + poster)
+				await downloadFile(show.poster_image.url, SHOW_IMAGES_PATH + poster)
 			} catch (err) {
 				if (err.response.status == 404) {
-					log.error(`Unable to download file: ${show.image}`)
+					log.error(`Unable to download file: ${show.poster_image.url}`)
 					poster = null
 				} else {
 					throw err
@@ -98,10 +106,10 @@ async function run() {
 
 		if (logo !== null) {
 			try {
-				await downloadFile(show.logo, SHOW_IMAGES_PATH + logo)
+				await downloadFile(show.logo_image.url, SHOW_IMAGES_PATH + logo)
 			} catch (err) {
 				if (err.response.status == 404) {
-					log.error(`Unable to download file: ${show.logo}`)
+					log.error(`Unable to download file: ${show.logo_image.url}`)
 					logo = null
 				} else {
 					throw err
@@ -113,7 +121,7 @@ async function run() {
 			id: show.slug ?? toIdentifier(show.title),
 			gb_id: show.id,
 			title: show.title,
-			description: show.description ?? '',
+			description: show.deck ?? '',
 			poster: poster,
 			logo: logo,
 		})
@@ -168,16 +176,35 @@ async function run() {
 		}
 
 		let thumbnail = `https://archive.org/services/img/${video.identifier}`
-		let gbVideoIndex = gbVideos.findIndex((item) => item.guid === video.guid)
+		let gbVideoIndex = gbVideos.findIndex((item) => {
+			return (
+				item.publish_date.substring(0, 10) === video.date.substring(0, 10) && // dates
+				(item.show?.slug === videoShows[0] || // same show
+					!item.show) && // no show
+				(item.title.replace(/\s/g, '') === video.title.replace(/\s/g, '') ||
+					(item.description || '').replace(/\s/g, '') ===
+						video.description.replace(/\s/g, ''))
+			)
+		})
+
 		if (gbVideoIndex !== -1) {
-			if (gbVideos[gbVideoIndex].youtube_id) {
-				source['youtube'] = gbVideos[gbVideoIndex].youtube_id
+			if (gbVideos[gbVideoIndex].youtube_url) {
+				const youtubeId = extractYouTubeId(gbVideos[gbVideoIndex].youtube_url)
+				if (youtubeId) {
+					source['youtube'] = youtubeId
+				} else {
+					log.warn(
+						`Unable to extract YouTube ID from URL: ${gbVideos[gbVideoIndex].youtube_url}`
+					)
+				}
 			}
-			if (gbVideos[gbVideoIndex].image) {
-				thumbnail = gbVideos[gbVideoIndex].image  // default to the nicer GB thumbnail
+			if (gbVideos[gbVideoIndex].thumbnail) {
+				thumbnail = gbVideos[gbVideoIndex].thumbnail.url // default to the nicer GB thumbnail
 			}
 
-			gbVideos.splice(gbVideoIndex, 1)  // so it doesn't get double added later
+			gbVideos.splice(gbVideoIndex, 1) // so it doesn't get double added later
+		} else {
+			log.warn(`Missing GB video for IA video: ${video.title}`)
 		}
 
 		videos.push({
@@ -197,8 +224,10 @@ async function run() {
 	// Add the GB videos that don't have IA equivalents
 	log.info(`Adding ${gbVideos.length} GB videos...`)
 	for (const video of gbVideos) {
-		if (!video.youtube_id) {
-			log.error(`Skipping GB video due to missing YouTube video: ${video.name} (${video.id})`)
+		if (!video.youtube_url) {
+			log.error(
+				`Skipping GB video due to missing YouTube video: ${video.title} (${video.id})`
+			)
 			continue
 		}
 
@@ -208,17 +237,16 @@ async function run() {
 
 		// Add the video to the video list
 		videos.push({
-			id: video.guid,
-			gb_id: video.id,
+			id: String(video.id),
 			show,
-			title: video.name,
+			title: video.title,
 			description: video.description,
 			date: video.publish_date,
-			thumbnail: video.image,
-			duration: video.duration,
+			thumbnail: video.thumbnail?.url,
+			duration: null,
 			hosts: [],
 			source: {
-				youtube: video.youtube_id,
+				youtube: extractYouTubeId(video.youtube_url),
 			},
 		})
 	}
