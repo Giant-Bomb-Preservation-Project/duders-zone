@@ -167,7 +167,7 @@
 		"image": "jess.png",
 		"links": [
 			"https://www.patreon.com/voidburger",
-			"https://bsky.app/profile/voidburger.bsky.social"
+			"https://bsky.app/profile/voidburger.com"
 		]
 	},
 	{
@@ -184,6 +184,7 @@
 		"name": "Lucy James",
 		"image": "lucy.jpg",
 		"links": [
+			"https://lookingfor.game/",
 			"https://bsky.app/profile/lucyjames.games"
 		]
 	},
@@ -227,8 +228,7 @@
 		"links": [
 			"https://www.patreon.com/gamemess",
 			"https://www.twitch.tv/tolkoto",
-			"https://bsky.app/profile/tolkoto.com",
-			"https://gamesbeat.com/author/tolkoto/"
+			"https://bsky.app/profile/tolkoto.com"
 		]
 	},
 	{
@@ -238,8 +238,7 @@
 		"links": [
 			"https://www.twitch.tv/nikigrayson",
 			"https://bsky.app/profile/nikigrayson.com",
-			"https://vgbees.com/",
-			"https://makeyouthink.club/"
+			"https://vgbees.com/"
 		]
 	},
 	{
@@ -292,7 +291,7 @@
 		"name": "Sean Coonce",
 		"image": "coonce.png",
 		"links": [
-			"https://twitter.com/cooncesean"
+			"https://seancoonce.com/"
 		]
 	},
 	{
@@ -335,7 +334,6 @@
 		"name": "Will Smith",
 		"image": "will.jpg",
 		"links": [
-			"https://techpod.content.town/",
 			"https://www.patreon.com/techpod",
 			"https://bsky.app/profile/willsmith.fun"
 		]
