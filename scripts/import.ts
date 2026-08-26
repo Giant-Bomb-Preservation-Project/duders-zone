@@ -103,12 +103,8 @@ async function run() {
 			try {
 				await downloadFile(show.poster_image.url, SHOW_IMAGES_PATH + poster)
 			} catch (err) {
-				if (err.response.status == 404) {
-					log.error(`Unable to download file: ${show.poster_image.url}`)
-					poster = null
-				} else {
-					throw err
-				}
+				log.error(`Unable to download file (${err.response.status}): ${show.poster_image.url}`)
+				poster = null
 			}
 		}
 
@@ -116,12 +112,7 @@ async function run() {
 			try {
 				await downloadFile(show.logo_image.url, SHOW_IMAGES_PATH + logo)
 			} catch (err) {
-				if (err.response.status == 404) {
-					log.error(`Unable to download file: ${show.logo_image.url}`)
-					logo = null
-				} else {
-					throw err
-				}
+				log.error(`Unable to download file (${err.response.status}): ${show.logo_image.url}`)
 			}
 		}
 
