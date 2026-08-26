@@ -221,7 +221,9 @@ async function run() {
 
 	// Add the GB videos that don't have IA equivalents
 	log.info(`Adding ${gbVideos.length} GB videos...`)
+	log.warn('Skipping')
 	for (const video of gbVideos) {
+		continue
 		if (!video.youtube_url) {
 			log.debug(
 				`Skipping GB video due to missing YouTube video: ${video.title} (${video.id})`
