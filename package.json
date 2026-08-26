@@ -11,6 +11,7 @@
 		"lint": "prettier --check .",
 		"format": "prettier --write .",
 		"download": "tsx scripts/download.ts",
+		"download:overwrite": "tsx scripts/download.ts --overwrite",
 		"import": "tsx scripts/import.ts",
 		"sync": "npm run download && npm run import",
 		"test": "vitest run",

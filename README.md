@@ -86,6 +86,13 @@ Then the data can be downloaded using the `download` script:
 npm run download
 ```
 
+By default the script will skip files that exist, but if you want to force it to redownload then
+just run `download:overwrite`:
+
+```shell
+npm run download:overwrite
+```
+
 Once this is complete (or you are working with existing cahced data), the data
 can be imported into the site's datastore using the `import` script:
 

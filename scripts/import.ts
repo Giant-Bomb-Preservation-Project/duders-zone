@@ -1,4 +1,4 @@
-import { readJSONFile, writeJSONFile } from './utils/file.ts'
+import { checkExists, readJSONFile, writeJSONFile } from './utils/file.ts'
 import { downloadFile } from './utils/http.ts'
 import log from './utils/log.ts'
 
@@ -59,9 +59,17 @@ function toIdentifier(text: string): string {
 
 async function run() {
 	log.info('Reading source files...')
-	let iaItems = await readJSONFile(SOURCE_DIRECTORY_PATH + 'ia_items.json')
-	let gbShows = await readJSONFile(SOURCE_DIRECTORY_PATH + 'gb_shows.json')
-	let gbVideos = await readJSONFile(SOURCE_DIRECTORY_PATH + 'gb_videos.json')
+	let iaCollection = await readJSONFile(SOURCE_DIRECTORY_PATH + 'ia/collection.json')
+	let gbShows = await readJSONFile(SOURCE_DIRECTORY_PATH + 'gb/shows.json')
+	let gbVideos = await readJSONFile(SOURCE_DIRECTORY_PATH + 'gb/videos.json')
+	let iaItems = []
+	for (const identifier of iaCollection) {
+		const itemFile = SOURCE_DIRECTORY_PATH + `ia/${identifier}.json`
+		const exists = await checkExists(itemFile)
+		if (exists) {
+			iaItems.push(await readJSONFile(itemFile))
+		}
+	}
 
 	const shows = []
 	const videos = []
@@ -178,12 +186,11 @@ async function run() {
 		let thumbnail = `https://archive.org/services/img/${video.identifier}`
 		let gbVideoIndex = gbVideos.findIndex((item) => {
 			return (
-				item.publish_date.substring(0, 10) === video.date.substring(0, 10) && // dates
-				(item.show?.slug === videoShows[0] || // same show
-					!item.show) && // no show
-				(item.title.replace(/\s/g, '') === video.title.replace(/\s/g, '') ||
-					(item.description || '').replace(/\s/g, '') ===
-						video.description.replace(/\s/g, ''))
+				item.publish_date.substring(0, 10) === (video.date || '').substring(0, 10) // same date
+				&& (item.show?.slug === videoShows[0] // same show
+					 || !item.show) // no show
+				&&  (item.title.replace(/\s/g, '') === video.title.replace(/\s/g, '') // same title
+					|| (item.description || '').replace(/\s/g, '') === (video.description || '').replace(/\s/g, '')) // same description
 			)
 		})
 
@@ -225,7 +232,7 @@ async function run() {
 	log.info(`Adding ${gbVideos.length} GB videos...`)
 	for (const video of gbVideos) {
 		if (!video.youtube_url) {
-			log.error(
+			log.debug(
 				`Skipping GB video due to missing YouTube video: ${video.title} (${video.id})`
 			)
 			continue

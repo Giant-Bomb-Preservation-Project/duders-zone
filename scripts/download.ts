@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs'
 
-import { writeJSONFile } from './utils/file.ts'
+import { checkExists, readJSONFile, writeJSONFile } from './utils/file.ts'
 import InternetArchive from './utils/InternetArchive.ts'
 import GiantBomb from './utils/GiantBomb.ts'
 import log from './utils/log.ts'
@@ -19,9 +19,10 @@ const TARGET_DIRECTORY_PATH = 'tmp/'
 /// Script
 ///
 
-async function run() {
+async function run(overwrite: boolean) {
 	try {
-		await fs.mkdir(TARGET_DIRECTORY_PATH, { recursive: true })
+		await fs.mkdir(TARGET_DIRECTORY_PATH + '/gb', { recursive: true })
+		await fs.mkdir(TARGET_DIRECTORY_PATH + '/ia', { recursive: true })
 	} catch (err) {
 		if (err.code != 'EEXIST') {
 			throw err
@@ -36,26 +37,70 @@ async function run() {
 	const ia = new InternetArchive()
 	const gb = new GiantBomb(process.env.GB_API_KEY, 1)
 
-	log.info('Getting items from Internet Archive...')
-	let iaItems = await ia.getCollectionItems(COLLECTION_IDENTIFIER)
-	log.success(`Got ${iaItems.length} items`)
-	var targetFile = TARGET_DIRECTORY_PATH + 'ia_items.json'
-	await writeJSONFile(targetFile, iaItems)
-	log.success(`Wrote file: ${targetFile}`)
+	let targetFile = null
+	let exists = false
 
-	log.info('Getting shows from Giant Bomb...')
-	let gbShows = await gb.getShows()
-	log.success(`Got ${gbShows.length} shows`)
-	targetFile = TARGET_DIRECTORY_PATH + 'gb_shows.json'
-	await writeJSONFile(targetFile, gbShows)
-	log.success(`Wrote file: ${targetFile}`)
+	targetFile = TARGET_DIRECTORY_PATH + 'ia/collection.json'
+	exists = await checkExists(targetFile)
+	if (!exists || overwrite) {
+		log.info('Getting collection from Internet Archive...')
+		let iaItems = await ia.getCollection(COLLECTION_IDENTIFIER)
+		log.success(`Got ${iaItems.length} items`)
+		await writeJSONFile(targetFile, iaItems)
+		log.success(`Wrote file: ${targetFile}`)
+	} else {
+		log.warn('Skipping Internet Archive collection')
+	}
 
-	log.info('Getting videos from Giant Bomb...')
-	let gbVideos = await gb.getVideos()
-	log.success(`Got ${gbVideos.length} videos`)
-	targetFile = TARGET_DIRECTORY_PATH + 'gb_videos.json'
-	await writeJSONFile(targetFile, gbVideos)
-	log.success(`Wrote file: ${targetFile}`)
+	let iaCollection = await readJSONFile(targetFile)
+	log.info(`Processing ${iaCollection.length} IA items...`)
+	let skipped = 0
+	let downloaded = 0
+	let failed = 0
+	for (const identifier of iaCollection) {
+		targetFile = TARGET_DIRECTORY_PATH + `ia/${identifier}.json`
+		exists = await checkExists(targetFile)
+		if (!exists || overwrite) {
+			try {
+				let data = await ia.getMetadata(identifier)
+				await writeJSONFile(targetFile, data)
+				downloaded += 1
+			} catch (e) {
+				failed += 1
+				log.error(`Error: ${e}`)
+			}
+		} else {
+			skipped += 1
+		}
+	}
+	log.success(`Downloaded ${downloaded} and skipped ${skipped} items`)
+	if (failed !== 0) {
+		log.error(` with ${failed} failures`)
+	}
+
+	targetFile = TARGET_DIRECTORY_PATH + 'gb/shows.json'
+	exists = await checkExists(targetFile)
+	if (!exists || overwrite) {
+		log.info('Getting shows from Giant Bomb...')
+		let gbShows = await gb.getShows()
+		log.success(`Got ${gbShows.length} shows`)
+		await writeJSONFile(targetFile, gbShows)
+		log.success(`Wrote file: ${targetFile}`)
+	} else {
+		log.warn('Skipping Giant Bomb shows')
+	}
+
+	targetFile = TARGET_DIRECTORY_PATH + 'gb/videos.json'
+	exists = await checkExists(targetFile)
+	if (!exists || overwrite) {
+		log.info('Getting videos from Giant Bomb...')
+		let gbVideos = await gb.getVideos()
+		log.success(`Got ${gbVideos.length} videos`)
+		await writeJSONFile(targetFile, gbVideos)
+		log.success(`Wrote file: ${targetFile}`)
+	} else {
+		log.warn('Skipping Giant Bomb videos')
+	}
 }
 
-run()
+run(process.argv.includes('--overwrite'))
