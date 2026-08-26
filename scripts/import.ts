@@ -113,6 +113,7 @@ async function run() {
 				await downloadFile(show.logo_image.url, SHOW_IMAGES_PATH + logo)
 			} catch (err) {
 				log.error(`Unable to download file (${err.response.status}): ${show.logo_image.url}`)
+				logo = null
 			}
 		}
 
@@ -121,8 +122,8 @@ async function run() {
 			gb_id: show.id,
 			title: show.title,
 			description: show.deck ?? '',
-			poster: poster,
-			logo: logo,
+			poster,
+			logo,
 		})
 	}
 
