@@ -3,10 +3,10 @@ import { promises as fs } from 'fs'
 // Check if a file exists
 export async function checkExists(path) {
 	try {
-		await fs.stat(path);
-	    return true;
+		await fs.stat(path)
+		return true
 	} catch {
-		return false;
+		return false
 	}
 }
 

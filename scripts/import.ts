@@ -103,7 +103,9 @@ async function run() {
 			try {
 				await downloadFile(show.poster_image.url, SHOW_IMAGES_PATH + poster)
 			} catch (err) {
-				log.error(`Unable to download file (${err.response.status}): ${show.poster_image.url}`)
+				log.error(
+					`Unable to download file (${err.response.status}): ${show.poster_image.url}`
+				)
 				poster = null
 			}
 		}
@@ -112,7 +114,9 @@ async function run() {
 			try {
 				await downloadFile(show.logo_image.url, SHOW_IMAGES_PATH + logo)
 			} catch (err) {
-				log.error(`Unable to download file (${err.response.status}): ${show.logo_image.url}`)
+				log.error(
+					`Unable to download file (${err.response.status}): ${show.logo_image.url}`
+				)
 				logo = null
 			}
 		}
@@ -178,11 +182,12 @@ async function run() {
 		let thumbnail = `https://archive.org/services/img/${video.identifier}`
 		let gbVideoIndex = gbVideos.findIndex((item) => {
 			return (
-				item.publish_date.substring(0, 10) === (video.date || '').substring(0, 10) // same date
-				&& (item.show?.slug === videoShows[0] // same show
-					 || !item.show) // no show
-				&&  (item.title.replace(/\s/g, '') === video.title.replace(/\s/g, '') // same title
-					|| (item.description || '').replace(/\s/g, '') === (video.description || '').replace(/\s/g, '')) // same description
+				item.publish_date.substring(0, 10) === (video.date || '').substring(0, 10) && // same date
+				(item.show?.slug === videoShows[0] || // same show
+					!item.show) && // no show
+				(item.title.replace(/\s/g, '') === video.title.replace(/\s/g, '') || // same title
+					(item.description || '').replace(/\s/g, '') ===
+						(video.description || '').replace(/\s/g, '')) // same description
 			)
 		})
 

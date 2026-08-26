@@ -93,16 +93,13 @@ export default class InternetArchive {
 		}
 
 		const subject =
-			typeof data.metadata.subject === 'string' ||
-			data.metadata.subject instanceof String
+			typeof data.metadata.subject === 'string' || data.metadata.subject instanceof String
 				? [data.metadata.subject]
 				: data.metadata.subject
 
 		let guid = null
 		if ('external-identifier' in data.metadata) {
-			const match = data.metadata['external-identifier']
-				.toLowerCase()
-				.match(/^gb-guid:(.+)$/)
+			const match = data.metadata['external-identifier'].toLowerCase().match(/^gb-guid:(.+)$/)
 			guid = match ? match[1] : null
 		}
 
