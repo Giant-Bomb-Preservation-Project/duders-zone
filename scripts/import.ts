@@ -1,4 +1,4 @@
-import { checkExists, readJSONFile, writeJSONFile } from './utils/file.ts'
+import { readJSONFile, writeJSONFile } from './utils/file.ts'
 import { downloadFile } from './utils/http.ts'
 import log from './utils/log.ts'
 
@@ -65,9 +65,10 @@ async function run() {
 	let iaItems = []
 	for (const identifier of iaCollection) {
 		const itemFile = SOURCE_DIRECTORY_PATH + `ia/${identifier}.json`
-		const exists = await checkExists(itemFile)
-		if (exists) {
+		try {
 			iaItems.push(await readJSONFile(itemFile))
+		} catch (err) {
+			// just continue, assuming the file doesn't exist
 		}
 	}
 
