@@ -1,37 +1,5 @@
 [
     {
-        "id": "portal-pals",
-        "gb_id": 177,
-        "title": "Portal Pals",
-        "description": "Mike Minotti enlists the help of our pal, Mary Kish, to solve the various puzzles of Portal 2 with science and friendship! ",
-        "poster": "media--file--pp---standby-copy-03-31-2026.jpg",
-        "logo": "media--file--pp---standby-copy-03-31-2026.jpg"
-    },
-    {
-        "id": "marry-me-tomodachi",
-        "gb_id": 176,
-        "title": "Marry Me Tomodachi",
-        "description": "Abby Russell is back to help us all find love! We're over in Tomodachi Life trying to make friends, break hearts, and hopefully tie the knot! ",
-        "poster": "media--file--1---intro-02-19-2026.png",
-        "logo": null
-    },
-    {
-        "id": "9-lives",
-        "gb_id": 175,
-        "title": "9 Lives",
-        "description": "Join Jeff Grubb, Jan Ochoa, and Chuck Zimmerheld as Chuck attempts to beat Skyrim with just 9 Lives. On Expert mode. As a Khajiit. While being hunted.",
-        "poster": "media--file--9lives-02-10-2026.jpeg",
-        "logo": null
-    },
-    {
-        "id": "grubbsnax-premium",
-        "gb_id": 174,
-        "title": "Grubbsnax Premium",
-        "description": "This is the new Grubbsnax for premium members where Grubb picks a question or two from the audience and discusses it in depth. ",
-        "poster": "media--file--grubb-full-01-05-2026.png",
-        "logo": "media--file--grubb-full-01-05-2026.png"
-    },
-    {
         "id": "30-day-trial",
         "gb_id": 173,
         "title": "30 Day Trial",
@@ -48,59 +16,11 @@
         "logo": null
     },
     {
-        "id": "dispatch-grubbtale-games",
-        "gb_id": 171,
-        "title": "Dispatch: Grubbtale Games",
-        "description": "Tales from the Grubberlands. The Grubb Among Us. The Walking Grubb. Disp...grubb",
-        "poster": null,
-        "logo": null
-    },
-    {
-        "id": "giant-bomb-gaming-minute",
-        "gb_id": 170,
-        "title": "Giant Bomb Gaming Minute",
-        "description": "Jeff Gerstmann reads a blurb about gaming. For the radio. Remember radio?",
-        "poster": null,
-        "logo": null
-    },
-    {
-        "id": "jeffjeff-s-bizarre-adventure",
-        "gb_id": 153,
-        "title": "JeffJeff's Bizarre Adventure",
-        "description": "Jeff Bakalar and friends dip into the bizarre world of JoJo's Bizarre Adventure!",
-        "poster": "3369976-jeff-jeffs-bizzare-adventure-podcast-logo-update.png",
-        "logo": "3369976-jeff-jeffs-bizzare-adventure-podcast-logo-update.png"
-    },
-    {
-        "id": "armed-and-rangerous",
-        "gb_id": 143,
-        "title": "Armed and Rangerous",
-        "description": "Jan Ochoa and Matt Shipman are here to rewatch, recap, and relive the morphenomenal program that was the Mighty Morphin' Power Rangers!",
-        "poster": "3307507-untitled-2.png",
-        "logo": null
-    },
-    {
         "id": "all-systems-goku",
         "gb_id": 91,
         "title": "All Systems Goku",
         "description": "Anime experts Dan Ryckert and Jeff Gerstmann embark on a quest to watch every episode of Dragon Ball Z Kai.",
         "poster": "3083614-all-systems-goku.png",
-        "logo": null
-    },
-    {
-        "id": "alt-f1",
-        "gb_id": 89,
-        "title": "Alt+F1",
-        "description": "Alt+F1 is a weekly Formula 1 podcast from your friends at Giant Bomb. We run down the twists and turns of Earth's fastest and most expensive urinating contest. Join us for race recaps, news from the wide world of racing and the latest on Pastor Maldonado.",
-        "poster": "3061718-alt-f1.png",
-        "logo": null
-    },
-    {
-        "id": "8-4-play",
-        "gb_id": 86,
-        "title": "8-4 Play",
-        "description": "Every other week, tune into 8-4 Play for talk about video games, Japan, and Japanese video games, straight from the 8-4 offices in beautiful downtown Tokyo. Hosted by 1UP Japan's own Mark MacDonald, John Ricciardi, and Hiroko Minamoto.",
-        "poster": "3061714-artboard-4.png",
         "logo": null
     },
     {
@@ -165,14 +85,6 @@
         "title": "Giant Bombcast",
         "description": "The Giant Bombcast is the world's most beloved video game podcast, and now it's available in video form.",
         "poster": "3380593-bombcast-logo-wide.png",
-        "logo": null
-    },
-    {
-        "id": "monday-evening-gaming-at-mikes-at-night",
-        "gb_id": 169,
-        "title": "Monday Evening Gaming at Mike's at Night",
-        "description": "Tolkoto the Mike \"Mitch\" Minotti invites you over to his place for games. At night. On Mondays.",
-        "poster": "3783692-megaman0811.jpg",
         "logo": null
     },
     {
@@ -1024,14 +936,6 @@
         "logo": null
     },
     {
-        "id": "unarchived",
-        "gb_id": null,
-        "title": "Unarchived",
-        "description": "",
-        "poster": null,
-        "logo": null
-    },
-    {
         "id": "promos",
         "gb_id": null,
         "title": "Promos",
@@ -1051,14 +955,6 @@
         "id": "mortal-kombat-armagrubben",
         "gb_id": null,
         "title": "Mortal Kombat: ArmaGrubben",
-        "description": "",
-        "poster": null,
-        "logo": null
-    },
-    {
-        "id": "ryckerts-roulette",
-        "gb_id": null,
-        "title": "Ryckert's Roulette",
         "description": "",
         "poster": null,
         "logo": null
@@ -1459,14 +1355,6 @@
         "id": "mag-thing",
         "gb_id": null,
         "title": "MAG Thing",
-        "description": "",
-        "poster": null,
-        "logo": null
-    },
-    {
-        "id": "gb-kidz",
-        "gb_id": null,
-        "title": "GB Kidz",
         "description": "",
         "poster": null,
         "logo": null

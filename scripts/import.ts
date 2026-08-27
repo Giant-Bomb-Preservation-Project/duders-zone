@@ -160,6 +160,8 @@ async function run() {
 		logo: null,
 	})
 
+	let showsWithVideos = new Set()
+
 	// Process videos
 	log.info(`Adding ${iaItems.length} IA videos...`)
 	for (const video of iaItems) {
@@ -212,6 +214,8 @@ async function run() {
 			log.warn(`Missing GB video for IA video: ${video.title}`)
 		}
 
+		showsWithVideos.add(videoShows[0])
+
 		videos.push({
 			id: video.identifier,
 			gb_id: video.guid,
@@ -224,6 +228,13 @@ async function run() {
 			hosts: video.hosts,
 			source,
 		})
+	}
+
+	for (let i = shows.length - 1; i >= 0; i--) {
+		if (!showsWithVideos.has(shows[i].id)) {
+			log.warn(`Removing ${shows[i].title} due to no videos`)
+			shows.splice(i, 1)
+		}
 	}
 
 	// Add the GB videos that don't have IA equivalents
