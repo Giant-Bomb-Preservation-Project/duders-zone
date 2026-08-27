@@ -1,10 +1,5 @@
 // Log text in a color based on the level (defaulting to plain)
 function log(level: string, text: string) {
-	if (!text) {
-		text = level
-		level = 'info'
-	}
-
 	switch (level) {
 		case 'debug':
 			console.debug(`\x1b[37m${text}\x1b[0m`)
