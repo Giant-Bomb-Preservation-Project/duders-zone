@@ -38,11 +38,9 @@ async function run(overwrite: boolean) {
 	const gb = new GiantBomb(process.env.GB_API_KEY, 1)
 
 	let targetFile = null
-	let exists = false
 
 	targetFile = TARGET_DIRECTORY_PATH + 'ia/collection.json'
-	exists = await checkExists(targetFile)
-	if (!exists || overwrite) {
+	if (overwrite || !(await checkExists(targetFile))) {
 		log.info('Getting collection from Internet Archive...')
 		let iaItems = await ia.getCollection(COLLECTION_IDENTIFIER)
 		log.success(`Got ${iaItems.length} items`)
@@ -59,8 +57,7 @@ async function run(overwrite: boolean) {
 	let failed = 0
 	for (const identifier of iaCollection) {
 		targetFile = TARGET_DIRECTORY_PATH + `ia/${identifier}.json`
-		exists = await checkExists(targetFile)
-		if (!exists || overwrite) {
+		if (overwrite || !(await checkExists(targetFile))) {
 			try {
 				let data = await ia.getMetadata(identifier)
 				await writeJSONFile(targetFile, data)
@@ -79,8 +76,7 @@ async function run(overwrite: boolean) {
 	}
 
 	targetFile = TARGET_DIRECTORY_PATH + 'gb/shows.json'
-	exists = await checkExists(targetFile)
-	if (!exists || overwrite) {
+	if (overwrite || !(await checkExists(targetFile))) {
 		log.info('Getting shows from Giant Bomb...')
 		let gbShows = await gb.getShows()
 		log.success(`Got ${gbShows.length} shows`)
@@ -91,8 +87,7 @@ async function run(overwrite: boolean) {
 	}
 
 	targetFile = TARGET_DIRECTORY_PATH + 'gb/videos.json'
-	exists = await checkExists(targetFile)
-	if (!exists || overwrite) {
+	if (overwrite || !(await checkExists(targetFile))) {
 		log.info('Getting videos from Giant Bomb...')
 		let gbVideos = await gb.getVideos()
 		log.success(`Got ${gbVideos.length} videos`)
