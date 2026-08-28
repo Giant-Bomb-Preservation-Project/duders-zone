@@ -1,5 +1,4 @@
-import { readJSONFile, writeJSONFile } from './utils/file.ts'
-import { downloadFile } from './utils/http.ts'
+import { readJSONFile } from './utils/file.ts'
 import log from './utils/log.ts'
 
 ///
@@ -15,12 +14,12 @@ const VIDEOS_FILE_PATH = 'src/lib/data/videos.json'
 
 async function run() {
 	log.info('Reading source files...')
-	let people = await readJSONFile(PEOPLE_FILE_PATH)
-	let videos = await readJSONFile(VIDEOS_FILE_PATH)
+	const people: { name: string }[] = await readJSONFile(PEOPLE_FILE_PATH)
+	const videos = await readJSONFile(VIDEOS_FILE_PATH)
 
-	let peopleNames = people.map((person) => person.name)
+	const peopleNames = people.map((person) => person.name)
 
-	let missingPeople = {}
+	const missingPeople: Record<string, number> = {}
 	for (const video of videos) {
 		for (const host of video.hosts) {
 			if (!peopleNames.includes(host)) {
@@ -35,12 +34,12 @@ async function run() {
 
 	const orderedPeople = Object.keys(missingPeople)
 		.sort()
-		.reduce((obj, key) => {
+		.reduce<Record<string, number>>((obj, key) => {
 			obj[key] = missingPeople[key]
 			return obj
 		}, {})
 
-	log.info('Hosts with missing entries:')
+	log.info('Video count per host:')
 	for (const [name, amount] of Object.entries(orderedPeople)) {
 		log.info(`${name}: ${amount}`)
 	}
