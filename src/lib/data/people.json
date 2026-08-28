@@ -19,7 +19,7 @@
 	},
 	{
 		"id": "alexisg",
-		"name": "Alexis Gallisá",
+		"name": "Alexis Gallisa",
 		"image": "alexisg.jpg",
 		"links": [
 			"https://www.alexisgallisa.com/"
@@ -82,11 +82,19 @@
 	},
 	{
 		"id": "dannyodwyer",
-		"name": "Danny O’Dwyer",
+		"name": "Danny O'Dwyer",
 		"image": "danny.jpg",
 		"links": [
 			"https://www.patreon.com/cw/noclip",
 			"https://bsky.app/profile/dannyodwyer.bsky.social"
+		]
+	},
+	{
+		"id": "davelang",
+		"name": "Dave Lang",
+		"image": "davelang.png",
+		"links": [
+			"https://www.twitch.tv/josephjbroni/"
 		]
 	},
 	{
@@ -105,6 +113,15 @@
 		"links": [
 			"https://www.drewscanlon.com/",
 			"https://bsky.app/profile/drewscanlon.bsky.social"
+		]
+	},
+	{
+		"id": "gregkasavin",
+		"name": "Greg Kasavin",
+		"image": "gregkasavin.jpg",
+		"links": [
+			"https://www.supergiantgames.com/",
+			"https://en.wikipedia.org/wiki/Greg_Kasavin"
 		]
 	},
 	{
@@ -217,7 +234,7 @@
 	},
 	{
 		"id": "rorie",
-		"name": "Matthew Rorie",
+		"name": "Matt Rorie",
 		"image": "matthew.jpg",
 		"links": [
 			"https://bsky.app/profile/frailgesture.bsky.social"
