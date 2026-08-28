@@ -128,7 +128,6 @@ export class DataStore {
 			for (const host of video.hosts) {
 				const person = peopleData.find((person) => person.name == host)
 				if (!person) {
-					console.warn(`Unable to find host "${host}" from video: ${video.title}`)
 					continue
 				}
 
