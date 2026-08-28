@@ -241,7 +241,7 @@ export class DataStore {
 
 	// Get videos for a specific person.
 	getVideosForPerson(person: Person): Video[] {
-		return person.videos.map((videoId) => this.videos[videoId])
+		return person.videos.map((videoId) => this.videos[videoId]).sort(byDateDesc)
 	}
 
 	// Get videos for a specific show.
