@@ -39,7 +39,7 @@ async function run() {
 			return obj
 		}, {})
 
-	log.info('Video count per host:')
+	log.info('Hosts with missing entries:')
 	for (const [name, amount] of Object.entries(orderedPeople)) {
 		log.info(`${name}: ${amount}`)
 	}
