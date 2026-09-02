@@ -24,6 +24,14 @@
         "logo": null
     },
     {
+        "id": "alt-f1",
+        "gb_id": 89,
+        "title": "Alt+F1",
+        "description": "Alt+F1 is a weekly Formula 1 podcast from your friends at Giant Bomb. We run down the twists and turns of Earth's fastest and most expensive urinating contest. Join us for race recaps, news from the wide world of racing and the latest on Pastor Maldonado.",
+        "poster": "3061718-alt-f1.png",
+        "logo": null
+    },
+    {
         "id": "game-mess-mornings",
         "gb_id": 141,
         "title": "Game Mess Mornings",
@@ -708,7 +716,7 @@
         "gb_id": 104,
         "title": "Die Another Friday",
         "description": "Ryckert, Dan Ryckert, begins his ill-advised quest to finally beating Goldeneye 007 on 00 Agent Difficulty.",
-        "poster": null,
+        "poster": "3062394-4890415448-drg9swlvyaaacui.jpg",
         "logo": null
     },
     {
