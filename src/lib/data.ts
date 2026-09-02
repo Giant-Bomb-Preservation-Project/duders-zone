@@ -89,6 +89,15 @@ function formatDuration(duration: number | null): string {
 	)
 }
 
+// Convert an ISO string to date that preserves YYYY-MM-DD and ignores time
+function isoStringToNormalizedDate(isoString: string) {
+	const dateMatch = isoString.match(/^(\d\d\d\d)-(\d\d)-(\d\d)/)!
+	const year = parseInt(dateMatch[1])
+	const month = parseInt(dateMatch[2])
+	const day = parseInt(dateMatch[3])
+	return new Date(year, month - 1, day)
+}
+
 // Data store which contains the data for the app.
 export class DataStore {
 	readonly people: { [key: string]: Person }
@@ -138,7 +147,7 @@ export class DataStore {
 				id: video.id,
 				title: video.title,
 				description: video.description,
-				date: new Date(video.date ?? '2008-03-06T12:00Z'),
+				date: isoStringToNormalizedDate(video.date ?? '2008-03-06T00:00Z'),
 				show: video.show,
 				thumbnail: video.thumbnail,
 				duration: formatDuration(video.duration),
