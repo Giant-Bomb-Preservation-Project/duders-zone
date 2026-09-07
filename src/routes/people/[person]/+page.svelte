@@ -42,6 +42,17 @@
 	</section>
 </div>
 
+<svelte:head>
+	<meta property="og:url" content="https://duders.zone/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Duders Zone" />
+	<meta property="og:description" content="An archival website about video games." />
+	<meta property="og:image" content="https://duders.zone/image.png" />
+	<meta property="og:site_name" content="Duders Zone" />
+	<title>{data.person.name} - Duders Zone</title>
+	<meta name="description" content="An archival website about video games." />
+</svelte:head>
+
 <style>
 	h1 {
 		margin: 0.25em 0;
