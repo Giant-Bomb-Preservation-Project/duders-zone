@@ -41,11 +41,11 @@
 			},
 		},
 		{
-			title: 'The Hotsot',
-			description: 'Giant Bomb\'s revival of the Gamespot "Hotspot" podcast.',
+			title: 'The HotSpot',
+			description: 'Giant Bomb\'s revival of the Gamespot "HotSpot" podcast.',
 			image: 'hotspot.jpg',
 			files: {
-				'The Hotspot RSS': 'Hotspot_Revival_Archive.rss',
+				'The HotSpot RSS': 'Hotspot_Revival_Archive.rss',
 			},
 		},
 	]
