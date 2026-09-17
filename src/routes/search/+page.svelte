@@ -9,6 +9,10 @@
 
 	const { data }: Props = $props()
 	const { searchQuery, videos } = $derived(data)
+
+	let pageTitle = $derived(
+		(searchQuery ? `Search results: ${searchQuery}` : 'Search') + ' - Duders Zone'
+	)
 </script>
 
 <div class="container">
@@ -45,7 +49,7 @@
 	<meta property="og:description" content="An archival website about video games." />
 	<meta property="og:image" content="https://duders.zone/image.png" />
 	<meta property="og:site_name" content="Duders Zone" />
-	<title>Search - Duders Zone</title>
+	<title>{pageTitle}</title>
 	<meta name="description" content="An archival website about video games." />
 </svelte:head>
 
