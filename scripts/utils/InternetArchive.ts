@@ -113,8 +113,8 @@ export default class InternetArchive {
 			if (match) {
 				date = new Date(
 					parseInt(match[3], 10),
-					parseInt(match[2], 10) - 1,
-					parseInt(match[1]),
+					parseInt(match[1], 10) - 1,
+					parseInt(match[2], 10),
 					12
 				)
 			} else {
