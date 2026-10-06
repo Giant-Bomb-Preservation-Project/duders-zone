@@ -107,20 +107,7 @@ export default class InternetArchive {
 			(file) => file.source === 'original' && file.format === 'MPEG4'
 		)
 
-		var date = null
-		if (data.metadata.date) {
-			const match = data.metadata.date.match(/^(\d+)\/(\d+)\/(\d{4})$/)
-			if (match) {
-				date = new Date(
-					parseInt(match[3], 10),
-					parseInt(match[2], 10) - 1,
-					parseInt(match[1]),
-					12
-				)
-			} else {
-				date = new Date(data.metadata.date)
-			}
-		}
+		var date = data.metadata.date ? new Date(data.metadata.date + " 00:00:00Z") : null
 
 		var hosts = data.metadata.hosts
 			? data.metadata.hosts.split(',').map((name) => name.trim())
