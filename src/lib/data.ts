@@ -59,7 +59,8 @@ const SEARCH_WEIGHTS = {
 }
 
 // Sort by date descending
-const byDateDesc = (a: { date: Date }, b: { date: Date }) => b.date.getTime() - a.date.getTime()
+const byDateAndIDDesc = (a: { id: string; date: Date }, b: { id: string; date: Date }) =>
+	b.date.getTime() - a.date.getTime() || b.id.localeCompare(a.id)
 
 // Sort by name ascending
 const byNameAsc = (a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name)
@@ -232,7 +233,7 @@ export class DataStore {
 
 	// Get all videos sorted by date.
 	getVideos(): Video[] {
-		return Object.values(this.videos).sort(byDateDesc)
+		return Object.values(this.videos).sort(byDateAndIDDesc)
 	}
 
 	// Get all videos which were released on a given day.
@@ -244,17 +245,17 @@ export class DataStore {
 
 		return Object.values(this.videos)
 			.filter((video) => video.date.getDate() == date && video.date.getMonth() == month)
-			.sort(byDateDesc)
+			.sort(byDateAndIDDesc)
 	}
 
 	// Get videos for a specific person.
 	getVideosForPerson(person: Person): Video[] {
-		return person.videos.map((videoId) => this.videos[videoId]).sort(byDateDesc)
+		return person.videos.map((videoId) => this.videos[videoId]).sort(byDateAndIDDesc)
 	}
 
 	// Get videos for a specific show.
 	getVideosForShow(show: Show): Video[] {
-		return show.videos.map((videoId) => this.videos[videoId]).sort(byDateDesc)
+		return show.videos.map((videoId) => this.videos[videoId]).sort(byDateAndIDDesc)
 	}
 
 	// Search videos for a given query.
