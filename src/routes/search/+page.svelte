@@ -8,7 +8,7 @@
 	}
 
 	const { data }: Props = $props()
-	const { searchQuery, videos } = $derived(data)
+	const { searchQuery, videos, pageNumber } = $derived(data)
 
 	let pageTitle = $derived(
 		(searchQuery ? `Search results: ${searchQuery}` : 'Search') + ' - Duders Zone'
@@ -32,8 +32,10 @@
 		<VideoList
 			{videos}
 			title={`Search results for: ${searchQuery}`}
-			perPage={100}
+			perPage={24}
+			{pageNumber}
 			sortable={false}
+			filterable
 		/>
 	{:else if searchQuery}
 		<div class="empty">No videos found for "{searchQuery}"</div>

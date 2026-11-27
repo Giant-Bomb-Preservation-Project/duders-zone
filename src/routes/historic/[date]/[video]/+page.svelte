@@ -67,7 +67,6 @@
 		currentVideo={data.video}
 		title="This Day in Giant Bomb History"
 		rootUri={currentUri}
-		perPage={100}
 	/>
 </section>
 

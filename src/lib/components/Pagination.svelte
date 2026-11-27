@@ -1,11 +1,14 @@
 <script lang="ts">
+	import { page } from '$app/state'
+	import { SvelteURLSearchParams } from 'svelte/reactivity'
 	interface Props {
 		currentPage: number
 		totalPages: number
 		totalResults: number
+		filtered?: boolean
 	}
 
-	const { currentPage, totalPages, totalResults }: Props = $props()
+	const { currentPage, totalPages, totalResults, filtered }: Props = $props()
 
 	const buttons = $derived(createPageButtons(currentPage, totalPages))
 
@@ -32,13 +35,29 @@
 
 		return buttons
 	}
+
+	// Get searchParams for new page while preserving existing params (e.g. search query)
+	function getPageLink(number: number | null) {
+		const params = new SvelteURLSearchParams(page.url.search)
+		if (number !== null) {
+			params.set('page', `${number}`)
+		} else {
+			params.delete('page')
+		}
+		return `?${params}`
+	}
 </script>
 
 <ul>
-	<li>{totalResults} videos</li>
+	<li>
+		{totalResults.toLocaleString()} videos
+		{#if totalResults === 0 && filtered}
+			&mdash; try resetting your filter
+		{/if}
+	</li>
 	{#if currentPage > 1}
 		<li>
-			<a href="?page={currentPage - 1}" aria-label="Previous Page"
+			<a href={getPageLink(currentPage - 1)} aria-label="Previous Page"
 				><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 10">
 					<path d="M7 5H1l3 -3M1 5l3 3" />
 				</svg></a
@@ -48,7 +67,7 @@
 	{#each buttons as button}
 		{#if button}
 			<li class:current={button === currentPage}>
-				<a href="?page={button}">{button}</a>
+				<a href={getPageLink(button)}>{button}</a>
 			</li>
 		{:else}
 			<li>...</li>
@@ -56,7 +75,7 @@
 	{/each}
 	{#if currentPage < totalPages}
 		<li>
-			<a href="?page={currentPage + 1}" aria-label="Next Page"
+			<a href={getPageLink(currentPage + 1)} aria-label="Next Page"
 				><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 10">
 					<path d="M1 5H7l-3 -3M7 5l-3 3" />
 				</svg></a
