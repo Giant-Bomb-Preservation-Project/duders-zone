@@ -54,8 +54,23 @@
 					class:include
 					class:exclude
 					title="{include ? 'Exclude' : exclude ? 'Reset' : 'Include'} {host.name}"
-					onclick={() => (hostFilters[h] = (hostFilters[h] + 1) % 3)}>{host.name}</button
+					onclick={() => (hostFilters[h] = (hostFilters[h] + 1) % 3)}
 				>
+					{#if include || exclude}
+						<div class="overlay">
+							<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d={include ? 'M2,15 l5,5,9,-12' : 'M6,6 l15,15 m-15,0 l15,-15'}
+									stroke="currentColor"
+									stroke-width="4"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</div>
+					{/if}
+					<span>{host.name}</span>
+				</button>
 			{/each}
 		</div>
 		<div style="display: flex; flex-direction: column;">
@@ -91,6 +106,7 @@
 		border-radius: 3px;
 		font-size: 1em;
 		cursor: pointer;
+		position: relative;
 	}
 
 	.host-filter button:hover {
@@ -110,16 +126,37 @@
 		margin-bottom: 1em;
 	}
 
-	.host-list button.include {
-		background-color: var(--color-green);
+	.host-list button {
+		touch-action: manipulation;
 	}
 
-	.host-list button:not(.include):not(.exclude):hover {
-		box-shadow: inset 0 0 10px var(--color-green);
+	.host-list button .overlay {
+		color: #0f0;
+		padding: 0 8px;
+		border-radius: 3px;
+		font-size: 1.5em;
+		box-sizing: border-box;
+		display: flex;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(90deg, #009900aa, #00990000);
 	}
 
-	.host-list button.exclude {
-		background-color: var(--color-red);
+	.host-list .overlay svg {
+		height: 22px;
+	}
+
+	.host-list button.exclude .overlay {
+		color: #f00;
+		flex-direction: row-reverse;
+		background: linear-gradient(-90deg, #b31919aa, #b3191900);
+	}
+
+	.host-list button span {
+		position: relative; /* Keep text on top of .overlay */
 	}
 
 	.host-filter::after {
