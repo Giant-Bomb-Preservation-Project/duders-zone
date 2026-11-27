@@ -1,20 +1,25 @@
 <script lang="ts">
-	import type { Person, Video } from '$lib/data'
+	import { byNameAsc, type Person, type Video } from '$lib/data'
 
 	interface Props {
 		videos: Video[]
 		filteredVideos: Video[]
-		hosts: Person[]
 		hidden: boolean
 	}
 
-	let { videos, hosts, filteredVideos = $bindable(), hidden }: Props = $props()
+	let { videos, filteredVideos = $bindable(), hidden }: Props = $props()
 
 	enum HostFilter {
 		neutral,
 		include,
 		exclude,
 	}
+
+	let hosts = $derived.by(() => {
+		const hostsSet: Set<Person> = new Set()
+		videos.forEach((video) => video.hosts.forEach((host) => hostsSet.add(host)))
+		return [...hostsSet].sort(byNameAsc)
+	})
 	// svelte-ignore state_referenced_locally
 	let hostFilters = $state(hosts.map(() => HostFilter.neutral))
 	let includeHosts = $derived(hosts.filter((_, h) => hostFilters[h] === HostFilter.include))

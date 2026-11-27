@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths'
-	import { byNameAsc, type Person, type Video } from '$lib/data'
+	import type { Video } from '$lib/data'
 	import { VideoListMode, VideoListSorting } from '$lib/types'
 	import Header from '$lib/components/Header.svelte'
 	import Pagination from '$lib/components/Pagination.svelte'
@@ -43,12 +43,7 @@
 	)
 
 	let showHostFilter = $state(false)
-	let hosts = $derived.by(() => {
-		if (!filterable) return []
-		const hostsSet: Set<Person> = new Set()
-		videos.forEach((video) => video.hosts.forEach((host) => hostsSet.add(host)))
-		return [...hostsSet].sort(byNameAsc)
-	})
+
 	// svelte-ignore state_referenced_locally
 	let filteredVideos = $state(videos)
 
@@ -142,7 +137,7 @@
 	</div>
 </Header>
 {#if filterable}
-	<HostFilter videos={sortedVideos} {hosts} bind:filteredVideos hidden={!showHostFilter} />
+	<HostFilter videos={sortedVideos} bind:filteredVideos hidden={!showHostFilter} />
 {/if}
 <ul class={mode ?? $videoListMode}>
 	{#each paginatedVideos as video (video.id)}
