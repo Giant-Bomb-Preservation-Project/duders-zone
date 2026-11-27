@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { browser } from '$app/environment'
 	import { page } from '$app/state'
 	import { SvelteURLSearchParams } from 'svelte/reactivity'
 	interface Props {
@@ -38,6 +39,9 @@
 
 	// Get searchParams for new page while preserving existing params (e.g. search query)
 	function getPageLink(number: number | null) {
+		if (!browser) {
+			return `?page=${number}`
+		}
 		const params = new SvelteURLSearchParams(page.url.search)
 		if (number !== null) {
 			params.set('page', `${number}`)
@@ -50,7 +54,7 @@
 
 <ul>
 	<li>
-		{totalResults.toLocaleString()} videos
+		{totalResults.toLocaleString()} video{totalResults === 1 ? '' : 's'}
 		{#if totalResults === 0 && filtered}
 			&mdash; try resetting your filter
 		{/if}
