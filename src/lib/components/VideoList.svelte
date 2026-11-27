@@ -89,7 +89,7 @@
 			<ListButtons
 				value={showHostFilter}
 				onChange={() => (showHostFilter = !showHostFilter)}
-				options={[{ label: 'Filter', icon: IconType.Patreon, option: true }]}
+				options={[{ label: 'Filter', icon: IconType.Host, option: true }]}
 			/>
 			<div class="divider mobile-hidden"></div>
 		{/if}

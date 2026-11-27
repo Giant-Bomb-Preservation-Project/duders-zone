@@ -16,6 +16,7 @@
 		LeastFirst,
 		MostFirst,
 		Play,
+		Host,
 	}
 
 	export function iconForUrl(url: string): IconType {
@@ -148,6 +149,16 @@
 			stroke="currentColor"
 			stroke-width="1.5"
 			stroke-linecap="round"
+			stroke-linejoin="round"
+		/>
+	</svg>
+{:else if type == IconType.Host}
+	<svg viewBox="-1 -1 26 26" xmlns="http://www.w3.org/2000/svg">
+		<path
+			d="M12,2 a4.5,4.5 0 0 0 0,9 a4.5,4.5 0 0 0 0,-9 M2,22 h20 a10.5,10.5 0 0 0 -20,0 Z"
+			fill="currentColor"
+			stroke="currentColor"
+			stroke-width="4"
 			stroke-linejoin="round"
 		/>
 	</svg>
