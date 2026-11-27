@@ -51,7 +51,7 @@
 				<a href="?page={button}">{button}</a>
 			</li>
 		{:else}
-			<li class="ellipse">...</li>
+			<li>...</li>
 		{/if}
 	{/each}
 	{#if currentPage < totalPages}
@@ -74,7 +74,7 @@
 	}
 
 	ul li {
-		color: #9da1a4;
+		color: var(--color-text-muted);
 		padding: 0 3px;
 		line-height: 20px;
 		font-weight: bold;
@@ -82,12 +82,11 @@
 
 	ul li:first-child {
 		padding-left: 0;
-		color: #696e72;
 		font-weight: normal;
 	}
 
 	ul li a {
-		color: #696e72;
+		color: var(--color-text-muted);
 		padding: 0 6px;
 		display: inline-block;
 		line-height: 19px;
@@ -101,23 +100,41 @@
 		-moz-background-clip: padding;
 		background-clip: padding-box;
 		background-color: #e6e6e6;
-		background-image: -webkit-linear-gradient(#f5f5f5, rgba(230, 230, 230, 0));
-		background-image: -moz-linear-gradient(#f5f5f5, rgba(230, 230, 230, 0));
-		background-image: -o-linear-gradient(#f5f5f5, rgba(230, 230, 230, 0));
-		background-image: linear-gradient(#f5f5f5, rgba(230, 230, 230, 0));
+		background-image: -webkit-linear-gradient(#f5f5f5, #e6e6e600);
+		background-image: -moz-linear-gradient(#f5f5f5, #e6e6e600);
+		background-image: -o-linear-gradient(#f5f5f5, #e6e6e600);
+		background-image: linear-gradient(#f5f5f5, #e6e6e600);
 		background-repeat: repeat-x;
 	}
 
 	ul li.current a {
 		box-shadow:
 			#b5b5b5 0 0 0 1px,
-			rgba(255, 255, 255, 0.15) 0 1px 0 inset,
-			rgba(0, 0, 0, 0.3) 0 1px 5px inset,
-			#fff 0 2px 0;
+			rgba(0, 0, 0, 0.3) 0 1px 5px inset;
 	}
 
 	ul li:not(.current) a:hover {
 		color: var(--color-gray);
+	}
+
+	:global([data-theme='dark']) ul li a {
+		text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0;
+		background-color: #303030;
+		background-image: -webkit-linear-gradient(#242424, #30303000);
+		background-image: -moz-linear-gradient(#242424, #30303000);
+		background-image: -o-linear-gradient(#242424, #30303000);
+		background-image: linear-gradient(#242424, #30303000);
+	}
+
+	:global([data-theme='dark']) ul li.current a {
+		background-color: #222;
+		box-shadow:
+			#111 0 0 0 1px,
+			rgba(0, 0, 0, 0.7) 0 1px 5px inset;
+	}
+
+	:global([data-theme='dark']) ul li:not(.current) a:hover {
+		color: #ddd;
 	}
 
 	ul li a svg {
