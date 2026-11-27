@@ -8,6 +8,7 @@
 	import { videoListMode, videoListSorting } from '$lib/store'
 	import ListButtons from './ListButtons.svelte'
 	import { IconType } from './Icon.svelte'
+	import HostFilter from './HostFilter.svelte'
 	import { onMount } from 'svelte'
 
 	interface Props {
@@ -40,45 +41,16 @@
 	let sortedVideos = $derived(
 		$videoListSorting === VideoListSorting.NewestFirst || !sortable ? videos : videosReversed
 	)
+
+	let showHostFilter = $state(false)
 	let hosts = $derived.by(() => {
 		if (!filterable) return []
 		const hostsSet: Set<Person> = new Set()
 		videos.forEach((video) => video.hosts.forEach((host) => hostsSet.add(host)))
 		return [...hostsSet].sort(byNameAsc)
 	})
-
-	// TODO: Move all host filtering logic and markup into component
-	enum HostFilter {
-		neutral,
-		include,
-		exclude,
-	}
 	// svelte-ignore state_referenced_locally
-	let hostFilters = $state(hosts.map(() => HostFilter.neutral))
-	let includeHosts = $derived(hosts.filter((_, h) => hostFilters[h] === HostFilter.include))
-	let excludeHosts = $derived(hosts.filter((_, h) => hostFilters[h] === HostFilter.exclude))
-	let filterActive = $derived(includeHosts.length + excludeHosts.length > 0)
-	let matchAnyIncludedHost = $state(false)
-	let filteredVideos = $derived(
-		filterActive
-			? sortedVideos.filter((v) =>
-					matchAnyIncludedHost
-						? includeHosts.some((ih) => v.hosts.find((h) => h.id === ih.id))
-						: includeHosts.every((ih) => v.hosts.find((h) => h.id === ih.id)) &&
-							excludeHosts.every((eh) => !v.hosts.find((h) => h.id === eh.id))
-				)
-			: sortedVideos
-	)
-	let showHostFilter = $state(false)
-
-	function changeFilter(hostIndex: number) {
-		const oldVideoCount = filteredVideos.length
-		hostFilters[hostIndex] = (hostFilters[hostIndex] + 1) % 3
-		console.log(oldVideoCount, filteredVideos.length)
-		if (filteredVideos.length !== oldVideoCount) {
-			currentPage = 1 // Reset page number if video count has changed
-		}
-	}
+	let filteredVideos = $state(videos)
 
 	let totalPages = $derived(perPage != -1 ? Math.ceil(filteredVideos.length / perPage) : 1)
 	let currentPage = $derived.by(() => {
@@ -105,6 +77,7 @@
 	})
 
 	// If videos get re-sorted on load, thumbnails will be wrong, so hide them initially
+	// svelte-ignore state_referenced_locally
 	let hideThumbnails = $state(sortable)
 
 	onMount(() => {
@@ -168,33 +141,8 @@
 		{/if}
 	</div>
 </Header>
-{#if filterable && showHostFilter}
-	<div class="host-filter">
-		<h2>Filter by hosts</h2>
-		{#if filterActive}
-			<button onclick={() => (hostFilters = hosts.map(() => HostFilter.neutral))}>
-				Reset
-			</button>
-		{/if}
-		<div class="host-list">
-			{#each hosts as host, h}
-				{@const include = hostFilters[h] === HostFilter.include}
-				{@const exclude = hostFilters[h] === HostFilter.exclude}
-				<button
-					class:include
-					class:exclude
-					title="{include ? 'Exclude' : exclude ? 'Reset' : 'Include'} {host.name}"
-					onclick={() => changeFilter(h)}>{host.name}</button
-				>
-			{/each}
-		</div>
-		<div style="display: flex; flex-direction: column;">
-			<label>
-				<input type="checkbox" bind:checked={matchAnyIncludedHost} />
-				Include videos with any of these hosts
-			</label>
-		</div>
-	</div>
+{#if filterable}
+	<HostFilter videos={sortedVideos} {hosts} bind:filteredVideos hidden={!showHostFilter} />
 {/if}
 <ul class={mode ?? $videoListMode}>
 	{#each paginatedVideos as video (video.id)}
@@ -228,7 +176,7 @@
 		totalResults={filteredVideos.length}
 		{currentPage}
 		{totalPages}
-		filtered={filterActive}
+		filtered={filteredVideos.length < videos.length}
 	/>
 {/if}
 
@@ -245,75 +193,6 @@
 		border-left: 1px solid rgba(0, 0, 0, 0.3);
 		margin: 0 8px;
 		box-shadow: 1px 0 0 rgba(255, 255, 255, 0.08);
-	}
-
-	h2 {
-		font-size: 16px;
-	}
-
-	.host-filter {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		column-gap: 1em;
-		width: 100%;
-	}
-
-	.host-filter button {
-		height: 32px;
-		font-weight: bold;
-		background: var(--color-gray) url(/assets/bg-button.png) center center repeat-x;
-		color: #dedede;
-		text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0;
-		padding: 0 1em;
-		border: 1px solid #0b0d0e;
-		border-radius: 3px;
-		font-size: 1em;
-		cursor: pointer;
-	}
-
-	.host-filter button:hover {
-		color: #fff;
-		background-color: #282828;
-	}
-
-	.host-filter button:active {
-		background-color: #222;
-	}
-
-	.host-list {
-		width: 100%;
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-		gap: 0.375em;
-		margin-bottom: 1em;
-	}
-
-	.host-list button.include {
-		background-color: var(--color-green);
-	}
-
-	.host-list button:not(.include):not(.exclude):hover {
-		box-shadow: inset 0 0 10px var(--color-green);
-	}
-
-	.host-list button.exclude {
-		background-color: var(--color-red);
-	}
-
-	.host-filter::after {
-		content: ' ';
-		display: block;
-		width: 100%;
-		height: 2px;
-		margin-top: 6px;
-		background-position: bottom;
-		background-image: url(/assets/bg-border-light.png);
-		background-repeat: repeat-x;
-	}
-
-	:global([data-theme='dark']) .host-filter::after {
-		background-image: url(/assets/bg-border-dark.png);
 	}
 
 	h3 {
@@ -449,10 +328,6 @@
 		ul.grid h3 {
 			font-size: 18px;
 			line-height: 21px;
-		}
-
-		.host-list {
-			gap: 0.5em;
 		}
 
 		.mobile-hidden {
