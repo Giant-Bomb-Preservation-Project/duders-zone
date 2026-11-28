@@ -20,8 +20,11 @@
 		videos.forEach((video) => video.hosts.forEach((host) => hostsSet.add(host)))
 		return [...hostsSet].sort(byNameAsc)
 	})
-	// svelte-ignore state_referenced_locally
-	let hostFilters = $state(hosts.map(() => HostFilter.neutral))
+	let hostFilters: HostFilter[] = $state([])
+	$effect(() => {
+		// Rebuild filters if hosts list changes (triggered by videos changing)
+		hostFilters = hosts.map(() => HostFilter.neutral)
+	})
 	let includeHosts = $derived(hosts.filter((_, h) => hostFilters[h] === HostFilter.include))
 	let excludeHosts = $derived(hosts.filter((_, h) => hostFilters[h] === HostFilter.exclude))
 	let filterActive = $derived(includeHosts.length + excludeHosts.length > 0)

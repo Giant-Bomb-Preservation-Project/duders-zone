@@ -37,43 +37,44 @@
 		filterable = false,
 	}: Props = $props()
 
-	let videosReversed = $derived([...videos].reverse())
+	// svelte-ignore state_referenced_locally
+	let filteredVideos = $state(videos) // Videos prop should never go stale, so initial state is OK
+
+	let filteredVideosReversed = $derived([...filteredVideos].reverse())
 	let sortedVideos = $derived(
-		$videoListSorting === VideoListSorting.NewestFirst || !sortable ? videos : videosReversed
+		$videoListSorting === VideoListSorting.NewestFirst || !sortable
+			? filteredVideos
+			: filteredVideosReversed
 	)
 
 	let showHostFilter = $state(false)
 
-	// svelte-ignore state_referenced_locally
-	let filteredVideos = $state(videos)
-
-	let totalPages = $derived(perPage != -1 ? Math.ceil(filteredVideos.length / perPage) : 1)
+	let totalPages = $derived(perPage != -1 ? Math.ceil(sortedVideos.length / perPage) : 1)
 	let currentPage = $derived.by(() => {
 		if (!currentVideo || pageNumber) {
 			return Math.min(pageNumber ?? 1, totalPages)
 		}
 
 		// Determine which page the current video is on
-		for (let i = 0; i < filteredVideos.length; i++) {
-			if (filteredVideos[i].id === currentVideo.id) {
+		for (let i = 0; i < sortedVideos.length; i++) {
+			if (sortedVideos[i].id === currentVideo.id) {
 				return Math.floor(i / perPage) + 1
 			}
 		}
 
-		return 1 // In case current video isn't in filtered list
+		return 1 // Current video is not in filtered list
 	})
 	let paginatedVideos = $derived.by(() => {
 		if (perPage == -1) {
-			return filteredVideos
+			return sortedVideos
 		}
 
 		const itemIndexStart = (currentPage - 1) * perPage
-		return filteredVideos.slice(itemIndexStart, itemIndexStart + perPage)
+		return sortedVideos.slice(itemIndexStart, itemIndexStart + perPage)
 	})
 
 	// If videos get re-sorted on load, thumbnails will be wrong, so hide them initially
-	// svelte-ignore state_referenced_locally
-	let hideThumbnails = $state(sortable)
+	let hideThumbnails = $derived(sortable)
 
 	onMount(() => {
 		hideThumbnails = false
@@ -137,7 +138,7 @@
 	</div>
 </Header>
 {#if filterable}
-	<HostFilter videos={sortedVideos} bind:filteredVideos hidden={!showHostFilter} />
+	<HostFilter {videos} bind:filteredVideos hidden={!showHostFilter} />
 {/if}
 <ul class={mode ?? $videoListMode}>
 	{#each paginatedVideos as video (video.id)}
