@@ -14,7 +14,13 @@
 <VideosHeader current={VideosPage.All} />
 
 <section class="container videos">
-	<VideoList videos={data.videos} title="All Videos" perPage={24} pageNumber={data.pageNumber} />
+	<VideoList
+		videos={data.videos}
+		title="All Videos"
+		perPage={24}
+		pageNumber={data.pageNumber}
+		filterable
+	/>
 </section>
 
 <svelte:head>

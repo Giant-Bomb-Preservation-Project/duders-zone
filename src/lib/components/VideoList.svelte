@@ -8,6 +8,7 @@
 	import { videoListMode, videoListSorting } from '$lib/store'
 	import ListButtons from './ListButtons.svelte'
 	import { IconType } from './Icon.svelte'
+	import HostFilter from './HostFilter.svelte'
 	import { onMount } from 'svelte'
 
 	interface Props {
@@ -20,6 +21,7 @@
 		perPage?: number
 		pageNumber?: number | null
 		sortable?: boolean
+		filterable?: boolean
 	}
 
 	const {
@@ -32,17 +34,25 @@
 		perPage = -1,
 		pageNumber = null,
 		sortable = true,
+		filterable = false,
 	}: Props = $props()
 
-	let videosReversed = $derived([...videos].reverse())
+	// svelte-ignore state_referenced_locally
+	let filteredVideos = $state(videos) // Videos prop should never go stale, so initial state is OK
+
+	let filteredVideosReversed = $derived([...filteredVideos].reverse())
 	let sortedVideos = $derived(
-		$videoListSorting === VideoListSorting.NewestFirst || !sortable ? videos : videosReversed
+		$videoListSorting === VideoListSorting.NewestFirst || !sortable
+			? filteredVideos
+			: filteredVideosReversed
 	)
 
-	let totalPages = $derived(perPage != -1 ? Math.ceil(videos.length / perPage) : 1)
+	let showHostFilter = $state(false)
+
+	let totalPages = $derived(perPage != -1 ? Math.ceil(sortedVideos.length / perPage) : 1)
 	let currentPage = $derived.by(() => {
-		if (!currentVideo || pageNumber || perPage === -1) {
-			return pageNumber ?? 1
+		if (!currentVideo || pageNumber) {
+			return Math.min(pageNumber ?? 1, totalPages)
 		}
 
 		// Determine which page the current video is on
@@ -52,7 +62,7 @@
 			}
 		}
 
-		return 1 // shouldn't happen, but just in case
+		return 1 // Current video is not in filtered list
 	})
 	let paginatedVideos = $derived.by(() => {
 		if (perPage == -1) {
@@ -63,7 +73,8 @@
 		return sortedVideos.slice(itemIndexStart, itemIndexStart + perPage)
 	})
 
-	let hideThumbnails = $state(sortable)
+	// If videos get re-sorted on load, thumbnails will be wrong, so hide them initially
+	let hideThumbnails = $derived(sortable)
 
 	onMount(() => {
 		hideThumbnails = false
@@ -75,6 +86,14 @@
 		<div class="see-all">&middot; <a href={seeAllUrl}>See All</a></div>
 	{/if}
 	<div class="controls">
+		{#if filterable}
+			<ListButtons
+				value={showHostFilter}
+				onChange={() => (showHostFilter = !showHostFilter)}
+				options={[{ label: 'Filter', icon: IconType.Host, option: true }]}
+			/>
+			<div class="divider mobile-hidden"></div>
+		{/if}
 		{#if sortable}
 			<ListButtons
 				value={$videoListSorting}
@@ -92,9 +111,9 @@
 					},
 				]}
 			/>
-		{/if}
-		{#if !mode && sortable}
-			<div class="divider mobile-hidden"></div>
+			{#if !mode}
+				<div class="divider mobile-hidden"></div>
+			{/if}
 		{/if}
 		{#if !mode}
 			<div class="mobile-hidden">
@@ -118,6 +137,9 @@
 		{/if}
 	</div>
 </Header>
+{#if filterable}
+	<HostFilter {videos} bind:filteredVideos hidden={!showHostFilter} />
+{/if}
 <ul class={mode ?? $videoListMode}>
 	{#each paginatedVideos as video (video.id)}
 		<li>
@@ -146,10 +168,29 @@
 </ul>
 
 {#if perPage !== -1}
-	<Pagination totalResults={videos.length} {currentPage} {totalPages} />
+	<Pagination
+		totalResults={filteredVideos.length}
+		{currentPage}
+		{totalPages}
+		filtered={filteredVideos.length < videos.length}
+	/>
 {/if}
 
 <style>
+	.controls {
+		display: flex;
+		align-items: center;
+		margin-left: auto;
+	}
+
+	.controls .divider {
+		height: 80%;
+		width: 0;
+		border-left: 1px solid rgba(0, 0, 0, 0.3);
+		margin: 0 8px;
+		box-shadow: 1px 0 0 rgba(255, 255, 255, 0.08);
+	}
+
 	h3 {
 		font-size: 21px;
 		line-height: 25px;
@@ -195,20 +236,6 @@
 
 	ul li:last-child {
 		background-image: none !important;
-	}
-
-	.controls {
-		display: flex;
-		align-items: center;
-		margin-left: auto;
-	}
-
-	.controls .divider {
-		height: 80%;
-		width: 0;
-		border-left: 1px solid rgba(0, 0, 0, 0.3);
-		margin: 0 8px;
-		box-shadow: 1px 0 0 rgba(255, 255, 255, 0.08);
 	}
 
 	.mobile-hidden {
@@ -268,7 +295,7 @@
 		ul {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
-			column-gap: 10px;
+			column-gap: 30px;
 		}
 
 		ul li,
@@ -305,6 +332,9 @@
 
 		.thumbnail-wrapper {
 			flex: 0 0 220px;
+		}
+
+		ul:not(.grid) .thumbnail-wrapper {
 			margin-right: var(--spacing);
 		}
 	}

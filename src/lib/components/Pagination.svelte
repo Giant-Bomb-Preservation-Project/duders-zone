@@ -1,11 +1,15 @@
 <script lang="ts">
+	import { browser } from '$app/environment'
+	import { page } from '$app/state'
+	import { SvelteURLSearchParams } from 'svelte/reactivity'
 	interface Props {
 		currentPage: number
 		totalPages: number
 		totalResults: number
+		filtered?: boolean
 	}
 
-	const { currentPage, totalPages, totalResults }: Props = $props()
+	const { currentPage, totalPages, totalResults, filtered }: Props = $props()
 
 	const buttons = $derived(createPageButtons(currentPage, totalPages))
 
@@ -32,13 +36,32 @@
 
 		return buttons
 	}
+
+	// Get searchParams for new page while preserving existing params (e.g. search query)
+	function getPageLink(number: number | null) {
+		if (!browser) {
+			return `?page=${number}`
+		}
+		const params = new SvelteURLSearchParams(page.url.search)
+		if (number !== null) {
+			params.set('page', `${number}`)
+		} else {
+			params.delete('page')
+		}
+		return `?${params}`
+	}
 </script>
 
 <ul>
-	<li>{totalResults} videos</li>
+	<li>
+		{totalResults.toLocaleString()} video{totalResults === 1 ? '' : 's'}
+		{#if totalResults === 0 && filtered}
+			&mdash; try resetting your filter
+		{/if}
+	</li>
 	{#if currentPage > 1}
 		<li>
-			<a href="?page={currentPage - 1}" aria-label="Previous Page"
+			<a href={getPageLink(currentPage - 1)} aria-label="Previous Page"
 				><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 10">
 					<path d="M7 5H1l3 -3M1 5l3 3" />
 				</svg></a
@@ -48,15 +71,15 @@
 	{#each buttons as button}
 		{#if button}
 			<li class:current={button === currentPage}>
-				<a href="?page={button}">{button}</a>
+				<a href={getPageLink(button)}>{button}</a>
 			</li>
 		{:else}
-			<li class="ellipse">...</li>
+			<li>...</li>
 		{/if}
 	{/each}
 	{#if currentPage < totalPages}
 		<li>
-			<a href="?page={currentPage + 1}" aria-label="Next Page"
+			<a href={getPageLink(currentPage + 1)} aria-label="Next Page"
 				><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 10">
 					<path d="M1 5H7l-3 -3M7 5l-3 3" />
 				</svg></a
@@ -74,7 +97,7 @@
 	}
 
 	ul li {
-		color: #9da1a4;
+		color: var(--color-text-muted);
 		padding: 0 3px;
 		line-height: 20px;
 		font-weight: bold;
@@ -82,12 +105,11 @@
 
 	ul li:first-child {
 		padding-left: 0;
-		color: #696e72;
 		font-weight: normal;
 	}
 
 	ul li a {
-		color: #696e72;
+		color: var(--color-text-muted);
 		padding: 0 6px;
 		display: inline-block;
 		line-height: 19px;
@@ -101,23 +123,41 @@
 		-moz-background-clip: padding;
 		background-clip: padding-box;
 		background-color: #e6e6e6;
-		background-image: -webkit-linear-gradient(#f5f5f5, rgba(230, 230, 230, 0));
-		background-image: -moz-linear-gradient(#f5f5f5, rgba(230, 230, 230, 0));
-		background-image: -o-linear-gradient(#f5f5f5, rgba(230, 230, 230, 0));
-		background-image: linear-gradient(#f5f5f5, rgba(230, 230, 230, 0));
+		background-image: -webkit-linear-gradient(#f5f5f5, #e6e6e600);
+		background-image: -moz-linear-gradient(#f5f5f5, #e6e6e600);
+		background-image: -o-linear-gradient(#f5f5f5, #e6e6e600);
+		background-image: linear-gradient(#f5f5f5, #e6e6e600);
 		background-repeat: repeat-x;
 	}
 
 	ul li.current a {
 		box-shadow:
 			#b5b5b5 0 0 0 1px,
-			rgba(255, 255, 255, 0.15) 0 1px 0 inset,
-			rgba(0, 0, 0, 0.3) 0 1px 5px inset,
-			#fff 0 2px 0;
+			rgba(0, 0, 0, 0.3) 0 1px 5px inset;
 	}
 
 	ul li:not(.current) a:hover {
 		color: var(--color-gray);
+	}
+
+	:global([data-theme='dark']) ul li a {
+		text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0;
+		background-color: #303030;
+		background-image: -webkit-linear-gradient(#242424, #30303000);
+		background-image: -moz-linear-gradient(#242424, #30303000);
+		background-image: -o-linear-gradient(#242424, #30303000);
+		background-image: linear-gradient(#242424, #30303000);
+	}
+
+	:global([data-theme='dark']) ul li.current a {
+		background-color: #222;
+		box-shadow:
+			#111 0 0 0 1px,
+			rgba(0, 0, 0, 0.7) 0 1px 5px inset;
+	}
+
+	:global([data-theme='dark']) ul li:not(.current) a:hover {
+		color: #ddd;
 	}
 
 	ul li a svg {

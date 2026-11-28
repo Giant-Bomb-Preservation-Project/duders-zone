@@ -63,7 +63,7 @@ const byDateAndIDDesc = (a: { id: string; date: Date }, b: { id: string; date: D
 	b.date.getTime() - a.date.getTime() || b.id.localeCompare(a.id)
 
 // Sort by name ascending
-const byNameAsc = (a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name)
+export const byNameAsc = (a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name)
 
 // Sort randomly
 const byRandom = () => 0.5 - Math.random()
@@ -259,7 +259,7 @@ export class DataStore {
 	}
 
 	// Search videos for a given query.
-	searchVideos(searchQuery: string, limit: number = 100): Video[] {
+	searchVideos(searchQuery: string): Video[] {
 		const words = extractWords(searchQuery)
 
 		const foundVideos = new Map()
@@ -281,8 +281,7 @@ export class DataStore {
 
 		const sortedVideos = [...foundVideos].sort((a, b) => b[1] - a[1])
 		const videoList = sortedVideos.map((item) => this.videos[item[0]]) as Video[]
-
-		return videoList.slice(0, limit)
+		return videoList
 	}
 }
 

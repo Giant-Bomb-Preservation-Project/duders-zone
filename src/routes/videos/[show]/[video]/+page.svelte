@@ -24,6 +24,7 @@
 		title={data.show.title}
 		perPage={24}
 		pageNumber={data.pageNumber}
+		filterable
 	/>
 </section>
 
